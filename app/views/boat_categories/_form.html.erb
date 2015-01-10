@@ -1,0 +1,21 @@
+<%= form_for(@boat_category) do |f| %>
+  <% if @boat_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@boat_category.errors.count, "error") %> prohibited this boat_category from being saved:</h2>
+
+      <ul>
+      <% @boat_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

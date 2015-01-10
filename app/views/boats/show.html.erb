@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @boat.name %>
+</p>
+
+<p>
+  <strong>Manufacturer:</strong>
+  <%= @boat.manufacturer %>
+</p>
+
+<p>
+  <strong>Daily price:</strong>
+  <%= @boat.daily_price %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @boat.year %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @boat.model %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @boat.length %>
+</p>
+
+<p>
+  <strong>Guest capacity:</strong>
+  <%= @boat.guest_capacity %>
+</p>
+
+<p>
+  <strong>Boat category:</strong>
+  <%= @boat.boat_category %>
+</p>
+
+<%= link_to 'Edit', edit_boat_path(@boat) %> |
+<%= link_to 'Back', boats_path %>

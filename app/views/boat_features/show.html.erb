@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @boat_feature.name %>
+</p>
+
+<p>
+  <strong>Boat category:</strong>
+  <%= @boat_feature.boat_category %>
+</p>
+
+<%= link_to 'Edit', edit_boat_feature_path(@boat_feature) %> |
+<%= link_to 'Back', boat_features_path %>

@@ -1,0 +1,49 @@
+<%= form_for(@boat) do |f| %>
+  <% if @boat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@boat.errors.count, "error") %> prohibited this boat from being saved:</h2>
+
+      <ul>
+      <% @boat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :manufacturer %><br>
+    <%= f.text_field :manufacturer %>
+  </div>
+  <div class="field">
+    <%= f.label :daily_price %><br>
+    <%= f.text_field :daily_price %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br>
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :length %><br>
+    <%= f.number_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :guest_capacity %><br>
+    <%= f.number_field :guest_capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :boat_category_id %><br>
+    <%= f.select :boat_category_id, BoatCategory.all.collect { |c| [ c.name, c.id] } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
