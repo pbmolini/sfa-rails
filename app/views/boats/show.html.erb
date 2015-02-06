@@ -40,5 +40,13 @@
   <%= @boat.boat_category %>
 </p>
 
+<p>
+  <strong>Pictures:</strong>
+  <% @boat.pictures.each do |pic| %>
+  <%= pic.image_file_name %>
+  <%= image_tag pic.image.url(:thumb) %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_boat_path(@boat) %> |
 <%= link_to 'Back', boats_path %>

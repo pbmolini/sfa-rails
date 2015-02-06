@@ -1,4 +1,4 @@
-<%= form_for(@boat) do |f| %>
+<%= form_for @boat, :html => { :multipart => true } do |f| %>
   <% if @boat.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@boat.errors.count, "error") %> prohibited this boat from being saved:</h2>
@@ -42,6 +42,10 @@
   <div class="field">
     <%= f.label :boat_category_id %><br>
     <%= f.select :boat_category_id, BoatCategory.all.collect { |c| [ c.name, c.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :pictures %><br>
+    <%= file_field_tag "images[]", type: :file, multiple: true %>
   </div>
   <div class="actions">
     <%= f.submit %>

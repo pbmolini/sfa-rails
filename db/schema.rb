@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110183352) do
+ActiveRecord::Schema.define(version: 20150206214822) do
 
   create_table "boat_categories", force: :cascade do |t|
     t.string   "name"
@@ -42,5 +42,18 @@ ActiveRecord::Schema.define(version: 20150110183352) do
   end
 
   add_index "boats", ["boat_category_id"], name: "index_boats_on_boat_category_id"
+
+  create_table "pictures", force: :cascade do |t|
+    t.integer  "boat_id"
+    t.string   "description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "pictures", ["boat_id"], name: "index_pictures_on_boat_id"
 
 end

@@ -5,4 +5,5 @@ class Boat < ActiveRecord::Base
 	validates :daily_price, numericality: { greater_than: 1 }
 	
   belongs_to :boat_category
+  has_many :pictures
 end

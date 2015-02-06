@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  boat_id: 
+  description: MyString
+
+two:
+  boat_id: 
+  description: MyString
