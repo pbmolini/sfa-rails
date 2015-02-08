@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :boats
+
+  resources :boats do 
+    resources :pictures, only: [:index, :destroy]
+  end
+
 
   resources :boat_features
 
