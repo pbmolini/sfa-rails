@@ -7,6 +7,28 @@ Given(/^These boats are registered on SfA: (.+)$/) do |boats|
   end
 end
 
-Then(/^I should see (.+)$/) do |boat_name|
+Given(/^All boats are available$/) do
+  # TODO this will obviously use some search
+  @available_boats = Boat.all
+end
+
+Then(/^I should see "(.+)"$/) do |boat_name|
   page.has_content? boat_name
+end
+
+When(/^I click on a boat$/) do
+  @boat = Boat.all.sample
+  click_link @boat.name
+end
+
+Then(/^I should see all the details of the selected boat$/) do
+  # TODO refactor including CSS selectors
+  page.has_content?(@boat.name) &&
+  page.has_content?(@boat.manufacturer) &&
+  page.has_content?(@boat.daily_price) &&
+  page.has_content?(@boat.year) &&
+  page.has_content?(@boat.model) &&
+  page.has_content?(@boat.length) &&
+  page.has_content?(@boat.guest_capacity) &&
+  page.has_content?(@boat.boat_category)
 end

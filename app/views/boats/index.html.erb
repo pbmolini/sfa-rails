@@ -20,7 +20,7 @@
   <tbody>
     <% @boats.each do |boat| %>
       <tr>
-        <td><%= boat.name %></td>
+        <td><%= link_to boat.name, boat %></td>
         <td><%= boat.manufacturer %></td>
         <td><%= boat.daily_price %></td>
         <td><%= boat.year %></td>
