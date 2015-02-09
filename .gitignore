@@ -13,7 +13,7 @@ pickle-email-*.html
 
 # This is why they have been commented out: http://stackoverflow.com/questions/25426940/what-is-the-use-of-secret-key-base-in-rails-4
 # config/initializers/secret_token.rb
-# config/secrets.yml
+config/secrets.yml
 .env
 
 ## Environment normalisation:
