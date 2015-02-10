@@ -1,0 +1,10 @@
+<h1>Pictures of <%= @boat.name %></h1>
+<ul>
+	<% @pictures.each do |pic| %>
+	<li>
+  	<%= image_tag pic.image.url(:thumb) %>
+		<%= pic.image_file_name %> | 
+		<%= link_to "Delete", boat_picture_path(@boat, pic), method: :delete, data: {confirm: "Are you sure?"} %>
+  </li>
+  <% end %>
+</ul>

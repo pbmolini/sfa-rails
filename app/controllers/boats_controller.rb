@@ -34,7 +34,7 @@ class BoatsController < ApplicationController
             @boat.pictures.create image: image
           end
         end
-        
+
         format.html { redirect_to @boat, notice: 'Boat was successfully created.' }
         format.json { render :show, status: :created, location: @boat }
       else
@@ -49,6 +49,13 @@ class BoatsController < ApplicationController
   def update
     respond_to do |format|
       if @boat.update(boat_params)
+
+        if params[:images]
+          params[:images].each do |image|
+            @boat.pictures.create image: image
+          end
+        end
+        
         format.html { redirect_to @boat, notice: 'Boat was successfully updated.' }
         format.json { render :show, status: :ok, location: @boat }
       else

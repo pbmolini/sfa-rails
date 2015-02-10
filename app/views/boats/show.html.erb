@@ -42,9 +42,12 @@
 
 <p>
   <strong>Pictures:</strong>
+  <br>
   <% @boat.pictures.each do |pic| %>
-  <%= pic.image_file_name %>
-  <%= image_tag pic.image.url(:thumb) %>
+    <%= image_tag pic.image.url(:thumb) %>
+    <%= pic.image_file_name %> |  
+    <%= link_to "Delete", boat_picture_path(@boat, pic), method: :delete, data: {confirm: "Are you sure?"} %>
+    <br>
   <% end %>
 </p>
 
