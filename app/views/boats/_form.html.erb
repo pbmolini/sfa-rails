@@ -1,4 +1,4 @@
-<%= form_for @boat, :html => { :multipart => true } do |f| %>
+<%= simple_form_for @boat, html: { :multipart => true } do |f| %>
   <% if @boat.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@boat.errors.count, "error") %> prohibited this boat from being saved:</h2>
@@ -11,45 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :manufacturer %><br>
-    <%= f.text_field :manufacturer %>
-  </div>
-  <div class="field">
-    <%= f.label :daily_price %><br>
-    <%= f.text_field :daily_price %>
-  </div>
-  <div class="field">
-    <%= f.label :year %><br>
-    <%= f.number_field :year %>
-  </div>
-  <div class="field">
-    <%= f.label :model %><br>
-    <%= f.text_field :model %>
-  </div>
-  <div class="field">
-    <%= f.label :length %><br>
-    <%= f.number_field :length %>
-  </div>
-  <div class="field">
-    <%= f.label :guest_capacity %><br>
-    <%= f.number_field :guest_capacity %>
-  </div>
-  <div class="field">
-    <%= f.label :boat_category_id %><br>
-    <%= f.select :boat_category_id, BoatCategory.all.collect { |c| [ c.name, c.id] } %>
-  </div>
-  <div class="field">
-    <%= f.fields_for :pictures do |pictures_form| %>
-      <%= pictures_form.label :pictures %><br>
-      <%= pictures_form.file_field :image %>
-    <% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.input :name %>
+  <%= f.input :manufacturer %>
+  <%= f.input :daily_price %>
+  <%= f.input :year, collection: 1900..Time.now.year, prompt: "Select the year" %>
+  <%= f.input :model %>
+  <%= f.input :length %>
+  <%= f.input :guest_capacity %>
+  <%= f.association :boat_category, prompt: "Select the category" %>
+  <%= f.simple_fields_for :pictures do |pictures_form| %>
+    <%= pictures_form.input :image, as: :file %>
+  <% end %>
+  <%= f.button :submit %>
+
+  
 <% end %>
