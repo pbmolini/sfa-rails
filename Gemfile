@@ -40,7 +40,9 @@ group :development, :test do
 
   # Cucumber
   gem 'cucumber-rails', :require => false
-  gem "capybara-webkit"
+  gem 'selenium-webdriver'
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+
+  gem 'factory_girl_rails'
 end

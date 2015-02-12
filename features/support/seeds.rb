@@ -1,0 +1,1 @@
+BoatCategory.create(name: 'Motoscafo')
