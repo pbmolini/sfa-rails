@@ -6,7 +6,7 @@ class CreateBoats < ActiveRecord::Migration
       t.decimal :daily_price, precision: 8, scale: 2
       t.integer :year
       t.string :model
-      t.integer :length
+      t.decimal :daily_price, precision: 8, scale: 2
       t.integer :guest_capacity
       t.references :boat_category, index: true
 

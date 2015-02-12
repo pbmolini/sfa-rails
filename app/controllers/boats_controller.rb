@@ -15,6 +15,7 @@ class BoatsController < ApplicationController
   # GET /boats/new
   def new
     @boat = Boat.new
+    @boat.pictures.build
   end
 
   # GET /boats/1/edit
@@ -25,16 +26,8 @@ class BoatsController < ApplicationController
   # POST /boats.json
   def create
     @boat = Boat.new(boat_params)
-
     respond_to do |format|
       if @boat.save
-
-        if params[:images]
-          params[:images].each do |image|
-            @boat.pictures.create image: image
-          end
-        end
-
         format.html { redirect_to @boat, notice: 'Boat was successfully created.' }
         format.json { render :show, status: :created, location: @boat }
       else
@@ -50,9 +43,9 @@ class BoatsController < ApplicationController
     respond_to do |format|
       if @boat.update(boat_params)
 
-        if params[:images]
-          params[:images].each do |image|
-            @boat.pictures.create image: image
+        if params[:pictures]
+          params[:pictures].each do |pic|
+            @boat.pictures.create image: pic
           end
         end
         
@@ -83,6 +76,6 @@ class BoatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def boat_params
-      params.require(:boat).permit(:name, :manufacturer, :daily_price, :year, :model, :length, :guest_capacity, :boat_category_id)
+      params.require(:boat).permit(:name, :manufacturer, :daily_price, :year, :model, :length, :guest_capacity, :boat_category_id, pictures_attributes: [:image])
     end
 end

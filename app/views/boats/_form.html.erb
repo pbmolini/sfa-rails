@@ -44,8 +44,10 @@
     <%= f.select :boat_category_id, BoatCategory.all.collect { |c| [ c.name, c.id] } %>
   </div>
   <div class="field">
-    <%= f.label :pictures %><br>
-    <%= file_field_tag "images[]", type: :file, multiple: true %>
+    <%= f.fields_for :pictures do |pictures_form| %>
+      <%= pictures_form.label :pictures %><br>
+      <%= pictures_form.file_field :image %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

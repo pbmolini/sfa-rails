@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20150206214822) do
     t.decimal  "daily_price",      precision: 8, scale: 2
     t.integer  "year"
     t.string   "model"
-    t.integer  "length"
     t.integer  "guest_capacity"
     t.integer  "boat_category_id"
     t.datetime "created_at",                               null: false
