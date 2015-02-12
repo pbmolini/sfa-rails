@@ -62,3 +62,8 @@ Capybara.register_driver :chrome do |app|
 end
 
 Capybara.javascript_driver = :chrome
+
+World(FactoryGirl::Syntax::Methods)
+
+# seed the DB
+require File.dirname(__FILE__) + '/seeds'

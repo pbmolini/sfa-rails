@@ -32,3 +32,22 @@ Then(/^I should see all the details of the selected boat$/) do
   page.has_content?(@boat.guest_capacity) &&
   page.has_content?(@boat.boat_category)
 end
+
+Given(/^I own a boat called "(.+)"$/) do |boat_name|
+  @boat_attrs = FactoryGirl.attributes_for(:boat, name: boat_name)
+end
+
+When(/^I add the details of my boat$/) do
+  within('form') do
+    @boat_attrs.each do |att, value|
+      fill_in att.to_s.humanize, with: value
+    end
+
+    click_button 'Create Boat'
+  end
+end
+
+Then(/^I should see my boat in the list of boats$/) do
+  visit(boats_path)
+  page.has_content? @boat_attrs[:name]
+end

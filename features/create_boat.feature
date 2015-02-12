@@ -4,9 +4,12 @@ Feature: put up a boat for rent (create a boat)
   I want to register my boat
 
   Background:
-    Given I'm signed in
+    Given I am on "the list of boats"
+    And I'm signed in
+    And I own a boat called "Catrinza"
+
+  @javascript
   Scenario: registering a new boat
     When I click on "Rent your boat"
-    And I fill in the form with these details
-      # TODO | ... | ... |
+    And I add the details of my boat
     Then I should see my boat in the list of boats
