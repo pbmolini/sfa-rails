@@ -10,3 +10,11 @@ Use `rake secret >> .env` to create an Env file with the secret token, then edit
 ```
 export SECRET_TOKEN="YOUR_GENERATED_SECRET_TOKEN"
 ```
+
+## Testing
+
+To run Cucumber tests:
+
+```bash
+bundle exec cucumber # optionally specify features/<file_name>.feature
+```
