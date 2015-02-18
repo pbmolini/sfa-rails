@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <%= f.input :name %>
-  <%= f.input :manufacturer %>
-  <%= f.input :daily_price %>
-  <%= f.input :year, collection: 1900..Time.now.year, prompt: "Select the year" %>
-  <%= f.input :model %>
-  <%= f.input :length %>
-  <%= f.input :guest_capacity %>
-  <%= f.association :boat_category, prompt: "Select the category" %>
+  <%= f.input :name, required: false %>
+  <%= f.input :manufacturer, required: false %>
+  <%= f.input :daily_price, required: false %>
+  <%= f.input :year, collection: 1900..Time.now.year, prompt: "Select the year", required: false %>
+  <%= f.input :model, required: false %>
+  <%= f.input :length, required: false %>
+  <%= f.input :guest_capacity, required: false %>
+  <%= f.association :boat_category, prompt: "Select the category", required: false %>
   <%= f.simple_fields_for :pictures do |pictures_form| %>
     <%= pictures_form.input :image, as: :file %>
   <% end %>

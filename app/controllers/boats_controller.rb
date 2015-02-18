@@ -31,6 +31,8 @@ class BoatsController < ApplicationController
         format.html { redirect_to @boat, notice: 'Boat was successfully created.' }
         format.json { render :show, status: :created, location: @boat }
       else
+        # pictures must be rebuilt to make the field appear in the form
+        @boat.pictures.build unless @boat.pictures.any?
         format.html { render :new }
         format.json { render json: @boat.errors, status: :unprocessable_entity }
       end
@@ -42,13 +44,6 @@ class BoatsController < ApplicationController
   def update
     respond_to do |format|
       if @boat.update(boat_params)
-
-        if params[:pictures]
-          params[:pictures].each do |pic|
-            @boat.pictures.create image: pic
-          end
-        end
-        
         format.html { redirect_to @boat, notice: 'Boat was successfully updated.' }
         format.json { render :show, status: :ok, location: @boat }
       else
