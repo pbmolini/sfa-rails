@@ -11,8 +11,8 @@ class BoatsController < ApplicationController
   # GET /boats/1.json
   def show
     @booking = @boat.bookings.build
-    @booking.start_time = DateTime.tomorrow + 9.hours
-    @booking.end_time = DateTime.tomorrow + 18.hours
+    @booking.start_time = Time.zone.tomorrow + 9.hours
+    @booking.end_time = Time.zone.tomorrow + 18.hours
     @booking.people_on_board = 1
   end
 
