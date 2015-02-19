@@ -51,5 +51,8 @@
   <% end %>
 </p>
 
+<%= render 'bookings/form' %>
+
+<%= link_to 'See all Bookings', boat_bookings_path(@boat) %>
 <%= link_to 'Edit', edit_boat_path(@boat) %> |
 <%= link_to 'Back', boats_path %>

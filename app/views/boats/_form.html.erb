@@ -19,6 +19,7 @@
   <%= f.input :length, required: false %>
   <%= f.input :guest_capacity, required: false %>
   <%= f.association :boat_category, prompt: "Select the category", required: false %>
+  <!-- Per la EDIT: mettere la lista delle pictures già esistenti, con il relativo "delete" -->
   <%= f.simple_fields_for :pictures do |pictures_form| %>
     <%= pictures_form.input :image, as: :file %>
   <% end %>

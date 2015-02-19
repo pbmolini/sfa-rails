@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>People on board</th>
+      <th>Boat</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.start_time %></td>
+        <td><%= booking.end_time %></td>
+        <td><%= booking.people_on_board %></td>
+        <td><%= booking.boat %></td>
+        <td><%= link_to 'Edit', edit_boat_booking_path(@boat, booking) %></td>
+        <td><%= link_to 'Destroy', boat_booking_path(@boat, booking), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

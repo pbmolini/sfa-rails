@@ -1,6 +1,7 @@
 class Boat < ActiveRecord::Base
 
   belongs_to :boat_category
+  has_many :bookings
   has_many :pictures, dependent: :destroy
   accepts_nested_attributes_for :pictures
 
