@@ -147,6 +147,19 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    rspec (3.2.0)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+    rspec-core (3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-expectations (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-mocks (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.1)
     rubyzip (1.1.7)
     sass (3.4.11)
     sass-rails (5.0.1)
@@ -210,6 +223,7 @@ DEPENDENCIES
   jquery-rails
   paperclip (~> 4.2)
   rails (= 4.2.0)
+  rspec
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   selenium-webdriver

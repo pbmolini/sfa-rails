@@ -8,5 +8,6 @@ FactoryGirl.define do
     length 8.78
     guest_capacity 40
     boat_category
+    pictures { |b| [b.association(:picture)]}
   end
 end

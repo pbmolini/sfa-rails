@@ -8,6 +8,4 @@ Feature: Find a boat
     Given These boats are registered on SfA: Niña, Pinta, Santa Maria
     And All boats are available
     When I visit the list of boats
-    Then I should see "Niña"
-    And I should see "Pinta"
-    And I should see "Santa Maria"
+    Then I should see: Niña, Pinta, Santa Maria

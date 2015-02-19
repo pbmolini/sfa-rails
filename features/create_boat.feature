@@ -12,4 +12,4 @@ Feature: put up a boat for rent (create a boat)
   Scenario: registering a new boat
     When I click on "Rent your boat"
     And I add the details of my boat
-    Then I should see my boat in the list of boats
+    Then I should see "Catrinza" in "the list of boats"
