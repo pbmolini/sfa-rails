@@ -1,4 +1,8 @@
 <%= simple_form_for([@boat, @booking]) do |f| %>
+  <% if @booking.errors[:base] %>
+    <p class="error"><%= @booking.errors[:base] %></p>
+  <% end %>
+
   <%= f.error_notification %>
 
   <div class="form-inputs">

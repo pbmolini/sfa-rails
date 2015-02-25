@@ -18,12 +18,13 @@ class Booking < ActiveRecord::Base
   end
 
   def not_overlapping_other_bookings
-  	overlapping_bookings = 
-  				Booking.where(boat_id: boat_id).where('end_time >= ? AND end_time <= ?', self.start_time, self.end_time) + 
+  	overlapping_bookings =
+  				Booking.where(boat_id: boat_id).where('end_time >= ? AND end_time <= ?', self.start_time, self.end_time) +
   				Booking.where(boat_id: boat_id).where('start_time >= ? AND start_time <= ?', self.start_time, self.end_time)
   	unless overlapping_bookings.empty?
   		errors.add :start_time,  "Overlaps!!"
   		errors.add :end_time,  "Overlaps!!"
+      errors.add :base, "This boat is not available in the period you selected"
   	end
   end
 end

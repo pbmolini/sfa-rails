@@ -10,6 +10,16 @@ Given(/^All boats are available$/) do
   @available_boats = Boat.all
 end
 
+Given(/^There is a boat with:$/) do |table|
+  @boat = FactoryGirl.create(:boat, table.rows_hash)
+end
+
+Given(/^the boat is already booked$/) do |table|
+  booking = Booking.new(table.rows_hash.inject({}) {|h, (k,v)| h[k] = eval(v); h })
+  booking.boat = @boat
+  booking.save
+end
+
 Then(/^I should see "(.+)" in "(.+)"$/) do |boat_name, page_name|
   visit(path_to page_name)
   expect(page).to have_content boat_name
@@ -50,6 +60,33 @@ When(/^I add the details of my boat$/) do
       end
     end
 
+    select BoatCategory.first.name, from: 'Boat category'
+
     click_button 'Create Boat'
+    #byebug
   end
+end
+
+When(/^I fill in the period I am interested in as follows:$/) do |table|
+  @booking_attrs = table.rows_hash
+  within('form.new_booking') do
+    @booking_attrs.each do |key, value|
+      if ['start_time','end_time'].include? key
+        select_date_and_time eval(value), from: "booking_#{key}"
+      else
+        fill_in key.humanize, with: eval(value)
+      end
+    end
+  end
+end
+
+Then(/^There should be a booking for the specified dates$/) do
+  booking = Booking.last
+  expect(booking.start_time).to eq(eval(@booking_attrs[:start_time]).beginning_of_minute)
+  expect(booking.end_time).to eq(eval(@booking_attrs[:end_time]).beginning_of_minute)
+  expect(booking.people_on_board).to eq(@booking_attrs[:people_on_board].to_i)
+end
+
+Then(/^I should be notified the boat is unavailable$/) do
+  expect(page).to have_content "This boat is not available in the period you selected"
 end
