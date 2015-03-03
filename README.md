@@ -37,5 +37,11 @@ git push staging development:master
 ```
 This command pushes the latest commit from the *development* local branch to the *staging* remote (that is the *master* branch on heroku)
 
+If needed, migrate the database with
+
+```
+heroku run rake db:migrate
+```
+
 ### Production
 TODO
