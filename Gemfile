@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
+ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,6 +31,9 @@ gem 'simple_form'
 gem "cocoon", '>= 1.2.0', git: 'https://github.com/nathanvda/cocoon'
 
 group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+  
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -51,4 +53,13 @@ group :development, :test do
 
   # RSpec
   gem 'rspec'
+end
+
+group :production do
+
+  # needed for Heroku
+  gem 'rails_12factor'
+
+  # PostgreSQL
+  gem 'pg'
 end
