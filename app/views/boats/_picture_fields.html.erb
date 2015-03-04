@@ -1,0 +1,5 @@
+<div class="nested_fields">
+  <%= f.input :image, as: :file, label: false, input_html: { hidden: !f.object.new_record?, id: 'real-image-upload' } %>
+  <%= image_tag(f.object.image.url(:thumb)) unless f.object.new_record? %>
+  <%= link_to_remove_association("Remove picture", f) %>
+</div>

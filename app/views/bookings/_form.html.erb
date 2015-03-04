@@ -1,5 +1,5 @@
 <%= simple_form_for([@boat, @booking]) do |f| %>
-  <% if @booking.errors[:base] %>
+  <% if @booking.errors[:base].any? %>
     <p class="error"><%= @booking.errors[:base] %></p>
   <% end %>
 

@@ -1,15 +1,7 @@
 <%= simple_form_for @boat, html: { :multipart => true } do |f| %>
-  <% if @boat.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@boat.errors.count, "error") %> prohibited this boat from being saved:</h2>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @boat.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <h3>Details of your boat</h3>
 
   <%= f.input :name, required: false %>
   <%= f.input :manufacturer, required: false %>
@@ -19,11 +11,26 @@
   <%= f.input :length, required: false %>
   <%= f.input :guest_capacity, required: false %>
   <%= f.association :boat_category, prompt: "Select the category", required: false %>
-  <!-- Per la EDIT: mettere la lista delle pictures già esistenti, con il relativo "delete" -->
-  <%= f.simple_fields_for :pictures do |pictures_form| %>
-    <%= pictures_form.input :image, as: :file %>
-  <% end %>
+
+  <h3>Pictures</h3>
+  <div id="pictures">
+    <%= f.simple_fields_for :pictures do |pictures_form| %>
+      <%= render 'picture_fields', f: pictures_form %>
+    <% end %>
+    <div class="links">
+      <p><%= link_to_add_association "Add picture", f, :pictures %></p>
+    </div>
+  </div>
+
   <%= f.button :submit %>
 
-  
 <% end %>
+
+
+<script type="text/javascript">
+  $(document).on('page:change page:load',function() {
+    $('#pictures').on('cocoon:before-remove',function(){
+      console.log("OX");
+    });
+  });
+</script>
