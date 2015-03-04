@@ -1,11 +1,12 @@
 <%= simple_form_for([@boat, @booking]) do |f| %>
   <% if @booking.errors[:base].any? %>
-    <p class="error"><%= @booking.errors[:base] %></p>
+    <p class="error"><%= @booking.errors[:base].join(', ') %></p>
   <% end %>
 
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.association :user, as: :hidden %>
     <%= f.input :start_time %>
     <%= f.input :end_time %>
     <%= f.input :people_on_board %>

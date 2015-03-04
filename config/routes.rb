@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       sign_up: 'signup'
     }
 
+
   resources :boats do
     resources :pictures,
     only: [:index,
@@ -22,9 +23,9 @@ Rails.application.routes.draw do
     resources :bookings
   end
 
+  get 'bookings' => 'bookings#index', as: :bookings
 
   resources :boat_features
-
   resources :boat_categories
 
   # The priority is based upon order of creation: first created -> highest priority.

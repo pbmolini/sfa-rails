@@ -5,7 +5,11 @@ class BookingsController < ApplicationController
   # GET /bookings
   # GET /bookings.json
   def index
-    @bookings = Booking.all
+    if @boat
+      @bookings = @boat.bookings
+    else
+      @bookings = current_user.bookings
+    end
   end
 
   # GET /bookings/1
@@ -15,7 +19,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings/new
   def new
-    @booking = Booking.new
+    @booking = @boat.bookings.build(user: current_user)
   end
 
   # GET /bookings/1/edit
@@ -69,11 +73,11 @@ class BookingsController < ApplicationController
     end
 
     def set_boat
-      @boat = Boat.find(params[:boat_id])
+      @boat = Boat.find(params[:boat_id]) if params[:boat_id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:start_time, :end_time, :people_on_board, :boat_id)
+      params.require(:booking).permit(:start_time, :end_time, :people_on_board, :boat_id, :user_id)
     end
 end

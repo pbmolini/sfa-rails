@@ -19,9 +19,9 @@
         <td><%= booking.start_time %></td>
         <td><%= booking.end_time %></td>
         <td><%= booking.people_on_board %></td>
-        <td><%= booking.boat %></td>
-        <td><%= link_to 'Edit', edit_boat_booking_path(@boat, booking) %></td>
-        <td><%= link_to 'Destroy', boat_booking_path(@boat, booking), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to booking.boat.name, booking.boat %></td>
+        <td><%= link_to 'Edit', edit_boat_booking_path(booking.boat, booking) %></td>
+        <td><%= link_to 'Destroy', boat_booking_path(booking.boat, booking), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +29,4 @@
 
 <br>
 
-<%= link_to "Back to #{@boat.name}", boat_path(@boat) %>
+<%= link_to("Back to #{@boat.name}", boat_path(@boat)) if @boat %>
