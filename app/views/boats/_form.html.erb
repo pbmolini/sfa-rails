@@ -1,5 +1,8 @@
 <%= simple_form_for @boat, html: { :multipart => true } do |f| %>
   <%= f.error_notification %>
+  <% @boat.errors[:base].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
 
   <h3>Details of your boat</h3>
 
@@ -13,6 +16,7 @@
   <%= f.association :boat_category, prompt: "Select the category", required: false %>
 
   <h3>Pictures</h3>
+  <%= content_tag :p, @boat.errors[:pictures].join(', ') if @boat.errors[:pictures] %>
   <div id="pictures">
     <%= f.simple_fields_for :pictures do |pictures_form| %>
       <%= render 'picture_fields', f: pictures_form %>
@@ -28,9 +32,8 @@
 
 
 <script type="text/javascript">
-  $(document).on('page:change page:load',function() {
-    $('#pictures').on('cocoon:before-remove',function(){
-      console.log("OX");
-    });
-  });
+$('#pictures').on('click', 'a.remove_fields.existing', function(e){
+  $(e.target).closest('.nested_fields').css('opacity',0.3);
+  $(e.target).hide();
+});
 </script>
