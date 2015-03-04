@@ -6,6 +6,8 @@
 
   <h3>Details of your boat</h3>
 
+  <%= f.association :user, as: :hidden %>
+
   <%= f.input :name, required: false %>
   <%= f.input :manufacturer, required: false %>
   <%= f.input :daily_price, required: false %>

@@ -1,5 +1,6 @@
 class Boat < ActiveRecord::Base
 
+  belongs_to :user
   belongs_to :boat_category
   has_many :bookings
   has_many :pictures, dependent: :destroy

@@ -1,4 +1,5 @@
 class BoatsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   # GET /boats
@@ -18,7 +19,7 @@ class BoatsController < ApplicationController
 
   # GET /boats/new
   def new
-    @boat = Boat.new
+    @boat = current_user.boats.build
     @boat.pictures.build
   end
 
@@ -29,7 +30,7 @@ class BoatsController < ApplicationController
   # POST /boats
   # POST /boats.json
   def create
-    @boat = Boat.new(boat_params)
+    @boat = current_user.boats.build(boat_params)
     respond_to do |format|
       if @boat.save
         format.html { redirect_to @boat, notice: 'Boat was successfully created.' }

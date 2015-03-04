@@ -1,4 +1,5 @@
 class Booking < ActiveRecord::Base
+  belongs_to :user
   belongs_to :boat
 
   validate :minimum_booking_period
