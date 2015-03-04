@@ -31,6 +31,8 @@ gem 'paperclip', '~> 4.2'
 gem 'simple_form'
 gem "cocoon", '>= 1.2.0', git: 'https://github.com/nathanvda/cocoon'
 
+gem 'devise'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'

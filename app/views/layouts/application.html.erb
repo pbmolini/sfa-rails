@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SfaRails</title>
+  <title>Sea for All - Dona la tua barca - Divertiti a nastro - Aiuta i poveri</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<%#= @GIULIO - questa roba ci serve per far vedere gli errore messaggi %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<p>
+<% if user_signed_in? %>
+  Welcome, <strong><%= current_user.email %></strong>
+  (<%= link_to "Logout", destroy_user_session_path, method: :delete %>)
+<% else %>
+  <%= link_to 'Register', new_user_registration_path %>
+  |
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
+</p>
 
 <%= yield %>
 
