@@ -13,14 +13,14 @@
       <th>Length</th>
       <th>Guest capacity</th>
       <th>Boat category</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @boats.each do |boat| %>
       <tr>
-        <td><%= link_to boat.name, boat %></td>
+        <td><%= link_to(boat.name, boat) if can? :read, boat %></td>
         <td><%= boat.manufacturer %></td>
         <td><%= boat.daily_price %></td>
         <td><%= boat.year %></td>
@@ -28,9 +28,8 @@
         <td><%= boat.length %></td>
         <td><%= boat.guest_capacity %></td>
         <td><%= boat.boat_category %></td>
-        <td><%= link_to 'Show', boat %></td>
-        <td><%= link_to 'Edit', edit_boat_path(boat) %></td>
-        <td><%= link_to 'Destroy', boat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to('Edit', edit_boat_path(boat)) if can? :update, boat %></td>
+        <td><%= link_to('Destroy', boat, method: :delete, data: { confirm: 'Are you sure?' }) if can? :destry, boat %></td>
       </tr>
     <% end %>
   </tbody>

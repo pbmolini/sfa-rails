@@ -32,6 +32,12 @@ gem 'simple_form'
 gem "cocoon", '>= 1.2.0', git: 'https://github.com/nathanvda/cocoon'
 
 gem 'devise'
+gem 'cancancan', '~> 1.10'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
