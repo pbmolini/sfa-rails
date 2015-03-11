@@ -51,7 +51,7 @@
   <% end %>
 </p>
 
-<%= render 'bookings/form' %>
+<%= render 'bookings/form' if can? :create, @booking %>
 
 <%= link_to 'See all Bookings', boat_bookings_path(@boat) %>
 <%= link_to 'Edit', edit_boat_path(@boat) %> |

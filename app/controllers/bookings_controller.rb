@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  load_and_authorize_resource :boat
+  load_and_authorize_resource :booking, through: :boat
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
   before_action :set_boat
 
@@ -29,7 +31,7 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    @booking = @boat.bookings.build(booking_params)
+    @booking = @boat.bookings.create(booking_params)
 
     respond_to do |format|
       if @booking.save
@@ -78,6 +80,7 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:start_time, :end_time, :people_on_board, :boat_id, :user_id)
+      params.require(:boat_id)
+      params.require(:booking).permit(:start_time, :end_time, :people_on_board, :user_id)
     end
 end
