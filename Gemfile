@@ -31,6 +31,8 @@ gem 'paperclip', '~> 4.2'
 gem 'simple_form'
 gem "cocoon", '>= 1.2.0', git: 'https://github.com/nathanvda/cocoon'
 
+gem 'bootstrap-sass', '~> 3.3.3'
+
 gem 'devise'
 
 group :development, :test do
