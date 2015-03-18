@@ -7,23 +7,50 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Project name</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
 
-<%#= @GIULIO - questa roba ci serve per far vedere gli errore messaggi %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <%#= @GIULIO - questa roba ci serve per far vedere gli errore messaggi %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 
-<p>
-<% if user_signed_in? %>
-  Welcome, <strong><%= current_user.email %></strong>
-  (<%= link_to "Logout", destroy_user_session_path, method: :delete %>)
-<% else %>
-  <%= link_to 'Register', new_user_registration_path %>
-  |
-  <%= link_to "Login", new_user_session_path %>
-<% end %>
-</p>
+        <p>
+        <% if user_signed_in? %>
+          Welcome, <strong><%= current_user.email %></strong>
+          (<%= link_to "Logout", destroy_user_session_path, method: :delete %>)
+        <% else %>
+          <%= link_to 'Register', new_user_registration_path %>
+          |
+          <%= link_to "Login", new_user_session_path %>
+        <% end %>
+        </p>
 
-<%= yield %>
+        <%= yield %>
+      </div>
+    </div>
+  </div><!-- /.container -->
+
 
 </body>
 </html>

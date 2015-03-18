@@ -36,6 +36,9 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
 
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

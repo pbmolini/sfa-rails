@@ -1,3 +1,5 @@
+<h2>Book it! NOW!</h2>
+
 <%= simple_form_for([@boat, @booking]) do |f| %>
   <% if @booking.errors[:base].any? %>
     <p class="error"><%= @booking.errors[:base].join(', ') %></p>
@@ -7,8 +9,22 @@
 
   <div class="form-inputs">
     <%= f.association :user, as: :hidden %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <%= f.input :start_time, class: 'input-group date', wrapper: :vertical_input_group do %>
+          <%= f.input_field :start_time, as: :string, class: 'form-control' %>
+          <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span> -->
+        <% end %>
+      </div>
+      <div class="col-sm-6">
+        <%= f.input :end_time, input_html: { class: 'input-group date' }, wrapper: :vertical_input_group do %>
+          <%= f.input_field :end_time, as: :string, class: 'form-control' %>
+          <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span> -->
+        <% end %>
+      </div>
+    </div>
+
     <%= f.input :people_on_board %>
   </div>
 
@@ -16,3 +32,24 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.booking_start_time .form-control').datetimepicker({
+    // need to upgrade to 4.7.14 to have inline
+    // inline: true,
+    // sideBySide: true
+  });
+  $('.booking_end_time .form-control').datetimepicker({
+    // need to upgrade to 4.7.14 to have inline
+    // inline: true,
+    // sideBySide: true
+  });
+  $(".booking_start_time .form-control").on("dp.change",function (e) {
+    $('.booking_end_time .form-control').data("DateTimePicker").minDate(e.date);
+  });
+  $(".booking_end_time .form-control").on("dp.change",function (e) {
+    $('.booking_start_time .form-control').data("DateTimePicker").maxDate(e.date);
+  });
+});
+</script>

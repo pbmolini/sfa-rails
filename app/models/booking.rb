@@ -6,7 +6,6 @@ class Booking < ActiveRecord::Base
   validate :not_overlapping_other_bookings
   validates_numericality_of :people_on_board, less_than_or_equal_to: ->(booking) {booking.boat.guest_capacity}
 
-
   private
 
   def minimum_booking_period
