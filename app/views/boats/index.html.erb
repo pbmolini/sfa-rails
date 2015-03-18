@@ -1,40 +1,30 @@
+<div class="row">
+  <div class="col-sm-12 centered">
+    <h1>Dude, rent your boat NOW!</h1>
+    <p><%= link_to 'Click here!!', new_boat_path, class: 'btn btn-success btn-lg' %></p>
+  </div>
+</div>
 
+<div class="row">
+  <div class="col-sm-12">
+    <h1>A lot of boats - Ready for your perusal</h1>
+  </div>
+</div>
 
-<h1>Listing Boats</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Manufacturer</th>
-      <th>Daily price</th>
-      <th>Year</th>
-      <th>Model</th>
-      <th>Length</th>
-      <th>Guest capacity</th>
-      <th>Boat category</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @boats.each do |boat| %>
-      <tr>
-        <td><%= link_to(boat.name, boat) if can? :read, boat %></td>
-        <td><%= boat.manufacturer %></td>
-        <td><%= boat.daily_price %></td>
-        <td><%= boat.year %></td>
-        <td><%= boat.model %></td>
-        <td><%= boat.length %></td>
-        <td><%= boat.guest_capacity %></td>
-        <td><%= boat.boat_category %></td>
-        <td><%= link_to('Edit', edit_boat_path(boat)) if can? :update, boat %></td>
-        <td><%= link_to('Destroy', boat, method: :delete, data: { confirm: 'Are you sure?' }) if can? :destry, boat %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Rent your boat', new_boat_path %>
+<div class="row">
+  <% @boats.each do |boat| %>
+    <div class="col-md-4 col-sm-12 boat-card">
+      <div class="thumbnail">
+        <div class="picture" style="background-image: url('<%= boat.pictures.first.image.url if boat.pictures.any? %>')">
+          <h3><%= link_to boat.name, boat %></h3>
+        </div>
+        <div class="caption">
+          <p><%= boat.daily_price %> €/day</p>
+          <p>
+            <%= link_to('Edit', edit_boat_path(boat), class: 'btn btn-info') if can? :update, boat %> <%= link_to('Destroy', boat, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger') if can? :destry, boat %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

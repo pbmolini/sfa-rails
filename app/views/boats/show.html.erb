@@ -1,58 +1,85 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div id="boat-photos-carousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <% @boat.pictures.each_with_index do |p,index| %>
+          <%= content_tag :li, nil, data: { target: '#boat-photos-carousel', 'slide-to' => index.to_s }, class: ('active' if index == 0) %>
+        <% end %>
+      </ol>
 
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <% @boat.pictures.each_with_index do |p,index| %>
+          <div class="item <%= 'active' if index==0 %>">
+            <%= image_tag p.image.url %>
+          </div>
+        <% end %>
+      </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @boat.name %>
-</p>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#boat-photos-carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#boat-photos-carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Manufacturer:</strong>
-  <%= @boat.manufacturer %>
-</p>
+<div class="row">
+  <div class="col-sm-12">
+    <h1><%= @boat.name %></h1>
 
-<p>
-  <strong>Daily price:</strong>
-  <%= @boat.daily_price %>
-</p>
+    <p>
+      <%= link_to 'Edit', edit_boat_path(@boat), class: 'btn btn-info' %>
+      <%= link_to 'See all Bookings', boat_bookings_path(@boat), class: 'btn btn-info' %>
+    </p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @boat.year %>
-</p>
+    <p>
+      <strong>Manufacturer:</strong>
+      <%= @boat.manufacturer %>
+    </p>
 
-<p>
-  <strong>Model:</strong>
-  <%= @boat.model %>
-</p>
+    <p>
+      <strong>Daily price:</strong>
+      <%= @boat.daily_price %>
+    </p>
 
-<p>
-  <strong>Length:</strong>
-  <%= @boat.length %>
-</p>
+    <p>
+      <strong>Year:</strong>
+      <%= @boat.year %>
+    </p>
 
-<p>
-  <strong>Guest capacity:</strong>
-  <%= @boat.guest_capacity %>
-</p>
+    <p>
+      <strong>Model:</strong>
+      <%= @boat.model %>
+    </p>
 
-<p>
-  <strong>Boat category:</strong>
-  <%= @boat.boat_category %>
-</p>
+    <p>
+      <strong>Length:</strong>
+      <%= @boat.length %>
+    </p>
 
-<p>
-  <strong>Pictures:</strong>
-  <br>
-  <% @boat.pictures.each do |pic| %>
-    <%= image_tag pic.image.url(:thumb) %>
-    <%= pic.image_file_name %> |
-    <%#= link_to "Delete", boat_picture_path(@boat, pic), method: :delete, data: {confirm: "Are you sure?"} %>
-    <br>
-  <% end %>
-</p>
+    <p>
+      <strong>Guest capacity:</strong>
+      <%= @boat.guest_capacity %>
+    </p>
 
-<%= render 'bookings/form' if can? :create, @booking %>
+    <p>
+      <strong>Boat category:</strong>
+      <%= @boat.boat_category %>
+    </p>
 
-<%= link_to 'See all Bookings', boat_bookings_path(@boat) %>
-<%= link_to 'Edit', edit_boat_path(@boat) %> |
-<%= link_to 'Back', boats_path %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <%= render 'bookings/form' if can? :create, @booking %>
+  </div>
+</div>
+
