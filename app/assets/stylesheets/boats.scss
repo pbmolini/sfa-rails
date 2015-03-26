@@ -11,9 +11,14 @@
     background-size: cover;
     position: relative;
   }
-  h3 a {
-    color: $black;
-    font-weight: bold;
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    a {
+      color: $black;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
   }
 }
 
