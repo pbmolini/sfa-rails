@@ -13,6 +13,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'rails-observers'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
@@ -39,9 +41,13 @@ gem 'cancancan', '~> 1.10'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 
+gem 'gettext_i18n_rails'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'gettext', '>=3.0.2', :require => false
+  gem 'ruby_parser', :require => false
 end
 
 group :development, :test do

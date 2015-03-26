@@ -30,7 +30,7 @@
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "Login", new_user_session_path %></li>
-            <li><%= button_to 'Register', new_user_registration_path, class: 'btn btn-success btn-default navbar-btn' %></li>
+            <li><%= button_to 'Register', new_user_registration_path, method: :get, class: 'btn btn-success btn-default navbar-btn' %></li>
           <% end %>
         </ul>
       </div><!--/.nav-collapse -->
