@@ -13,12 +13,12 @@
 
 <div class="row">
   <% @boats.each do |boat| %>
-    <div class="col-md-4 col-sm-12 boat-card">
-      <div class="thumbnail">
+    <div class="col-sm-3 boat-card">
+      <div>
         <div class="picture" style="background-image: url('<%= boat.pictures.first.image.url if boat.pictures.any? %>')">
-          <h3><%= link_to boat.name, boat %></h3>
         </div>
         <div class="caption">
+          <h3><%= link_to boat.name, boat %></h3>
           <p><%= boat.daily_price %> €/day</p>
           <p>
             <%= link_to('Edit', edit_boat_path(boat), class: 'btn btn-info') if can? :update, boat %> <%= link_to('Destroy', boat, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger') if can? :destry, boat %>
