@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318211130) do
+ActiveRecord::Schema.define(version: 20150326220447) do
 
   create_table "boat_categories", force: :cascade do |t|
     t.string   "name"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150318211130) do
   create_table "boats", force: :cascade do |t|
     t.string   "name"
     t.string   "manufacturer"
-    t.decimal  "daily_price",      precision: 8, scale: 2
+    t.integer  "daily_price"
     t.integer  "year"
     t.string   "model"
     t.decimal  "length",           precision: 8, scale: 2

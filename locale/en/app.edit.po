@@ -1,0 +1,31 @@
+# English translations for app package.
+# Copyright (C) 2015 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: app 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-26 21:54+0100\n"
+"PO-Revision-Date: 2015-03-26 21:54+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+
+msgid "Thanks for joining Sea for All, the best community of people who love boats and who share boats for boating together on boats."
+msgstr ""
+
+msgid "Welcome %{user}!!"
+msgstr ""
+
+msgid "Welcome to Sea for All!"
+msgstr ""
+
+msgid "You should check out this welcome video: "
+msgstr ""
