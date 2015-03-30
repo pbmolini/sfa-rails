@@ -34,10 +34,12 @@
   <div class="col-sm-12">
     <h1><%= @boat.name %></h1>
 
+    <% if can? :edit, @boat %>
     <p>
-      <%= link_to 'Edit', edit_boat_path(@boat), class: 'btn btn-info' %>
-      <%= link_to 'See all Bookings', boat_bookings_path(@boat), class: 'btn btn-info' %>
+      <%= link_to _('Edit'), edit_boat_path(@boat), class: 'btn btn-info' %>
+      <%= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-info' %>
     </p>
+    <% end %>
 
     <p>
       <strong>Manufacturer:</strong>

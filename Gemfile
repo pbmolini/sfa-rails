@@ -55,8 +55,11 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  #use pry instead of normal rails c
+  gem 'pry-rails'
+
+  # Call 'pry-byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
