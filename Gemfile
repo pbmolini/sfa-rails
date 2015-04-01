@@ -40,12 +40,14 @@ gem "cocoon", '>= 1.2.0', git: 'https://github.com/nathanvda/cocoon'
 gem 'bootstrap-sass', '~> 3.3.3'
 
 gem 'devise'
+gem 'omniauth-facebook'
 gem 'cancancan', '~> 1.10'
 
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 
 gem 'gettext_i18n_rails'
+gem 'font-awesome-rails'
 
 #easy peasy css
 gem "autoprefixer-rails"

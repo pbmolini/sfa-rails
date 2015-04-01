@@ -1,5 +1,14 @@
 <h2>Sign up</h2>
 
+<p>Fill the form below</p>
+<p>
+  or just
+  <br>
+  <%= button_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary navbar-btn' do %>
+    <%= fa_icon('facebook', text: "Sign up with Facebook") %>
+  <% end %>
+</p>
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
