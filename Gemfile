@@ -49,6 +49,9 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 gem 'gettext_i18n_rails'
 gem 'font-awesome-rails'
 
+#easy peasy css
+gem "autoprefixer-rails"
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
