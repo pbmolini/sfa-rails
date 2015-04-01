@@ -47,6 +47,9 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 
 gem 'gettext_i18n_rails'
 
+# Rails engine for static pages.
+gem 'high_voltage', '~> 2.2.1'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

@@ -32,7 +32,9 @@ Rails.application.routes.draw do
   resources :boat_categories
 
   # You can have the root of your site routed with "root"
-  root 'boats#index'
+  # root 'boats#index'
+
+  get 'pages/landing' => 'high_voltage/pages#show', id: 'landing'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
