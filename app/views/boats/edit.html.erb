@@ -1,6 +1,14 @@
-<h1>Editing Boat</h1>
+<h1><%= _('Editing Boat') %></h1>
+<%= link_to 'Show', @boat %> |
+<%= link_to 'Back', boats_path %>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @boat %> |
-<%= link_to 'Back', boats_path %>
+<p>
+	<%= button_to _('Delete %{name}') %{name: @boat.name}, 
+								boat_path(@boat), 
+								method: :delete, 
+								class: 'btn btn-danger btn-default',
+								data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name} } if can? :destroy, @boat %>
+</p>
+

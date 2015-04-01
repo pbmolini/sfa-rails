@@ -25,10 +25,14 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# New Relic
+gem 'newrelic_rpm'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'paperclip', '~> 4.2'
+gem 'aws-sdk-v1'
 
 gem 'simple_form'
 gem "cocoon", '>= 1.2.0', git: 'https://github.com/nathanvda/cocoon'
@@ -54,8 +58,11 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  #use pry instead of normal rails c
+  gem 'pry-rails'
+
+  # Call 'pry-byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

@@ -21,7 +21,7 @@
           <h3><%= link_to boat.name, boat %></h3>
           <p><%= boat.daily_price %> €/day</p>
           <p>
-            <%= link_to('Edit', edit_boat_path(boat), class: 'btn btn-info') if can? :update, boat %> <%= link_to('Destroy', boat, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger') if can? :destry, boat %>
+            <%= link_to('Edit', edit_boat_path(boat), class: 'btn btn-info') if can? :update, boat %> <%= link_to('Destroy', boat, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger') if can? :destroy, boat %>
           </p>
         </div>
       </div>
