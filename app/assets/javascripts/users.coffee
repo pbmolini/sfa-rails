@@ -4,5 +4,5 @@ $(document).ready () ->
       format: 'YYYY-MM-DD' #see http://momentjs.com/docs/#/displaying/format/
       extraFormats: ['LL']
       useCurrent: true
-      # defaultDate: moment().subtract(16, 'years')
+      defaultDate: moment().subtract(16, 'years')
       maxDate: moment().subtract(16, 'years')

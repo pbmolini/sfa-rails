@@ -43,6 +43,7 @@ gem "cocoon", '>= 1.2.0', git: 'https://github.com/nathanvda/cocoon'
 gem 'bootstrap-sass', '~> 3.3.3'
 
 gem 'devise'
+gem 'devise-i18n'
 gem 'omniauth-facebook'
 gem 'cancancan', '~> 1.10'
 
