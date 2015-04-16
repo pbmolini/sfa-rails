@@ -297,7 +297,7 @@ DEPENDENCIES
   factory_girl_rails
   gettext (>= 3.0.2)
   gettext_i18n_rails
-  high_voltage (~> 2.2.1)
+  high_voltage
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks

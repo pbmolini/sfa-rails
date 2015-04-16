@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Rails engine for static pages.
+gem 'high_voltage'
+
 # New Relic
 gem 'newrelic_rpm'
 
@@ -47,8 +50,6 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 
 gem 'gettext_i18n_rails'
 
-# Rails engine for static pages.
-gem 'high_voltage', '~> 2.2.1'
 
 group :development do
   gem "better_errors"
