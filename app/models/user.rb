@@ -37,6 +37,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def name
+    "#{self.first_name} #{self.last_name}"
+  end
+
   private
 
   def self.facebook_image_url uri

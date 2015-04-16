@@ -20,6 +20,10 @@
           <div class="picture" style="background-image: url('<%= boat.pictures.first.image.url if boat.pictures.any? %>')">
           </div>
           <div class="caption">
+            <p>
+              <%= image_tag(boat.user.image, height: '30px') %> 
+              <%= boat.user.name %></p>
+            <p><i class="fa fa-map-marker"></i> <%= boat.user.location %></p>
             <h3><%= boat.name %></h3>
             <p><%= boat.daily_price %> €/day</p>
             <p>
