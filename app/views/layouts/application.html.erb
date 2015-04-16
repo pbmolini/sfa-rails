@@ -51,18 +51,12 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <%#= @GIULIO - questa roba ci serve per far vedere gli errore messaggi %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-
-        <p>
-        </p>
-
         <%= yield %>
       </div>
     </div>
   </div><!-- /.container -->
 
+  <%= render 'layouts/messages' %>
 
 </body>
 </html>

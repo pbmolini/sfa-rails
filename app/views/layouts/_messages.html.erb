@@ -1,0 +1,7 @@
+<script type="text/javascript">
+<% flash.each do |key, value| %>
+  <% key = "info" if key == "notice" %>
+  <% key = "error" if key == "alert" %>
+  toastr.<%= key %>(<%= value.inspect.html_safe %>);
+<% end %>
+</script>
