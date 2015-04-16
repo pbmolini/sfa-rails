@@ -39,9 +39,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # You can put the params you want to permit in the empty array.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
-  # end
+  def configure_sign_up_params
+    attributes = [:first_name, :last_name, :image]
+    attributes.each do |a|
+      devise_parameter_sanitizer.for(:account_update) << a
+    end
+  end
 
   # You can put the params you want to permit in the empty array.
   def configure_account_update_params
