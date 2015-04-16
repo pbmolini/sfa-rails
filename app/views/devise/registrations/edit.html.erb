@@ -23,6 +23,14 @@
 
     <%= f.input :first_name %>
     <%= f.input :last_name %>
+
+    <%= f.input :birthdate, class: 'input-group date', wrapper: :vertical_input_group do %>
+      <%= f.input_field :birthdate, as: :string, class: 'form-control' %>
+      <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span> -->
+    <% end %>
+
+    <%= f.input :bio %>
+    <%= f.input :phone %>
     <%= f.input :location %>
     <%= f.input :image %>
   </div>
