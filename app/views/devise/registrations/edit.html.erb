@@ -4,15 +4,35 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <%# This avoids showing the change password fields for this user if he/she signed up with FB %>
+    <% unless resource.uid && resource.provider %>
+      <h3>Login info</h3>
+
+      <%= f.input :email, required: true, autofocus: true %>
+      <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+      <%= f.input :password_confirmation, required: false %>
+      <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <% end %>
+
+    <h3>Personal info</h3>
+
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+
+    <%= f.input :birthdate, class: 'input-group date', wrapper: :vertical_input_group do %>
+      <%= f.input_field :birthdate, as: :string, class: 'form-control' %>
+      <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span> -->
+    <% end %>
+
+    <%= f.input :bio %>
+    <%= f.input :phone %>
+    <%= f.input :location %>
+    <%= f.input :image %>
   </div>
 
   <div class="form-actions">

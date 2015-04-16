@@ -19,4 +19,5 @@
 //= require moment/it.js
 //= require bootstrap-datetimepicker
 //= require turbolinks
+//= require toastr
 //= require_tree .
