@@ -1,0 +1,10 @@
+// This css is loaded only by the landing page
+/*"bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap-datetimepicker';
+@import "font-awesome";
+@import "toastr";
+
+@import "landing/bootstrap-theme";
+@import "landing/custom";

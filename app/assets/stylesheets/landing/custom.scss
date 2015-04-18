@@ -1,0 +1,220 @@
+#menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.5);
+}
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+body label {
+  font-weight: 300;
+}
+h1,
+h2 {
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+h2 {
+  font-size: 33px;
+  font-weight: bold;
+}
+nav {
+  margin-top: 1em;
+  text-align: left;
+  z-index: 256;
+}
+position relative,
+#hero {
+  text-shadow: 0 1px 1px rgba(0,0,0,0.7);
+  height: 750px;
+  background: url("//sfa-static.s3.amazonaws.com/img/3.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+}
+position relative .logo,
+#hero .logo {
+  position: relative;
+  top: 0;
+  z-index: 255;
+  width: 500px;
+}
+position relative .hero-background,
+#hero .hero-background {
+  background: rgba(10,113,180,0.4);
+  position: absolute;
+  width: 100%;
+  height: 750px;
+  z-index: 1;
+  top: 0;
+}
+position relative .container,
+#hero .container {
+  position: relative;
+  z-index: 256;
+  text-align: center;
+}
+position relative h1,
+#hero h1,
+position relative h2,
+#hero h2,
+position relative h3,
+#hero h3 {
+  color: #fff;
+  font-weight: 300;
+}
+position relative h1,
+#hero h1 {
+  margin: 0 auto;
+  padding: 0.3em 0 0 0px;
+  font-size: 50px;
+}
+position relative h3,
+#hero h3 {
+  line-height: 1.3em;
+  padding-left: 0px;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+position relative label,
+#hero label {
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+}
+position relative h3,
+#hero h3,
+position relative label,
+#hero label {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+}
+#users {
+  background: #fff;
+  color: #0a71b4;
+  position: relative;
+  padding: 2em 0;
+}
+#hero .container #mc_embed_signup {
+  padding-left: padding-hero;
+}
+.mc-field-group {
+  float: left;
+}
+.mc-field-group label {
+  margin-top: 0.3em;
+}
+.mc-field-group input {
+  padding: 10px 7px;
+  height: 45px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 0;
+  width: 400px;
+  border: 2px solid #d8d8d8;
+  background: #fff;
+}
+.btn-mailchimp {
+  color: #fff;
+  background: #fab647;
+  margin-top: 1em;
+}
+.btn-mailchimp:hover {
+  color: #0a71b4;
+}
+.pattern {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.bottom-call {
+  color: #fff;
+  background: #6fabd0;
+  padding: 2em;
+  position: relative;
+}
+.centrati {
+  margin: 0 auto 2em auto;
+  width: 477px;
+}
+.mc-field-group {
+  float: none;
+  color: #fff;
+}
+.mc-field-group input {
+  color: #000;
+}
+.description-icon img {
+  width: 25%;
+  display: inline-block;
+}
+select {
+  color: #000;
+  width: 400px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  -webkit-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  height: 45px;
+}
+.bordino-mail {
+  border: 1px solid #fff;
+  padding: 0 20px 20px 20px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  width: 500px;
+  margin: 0 auto;
+}
+footer {
+  display: inline-block;
+  width: 100%;
+  background: #0a71b4;
+  color: #fff;
+}
+footer .icons {
+  font-size: 30px;
+}
+footer .icons a {
+  color: #fff;
+}
+footer .icons a:focus {
+  outline: none;
+}
+@media screen and (max-width: 610px) {
+  .bordino-mail {
+    border: none;
+    padding: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    width: auto;
+    margin: auto;
+  }
+  #hero .logo {
+    width: 80%;
+  }
+  #hero h1 {
+    font-size: 40px;
+  }
+  #hero input,
+  .mc-field-group input,
+  #hero select,
+  .mc-field-group select {
+    width: 100%;
+  }
+}
