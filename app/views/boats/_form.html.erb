@@ -4,27 +4,34 @@
     <p><%= error %></p>
   <% end %>
 
-  <h3>Details of your boat</h3>
+  <h3><%= _("Details of your boat") %></h3>
 
   <%= f.association :user, as: :hidden %>
 
   <%= f.input :name, required: false %>
   <%= f.input :manufacturer, required: false %>
   <%= f.input :daily_price, required: false %>
-  <%= f.input :year, collection: 1900..Time.now.year, prompt: "Select the year", required: false %>
+  <%= f.input :year, 
+              collection: 1900..Time.now.year, 
+              prompt: _("Select the year"), 
+              input_html: { class: 'form-control' }, 
+              required: false %>
   <%= f.input :model, required: false %>
   <%= f.input :length, required: false %>
   <%= f.input :guest_capacity, required: false %>
-  <%= f.association :boat_category, prompt: "Select the category", required: false %>
+  <%= f.association :boat_category, 
+                    prompt: _("Select the category"), 
+                    input_html: { class: 'form-control' }, 
+                    required: false %>
 
-  <h3>Pictures</h3>
+  <h3><%= _("Pictures") %></h3>
   <%= content_tag :p, @boat.errors[:pictures].join(', ') if @boat.errors[:pictures] %>
   <div id="pictures">
     <%= f.simple_fields_for :pictures do |pictures_form| %>
       <%= render 'picture_fields', f: pictures_form %>
     <% end %>
     <div class="links">
-      <p><%= link_to_add_association "Add picture", f, :pictures %></p>
+      <p><%= link_to_add_association _("Add picture"), f, :pictures %></p>
     </div>
   </div>
 

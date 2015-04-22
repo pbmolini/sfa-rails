@@ -22,6 +22,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Devise wants these methods here, see:
+  # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-after-a-successful-sign-in-or-sign-out
+  def after_sign_in_path_for(resource)
+   dashboard_path
+  end
+
+  def after_sign_out_path_for(resource_or_scope)
+    root_path
+  end
+
   private
 
   def devise_or_pages_controller?
