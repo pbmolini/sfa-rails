@@ -6,10 +6,19 @@ class Boat < ActiveRecord::Base
   has_many :pictures, dependent: :destroy
   accepts_nested_attributes_for :pictures, reject_if: :all_blank, allow_destroy: true
 
-	validates :name, :manufacturer, :daily_price, :year, :model, :length, :guest_capacity, :boat_category, presence: true
-	validates :year, numericality: { greater_than_or_equal_to: 1900 }
-	validates :daily_price, numericality: { greater_than_or_equal_to: 1 }
-	validates :pictures, presence: true
+  RENTAL_TYPES = [ 'bareboat', 'captained', 'both' ].freeze
+  FUEL_TYPES = [ 'petrol', 'diesel', 'mix' ].freeze
+
+  validates :name, :manufacturer, :daily_price, :year, :model, :length, :guest_capacity, :boat_category, presence: true
+  validates :year, numericality: { greater_than_or_equal_to: 1900 }
+  validates :daily_price, numericality: { greater_than_or_equal_to: 1 }
+  validates :pictures, presence: true
+  validates :description, presence: true
+  validates :fuel_type, inclusion: { within: Boat::FUEL_TYPES }
+  validates :rental_type, inclusion: { within: Boat::RENTAL_TYPES }
+  validates :address, presence: true
+  validates :horse_power, numericality: { greater_than_or_equal_to: 0 }
+
 
   # validate :min_pics
   validate :max_pics

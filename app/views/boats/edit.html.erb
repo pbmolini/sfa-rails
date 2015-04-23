@@ -1,14 +1,19 @@
-<h1><%= _('Editing Boat') %></h1>
-<%= link_to 'Show', @boat %> |
-<%= link_to 'Back', boats_path %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<h1><%= _('Editi Boat') %></h1>
+			<%= link_to 'Show', @boat %> |
+			<%= link_to 'Back', boats_path %>
 
-<%= render 'form' %>
+			<%= render 'form' %>
 
-<p>
-	<%= button_to _('Delete %{name}') %{name: @boat.name}, 
-								boat_path(@boat), 
-								method: :delete, 
-								class: 'btn btn-danger btn-default',
-								data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name} } if can? :destroy, @boat %>
-</p>
-
+			<p>
+				<%= button_to _('Delete %{name}') %{name: @boat.name}, 
+											boat_path(@boat), 
+											method: :delete, 
+											class: 'btn btn-danger btn-default',
+											data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name} } if can? :destroy, @boat %>
+			</p>
+		</div>
+	</div>
+</div>
