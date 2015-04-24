@@ -1,12 +1,20 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-8 col-sm-offset-2">
-			<h1><%= _('Editi Boat') %></h1>
+			<h1><%= _('Edit Boat') %></h1>
 			<%= link_to 'Show', @boat %> |
 			<%= link_to 'Back', boats_path %>
+			<%= simple_form_for @boat, html: { :multipart => true } do |f| %>
+  			<%= f.error_notification %>
+  			<% @boat.errors[:base].each do |error| %>
+    			<p><%= error %></p>
+  			<% end %>
 
-			<%= render 'form' %>
-
+				<%= render 'fields', f: f %>
+			
+  			<%= f.button :submit, _("Edit Boat"), class: "btn btn-lg btn-primary" %>
+			
+			<% end %>
 			<p>
 				<%= button_to _('Delete %{name}') %{name: @boat.name}, 
 											boat_path(@boat), 
