@@ -3,7 +3,14 @@
 		<div class="col-sm-8 col-sm-offset-2">
 
 			<h1>New Boat</h1>
-			<%= simple_form_for @boat, html: { :multipart => true } do |f| %>
+			<%# Usage of wrappers:https://github.com/plataformatec/simple_form/wiki/How-to-use-Bootstrap-3-input-group-in-Simple-Form %>
+			<%= simple_form_for @boat, html: { :multipart => true }, wrapper: :vertical_input_group,
+        wrapper_mappings: {
+          check_boxes: :horizontal_radio_and_checkboxes,
+          radio_buttons: :horizontal_radio_and_checkboxes,
+          file: :horizontal_file_input,
+          boolean: :vertical_boolean
+        } do |f| %>
   			<%= f.error_notification %>
   			<% @boat.errors[:base].each do |error| %>
     			<p><%= error %></p>
