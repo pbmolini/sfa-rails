@@ -1,0 +1,87 @@
+<h3><%= _("Details of your boat") %></h3>
+
+<%= f.association :boat_category, 
+                  prompt: _("Select the category"), 
+                  input_html: { class: 'form-control' }, 
+                  label_method: ->(obj) { _("#{obj.to_s.capitalize}") },
+                  required: false %>
+
+<%= f.input :name,   
+            placeholder: _("What is its name?"),
+            required: false %>
+
+<%= f.input :manufacturer,  
+            placeholder: _("Who built your boat?"),
+            required: false %>
+
+<%= f.input :model,  
+            placeholder: _("e.g. Pursuit DC 265, Cobalt A25"),
+            required: false %>
+
+<%= f.input :year, 
+            collection: 1900..Time.now.year, 
+            prompt: _("Select the year"), 
+            input_html: { class: 'form-control' }, 
+            required: false %>
+
+<%= f.input :length, wrapper: :vertical_input_group, required: false do %>
+  <%= f.input_field :length, placeholder: _("Your boat's length, in meters"), class: "form-control" %>
+  <span class="input-group-addon">m</span>
+<% end %>
+
+<%= f.input :guest_capacity, wrapper: :vertical_input_group, required: false do %>
+  <%= f.input_field :guest_capacity, placeholder: _("How many people can jump aboard?"), class: 'form-control' %>
+  <span class="input-group-addon"><%= _("persons") %></span>
+<% end %>
+
+<%= f.input :description,  
+            placeholder: _("Please tell us what you love of your boat"),
+            required: false %> 
+
+<%= f.input :fuel_type, 
+            collection: Boat::FUEL_TYPES, 
+            prompt: _("Select the type of fuel"), 
+            label_method: ->(obj) { _("#{obj.to_s.capitalize}") },
+            required: false %>
+
+<%= f.input :with_license, label: _("License needed"), required: false %>
+
+<%= f.input :rental_type,  
+            collection: Boat::RENTAL_TYPES, 
+            prompt: _("Select the type of rental"), 
+            label_method: ->(obj) { _("#{obj.to_s.capitalize}") },
+            required: false %>
+
+<%= f.input :address,  
+            placeholder: _("Where is your boat moored? E.g. Molo Ponte Morosini, 46, Genoa"),
+            required: false %>
+
+<%= f.input :horse_power, wrapper: :vertical_input_group, required: false do %> 
+  <%= f.input_field :horse_power, placeholder: _("Leave blank if your boat has no engine"), class: "form-control" %>
+  <span class="input-group-addon">Hp</span>
+<% end %>
+
+<%= f.input :daily_price, wrapper: :vertical_input_group, required: false do %>
+  <%= f.input_field :daily_price, placeholder: _("How much should a guest pay for a day on your boat?"), class: "form-control" %>
+  <span class="input-group-addon"><%= fa_icon 'eur' %></span>
+<% end %>
+
+<h3><%= _("Pictures") %></h3>
+<%= content_tag :p, @boat.errors[:pictures].join(', ') if @boat.errors[:pictures] %>
+<div id="pictures">
+  <%= f.simple_fields_for :pictures do |pictures_form| %>
+    <%= render 'picture_fields', f: pictures_form %>
+  <% end %>
+  <div class="links">
+    <p><%= link_to_add_association _("Add picture"), f, :pictures %></p>
+  </div>
+</div>
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    $('#pictures').on('click', 'a.remove_fields.existing', function(e){
+      $(e.target).closest('.nested_fields').css('opacity',0.3);
+      $(e.target).hide();
+    });
+  </script>
+<% end %>

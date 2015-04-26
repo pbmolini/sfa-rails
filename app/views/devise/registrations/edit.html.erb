@@ -10,7 +10,13 @@
           <a href="#login_info" aria-controls="login_info" role="tab" data-toggle="tab"><%= _("Login info") %></a>
         </li>
       </ul>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, wrapper: :vertical_input_group,
+        wrapper_mappings: {
+          check_boxes: :horizontal_radio_and_checkboxes,
+          radio_buttons: :horizontal_radio_and_checkboxes,
+          file: :horizontal_file_input,
+          boolean: :vertical_boolean
+        }) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
@@ -23,7 +29,7 @@
 
               <%= f.input :birthdate, class: 'input-group date', wrapper: :vertical_input_group do %>
                 <%= f.input_field :birthdate, as: :string, class: 'form-control' %>
-                <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span> -->
+                <span class="input-group-addon"><%= fa_icon 'calendar' %></span>
               <% end %>
 
               <%= f.input :bio %>
@@ -62,7 +68,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Update", class: 'btn btn-lg btn-success pull-right' %>
+          <%= f.button :submit, _("Update"), class: 'btn btn-lg btn-success pull-right' %>
         </div>
       <% end %>
     </div>

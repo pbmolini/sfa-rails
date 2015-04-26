@@ -1,14 +1,34 @@
-<h1><%= _('Editing Boat') %></h1>
-<%= link_to 'Show', @boat %> |
-<%= link_to 'Back', boats_path %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<h1><%= _('Edit Boat') %></h1>			
+			<%# Usage of wrappers:https://github.com/plataformatec/simple_form/wiki/How-to-use-Bootstrap-3-input-group-in-Simple-Form %>
+			<%= link_to 'Show', @boat %> |
+			<%= link_to 'Back', boats_path %>
+			<%= simple_form_for @boat, html: { multipart: true }, wrapper: :vertical_input_group,
+        wrapper_mappings: {
+          check_boxes: :horizontal_radio_and_checkboxes,
+          radio_buttons: :horizontal_radio_and_checkboxes,
+          file: :horizontal_file_input,
+          boolean: :vertical_boolean
+        } do |f| %>
+  			<%= f.error_notification %>
+  			<% @boat.errors[:base].each do |error| %>
+    			<p><%= error %></p>
+  			<% end %>
 
-<%= render 'form' %>
-
-<p>
-	<%= button_to _('Delete %{name}') %{name: @boat.name}, 
-								boat_path(@boat), 
-								method: :delete, 
-								class: 'btn btn-danger btn-default',
-								data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name} } if can? :destroy, @boat %>
-</p>
-
+				<%= render 'fields', f: f %>
+			
+  			<%= f.button :submit, _("Edit Boat"), class: "btn btn-lg btn-primary" %>
+			
+			<% end %>
+			<p>
+				<%= button_to _('Remove %{name} from SeaForAll') %{name: @boat.name}, 
+											boat_path(@boat), 
+											method: :delete, 
+											class: 'btn btn-danger btn-default',
+											data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name} } if can? :destroy, @boat %>
+			</p>
+		</div>
+	</div>
+</div>

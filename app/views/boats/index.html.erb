@@ -14,14 +14,15 @@
           </div>
           <div class="caption">
             <p class="boat-owner">
-              <%= image_tag(boat.user.image(:thumb), height: '20px') %>
-              <%= boat.user.name %><br>
-              <i style="width: 20px; text-align: center;" class="fa fa-map-marker"></i> <%= boat.user.location %>
+              <%= image_tag(boat.user.image(:thumb), height: '25px') %>
+              <%= boat.user.name %>
+              <br>
+              <%= fa_icon 'map-marker lg' %> <%= boat.address %>
             </p>
             <h3><%= boat.name %></h3>
-            <p><%= boat.daily_price %> €/day</p>
+            <p><%= boat.daily_price %> <%= _("€/day") %></p>
             <p>
-              <%= link_to('Edit', edit_boat_path(boat), class: 'btn btn-info') if can? :update, boat %> <%= link_to('Destroy', boat, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger') if can? :destroy, boat %>
+              <%= link_to(_('Edit'), edit_boat_path(boat), class: 'btn btn-info') if can? :update, boat %>
             </p>
           </div>
         </div>

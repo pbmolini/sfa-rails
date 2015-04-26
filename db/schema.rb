@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416190734) do
+ActiveRecord::Schema.define(version: 20150423193800) do
 
   create_table "boat_categories", force: :cascade do |t|
     t.string   "name"
@@ -37,9 +37,15 @@ ActiveRecord::Schema.define(version: 20150416190734) do
     t.decimal  "length",           precision: 8, scale: 2
     t.integer  "guest_capacity"
     t.integer  "boat_category_id"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
     t.integer  "user_id"
+    t.text     "description"
+    t.string   "fuel_type"
+    t.boolean  "with_license",                             default: false
+    t.string   "rental_type"
+    t.string   "address"
+    t.integer  "horse_power"
   end
 
   add_index "boats", ["boat_category_id"], name: "index_boats_on_boat_category_id"
