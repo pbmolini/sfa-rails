@@ -18,7 +18,12 @@
             placeholder: _("e.g. Pursuit DC 265, Cobalt A25"),
             required: false %>
 
-<%= f.input :year, 
+<%= f.input :year, wrapper: :vertical_input_group, required: false do %>
+  <%= f.input_field :year, as: :string, placeholder: _("Select the year"), class: 'form-control' %>
+  <span class="input-group-addon"><%= fa_icon 'calendar' %></span>
+<% end %>
+
+<%#= f.input :year, 
             collection: 1900..Time.now.year, 
             prompt: _("Select the year"), 
             input_html: { class: 'form-control' }, 
@@ -82,6 +87,13 @@
     $('#pictures').on('click', 'a.remove_fields.existing', function(e){
       $(e.target).closest('.nested_fields').css('opacity',0.3);
       $(e.target).hide();
+    });
+
+    $('.boat_year .form-control').datetimepicker({
+      viewMode: 'years',
+      format: 'YYYY',
+      minDate: moment().year(1900),
+      maxDate: moment()
     });
   </script>
 <% end %>
