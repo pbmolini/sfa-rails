@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Boat:</strong>
+  <%= @boat_features_set.boat %>
+</p>
+
+<p>
+  <strong>Vhf:</strong>
+  <%= @boat_features_set.vhf %>
+</p>
+
+<p>
+  <strong>Depth finder:</strong>
+  <%= @boat_features_set.depth_finder %>
+</p>
+
+<%= link_to 'Edit', edit_boat_features_set_path(@boat_features_set) %> |
+<%= link_to 'Back', boat_features_sets_path %>

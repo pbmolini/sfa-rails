@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Boat Features Sets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Boat</th>
+      <th>Vhf</th>
+      <th>Depth finder</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boat_features_sets.each do |boat_features_set| %>
+      <tr>
+        <td><%= boat_features_set.boat %></td>
+        <td><%= boat_features_set.vhf %></td>
+        <td><%= boat_features_set.depth_finder %></td>
+        <td><%= link_to 'Show', boat_features_set %></td>
+        <td><%= link_to 'Edit', edit_boat_features_set_path(boat_features_set) %></td>
+        <td><%= link_to 'Destroy', boat_features_set, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Boat features set', new_boat_features_set_path %>

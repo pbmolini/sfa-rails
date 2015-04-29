@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423193800) do
+ActiveRecord::Schema.define(version: 20150429195525) do
 
   create_table "boat_categories", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +27,62 @@ ActiveRecord::Schema.define(version: 20150423193800) do
   end
 
   add_index "boat_features", ["boat_category_id"], name: "index_boat_features_on_boat_category_id"
+
+  create_table "boat_features_sets", force: :cascade do |t|
+    t.integer  "boat_id"
+    t.boolean  "outboard_engine",             default: false
+    t.boolean  "inboard_engine",              default: false
+    t.boolean  "vhf",                         default: false
+    t.boolean  "depth_finder",                default: false
+    t.boolean  "speed_instrumentation_radar", default: false
+    t.boolean  "sonar",                       default: false
+    t.boolean  "autopilot",                   default: false
+    t.boolean  "anchor",                      default: false
+    t.boolean  "anchor_windlass",             default: false
+    t.boolean  "boarding_ladder",             default: false
+    t.boolean  "shower",                      default: false
+    t.boolean  "wc",                          default: false
+    t.boolean  "radio_stereo_cd_mp3",         default: false
+    t.boolean  "tv",                          default: false
+    t.boolean  "cabin_cruiser_bed",           default: false
+    t.boolean  "galley",                      default: false
+    t.boolean  "sink",                        default: false
+    t.boolean  "cooler",                      default: false
+    t.boolean  "liferaft",                    default: false
+    t.boolean  "trolling_motor",              default: false
+    t.boolean  "bimini_top",                  default: false
+    t.boolean  "sunbathing_area",             default: false
+    t.boolean  "sport_fishing_equipment",     default: false
+    t.boolean  "safety_equipment",            default: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+  end
+
+  add_index "boat_features_sets", ["anchor"], name: "index_boat_features_sets_on_anchor"
+  add_index "boat_features_sets", ["anchor_windlass"], name: "index_boat_features_sets_on_anchor_windlass"
+  add_index "boat_features_sets", ["autopilot"], name: "index_boat_features_sets_on_autopilot"
+  add_index "boat_features_sets", ["bimini_top"], name: "index_boat_features_sets_on_bimini_top"
+  add_index "boat_features_sets", ["boarding_ladder"], name: "index_boat_features_sets_on_boarding_ladder"
+  add_index "boat_features_sets", ["boat_id"], name: "index_boat_features_sets_on_boat_id"
+  add_index "boat_features_sets", ["cabin_cruiser_bed"], name: "index_boat_features_sets_on_cabin_cruiser_bed"
+  add_index "boat_features_sets", ["cooler"], name: "index_boat_features_sets_on_cooler"
+  add_index "boat_features_sets", ["depth_finder"], name: "index_boat_features_sets_on_depth_finder"
+  add_index "boat_features_sets", ["galley"], name: "index_boat_features_sets_on_galley"
+  add_index "boat_features_sets", ["inboard_engine"], name: "index_boat_features_sets_on_inboard_engine"
+  add_index "boat_features_sets", ["liferaft"], name: "index_boat_features_sets_on_liferaft"
+  add_index "boat_features_sets", ["outboard_engine"], name: "index_boat_features_sets_on_outboard_engine"
+  add_index "boat_features_sets", ["radio_stereo_cd_mp3"], name: "index_boat_features_sets_on_radio_stereo_cd_mp3"
+  add_index "boat_features_sets", ["safety_equipment"], name: "index_boat_features_sets_on_safety_equipment"
+  add_index "boat_features_sets", ["shower"], name: "index_boat_features_sets_on_shower"
+  add_index "boat_features_sets", ["sink"], name: "index_boat_features_sets_on_sink"
+  add_index "boat_features_sets", ["sonar"], name: "index_boat_features_sets_on_sonar"
+  add_index "boat_features_sets", ["speed_instrumentation_radar"], name: "index_boat_features_sets_on_speed_instrumentation_radar"
+  add_index "boat_features_sets", ["sport_fishing_equipment"], name: "index_boat_features_sets_on_sport_fishing_equipment"
+  add_index "boat_features_sets", ["sunbathing_area"], name: "index_boat_features_sets_on_sunbathing_area"
+  add_index "boat_features_sets", ["trolling_motor"], name: "index_boat_features_sets_on_trolling_motor"
+  add_index "boat_features_sets", ["tv"], name: "index_boat_features_sets_on_tv"
+  add_index "boat_features_sets", ["vhf"], name: "index_boat_features_sets_on_vhf"
+  add_index "boat_features_sets", ["wc"], name: "index_boat_features_sets_on_wc"
 
   create_table "boats", force: :cascade do |t|
     t.string   "name"

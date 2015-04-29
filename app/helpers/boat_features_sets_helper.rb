@@ -1,0 +1,2 @@
+module BoatFeaturesSetsHelper
+end

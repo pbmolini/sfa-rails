@@ -14,6 +14,9 @@ class Ability
       can [:read, :create], Boat
       can :crud, Boat, user_id: user.id
 
+      can [:read, :create], BoatFeaturesSet
+      can :crud, BoatFeaturesSet, user_id: user.id
+
       can :read, Booking, boat: { user_id: user.id }
 
       can :create, Booking do |booking|
