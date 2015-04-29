@@ -78,23 +78,25 @@
             <div class="description-icon">
               <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-blue.png'), page_path('help/host') %>
             </div>
-            <h2>Vuoi guadagnare con la tua barca?</h2>
+            <h2><%= link_to "Vuoi guadagnare con la tua barca?", page_path('help/host') %></h2>
             <ul>
               <li>Troviamo persone interessate ad usarla</li>
               <li>e ti aiutiamo ad abbattere i costi</li>
             </ul>
+            <p><small><%= link_to "Maggiori informazioni", page_path('help/host') %></small></p>
           </div>
           <div class="col-sm-6 consumer text-center">
             <div class="description-icon">
               <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path('help/guest') %>
             </div>
             <h2>
-              Vuoi passare una giornata in barca?
+              <%= link_to "Vuoi passare una giornata in barca?", page_path('help/guest') %>
             </h2>
             <ul>
               <li>Ti aiutiamo a trovare la barca adatta alle tue esigenze</li>
               <li>per divertirti ad un prezzo abbordabile</li>
             </ul>
+            <p><small><%= link_to "Maggiori informazioni", page_path('help/guest') %></small></p>
           </div>
         </div>
       </div>
