@@ -76,7 +76,7 @@
           <h1 class="text-center">Cosa fa SEA FOR ALL</h1>
           <div class="col-sm-6 owner text-center">
             <div class="description-icon">
-              <img src="<%= aws_image_path_for 'sfa-logo-circle-blue.png' %>">
+              <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-blue.png'), page_path('help/host') %>
             </div>
             <h2>Vuoi guadagnare con la tua barca?</h2>
             <ul>
@@ -86,7 +86,7 @@
           </div>
           <div class="col-sm-6 consumer text-center">
             <div class="description-icon">
-              <img src="<%= aws_image_path_for 'sfa-logo-circle-orange.png' %>" alt="">
+              <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path('help/guest') %>
             </div>
             <h2>
               Vuoi passare una giornata in barca?

@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%= render 'layouts/head', layout: 'landing' %>
+    <%= render 'layouts/head', layout: 'application' %>
   </head>
   <body>
+    <%= render 'layouts/navbar' %>
 
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div id="help-text" class="col-sm-9">
+          <%= yield %>
+        </div>
+        <div class="col-md-3 sidebar hidden-sm hidden-xs">
+          <div id="affix" class="panel panel-info" data-spy="affix" data-offset-top="50" data-offset-bottom="200">
+            <div class="panel-body">
+              <ul>
+                <!-- will be filled by js -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer>
       <br>
@@ -26,6 +42,13 @@
     <!-- Toastr messages -->
     <%= render 'layouts/messages' %>
 
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('#affix').makeTocFor('#help-text');
+    });
+    </script>
+
+    <%= yield :javascript %>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="js/jquery-2.0.2.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->

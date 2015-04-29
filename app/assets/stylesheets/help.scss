@@ -1,0 +1,16 @@
+.sidebar #affix {
+  max-width: 260px;
+  ul {
+    padding-left: 0;
+    li {
+      list-style-type: none;
+      padding: 10px 5px;
+      &:hover {
+        background-color: $orange;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}
