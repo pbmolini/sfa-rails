@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :image, :styles => { :thumb => "50x50#" }, default_url: "default_avatar.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validate :at_least_16
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -47,5 +48,9 @@ class User < ActiveRecord::Base
     image_url = URI.parse(uri)
     image_url.scheme = 'https'
     image_url.to_s
+  end
+
+  def at_least_16
+    errors.add(:birthdate, "must be before #{16.years.ago.to_date}") unless birthdate < 16.years.ago.to_date
   end
 end

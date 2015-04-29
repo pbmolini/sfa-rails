@@ -27,7 +27,7 @@
               <%= f.input :first_name %>
               <%= f.input :last_name %>
 
-              <%= f.input :birthdate, class: 'input-group date', wrapper: :vertical_input_group do %>
+              <%= f.input :birthdate, class: 'input-group date', wrapper: :vertical_input_group, hint: 'You must be at least 16' do %>
                 <%= f.input_field :birthdate, as: :string, class: 'form-control' %>
                 <span class="input-group-addon"><%= fa_icon 'calendar' %></span>
               <% end %>
@@ -64,7 +64,7 @@
 
               <%= link_to _("Back"), :back %>
             </div>
-          </div>          
+          </div>
         </div>
 
         <div class="form-actions">
