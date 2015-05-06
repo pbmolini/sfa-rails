@@ -41,3 +41,38 @@
     }
   }
 }
+
+.boat-list {
+  margin-bottom: 1em;
+
+  a {
+    text-decoration: none;
+  }
+  
+  .boat-list-wrapper {
+    background: white;
+
+    h3, p {
+      padding-left: 10px;
+      padding-right: 10px;
+      text-transform: capitalize;
+      color: black;
+    }
+
+    h3 {
+      margin-top: 15px;
+      margin-bottom: 0;
+    }
+
+    p {
+      padding-bottom: 10px;
+    }
+
+    .list-img {
+      height: 180px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
