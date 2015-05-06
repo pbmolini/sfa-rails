@@ -32,10 +32,11 @@ class BoatsController < ApplicationController
   # POST /boats
   # POST /boats.json
   def create
-    @boat = current_user.boats.build(boat_params)
+    @boat = current_user.boats.build(boat_create_params)
+    # @boat.create_boat_features_set
     respond_to do |format|
       if @boat.save
-        format.html { redirect_to @boat, notice: 'Boat was successfully created.' }
+        format.html { redirect_to @boat, notice: _("Boat was successfully created.") }
         format.json { render :show, status: :created, location: @boat }
       else
         # pictures must be rebuilt to make the field appear in the form
@@ -50,8 +51,8 @@ class BoatsController < ApplicationController
   # PATCH/PUT /boats/1.json
   def update
     respond_to do |format|
-      if @boat.update(boat_params)
-        format.html { redirect_to @boat, notice: 'Boat was successfully updated.' }
+      if @boat.update(boat_update_params)
+        format.html { redirect_to @boat, notice: _("Boat was successfully updated.") }
         format.json { render :show, status: :ok, location: @boat }
       else
         format.html { render :edit }
@@ -65,7 +66,7 @@ class BoatsController < ApplicationController
   def destroy
     @boat.destroy
     respond_to do |format|
-      format.html { redirect_to boats_url, notice: 'Boat was successfully destroyed.' }
+      format.html { redirect_to boats_url, notice: _("Boat was successfully destroyed.") }
       format.json { head :no_content }
     end
   end
@@ -77,7 +78,7 @@ class BoatsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def boat_params
+    def boat_create_params
       params.require(:boat).permit(
                                   :name, :manufacturer, :daily_price, :year, :model, :length,
                                   :guest_capacity, :boat_category_id,
@@ -88,6 +89,47 @@ class BoatsController < ApplicationController
                                   :address,
                                   :horse_power,
                                   pictures_attributes: [:id, :image, :_destroy]
+                                  )
+    end
+
+    def boat_update_params
+      params.require(:boat).permit(
+                                  :name, :manufacturer, :daily_price, :year, :model, :length,
+                                  :guest_capacity, :boat_category_id,
+                                  :description,
+                                  :fuel_type,
+                                  :with_license,
+                                  :rental_type,
+                                  :address,
+                                  :horse_power,
+                                  pictures_attributes: [:id, :image, :_destroy],
+                                  boat_features_set_attributes: [
+                                    :id,
+                                    :outboard_engine,
+                                    :inboard_engine,
+                                    :depth_finder,
+                                    :vhf,
+                                    :speed_instrumentation_radar,
+                                    :sonar,
+                                    :autopilot,
+                                    :anchor,
+                                    :anchor_windlass,
+                                    :boarding_ladder,
+                                    :shower,
+                                    :wc,
+                                    :radio_stereo_cd_mp3,
+                                    :tv,
+                                    :cabin_cruiser_bed,
+                                    :galley,
+                                    :sink,
+                                    :cooler,
+                                    :liferaft,
+                                    :trolling_motor,
+                                    :bimini_top,
+                                    :sunbathing_area,
+                                    :sport_fishing_equipment,
+                                    :safety_equipment
+                                    ]
                                   )
     end
 end
