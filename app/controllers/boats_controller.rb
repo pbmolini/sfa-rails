@@ -32,8 +32,8 @@ class BoatsController < ApplicationController
   # POST /boats
   # POST /boats.json
   def create
-    @boat = current_user.boats.build(boat_create_params)
-    # @boat.create_boat_features_set
+    @boat = current_user.boats.build(boat_params)
+    @boat.create_boat_features_set
     respond_to do |format|
       if @boat.save
         format.html { redirect_to @boat, notice: _("Boat was successfully created.") }
@@ -51,7 +51,7 @@ class BoatsController < ApplicationController
   # PATCH/PUT /boats/1.json
   def update
     respond_to do |format|
-      if @boat.update(boat_update_params)
+      if @boat.update(boat_params)
         format.html { redirect_to @boat, notice: _("Boat was successfully updated.") }
         format.json { render :show, status: :ok, location: @boat }
       else
@@ -72,64 +72,36 @@ class BoatsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_boat
-      @boat = Boat.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_boat
+    @boat = Boat.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def boat_create_params
-      params.require(:boat).permit(
-                                  :name, :manufacturer, :daily_price, :year, :model, :length,
-                                  :guest_capacity, :boat_category_id,
-                                  :description,
-                                  :fuel_type,
-                                  :with_license,
-                                  :rental_type,
-                                  :address,
-                                  :horse_power,
-                                  pictures_attributes: [:id, :image, :_destroy]
-                                  )
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def boat_params
+    create_params = [
+      :name,
+      :manufacturer,
+      :daily_price,
+      :year,
+      :model,
+      :length,
+      :guest_capacity,
+      :boat_category_id,
+      :description,
+      :fuel_type,
+      :with_license,
+      :rental_type,
+      :address,
+      :horse_power,
+      pictures_attributes: [:id, :image, :_destroy]
+    ]
+    update_params = create_params + [ boat_features_set_attributes: [:id] + BoatFeaturesSet::FEATURES ]
+    if action_name == "create"
+      params.require(:boat).permit(create_params)
+    elsif action_name == "update"
+      params.require(:boat).permit(update_params)
     end
+  end
 
-    def boat_update_params
-      params.require(:boat).permit(
-                                  :name, :manufacturer, :daily_price, :year, :model, :length,
-                                  :guest_capacity, :boat_category_id,
-                                  :description,
-                                  :fuel_type,
-                                  :with_license,
-                                  :rental_type,
-                                  :address,
-                                  :horse_power,
-                                  pictures_attributes: [:id, :image, :_destroy],
-                                  boat_features_set_attributes: [
-                                    :id,
-                                    :outboard_engine,
-                                    :inboard_engine,
-                                    :depth_finder,
-                                    :vhf,
-                                    :speed_instrumentation_radar,
-                                    :sonar,
-                                    :autopilot,
-                                    :anchor,
-                                    :anchor_windlass,
-                                    :boarding_ladder,
-                                    :shower,
-                                    :wc,
-                                    :radio_stereo_cd_mp3,
-                                    :tv,
-                                    :cabin_cruiser_bed,
-                                    :galley,
-                                    :sink,
-                                    :cooler,
-                                    :liferaft,
-                                    :trolling_motor,
-                                    :bimini_top,
-                                    :sunbathing_area,
-                                    :sport_fishing_equipment,
-                                    :safety_equipment
-                                    ]
-                                  )
-    end
 end

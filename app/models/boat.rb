@@ -3,7 +3,7 @@ class Boat < ActiveRecord::Base
   belongs_to :user
   belongs_to :boat_category
   
-  has_one :boat_features_set
+  has_one :boat_features_set, dependent: :destroy
   accepts_nested_attributes_for :boat_features_set, update_only: true
 
   has_many :bookings

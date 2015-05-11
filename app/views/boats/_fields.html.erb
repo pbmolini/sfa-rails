@@ -82,7 +82,7 @@
   </div>
 </div>
 
-<% content_for :javascript do %>
+<% content_for :scripts do %>
   <script type="text/javascript">
     $('#pictures').on('click', 'a.remove_fields.existing', function(e){
       $(e.target).closest('.nested_fields').css('opacity',0.3);
