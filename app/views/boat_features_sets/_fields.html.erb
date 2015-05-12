@@ -3,14 +3,14 @@
 <%# f.association :boat %>
 
 <div class="row">
-    <div class="col-sm-4">
+  <div class="col-sm-4">
+      <%= f.input :safety_equipment %>
+  </div>
+  <div class="col-sm-4">
 		<%= f.input :outboard_engine %>
 	</div>
 	<div class="col-sm-4">
 	    <%= f.input :inboard_engine %>
-	</div>
-	<div class="col-sm-4">
-		<%= f.input :depth_finder %>
 	</div>
 </div>
 
@@ -93,9 +93,9 @@
 	<div class="col-sm-4">
 			<%= f.input :sport_fishing_equipment %>
 	</div>
-	<div class="col-sm-4">
-			<%= f.input :safety_equipment %>
-	</div>
+  <div class="col-sm-4">
+    <%= f.input :depth_finder %>
+  </div>
 </div>
 
 <% content_for :scripts do %>
