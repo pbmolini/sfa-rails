@@ -3,7 +3,7 @@
 <%= f.association :boat_category, 
                   prompt: _("Select the category"), 
                   input_html: { class: 'form-control' }, 
-                  label_method: ->(obj) { _("#{obj.to_s.capitalize}") },
+                  label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
                   required: false %>
 
 <%= f.input :name,   
@@ -46,7 +46,7 @@
 <%= f.input :fuel_type, 
             collection: Boat::FUEL_TYPES, 
             prompt: _("Select the type of fuel"), 
-            label_method: ->(obj) { _("#{obj.to_s.capitalize}") },
+            label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
             required: false %>
 
 <%= f.input :with_license, label: _("License needed"), required: false %>
@@ -54,7 +54,7 @@
 <%= f.input :rental_type,  
             collection: Boat::RENTAL_TYPES, 
             prompt: _("Select the type of rental"), 
-            label_method: ->(obj) { _("#{obj.to_s.capitalize}") },
+            label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
             required: false %>
 
 <%= f.input :address,  
@@ -82,7 +82,7 @@
   </div>
 </div>
 
-<% content_for :javascript do %>
+<% content_for :scripts do %>
   <script type="text/javascript">
     $('#pictures').on('click', 'a.remove_fields.existing', function(e){
       $(e.target).closest('.nested_fields').css('opacity',0.3);

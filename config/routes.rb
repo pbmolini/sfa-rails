@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
     only: [:index,
       :destroy]
     resources :bookings
+    resources :boat_features_sets, as: :features_sets # to avoid boat_boat_features_sets_path
   end
 
   get 'bookings' => 'bookings#index', as: :bookings

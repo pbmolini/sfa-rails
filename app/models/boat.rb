@@ -2,6 +2,10 @@ class Boat < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :boat_category
+  
+  has_one :boat_features_set, dependent: :destroy
+  accepts_nested_attributes_for :boat_features_set, update_only: true
+
   has_many :bookings
   has_many :pictures, dependent: :destroy
   accepts_nested_attributes_for :pictures, reject_if: :all_blank, allow_destroy: true
@@ -22,6 +26,11 @@ class Boat < ActiveRecord::Base
 
   # validate :min_pics
   validate :max_pics
+
+  # Returns all the features that are true in self.boat_features_set
+  def features
+    self.boat_features_set.attributes.select { |k, v| k if v == true }.keys
+  end
 
   private
 
