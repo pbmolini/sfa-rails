@@ -39,6 +39,6 @@ class Boat < ActiveRecord::Base
   # end
 
   def max_pics
-    errors.add(:base, "too many pictures (choose at most 10)") unless pictures.size <= 10
+    errors.add(:base, _("too many pictures (choose at most 10)")) unless pictures.size <= 10
   end
 end

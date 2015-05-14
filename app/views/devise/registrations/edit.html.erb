@@ -17,7 +17,7 @@
             <a href="#login_info" aria-controls="login_info" role="tab" data-toggle="tab"><%= _("Login info") %></a>
           </li>
         </ul>
-        <%= f.error_notification %>
+        <p><%= f.error_notification %></p>
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade in active" id="personal_info">
             <h3><%= _("Personal info") %></h3>
@@ -29,9 +29,9 @@
               <%= f.input_field :birthdate, as: :string, class: 'form-control' %>
               <span class="input-group-addon"><%= fa_icon 'calendar' %></span>
             <% end %>
-            <%= f.input :bio %>
-            <%= f.input :phone %>
-            <%= f.input :location %>
+            <%= f.input :bio, placeholder: _("Tell us something about you, and how much you love your boat!") %>
+            <%= f.input :phone, placeholder: _("e.g. +39 012 3456789") %>
+            <%= f.input :location, label: _("Address"), placeholder: _("e.g. 200 E Main St Phoenix AZ 85123 USA") %>
             <%= f.input :image %>
           </div>
           <div role="tabpanel" class="tab-pane fade in" id="login_info">

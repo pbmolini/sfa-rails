@@ -11,7 +11,11 @@ class User < ActiveRecord::Base
 
   has_attached_file :image, :styles => { :thumb => "50x50#" }, default_url: "default_avatar.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-  validate :at_least_16
+  validates_presence_of :first_name, :last_name
+  validates :birthdate, presence: true, on: :update
+  validate :at_least_16, on: :update
+  validates :phone, presence: true, on: :update
+  validates :location, presence: true, on: :update
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -51,6 +55,8 @@ class User < ActiveRecord::Base
   end
 
   def at_least_16
-    errors.add(:birthdate, "must be before #{16.years.ago.to_date}") unless birthdate < 16.years.ago.to_date
+    if birthdate
+      errors.add(:birthdate, _("must be before %{date}") %{date: 16.years.ago.to_date}) unless birthdate < 16.years.ago.to_date
+    end
   end
 end

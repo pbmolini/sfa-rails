@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-#before_filter :configure_sign_up_params, only: [:create]
+  before_filter :configure_sign_up_params, only: [:create]
   before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -42,7 +42,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_sign_up_params
     attributes = [:first_name, :last_name, :image]
     attributes.each do |a|
-      devise_parameter_sanitizer.for(:account_update) << a
+      devise_parameter_sanitizer.for(:sign_up) << a
     end
   end
 
@@ -56,7 +56,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    dashboard_path
+    welcome_path
   end
 
   # The path used after updating profile.

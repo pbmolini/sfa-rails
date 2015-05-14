@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+    	<h1>
+        <%= _("Welcome %{name}") %{name: current_user.first_name} %>
+      </h1>
+      <p class="lead">
+        <%= _("Thank you for joining SeaForAll. You can register your boat in a minute, just") %>
+        <%= link_to _("complete your Profile!"), edit_user_registration_path %>
+      </p>
+      <p><%= link_to _('Start register'), new_boat_path, class: 'btn btn-success btn-lg' %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Your boats</h2>
+    </div>
+    <% current_user.boats.each do |boat| %>
+    <div class="col-sm-3 boat-list">
+      <div class="boat-list-wrapper">
+        <%= link_to boat_path(boat) do %>
+          <div style="background-image: url(<%= boat.pictures.first.image.url %>);" class="list-img"></div>
+          <h3><%= boat.name %></h3>
+          <p><%= boat.model %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <hr>
+  <div class="row">
+   <div class="col-sm-12">
+     <h2>Curious about other boats? <%= link_to 'Check it out', boats_path %></h2>
+   </div>
+ </div>
+</div>
