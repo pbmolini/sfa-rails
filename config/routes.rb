@@ -21,11 +21,8 @@ Rails.application.routes.draw do
       sign_up: 'signup'
     }
 
-
   resources :boats do
-    resources :pictures,
-    only: [:index,
-      :destroy]
+    resources :pictures, only: [:index, :destroy]
     resources :bookings
     resources :boat_features_sets, as: :features_sets # to avoid boat_boat_features_sets_path
   end
@@ -43,6 +40,9 @@ Rails.application.routes.draw do
 
   # Dashboard
   get 'dashboard' => 'pages#show', id: 'dashboard', as: :dashboard
+
+  # Welcome
+  get 'welcome' => 'pages#show', id: 'welcome', as: :welcome
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
