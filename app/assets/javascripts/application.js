@@ -21,4 +21,5 @@
 //= require bootstrap-datetimepicker
 //= require turbolinks
 //= require toastr
+//= require dropzone
 //= require_tree .

@@ -1,0 +1,12 @@
+<div class="row">
+  <% @boat.pictures.each do |pic| %>
+    <div class="col-md-4">
+      <div class="thumbnail boat-pic-thumb">
+        <%= link_to '&times;'.html_safe, '#', data: { url: boat_picture_url(@boat,pic) }, class: 'btn picture-delete' %>
+        <%= image_tag pic.image.url(:medium) %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<form action="#" class="dropzone" id="boat_pictures_upload" data-id='<%= @boat.id %>'></form>

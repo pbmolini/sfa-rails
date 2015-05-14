@@ -15,12 +15,29 @@
   			<% @boat.errors[:base].each do |error| %>
     			<p><%= error %></p>
   			<% end %>
-				
-				<%= render 'fields', f: f %>
-			
+
+        <%= f.association :boat_category,
+            prompt: _("Select the category"),
+            input_html: { class: 'form-control' },
+            label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
+            required: false %>
+
+        <%= f.input :rental_type,
+            collection: Boat::RENTAL_TYPES,
+            prompt: _("Select the type of rental"),
+            label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
+            required: false %>
+
+        <%= f.input :address,
+            placeholder: _("Where is your boat moored? E.g. Molo Ponte Morosini, 46, Genoa"),
+            required: false %>
+
+				<%#= render 'fields', f: f %>
+
   			<%= f.button :submit, _("Create Boat"), class: "btn btn-lg btn-primary" %>
-			
+
 			<% end %>
+
 			<%= link_to 'Back', boats_path %>
 		</div>
 	</div>

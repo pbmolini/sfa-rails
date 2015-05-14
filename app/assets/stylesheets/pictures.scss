@@ -1,3 +1,20 @@
 // Place all the styles related to the Pictures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.boat-pic-thumb {
+  a.picture-delete {
+    @extend .btn-danger;
+    position: absolute;
+    right: 8px;
+    /* border: 1px solid white; */
+    /* background: lightgray; */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    top: -5px;
+    font-size: 16px;
+    padding: 0px;
+  }
+}
