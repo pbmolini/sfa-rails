@@ -36,8 +36,8 @@ class BoatsController < ApplicationController
     @boat.create_boat_features_set
     respond_to do |format|
       if @boat.save
-        format.html { redirect_to @boat, notice: _("Boat was successfully created.") }
-        format.json { render :show, status: :created, location: @boat }
+        format.html { redirect_to edit_boat_path(@boat), notice: _("Boat was successfully created.") }
+        format.json { render :edit, status: :created, location: @boat }
       else
         # pictures must be rebuilt to make the field appear in the form
         @boat.pictures.build unless @boat.pictures.any?

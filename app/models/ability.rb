@@ -18,6 +18,9 @@ class Ability
       can :crud, BoatFeaturesSet do |bfs|
         bfs.boat.user == user
       end
+      can :crud, Picture do |pic|
+        pic.boat.user == user
+      end
 
       can :read, Booking, boat: { user_id: user.id }
 

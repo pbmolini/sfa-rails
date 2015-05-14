@@ -2,54 +2,75 @@
 	<div class="row">
 		<div class="col-sm-8 col-sm-offset-2">
 			<%# Usage of wrappers:https://github.com/plataformatec/simple_form/wiki/How-to-use-Bootstrap-3-input-group-in-Simple-Form %>
-			<%= simple_form_for @boat, html: { multipart: true }, wrapper: :vertical_input_group,
-        wrapper_mappings: {
-          check_boxes: :horizontal_radio_and_checkboxes,
-          radio_buttons: :horizontal_radio_and_checkboxes,
-          file: :horizontal_file_input,
-          boolean: :vertical_boolean
-        } do |f| %>
-  			<%= f.error_notification %>
-  			<% @boat.errors[:base].each do |error| %>
-    			<p><%= error %></p>
-  			<% end %>
+			<h1><%= _('Edit Boat') %></h1>
+			<ul class="nav nav-pills">
+        <li role="presentation" class="active">
+          <a href="#boat_details" aria-controls="boat_details" role="tab" data-toggle="tab"><%= _("Boat details") %></a>
+        </li>
+        <li role="presentation">
+          <a href="#boat_features" aria-controls="boat_features" role="tab" data-toggle="tab"><%= _("Boat features") %></a>
+        </li>
+        <li role="presentation">
+          <a href="#boat_pictures" aria-controls="boat_pictures" role="tab" data-toggle="tab"><%= _("Boat pictures") %></a>
+        </li>
+        <li role="presentation">
+          <a href="#boat_danger_zone" aria-controls="boat_danger_zone" role="tab" data-toggle="tab"><%= fa_icon "warning" %> <%= _("Danger Zone") %></a>
+        </li>
+      </ul>
 
-				<h1><%= _('Edit Boat') %><%= f.button :submit, _("Edit"), class: "btn btn-lg btn-success pull-right" %></h1>
-				<ul class="nav nav-pills">
-	        <li role="presentation" class="active">
-	          <a href="#boat_details" aria-controls="boat_details" role="tab" data-toggle="tab"><%= _("Boat details") %></a>
-	        </li>
-	        <li role="presentation">
-	          <a href="#boat_features" aria-controls="boat_features" role="tab" data-toggle="tab"><%= _("Boat features") %></a>
-	        </li>
-	        <li role="presentation">
-	          <a href="#boat_danger_zone" aria-controls="boat_danger_zone" role="tab" data-toggle="tab"><%= fa_icon "warning" %> <%= _("Danger Zone") %></a>
-	        </li>
-	      </ul>
-	      <div class="tab-content">
-	        <div role="tabpanel" class="tab-pane fade in active" id="boat_details">
-						<%= render 'fields', f: f %>	
-					</div>
-					<div role="tabpanel" class="tab-pane fade in" id="boat_features">
-						<h3><%= _("Other Features of your boat") %></h3>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="boat_details">
+					<%= simple_form_for @boat, html: { multipart: true }, wrapper: :vertical_input_group,
+		        wrapper_mappings: {
+		          check_boxes: :horizontal_radio_and_checkboxes,
+		          radio_buttons: :horizontal_radio_and_checkboxes,
+		          file: :horizontal_file_input,
+		          boolean: :vertical_boolean
+		        } do |f| %>
+		  			<%= f.error_notification %>
+		  			<% @boat.errors[:base].each do |error| %>
+		    			<p><%= error %></p>
+		  			<% end %>
+						<%= render 'fields', f: f %>
+						<%= f.submit "Save", class: 'btn btn-lg btn-success' %>
+					<% end %>
+				</div>
+				<div role="tabpanel" class="tab-pane fade in" id="boat_features">
+					<h3><%= _("Other Features of your boat") %></h3>
+					<%= simple_form_for @boat, html: { multipart: true }, wrapper: :vertical_input_group,
+		        wrapper_mappings: {
+		          check_boxes: :horizontal_radio_and_checkboxes,
+		          radio_buttons: :horizontal_radio_and_checkboxes,
+		          file: :horizontal_file_input,
+		          boolean: :vertical_boolean
+		        } do |f| %>
+		  			<%= f.error_notification %>
+		  			<% @boat.errors[:base].each do |error| %>
+		    			<p><%= error %></p>
+		  			<% end %>
 						<%= f.simple_fields_for :boat_features_set do |bfs| %>
 							<%= render "boat_features_sets/fields", f: bfs %>
 						<% end %>
-					</div>
-					<div role="tabpanel" class="tab-pane fade in" id="boat_danger_zone">
-						<h3><%= _("Be careful here...") %></h3>
-						<p class="alert alert-danger" role="alert">
-							<%= _("Tired of sharing your boat?") %>
-							<br>
-							<%= link_to _('Remove %{name} from SeaForAll') %{name: @boat.name}, 
-														boat_path(@boat), 
-														method: :delete, 
-														:class => 'alert-link',
-														data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name} } if can? :destroy, @boat %>
-						</p>
-					</div>
-				</div>				
-			<% end %>
+						<%= f.submit "Save", class: 'btn btn-lg btn-success' %>
+					<% end %>
+				</div>
+				<div role="tabpanel" class="tab-pane fade in" id="boat_pictures">
+					<h3><%= _('Pictures of your boat') %></h3>
+					<%= render 'pictures/fields' %>
+				</div>
+				<div role="tabpanel" class="tab-pane fade in" id="boat_danger_zone">
+					<h3><%= _("Be careful here...") %></h3>
+					<p class="alert alert-danger" role="alert">
+						<%= _("Tired of sharing your boat?") %>
+						<br>
+						<%= link_to _('Remove %{name} from SeaForAll') %{name: @boat.name},
+													boat_path(@boat),
+													method: :delete,
+													:class => 'alert-link',
+													data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name} } if can? :destroy, @boat %>
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
