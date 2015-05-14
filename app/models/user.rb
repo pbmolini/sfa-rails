@@ -46,6 +46,10 @@ class User < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
 
+  def complete?
+    self.location and self.phone and self.birthdate
+  end
+
   private
 
   def self.facebook_image_url uri

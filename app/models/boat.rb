@@ -32,6 +32,10 @@ class Boat < ActiveRecord::Base
     self.boat_features_set.attributes.select { |k, v| k if v == true }.keys
   end
 
+  def complete?
+    self.boat_features_set.safety_equipment?
+  end
+
   private
 
   # def min_pics
