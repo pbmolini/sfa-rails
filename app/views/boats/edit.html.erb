@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2">
+		<div class="col-sm-10 col-sm-offset-1">
 			<%# Usage of wrappers:https://github.com/plataformatec/simple_form/wiki/How-to-use-Bootstrap-3-input-group-in-Simple-Form %>
 			<h1><%= _('Edit Boat') %></h1>
 			<ul class="nav nav-pills">
@@ -27,16 +27,15 @@
 		          file: :horizontal_file_input,
 		          boolean: :vertical_boolean
 		        } do |f| %>
+		        <h3><%= _("Details of your boat") %><%= f.submit _("Save"), class: 'btn btn-success pull-right' %></h3>
 		  			<%= f.error_notification %>
 		  			<% @boat.errors[:base].each do |error| %>
 		    			<p><%= error %></p>
 		  			<% end %>
 						<%= render 'fields', f: f %>
-						<%= f.submit "Save", class: 'btn btn-lg btn-success' %>
 					<% end %>
 				</div>
 				<div role="tabpanel" class="tab-pane fade in" id="boat_features">
-					<h3><%= _("Other Features of your boat") %></h3>
 					<%= simple_form_for @boat, html: { multipart: true }, wrapper: :vertical_input_group,
 		        wrapper_mappings: {
 		          check_boxes: :horizontal_radio_and_checkboxes,
@@ -44,6 +43,8 @@
 		          file: :horizontal_file_input,
 		          boolean: :vertical_boolean
 		        } do |f| %>
+					<h3><%= _("Other Features of your boat") %><%= f.submit _("Save"), class: 'btn btn-success pull-right' %></h3>
+						
 		  			<%= f.error_notification %>
 		  			<% @boat.errors[:base].each do |error| %>
 		    			<p><%= error %></p>
@@ -51,7 +52,6 @@
 						<%= f.simple_fields_for :boat_features_set do |bfs| %>
 							<%= render "boat_features_sets/fields", f: bfs %>
 						<% end %>
-						<%= f.submit "Save", class: 'btn btn-lg btn-success' %>
 					<% end %>
 				</div>
 				<div role="tabpanel" class="tab-pane fade in" id="boat_pictures">

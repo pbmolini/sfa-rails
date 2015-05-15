@@ -12,19 +12,33 @@ class Boat < ActiveRecord::Base
 
   RENTAL_TYPES = [ 'bareboat', 'captained', 'both' ].freeze
   FUEL_TYPES = [ 'petrol', 'diesel', 'mix' ].freeze
+  COMPULSORY_FIELDS = [
+    :name,
+    :manufacturer,
+    :model,
+    :year,
+    :length,
+    :guest_capacity,
+    :fuel_type,
+    :horse_power,
+    :daily_price,
+    :description
+  ].freeze
 
-  validates :name, :manufacturer, :daily_price, :year, :model, :length, :guest_capacity, :boat_category, presence: true, on: :update
-  validates :year, numericality: { greater_than_or_equal_to: 1900 }, on: :update
-  validates :daily_price, numericality: { greater_than_or_equal_to: 1 }, on: :update
-  validates :pictures, presence: true, on: :update
-  validates :description, presence: true, on: :update
-  validates :fuel_type, inclusion: { within: Boat::FUEL_TYPES }, on: :update
   validates :rental_type, inclusion: { within: Boat::RENTAL_TYPES }
   validates :address, presence: true
+
+  # Presence validations on COMPULSORY_FIELDS
+  Boat::COMPULSORY_FIELDS.each do |f|
+    validates f, presence: true, on: :update
+  end
+
+  # Other validations in COMPULSORY_FIELDS
+  validates :year, numericality: { greater_than_or_equal_to: 1900 }, on: :update
+  validates :fuel_type, inclusion: { within: Boat::FUEL_TYPES }, on: :update
   validates :horse_power, numericality: { greater_than_or_equal_to: 0 }, on: :update
-
-
-  # validate :min_pics
+  validates :daily_price, numericality: { greater_than_or_equal_to: 1 }, on: :update
+  validates :pictures, presence: true, on: :update
   validate :max_pics, on: :update
 
   # Returns all the features that are true in self.boat_features_set
@@ -33,6 +47,8 @@ class Boat < ActiveRecord::Base
   end
 
   def complete?
+    Boat::COMPULSORY_FIELDS.map { |f| self.send(f) }.reduce(:&) and
+    self.pictures.any? and
     self.boat_features_set.safety_equipment?
   end
 

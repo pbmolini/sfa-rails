@@ -1,75 +1,105 @@
-<h3><%= _("Details of your boat") %></h3>
+<div class="row">
+  <div class="col-md-4">  
+    <%= f.association :boat_category,
+                      prompt: _("Select the category"),
+                      input_html: { class: 'form-control' },
+                      label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
+                      required: false %>
+  </div>
+  <div class="col-md-4">
+    <%= f.input :rental_type,
+                collection: Boat::RENTAL_TYPES,
+                prompt: _("Select the type of rental"),
+                label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
+                required: false %>
+  </div>
+  <div class="col-md-4">
+    <p><strong><%= _("License") %></strong></p>
+    <%= f.input :with_license, label: _("License needed"), required: false %>
+  </div>
+</div>
 
-<%= f.association :boat_category,
-                  prompt: _("Select the category"),
-                  input_html: { class: 'form-control' },
-                  label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
-                  required: false %>
+<div class="row">
+  <div class="col-md-12">
+    <%= f.input :name,
+                placeholder: _("What is its name?"),
+                required: false %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <%= f.input :manufacturer,
+                placeholder: _("Who built your boat?"),
+                required: false %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <%= f.input :model,
+                placeholder: _("e.g. Pursuit DC 265, Cobalt A25"),
+                required: false %>
+  </div>
+</div>
 
-<%= f.input :name,
-            placeholder: _("What is its name?"),
-            required: false %>
-
-<%= f.input :manufacturer,
-            placeholder: _("Who built your boat?"),
-            required: false %>
-
-<%= f.input :model,
-            placeholder: _("e.g. Pursuit DC 265, Cobalt A25"),
-            required: false %>
-
-<%= f.input :year, wrapper: :vertical_input_group, required: false do %>
-  <%= f.input_field :year, as: :string, placeholder: _("Select the year"), class: 'form-control' %>
-  <span class="input-group-addon"><%= fa_icon 'calendar' %></span>
+<div class="row">
+  <div class="col-md-4">
+    <%= f.input :year, wrapper: :vertical_input_group, required: false do %>
+    <%= f.input_field :year, as: :string, placeholder: _("Select the year"), class: 'form-control' %>
+    <span class="input-group-addon boat-input-group-addon"><%= fa_icon 'calendar' %></span>
 <% end %>
+  </div>
+  <div class="col-md-4">    
+    <%= f.input :length, wrapper: :vertical_input_group, required: false do %>
+      <%= f.input_field :length, placeholder: _("Your boat's length, in meters"), class: "form-control" %>
+      <span class="input-group-addon boat-input-group-addon">m</span>
+    <% end %>
+  </div>
+  <div class="col-md-4">    
+    <%= f.input :guest_capacity, wrapper: :vertical_input_group, required: false do %>
+      <%= f.input_field :guest_capacity, placeholder: _("How many people can jump aboard?"), class: 'form-control' %>
+      <span class="input-group-addon boat-input-group-addon"><%= fa_icon 'users' %></span>
+    <% end %>
+  </div>
+</div>
 
-<%#= f.input :year,
-            collection: 1900..Time.now.year,
-            prompt: _("Select the year"),
-            input_html: { class: 'form-control' },
-            required: false %>
+<div class="row">
+  <div class="col-md-4">
+    <%= f.input :fuel_type,
+                collection: Boat::FUEL_TYPES,
+                prompt: _("Select the type of fuel"),
+                label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
+                required: false %>
+  </div>
+  <div class="col-md-4">
+    <%= f.input :horse_power, wrapper: :vertical_input_group, required: false do %>
+      <%= f.input_field :horse_power, placeholder: _("No engine? Type '0'"), class: "form-control" %>
+      <span class="input-group-addon boat-input-group-addon">Hp</span>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <%= f.input :daily_price, wrapper: :vertical_input_group, required: false do %>
+      <%= f.input_field :daily_price, placeholder: _("How much should a guest pay for a day on your boat?"), class: "form-control" %>
+      <span class="input-group-addon boat-input-group-addon"><%= fa_icon 'eur' %></span>
+    <% end %>
+  </div>
+</div>
 
-<%= f.input :length, wrapper: :vertical_input_group, required: false do %>
-  <%= f.input_field :length, placeholder: _("Your boat's length, in meters"), class: "form-control" %>
-  <span class="input-group-addon">m</span>
-<% end %>
 
-<%= f.input :guest_capacity, wrapper: :vertical_input_group, required: false do %>
-  <%= f.input_field :guest_capacity, placeholder: _("How many people can jump aboard?"), class: 'form-control' %>
-  <span class="input-group-addon"><%= _("persons") %></span>
-<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <%= f.input :description,
+                placeholder: _("The person who will use it will love to know more about your boat. Tell him how do you use it, some stories about it and what you love of your boat"),
+                required: false %>
+  </div>
+</div>
 
-<%= f.input :description,
-            placeholder: _("Please tell us what you love of your boat"),
-            required: false %>
-
-<%= f.input :fuel_type,
-            collection: Boat::FUEL_TYPES,
-            prompt: _("Select the type of fuel"),
-            label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
-            required: false %>
-
-<%= f.input :with_license, label: _("License needed"), required: false %>
-
-<%= f.input :rental_type,
-            collection: Boat::RENTAL_TYPES,
-            prompt: _("Select the type of rental"),
-            label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
-            required: false %>
-
-<%= f.input :address,
-            placeholder: _("Where is your boat moored? E.g. Molo Ponte Morosini, 46, Genoa"),
-            required: false %>
-
-<%= f.input :horse_power, wrapper: :vertical_input_group, required: false do %>
-  <%= f.input_field :horse_power, placeholder: _("Leave blank if your boat has no engine"), class: "form-control" %>
-  <span class="input-group-addon">Hp</span>
-<% end %>
-
-<%= f.input :daily_price, wrapper: :vertical_input_group, required: false do %>
-  <%= f.input_field :daily_price, placeholder: _("How much should a guest pay for a day on your boat?"), class: "form-control" %>
-  <span class="input-group-addon"><%= fa_icon 'eur' %></span>
-<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <%= f.input :address,
+                placeholder: _("Where is your boat moored? E.g. Molo Ponte Morosini, 46, Genoa"),
+                required: false %>
+  </div>
+</div>
 
 <% content_for :scripts do %>
   <script type="text/javascript">
