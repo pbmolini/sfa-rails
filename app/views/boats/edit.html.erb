@@ -1,6 +1,15 @@
 <div class="container">
 	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1">
+		<div class="col-md-10 col-md-offset-1">
+			<% unless @boat.complete? %>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 alert alert-warning">
+						<p class="text-center">
+							<small><%= _("This boat cannot be published yet. Fill all the fields and upload at least one picture to complete the boat's profile.") %></small>
+						</p>						
+					</div>
+				</div>
+			<% end %>
 			<%# Usage of wrappers:https://github.com/plataformatec/simple_form/wiki/How-to-use-Bootstrap-3-input-group-in-Simple-Form %>
 			<h1><%= _('Edit Boat') %></h1>
 			<ul class="nav nav-pills">

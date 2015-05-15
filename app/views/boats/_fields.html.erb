@@ -71,8 +71,11 @@
                 required: false %>
   </div>
   <div class="col-md-4">
-    <%= f.input :horse_power, wrapper: :vertical_input_group, required: false do %>
-      <%= f.input_field :horse_power, placeholder: _("No engine? Type '0'"), class: "form-control" %>
+    <%= f.input :horse_power, label: _("Engine Horse Power"), wrapper: :vertical_input_group, required: false do %>
+      <span class="input-group-addon">
+        <input type="checkbox" id="engine-presence" aria-label="<%= _('Check this if the boat has an engine') %>">
+      </span>
+      <%= f.input_field :horse_power, placeholder: _("No engine? Uncheck!"), class: "form-control", min: 1 %>
       <span class="input-group-addon boat-input-group-addon">Hp</span>
     <% end %>
   </div>
@@ -88,7 +91,7 @@
 <div class="row">
   <div class="col-md-12">
     <%= f.input :description,
-                placeholder: _("The person who will use it will love to know more about your boat. Tell him how do you use it, some stories about it and what you love of your boat"),
+                placeholder: _("Your guests will love to know more about your boat. Tell them something about it, what you use it for and what you love of your boat"),
                 required: false %>
   </div>
 </div>
@@ -103,16 +106,42 @@
 
 <% content_for :scripts do %>
   <script type="text/javascript">
-    $('#pictures').on('click', 'a.remove_fields.existing', function(e){
-      $(e.target).closest('.nested_fields').css('opacity',0.3);
-      $(e.target).hide();
-    });
 
-    $('.boat_year .form-control').datetimepicker({
-      viewMode: 'years',
-      format: 'YYYY',
-      minDate: moment().year(1900),
-      maxDate: moment()
+    var initEngineField = function() {
+      var hasEngineOrIsNew = <%= @boat.horse_power == nil || @boat.horse_power > 1 %>
+      if (hasEngineOrIsNew) {
+        $('#engine-presence').prop('checked', true);
+      } else {
+        $('#boat_horse_power').attr("readonly", "readonly").val("0");   
+        $('.boat_horse_power > label').text("<%= _('No Engine') %>");
+      }
+    };
+
+    $(document).ready(function () {
+      initEngineField();
+
+      $('#pictures').on('click', 'a.remove_fields.existing', function(e){
+        $(e.target).closest('.nested_fields').css('opacity',0.3);
+        $(e.target).hide();
+      });
+
+      $('#engine-presence').on('change', function(){
+        // Use 'readonly' instead of 'disable' because it keeps the val()
+        if ($(this).is(':checked')) {
+          $('#boat_horse_power').removeAttr("readonly").val("<%= @boat.horse_power %>");  
+          $('.boat_horse_power > label').text("<%= _('Engine Horse Power') %>");
+        } else {
+          $('#boat_horse_power').attr("readonly", "readonly").val("0");   
+          $('.boat_horse_power > label').text("<%= _('No Engine') %>");
+        }
+      });
+
+      $('.boat_year .form-control').datetimepicker({
+        viewMode: 'years',
+        format: 'YYYY',
+        minDate: moment().year(1900),
+        maxDate: moment()
+      });
     });
   </script>
 <% end %>

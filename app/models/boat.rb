@@ -47,7 +47,7 @@ class Boat < ActiveRecord::Base
   end
 
   def complete?
-    Boat::COMPULSORY_FIELDS.map { |f| self.send(f) }.reduce(:&) and
+    Boat::COMPULSORY_FIELDS.map { |f| self.send(f) }.reduce {|r,e| r && e} and
     self.pictures.any? and
     self.boat_features_set.safety_equipment?
   end
