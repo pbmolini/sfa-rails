@@ -3,14 +3,14 @@
 <%# f.association :boat %>
 
 <div class="row">
-  <div class="col-sm-4">
-      <%= f.input :safety_equipment %>
+  <div class="col-sm-4<%= ' missing-safety-equipment' unless f.object.safety_equipment? %>">
+		<%= f.input :safety_equipment %>
   </div>
   <div class="col-sm-4">
 		<%= f.input :outboard_engine %>
 	</div>
 	<div class="col-sm-4">
-	    <%= f.input :inboard_engine %>
+		<%= f.input :inboard_engine %>
 	</div>
 </div>
 
@@ -19,22 +19,22 @@
 		<%= f.input :vhf %>
 	</div>
 	<div class="col-sm-4">
-	    <%= f.input :speed_instrumentation_radar %>
+	  <%= f.input :speed_instrumentation_radar %>
 	</div>
 	<div class="col-sm-4">
-	    <%= f.input :sonar %>
+	  <%= f.input :sonar %>
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-sm-4">
-	    <%= f.input :autopilot %>
+	  <%= f.input :autopilot %>
 	</div>
 	<div class="col-sm-4">
-	    <%= f.input :anchor %>
+	  <%= f.input :anchor %>
 	</div>
 	<div class="col-sm-4">
-	    <%= f.input :anchor_windlass %>
+	  <%= f.input :anchor_windlass %>
 	</div>
 </div>
 
