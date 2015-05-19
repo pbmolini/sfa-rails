@@ -41,18 +41,28 @@ class Boat < ActiveRecord::Base
   validates :pictures, presence: true, on: :update
   validate :max_pics, on: :update
 
+  after_validation :set_complete, on: :update
+
+  scope :complete, -> { where complete: true }
+  scope :incomplete, -> { where complete: false }
+
   # Returns all the features that are true in self.boat_features_set
   def features
     self.boat_features_set.attributes.select { |k, v| k if v == true }.keys
   end
 
-  def complete?
+
+  private
+
+  def check_complete?
     Boat::COMPULSORY_FIELDS.map { |f| self.send(f) }.reduce {|r,e| r && e} and
     self.pictures.any? and
     self.boat_features_set.safety_equipment?
   end
 
-  private
+  def set_complete
+    self.update_attribute(:complete, check_complete?)
+  end
 
   # def min_pics
   #   errors.add(:base, "at least one picture needed") unless pictures.size >= 1

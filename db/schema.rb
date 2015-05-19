@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429195525) do
+ActiveRecord::Schema.define(version: 20150519205920) do
 
   create_table "boat_categories", force: :cascade do |t|
     t.string   "name"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20150429195525) do
     t.string   "rental_type"
     t.string   "address"
     t.integer  "horse_power"
+    t.boolean  "complete",                                 default: false
   end
 
   add_index "boats", ["boat_category_id"], name: "index_boats_on_boat_category_id"

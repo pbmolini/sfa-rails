@@ -5,8 +5,23 @@
         <%= _("Hi %{name}") %{name: current_user.first_name} %>,
       </h3>
       <p class="lead">
-        register your boat to start renting it. It's super easy: in a minute you will be ready to rent.
+        <%= _("Welcome to SEAFORALL and thank you for joining us!") %>
       </p>
+      <!-- Se hai una barca da completare -->
+      <% if current_user.boats.incomplete.any? %>
+        <p>
+          <%= _("You have started the registration of %{num}") %{num: current_user.boats.count} %>
+          <%= n_("boat", "boats", current_user.boats.count) %>.
+          <% if current_user.boats.incomplete.count > 1 %>
+            <%= _("Complete the profiles of your boats to make them visible to the guests.") %>
+          <% else %>
+            <%= _("Complete the profile of your boat to make it visible to the guests.") %>
+          <% end %>
+        </p>
+        <% current_user.boats.incomplete.each do |boat| %>
+          <p><%= link_to _("Complete this boat's profile"), edit_boat_path(boat) %></p>
+        <% end %>
+      <% end %>
       <p><%= link_to 'Start register', new_boat_path, class: 'btn btn-success btn-lg' %></p>
     </div>
   </div>
