@@ -1,0 +1,6 @@
+_("bareboat")
+_("captained")
+_("both")
+_("petrol")
+_("diesel")
+_("mix")

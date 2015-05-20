@@ -38,10 +38,22 @@ msgstr ""
 msgid "Be careful here..."
 msgstr ""
 
+msgid "Boat"
+msgstr ""
+
+msgid "Boat category"
+msgstr ""
+
 msgid "Boat details"
 msgstr ""
 
+msgid "Boat feature"
+msgstr ""
+
 msgid "Boat features"
+msgstr ""
+
+msgid "Boat features set"
 msgstr ""
 
 msgid "Boat pictures"
@@ -54,6 +66,138 @@ msgid "Boat was successfully destroyed."
 msgstr ""
 
 msgid "Boat was successfully updated."
+msgstr ""
+
+msgid "BoatCategory|Name"
+msgstr ""
+
+msgid "BoatFeaturesSet|Anchor"
+msgstr ""
+
+msgid "BoatFeaturesSet|Anchor windlass"
+msgstr ""
+
+msgid "BoatFeaturesSet|Autopilot"
+msgstr ""
+
+msgid "BoatFeaturesSet|Bimini top"
+msgstr ""
+
+msgid "BoatFeaturesSet|Boarding ladder"
+msgstr ""
+
+msgid "BoatFeaturesSet|Cabin cruiser bed"
+msgstr ""
+
+msgid "BoatFeaturesSet|Cooler"
+msgstr ""
+
+msgid "BoatFeaturesSet|Depth finder"
+msgstr ""
+
+msgid "BoatFeaturesSet|Galley"
+msgstr ""
+
+msgid "BoatFeaturesSet|Inboard engine"
+msgstr ""
+
+msgid "BoatFeaturesSet|Liferaft"
+msgstr ""
+
+msgid "BoatFeaturesSet|Outboard engine"
+msgstr ""
+
+msgid "BoatFeaturesSet|Radio stereo cd mp3"
+msgstr ""
+
+msgid "BoatFeaturesSet|Safety equipment"
+msgstr ""
+
+msgid "BoatFeaturesSet|Shower"
+msgstr ""
+
+msgid "BoatFeaturesSet|Sink"
+msgstr ""
+
+msgid "BoatFeaturesSet|Sonar"
+msgstr ""
+
+msgid "BoatFeaturesSet|Speed instrumentation radar"
+msgstr ""
+
+msgid "BoatFeaturesSet|Sport fishing equipment"
+msgstr ""
+
+msgid "BoatFeaturesSet|Sunbathing area"
+msgstr ""
+
+msgid "BoatFeaturesSet|Trolling motor"
+msgstr ""
+
+msgid "BoatFeaturesSet|Tv"
+msgstr ""
+
+msgid "BoatFeaturesSet|Vhf"
+msgstr ""
+
+msgid "BoatFeaturesSet|Wc"
+msgstr ""
+
+msgid "BoatFeature|Name"
+msgstr ""
+
+msgid "Boat|Address"
+msgstr ""
+
+msgid "Boat|Complete"
+msgstr ""
+
+msgid "Boat|Daily price"
+msgstr ""
+
+msgid "Boat|Description"
+msgstr ""
+
+msgid "Boat|Fuel type"
+msgstr ""
+
+msgid "Boat|Guest capacity"
+msgstr ""
+
+msgid "Boat|Horse power"
+msgstr ""
+
+msgid "Boat|Length"
+msgstr ""
+
+msgid "Boat|Manufacturer"
+msgstr ""
+
+msgid "Boat|Model"
+msgstr ""
+
+msgid "Boat|Name"
+msgstr ""
+
+msgid "Boat|Rental type"
+msgstr ""
+
+msgid "Boat|With license"
+msgstr ""
+
+msgid "Boat|Year"
+msgstr ""
+
+msgid "Booking"
+msgstr ""
+
+msgid "Booking|End time"
+msgstr ""
+
+msgid "Booking|People on board"
+msgstr ""
+
+msgid "Booking|Start time"
 msgstr ""
 
 msgid "Cancel my account"
@@ -155,7 +299,25 @@ msgstr ""
 msgid "Personal info"
 msgstr ""
 
+msgid "Picture"
+msgstr ""
+
 msgid "Pictures of your boat"
+msgstr ""
+
+msgid "Picture|Description"
+msgstr ""
+
+msgid "Picture|Image content type"
+msgstr ""
+
+msgid "Picture|Image file name"
+msgstr ""
+
+msgid "Picture|Image file size"
+msgstr ""
+
+msgid "Picture|Image updated at"
 msgstr ""
 
 msgid "Remove %{name} from SeaForAll"
@@ -219,6 +381,78 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
+msgid "User"
+msgstr ""
+
+msgid "User|Admin"
+msgstr ""
+
+msgid "User|Bio"
+msgstr ""
+
+msgid "User|Birthdate"
+msgstr ""
+
+msgid "User|Current sign in at"
+msgstr ""
+
+msgid "User|Current sign in ip"
+msgstr ""
+
+msgid "User|Email"
+msgstr ""
+
+msgid "User|Encrypted password"
+msgstr ""
+
+msgid "User|First name"
+msgstr ""
+
+msgid "User|Image content type"
+msgstr ""
+
+msgid "User|Image file name"
+msgstr ""
+
+msgid "User|Image file size"
+msgstr ""
+
+msgid "User|Image updated at"
+msgstr ""
+
+msgid "User|Last name"
+msgstr ""
+
+msgid "User|Last sign in at"
+msgstr ""
+
+msgid "User|Last sign in ip"
+msgstr ""
+
+msgid "User|Location"
+msgstr ""
+
+msgid "User|Phone"
+msgstr ""
+
+msgid "User|Provider"
+msgstr ""
+
+msgid "User|Remember created at"
+msgstr ""
+
+msgid "User|Reset password sent at"
+msgstr ""
+
+msgid "User|Reset password token"
+msgstr ""
+
+msgid "User|Sign in count"
+msgstr ""
+
+msgid "User|Uid"
+msgstr ""
+
 msgid "Welcome %{name}"
 msgstr ""
 
@@ -260,12 +494,24 @@ msgid ""
 "it, what you use it for and what you love of your boat"
 msgstr ""
 
+msgid "bareboat"
+msgstr ""
+
 msgid "boat"
 msgid_plural "boats"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "both"
+msgstr ""
+
+msgid "captained"
+msgstr ""
+
 msgid "complete your Profile!"
+msgstr ""
+
+msgid "diesel"
 msgstr ""
 
 msgid "e.g. +39 012 3456789"
@@ -280,10 +526,16 @@ msgstr ""
 msgid "leave it blank if you don't want to change it"
 msgstr ""
 
+msgid "mix"
+msgstr ""
+
 msgid "must be before %{date}"
 msgstr ""
 
 msgid "or just fill the form below"
+msgstr ""
+
+msgid "petrol"
 msgstr ""
 
 msgid "too many pictures (choose at most 10)"
