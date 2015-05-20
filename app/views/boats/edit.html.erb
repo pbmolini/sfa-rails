@@ -14,16 +14,24 @@
 			<h1><%= _('Edit Boat') %></h1>
 			<ul class="nav nav-pills">
         <li role="presentation" class="active">
-          <a href="#boat_details" aria-controls="boat_details" role="tab" data-toggle="tab"><%= _("Boat details") %></a>
+          <a href="#boat_details" aria-controls="boat_details" role="tab" data-toggle="tab">
+          	<%= fa_icon "list-ul" %>&nbsp;&nbsp;<%= _("Boat details") %>
+          </a>
         </li>
         <li role="presentation">
-          <a href="#boat_features" aria-controls="boat_features" role="tab" data-toggle="tab"><%= _("Boat features") %></a>
+          <a href="#boat_features" aria-controls="boat_features" role="tab" data-toggle="tab">
+          	<%= fa_icon "check-square-o" %>&nbsp;&nbsp;<%= _("Boat features") %>
+          </a>
         </li>
         <li role="presentation">
-          <a href="#boat_pictures" aria-controls="boat_pictures" role="tab" data-toggle="tab"><%= _("Boat pictures") %></a>
+          <a href="#boat_pictures" aria-controls="boat_pictures" role="tab" data-toggle="tab">
+          	<%= fa_icon "camera-retro" %>&nbsp;&nbsp;<%= _("Boat pictures") %>
+          </a>
         </li>
         <li role="presentation">
-          <a href="#boat_danger_zone" aria-controls="boat_danger_zone" role="tab" data-toggle="tab"><%= fa_icon "warning" %> <%= _("Danger Zone") %></a>
+          <a href="#boat_danger_zone" aria-controls="boat_danger_zone" role="tab" data-toggle="tab">
+          	<%= fa_icon "exclamation-circle" %>&nbsp;&nbsp;<%= _("Danger Zone") %>
+          </a>
         </li>
       </ul>
 

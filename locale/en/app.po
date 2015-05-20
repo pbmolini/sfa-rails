@@ -17,16 +17,280 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
+msgid "%{length} characters minimum"
+msgstr ""
+
+msgid "%{o}"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Are really you sure you want to delete %{name}?"
+msgstr ""
+
+msgid "Are you really sure?"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Be careful here..."
+msgstr ""
+
+msgid "Boat details"
+msgstr ""
+
+msgid "Boat features"
+msgstr ""
+
+msgid "Boat pictures"
+msgstr ""
+
+msgid "Boat was successfully created."
+msgstr ""
+
+msgid "Boat was successfully destroyed."
+msgstr ""
+
+msgid "Boat was successfully updated."
+msgstr ""
+
+msgid "Cancel my account"
+msgstr ""
+
+msgid "Change Password"
+msgstr ""
+
+msgid "Check this if the boat has an engine"
+msgstr ""
+
+msgid "Complete the profile of your boat to make it visible to the guests."
+msgstr ""
+
+msgid "Complete the profiles of your boats to make them visible to the guests."
+msgstr ""
+
+msgid "Complete this boat's profile"
+msgstr ""
+
+msgid "Create Boat"
+msgstr ""
+
+msgid "Danger Zone"
+msgstr ""
+
+msgid "Delete my account"
+msgstr ""
+
+msgid "Details of your boat"
+msgstr ""
+
+msgid "Didn't receive confirmation instructions?"
+msgstr ""
+
+msgid "Didn't receive unlock instructions?"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit Boat"
+msgstr ""
+
+msgid "Edit Profile"
+msgstr ""
+
+msgid "Engine Horse Power"
+msgstr ""
+
+msgid "Enter your Facebook account to change your email and password."
+msgstr ""
+
+msgid "Forgot your password?"
+msgstr ""
+
+msgid "Hi %{name}"
+msgstr ""
+
+msgid "How many people can jump aboard?"
+msgstr ""
+
+msgid "How much should a guest pay for a day on your boat?"
+msgstr ""
+
+msgid "License"
+msgstr ""
+
+msgid "License needed"
+msgstr ""
+
+msgid "Log in"
+msgstr ""
+
+msgid "Login info"
+msgstr ""
+
+msgid "Login with Facebook"
+msgstr ""
+
+msgid "My Boats"
+msgstr ""
+
+msgid "My Profile"
+msgstr ""
+
+msgid "New Boat"
+msgstr ""
+
+msgid "No Engine"
+msgstr ""
+
+msgid "No engine? Uncheck!"
+msgstr ""
+
+msgid "Other Features of your boat"
+msgstr ""
+
+msgid "Personal info"
+msgstr ""
+
+msgid "Pictures of your boat"
+msgstr ""
+
+msgid "Remove %{name} from SeaForAll"
+msgstr ""
+
+msgid "Remove picture"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "See all Bookings"
+msgstr ""
+
+msgid "Select the category"
+msgstr ""
+
+msgid "Select the type of fuel"
+msgstr ""
+
+msgid "Select the type of rental"
+msgstr ""
+
+msgid "Select the year"
+msgstr ""
+
+msgid "Sign in with %{provider}"
+msgstr ""
+
+msgid "Sign up"
+msgstr ""
+
+msgid "Sign up with Facebook"
+msgstr ""
+
+msgid "Start register"
+msgstr ""
+
+msgid "Tell us something about you, and how much you love your boat!"
+msgstr ""
+
+msgid "Thank you for joining SeaForAll. You can register your boat in a minute, just"
+msgstr ""
+
 msgid ""
 "Thanks for joining Sea for All, the best community of people who love boats an"
 "d who share boats for boating together on boats."
 msgstr ""
 
+msgid "They can't be both true!"
+msgstr ""
+
+msgid ""
+"This boat cannot be published yet. Fill all the fields and upload at least one"
+" picture to complete the boat's profile."
+msgstr ""
+
+msgid "Tired of sharing your boat?"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Welcome %{name}"
+msgstr ""
+
 msgid "Welcome %{user}!!"
+msgstr ""
+
+msgid "Welcome to SEAFORALL and thank you for joining us!"
 msgstr ""
 
 msgid "Welcome to Sea for All!"
 msgstr ""
 
+msgid "What is its name?"
+msgstr ""
+
+msgid "Where is your boat moored? E.g. Molo Ponte Morosini, 46, Genoa"
+msgstr ""
+
+msgid "Who built your boat?"
+msgstr ""
+
+msgid "You created this account using your Facebook credentials."
+msgstr ""
+
+msgid "You have started the registration of %{num}"
+msgstr ""
+
+msgid "You have to log in to continue."
+msgstr ""
+
 msgid "You should check out this welcome video: "
+msgstr ""
+
+msgid "Your boat's length, in meters"
+msgstr ""
+
+msgid ""
+"Your guests will love to know more about your boat. Tell them something about "
+"it, what you use it for and what you love of your boat"
+msgstr ""
+
+msgid "boat"
+msgid_plural "boats"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "complete your Profile!"
+msgstr ""
+
+msgid "e.g. +39 012 3456789"
+msgstr ""
+
+msgid "e.g. 200 E Main St Phoenix AZ 85123 USA"
+msgstr ""
+
+msgid "e.g. Pursuit DC 265, Cobalt A25"
+msgstr ""
+
+msgid "leave it blank if you don't want to change it"
+msgstr ""
+
+msgid "must be before %{date}"
+msgstr ""
+
+msgid "or just fill the form below"
+msgstr ""
+
+msgid "too many pictures (choose at most 10)"
+msgstr ""
+
+msgid "we need your current password to confirm your changes"
+msgstr ""
+
+msgid "€/day"
 msgstr ""

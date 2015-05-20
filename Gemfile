@@ -53,6 +53,7 @@ gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 
 gem 'gettext_i18n_rails'
+gem "gettext_i18n_rails_js", "~> 1.0.0"
 gem 'font-awesome-rails'
 
 # for uploading photos

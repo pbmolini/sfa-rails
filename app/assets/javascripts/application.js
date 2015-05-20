@@ -22,4 +22,6 @@
 //= require turbolinks
 //= require toastr
 //= require dropzone
+//= require_tree ./locale
+//= require gettext/all
 //= require_tree .

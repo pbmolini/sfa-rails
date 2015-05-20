@@ -76,27 +76,27 @@
           <h1 class="text-center">Cosa fa SEA FOR ALL</h1>
           <div class="col-sm-6 owner text-center">
             <div class="description-icon">
-              <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-blue.png'), page_path('help/host') %>
+              <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-blue.png'), page_path(id: 'help/host') %>
             </div>
-            <h2><%= link_to "Vuoi guadagnare con la tua barca?", page_path('help/host') %></h2>
+            <h2><%= link_to "Vuoi guadagnare con la tua barca?", page_path(id: 'help/host') %></h2>
             <ul>
               <li>Troviamo persone interessate ad usarla</li>
               <li>e ti aiutiamo ad abbattere i costi</li>
             </ul>
-            <p><small><%= link_to "Maggiori informazioni", page_path('help/host') %></small></p>
+            <p><small><%= link_to "Maggiori informazioni", page_path(id: 'help/host') %></small></p>
           </div>
           <div class="col-sm-6 consumer text-center">
             <div class="description-icon">
-              <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path('help/guest') %>
+              <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path(id: 'help/guest') %>
             </div>
             <h2>
-              <%= link_to "Vuoi passare una giornata in barca?", page_path('help/guest') %>
+              <%= link_to "Vuoi passare una giornata in barca?", page_path(id: 'help/guest') %>
             </h2>
             <ul>
               <li>Ti aiutiamo a trovare la barca adatta alle tue esigenze</li>
               <li>per divertirti ad un prezzo abbordabile</li>
             </ul>
-            <p><small><%= link_to "Maggiori informazioni", page_path('help/guest') %></small></p>
+            <p><small><%= link_to "Maggiori informazioni", page_path(id: 'help/guest') %></small></p>
           </div>
         </div>
       </div>
