@@ -16,7 +16,7 @@ $(document).ready () ->
     paramName: "picture[image]"
     # show remove links on each image upload
     addRemoveLinks: true
-    dictDefaultMessage: __('Drop here the photos of your boat! You are already awesome!')
+    dictDefaultMessage: "<i class='fa fa-4x fa-camera-retro'></i><br>#{__('Drop here the photos of your boat! You are already awesome!')}"
     dictFallbackMessage: __("Your browser does not support drag'n'drop file uploads.")
     dictFallbackText: __("Please use the fallback form below to upload your files like in the olden days.")
     dictInvalidFileType: __("This filetype is not supported.")
