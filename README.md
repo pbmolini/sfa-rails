@@ -18,6 +18,25 @@ Branch *master* is the one used for the **production** deployment.
 
 Branch *development* is the one used for the **staging** deployment.
 
+## Translations
+
+If there are new models' columns
+
+```
+rake gettext:store_model_attributes
+```
+
+If there are new localized strings
+```
+rake gettext_find
+```
+
+If there are new localized string in Javascript files
+
+```
+rake gettext:po_to_json
+``` 
+
 ## Testing
 
 To run Cucumber tests:
