@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /it|en/ do
     resources :boats do
+      post 'publish', on: :member
       resources :pictures, only: [:index, :new, :create, :destroy]
       resources :bookings
       resources :boat_features_sets, as: :features_sets # to avoid boat_boat_features_sets_path

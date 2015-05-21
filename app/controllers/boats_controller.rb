@@ -1,8 +1,8 @@
 class BoatsController < ApplicationController
   load_and_authorize_resource
 
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_boat, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :publish]
+  before_action :set_boat, only: [:show, :edit, :update, :destroy, :publish]
 
   # GET /boats
   # GET /boats.json
@@ -53,10 +53,23 @@ class BoatsController < ApplicationController
     respond_to do |format|
       if @boat.update(boat_params)
         format.html { redirect_to @boat, notice: _("Boat was successfully updated.") }
+        format.js { render 'reload' }
         format.json { render :show, status: :ok, location: @boat }
       else
         format.html { render :edit }
+        format.js { render 'reload' }
         format.json { render json: @boat.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def publish
+    @boat.complete = true
+    respond_to do |format|
+      if @boat.save
+        format.html { redirect_to @boat, notice: _('Yay! You published your boat on the mighty board! Hand it over NOW! It\'s warmer') }
+      else
+        format.js { render 'reload' }
       end
     end
   end
