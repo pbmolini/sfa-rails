@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .boat-card {
-  
+
   a {
     color: $black;
     font-weight: bold;
@@ -12,7 +12,7 @@
   a:hover {
     text-decoration: none;
   }
-  
+
   .picture {
     overflow: hidden;
     height: 200px;
@@ -21,14 +21,14 @@
     background-size: cover;
     position: relative;
   }
-  
+
   .boat-owner {
     margin: 1em 0;
   }
 
   h3 {
     margin-top: 10px;
-    margin-bottom: 0;    
+    margin-bottom: 0;
   }
 }
 
@@ -48,7 +48,7 @@
   a {
     text-decoration: none;
   }
-  
+
   .boat-list-wrapper {
     background: white;
 
@@ -79,4 +79,16 @@
 
 span.boat-input-group-addon {
   width: 42px;
+}
+
+
+.saving {
+  color: $brand-success;
+  padding-left: 10px;
+}
+
+.last-update {
+  font-size: small;
+  text-decoration: underline;
+  color: grey;
 }

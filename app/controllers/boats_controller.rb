@@ -69,7 +69,7 @@ class BoatsController < ApplicationController
       if @boat.save
         format.html { redirect_to @boat, notice: _('Yay! You published your boat on the mighty board! Hand it over NOW! It\'s warmer') }
       else
-        format.js { render 'reload' }
+        format.html { render :edit }
       end
     end
   end

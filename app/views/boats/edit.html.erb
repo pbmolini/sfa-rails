@@ -66,9 +66,10 @@
 <%= content_for :scripts do %>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#boat_details, #boat_features').find('form input[type="submit"]').attr('disabled','disabled');
+		$('#boat_details, #boat_features').find('form .saving').hide();
 		$('#boat_details, #boat_features').on('change', function(){
-			$(this).find('input[type="submit"]').removeAttr('disabled');
+			$(this).find('.saving').fadeIn();
+			$(this).find('form').submit();
 		});
 	});
 </script>
