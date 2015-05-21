@@ -236,6 +236,9 @@ msgstr ""
 msgid "Didn't receive unlock instructions?"
 msgstr ""
 
+msgid "Drop here the photos of your boat! You are already awesome!"
+msgstr ""
+
 msgid "Edit"
 msgstr ""
 

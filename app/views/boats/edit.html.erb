@@ -6,7 +6,7 @@
 					<div class="col-md-8 col-md-offset-2 alert alert-warning">
 						<p class="text-center">
 							<small><%= _("This boat cannot be published yet. Fill all the fields and upload at least one picture to complete the boat's profile.") %></small>
-						</p>						
+						</p>
 					</div>
 				</div>
 			<% end %>
@@ -61,7 +61,7 @@
 		          boolean: :vertical_boolean
 		        } do |f| %>
 					<h3><%= _("Other Features of your boat") %><%= f.submit _("Save"), class: 'btn btn-success pull-right' %></h3>
-						
+
 		  			<%= f.error_notification %>
 		  			<% @boat.errors[:base].each do |error| %>
 		    			<p><%= error %></p>

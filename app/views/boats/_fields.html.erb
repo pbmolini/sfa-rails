@@ -1,16 +1,16 @@
 <div class="row">
-  <div class="col-md-4">  
+  <div class="col-md-4">
     <%= f.association :boat_category,
                       prompt: _("Select the category"),
                       input_html: { class: 'form-control' },
-                      label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
+                      label_method: ->(obj) { _(obj.to_s).capitalize },
                       required: false %>
   </div>
   <div class="col-md-4">
     <%= f.input :rental_type,
                 collection: Boat::RENTAL_TYPES,
                 prompt: _("Select the type of rental"),
-                label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
+                label_method: ->(obj) { _(obj.to_s).capitalize },
                 required: false %>
   </div>
   <div class="col-md-4">
@@ -48,13 +48,13 @@
     <span class="input-group-addon boat-input-group-addon"><%= fa_icon 'calendar' %></span>
 <% end %>
   </div>
-  <div class="col-md-4">    
+  <div class="col-md-4">
     <%= f.input :length, wrapper: :vertical_input_group, required: false do %>
       <%= f.input_field :length, placeholder: _("Your boat's length, in meters"), class: "form-control" %>
       <span class="input-group-addon boat-input-group-addon">m</span>
     <% end %>
   </div>
-  <div class="col-md-4">    
+  <div class="col-md-4">
     <%= f.input :guest_capacity, wrapper: :vertical_input_group, required: false do %>
       <%= f.input_field :guest_capacity, placeholder: _("How many people can jump aboard?"), class: 'form-control' %>
       <span class="input-group-addon boat-input-group-addon"><%= fa_icon 'users' %></span>
@@ -67,7 +67,7 @@
     <%= f.input :fuel_type,
                 collection: Boat::FUEL_TYPES,
                 prompt: _("Select the type of fuel"),
-                label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
+                label_method: ->(obj) { _(obj.to_s).capitalize },
                 required: false %>
   </div>
   <div class="col-md-4">
@@ -112,7 +112,7 @@
       if (hasEngineOrIsNew) {
         $('#engine-presence').prop('checked', true);
       } else {
-        $('#boat_horse_power').attr("readonly", "readonly").val("0");   
+        $('#boat_horse_power').attr("readonly", "readonly").val("0");
         $('.boat_horse_power > label').text("<%= _('No Engine') %>");
       }
     };
@@ -128,10 +128,10 @@
       $('#engine-presence').on('change', function(){
         // Use 'readonly' instead of 'disable' because it keeps the val()
         if ($(this).is(':checked')) {
-          $('#boat_horse_power').removeAttr("readonly").val("<%= @boat.horse_power %>");  
+          $('#boat_horse_power').removeAttr("readonly").val("<%= @boat.horse_power %>");
           $('.boat_horse_power > label').text("<%= _('Engine Horse Power') %>");
         } else {
-          $('#boat_horse_power').attr("readonly", "readonly").val("0");   
+          $('#boat_horse_power').attr("readonly", "readonly").val("0");
           $('.boat_horse_power > label').text("<%= _('No Engine') %>");
         }
       });

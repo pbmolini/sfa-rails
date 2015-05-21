@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-05-20 23:10+0100\n"
+"PO-Revision-Date: 2015-05-20 23:46+0100\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"POT-Creation-Date: 2015-05-20 23:31+0200\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8\n"
+"POT-Creation-Date: 2015-05-21 21:34+0200\n"
 
 msgid "%{length} characters minimum"
 msgstr "minimo %{length} caratteri"
@@ -42,21 +42,18 @@ msgstr "Occhio qui..."
 msgid "Boat"
 msgstr ""
 
-#, fuzzy
 msgid "Boat category"
-msgstr "Seleziona la categoria"
+msgstr "Tipologia"
 
 msgid "Boat details"
 msgstr "Dettagli"
 
-#, fuzzy
 msgid "Boat feature"
-msgstr "Caratteristiche"
+msgstr "Caratteristica"
 
 msgid "Boat features"
 msgstr "Caratteristiche"
 
-#, fuzzy
 msgid "Boat features set"
 msgstr "Caratteristiche"
 
@@ -76,129 +73,121 @@ msgid "BoatCategory|Name"
 msgstr ""
 
 msgid "BoatFeaturesSet|Anchor"
-msgstr ""
+msgstr "Ancora"
 
 msgid "BoatFeaturesSet|Anchor windlass"
-msgstr ""
+msgstr "Ancora con verricello"
 
 msgid "BoatFeaturesSet|Autopilot"
-msgstr ""
+msgstr "Autopilota"
 
 msgid "BoatFeaturesSet|Bimini top"
-msgstr ""
+msgstr "Tendalino"
 
 msgid "BoatFeaturesSet|Boarding ladder"
-msgstr ""
+msgstr "Scaletta"
 
 msgid "BoatFeaturesSet|Cabin cruiser bed"
-msgstr ""
+msgstr "Cabinato/Posti letto"
 
 msgid "BoatFeaturesSet|Cooler"
-msgstr ""
+msgstr "Frigorifero"
 
 msgid "BoatFeaturesSet|Depth finder"
-msgstr ""
+msgstr "Ecoscandaglio"
 
 msgid "BoatFeaturesSet|Galley"
-msgstr ""
+msgstr "Cucina"
 
 msgid "BoatFeaturesSet|Inboard engine"
-msgstr ""
+msgstr "Motore entrobordo"
 
 msgid "BoatFeaturesSet|Liferaft"
-msgstr ""
+msgstr "Zattera autogonfiabile"
 
 msgid "BoatFeaturesSet|Outboard engine"
-msgstr ""
+msgstr "Motore fuoribordo"
 
 msgid "BoatFeaturesSet|Radio stereo cd mp3"
-msgstr ""
+msgstr "Radio stereo cd mp3"
 
 msgid "BoatFeaturesSet|Safety equipment"
-msgstr ""
+msgstr "Equipaggiamento di Sicurezza"
 
 msgid "BoatFeaturesSet|Shower"
-msgstr ""
+msgstr "Doccia"
 
 msgid "BoatFeaturesSet|Sink"
-msgstr ""
+msgstr "Lavello"
 
 msgid "BoatFeaturesSet|Sonar"
-msgstr ""
+msgstr "Sonar"
 
 msgid "BoatFeaturesSet|Speed instrumentation radar"
-msgstr ""
+msgstr "Strumentazione velocità"
 
 msgid "BoatFeaturesSet|Sport fishing equipment"
-msgstr ""
+msgstr "Allestimento per pesca sportiva"
 
 msgid "BoatFeaturesSet|Sunbathing area"
-msgstr ""
+msgstr "Cuscineria prendisole"
 
 msgid "BoatFeaturesSet|Trolling motor"
-msgstr ""
+msgstr "Motore di sicurezza"
 
-#, fuzzy
 msgid "BoatFeaturesSet|Tv"
-msgstr "Caratteristiche"
+msgstr "TV"
 
-#, fuzzy
 msgid "BoatFeaturesSet|Vhf"
-msgstr "Caratteristiche"
+msgstr "Radio VHF"
 
-#, fuzzy
 msgid "BoatFeaturesSet|Wc"
-msgstr "Caratteristiche"
+msgstr "WC"
 
-#, fuzzy
 msgid "BoatFeature|Name"
-msgstr "Caratteristiche"
+msgstr "Nome"
 
-#, fuzzy
 msgid "Boat|Address"
 msgstr "Indirizzo"
 
 msgid "Boat|Complete"
-msgstr ""
+msgstr "Completa"
 
 msgid "Boat|Daily price"
-msgstr ""
+msgstr "Prezzo giornaliero"
 
 msgid "Boat|Description"
-msgstr ""
+msgstr "Descrizione"
 
 msgid "Boat|Fuel type"
-msgstr ""
+msgstr "Tipo di Carburante"
 
 msgid "Boat|Guest capacity"
-msgstr ""
+msgstr "Numero max persone a bordo"
 
-#, fuzzy
 msgid "Boat|Horse power"
 msgstr "Cavalli Potenza"
 
 msgid "Boat|Length"
-msgstr ""
+msgstr "Lunghezza"
 
-#, fuzzy
 msgid "Boat|Manufacturer"
-msgstr "Caratteristiche"
+msgstr "Cantiere"
 
 msgid "Boat|Model"
-msgstr ""
+msgstr "Modello"
 
 msgid "Boat|Name"
-msgstr ""
+msgstr "Nome"
 
 msgid "Boat|Rental type"
-msgstr ""
+msgstr "Tipo di noleggio"
 
 msgid "Boat|With license"
-msgstr ""
+msgstr "Patente Nautica"
 
-#, fuzzy
 msgid "Boat|Year"
-msgstr "Caratteristiche"
+msgstr "Anno"
 
 msgid "Booking"
 msgstr ""
@@ -246,6 +235,9 @@ msgid "Didn't receive confirmation instructions?"
 msgstr ""
 
 msgid "Didn't receive unlock instructions?"
+msgstr ""
+
+msgid "Drop here the photos of your boat! You are already awesome!"
 msgstr ""
 
 msgid "Edit"
@@ -501,24 +493,24 @@ msgid "Your guests will love to know more about your boat. Tell them something a
 msgstr "Chi salirà a bordo della tua barca vorrà sapere tutto su di lei. Racconta qualcosa, per esempio per cosa la usi di solito, con chi ci vai e perché la tua barca è unica!"
 
 msgid "bareboat"
-msgstr ""
+msgstr "senza capitano"
 
 msgid "boat"
 msgid_plural "boats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "barca"
+msgstr[1] "barche"
 
 msgid "both"
-msgstr ""
+msgstr "entrambi"
 
 msgid "captained"
-msgstr ""
+msgstr "con capitano"
 
 msgid "complete your Profile!"
 msgstr ""
 
 msgid "diesel"
-msgstr ""
+msgstr "gasolio"
 
 msgid "e.g. +39 012 3456789"
 msgstr "es. +39 012 3456789"
@@ -533,7 +525,7 @@ msgid "leave it blank if you don't want to change it"
 msgstr "lascia vuoto se non vuoi cambiare la password"
 
 msgid "mix"
-msgstr ""
+msgstr "miscela"
 
 msgid "must be before %{date}"
 msgstr ""
@@ -542,7 +534,7 @@ msgid "or just fill the form below"
 msgstr "oppure compila i seguenti campi"
 
 msgid "petrol"
-msgstr ""
+msgstr "benzina"
 
 msgid "too many pictures (choose at most 10)"
 msgstr ""
