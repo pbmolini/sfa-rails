@@ -46,6 +46,9 @@ class Boat < ActiveRecord::Base
   scope :complete, -> { where complete: true }
   scope :incomplete, -> { where complete: false }
 
+  geocoded_by :address
+  after_validation :geocode, if: -> { address.present? and address_changed? }
+
   # Returns all the features that are true in self.boat_features_set
   def features
     self.boat_features_set.attributes.select { |k, v| k if v == true }.keys

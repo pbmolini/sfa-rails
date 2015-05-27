@@ -67,12 +67,44 @@
   }
 }
 
-.boat-info {
-  margin-top: 0;
-  padding-top: 1em;
-  background: white;
-  padding-left: 24px;
-  padding-right: 24px;
+.boat-body {
+  background-color: white;
+  margin-bottom: 60px; //because we are clevah!
+
+  .boat-info {
+    margin-top: 0;
+    padding-top: 1em;
+    background: white;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .boat-booking {
+    background-color: #CDE1EE;
+    .boat-price {
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      background-color: white;
+      #price {
+        font-size: 2em;
+        margin-bottom: 0;
+      }
+      #rental-type {
+        font-size: .8em;
+      }
+    }
+    .booking-form {
+      margin-bottom: 2em;
+    }
+    .boat-map {
+      height: 300px;
+      padding: 0;
+      #map {
+        height: 100%;
+      }
+    }
+  }
 }
 
 .boat-list {

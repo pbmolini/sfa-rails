@@ -59,6 +59,10 @@ gem 'font-awesome-rails'
 # for uploading photos
 gem 'dropzonejs-rails'
 
+# for maps
+gem 'leaflet-rails'
+gem 'geocoder'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

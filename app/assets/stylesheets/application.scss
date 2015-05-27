@@ -13,6 +13,10 @@
  */
 
 /*"bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"*/
+
+//= depend_on_asset "layers.png"
+//= depend_on_asset "layers-2x.png"
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
@@ -20,6 +24,7 @@
 @import "font-awesome";
 @import "toastr";
 @import "dropzone/dropzone";
+@import "leaflet";
 
 // our stuff
 @import "boats";

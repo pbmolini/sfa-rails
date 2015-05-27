@@ -20,8 +20,8 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-12 boat-info">
+<div class="row boat-body">
+  <div class="col-sm-8 boat-info">
 
     <p><strong><%= @boat.address %></strong></p>
 
@@ -29,14 +29,28 @@
 
     <p><%= @boat.description %></p>
 
-    <h2><%= _('Accessories') %></h2>
+    <h2><%= _('Details') %></h2>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <p><strong><%= s_("Boat category") %>:</strong> <%= _(@boat.boat_category.name) %></p>
+        <p><strong><%= s_("Boat|Manufacturer") %>:</strong> <%= @boat.manufacturer %></p>
+        <p><strong><%= s_("Boat|Model") %>:</strong> <%= @boat.model %></p>
+      </div>
+      <div class="col-sm-6">
+        <p><strong><%= s_("Boat|Length") %>:</strong> <%= @boat.length %> m</p>
+        <p><strong><%= s_("Boat|Guest capacity") %>:</strong> <%= @boat.guest_capacity %></p>
+      </div>
+    </div>
+
+    <h2><%= _('Features') %></h2>
 
     <div class="row">
       <div class="col-sm-6">
         <ul>
           <% @boat.features.each_with_index do |f,i| %>
             <% if i.even? %>
-              <li><%= _(f) %></li>
+              <li><%= s_("BoatFeaturesSet|#{f.humanize}") %></li>
             <% end %>
           <% end %>
         </ul>
@@ -45,7 +59,7 @@
         <ul>
           <% @boat.features.each_with_index do |f,i| %>
             <% if i.odd? %>
-              <li><%= _(f) %></li>
+              <li><%= s_("BoatFeaturesSet|#{f.humanize}") %></li>
             <% end %>
           <% end %>
         </ul>
@@ -59,47 +73,50 @@
     </p>
     <% end %>
 
-<!--     <p>
-      <strong>Manufacturer:</strong>
-      <%= @boat.manufacturer %>
-    </p>
-
-    <p>
-      <strong>Daily price:</strong>
-      <%= @boat.daily_price %>
-    </p>
-
-    <p>
-      <strong>Year:</strong>
-      <%= @boat.year %>
-    </p>
-
-    <p>
-      <strong>Model:</strong>
-      <%= @boat.model %>
-    </p>
-
-    <p>
-      <strong>Length:</strong>
-      <%= @boat.length %>
-    </p>
-
-    <p>
-      <strong>Guest capacity:</strong>
-      <%= @boat.guest_capacity %>
-    </p>
-
-    <p>
-      <strong>Boat category:</strong>
-      <%= @boat.boat_category %>
-    </p> -->
-
+  </div>
+  <div class="col-sm-4 boat-booking">
+    <div class="row">
+      <div class="col-sm-12 boat-price">
+        <p id="price">
+          <%= _("%{boat_price} €/day") %{ boat_price: @boat.daily_price } %><br>
+        </p>
+        <p id="rental-type">
+          <%= _(@boat.rental_type) %>
+        </p>
+      </div>
+    </div>
+    <%# if can? :create, @boat.bookings.build %>
+      <div class="row booking-form">
+        <div class="col-sm-12 boat-booking">
+          <%= render 'bookings/form' %>
+        </div>
+      </div>
+    <%# end %>
+    <div class="row">
+      <div class="col-sm-12 boat-map">
+        <%=
+          map(:center => {
+            :latlng => [@boat.latitude, @boat.longitude],
+            :zoom => 12
+          },
+          :markers => [
+            {
+              :latlng => [@boat.latitude, @boat.longitude],
+              icon: {
+                icon_url: aws_image_path_for('sfa-logo-circle-blue.png'),
+                icon_size: 42
+              }
+            }
+          ])
+        %>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-12">
-    <%= render 'bookings/form' if can? :create, @booking %>
+
   </div>
 </div>
 

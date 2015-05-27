@@ -1,4 +1,4 @@
-<h2>Book it! NOW!</h2>
+<h2><%= _("Book") %></h2>
 
 <%= simple_form_for([@boat, @booking]) do |f| %>
   <% if @booking.errors[:base].any? %>
@@ -29,7 +29,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, _('Book'), class: 'btn btn-block btn-lg btn-success' %>
   </div>
 <% end %>
 
