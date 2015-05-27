@@ -59,6 +59,10 @@ gem 'font-awesome-rails'
 # for uploading photos
 gem 'dropzonejs-rails'
 
+# Delayed Jobs
+gem 'delayed_job_active_record'
+gem 'daemons'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
