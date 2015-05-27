@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .boat-card {
-  
+
   a {
     color: $black;
     font-weight: bold;
@@ -12,7 +12,7 @@
   a:hover {
     text-decoration: none;
   }
-  
+
   .picture {
     overflow: hidden;
     height: 200px;
@@ -21,25 +21,58 @@
     background-size: cover;
     position: relative;
   }
-  
+
   .boat-owner {
     margin: 1em 0;
   }
 
   h3 {
     margin-top: 10px;
-    margin-bottom: 0;    
+    margin-bottom: 0;
   }
 }
 
-.carousel#boat-photos-carousel {
-  height: 500px;
-  .carousel-inner {
-    height: 100%;
-    img {
-      width: 100%;
+.boat-hero {
+  .carousel-container {
+    padding: 0;
+    .carousel#boat-photos-carousel {
+      margin-top: -20px;
+      height: 500px;
+      .carousel-inner {
+        height: 100%;
+        img {
+          width: 100%;
+        }
+      }
     }
   }
+  .boat-name-container {
+    position: absolute;
+    bottom: 0;
+    left: 24px;
+    text-shadow: #565a5c 2px 2px 2px;
+    color: white;
+    h1.boat-name {
+      font-size: 5em;
+      margin-bottom: 0;
+    }
+    h2.boat-owner {
+      margin-top: 0;
+      .user-avatar {
+        border-radius: 50%;
+        border: 4px solid white;
+        box-shadow: #565a5c 2px 2px 2px;
+      }
+    }
+  }
+}
+
+.boat-info {
+  margin-top: 0;
+  padding-top: 1em;
+  background: white;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .boat-list {
@@ -48,7 +81,7 @@
   a {
     text-decoration: none;
   }
-  
+
   .boat-list-wrapper {
     background: white;
 
