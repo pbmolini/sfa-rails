@@ -19,13 +19,13 @@
         <%= f.association :boat_category,
             prompt: _("Select the category"),
             input_html: { class: 'form-control' },
-            label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
+            label_method: ->(obj) { _(obj.to_s).capitalize },
             required: false %>
 
         <%= f.input :rental_type,
             collection: Boat::RENTAL_TYPES,
             prompt: _("Select the type of rental"),
-            label_method: ->(obj) { _("%{o}") %{o: obj.to_s.capitalize} },
+            label_method: ->(obj) { _(obj.to_s).capitalize },
             required: false %>
 
         <%= f.input :address,

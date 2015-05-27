@@ -63,6 +63,10 @@ gem 'dropzonejs-rails'
 gem 'leaflet-rails'
 gem 'geocoder'
 
+# Delayed Jobs
+gem 'delayed_job_active_record'
+gem 'daemons'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
