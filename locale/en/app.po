@@ -59,13 +59,13 @@ msgstr ""
 msgid "Boat pictures"
 msgstr ""
 
-msgid "Boat was successfully created."
+msgid "Boat was successfully created"
 msgstr ""
 
-msgid "Boat was successfully destroyed."
+msgid "Boat was successfully destroyed"
 msgstr ""
 
-msgid "Boat was successfully updated."
+msgid "Boat was successfully updated"
 msgstr ""
 
 msgid "BoatCategory|Name"
@@ -203,6 +203,9 @@ msgstr ""
 msgid "Cancel my account"
 msgstr ""
 
+msgid "Cancel upload"
+msgstr ""
+
 msgid "Change Password"
 msgstr ""
 
@@ -222,6 +225,9 @@ msgid "Create Boat"
 msgstr ""
 
 msgid "Danger Zone"
+msgstr ""
+
+msgid "Darn! Something went wrong."
 msgstr ""
 
 msgid "Delete my account"
@@ -266,6 +272,9 @@ msgstr ""
 msgid "How much should a guest pay for a day on your boat?"
 msgstr ""
 
+msgid "Last update:"
+msgstr ""
+
 msgid "License"
 msgstr ""
 
@@ -296,6 +305,9 @@ msgstr ""
 msgid "No engine? Uncheck!"
 msgstr ""
 
+msgid "Other"
+msgstr ""
+
 msgid "Other Features of your boat"
 msgstr ""
 
@@ -323,13 +335,30 @@ msgstr ""
 msgid "Picture|Image updated at"
 msgstr ""
 
+msgid ""
+"Please use the fallback form below to upload your files like in the olden days"
+"."
+msgstr ""
+
+msgid "Power"
+msgstr ""
+
+msgid "Publish"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
 msgid "Remove %{name} from SeaForAll"
 msgstr ""
 
 msgid "Remove picture"
 msgstr ""
 
-msgid "Save"
+msgid "Sail"
+msgstr ""
+
+msgid "Saving..."
 msgstr ""
 
 msgid "See all Bookings"
@@ -359,6 +388,9 @@ msgstr ""
 msgid "Start register"
 msgstr ""
 
+msgid "Sure?"
+msgstr ""
+
 msgid "Tell us something about you, and how much you love your boat!"
 msgstr ""
 
@@ -378,7 +410,16 @@ msgid ""
 " picture to complete the boat's profile."
 msgstr ""
 
+msgid "This filetype is not supported."
+msgstr ""
+
+msgid "This photo is too big! No more than {{maxFilesize}} MB please."
+msgstr ""
+
 msgid "Tired of sharing your boat?"
+msgstr ""
+
+msgid "Too many photos!"
 msgstr ""
 
 msgid "Update"
@@ -477,6 +518,9 @@ msgstr ""
 msgid "Who built your boat?"
 msgstr ""
 
+msgid "Yay! You published your boat! Prepare to share it!"
+msgstr ""
+
 msgid "You created this account using your Facebook credentials."
 msgstr ""
 
@@ -490,6 +534,9 @@ msgid "You should check out this welcome video: "
 msgstr ""
 
 msgid "Your boat's length, in meters"
+msgstr ""
+
+msgid "Your browser does not support drag'n'drop file uploads."
 msgstr ""
 
 msgid ""

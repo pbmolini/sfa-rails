@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-05-21 21:36+0100\n"
+"PO-Revision-Date: 2015-05-27 21:33+0100\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"Last-Translator: Aaron Ciaghi <aaron.ciaghi@gmail.com>\n"
-"X-Generator: Poedit 1.7.5\n"
+"Last-Translator: Pietro <pbmolini@fbk.eu>\n"
+"X-Generator: Poedit 1.8.1\n"
 "POT-Creation-Date: \n"
 
 msgid "%{length} characters minimum"
@@ -60,13 +60,13 @@ msgstr "Caratteristiche"
 msgid "Boat pictures"
 msgstr "Foto"
 
-msgid "Boat was successfully created."
+msgid "Boat was successfully created"
 msgstr "La barca è stata creata"
 
-msgid "Boat was successfully destroyed."
+msgid "Boat was successfully destroyed"
 msgstr "La barca è stata eliminata"
 
-msgid "Boat was successfully updated."
+msgid "Boat was successfully updated"
 msgstr "La barca è stata aggiornata"
 
 msgid "BoatCategory|Name"
@@ -204,6 +204,9 @@ msgstr ""
 msgid "Cancel my account"
 msgstr "Elimina il mio account"
 
+msgid "Cancel upload"
+msgstr ""
+
 msgid "Change Password"
 msgstr "Cambia password"
 
@@ -224,6 +227,9 @@ msgstr "Crea barca"
 
 msgid "Danger Zone"
 msgstr "Zona Pericolosa"
+
+msgid "Darn! Something went wrong."
+msgstr "Accidenti! Si è verificato un problema."
 
 msgid "Delete my account"
 msgstr "Elimina il mio account"
@@ -267,11 +273,14 @@ msgstr ""
 msgid "How much should a guest pay for a day on your boat?"
 msgstr ""
 
+msgid "Last update:"
+msgstr "Ultimo aggiornamento"
+
 msgid "License"
-msgstr ""
+msgstr "Patente Nautica"
 
 msgid "License needed"
-msgstr ""
+msgstr "Solo con Patente Nautica"
 
 msgid "Log in"
 msgstr "Log in"
@@ -296,6 +305,9 @@ msgstr "Senza motore"
 
 msgid "No engine? Uncheck!"
 msgstr "Senza motore? Deseleziona!"
+
+msgid "Other"
+msgstr "Altro"
 
 msgid "Other Features of your boat"
 msgstr ""
@@ -324,14 +336,30 @@ msgstr ""
 msgid "Picture|Image updated at"
 msgstr ""
 
-msgid "Remove %{name} from SeaForAll"
+msgid ""
+"Please use the fallback form below to upload your files like in the olden days."
 msgstr ""
+
+msgid "Power"
+msgstr "Motore"
+
+msgid "Publish"
+msgstr "Pubblica"
+
+msgid "Remove"
+msgstr ""
+
+msgid "Remove %{name} from SeaForAll"
+msgstr "Elimina %{name} da SeaForAll"
 
 msgid "Remove picture"
 msgstr ""
 
-msgid "Save"
-msgstr "Salva"
+msgid "Sail"
+msgstr "Vela"
+
+msgid "Saving..."
+msgstr "Salvo…"
 
 msgid "See all Bookings"
 msgstr "Vedi prenotazioni"
@@ -360,6 +388,9 @@ msgstr "Registrati con Facebook"
 msgid "Start register"
 msgstr ""
 
+msgid "Sure?"
+msgstr ""
+
 msgid "Tell us something about you, and how much you love your boat!"
 msgstr ""
 
@@ -381,8 +412,17 @@ msgstr ""
 "Questa barca non può ancora essere pubblicata. Riempi tutti i campi necessari e "
 "carica almeno un’immagine per completare la registrazione della barca."
 
+msgid "This filetype is not supported."
+msgstr ""
+
+msgid "This photo is too big! No more than {{maxFilesize}} MB please."
+msgstr ""
+
 msgid "Tired of sharing your boat?"
 msgstr "Ti sei stancato di condividere la tua barca?"
+
+msgid "Too many photos!"
+msgstr ""
 
 msgid "Update"
 msgstr "Aggiorna"
@@ -394,10 +434,10 @@ msgid "User|Admin"
 msgstr ""
 
 msgid "User|Bio"
-msgstr ""
+msgstr "Breve Biografia"
 
 msgid "User|Birthdate"
-msgstr ""
+msgstr "Data di nascita"
 
 msgid "User|Current sign in at"
 msgstr ""
@@ -412,7 +452,7 @@ msgid "User|Encrypted password"
 msgstr ""
 
 msgid "User|First name"
-msgstr ""
+msgstr "Nome"
 
 msgid "User|Image content type"
 msgstr ""
@@ -427,7 +467,7 @@ msgid "User|Image updated at"
 msgstr ""
 
 msgid "User|Last name"
-msgstr ""
+msgstr "Cognome"
 
 msgid "User|Last sign in at"
 msgstr ""
@@ -439,7 +479,7 @@ msgid "User|Location"
 msgstr ""
 
 msgid "User|Phone"
-msgstr ""
+msgstr "Numero di telefono"
 
 msgid "User|Provider"
 msgstr ""
@@ -460,7 +500,7 @@ msgid "User|Uid"
 msgstr ""
 
 msgid "Welcome %{name}"
-msgstr ""
+msgstr "Benvenuto %{name}"
 
 msgid "Welcome %{user}!!"
 msgstr ""
@@ -480,11 +520,14 @@ msgstr ""
 msgid "Who built your boat?"
 msgstr "Qual’è il cantiere di provenienza?"
 
-msgid "You created this account using your Facebook credentials."
+msgid "Yay! You published your boat! Prepare to share it!"
 msgstr ""
 
+msgid "You created this account using your Facebook credentials."
+msgstr "Hai creato questo account utilizzando le credenziali di Facebook."
+
 msgid "You have started the registration of %{num}"
-msgstr ""
+msgstr "Hai iniziato la registrazione di % {num}"
 
 msgid "You have to log in to continue."
 msgstr "È necessario effettuare il login per continuare."
@@ -494,6 +537,9 @@ msgstr ""
 
 msgid "Your boat's length, in meters"
 msgstr "La lunghezza della barca, in metri"
+
+msgid "Your browser does not support drag'n'drop file uploads."
+msgstr "Il tuo browser non supporta il caricamento dei file tramite trascinamento"
 
 msgid ""
 "Your guests will love to know more about your boat. Tell them something about it, "
@@ -518,7 +564,7 @@ msgid "captained"
 msgstr "con capitano"
 
 msgid "complete your Profile!"
-msgstr ""
+msgstr "completa il tuo Profilo!"
 
 msgid "diesel"
 msgstr "gasolio"

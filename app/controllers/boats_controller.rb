@@ -36,7 +36,7 @@ class BoatsController < ApplicationController
     @boat.create_boat_features_set
     respond_to do |format|
       if @boat.save
-        format.html { redirect_to edit_boat_path(@boat), notice: _("Boat was successfully created.") }
+        format.html { redirect_to edit_boat_path(@boat), notice: _("Boat was successfully created") }
         format.json { render :edit, status: :created, location: @boat }
       else
         # pictures must be rebuilt to make the field appear in the form
@@ -52,7 +52,7 @@ class BoatsController < ApplicationController
   def update
     respond_to do |format|
       if @boat.update(boat_params)
-        format.html { redirect_to @boat, notice: _("Boat was successfully updated.") }
+        format.html { redirect_to @boat, notice: _("Boat was successfully updated") }
         format.js { render 'reload' }
         format.json { render :show, status: :ok, location: @boat }
       else
@@ -67,7 +67,8 @@ class BoatsController < ApplicationController
     @boat.complete = true
     respond_to do |format|
       if @boat.save
-        format.html { redirect_to @boat, notice: _('Yay! You published your boat on the mighty board! Hand it over NOW! It\'s warmer') }
+        # TODO: mandare mail per avvenuta pubblicazione
+        format.html { redirect_to @boat, notice: _('Yay! You published your boat! Prepare to share it!') }
       else
         format.html { render :edit }
       end
@@ -79,7 +80,7 @@ class BoatsController < ApplicationController
   def destroy
     @boat.destroy
     respond_to do |format|
-      format.html { redirect_to boats_url, notice: _("Boat was successfully destroyed.") }
+      format.html { redirect_to boats_url, notice: _("Boat was successfully destroyed") }
       format.json { head :no_content }
     end
   end
