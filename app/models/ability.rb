@@ -12,7 +12,7 @@ class Ability
       alias_action :create, :read, :update, :destroy, :to => :crud
 
       can [:read, :create], Boat
-      can :crud, Boat, user_id: user.id
+      can [:crud, :publish], Boat, user_id: user.id
 
       can [:read, :create], BoatFeaturesSet
       can :crud, BoatFeaturesSet do |bfs|

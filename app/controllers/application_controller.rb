@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :set_locale
   before_filter :set_gettext_locale
 
   # Prevent CSRF attacks by raising an exception.
@@ -32,9 +33,19 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
+  end
+
   private
 
   def devise_or_pages_controller?
     devise_controller? || is_a?(PagesController)
   end
+
+
 end

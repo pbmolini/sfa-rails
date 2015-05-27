@@ -1,8 +1,8 @@
 class BoatsController < ApplicationController
   load_and_authorize_resource
 
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_boat, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :publish]
+  before_action :set_boat, only: [:show, :edit, :update, :destroy, :publish]
 
   # GET /boats
   # GET /boats.json
@@ -36,7 +36,7 @@ class BoatsController < ApplicationController
     @boat.create_boat_features_set
     respond_to do |format|
       if @boat.save
-        format.html { redirect_to edit_boat_path(@boat), notice: _("Boat was successfully created.") }
+        format.html { redirect_to edit_boat_path(@boat), notice: _("Boat was successfully created") }
         format.json { render :edit, status: :created, location: @boat }
       else
         # pictures must be rebuilt to make the field appear in the form
@@ -52,11 +52,25 @@ class BoatsController < ApplicationController
   def update
     respond_to do |format|
       if @boat.update(boat_params)
-        format.html { redirect_to @boat, notice: _("Boat was successfully updated.") }
+        format.html { redirect_to @boat, notice: _("Boat was successfully updated") }
+        format.js { render 'reload' }
         format.json { render :show, status: :ok, location: @boat }
       else
         format.html { render :edit }
+        format.js { render 'reload' }
         format.json { render json: @boat.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def publish
+    @boat.complete = true
+    respond_to do |format|
+      if @boat.save
+        # TODO: mandare mail per avvenuta pubblicazione
+        format.html { redirect_to @boat, notice: _('Yay! You published your boat! Prepare to share it!') }
+      else
+        format.html { render :edit }
       end
     end
   end
@@ -66,7 +80,7 @@ class BoatsController < ApplicationController
   def destroy
     @boat.destroy
     respond_to do |format|
-      format.html { redirect_to boats_url, notice: _("Boat was successfully destroyed.") }
+      format.html { redirect_to boats_url, notice: _("Boat was successfully destroyed") }
       format.json { head :no_content }
     end
   end

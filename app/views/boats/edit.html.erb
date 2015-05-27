@@ -6,62 +6,41 @@
 					<div class="col-md-8 col-md-offset-2 alert alert-warning">
 						<p class="text-center">
 							<small><%= _("This boat cannot be published yet. Fill all the fields and upload at least one picture to complete the boat's profile.") %></small>
-						</p>						
+						</p>
 					</div>
 				</div>
 			<% end %>
 			<%# Usage of wrappers:https://github.com/plataformatec/simple_form/wiki/How-to-use-Bootstrap-3-input-group-in-Simple-Form %>
-			<h1><%= _('Edit Boat') %></h1>
+			<h1><%= _('Edit Boat') %> <%= publish_boat_button(@boat) %></h1>
 			<ul class="nav nav-pills">
         <li role="presentation" class="active">
-          <a href="#boat_details" aria-controls="boat_details" role="tab" data-toggle="tab"><%= _("Boat details") %></a>
+          <a href="#boat_details" aria-controls="boat_details" role="tab" data-toggle="tab">
+          	<%= fa_icon "list-ul" %>&nbsp;&nbsp;<%= _("Boat details") %>
+          </a>
         </li>
         <li role="presentation">
-          <a href="#boat_features" aria-controls="boat_features" role="tab" data-toggle="tab"><%= _("Boat features") %></a>
+          <a href="#boat_features" aria-controls="boat_features" role="tab" data-toggle="tab">
+          	<%= fa_icon "check-square-o" %>&nbsp;&nbsp;<%= _("Boat features") %>
+          </a>
         </li>
         <li role="presentation">
-          <a href="#boat_pictures" aria-controls="boat_pictures" role="tab" data-toggle="tab"><%= _("Boat pictures") %></a>
+          <a href="#boat_pictures" aria-controls="boat_pictures" role="tab" data-toggle="tab">
+          	<%= fa_icon "camera-retro" %>&nbsp;&nbsp;<%= _("Boat pictures") %>
+          </a>
         </li>
         <li role="presentation">
-          <a href="#boat_danger_zone" aria-controls="boat_danger_zone" role="tab" data-toggle="tab"><%= fa_icon "warning" %> <%= _("Danger Zone") %></a>
+          <a href="#boat_danger_zone" aria-controls="boat_danger_zone" role="tab" data-toggle="tab">
+          	<%= fa_icon "exclamation-circle" %>&nbsp;&nbsp;<%= _("Danger Zone") %>
+          </a>
         </li>
       </ul>
 
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="boat_details">
-					<%= simple_form_for @boat, html: { multipart: true }, wrapper: :vertical_input_group,
-		        wrapper_mappings: {
-		          check_boxes: :horizontal_radio_and_checkboxes,
-		          radio_buttons: :horizontal_radio_and_checkboxes,
-		          file: :horizontal_file_input,
-		          boolean: :vertical_boolean
-		        } do |f| %>
-		        <h3><%= _("Details of your boat") %><%= f.submit _("Save"), class: 'btn btn-success pull-right' %></h3>
-		  			<%= f.error_notification %>
-		  			<% @boat.errors[:base].each do |error| %>
-		    			<p><%= error %></p>
-		  			<% end %>
-						<%= render 'fields', f: f %>
-					<% end %>
+					<%= render 'boat_details_form' %>
 				</div>
 				<div role="tabpanel" class="tab-pane fade in" id="boat_features">
-					<%= simple_form_for @boat, html: { multipart: true }, wrapper: :vertical_input_group,
-		        wrapper_mappings: {
-		          check_boxes: :horizontal_radio_and_checkboxes,
-		          radio_buttons: :horizontal_radio_and_checkboxes,
-		          file: :horizontal_file_input,
-		          boolean: :vertical_boolean
-		        } do |f| %>
-					<h3><%= _("Other Features of your boat") %><%= f.submit _("Save"), class: 'btn btn-success pull-right' %></h3>
-						
-		  			<%= f.error_notification %>
-		  			<% @boat.errors[:base].each do |error| %>
-		    			<p><%= error %></p>
-		  			<% end %>
-						<%= f.simple_fields_for :boat_features_set do |bfs| %>
-							<%= render "boat_features_sets/fields", f: bfs %>
-						<% end %>
-					<% end %>
+					<%= render 'boat_features_form' %>
 				</div>
 				<div role="tabpanel" class="tab-pane fade in" id="boat_pictures">
 					<h3><%= _('Pictures of your boat') %></h3>
@@ -83,3 +62,15 @@
 		</div>
 	</div>
 </div>
+
+<%= content_for :scripts do %>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#boat_details, #boat_features').find('form .saving').hide();
+		$('#boat_details, #boat_features').on('change', function(){
+			$(this).find('.saving').fadeIn();
+			$(this).find('form').submit();
+		});
+	});
+</script>
+<% end %>

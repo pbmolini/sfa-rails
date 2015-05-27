@@ -18,3 +18,13 @@
     padding: 0px;
   }
 }
+
+.dropzone {
+    min-height: 300px;
+    border: 2px dashed;
+    border-radius: 10px;
+    background-color: snow;
+    .dz-message {
+        font-size: 2em;
+    }
+}

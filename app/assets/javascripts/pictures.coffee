@@ -16,6 +16,16 @@ $(document).ready () ->
     paramName: "picture[image]"
     # show remove links on each image upload
     addRemoveLinks: true
+    dictDefaultMessage: "<i class='fa fa-4x fa-camera-retro'></i><br>#{__('Drop here the photos of your boat! You are already awesome!')}"
+    dictFallbackMessage: __("Your browser does not support drag'n'drop file uploads.")
+    dictFallbackText: __("Please use the fallback form below to upload your files like in the olden days.")
+    dictInvalidFileType: __("This filetype is not supported.")
+    dictFileTooBig: __("This photo is too big! No more than {{maxFilesize}} MB please.")
+    dictResponseError: __("Darn! Something went wrong.")
+    dictCancelUpload: __("Cancel upload")
+    dictCancelUploadConfirmation: __("Sure?")
+    dictRemoveFile: __("Remove")
+    dictMaxFilesExceeded: __("Too many photos!")
     # if the upload was successful
     success: (file, response) ->
       # find the remove button link of the uploaded file and give it an id

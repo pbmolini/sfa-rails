@@ -7,7 +7,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-26 21:54+0100\n"
 "PO-Revision-Date: 2015-03-26 21:54+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: English\n"
@@ -18,14 +17,574 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
+msgid "%{length} characters minimum"
+msgstr ""
+
+msgid "%{o}"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Are really you sure you want to delete %{name}?"
+msgstr ""
+
+msgid "Are you really sure?"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Be careful here..."
+msgstr ""
+
+msgid "Boat"
+msgstr ""
+
+msgid "Boat category"
+msgstr ""
+
+msgid "Boat details"
+msgstr ""
+
+msgid "Boat feature"
+msgstr ""
+
+msgid "Boat features"
+msgstr ""
+
+msgid "Boat features set"
+msgstr ""
+
+msgid "Boat pictures"
+msgstr ""
+
+msgid "Boat was successfully created"
+msgstr ""
+
+msgid "Boat was successfully destroyed"
+msgstr ""
+
+msgid "Boat was successfully updated"
+msgstr ""
+
+msgid "BoatCategory|Name"
+msgstr ""
+
+msgid "BoatFeaturesSet|Anchor"
+msgstr ""
+
+msgid "BoatFeaturesSet|Anchor windlass"
+msgstr ""
+
+msgid "BoatFeaturesSet|Autopilot"
+msgstr ""
+
+msgid "BoatFeaturesSet|Bimini top"
+msgstr ""
+
+msgid "BoatFeaturesSet|Boarding ladder"
+msgstr ""
+
+msgid "BoatFeaturesSet|Cabin cruiser bed"
+msgstr ""
+
+msgid "BoatFeaturesSet|Cooler"
+msgstr ""
+
+msgid "BoatFeaturesSet|Depth finder"
+msgstr ""
+
+msgid "BoatFeaturesSet|Galley"
+msgstr ""
+
+msgid "BoatFeaturesSet|Inboard engine"
+msgstr ""
+
+msgid "BoatFeaturesSet|Liferaft"
+msgstr ""
+
+msgid "BoatFeaturesSet|Outboard engine"
+msgstr ""
+
+msgid "BoatFeaturesSet|Radio stereo cd mp3"
+msgstr ""
+
+msgid "BoatFeaturesSet|Safety equipment"
+msgstr ""
+
+msgid "BoatFeaturesSet|Shower"
+msgstr ""
+
+msgid "BoatFeaturesSet|Sink"
+msgstr ""
+
+msgid "BoatFeaturesSet|Sonar"
+msgstr ""
+
+msgid "BoatFeaturesSet|Speed instrumentation radar"
+msgstr ""
+
+msgid "BoatFeaturesSet|Sport fishing equipment"
+msgstr ""
+
+msgid "BoatFeaturesSet|Sunbathing area"
+msgstr ""
+
+msgid "BoatFeaturesSet|Trolling motor"
+msgstr ""
+
+msgid "BoatFeaturesSet|Tv"
+msgstr ""
+
+msgid "BoatFeaturesSet|Vhf"
+msgstr ""
+
+msgid "BoatFeaturesSet|Wc"
+msgstr ""
+
+msgid "BoatFeature|Name"
+msgstr ""
+
+msgid "Boat|Address"
+msgstr ""
+
+msgid "Boat|Complete"
+msgstr ""
+
+msgid "Boat|Daily price"
+msgstr ""
+
+msgid "Boat|Description"
+msgstr ""
+
+msgid "Boat|Fuel type"
+msgstr ""
+
+msgid "Boat|Guest capacity"
+msgstr ""
+
+msgid "Boat|Horse power"
+msgstr ""
+
+msgid "Boat|Length"
+msgstr ""
+
+msgid "Boat|Manufacturer"
+msgstr ""
+
+msgid "Boat|Model"
+msgstr ""
+
+msgid "Boat|Name"
+msgstr ""
+
+msgid "Boat|Rental type"
+msgstr ""
+
+msgid "Boat|With license"
+msgstr ""
+
+msgid "Boat|Year"
+msgstr ""
+
+msgid "Booking"
+msgstr ""
+
+msgid "Booking|End time"
+msgstr ""
+
+msgid "Booking|People on board"
+msgstr ""
+
+msgid "Booking|Start time"
+msgstr ""
+
+msgid "Cancel my account"
+msgstr ""
+
+msgid "Cancel upload"
+msgstr ""
+
+msgid "Change Password"
+msgstr ""
+
+msgid "Check this if the boat has an engine"
+msgstr ""
+
+msgid "Complete the profile of your boat to make it visible to the guests."
+msgstr ""
+
+msgid "Complete the profiles of your boats to make them visible to the guests."
+msgstr ""
+
+msgid "Complete this boat's profile"
+msgstr ""
+
+msgid "Create Boat"
+msgstr ""
+
+msgid "Danger Zone"
+msgstr ""
+
+msgid "Darn! Something went wrong."
+msgstr ""
+
+msgid "Delete my account"
+msgstr ""
+
+msgid "Details of your boat"
+msgstr ""
+
+msgid "Didn't receive confirmation instructions?"
+msgstr ""
+
+msgid "Didn't receive unlock instructions?"
+msgstr ""
+
+msgid "Drop here the photos of your boat! You are already awesome!"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit Boat"
+msgstr ""
+
+msgid "Edit Profile"
+msgstr ""
+
+msgid "Engine Horse Power"
+msgstr ""
+
+msgid "Enter your Facebook account to change your email and password."
+msgstr ""
+
+msgid "Forgot your password?"
+msgstr ""
+
+msgid "Hi %{name}"
+msgstr ""
+
+msgid "How many people can jump aboard?"
+msgstr ""
+
+msgid "How much should a guest pay for a day on your boat?"
+msgstr ""
+
+msgid "Last update:"
+msgstr ""
+
+msgid "License"
+msgstr ""
+
+msgid "License needed"
+msgstr ""
+
+msgid "Log in"
+msgstr ""
+
+msgid "Login info"
+msgstr ""
+
+msgid "Login with Facebook"
+msgstr ""
+
+msgid "My Boats"
+msgstr ""
+
+msgid "My Profile"
+msgstr ""
+
+msgid "New Boat"
+msgstr ""
+
+msgid "No Engine"
+msgstr ""
+
+msgid "No engine? Uncheck!"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
+msgid "Other Features of your boat"
+msgstr ""
+
+msgid "Personal info"
+msgstr ""
+
+msgid "Picture"
+msgstr ""
+
+msgid "Pictures of your boat"
+msgstr ""
+
+msgid "Picture|Description"
+msgstr ""
+
+msgid "Picture|Image content type"
+msgstr ""
+
+msgid "Picture|Image file name"
+msgstr ""
+
+msgid "Picture|Image file size"
+msgstr ""
+
+msgid "Picture|Image updated at"
+msgstr ""
+
+msgid "Please use the fallback form below to upload your files like in the olden days."
+msgstr ""
+
+msgid "Power"
+msgstr ""
+
+msgid "Publish"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Remove %{name} from SeaForAll"
+msgstr ""
+
+msgid "Remove picture"
+msgstr ""
+
+msgid "Sail"
+msgstr ""
+
+msgid "Saving..."
+msgstr ""
+
+msgid "See all Bookings"
+msgstr ""
+
+msgid "Select the category"
+msgstr ""
+
+msgid "Select the type of fuel"
+msgstr ""
+
+msgid "Select the type of rental"
+msgstr ""
+
+msgid "Select the year"
+msgstr ""
+
+msgid "Sign in with %{provider}"
+msgstr ""
+
+msgid "Sign up"
+msgstr ""
+
+msgid "Sign up with Facebook"
+msgstr ""
+
+msgid "Start register"
+msgstr ""
+
+msgid "Sure?"
+msgstr ""
+
+msgid "Tell us something about you, and how much you love your boat!"
+msgstr ""
+
+msgid "Thank you for joining SeaForAll. You can register your boat in a minute, just"
+msgstr ""
+
 msgid "Thanks for joining Sea for All, the best community of people who love boats and who share boats for boating together on boats."
+msgstr ""
+
+msgid "They can't be both true!"
+msgstr ""
+
+msgid "This boat cannot be published yet. Fill all the fields and upload at least one picture to complete the boat's profile."
+msgstr ""
+
+msgid "This filetype is not supported."
+msgstr ""
+
+msgid "This photo is too big! No more than {{maxFilesize}} MB please."
+msgstr ""
+
+msgid "Tired of sharing your boat?"
+msgstr ""
+
+msgid "Too many photos!"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "User|Admin"
+msgstr ""
+
+msgid "User|Bio"
+msgstr ""
+
+msgid "User|Birthdate"
+msgstr ""
+
+msgid "User|Current sign in at"
+msgstr ""
+
+msgid "User|Current sign in ip"
+msgstr ""
+
+msgid "User|Email"
+msgstr ""
+
+msgid "User|Encrypted password"
+msgstr ""
+
+msgid "User|First name"
+msgstr ""
+
+msgid "User|Image content type"
+msgstr ""
+
+msgid "User|Image file name"
+msgstr ""
+
+msgid "User|Image file size"
+msgstr ""
+
+msgid "User|Image updated at"
+msgstr ""
+
+msgid "User|Last name"
+msgstr ""
+
+msgid "User|Last sign in at"
+msgstr ""
+
+msgid "User|Last sign in ip"
+msgstr ""
+
+msgid "User|Location"
+msgstr ""
+
+msgid "User|Phone"
+msgstr ""
+
+msgid "User|Provider"
+msgstr ""
+
+msgid "User|Remember created at"
+msgstr ""
+
+msgid "User|Reset password sent at"
+msgstr ""
+
+msgid "User|Reset password token"
+msgstr ""
+
+msgid "User|Sign in count"
+msgstr ""
+
+msgid "User|Uid"
+msgstr ""
+
+msgid "Welcome %{name}"
 msgstr ""
 
 msgid "Welcome %{user}!!"
 msgstr ""
 
+msgid "Welcome to SEAFORALL and thank you for joining us!"
+msgstr ""
+
 msgid "Welcome to Sea for All!"
 msgstr ""
 
+msgid "What is its name?"
+msgstr ""
+
+msgid "Where is your boat moored? E.g. Molo Ponte Morosini, 46, Genoa"
+msgstr ""
+
+msgid "Who built your boat?"
+msgstr ""
+
+msgid "Yay! You published your boat! Prepare to share it!"
+msgstr ""
+
+msgid "You created this account using your Facebook credentials."
+msgstr ""
+
+msgid "You have started the registration of %{num}"
+msgstr ""
+
+msgid "You have to log in to continue."
+msgstr ""
+
 msgid "You should check out this welcome video: "
+msgstr ""
+
+msgid "Your boat's length, in meters"
+msgstr ""
+
+msgid "Your browser does not support drag'n'drop file uploads."
+msgstr ""
+
+msgid "Your guests will love to know more about your boat. Tell them something about it, what you use it for and what you love of your boat"
+msgstr ""
+
+msgid "bareboat"
+msgstr ""
+
+msgid "boat"
+msgid_plural "boats"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "both"
+msgstr ""
+
+msgid "captained"
+msgstr ""
+
+msgid "complete your Profile!"
+msgstr ""
+
+msgid "diesel"
+msgstr ""
+
+msgid "e.g. +39 012 3456789"
+msgstr ""
+
+msgid "e.g. 200 E Main St Phoenix AZ 85123 USA"
+msgstr ""
+
+msgid "e.g. Pursuit DC 265, Cobalt A25"
+msgstr ""
+
+msgid "leave it blank if you don't want to change it"
+msgstr ""
+
+msgid "mix"
+msgstr ""
+
+msgid "must be before %{date}"
+msgstr ""
+
+msgid "or just fill the form below"
+msgstr ""
+
+msgid "petrol"
+msgstr ""
+
+msgid "too many pictures (choose at most 10)"
+msgstr ""
+
+msgid "we need your current password to confirm your changes"
+msgstr ""
+
+msgid "€/day"
 msgstr ""
