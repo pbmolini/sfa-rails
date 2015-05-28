@@ -25,6 +25,9 @@ module SfaRails
     config.active_record.raise_in_transactional_callbacks = true
 
     config.active_record.observers = :user_observer, :boat_observer
+
+    # Make delayed_job the Queue Adapter
+    config.active_job.queue_adapter = :delayed_job
     
   end
 end
