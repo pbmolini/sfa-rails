@@ -67,7 +67,7 @@
     <%= f.input :fuel_type,
                 collection: Boat::FUEL_TYPES,
                 prompt: _("Select the type of fuel"),
-                label_method: ->(obj) { _(obj.to_s).capitalize },
+                label_method: ->(obj) { _(obj.to_s).humanize },
                 required: false %>
   </div>
   <div class="col-md-4">
