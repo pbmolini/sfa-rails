@@ -2,7 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.boat-card-wrapper {
+  margin-bottom: 1em;
+}
+
 .boat-card {
+  background: white;
+  position: relative;
+  padding-bottom: 1em;
+
+  .boat-owner {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    border: 3px solid white;
+    z-index: 1;
+  }
+
+  .boat-price {
+    position: absolute;
+    top: 148px;
+    font-size: 37px;
+    font-weight: 300;
+    right: 0;
+    text-align: right;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.701961);
+    z-index: 1;
+  }
+
+  h3, p {
+    margin-bottom: 0;
+    padding: 0 17px;
+  }
+
+  .boat-model {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  .boat-name, .boat-place {
+    font-weight: 200;
+    font-size: 14px;
+    font-size: 18px;
+    margin-top: 0;
+  }
 
   a {
     color: $black;
@@ -22,14 +68,6 @@
     position: relative;
   }
 
-  .boat-owner {
-    margin: 1em 0;
-  }
-
-  h3 {
-    margin-top: 10px;
-    margin-bottom: 0;
-  }
 }
 
 .boat-hero {
