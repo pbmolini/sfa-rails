@@ -8,4 +8,5 @@
 //= require moment/it.js
 //= require turbolinks
 //= require toastr
+//= require cookies_eu
 //= require_tree .

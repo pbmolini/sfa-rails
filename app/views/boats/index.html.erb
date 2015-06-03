@@ -10,7 +10,8 @@
       
       <%= link_to boat do %>
         <div>
-          <div class="picture" style="background-image: url('<%= boat.pictures.first.image.url if boat.pictures.any? %>')">
+          <% bg_image = boat.pictures.any? ? boat.pictures.first.image.url : "http://placehold.it/300&text=SeaForAll+rocks!" %>
+          <div class="picture" style="background-image: url('<%= bg_image %>')">
           </div>
           <div class="caption">
             <p class="boat-owner">

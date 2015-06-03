@@ -222,3 +222,16 @@ footer .icons a:focus {
   }
 }
 
+.cookies-eu {
+  background: white;
+  font-size: 13px;
+  .cookies-eu-button-holder .cookies-eu-ok {
+    border: 1px solid #848484 !important;
+    background: #848484 !important;
+    font-size: 13px;
+  }
+  .cookies-eu-link:hover {
+    background: none;
+    color: lightblue;
+  }
+}

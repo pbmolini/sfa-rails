@@ -1,148 +1,148 @@
-    <div id="hero">
+<div id="hero">
+  <div class="container-fluid">
+    <nav class="navbar">
       <div class="container-fluid">
-        <nav class="navbar">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">
-                <img class="hidden-xs" src="<%= aws_image_path_for 'sfa-logo-hor-white.png' %>" height="30px" alt="SEA FOR ALL | Condividi la tua barca e risparmia sui costi di gestione">
-              </a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <% if user_signed_in? %>
-                  <li class="dropdown">
-                    <%= link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' }, role: 'button', aria: { expanded: 'false' } do %>
-                      <%= current_user.first_name %> <%= image_tag current_user.image(:thumb), class: 'user-avatar' %>
-                    <% end %>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><%= link_to "Profile", edit_user_registration_path %></li>
-                      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-                    </ul>
-                  </li>
-                  <!-- <p class="navbar-text"><%#= image_tag current_user.image, class: 'user-avatar' %> <%#= current_user.first_name %></p> -->
-                <% else %>
-                  <li><%= link_to "Login", new_user_session_path %></li>
-                  <li><%= button_to 'Register', new_user_registration_path, method: :get, class: 'btn btn-success navbar-btn' %></li>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img class="hidden-xs" src="<%= aws_image_path_for 'sfa-logo-hor-white.png' %>" height="30px" alt="SEA FOR ALL | Condividi la tua barca e risparmia sui costi di gestione">
+          </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li class="dropdown">
+                <%= link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' }, role: 'button', aria: { expanded: 'false' } do %>
+                  <%= current_user.first_name %> <%= image_tag current_user.image(:thumb), class: 'user-avatar' %>
                 <% end %>
-              </ul>
-            </div><!--/.nav-collapse -->
-          </div>
-        </nav>
+                <ul class="dropdown-menu" role="menu">
+                  <li><%= link_to "Profile", edit_user_registration_path %></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+              <!-- <p class="navbar-text"><%#= image_tag current_user.image, class: 'user-avatar' %> <%#= current_user.first_name %></p> -->
+            <% else %>
+              <li><%= link_to "Login", new_user_session_path %></li>
+              <li><%= button_to 'Register', new_user_registration_path, method: :get, class: 'btn btn-success navbar-btn' %></li>
+            <% end %>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-      <p class="text-center">
-        <img class="logo" src="<%= aws_image_path_for 'sfa-logo-hor-white-navbar.png' %>" alt="SEA FOR ALL | Condividi la tua barca e risparmia sui costi di gestione">
-      </p>
-      <div class="hero-background"></div>
-      <div class="container">
-        <h1>Condividi la tua barca con chi ama il mare</h1>
-        <p>&nbsp;</p>
-        <h3>Vuoi saperne di più? <strong>Lasciaci l'email</strong></h3>
+    </nav>
+  </div>
+  <p class="text-center">
+    <img class="logo" src="<%= aws_image_path_for 'sfa-logo-hor-white-navbar.png' %>" alt="SEA FOR ALL | Condividi la tua barca e risparmia sui costi di gestione">
+  </p>
+  <div class="hero-background"></div>
+  <div class="container">
+    <h1>Condividi la tua barca con chi ama il mare</h1>
+    <p>&nbsp;</p>
+    <h3>Vuoi saperne di più? <strong>Lasciaci l'email</strong></h3>
 
-        <!-- Begin MailChimp Signup Form -->
-        <div id="mc_embed_signup">
-          <form action="//seaforall.us10.list-manage.com/subscribe/post?u=69835b8c2d366cadb1d79be22&amp;id=b07377296f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-              <div class="mc-field-group">
-                <input placeholder="scrivi la tua email" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-              </div>
-              <div class="mc-field-group">
-                <label for="mce-ROLE">Mi interessa perché</label>
-                <br>
-                <select name="ROLE" class="required" id="mce-ROLE">
-                  <option value="">Scegli un'opzione</option>
-                  <option value="Vorrei condividere la mia barca">Ho una barca da condividere</option>
-                  <option value="Vorrei affittare una barca">Cerco una barca in noleggio o locazione</option>
+    <!-- Begin MailChimp Signup Form -->
+    <div id="mc_embed_signup">
+      <form action="//seaforall.us10.list-manage.com/subscribe/post?u=69835b8c2d366cadb1d79be22&amp;id=b07377296f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+          <div class="mc-field-group">
+            <input placeholder="scrivi la tua email" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+          </div>
+          <div class="mc-field-group">
+            <label for="mce-ROLE">Mi interessa perché</label>
+            <br>
+            <select name="ROLE" class="required" id="mce-ROLE">
+              <option value="">Scegli un'opzione</option>
+              <option value="Vorrei condividere la mia barca">Ho una barca da condividere</option>
+              <option value="Vorrei affittare una barca">Cerco una barca in noleggio o locazione</option>
 
-                </select>
-              </div>
-              <div id="mce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-              </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;"><input type="text" name="b_69835b8c2d366cadb1d79be22_b07377296f" tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Tienimi aggiornato" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-lg btn-mailchimp"></div>
-            </div>
-          </form>
+            </select>
+          </div>
+          <div id="mce-responses" class="clear">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;"><input type="text" name="b_69835b8c2d366cadb1d79be22_b07377296f" tabindex="-1" value=""></div>
+          <div class="clear"><input type="submit" value="Tienimi aggiornato" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-lg btn-mailchimp"></div>
         </div>
-        <!--End mc_embed_signup-->
-        <h2>#sharingissaving</h2>
+      </form>
+    </div>
+    <!--End mc_embed_signup-->
+    <h2>#sharingissaving</h2>
+  </div>
+</div>
+
+<div id="users">
+<div class="pattern"></div>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-center">Cosa fa SEA FOR ALL</h1>
+      <div class="col-sm-6 owner text-center">
+        <div class="description-icon">
+          <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-blue.png'), page_path(id: 'help/host') %>
+        </div>
+        <h2><%= link_to "Vuoi guadagnare con la tua barca?", page_path(id: 'help/host') %></h2>
+        <ul>
+          <li>Troviamo persone interessate ad usarla</li>
+          <li>e ti aiutiamo ad abbattere i costi</li>
+        </ul>
+        <p><small><%= link_to "Maggiori informazioni", page_path(id: 'help/host') %></small></p>
+      </div>
+      <div class="col-sm-6 consumer text-center">
+        <div class="description-icon">
+          <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path(id: 'help/guest') %>
+        </div>
+        <h2>
+          <%= link_to "Vuoi passare una giornata in barca?", page_path(id: 'help/guest') %>
+        </h2>
+        <ul>
+          <li>Ti aiutiamo a trovare la barca adatta alle tue esigenze</li>
+          <li>per divertirti ad un prezzo abbordabile</li>
+        </ul>
+        <p><small><%= link_to "Maggiori informazioni", page_path(id: 'help/guest') %></small></p>
       </div>
     </div>
+  </div>
+</div>
+<div class="bottom-call">
+  <div class="pattern"></div>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <div class="bordino-mail">
 
-    <div id="users">
-    <div class="pattern"></div>
-      <div class="container">
-        <div class="row">
-          <h1 class="text-center">Cosa fa SEA FOR ALL</h1>
-          <div class="col-sm-6 owner text-center">
-            <div class="description-icon">
-              <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-blue.png'), page_path(id: 'help/host') %>
-            </div>
-            <h2><%= link_to "Vuoi guadagnare con la tua barca?", page_path(id: 'help/host') %></h2>
-            <ul>
-              <li>Troviamo persone interessate ad usarla</li>
-              <li>e ti aiutiamo ad abbattere i costi</li>
-            </ul>
-            <p><small><%= link_to "Maggiori informazioni", page_path(id: 'help/host') %></small></p>
-          </div>
-          <div class="col-sm-6 consumer text-center">
-            <div class="description-icon">
-              <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path(id: 'help/guest') %>
-            </div>
-            <h2>
-              <%= link_to "Vuoi passare una giornata in barca?", page_path(id: 'help/guest') %>
-            </h2>
-            <ul>
-              <li>Ti aiutiamo a trovare la barca adatta alle tue esigenze</li>
-              <li>per divertirti ad un prezzo abbordabile</li>
-            </ul>
-            <p><small><%= link_to "Maggiori informazioni", page_path(id: 'help/guest') %></small></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bottom-call">
-      <div class="pattern"></div>
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-sm-12">
-            <div class="bordino-mail">
+          <h2 class="sei-pronto">Sei pronto?</h2>
+          <p>Lasciaci l'email.<br>
+            Ti contatteremo appena si salpa.</p>
 
-              <h2 class="sei-pronto">Sei pronto?</h2>
-              <p>Lasciaci l'email.<br>
-                Ti contatteremo appena si salpa.</p>
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+              <form action="//seaforall.us10.list-manage.com/subscribe/post?u=69835b8c2d366cadb1d79be22&amp;id=b07377296f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                  <div class="mc-field-group">
+                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                  </div>
+                  <div class="mc-field-group">
+                    <label for="mce-ROLE">Mi interessa perché
+                    </label>
+                    <br>
+                    <select name="ROLE" class="required" id="mce-ROLE">
+                      <option value="">Scegli un'opzione</option>
+                      <option value="Vorrei condividere la mia barca">Ho una barca da condividere</option>
+                      <option value="Vorrei affittare una barca">Cerco una barca in noleggio o locazione</option>
 
-                <!-- Begin MailChimp Signup Form -->
-                <div id="mc_embed_signup">
-                  <form action="//seaforall.us10.list-manage.com/subscribe/post?u=69835b8c2d366cadb1d79be22&amp;id=b07377296f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                    <div id="mc_embed_signup_scroll">
-                      <div class="mc-field-group">
-                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                      </div>
-                      <div class="mc-field-group">
-                        <label for="mce-ROLE">Mi interessa perché
-                        </label>
-                        <br>
-                        <select name="ROLE" class="required" id="mce-ROLE">
-                          <option value="">Scegli un'opzione</option>
-                          <option value="Vorrei condividere la mia barca">Ho una barca da condividere</option>
-                          <option value="Vorrei affittare una barca">Cerco una barca in noleggio o locazione</option>
-
-                        </select>
-                      </div>
-                      <div id="mce-responses" class="clear">
-                        <div class="response" id="mce-error-response" style="display:none"></div>
-                        <div class="response" id="mce-success-response" style="display:none"></div>
-                      </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                      <div style="position: absolute; left: -5000px;"><input type="text" name="b_69835b8c2d366cadb1d79be22_b07377296f" tabindex="-1" value=""></div>
-                      <div class="clear"><input type="submit" value="Tienimi aggiornato" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-mailchimp"></div>
-                    </div>
-                  </form>
+                    </select>
+                  </div>
+                  <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                  </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;"><input type="text" name="b_69835b8c2d366cadb1d79be22_b07377296f" tabindex="-1" value=""></div>
+                  <div class="clear"><input type="submit" value="Tienimi aggiornato" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-mailchimp"></div>
                 </div>
-
-            <!--End mc_embed_signup-->
+              </form>
             </div>
-          </div>
+
+        <!--End mc_embed_signup-->
         </div>
       </div>
     </div>
+  </div>
+</div>

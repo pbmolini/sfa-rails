@@ -67,6 +67,9 @@ gem 'geocoder'
 gem 'delayed_job_active_record'
 gem 'daemons'
 
+# Stupid Cookie Law
+gem 'cookies_eu'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

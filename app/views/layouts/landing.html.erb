@@ -4,7 +4,7 @@
     <%= render 'layouts/head', layout: 'landing' %>
   </head>
   <body>
-
+    <%= render 'cookies_eu/cookies_eu', link: page_path(id: 'cookies', locale: I18n.locale) %>
     <%= yield %>
 
     <footer>

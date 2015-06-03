@@ -34,7 +34,8 @@
       <div class="boat-list-wrapper">
         <% if boat.complete? %>
           <%= link_to boat_path(boat) do %>
-            <div style="background-image: url(<%= boat.pictures.first.image.url %>);" class="list-img"></div>
+            <% bg_image = boat.pictures.any? ? boat.pictures.first.image.url : "http://placehold.it/300&text=SeaForAll+rocks!" %>
+            <div style="background-image: url(<%= bg_image %>);" class="list-img"></div>
             <h3><%= boat.name %></h3>
             <p><%= boat.model %></p>
           <% end %>

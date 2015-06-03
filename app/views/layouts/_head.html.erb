@@ -30,5 +30,11 @@
 </script>
 
 <!-- typekit -->
-<script src="//use.typekit.net/ndv6wib.js"></script>
+<% if Rails.env == "production" %>
+	<!-- For staging and production (Pietro's account) -->
+	<script src="//use.typekit.net/hkw0con.js"></script>
+<% else %>
+	<!-- For development (Giulio's account) -->
+	<script src="//use.typekit.net/ndv6wib.js"></script>
+<% end %>
 <script>try{Typekit.load();}catch(e){}</script>
