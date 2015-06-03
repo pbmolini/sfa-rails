@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-05-27 21:31+0100\n"
+"PO-Revision-Date: 2015-05-27 21:33+0100\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,13 +16,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.1\n"
-"POT-Creation-Date: 2015-05-27 21:31+0200\n"
+"POT-Creation-Date: 2015-06-03 22:36+0200\n"
+
+msgid "\"BoatFeaturesSet|#{f.humanize}\""
+msgstr ""
+
+msgid "%{boat_price} €/day"
+msgstr ""
 
 msgid "%{length} characters minimum"
 msgstr "minimo %{length} caratteri"
-
-msgid "%{o}"
-msgstr "%{o}"
 
 msgid "Address"
 msgstr "Indirizzo"
@@ -60,15 +63,12 @@ msgstr "Caratteristiche"
 msgid "Boat pictures"
 msgstr "Foto"
 
-#, fuzzy
 msgid "Boat was successfully created"
 msgstr "La barca è stata creata"
 
-#, fuzzy
 msgid "Boat was successfully destroyed"
 msgstr "La barca è stata eliminata"
 
-#, fuzzy
 msgid "Boat was successfully updated"
 msgstr "La barca è stata aggiornata"
 
@@ -192,6 +192,9 @@ msgstr "Patente Nautica"
 msgid "Boat|Year"
 msgstr "Anno"
 
+msgid "Book"
+msgstr ""
+
 msgid "Booking"
 msgstr ""
 
@@ -237,6 +240,9 @@ msgstr "Accidenti! Si è verificato un problema."
 msgid "Delete my account"
 msgstr "Elimina il mio account"
 
+msgid "Details"
+msgstr ""
+
 msgid "Details of your boat"
 msgstr "Dettagli della tua barca"
 
@@ -248,6 +254,9 @@ msgstr ""
 
 msgid "Drop here the photos of your boat! You are already awesome!"
 msgstr "Trascina qui le tue foto! Verranno caricate automaticamente"
+
+msgid "Drop us an email"
+msgstr ""
 
 msgid "Edit"
 msgstr "Modifica"
@@ -264,8 +273,24 @@ msgstr "Cavalli Potenza"
 msgid "Enter your Facebook account to change your email and password."
 msgstr ""
 
+#, fuzzy
+msgid "Features"
+msgstr "Caratteristiche"
+
 msgid "Forgot your password?"
 msgstr "Password dimenticata?"
+
+msgid "Help"
+msgstr ""
+
+msgid "Help & Support"
+msgstr ""
+
+msgid "Help|I have a boat to rent"
+msgstr ""
+
+msgid "Help|I want to take a boat for renting"
+msgstr ""
 
 msgid "Hi %{name}"
 msgstr "Ciao %{name}"
@@ -276,8 +301,14 @@ msgstr ""
 msgid "How much should a guest pay for a day on your boat?"
 msgstr ""
 
-msgid "Last update:"
+msgid "I need help"
 msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "Last update:"
+msgstr "Ultimo aggiornamento"
 
 msgid "License"
 msgstr "Patente Nautica"
@@ -299,6 +330,9 @@ msgstr "Le mie barche"
 
 msgid "My Profile"
 msgstr "Il mio profilo"
+
+msgid "Need help?"
+msgstr ""
 
 msgid "New Boat"
 msgstr "Nuova barca"
@@ -346,7 +380,7 @@ msgid "Power"
 msgstr "Motore"
 
 msgid "Publish"
-msgstr ""
+msgstr "Pubblica"
 
 msgid "Remove"
 msgstr ""
@@ -361,7 +395,7 @@ msgid "Sail"
 msgstr "Vela"
 
 msgid "Saving..."
-msgstr ""
+msgstr "Salvo…"
 
 msgid "See all Bookings"
 msgstr "Vedi prenotazioni"
@@ -405,8 +439,8 @@ msgstr ""
 msgid "They can't be both true!"
 msgstr "Non possono essere presenti entrambi!"
 
-msgid "This boat cannot be published yet. Fill all the fields and upload at least one picture to complete the boat's profile."
-msgstr "Questa barca non può ancora essere pubblicata. Riempi tutti i campi necessari e carica almeno un’immagine per completare la registrazione della barca."
+msgid "This boat cannot be published yet. Fill all the fields and <strong>upload at least one picture</strong> to complete the boat's profile."
+msgstr ""
 
 msgid "This filetype is not supported."
 msgstr ""
@@ -418,6 +452,9 @@ msgid "Tired of sharing your boat?"
 msgstr "Ti sei stancato di condividere la tua barca?"
 
 msgid "Too many photos!"
+msgstr ""
+
+msgid "Unhappy?"
 msgstr ""
 
 msgid "Update"
@@ -498,9 +535,6 @@ msgstr ""
 msgid "Welcome %{name}"
 msgstr "Benvenuto %{name}"
 
-msgid "Welcome %{user}!!"
-msgstr ""
-
 msgid "Welcome to SEAFORALL and thank you for joining us!"
 msgstr ""
 
@@ -578,6 +612,12 @@ msgstr "miscela"
 msgid "must be before %{date}"
 msgstr ""
 
+msgid "not_applicable"
+msgstr ""
+
+msgid "or check these out"
+msgstr ""
+
 msgid "or just fill the form below"
 msgstr "oppure compila i seguenti campi"
 
@@ -593,11 +633,11 @@ msgstr "devi inserire la password attuale per cambiare la password"
 msgid "€/day"
 msgstr "€/giorno"
 
-#~ msgid "Boat was successfully created."
-#~ msgstr "La barca è stata creata"
-
-#~ msgid "Boat was successfully destroyed."
-#~ msgstr "La barca è stata eliminata"
-
-#~ msgid "Boat was successfully updated."
-#~ msgstr "La barca è stata aggiornata"
+#~ msgid "%{o}"
+#~ msgstr "%{o}"
+#~ msgid ""
+#~ "This boat cannot be published yet. Fill all the fields and upload at least one"
+#~ " picture to complete the boat's profile."
+#~ msgstr ""
+#~ "Questa barca non può ancora essere pubblicata. Riempi tutti i campi necessari "
+#~ "e carica almeno un’immagine per completare la registrazione della barca."

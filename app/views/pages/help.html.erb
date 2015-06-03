@@ -1,0 +1,33 @@
+<div class="container">
+	<h1 class="text-center"><%= s_("Help|Help & Support") %></h1>
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="jumbotron">
+				<h1><%= fa_icon 'life-ring', text: s_("Help|Need help?") %></h1>
+				<p>
+					<%= s_("Help|Drop us an email") %>:
+					<%= mail_to "hello@seaforall.com", "hello@seaforall.com", subject: s_("Help|I need help") %>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+    <div class="row">
+      <h1 class="text-center"><%= s_("Help|or check these out") %></h1>
+      <div class="col-sm-5 col-sm-offset-1 text-center">
+        <div class="description-icon">
+          <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-blue.png'), page_path(id: 'help/host') %>
+        </div>
+        <h2><%= link_to s_("Help|I have a boat to rent"), page_path(id: 'help/host') %></h2>
+      </div>
+      <div class="col-sm-5 text-center">
+        <div class="description-icon">
+          <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path(id: 'help/guest') %>
+        </div>
+        <h2>
+          <%= link_to s_("Help|I want to take a boat for renting"), page_path(id: 'help/guest') %>
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>

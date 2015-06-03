@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-27 21:31+0200\n"
-"PO-Revision-Date: 2015-05-27 21:31+0200\n"
+"POT-Creation-Date: 2015-06-03 22:36+0200\n"
+"PO-Revision-Date: 2015-06-03 22:36+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,10 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-msgid "%{length} characters minimum"
+msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
 
-msgid "%{o}"
+msgid "%{boat_price} €/day"
+msgstr ""
+
+msgid "%{length} characters minimum"
 msgstr ""
 
 msgid "Address"
@@ -189,6 +192,9 @@ msgstr ""
 msgid "Boat|Year"
 msgstr ""
 
+msgid "Book"
+msgstr ""
+
 msgid "Booking"
 msgstr ""
 
@@ -234,6 +240,9 @@ msgstr ""
 msgid "Delete my account"
 msgstr ""
 
+msgid "Details"
+msgstr ""
+
 msgid "Details of your boat"
 msgstr ""
 
@@ -244,6 +253,9 @@ msgid "Didn't receive unlock instructions?"
 msgstr ""
 
 msgid "Drop here the photos of your boat! You are already awesome!"
+msgstr ""
+
+msgid "Drop us an email"
 msgstr ""
 
 msgid "Edit"
@@ -261,7 +273,22 @@ msgstr ""
 msgid "Enter your Facebook account to change your email and password."
 msgstr ""
 
+msgid "Features"
+msgstr ""
+
 msgid "Forgot your password?"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "Help & Support"
+msgstr ""
+
+msgid "Help|I have a boat to rent"
+msgstr ""
+
+msgid "Help|I want to take a boat for renting"
 msgstr ""
 
 msgid "Hi %{name}"
@@ -271,6 +298,12 @@ msgid "How many people can jump aboard?"
 msgstr ""
 
 msgid "How much should a guest pay for a day on your boat?"
+msgstr ""
+
+msgid "I need help"
+msgstr ""
+
+msgid "Info"
 msgstr ""
 
 msgid "Last update:"
@@ -295,6 +328,9 @@ msgid "My Boats"
 msgstr ""
 
 msgid "My Profile"
+msgstr ""
+
+msgid "Need help?"
 msgstr ""
 
 msgid "New Boat"
@@ -402,7 +438,7 @@ msgstr ""
 msgid "They can't be both true!"
 msgstr ""
 
-msgid "This boat cannot be published yet. Fill all the fields and upload at least one picture to complete the boat's profile."
+msgid "This boat cannot be published yet. Fill all the fields and <strong>upload at least one picture</strong> to complete the boat's profile."
 msgstr ""
 
 msgid "This filetype is not supported."
@@ -415,6 +451,9 @@ msgid "Tired of sharing your boat?"
 msgstr ""
 
 msgid "Too many photos!"
+msgstr ""
+
+msgid "Unhappy?"
 msgstr ""
 
 msgid "Update"
@@ -495,9 +534,6 @@ msgstr ""
 msgid "Welcome %{name}"
 msgstr ""
 
-msgid "Welcome %{user}!!"
-msgstr ""
-
 msgid "Welcome to SEAFORALL and thank you for joining us!"
 msgstr ""
 
@@ -573,6 +609,12 @@ msgid "mix"
 msgstr ""
 
 msgid "must be before %{date}"
+msgstr ""
+
+msgid "not_applicable"
+msgstr ""
+
+msgid "or check these out"
 msgstr ""
 
 msgid "or just fill the form below"
