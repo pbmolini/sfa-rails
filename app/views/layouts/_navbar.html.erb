@@ -29,7 +29,7 @@
           <!-- <p class="navbar-text"><%#= image_tag current_user.image, class: 'user-avatar' %> <%#= current_user.first_name %></p> -->
         <% else %>
           <li><%= link_to "Login", new_user_session_path %></li>
-          <li><%= button_to 'Register', new_user_registration_path, method: :get, class: 'btn btn-success navbar-btn' %></li>
+          <li><%= button_to _('Register'), new_user_registration_path, method: :get, class: 'btn btn-success navbar-btn' %></li>
         <% end %>
       </ul>
     </div><!--/.nav-collapse -->
