@@ -4,6 +4,10 @@
   margin-left: 5px;
 }
 
+.dropdown-menu > li > a, .navbar-nav > li > a {
+  text-shadow: none;
+}
+
 #menu {
   position: fixed;
   top: 0;
