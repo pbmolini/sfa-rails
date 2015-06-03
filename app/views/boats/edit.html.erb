@@ -15,22 +15,27 @@
 			<ul class="nav nav-pills">
         <li role="presentation" class="active">
           <a href="#boat_details" aria-controls="boat_details" role="tab" data-toggle="tab">
-          	<%= fa_icon "list-ul" %>&nbsp;&nbsp;<%= _("Boat details") %>
+          	<%= fa_icon "list-ul" %> <span class="hidden-xs"><%= _("Boat details") %></span>
           </a>
         </li>
         <li role="presentation">
           <a href="#boat_features" aria-controls="boat_features" role="tab" data-toggle="tab">
-          	<%= fa_icon "check-square-o" %>&nbsp;&nbsp;<%= _("Boat features") %>
+          	<%= fa_icon "check-square-o" %> <span class="hidden-xs"><%= _("Boat features") %></span>
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="#boat_calendar" aria-controls="boat_calendar" role="tab" data-toggle="tab">
+          	<%= fa_icon "calendar-o" %> <span class="hidden-xs"><%= _("Boat Availability") %></span>
           </a>
         </li>
         <li role="presentation">
           <a href="#boat_pictures" aria-controls="boat_pictures" role="tab" data-toggle="tab">
-          	<%= fa_icon "camera-retro" %>&nbsp;&nbsp;<%= _("Boat pictures") %>
+          	<%= fa_icon "camera-retro" %> <span class="hidden-xs"><%= _("Boat pictures") %></span>
           </a>
         </li>
         <li role="presentation">
           <a href="#boat_danger_zone" aria-controls="boat_danger_zone" role="tab" data-toggle="tab">
-          	<%= fa_icon "exclamation-circle" %>&nbsp;&nbsp;<%= _("Danger Zone") %>
+          	<%= fa_icon "exclamation-circle" %> <span class="hidden-xs"><%= _("Danger Zone") %></span>
           </a>
         </li>
       </ul>
@@ -41,6 +46,9 @@
 				</div>
 				<div role="tabpanel" class="tab-pane fade in" id="boat_features">
 					<%= render 'boat_features_form' %>
+				</div>
+				<div role="tabpanel" class="tab-pane fade in" id="boat_calendar">
+					<h3><%= _("Coming soon&hellip;").html_safe %></h3>
 				</div>
 				<div role="tabpanel" class="tab-pane fade in" id="boat_pictures">
 					<h3><%= _('Pictures of your boat') %></h3>
