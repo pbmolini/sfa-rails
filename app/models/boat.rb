@@ -54,7 +54,6 @@ class Boat < ActiveRecord::Base
     self.boat_features_set.attributes.select { |k, v| k if v == true }.keys
   end
 
-
   private
 
   def check_complete?
@@ -64,7 +63,7 @@ class Boat < ActiveRecord::Base
   end
 
   def set_complete
-    self.update_attribute(:complete, check_complete?)
+    self.update_attribute(:complete, check_complete? ? true : false)
   end
 
   # def min_pics
