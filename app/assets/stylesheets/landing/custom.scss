@@ -8,6 +8,10 @@
   text-shadow: none;
 }
 
+.login a {
+  color: white;
+}
+
 #menu {
   position: fixed;
   top: 0;
@@ -133,9 +137,12 @@ li {
   color: #fff;
   background: #fab647;
   margin-top: 1em;
+  font-size: 25px;
+  letter-spacing: 1px;
 }
 .btn-mailchimp:hover {
-  color: #0a71b4;
+  color: #fff;
+  background: rgba(#fab647, .9);
 }
 .pattern {
   opacity: 0.2;
