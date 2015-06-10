@@ -63,7 +63,8 @@ class Boat < ActiveRecord::Base
   end
 
   def set_complete
-    self.update_attribute(:complete, check_complete? ? true : false)
+    # update_column :complete, check_complete?
+    complete = check_complete?
   end
 
   # def min_pics
