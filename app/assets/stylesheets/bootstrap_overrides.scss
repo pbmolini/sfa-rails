@@ -30,6 +30,10 @@ body {
 	color: white;
 }
 
+a.dropdown-toggle {
+	padding-bottom: 11px !important;
+}
+
 .btn-register {
 	background: $orange;
 	&:hover {
