@@ -41,6 +41,14 @@ a.dropdown-toggle {
 	}
 }
 
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+	color: white;
+}
+
+.navbar-inverse .navbar-toggle {
+	border-color: white;
+}
+
 .navbar-inverse .navbar-text {
 	color: white;
 	font-weight: bold;
