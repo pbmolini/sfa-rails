@@ -71,6 +71,12 @@
 }
 
 .boat-hero {
+  .boat-management-buttons {
+    position: absolute;
+    z-index: 2;
+    right: 10px
+  }
+
   .carousel-container {
     padding: 0;
     .carousel#boat-photos-carousel {

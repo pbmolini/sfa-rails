@@ -1,4 +1,10 @@
 <div class="row boat-hero">
+  <% if can? :edit, @boat %>
+    <div class="boat-management-buttons">
+      <%= link_to _('Edit'), edit_boat_path(@boat), class: 'btn btn-primary' %>
+      <%= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-primary' %>
+    </div>
+  <% end %>
   <div class="col-sm-12 carousel-container">
     <div id="boat-photos-carousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner" role="listbox">
@@ -66,13 +72,6 @@
       </div>
     </div>
 
-    <% if can? :edit, @boat %>
-    <p>
-      <%= link_to _('Edit'), edit_boat_path(@boat), class: 'btn btn-info' %>
-      <%= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-info' %>
-    </p>
-    <% end %>
-
   </div>
   <div class="col-sm-4 boat-booking">
     <div class="row">
@@ -103,7 +102,7 @@
             {
               :latlng => [@boat.latitude, @boat.longitude],
               icon: {
-                icon_url: aws_image_path_for('sfa-logo-circle-blue.png'),
+                icon_url: image_path('sfa-pin.png'),
                 icon_size: 42
               }
             }
@@ -114,9 +113,9 @@
   </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-sm-12">
 
   </div>
 </div>
-
+ -->
