@@ -1,4 +1,15 @@
 $("#boat_details").html("<%= escape_javascript(render :partial => 'boat_details_form') %>");
 $("#boat_features").html("<%= escape_javascript(render :partial => 'boat_features_form') %>");
 
+<% if @boat.pictures.any? %>
+  $('#at_least_one_pic-notice').fadeOut();
+<% else %>
+  // $('#at_least_one_pic-notice').fadeIn(); we don't need this because you it is IMPOSSIBLE to delete all the pictures of a boat IMPOSSIBLE! IMPOSSIBLE! IMPOSSIBLE~!
+<% end %>
+
 $("#boat_details, #boat_features").find('.saving').fadeOut();
+
+// listeners that must be reinitialized every time
+$('#engine-presence').engine_check();
+$("#boat_boat_features_set_attributes_outboard_engine").toggleInBoardEngine();
+$("#boat_boat_features_set_attributes_inboard_engine").toggleOutBoardEngine();

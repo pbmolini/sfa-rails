@@ -22,3 +22,11 @@
 		<%= render "boat_features_sets/fields", f: bfs %>
 	<% end %>
 <% end %>
+
+<%= content_for :scripts do %>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('#engine-presence').engine_check();
+  });
+  </script>
+<% end %>

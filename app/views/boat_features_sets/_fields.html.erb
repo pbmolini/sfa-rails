@@ -99,20 +99,10 @@
 </div>
 
 <% content_for :scripts do %>
-    <script type="text/javascript">
-        var toggleInBoardEngine = function() {
-          if ($('#boat_boat_features_set_attributes_outboard_engine').is(':checked') && $("#boat_boat_features_set_attributes_inboard_engine").is(':checked')) {
-            $("#boat_boat_features_set_attributes_inboard_engine").prop("checked", false);
-          }
-        }
-        var toggleOutBoardEngine = function() {
-          if ($('#boat_boat_features_set_attributes_outboard_engine').is(':checked') && $("#boat_boat_features_set_attributes_inboard_engine").is(':checked')) {
-            $("#boat_boat_features_set_attributes_outboard_engine").prop("checked", false);
-          }
-        }
-        $(document).ready(function () {
-            $("#boat_boat_features_set_attributes_outboard_engine").change(toggleInBoardEngine);
-            $("#boat_boat_features_set_attributes_inboard_engine").change(toggleOutBoardEngine);
-        });
-    </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#boat_boat_features_set_attributes_outboard_engine").toggleInBoardEngine();
+      $("#boat_boat_features_set_attributes_inboard_engine").toggleOutBoardEngine();
+    });
+  </script>
 <% end %>
