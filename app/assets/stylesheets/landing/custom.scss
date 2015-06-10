@@ -10,6 +10,11 @@
 
 .login a {
   color: white;
+  
+  &:hover, &:focus {
+    text-decoration: underline !important;
+    background-color: transparent !important;
+  }
 }
 
 #menu {
