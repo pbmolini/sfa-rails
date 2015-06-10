@@ -14,7 +14,7 @@
   </div>
 
   <%# No Boats %>
-  <% unless !current_user.boats.any? %>
+  <% unless current_user.boats.any? %>
   <div class="row">
     <div class="col-sm-12">
       <h2><%= _("No boats yet") %></h2>
