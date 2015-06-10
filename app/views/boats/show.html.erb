@@ -2,7 +2,7 @@
   <% if can? :edit, @boat %>
     <div class="boat-management-buttons">
       <%= link_to _('Edit'), edit_boat_path(@boat), class: 'btn btn-primary' %>
-      <%= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-primary' %>
+      <%#= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-primary' %>
     </div>
   <% end %>
   <div class="col-sm-12 carousel-container">
