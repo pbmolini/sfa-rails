@@ -125,17 +125,6 @@
         $(e.target).hide();
       });
 
-      $('#engine-presence').on('change', function(){
-        // Use 'readonly' instead of 'disable' because it keeps the val()
-        if ($(this).is(':checked')) {
-          $('#boat_horse_power').removeAttr("readonly").val("<%= @boat.horse_power %>");
-          $('.boat_horse_power > label').text("<%= _('Engine Horse Power') %>");
-        } else {
-          $('#boat_horse_power').attr("readonly", "readonly").val("0");
-          $('.boat_horse_power > label').text("<%= _('No Engine') %>");
-        }
-      });
-
       $('.boat_year .form-control').datetimepicker({
         viewMode: 'years',
         format: 'YYYY',

@@ -12,6 +12,12 @@
 			<% end %>
 			<%# Usage of wrappers:https://github.com/plataformatec/simple_form/wiki/How-to-use-Bootstrap-3-input-group-in-Simple-Form %>
 			<h1><%= _('Edit Boat') %> <%= publish_boat_button(@boat) %></h1>
+      <%# when we load the page, if the boat has at least one pic (that can't be deleted) we don't show the message. Otherwise, we show it and in reload.js we hide it if a picture is added %>
+      <% if @boat.pictures.empty? %>
+        <p class="alert alert-danger" id="at_least_one_pic-notice">
+          <%= _("You have to add at least one picture of your boat before publishing") %>
+        </p>
+      <% end %>
 			<ul class="nav nav-pills">
         <li role="presentation" class="active">
           <a href="#boat_details" aria-controls="boat_details" role="tab" data-toggle="tab">
