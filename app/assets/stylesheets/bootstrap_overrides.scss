@@ -30,6 +30,10 @@ body {
 	color: white;
 }
 
+a.dropdown-toggle {
+	padding-bottom: 11px !important;
+}
+
 .btn-register {
 	background: $orange;
 	&:hover {
@@ -44,4 +48,12 @@ body {
 
 ul.nav.navbar-nav.navbar-right {
   height: 49px;
+}
+
+.panel-body {
+	padding: 0;
+
+	ul li {
+		padding: 10px 15px !important;
+	}
 }
