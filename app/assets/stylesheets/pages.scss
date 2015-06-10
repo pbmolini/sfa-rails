@@ -6,3 +6,25 @@
   width: 50%;
   display: inline-block;
 }
+
+html{
+	position: relative;
+  min-height: 100%;
+}
+
+body {
+	margin-bottom: 150px;
+}
+
+footer {
+	display: block;
+  background: $blue;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  i {
+  	color: white;
+  }
+}
