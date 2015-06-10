@@ -44,6 +44,7 @@ gem "cocoon", '>= 1.2.0', git: 'https://github.com/nathanvda/cocoon'
 
 gem 'bootstrap-sass', '~> 3.3.3'
 
+# Auth
 gem 'devise'
 gem 'devise-i18n'
 gem 'omniauth-facebook'
@@ -62,6 +63,10 @@ gem 'dropzonejs-rails'
 # for maps
 gem 'leaflet-rails'
 gem 'geocoder'
+
+# Email styling
+gem 'roadie'
+gem 'roadie-rails'
 
 # Delayed Jobs
 gem 'delayed_job_active_record'

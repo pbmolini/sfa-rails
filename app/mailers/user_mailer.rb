@@ -1,10 +1,16 @@
 class UserMailer < ActionMailer::Base
 
-  default from: 'hello@seaforall.com'
+	helper :application # gives access to all helpers defined within `application_helper`.
+	include Roadie::Rails::Automatic
+	include Devise::Controllers::UrlHelpers # Optional. eg. `confirmation_url`
+
+	layout 'user_mailer'
+  default from: "SeaForAll <hello@seaforall.com>"
 
   def welcome_email user
     @user = user
-    mail(:to => @user.email, :subject => _("Welcome to Sea for All!"))
+    @recipient = user
+    mail to: @recipient.email, subject: s_("MailTitle|Welcome to Sea for All!")
   end
 
 end

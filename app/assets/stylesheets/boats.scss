@@ -4,6 +4,14 @@
 
 .boat-card-wrapper {
   margin-bottom: 1em;
+
+  .complete-profile {
+    margin-bottom: 0;
+    a {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
 }
 
 .boat-card {
