@@ -1,8 +1,10 @@
-<h1><%= _("Welcome %{name}") %{name: @user.first_name} %></h1>
-
+<% content_for :title, s_("MailTitle|Welcome to Sea for All!") %>
 <p>
-	<%= _("Publish") %>
+	<%= s_("MailBody|Welcome and thanks for joining SeaForAll!") %>
 </p>
-<p><%= _("Thanks for joining Sea for All, the best community of people who love boats and who share boats for boating together on boats.") %></p>
-
-<p><%= _("You should check out this welcome video: ") %> <%= link_to "https://youtu.be/avaSdC0QOUM", "https://youtu.be/avaSdC0QOUM" %></p>
+<p>
+	<%= _("You can register blablah") %>
+</p>
+<p>
+	<%= _("Thank you,") %>
+</p>
