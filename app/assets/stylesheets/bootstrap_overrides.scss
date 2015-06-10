@@ -49,3 +49,11 @@ a.dropdown-toggle {
 ul.nav.navbar-nav.navbar-right {
   height: 49px;
 }
+
+.panel-body {
+	padding: 0;
+
+	ul li {
+		padding: 10px 15px !important;
+	}
+}

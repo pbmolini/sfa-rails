@@ -41,6 +41,8 @@
     margin-top: 10px;
     font-weight: bold;
     font-size: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .boat-name, .boat-place {
