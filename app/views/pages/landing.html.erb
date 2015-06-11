@@ -31,7 +31,7 @@
               <!-- <p class="navbar-text"><%#= image_tag current_user.image, class: 'user-avatar' %> <%#= current_user.first_name %></p> -->
             <% else %>
               <li class="navbar-landing-link"><%= link_to "Login", new_user_session_path %></li>
-              <li><%= button_to s_("Landing|Register"), new_user_registration_path, method: :get, class: 'btn btn-success navbar-btn' %></li>
+              <li><%= button_to s_("Landing|Register your boat"), new_user_registration_path, method: :get, class: 'btn btn-success navbar-btn' %></li>
             <% end %>
           </ul>
         </div><!--/.nav-collapse -->
@@ -45,10 +45,13 @@
   <div class="container">
     <h1><%= s_("Landing|Share your boat with those who love the sea") %></h1>
     <p>&nbsp;</p>
-    <h3><%= s_("Landing|Sign up now to share your boat") %></strong></h3>
+    <h3><%= s_("Landing|Super engaging message for the host. He must crave being able to share his boat!") %></strong></h3>
 
-    <%= button_to s_("Landing|Register"), new_user_registration_path, method: :get, class: 'button btn btn-lg btn-mailchimp' %>
-
+    <%= link_to s_("Landing|Register your boat"), new_user_registration_path, class: 'button btn btn-lg btn-mailchimp' %>
+    <h3>
+      <%= s_("Landing|Interested in renting a boat?") %>
+      <strong><%= link_to s_("Landing|Leave us your email!"), "#leave-email" %></strong>
+    </h3>
     <!--End mc_embed_signup-->
     <h2>#sharingissaving</h2>
   </div>
@@ -86,6 +89,7 @@
     </div>
   </div>
 </div>
+<a id="leave-email"></a>
 <div class="bottom-call">
   <div class="pattern"></div>
   <div class="container">
@@ -109,9 +113,9 @@
                     </label>
                     <br>
                     <select name="ROLE" class="required" id="mce-ROLE">
-                      <option value=""><%= s_("Landing|Please choose an option") %></option>
-                      <option value="Vorrei condividere la mia barca"><%= s_("Landing|I have a boat to share") %></option>
+
                       <option value="Vorrei affittare una barca"><%= s_("Landing|I'm looking for a boat to rent") %></option>
+                      <option value="Vorrei condividere la mia barca"><%= s_("Landing|I have a boat to share") %></option>
 
                     </select>
                   </div>
