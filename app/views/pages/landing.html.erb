@@ -9,20 +9,29 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
+            <li class="navbar-landing-link">
+              <% if I18n.locale == I18n.default_locale %>
+                <%= link_to "English", locale: :en %>
+              <% else %>
+                <%= link_to "Italiano", locale: :it %>
+              <% end %>
+            </li>
             <% if user_signed_in? %>
               <li class="dropdown">
                 <%= link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' }, role: 'button', aria: { expanded: 'false' } do %>
                   <%= current_user.first_name %> <%= image_tag current_user.image(:thumb), class: 'user-avatar' %>
                 <% end %>
                 <ul class="dropdown-menu" role="menu">
-                  <li><%= link_to "Profile", edit_user_registration_path %></li>
-                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                  <li role="presentation"><%= link_to _("My Boats"), dashboard_path %></li>
+                  <li role="presentation"><%= link_to _("My Profile"), edit_user_registration_path %></li>
+                  <li role="presentation" class="divider"></li>
+                  <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
               <!-- <p class="navbar-text"><%#= image_tag current_user.image, class: 'user-avatar' %> <%#= current_user.first_name %></p> -->
             <% else %>
-              <li class="login"><%= link_to "Login", new_user_session_path %></li>
-              <li><%= button_to _("Landing|Register"), new_user_registration_path, method: :get, class: 'btn btn-success navbar-btn' %></li>
+              <li class="navbar-landing-link"><%= link_to "Login", new_user_session_path %></li>
+              <li><%= button_to s_("Landing|Register"), new_user_registration_path, method: :get, class: 'btn btn-success navbar-btn' %></li>
             <% end %>
           </ul>
         </div><!--/.nav-collapse -->
@@ -38,7 +47,7 @@
     <p>&nbsp;</p>
     <h3><%= s_("Landing|Sign up now to share your boat") %></strong></h3>
 
-    <%= button_to _("Landing|Register"), new_user_registration_path, method: :get, class: 'button btn btn-lg btn-mailchimp' %>
+    <%= button_to s_("Landing|Register"), new_user_registration_path, method: :get, class: 'button btn btn-lg btn-mailchimp' %>
 
     <!--End mc_embed_signup-->
     <h2>#sharingissaving</h2>
