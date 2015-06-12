@@ -28,10 +28,10 @@ rake gettext:store_model_attributes
 
 If there are new localized strings
 ```
-rake gettext_find
+rake gettext:find
 ```
 
-If there are new localized string in Javascript files
+If there are new localized string in Javascript files, run this after saving the .po file
 
 ```
 rake gettext:po_to_json
