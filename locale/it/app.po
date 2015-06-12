@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-06-12 11:06+0100\n"
+"PO-Revision-Date: 2015-06-12 11:25+0100\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -91,7 +91,7 @@ msgid "BoatCard|Name not saved"
 msgstr "Nome non salvato"
 
 msgid "BoatCategory|Name"
-msgstr ""
+msgstr "Categoria"
 
 msgid "BoatFeaturesSet|Anchor"
 msgstr "Ancora"
@@ -235,7 +235,7 @@ msgid "Change Password"
 msgstr "Cambia password"
 
 msgid "Change avatar"
-msgstr "Cambia l’avatar"
+msgstr "Cambia l’immagine"
 
 msgid "Change language"
 msgstr "Cambia lingua"
@@ -247,19 +247,19 @@ msgid "Coming soon&hellip;"
 msgstr "Presto disponibile&hellip;"
 
 msgid "Complete boats"
-msgstr "Barche completate"
+msgstr "Barche già completate"
 
 msgid "Complete profile"
-msgstr "Completa il tuo Profilo"
+msgstr "Completa la scheda"
 
 msgid "Complete the profile of this boat to make it visible to your future guests."
 msgstr ""
-"Completa il profilo di questa barca per renderla visibile ai tuoi futuri ospiti"
+"Completa la scheda di questa barca per renderla visibile ai tuoi futuri ospiti."
 
 msgid ""
 "Complete the profiles of these boats to make them visible to your future guests."
 msgstr ""
-"Completa i profili di queste barche per renderle visibili ai tuoi futuri ospiti"
+"Completa le schede di queste barche per renderle visibili ai tuoi futuri ospiti"
 
 msgid "Create Boat"
 msgstr "Crea barca"
@@ -322,13 +322,13 @@ msgid "Help|I have a boat to rent"
 msgstr "Sono proprietario di una barca"
 
 msgid "Help|I need help"
-msgstr "Ho bisogno di aiuto"
+msgstr "Mi serve aiuto"
 
 msgid "Help|I want to take a boat for renting"
 msgstr "Vorrei prendere una barca"
 
 msgid "Help|Need help?"
-msgstr "Hai bisogno di aiuto?"
+msgstr "Serve aiuto?"
 
 msgid "Help|or check these out"
 msgstr "oppure dai un’occhiata qui"
@@ -464,7 +464,7 @@ msgid "No engine? Uncheck!"
 msgstr "Senza motore? Deseleziona!"
 
 msgid "Not ready for renting"
-msgstr "Non ancora pronta per essere noleggiata"
+msgstr "Non ancora pronte per essere noleggiate"
 
 msgid "Other"
 msgstr "Altro"
@@ -502,6 +502,9 @@ msgstr ""
 
 msgid "Power"
 msgstr "Motore"
+
+msgid "Profile picture"
+msgstr "Immagine del profilo"
 
 msgid "Publish"
 msgstr "Pubblica"
@@ -546,7 +549,7 @@ msgid "Sign up with Facebook"
 msgstr "Registrati con Facebook"
 
 msgid "Soon ready for renting"
-msgstr "Persto disponibili per il noleggio"
+msgstr "Presto disponibili per il noleggio"
 
 msgid "Start register"
 msgstr "Inizia la registrazione"
@@ -576,18 +579,18 @@ msgid ""
 "one picture</strong> to complete the boat's profile."
 msgstr ""
 "Questa barca non può ancora essere pubblicata. Riempi tutti i campi e "
-"<strong>carica almeno un’immagine</strong> per completare il profilo di questa "
+"<strong>carica almeno un’immagine</strong> per completare la scheda di questa "
 "barca."
 
 msgid "This filetype is not supported."
 msgstr "Questo tipo di file non è supportato."
 
 msgid ""
-"This is your dashboard: from here you can access all the details of your boats and "
-"soon you will be able to manage your bookings."
+"This is your <em>dashboard</em>: from here you can access all the details of your "
+"boats and soon you will be able to manage your bookings."
 msgstr ""
-"Questa è la tua dashboard: da qui puoi accedere ai dettagli delle tue barche e "
-"presto potrai gestire le tue prenotazioni."
+"Questa è la tua <em>dashboard</em>: da qui puoi accedere ai dettagli delle tue "
+"barche e presto potrai gestire le tue prenotazioni."
 
 msgid "This photo is too big! No more than {{maxFilesize}} MB please."
 msgstr ""

@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-4">
     <%= f.association :boat_category,
+                      label: s_("BoatCategory|Name"),
                       prompt: _("Select the category"),
                       input_html: { class: 'form-control' },
                       label_method: ->(obj) { _(obj.to_s).capitalize },

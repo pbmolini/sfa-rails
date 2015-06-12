@@ -33,7 +33,7 @@
             <%= f.input :phone, placeholder: _("e.g. +39 012 3456789") %>
             <%= f.input :location, label: _("Address"), placeholder: _("e.g. 200 E Main St Phoenix AZ 85123 USA") %>
 
-            <%= f.label :image %>
+            <%= f.label _("Profile picture") %>
             <div class="row">
               <div class="col-sm-2 text-center" id="avatar-preview">
                 <%= image_tag resource.image.url(:thumb) %>

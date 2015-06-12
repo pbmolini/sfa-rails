@@ -491,6 +491,9 @@ msgstr ""
 msgid "Power"
 msgstr ""
 
+msgid "Profile picture"
+msgstr ""
+
 msgid "Publish"
 msgstr ""
 
@@ -563,7 +566,7 @@ msgstr ""
 msgid "This filetype is not supported."
 msgstr ""
 
-msgid "This is your dashboard: from here you can access all the details of your boats and soon you will be able to manage your bookings."
+msgid "This is your <em>dashboard</em>: from here you can access all the details of your boats and soon you will be able to manage your bookings."
 msgstr ""
 
 msgid "This photo is too big! No more than {{maxFilesize}} MB please."
