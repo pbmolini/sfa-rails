@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-sm-4<%= ' missing-safety-equipment' unless f.object.safety_equipment? %>">
-		<%= f.input :safety_equipment %>
+		<%= f.input :safety_equipment, label: "#{s_('BoatFeaturesSet|Safety equipment')} *" %>
   </div>
   <div class="col-sm-4">
 		<%= f.input :outboard_engine %>
@@ -96,6 +96,12 @@
   <div class="col-sm-4">
     <%= f.input :depth_finder %>
   </div>
+</div>
+
+<div class="row">
+	<div class="col-sm-12">
+		<small>* <%= link_to _("See this table for details"), "http://www.nautica.it/norme/dotazioni-sicurezza.htm", target: "_blank" %> <%= "(in Italian)" if I18n.locale != I18n.default_locale %></small>
+	</div>
 </div>
 
 <% content_for :scripts do %>
