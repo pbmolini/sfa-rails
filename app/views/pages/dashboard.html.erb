@@ -5,7 +5,7 @@
         <%= _("Hi %{name}") %{name: current_user.first_name} %>,
       </h3>
       <p class="lead">
-        <%= _("Welcome to SEAFORALL and thank you for joining us!") %>
+        <%= _("Welcome to <strong>Sea for All</strong> and thank you for joining us!").html_safe %>
       </p>
       <p>
         <%= _("This is your <em>dashboard</em>: from here you can access all the details of your boats and soon you will be able to manage your bookings.").html_safe %>
@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-sm-12">
       <h2><%= _("No boats yet") %></h2>
-      <p><%= _("You have no boats registered in SeaForAll yet. Register your first boat now! It's fast and easy.") %></p>
+      <p><%= _("You have no boats registered in Sea for All yet. Register your first boat now! It's fast and easy.") %></p>
       <p class="text-center">
         <%= link_to _("Sure! Register my first boat"), new_boat_path, class: 'btn btn-success btn-lg' %>
       </p>
