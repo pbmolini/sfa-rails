@@ -31,3 +31,30 @@ footer {
     margin-top: 1em;
   }
 }
+
+.boat-search-header {
+  background-color: #8AC1E4;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+    img.logo {
+      width: 50%;
+      padding: 1em;
+    }
+}
+
+.boat-search-subtitle {
+  text-align: center;
+  color: snow;
+  background-color: #5CA4D2;
+}
+
+.boat-search-results {
+  padding-top: 1em;
+  background-color: #8AC1E4;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
