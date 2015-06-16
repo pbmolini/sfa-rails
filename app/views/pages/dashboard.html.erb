@@ -14,9 +14,9 @@
   </div>
 
   <%# No Boats %>
-  <% unless current_user.boats.any? %>
   <div class="row">
     <div class="col-sm-12">
+      <% unless current_user.boats.any? %>
       <h2><%= _("No boats yet") %></h2>
       <p><%= _("You have no boats registered in Sea for All yet. Register your first boat now! It's fast and easy.") %></p>
       <p class="text-center">
@@ -27,15 +27,26 @@
           <%= (_("Need help? Visit our wonderful %{help_page_link}!") %{help_page_link: link_to(_("help page"), page_path('help', locale: I18n.locale))}).html_safe %>
         </small>
       </p>
+      <% else %>
+      <p>
+        <%= _("You have %{num} %{boats} registered in Sea for All.") %{ num: current_user.boats.count, boats: n_("boat", "boats", current_user.boats.count) } %>
+        <%= _("To register another boat, just click the button below.") %>
+      </p>
+      <p class="text-center">
+        <%= link_to _("Register a new boat"), new_boat_path, class: 'btn btn-success' %>
+      </p>
+      <% end %>
     </div>
   </div>
-  <% end %>
+
 
   <%# Incomplete Boats %>
   <% if current_user.boats.incomplete.any? %>
   <div class="row">
     <div class="col-sm-12">
-      <h2><%= _("Incomplete boats") %> <small>(<%= _("Not ready for renting") %>)</small></h2>
+      <h2>
+        <%= _("Incomplete boats") %> <small>(<%= _("Not ready for renting") %>)</small>
+      </h2>
       <p>
         <%= _("You have started the registration of %{num}") %{num: current_user.boats.incomplete.count} %>
         <%= n_("boat", "boats", current_user.boats.incomplete.count) %>.
