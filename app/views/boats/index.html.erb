@@ -1,18 +1,15 @@
-<div class="row boat-search-header">
-  <div class="col-sm-12">
-    <p class="text-center">
-	    <img class="logo" src="<%= aws_image_path_for 'sfa-logo-hor-white-navbar.png' %>" alt="SEA FOR ALL | Condividi la tua barca e risparmia sui costi di gestione">
-	  </p>
-  </div>
-</div>
-
+<p class="text-center">
+  <%= image_tag("mini-logo.png", height:"50px") %>
+</p>
 <div class="row boat-search-subtitle">
   <div class="col-sm-12">
-    <h1><%= s_("All the boats that soon will be available for renting") %></h1>
+    <p>
+      <%= s_("All the boats that soon will be available for renting") %>
+    </p>
   </div>
 </div>
 
-<div class="row boat-search-results">
+<div class="row">
   <% @boats.complete.each do |boat| %>
     <%= render 'boat_card', boat: boat %>
   <% end %>
