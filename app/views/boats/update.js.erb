@@ -10,6 +10,8 @@ $("#boat_features").html("<%= escape_javascript(render :partial => 'boat_feature
 $("#boat_details, #boat_features").find('.saving').fadeOut();
 
 // listeners that must be reinitialized every time
-$('#engine-presence').engine_check();
+$('form').initEngineField(<%= @boat.horse_power == nil || @boat.horse_power > 1 %>);
+$('#engine-presence').engine_check(<%= @boat.horse_power %>);
 $("#boat_boat_features_set_attributes_outboard_engine").toggleInBoardEngine();
 $("#boat_boat_features_set_attributes_inboard_engine").toggleOutBoardEngine();
+$('.boat_year .form-control').boatYearField();

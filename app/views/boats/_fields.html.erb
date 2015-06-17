@@ -107,31 +107,10 @@
 
 <% content_for :scripts do %>
   <script type="text/javascript">
-
-    var initEngineField = function() {
-      var hasEngineOrIsNew = <%= @boat.horse_power == nil || @boat.horse_power > 1 %>
-      if (hasEngineOrIsNew) {
-        $('#engine-presence').prop('checked', true);
-      } else {
-        $('#boat_horse_power').attr("readonly", "readonly").val("0");
-        $('.boat_horse_power > label').text("<%= _('No Engine') %>");
-      }
-    };
-
     $(document).ready(function () {
-      initEngineField();
+      $('form').initEngineField(<%= @boat.horse_power == nil || @boat.horse_power > 1 %>);
 
-      $('#pictures').on('click', 'a.remove_fields.existing', function(e){
-        $(e.target).closest('.nested_fields').css('opacity',0.3);
-        $(e.target).hide();
-      });
-
-      $('.boat_year .form-control').datetimepicker({
-        viewMode: 'years',
-        format: 'YYYY',
-        minDate: moment().year(1900),
-        maxDate: moment()
-      });
+      $('.boat_year .form-control').boatYearField();
     });
   </script>
 <% end %>

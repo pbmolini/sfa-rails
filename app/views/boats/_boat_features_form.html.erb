@@ -26,7 +26,7 @@
 <%= content_for :scripts do %>
   <script type="text/javascript">
   $(document).ready(function() {
-    $('#engine-presence').engine_check();
+    $('#engine-presence').engine_check(<%= @boat.horse_power %>);
   });
   </script>
 <% end %>
