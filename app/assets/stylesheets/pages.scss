@@ -26,6 +26,10 @@ footer {
   height: 150px;
   i, a {
   	color: white;
+    &:hover {
+      text-decoration: none;
+      color: lightBlue;
+    }
   }
   .language-select {
     margin-top: 1em;

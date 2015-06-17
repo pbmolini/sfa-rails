@@ -37,6 +37,8 @@ gem 'newrelic_rpm'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'paperclip', '~> 4.2'
+# To save paperclip stuff on AWS
+# see https://github.com/aws/aws-sdk-ruby/tree/aws-sdk-v1
 gem 'aws-sdk-v1'
 
 gem 'simple_form'

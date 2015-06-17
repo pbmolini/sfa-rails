@@ -1,0 +1,49 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 text-center language-select">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <%= _("Change language") %> <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <% if I18n.locale == I18n.default_locale %>
+                <%= link_to "English", locale: :en %>
+              <% else %>
+                <%= link_to "Italiano", locale: :it %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <br>
+        <p class="text-center hidden-xs">
+          Sea for All - Copyright 2015
+        </p>
+        <p class="text-center"><%= mail_to "hello@seaforall.com" %></p>
+        <p class="text-center icons">
+          <a href="https://twitter.com/seaforall">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="https://www.facebook.com/pages/Sea-for-All/368816339967609">
+            <i class="fa fa-facebook-square"></i>
+          </a>
+        </p>
+      </div>
+      <div class="col-sm-4 text-right">
+        <br>
+        <p>
+          <small><%= link_to _("Help"), page_path('help', locale: I18n.locale) %></small>
+          <br>
+          <small><%= _("About us") %></small>
+          <br>
+          <small><%= _("Terms and Conditions") %></small>
+          <br>
+          <small><%= _("Privacy Policy") %></small>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
