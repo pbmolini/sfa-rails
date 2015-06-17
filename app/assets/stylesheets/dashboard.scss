@@ -1,0 +1,17 @@
+.dashboard-welcome {
+	background: white;
+	.btn {
+		margin-top: 1em;
+	}
+}
+
+.dashboard-incomplete {
+	background: $orange;
+}
+
+.wave {
+	position: absolute;
+	top: -7px;
+  right: 20px;
+  height: 10px;
+}
