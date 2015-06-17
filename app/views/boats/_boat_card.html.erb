@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-md-4 col-lg-3 boat-card-wrapper">
+<div class="col-sm-6 col-md-4 boat-card-wrapper">
   <% if (can? :edit, boat) and !boat.complete? %>
     <p class="complete-profile"><%= link_to _("Complete profile"), edit_boat_path(boat), class: "btn btn-info btn-sm" %></p>
   <% end %>
@@ -6,7 +6,7 @@
     <%= link_to boat do %>
       <div>
         <% bg_image = boat.pictures.any? ? boat.pictures.first.image.url : "https://placeholdit.imgix.net/~text?txtsize=75&txt=SeaForAll&w=300&h=250" %>
-        <%= image_tag(boat.user.image(:thumb), height: '35px', class: 'boat-owner') %>
+        <%= image_tag(boat.user.image(:thumb), height: '50px', class: 'boat-owner') %>
         <p class="boat-price"><%= boat.daily_price || "??" %> <%= fa_icon 'eur' %></p>
         <div class="picture" style="background-image: url('<%= bg_image %>')"></div>
         <div class="caption">
