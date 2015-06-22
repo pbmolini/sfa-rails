@@ -68,3 +68,17 @@ a.dropdown-toggle {
 	border-radius: 0;
 	border: 0;
 }
+
+.cookies-eu {
+  background: $orange !important;
+  font-size: 13px;
+  .cookies-eu-button-holder .cookies-eu-ok {
+    border: 1px solid #848484 !important;
+    background: #848484 !important;
+    font-size: 13px;
+  }
+  .cookies-eu-link:hover {
+    background: none;
+    color: lightblue;
+  }
+}
