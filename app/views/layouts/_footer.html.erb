@@ -37,7 +37,7 @@
         <p>
           <small><%= link_to _("Help"), page_path('help', locale: I18n.locale) %></small>
           <br>
-          <small><%= _("About us") %></small>
+          <small><%= link_to _("About us"), page_path(id: 'about') %></small>
           <br>
           <small><%= _("Terms and Conditions") %></small>
           <br>

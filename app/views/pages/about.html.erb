@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col-sm-12 text-center">
+		<h1><%= _("About us") %></h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<p>
+			<strong>Sea for All</strong> nasce da un'idea di due fratelli, Giorgio e Stefano, da sempre appassionati di barche, e del loro cugino Pietro, da sempre appassionato di tecnologia. Concepita nell'estate 2014 e messa a punto nell'autunno successivo, nella prima metà del 2015 l'idea ha iniziato a concretizzarsi ed è diventata seaforall.com.
+		</p>
+		<p>
+			
+		</p>
+	</div>
+</div>
+<div class="row">
+	<% team_members.each do |m| %>
+	<div class="col-sm-4 team-member-card">
+		<div class="row">
+			<div class="col-sm-6 team-member-picture">
+				<%= image_tag m['picture'], alt: m['name'], class: "img-circle img-thumbnail" %>
+				<!-- <img src="https://placekitten.com/140/140" alt="" class="img-circle img-thumbnail"> -->
+			</div>
+			<div class="col-sm-6 team-member-text">
+				<h3><%= m['name'] %></h3>
+				<p><%= m['role'] %></p>
+				<p>
+					<% %w{ linkedin twitter github }.each do |link| %>
+						<%= link_to(fa_icon("#{link}-square"), m[link], target: '_blank') if m[link] %>
+					<% end %>
+				</p>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
