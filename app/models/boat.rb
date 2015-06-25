@@ -10,6 +10,9 @@ class Boat < ActiveRecord::Base
   has_many :pictures#, dependent: :destroy
   accepts_nested_attributes_for :pictures, reject_if: :all_blank, allow_destroy: true
 
+  has_many :days
+  accepts_nested_attributes_for :days
+
   RENTAL_TYPES = [ 'bareboat', 'captained', 'both' ].freeze
   FUEL_TYPES = [ 'petrol', 'diesel', 'mix', 'not_applicable' ].freeze
   COMPULSORY_FIELDS = [

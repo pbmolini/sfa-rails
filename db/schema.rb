@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527212018) do
+ActiveRecord::Schema.define(version: 20150617202202) do
 
   create_table "boat_categories", force: :cascade do |t|
     t.string   "name"
@@ -122,6 +122,18 @@ ActiveRecord::Schema.define(version: 20150527212018) do
 
   add_index "bookings", ["boat_id"], name: "index_bookings_on_boat_id"
 
+  create_table "days", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "boat_id"
+    t.integer  "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "days", ["boat_id"], name: "index_days_on_boat_id"
+  add_index "days", ["booking_id"], name: "index_days_on_booking_id"
+  add_index "days", ["date"], name: "index_days_on_date"
+
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -152,19 +164,19 @@ ActiveRecord::Schema.define(version: 20150527212018) do
   add_index "pictures", ["boat_id"], name: "index_pictures_on_boat_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin"
+    t.boolean  "admin",                  default: false
     t.string   "provider"
     t.string   "uid"
     t.string   "first_name"

@@ -25,8 +25,10 @@ class Ability
       can :read, Booking, boat: { user_id: user.id }
 
       can :create, Booking do |booking|
-          booking.user == user && booking.boat.user != user
+        booking.user == user && booking.boat.user != user
       end
+
+      can [:read, :create, :destroy], Day, boat: { user_id: user.id }
     end
 
   end

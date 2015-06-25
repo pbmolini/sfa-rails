@@ -17,6 +17,9 @@
 
   <%= render 'layouts/messages' %>
 
+  <script type="text/javascript">
+    moment.locale('<%= I18n.locale %>');
+  </script>
   <%= yield :scripts %>
 
   <footer>

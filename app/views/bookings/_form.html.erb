@@ -35,21 +35,6 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-  $('.booking_start_time .form-control').datetimepicker({
-    // need to upgrade to 4.7.14 to have inline
-    // inline: true,
-    // sideBySide: true
-  });
-  $('.booking_end_time .form-control').datetimepicker({
-    // need to upgrade to 4.7.14 to have inline
-    // inline: true,
-    // sideBySide: true
-  });
-  $(".booking_start_time .form-control").on("dp.change",function (e) {
-    $('.booking_end_time .form-control').data("DateTimePicker").minDate(e.date);
-  });
-  $(".booking_end_time .form-control").on("dp.change",function (e) {
-    $('.booking_start_time .form-control').data("DateTimePicker").maxDate(e.date);
-  });
+  $('form#new_booking').bookingForm(<%= @boat.days.where('date >= ?', DateTime.now).order('date ASC').to_json.html_safe %>);
 });
 </script>

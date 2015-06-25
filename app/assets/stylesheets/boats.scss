@@ -151,12 +151,12 @@
     }
     .booking-form {
       margin-bottom: 2em;
-      form, h2 {
-        opacity: .5;
-      }
-      .btn {
-        @extend .disabled;
-      }
+      // form, h2 {
+      //   opacity: .5;
+      // }
+      // .btn {
+      //   @extend .disabled;
+      // }
       .coming-soon {
         position: absolute;
         top: 25%;

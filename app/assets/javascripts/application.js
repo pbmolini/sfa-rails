@@ -21,6 +21,7 @@
 //= require bootstrap-datetimepicker
 //= require turbolinks
 //= require toastr
+//= require jquery.calendario
 //= require dropzone
 //= require leaflet
 //= require cookies_eu
