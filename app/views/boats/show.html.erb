@@ -1,7 +1,7 @@
 <div class="row boat-hero">
   <% if can? :edit, @boat %>
     <div class="boat-management-buttons">
-      <%= link_to _('Edit'), edit_boat_path(@boat), class: 'btn btn-primary' %>
+      <%= link_to _('Edit'), edit_boat_path(@boat), class: 'btn btn-primary btn-lg' %>
       <%#= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-primary' %>
     </div>
   <% end %>
@@ -31,41 +31,47 @@
 
     <p><strong><%= @boat.address %></strong></p>
 
-    <h2><%= _('Info') %></h2>
-
     <p><%= @boat.description %></p>
 
-    <h2><%= _('Details') %></h2>
+    <hr>
+
+    <h3><%= _('Details') %></h3>
 
     <div class="row">
       <div class="col-sm-6">
-        <p><strong><%= s_("Boat category") %>:</strong> <%= _(@boat.boat_category.name) %></p>
-        <p><strong><%= s_("Boat|Manufacturer") %>:</strong> <%= @boat.manufacturer %></p>
-        <p><strong><%= s_("Boat|Model") %>:</strong> <%= @boat.model %></p>
+        <p>
+          <strong><%= s_("Boat category") %>:</strong> <%= _(@boat.boat_category.name) %><br>
+          <strong><%= s_("Boat|Manufacturer") %>:</strong> <%= @boat.manufacturer %><br>
+          <strong><%= s_("Boat|Model") %>:</strong> <%= @boat.model %>
+        </p>
       </div>
       <div class="col-sm-6">
-        <p><strong><%= s_("Boat|Length") %>:</strong> <%= @boat.length %> m</p>
-        <p><strong><%= s_("Boat|Guest capacity") %>:</strong> <%= @boat.guest_capacity %></p>
+        <p>
+          <strong><%= s_("Boat|Length") %>:</strong> <%= @boat.length %> m<br>
+          <strong><%= s_("Boat|Guest capacity") %>:</strong> <%= @boat.guest_capacity %>
+        </p>
       </div>
     </div>
 
-    <h2><%= _('Features') %></h2>
+    <hr>
+
+    <h3><%= _('Features') %></h3>
 
     <div class="row">
       <div class="col-sm-6">
-        <ul>
+        <ul class="boat-features">
           <% @boat.features.each_with_index do |f,i| %>
             <% if i.even? %>
-              <li><%= s_("BoatFeaturesSet|#{f.humanize}") %></li>
+              <li><%= fa_icon "check-square", text: s_("BoatFeaturesSet|#{f.humanize}") %></li>
             <% end %>
           <% end %>
         </ul>
       </div>
       <div class="col-sm-6">
-        <ul>
+        <ul class="boat-features">
           <% @boat.features.each_with_index do |f,i| %>
             <% if i.odd? %>
-              <li><%= s_("BoatFeaturesSet|#{f.humanize}") %></li>
+              <li><%= fa_icon "check-square", text: s_("BoatFeaturesSet|#{f.humanize}") %></li>
             <% end %>
           <% end %>
         </ul>

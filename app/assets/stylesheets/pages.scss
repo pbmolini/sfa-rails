@@ -18,7 +18,7 @@ body {
 
 footer {
 	display: block;
-  background: $blue;
+  background: $darkblue;
   color: #fff;
   position: absolute;
   bottom: 0;
@@ -34,6 +34,14 @@ footer {
   .language-select {
     margin-top: 1em;
   }
+}
+
+.footer-dropdown {
+  @extend .btn;
+  @extend .btn-default; 
+  @extend .dropdown-toggle;
+  background: $blue;
+  color: white;
 }
 
 .boat-search-subtitle {
