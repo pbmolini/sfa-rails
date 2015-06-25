@@ -14,12 +14,12 @@
 	</div>
 </div>
 <div class="row">
+	<h1 class="text-center">Team</h1>
 	<% team_members.each do |m| %>
 	<div class="col-sm-4 team-member-card">
 		<div class="row">
 			<div class="col-sm-6 team-member-picture">
-				<%= image_tag m['picture'], alt: m['name'], class: "img-circle img-thumbnail" %>
-				<!-- <img src="https://placekitten.com/140/140" alt="" class="img-circle img-thumbnail"> -->
+				<%= image_tag aws_image_path_for(m['picture']), alt: m['name'], class: "img-circle img-thumbnail" %>
 			</div>
 			<div class="col-sm-6 team-member-text">
 				<h3><%= m['name'] %></h3>

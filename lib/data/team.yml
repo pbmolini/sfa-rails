@@ -3,63 +3,63 @@ team_members:
 
   - name: Stefano
     role: "Co-founder, CEO"
-    picture: https://placekitten.com/140/140
+    picture: team/placekitten_140.jpg
     linkedin:
     twitter: https://twitter.com/StePellerano
     github:
 
   - name: Giorgio
     role: "Co-founder, COO"
-    picture: https://placekitten.com/140/140
+    picture: team/placekitten_140.jpg
     linkedin: http://it.linkedin.com/pub/giorgio-pellerano/a9/9a2/428/en
     twitter: https://twitter.com/superantani
     github:
 
   - name: Pietro
     role: "Co-founder, CTO"
-    picture: https://placekitten.com/140/140
+    picture: team/placekitten_140.jpg
     linkedin: http://it.linkedin.com/in/pietromolini
     twitter: https://twitter.com/andareverso
     github: https://github.com/pbmolini
 
   - name: Francesco
     role: "Co-founder, CMO"
-    picture: https://placekitten.com/140/140
+    picture: team/francesco.jpg
     linkedin: http://it.linkedin.com/pub/francesco-derchi/3/881/77b
     twitter: https://twitter.com/FrancescoDerchi
     github:
 
   - name: Aaron
-    role: "Full-stack developer"
-    picture: https://placekitten.com/140/140
+    role: "Full-stack Developer"
+    picture: team/aaron.png
     linkedin: http://it.linkedin.com/in/aaronciaghi
     twitter: https://twitter.com/a2ronsama
     github: https://github.com/aaronsama
 
   - name: Giulio
-    role: "designer, developer"
-    picture: https://placekitten.com/140/140
+    role: "Designer, Front-end Developer"
+    picture: team/giulio.png
     linkedin: http://it.linkedin.com/pub/giulio-michelon/58/995/148/en
     twitter: https://twitter.com/giulio_michelon
     github: https://github.com/juleship
 
   - name: Andrea
     role: "Legal"
-    picture: https://placekitten.com/140/140
+    picture: team/andrea.png
     linkedin: http://it.linkedin.com/in/maruccio
     twitter:
     github:
 
   - name: Martina
     role: "Branding, Identity"
-    picture: https://placekitten.com/140/140
+    picture: team/placekitten_140.jpg
     linkedin: http://it.linkedin.com/pub/martina-portunato/2a/563/110/en
     twitter:
     github:
 
   - name: Massimiliano
     role: "Research & Analysis"
-    picture: https://placekitten.com/140/140
+    picture: team/massimiliano.png
     linkedin: http://it.linkedin.com/pub/massimiliano-mazzurana/3/aa9/a84
     twitter:
     github:

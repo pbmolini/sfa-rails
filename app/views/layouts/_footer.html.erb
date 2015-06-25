@@ -35,13 +35,13 @@
       <div class="col-sm-4 text-right">
         <br>
         <p>
-          <small><%= link_to _("Help"), page_path('help', locale: I18n.locale) %></small>
+          <small><%= link_to _("Help"), page_path(id: 'help') %></small>
           <br>
           <small><%= link_to _("About us"), page_path(id: 'about') %></small>
           <br>
-          <small><%= _("Terms and Conditions") %></small>
+          <small><%= link_to _("Terms and Conditions"), "#" %></small>
           <br>
-          <small><%= _("Privacy Policy") %></small>
+          <small><%= link_to _("Privacy Policy"), "#" %></small>
         </p>
       </div>
     </div>

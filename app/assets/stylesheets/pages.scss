@@ -49,11 +49,14 @@ footer {
 }
 
 .team-member-card {
-  margin: 5px 0px 5px 0px;
+  margin: 5px 0px;
   .team-member-picture {
     text-align: center;
-  } 
-  .team-member-text {
+  }
+}
 
+@media screen and (max-width: 767px) {
+  .team-member-text {
+    text-align: center;
   }
 }
