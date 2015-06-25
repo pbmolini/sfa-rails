@@ -3,8 +3,8 @@
 
 $black: rgba(0,0,0,.87);
 $blue: #3A8CC2;
+$darkblue: #104466;
 $orange: #FAB647;
-
 
 body, html {
 	font-family: "proxima-nova";
@@ -81,4 +81,8 @@ a.dropdown-toggle {
     background: none;
     color: lightblue;
   }
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+	background: $darkblue;
 }
