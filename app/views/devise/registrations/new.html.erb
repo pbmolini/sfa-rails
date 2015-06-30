@@ -51,8 +51,8 @@
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <p>
-                <%= (_("By joining you agree to the %{tos}") %{tos: link_to(_("Sea for All Terms of Service"), "#")}).html_safe %>
+              <p class="legal-acceptance">
+                <%= (_("By joining you agree to our %{tos} and %{privacy}") %{tos: link_to(_("Terms of Service"), page_path(id: 'legal/tos')), privacy: link_to(_("Privacy Policy"), page_path(id: 'legal/privacy'))}).html_safe %>
               </p>
             </div>
           </div>
