@@ -45,25 +45,9 @@
   In caso di servizio di noleggio richiedi maggiori specifiche sull'itinerario della giornata, sulla durata della navigazione, sul pranzo (nel caso che tali informazioni non fossero già segnalate dal proprietario nella sua bacheca).
 </p>
 
-<h2>Dotazioni di Sicurezza</h2>
-<p>
-  Ogni imbarcazione iscritta su Sea for All è equipaggiata delle dotazioni di sicurezza previste dalla Guardia Costiera (disponibili a <%= link_to " questo link", "http://www.guardiacostiera.it/maresicuro/downloads/dotazionidisicurezza_upd20042010.pdf" %>).
-</p>
-<p>
-  Il proprietario dovrà perciò garantire di essere in regola dimostrando e segnalando la posizione dell'equipaggiamento di sicurezza sulla barca.
-</p>
-<p>
-  L'unità da diporto fornita di motore (di qualsiasi potenza) avrà l'Assicurazione RC obbligatoria.
-</p>
+<%= render 'pages/help/dotazioni_sicurezza', guest: true %>
 
-<h2>Assicurazione Sea for All</h2>
-<%# TODO: tenere aggiornato e usare sempre tono non negativo %>
-<p>
-  Il team di Sea for All è al lavoro per trovare la migliore soluzione assicurativa per te, perché vogliamo che la tua esperienza con Sea for All sia al riparo da ogni possibile problema.
-</p>
-<p>
-  Ti terremo costantemente aggiornato tu tutte le novità in merito all'Assicurazione.
-</p>
+<%= render 'pages/help/assicurazione', guest: true %>
 
 <h2>Check-in</h2>
 <p>
