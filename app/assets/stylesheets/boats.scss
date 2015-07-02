@@ -129,3 +129,7 @@ span.boat-input-group-addon {
   text-decoration: underline;
   color: grey;
 }
+
+.boat-edit {
+  @extend .row;
+}

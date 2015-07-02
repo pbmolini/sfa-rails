@@ -1,42 +1,44 @@
-<div class="row boat-hero">
-  <% if can? :edit, @boat %>
-    <div class="boat-management-buttons">
-      <%= link_to _('Edit'), edit_boat_path(@boat), class: 'btn btn-primary btn-lg' %>
-      <%#= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-primary' %>
-    </div>
-  <% end %>
-  <div class="col-sm-12 carousel-container">
-    <div id="boat-photos-carousel" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner" role="listbox">
-        <% @boat.pictures.each_with_index do |p,index| %>
-          <div class="item <%= 'active' if index==0 %>">
-            <%= image_tag p.image.url %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="row boat-name-container">
-      <div class="col-sm-12">
-        <h1 class="boat-name"><%= @boat.name %></h1>
-        <h2 class="boat-owner">
-          <%= image_tag @boat.user.image(:thumb), class: 'user-avatar' %> <%= @boat.user.name %>
-        </h2>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="row boat-body">
+  <%# Left Column %>
   <div class="col-sm-8 boat-info">
+    <div class="row boat-hero">
+      <% if can? :edit, @boat %>
+        <div class="boat-management-buttons">
+          <%= link_to _('Edit'), edit_boat_path(@boat), class: 'btn btn-primary btn-lg' %>
+          <%#= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+      <div class="col-sm-12 carousel-container">
+        <div id="boat-photos-carousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <% @boat.pictures.each_with_index do |p,index| %>
+              <div class="item <%= 'active' if index==0 %>">
+                <%= image_tag p.image.url %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="row boat-name-container">
+          <div class="col-sm-12">
+            <h1 class="boat-name"><%= @boat.model %></h1>
+            <h2 class="boat-owner">
+              <%= @boat.name %>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">    
+        <p><strong><%= @boat.address %></strong></p>
 
-    <p><strong><%= @boat.address %></strong></p>
+        <p><%= @boat.description %></p>
 
-    <p><%= @boat.description %></p>
-
-    <hr>
+        <hr>
+      </div>
+    </div>
 
     <h3><%= _('Details') %></h3>
-
     <div class="row">
       <div class="col-sm-6">
         <p>
@@ -79,6 +81,7 @@
     </div>
 
   </div>
+  <%# Right Column %>
   <div class="col-sm-4 boat-booking">
     <div class="row">
       <div class="col-sm-12 boat-price">
@@ -117,6 +120,25 @@
             }
           ])
         %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 boat-owner">
+        <h2><%= @boat.user.name %></h2>
+        <div class="row">
+          <div class="col-sm-4">
+            <%= image_tag @boat.user.image.url, class: 'user-avatar' %>
+          </div>
+          <div class="col-sm-6">
+            Troope altre info
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <small><%= @boat.user.bio %></small>
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>
