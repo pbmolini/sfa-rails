@@ -14,3 +14,15 @@
   }
 
 }
+
+.bootstrap-datetimepicker-widget {
+  .day {
+    border-radius: 0;
+    background-color: #3AC24B;
+  }
+
+  .day.disabled {
+    background-color: red;
+    opacity: .2;
+  }
+}

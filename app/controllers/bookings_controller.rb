@@ -31,15 +31,15 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    @booking = @boat.bookings.create(booking_params)
+    @booking = @boat.bookings.build(booking_params)
 
     respond_to do |format|
       if @booking.save
         format.html { redirect_to @boat, notice: 'Booking was successfully created.' }
-        format.json { render :show, status: :created, location: @boat }
+        # format.json { render :show, status: :created, location: @boat }
       else
         format.html { render 'boats/show' }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
+        # format.json { render json: @booking.errors, status: :unprocessable_entity }
       end
     end
   end

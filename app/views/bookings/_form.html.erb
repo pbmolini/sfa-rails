@@ -2,10 +2,8 @@
 
 <%= simple_form_for([@boat, @booking]) do |f| %>
   <% if @booking.errors[:base].any? %>
-    <p class="error"><%= @booking.errors[:base].join(', ') %></p>
+    <p class="alert alert-danger"><%= @booking.errors[:base].join(', ') %></p>
   <% end %>
-
-  <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.association :user, as: :hidden %>
@@ -35,6 +33,6 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-  $('form#new_booking').bookingForm(<%= @boat.days.where('date >= ?', DateTime.now).order('date ASC').to_json.html_safe %>);
+  $('form#new_booking').bookingForm(<%= @boat.days.where('date >= ? AND booking_id IS NULL', DateTime.now).order('date ASC').to_json.html_safe %>);
 });
 </script>
