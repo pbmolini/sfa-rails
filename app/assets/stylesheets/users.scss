@@ -46,3 +46,10 @@ p.legal-acceptance {
   font-size: small;
   text-align: center;
 }
+
+.avatar-preview {
+  @extend .text-center;
+   img {
+    height: 50px;
+   }
+}

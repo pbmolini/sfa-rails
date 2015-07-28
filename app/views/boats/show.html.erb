@@ -127,7 +127,7 @@
         <h2><%= @boat.user.name %></h2>
         <div class="row">
           <div class="col-sm-4">
-            <%= image_tag @boat.user.image.url, class: 'user-avatar' %>
+            <%= image_tag @boat.user.image.url(:medium), class: 'user-avatar' %>
           </div>
           <div class="col-sm-6">
             Troope altre info
