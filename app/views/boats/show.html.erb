@@ -28,11 +28,15 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row boat-location">
+      <div class="col-sm-12">
+        <strong><%= fa_icon 'map-marker', text: @boat.address %></strong>
+      </div>
+    </div>
+    <div class="row boat-description">
       <div class="col-sm-12">    
-        <p><strong><%= @boat.address %></strong></p>
 
-        <p><%= @boat.description %></p>
+        <%= @boat.description %>
 
         <hr>
       </div>
@@ -40,18 +44,35 @@
 
     <h3><%= _('Details') %></h3>
     <div class="row">
-      <div class="col-sm-6">
-        <p>
-          <strong><%= s_("Boat category") %>:</strong> <%= _(@boat.boat_category.name) %><br>
-          <strong><%= s_("Boat|Manufacturer") %>:</strong> <%= @boat.manufacturer %><br>
-          <strong><%= s_("Boat|Model") %>:</strong> <%= @boat.model %>
-        </p>
+      <div class="col-sm-4">
+        <dl class="dl-horizontal">
+          <dt><%= s_("Boat category") %></dt>
+          <dd><%= _(@boat.boat_category.name) %></dd>
+          <dt><%= s_("Boat|Model") %></dt>
+          <dd><%= @boat.model %></dd>
+          <dt><%= s_("Boat|Name") %></dt>
+          <dd><%= @boat.name %></dd>
+          <dt><%= s_("Boat|Manufacturer") %></dt>
+          <dd><%= @boat.manufacturer %></dd>
+        </dl>
       </div>
-      <div class="col-sm-6">
-        <p>
-          <strong><%= s_("Boat|Length") %>:</strong> <%= @boat.length %> m<br>
-          <strong><%= s_("Boat|Guest capacity") %>:</strong> <%= @boat.guest_capacity %>
-        </p>
+      <div class="col-sm-4">
+        <dl class="dl-horizontal">
+          <dt><%= s_("Boat|Year") %></dt>
+          <dd><%= @boat.year %></dd>
+          <dt><%= s_("Boat|Length") %> (m)</dt>
+          <dd><%= @boat.length %></dd>
+          <dt><%= s_("Boat|Guest capacity") %></dt>
+          <dd><%= @boat.guest_capacity %></dd>
+        </dl>
+      </div>
+      <div class="col-sm-4">
+        <dl class="dl-horizontal">
+          <dt><%= s_("Boat|Fuel Type") %></dt>
+          <dd><%= @boat.fuel_type %></dd>
+          <dt><%= s_("Boat|Horse power") %></dt>
+          <dd><%= @boat.horse_power %></dd>
+        </dl>
       </div>
     </div>
 
@@ -129,15 +150,34 @@
           <div class="col-sm-4">
             <%= image_tag @boat.user.image.url(:medium), class: 'user-avatar' %>
           </div>
-          <div class="col-sm-6">
-            Troope altre info
+          <div class="col-sm-6 boat-owner-stats">
+            <ul class="list-unstyled">
+              <li>
+                <%= time_ago_in_words(@boat.user.birthdate).capitalize %>
+              </li>
+              <li>
+                <%= _("Registered %{time} ago") %{time: time_ago_in_words(@boat.user.created_at)} %>
+              </li>
+              <li>
+                <%= _("%{num} %{boat_pl} %{registered_pl}") %{num: current_user.boats.complete.count, boat_pl: n_("boat", "boats", current_user.boats.complete.count), registered_pl: n_("registered", "registered", current_user.boats.complete.count)} %>
+              </li>
+              <li>
+                <%= _("No feedback yet") %>
+              </li>
+            </ul>
           </div>
         </div>
+        <% unless @boat.user.bio.blank? %> 
         <div class="row">
-          <div class="col-sm-12">
-            <small><%= @boat.user.bio %></small>
+          <div class="col-sm-10 col-sm-offset-1 boat-owner-bio">
+            <span class="small">
+              <%= fa_icon 'quote-left', class: 'fa-2x pull-left' %>
+              <%= @boat.user.bio %>
+              <%= fa_icon 'quote-right', class: 'fa-2x pull-right' %>
+            </span>
           </div>
         </div>
+        <% end %>
         
       </div>
     </div>

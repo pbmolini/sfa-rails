@@ -26,13 +26,22 @@ msgstr ""
 msgid "%{length} characters minimum"
 msgstr ""
 
+msgid "%{num} %{boat_pl} %{registered_pl}"
+msgstr ""
+
 msgid "-- the team of %{link}"
+msgstr ""
+
+msgid "About us"
 msgstr ""
 
 msgid "Address"
 msgstr ""
 
 msgid "All the boats that soon will be available for renting"
+msgstr ""
+
+msgid "Already have an account?"
 msgstr ""
 
 msgid "Are really you sure you want to delete %{name}?"
@@ -179,6 +188,9 @@ msgstr ""
 msgid "Boat|Description"
 msgstr ""
 
+msgid "Boat|Fuel Type"
+msgstr ""
+
 msgid "Boat|Fuel type"
 msgstr ""
 
@@ -222,6 +234,9 @@ msgid "Booking|People on board"
 msgstr ""
 
 msgid "Booking|Start time"
+msgstr ""
+
+msgid "By joining you agree to our %{tos} and %{privacy}"
 msgstr ""
 
 msgid "Cancel my account"
@@ -344,9 +359,6 @@ msgstr ""
 msgid "Incomplete boats"
 msgstr ""
 
-msgid "Info"
-msgstr ""
-
 msgid "Landing|I have a boat to share"
 msgstr ""
 
@@ -419,13 +431,22 @@ msgstr ""
 msgid "Log in"
 msgstr ""
 
+msgid "Login"
+msgstr ""
+
 msgid "Login info"
 msgstr ""
 
 msgid "Login with Facebook"
 msgstr ""
 
-msgid "MailBody|Welcome and thanks for joining SeaForAll!"
+msgid "MailBody|Complete now your first boat's profile and get ready to share your boat!"
+msgstr ""
+
+msgid "MailBody|For any help just visit our awesome %{help_page} or contact us by replying to this email."
+msgstr ""
+
+msgid "MailBody|Welcome and thanks for joining Sea for All!"
 msgstr ""
 
 msgid "MailTitle|Welcome to Sea for All!"
@@ -450,6 +471,12 @@ msgid "No boats yet"
 msgstr ""
 
 msgid "No engine? Uncheck!"
+msgstr ""
+
+msgid "No feedback yet"
+msgstr ""
+
+msgid "Not a member?"
 msgstr ""
 
 msgid "Not ready for renting"
@@ -491,6 +518,9 @@ msgstr ""
 msgid "Power"
 msgstr ""
 
+msgid "Privacy Policy"
+msgstr ""
+
 msgid "Profile picture"
 msgstr ""
 
@@ -500,10 +530,16 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
+msgid "Register a new boat"
+msgstr ""
+
+msgid "Registered %{time} ago"
+msgstr ""
+
 msgid "Remove"
 msgstr ""
 
-msgid "Remove %{name} from SeaForAll"
+msgid "Remove %{name} from Sea for All"
 msgstr ""
 
 msgid "Remove picture"
@@ -513,6 +549,9 @@ msgid "Sail"
 msgstr ""
 
 msgid "Saving..."
+msgstr ""
+
+msgid "See this table for details"
 msgstr ""
 
 msgid "Select the category"
@@ -551,10 +590,16 @@ msgstr ""
 msgid "Tell us something about you, and how much you love your boat!"
 msgstr ""
 
-msgid "Thank you for joining SeaForAll. You can register your boat in a minute, just"
+msgid "Terms and Conditions"
 msgstr ""
 
-msgid "Thank you,"
+msgid "Terms of Service"
+msgstr ""
+
+msgid "Thank you"
+msgstr ""
+
+msgid "Thank you for joining Sea for All. You can register your boat in a minute, just"
 msgstr ""
 
 msgid "They can't be both true!"
@@ -659,7 +704,7 @@ msgstr ""
 msgid "Welcome %{name}"
 msgstr ""
 
-msgid "Welcome to SEAFORALL and thank you for joining us!"
+msgid "Welcome to <strong>Sea for All</strong> and thank you for joining us!"
 msgstr ""
 
 msgid "What is its name?"
@@ -677,13 +722,10 @@ msgstr ""
 msgid "You are receiving this email because you registered an account on %{link} with the email address <em>%{email}</em>. If you think you shouldn't have received this email please contact us replying to this message."
 msgstr ""
 
-msgid "You can register blablah"
-msgstr ""
-
 msgid "You created this account using your Facebook credentials."
 msgstr ""
 
-msgid "You have no boats registered in SeaForAll yet. Register your first boat now! It's fast and easy."
+msgid "You have no boats registered in Sea for All yet. Register your first boat now! It's fast and easy."
 msgstr ""
 
 msgid "You have started the registration of %{num}"
@@ -753,6 +795,11 @@ msgstr ""
 
 msgid "petrol"
 msgstr ""
+
+msgid "registered"
+msgid_plural "registered"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "too many pictures (choose at most 10)"
 msgstr ""
