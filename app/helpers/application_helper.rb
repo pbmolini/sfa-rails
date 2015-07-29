@@ -9,4 +9,8 @@ module ApplicationHelper
 	def aws_pdf_path_for short_pdf_path
 		"#{AWS_SFA_HOST}/pdf/#{short_pdf_path}"
 	end
+
+	def title page_title
+		content_for :title, page_title
+	end
 end

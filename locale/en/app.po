@@ -29,6 +29,12 @@ msgstr ""
 msgid "%{num} %{boat_pl} %{registered_pl}"
 msgstr ""
 
+msgid ""
+"%{profile_link_text} to <strong>publish</strong> your first boat. You can star"
+"t the registration of as many boats you like, but they will be visible to othe"
+"r people once you have completed your profile."
+msgstr ""
+
 msgid "-- the team of %{link}"
 msgstr ""
 
@@ -274,6 +280,12 @@ msgid ""
 "s."
 msgstr ""
 
+msgid "Complete your profile"
+msgstr ""
+
+msgid "Confirm password"
+msgstr ""
+
 msgid "Create Boat"
 msgstr ""
 
@@ -347,6 +359,11 @@ msgid "Help|or check these out"
 msgstr ""
 
 msgid ""
+"Here you will find a nice calendar for setting the availability of your boat. "
+"We are currently working on it!"
+msgstr ""
+
+msgid ""
 "Hey! Thanks for reading this. Did you know that there is a stupid Cookie Law a"
 "round? I hope you do, otherwise you might get fined by the evil governments of"
 " European countries. In any case take a look at http://cookie.tools to learn m"
@@ -356,10 +373,10 @@ msgstr ""
 msgid "Hi %{name}"
 msgstr ""
 
-msgid "How many people can jump aboard?"
+msgid "How many people aboard?"
 msgstr ""
 
-msgid "How much should a guest pay for a day on your boat?"
+msgid "How much for a day on your boat?"
 msgstr ""
 
 msgid "Incomplete boats"
@@ -559,6 +576,9 @@ msgstr ""
 msgid "Remove picture"
 msgstr ""
 
+msgid "Remove|this boat"
+msgstr ""
+
 msgid "Sail"
 msgstr ""
 
@@ -638,6 +658,30 @@ msgid "This photo is too big! No more than {{maxFilesize}} MB please."
 msgstr ""
 
 msgid "Tired of sharing your boat?"
+msgstr ""
+
+msgid "Title|About us"
+msgstr ""
+
+msgid "Title|All the boats"
+msgstr ""
+
+msgid "Title|Dashboard"
+msgstr ""
+
+msgid "Title|Edit Boat"
+msgstr ""
+
+msgid "Title|Edit Profile"
+msgstr ""
+
+msgid "Title|Help & Support"
+msgstr ""
+
+msgid "Title|Privacy Policy"
+msgstr ""
+
+msgid "Title|Terms of Service"
 msgstr ""
 
 msgid "Too many photos!"

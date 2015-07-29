@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-07-28 17:59+0200\n"
+"PO-Revision-Date: 2015-07-29 17:33+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.3\n"
-"POT-Creation-Date: 2015-07-28 18:17+0200\n"
+"POT-Creation-Date: 2015-07-29 17:44+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -28,13 +28,16 @@ msgid "%{length} characters minimum"
 msgstr "minimo %{length} caratteri"
 
 msgid "%{num} %{boat_pl} %{registered_pl}"
-msgstr ""
+msgstr "%{num} %{boat_pl} %{registered_pl}"
+
+msgid "%{profile_link_text} to <strong>publish</strong> your first boat. You can start the registration of as many boats you like, but they will be visible to other people once you have completed your profile."
+msgstr "%{profile_link_text} per <strong>pubblicare</strong> la tua prima barca. Puoi iniziare a d iscrivere quante barche vuoi, ma saranno visibili agli altri soltanto se il tuo profilo sarà completo."
 
 msgid "-- the team of %{link}"
 msgstr "— il team di %{link}"
 
 msgid "About us"
-msgstr ""
+msgstr "Chi siamo"
 
 msgid "Address"
 msgstr "Indirizzo"
@@ -43,7 +46,7 @@ msgid "All the boats that soon will be available for renting"
 msgstr "Tutte le barche che saranno presto disponibili per il noleggio"
 
 msgid "Already have an account?"
-msgstr ""
+msgstr "Hai già un account?"
 
 msgid "Are really you sure you want to delete %{name}?"
 msgstr "Sei davvero sicuro di voler cancellare %{name}?"
@@ -189,9 +192,8 @@ msgstr "Prezzo giornaliero"
 msgid "Boat|Description"
 msgstr "Descrizione"
 
-#, fuzzy
 msgid "Boat|Fuel Type"
-msgstr "Tipo di Carburante"
+msgstr "Carburante"
 
 msgid "Boat|Fuel type"
 msgstr "Tipo di Carburante"
@@ -239,7 +241,7 @@ msgid "Booking|Start time"
 msgstr "Inizio"
 
 msgid "By joining you agree to our %{tos} and %{privacy}"
-msgstr ""
+msgstr "Registrandoti accetti i nostri %{tos} e la nostra %{privacy}"
 
 msgid "Cancel my account"
 msgstr "Elimina il mio account"
@@ -273,6 +275,12 @@ msgstr "Completa la scheda di questa barca per renderla visibile ai tuoi futuri 
 
 msgid "Complete the profiles of these boats to make them visible to your future guests."
 msgstr "Completa le schede di queste barche per renderle visibili ai tuoi futuri ospiti"
+
+msgid "Complete your profile"
+msgstr "Completa il tuo profilo"
+
+msgid "Confirm password"
+msgstr "Conferma password"
 
 msgid "Create Boat"
 msgstr "Crea barca"
@@ -346,17 +354,20 @@ msgstr "Serve aiuto?"
 msgid "Help|or check these out"
 msgstr "oppure dai un’occhiata qui"
 
+msgid "Here you will find a nice calendar for setting the availability of your boat. We are currently working on it!"
+msgstr "Qui troverai il calendario per impostare i giorni in cui la tua barca sarà disponibile. Ci stiamo lavorando su!"
+
 msgid "Hey! Thanks for reading this. Did you know that there is a stupid Cookie Law around? I hope you do, otherwise you might get fined by the evil governments of European countries. In any case take a look at http://cookie.tools to learn more."
 msgstr ""
 
 msgid "Hi %{name}"
 msgstr "Ciao %{name}"
 
-msgid "How many people can jump aboard?"
-msgstr ""
+msgid "How many people aboard?"
+msgstr "Quante persone a bordo?"
 
-msgid "How much should a guest pay for a day on your boat?"
-msgstr ""
+msgid "How much for a day on your boat?"
+msgstr "Quanto chiedi al giorno?"
 
 msgid "Incomplete boats"
 msgstr "Barche non ancora completate"
@@ -433,7 +444,6 @@ msgstr "Solo con Patente Nautica"
 msgid "Log in"
 msgstr "Log in"
 
-#, fuzzy
 msgid "Login"
 msgstr "Log in"
 
@@ -444,17 +454,16 @@ msgid "Login with Facebook"
 msgstr "Login con Facebook"
 
 msgid "MailBody|Complete now your first boat's profile and get ready to share your boat!"
-msgstr ""
+msgstr "Completa subito il profilo della tua prima barca e preparati a condividerla con altre persone che come te amano il mare."
 
 msgid "MailBody|For any help just visit our awesome %{help_page} or contact us by replying to this email."
-msgstr ""
+msgstr "Se hai bisogno di aiuto puoi andare sulla nostra fantastica %{help_page} oppure puoi contattarci direttamente rispondendo a questa email."
 
-#, fuzzy
 msgid "MailBody|Welcome and thanks for joining Sea for All!"
-msgstr "Benvenuto e grazie per esserti registrato su SeaForAll!"
+msgstr "Benvenuto e grazie per esserti registrato su Sea for All!"
 
 msgid "MailTitle|Welcome to Sea for All!"
-msgstr "Benvenuto su Sea For All!"
+msgstr "Benvenuto su Sea for All!"
 
 msgid "My Boats"
 msgstr "Le mie barche"
@@ -477,12 +486,11 @@ msgstr "Non ci sono ancora barche"
 msgid "No engine? Uncheck!"
 msgstr "Senza motore? Deseleziona!"
 
-#, fuzzy
 msgid "No feedback yet"
-msgstr "Non ci sono ancora barche"
+msgstr "Nessun feedback"
 
 msgid "Not a member?"
-msgstr ""
+msgstr "Non sei ancora registrato?"
 
 msgid "Not ready for renting"
 msgstr "Non ancora pronte per essere noleggiate"
@@ -524,7 +532,7 @@ msgid "Power"
 msgstr "Motore"
 
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Informativa privacy"
 
 msgid "Profile picture"
 msgstr "Immagine del profilo"
@@ -536,20 +544,22 @@ msgid "Register"
 msgstr "Registrati"
 
 msgid "Register a new boat"
-msgstr ""
+msgstr "Iscrivi una nuova barca"
 
 msgid "Registered %{time} ago"
-msgstr ""
+msgstr "Iscritto da %{time}"
 
 msgid "Remove"
 msgstr "Elimina"
 
-#, fuzzy
 msgid "Remove %{name} from Sea for All"
-msgstr "Elimina %{name} da SeaForAll"
+msgstr "Elimina %{name} da Sea for All"
 
 msgid "Remove picture"
 msgstr "Elimina immagine"
+
+msgid "Remove|this boat"
+msgstr ""
 
 msgid "Sail"
 msgstr "Vela"
@@ -558,7 +568,7 @@ msgid "Saving..."
 msgstr "Salvo…"
 
 msgid "See this table for details"
-msgstr ""
+msgstr "Controlla questa tabella per i dettagli"
 
 msgid "Select the category"
 msgstr "Seleziona la categoria"
@@ -597,18 +607,16 @@ msgid "Tell us something about you, and how much you love your boat!"
 msgstr "Raccontaci qualcosa di te e fai sapere a tutti quanto ami la tua barca!"
 
 msgid "Terms and Conditions"
-msgstr ""
+msgstr "Termini e Condizioni"
 
 msgid "Terms of Service"
-msgstr ""
+msgstr "Termini di Servizio"
 
-#, fuzzy
 msgid "Thank you"
-msgstr "Grazie,"
+msgstr "Grazie"
 
-#, fuzzy
 msgid "Thank you for joining Sea for All. You can register your boat in a minute, just"
-msgstr "Grazie per esserti registrato su SeaForAll. Puoi iniziare a registrare la tua barca tra un minuto, devi solo"
+msgstr "Grazie per esserti registrato su Sea for All. Puoi iniziare ad iscrivere la tua barca tra un minuto, devi solo"
 
 msgid "They can't be both true!"
 msgstr "Non possono essere presenti entrambi!"
@@ -627,6 +635,36 @@ msgstr "Questa foto è troppo grande! Per favore caricare foto di dimensioni sup
 
 msgid "Tired of sharing your boat?"
 msgstr "Ti sei stancato di condividere la tua barca?"
+
+#, fuzzy
+msgid "Title|About us"
+msgstr "Chi siamo"
+
+msgid "Title|All the boats"
+msgstr ""
+
+msgid "Title|Dashboard"
+msgstr ""
+
+#, fuzzy
+msgid "Title|Edit Boat"
+msgstr "Modifica barca"
+
+#, fuzzy
+msgid "Title|Edit Profile"
+msgstr "Modifica profilo"
+
+#, fuzzy
+msgid "Title|Help & Support"
+msgstr "Aiuto e Supporto"
+
+#, fuzzy
+msgid "Title|Privacy Policy"
+msgstr "Informativa privacy"
+
+#, fuzzy
+msgid "Title|Terms of Service"
+msgstr "Termini di Servizio"
 
 msgid "Too many photos!"
 msgstr "Hai troppe immagini!"
@@ -713,7 +751,7 @@ msgid "Welcome %{name}"
 msgstr "Benvenuto %{name}"
 
 msgid "Welcome to <strong>Sea for All</strong> and thank you for joining us!"
-msgstr ""
+msgstr "Benvenuto su <strong>Sea for All</strong> e grazie per esserti unito a noi!"
 
 msgid "What is its name?"
 msgstr "Come si chiama?"
@@ -733,9 +771,8 @@ msgstr "Ricevi questa email perché hai creato un account su %{link} con l’ind
 msgid "You created this account using your Facebook credentials."
 msgstr "Hai creato questo account utilizzando le credenziali di Facebook."
 
-#, fuzzy
 msgid "You have no boats registered in Sea for All yet. Register your first boat now! It's fast and easy."
-msgstr "Non hai ancora registrato una barca su SeaForAll. Registra la tua prima barca adesso! È facile e veloce."
+msgstr "Non hai ancora registrato una barca su Sea for All. Iscrivi la tua prima barca adesso! È facile e veloce."
 
 msgid "You have started the registration of %{num}"
 msgstr "Hai iniziato la registrazione di % {num}"
@@ -785,7 +822,7 @@ msgid "e.g. Pursuit DC 265, Cobalt A25"
 msgstr "e.g. Pursuit DC 265, Cobalt A25"
 
 msgid "help page"
-msgstr "pagina di aiuto"
+msgstr "pagina di supporto"
 
 msgid "leave it blank if you don't want to change it"
 msgstr "lascia vuoto se non vuoi cambiare la password"
@@ -805,37 +842,13 @@ msgstr "oppure compila i seguenti campi"
 msgid "petrol"
 msgstr "benzina"
 
-#, fuzzy
 msgid "registered"
 msgid_plural "registered"
-msgstr[0] "Registrati"
+msgstr[0] "registrata"
+msgstr[1] "registrate"
 
 msgid "too many pictures (choose at most 10)"
 msgstr "troppe immagini (non possono essere più di 10)"
 
 msgid "we need your current password to confirm your changes"
 msgstr "devi inserire la password attuale per cambiare la password"
-
-#~ msgid "MailBody|Welcome and thanks for joining SeaForAll!"
-#~ msgstr "Benvenuto e grazie per esserti registrato su SeaForAll!"
-
-#~ msgid "Remove %{name} from SeaForAll"
-#~ msgstr "Elimina %{name} da SeaForAll"
-
-#~ msgid "Thank you for joining SeaForAll. You can register your boat in a minute, just"
-#~ msgstr ""
-#~ "Grazie per esserti registrato su SeaForAll. Puoi iniziare a registrare la tua "
-#~ "barca tra un minuto, devi solo"
-
-#~ msgid "Thank you,"
-#~ msgstr "Grazie,"
-
-#~ msgid "Welcome to SEAFORALL and thank you for joining us!"
-#~ msgstr "Benvenuto su SeaForAll e grazie per esserti registrato!"
-
-#~ msgid ""
-#~ "You have no boats registered in SeaForAll yet. Register your first boat now! I"
-#~ "t's fast and easy."
-#~ msgstr ""
-#~ "Non hai ancora registrato una barca su SeaForAll. Registra la tua prima barca "
-#~ "adesso! È facile e veloce."
