@@ -1,3 +1,4 @@
+<% content_for :title, "Dashboard" %>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 dashboard-welcome">
@@ -12,37 +13,25 @@
       <p>
         <%= _("This is your <em>dashboard</em>: from here you can access all the details of your boats and soon you will be able to manage your bookings.").html_safe %>
       </p>
-      <%# Incomplete Boats %>
-      <% if current_user.boats.incomplete.any? %>
-        <div class="col-sm-12 dashboard-incomplete">
-          <p>
-            <%= _("Incomplete boats") %> <small>(<%= _("Not ready for renting") %>)</small>
-          </p>
-          <p>
-            <%= _("You have started the registration of %{num}") %{num: current_user.boats.incomplete.count} %>
-            <%= n_("boat", "boats", current_user.boats.incomplete.count) %>.
-            <% if current_user.boats.incomplete.count > 1 %>
-              <%= _("Complete the profiles of these boats to make them visible to your future guests.") %>
-            <% else %>
-              <%= _("Complete the profile of this boat to make it visible to your future guests.") %>
-            <% end %>
-          </p>
-        </div>
-
-        <div class="row">
-          <% current_user.boats.incomplete.each do |boat| %>
-            <%= render 'boats/boat_card', boat: boat %>
-          <% end %>
-        </div>
-      </div>
-      <% end %>
     </div>
   </div>
 
-  <%# No Boats %>
+  <%# Incomplete Profile %>
+  <% unless current_user.complete? %>
   <div class="row">
-    <div class="col-sm-12">
-      <% unless current_user.boats.any? %>
+    <div class="col-md-12 dashboard-incomplete-profile">
+      <h2><%= _("Complete your profile") %></h2>
+      <p class="small">
+        <%= (_("%{profile_link_text} to <strong>publish</strong> your first boat. You can start the registration of as many boats you like, but they will be visible to other people once you have completed your profile.") %{profile_link_text: link_to(_("Complete your profile"), edit_user_registration_path)}).html_safe %>
+      </p>
+    </div>
+  </div>
+  <% end %>
+
+  <%# No Boats %>
+  <% unless current_user.boats.any? %>
+  <div class="row">
+    <div class="col-sm-12 dashboard-no-boats">
       <h2><%= _("No boats yet") %></h2>
       <p><%= _("You have no boats registered in Sea for All yet. Register your first boat now! It's fast and easy.") %></p>
       <p class="text-center">
@@ -53,11 +42,34 @@
           <%= (_("Need help? Visit our wonderful %{help_page_link}!") %{help_page_link: link_to(_("help page"), page_path('help', locale: I18n.locale))}).html_safe %>
         </small>
       </p>
-      <% else %>
-      <% end %>
     </div>
   </div>
-
+  <% end %>
+  
+  <%# Incomplete Boats %>
+  <% if current_user.boats.incomplete.any? %>
+  <div class="row">
+    <div class="col-sm-12 dashboard-incomplete">
+      <p>
+        <%= _("Incomplete boats") %> <small>(<%= _("Not ready for renting") %>)</small>
+      </p>
+      <p>
+        <%= _("You have started the registration of %{num}") %{num: current_user.boats.incomplete.count} %>
+        <%= n_("boat", "boats", current_user.boats.incomplete.count) %>.
+        <% if current_user.boats.incomplete.count > 1 %>
+          <%= _("Complete the profiles of these boats to make them visible to your future guests.") %>
+        <% else %>
+          <%= _("Complete the profile of this boat to make it visible to your future guests.") %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <% current_user.boats.incomplete.each do |boat| %>
+      <%= render 'boats/boat_card', boat: boat %>
+    <% end %>
+  </div>
+  <% end %>
 
   <%# Complete Boats %>
   <% if current_user.boats.complete.any? %>

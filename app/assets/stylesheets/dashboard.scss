@@ -11,6 +11,15 @@
 	color: white;
 }
 
+.dashboard-incomplete-profile {
+	@extend .alert, .alert-warning;
+	margin-top: 1em;
+}
+
+.dashboard-no-boats {
+	@extend .alert, .alert-info;
+}
+
 .wave {
 	position: absolute;
 	top: -7px;

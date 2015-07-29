@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   end
 
   def complete?
-    self.location and self.phone and self.birthdate
+    self.location.present? and self.phone.present? and self.birthdate.present?
   end
 
   private

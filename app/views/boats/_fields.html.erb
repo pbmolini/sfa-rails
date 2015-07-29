@@ -57,7 +57,7 @@
   </div>
   <div class="col-sm-4">
     <%= f.input :guest_capacity, wrapper: :vertical_input_group, required: false do %>
-      <%= f.input_field :guest_capacity, placeholder: _("How many people can jump aboard?"), class: 'form-control' %>
+      <%= f.input_field :guest_capacity, placeholder: _("How many people aboard?"), class: 'form-control' %>
       <span class="input-group-addon boat-input-group-addon"><%= fa_icon 'users' %></span>
     <% end %>
   </div>
@@ -82,7 +82,7 @@
   </div>
   <div class="col-sm-4">
     <%= f.input :daily_price, wrapper: :vertical_input_group, required: false do %>
-      <%= f.input_field :daily_price, placeholder: _("How much should a guest pay for a day on your boat?"), class: "form-control" %>
+      <%= f.input_field :daily_price, placeholder: _("How much for a day on your boat?"), class: "form-control" %>
       <span class="input-group-addon boat-input-group-addon"><%= fa_icon 'eur' %></span>
     <% end %>
   </div>

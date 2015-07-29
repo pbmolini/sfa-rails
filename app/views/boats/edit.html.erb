@@ -55,6 +55,7 @@
 				</div>
 				<div role="tabpanel" class="tab-pane fade in" id="boat_calendar">
 					<h3><%= _("Coming soon&hellip;").html_safe %></h3>
+					<p><%= _("Here you will find a nice calendar for setting the availability of your boat. We are currently working on it!") %></p>
 				</div>
 				<div role="tabpanel" class="tab-pane fade in" id="boat_pictures">
 					<h3><%= _('Pictures of your boat') %></h3>
@@ -65,11 +66,11 @@
 					<p class="alert alert-danger" role="alert">
 						<%= _("Tired of sharing your boat?") %>
 						<br>
-						<%= link_to _("Remove %{name} from Sea for All") %{name: @boat.name},
+						<%= link_to _("Remove %{name} from Sea for All") %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name},
 													boat_path(@boat),
 													method: :delete,
 													:class => 'alert-link',
-													data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name} } if can? :destroy, @boat %>
+													data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name} } if can? :destroy, @boat %>
 					</p>
 				</div>
 			</div>
