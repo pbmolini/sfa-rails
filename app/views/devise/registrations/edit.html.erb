@@ -11,10 +11,10 @@
         <h2><%= _("Edit Profile") %><%= f.button :submit, _("Update"), class: 'btn btn-lg btn-success pull-right' %></h2>
         <ul class="nav nav-pills">
           <li role="presentation" class="active">
-            <a href="#personal_info" aria-controls="personal_info" role="tab" data-toggle="tab"><%= _("Personal info") %></a>
+            <a href="#personal_info" aria-controls="personal_info" role="tab" data-toggle="tab"><%= fa_icon 'user', text: _("Personal info") %></a>
           </li>
           <li role="presentation">
-            <a href="#login_info" aria-controls="login_info" role="tab" data-toggle="tab"><%= _("Login info") %></a>
+            <a href="#login_info" aria-controls="login_info" role="tab" data-toggle="tab"><%= fa_icon 'lock', text: _("Login info") %></a>
           </li>
         </ul>
         <p><%= f.error_notification %></p>
@@ -94,6 +94,17 @@
         reader.readAsDataURL(this.files[0]);
       }
     });
+
+
+    $('#user_birthdate').datetimepicker({
+      locale: '<%= I18n.locale %>',
+      format: 'YYYY-MM-DD',
+      extraFormats: [ 'LL' ],
+      useCurrent: <%= resource.birthdate.blank? %>,
+      defaultDate: moment().subtract(16, 'years').subtract(1, 'days'),
+      maxDate: moment().subtract(16, 'years').subtract(1, 'days')
+    });
+
   });
 </script>
 <% end %>
