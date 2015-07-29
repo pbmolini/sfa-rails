@@ -70,7 +70,7 @@
       <div class="col-sm-4">
         <dl class="dl-horizontal">
           <dt><%= s_("Boat|Fuel Type") %></dt>
-          <dd><%= @boat.fuel_type %></dd>
+          <dd><%= _(@boat.fuel_type).humanize %></dd>
           <dt><%= s_("Boat|Horse power") %></dt>
           <dd><%= @boat.horse_power %></dd>
         </dl>
