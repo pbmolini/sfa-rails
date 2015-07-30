@@ -5,14 +5,14 @@
   <div class="boat-card">
     <%= link_to boat do %>
       <div>
-        <% bg_image = boat.pictures.any? ? boat.pictures.first.image.url : "https://placeholdit.imgix.net/~text?txtsize=75&txt=SeaForAll&w=300&h=250" %>
+        <% bg_image = boat.pictures.any? ? boat.pictures.first.image.url : placeholder_url_for(:boat_card) %>
         <%= image_tag(boat.user.image(:thumb), height: '50px', class: 'boat-owner') %>
         <p class="boat-price"><%= boat.daily_price || "??" %> <%= fa_icon 'eur' %></p>
         <div class="picture" style="background-image: url('<%= bg_image %>')"></div>
         <div class="caption">
-          <h3 class="boat-model"><%= boat.model.present? ? boat.model : s_("BoatCard|Model not saved") %></h3>
-          <p class="boat-name"><%= boat.name.present? ? boat.name : s_("BoatCard|Name not saved") %></p>
-          <p class="boat-place"><%= boat.address.present? ? boat.address : s_("BoatCard|Address_not_saved") %></p>
+          <h3 class="boat-model"><%= boat.model.present? ? boat.model : s_("BoatMissingField|Model not set") %></h3>
+          <p class="boat-name"><%= boat.name.present? ? boat.name : s_("BoatMissingField|Name not set") %></p>
+          <p class="boat-place"><%= boat.address.present? ? boat.address : s_("BoatMissingField|Address not set") %></p>
         </div>
       </div>
     <% end %>

@@ -5,10 +5,16 @@
 	}
 }
 
-.dashboard-incomplete {
+.dashboard-incomplete-header {
+	margin-top: 1em;
 	background: $orange;
-	padding: 10px 10px 5px 10px;
+	padding-top: 10px;
+	padding-bottom: 5px;
 	color: white;
+}
+
+.dashboard-incomplete-list {
+	margin-top: .5em;
 }
 
 .dashboard-incomplete-profile {

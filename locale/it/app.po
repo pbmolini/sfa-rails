@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-07-29 17:45+0200\n"
+"PO-Revision-Date: 2015-07-30 17:58+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -99,15 +99,6 @@ msgstr "La barca è stata eliminata"
 msgid "Boat was successfully updated"
 msgstr "La barca è stata aggiornata"
 
-msgid "BoatCard|Address_not_saved"
-msgstr "Indirizzo non salvato"
-
-msgid "BoatCard|Model not saved"
-msgstr "Modello non salvato"
-
-msgid "BoatCard|Name not saved"
-msgstr "Nome non salvato"
-
 msgid "BoatCategory|Name"
 msgstr "Categoria"
 
@@ -185,6 +176,15 @@ msgstr "WC"
 
 msgid "BoatFeature|Name"
 msgstr "Nome"
+
+msgid "BoatMissingField|Address not set"
+msgstr "Indirizzo non inserito"
+
+msgid "BoatMissingField|Model not set"
+msgstr "Modello non inserito"
+
+msgid "BoatMissingField|Name not set"
+msgstr "Nome non inserito"
 
 msgid "Boat|Address"
 msgstr "Indirizzo"
@@ -326,6 +326,15 @@ msgstr "Modifica barca"
 
 msgid "Edit Profile"
 msgstr "Modifica profilo"
+
+msgid ""
+"Edit to add\n"
+"pictures\n"
+" "
+msgstr ""
+"Modifica per\n"
+"aggiungere foto\n"
+" "
 
 msgid "Engine Horse Power"
 msgstr "Cavalli Potenza"
@@ -498,6 +507,9 @@ msgstr "Le mie barche"
 msgid "My Profile"
 msgstr "Il mio profilo"
 
+msgid "N/A"
+msgstr "N/D"
+
 msgid "Need help? Visit our wonderful %{help_page_link}!"
 msgstr "Ti serve auito? Visita la nostra %{help_page_link}!"
 
@@ -554,7 +566,7 @@ msgstr ""
 
 msgid ""
 "Please use the fallback form below to upload your files like in the olden days."
-msgstr ""
+msgstr "Usa il form qui sotto per caricare i files come ai bei vecchi tempi"
 
 msgid "Power"
 msgstr "Motore"
@@ -828,6 +840,12 @@ msgstr "Devi aggiungere almeno una foto della tua barca per poterla pubblicare"
 
 msgid "You have to log in to continue."
 msgstr "È necessario effettuare il login per continuare."
+
+msgid ""
+"Your boat's description goes here. %{link_text} this boat to add a description."
+msgstr ""
+"La descrizione della tua barca apparirà qui. %{link_text} questa barca per "
+"inserire una descrizione."
 
 msgid "Your boat's length, in meters"
 msgstr "La lunghezza della barca, in metri"

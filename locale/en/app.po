@@ -95,15 +95,6 @@ msgstr ""
 msgid "Boat was successfully updated"
 msgstr ""
 
-msgid "BoatCard|Address_not_saved"
-msgstr ""
-
-msgid "BoatCard|Model not saved"
-msgstr ""
-
-msgid "BoatCard|Name not saved"
-msgstr ""
-
 msgid "BoatCategory|Name"
 msgstr ""
 
@@ -180,6 +171,15 @@ msgid "BoatFeaturesSet|Wc"
 msgstr ""
 
 msgid "BoatFeature|Name"
+msgstr ""
+
+msgid "BoatMissingField|Address not set"
+msgstr ""
+
+msgid "BoatMissingField|Model not set"
+msgstr ""
+
+msgid "BoatMissingField|Name not set"
 msgstr ""
 
 msgid "Boat|Address"
@@ -320,6 +320,12 @@ msgid "Edit Boat"
 msgstr ""
 
 msgid "Edit Profile"
+msgstr ""
+
+msgid ""
+"Edit to add\n"
+"pictures\n"
+" "
 msgstr ""
 
 msgid "Engine Horse Power"
@@ -485,6 +491,9 @@ msgid "My Boats"
 msgstr ""
 
 msgid "My Profile"
+msgstr ""
+
+msgid "N/A"
 msgstr ""
 
 msgid "Need help? Visit our wonderful %{help_page_link}!"
@@ -804,6 +813,11 @@ msgid "You have to add at least one picture of your boat before publishing"
 msgstr ""
 
 msgid "You have to log in to continue."
+msgstr ""
+
+msgid ""
+"Your boat's description goes here. %{link_text} this boat to add a description"
+"."
 msgstr ""
 
 msgid "Your boat's length, in meters"

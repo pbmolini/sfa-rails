@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-07-29 17:33+0200\n"
+"PO-Revision-Date: 2015-07-29 17:45+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.3\n"
-"POT-Creation-Date: 2015-07-29 17:44+0200\n"
+"POT-Creation-Date: 2015-07-30 17:52+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -92,15 +92,6 @@ msgstr "La barca è stata eliminata"
 
 msgid "Boat was successfully updated"
 msgstr "La barca è stata aggiornata"
-
-msgid "BoatCard|Address_not_saved"
-msgstr "Indirizzo non salvato"
-
-msgid "BoatCard|Model not saved"
-msgstr "Modello non salvato"
-
-msgid "BoatCard|Name not saved"
-msgstr "Nome non salvato"
 
 msgid "BoatCategory|Name"
 msgstr "Categoria"
@@ -179,6 +170,15 @@ msgstr "WC"
 
 msgid "BoatFeature|Name"
 msgstr "Nome"
+
+msgid "BoatMissingField|Address not set"
+msgstr ""
+
+msgid "BoatMissingField|Model not set"
+msgstr ""
+
+msgid "BoatMissingField|Name not set"
+msgstr ""
 
 msgid "Boat|Address"
 msgstr "Indirizzo"
@@ -317,6 +317,12 @@ msgstr "Modifica barca"
 
 msgid "Edit Profile"
 msgstr "Modifica profilo"
+
+msgid ""
+"Edit to add\n"
+"pictures\n"
+" "
+msgstr ""
 
 msgid "Engine Horse Power"
 msgstr "Cavalli Potenza"
@@ -471,6 +477,9 @@ msgstr "Le mie barche"
 msgid "My Profile"
 msgstr "Il mio profilo"
 
+msgid "N/A"
+msgstr ""
+
 msgid "Need help? Visit our wonderful %{help_page_link}!"
 msgstr "Ti serve auito? Visita la nostra %{help_page_link}!"
 
@@ -559,7 +568,7 @@ msgid "Remove picture"
 msgstr "Elimina immagine"
 
 msgid "Remove|this boat"
-msgstr ""
+msgstr "questa barca"
 
 msgid "Sail"
 msgstr "Vela"
@@ -636,33 +645,27 @@ msgstr "Questa foto è troppo grande! Per favore caricare foto di dimensioni sup
 msgid "Tired of sharing your boat?"
 msgstr "Ti sei stancato di condividere la tua barca?"
 
-#, fuzzy
 msgid "Title|About us"
 msgstr "Chi siamo"
 
 msgid "Title|All the boats"
-msgstr ""
+msgstr "Tutte le barche"
 
 msgid "Title|Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
-#, fuzzy
 msgid "Title|Edit Boat"
 msgstr "Modifica barca"
 
-#, fuzzy
 msgid "Title|Edit Profile"
 msgstr "Modifica profilo"
 
-#, fuzzy
 msgid "Title|Help & Support"
 msgstr "Aiuto e Supporto"
 
-#, fuzzy
 msgid "Title|Privacy Policy"
 msgstr "Informativa privacy"
 
-#, fuzzy
 msgid "Title|Terms of Service"
 msgstr "Termini di Servizio"
 
@@ -783,6 +786,9 @@ msgstr "Devi aggiungere almeno una foto della tua barca per poterla pubblicare"
 msgid "You have to log in to continue."
 msgstr "È necessario effettuare il login per continuare."
 
+msgid "Your boat's description goes here. %{link_text} this boat to add a description."
+msgstr ""
+
 msgid "Your boat's length, in meters"
 msgstr "La lunghezza della barca, in metri"
 
@@ -852,3 +858,12 @@ msgstr "troppe immagini (non possono essere più di 10)"
 
 msgid "we need your current password to confirm your changes"
 msgstr "devi inserire la password attuale per cambiare la password"
+
+#~ msgid "BoatCard|Address_not_saved"
+#~ msgstr "Indirizzo non salvato"
+
+#~ msgid "BoatCard|Model not saved"
+#~ msgstr "Modello non salvato"
+
+#~ msgid "BoatCard|Name not saved"
+#~ msgstr "Nome non salvato"

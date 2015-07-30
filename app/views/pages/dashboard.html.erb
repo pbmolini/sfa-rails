@@ -49,10 +49,10 @@
   <%# Incomplete Boats %>
   <% if current_user.boats.incomplete.any? %>
   <div class="row">
-    <div class="col-sm-12 dashboard-incomplete">
-      <p>
+    <div class="col-sm-12 dashboard-incomplete-header">
+      <h2>
         <%= _("Incomplete boats") %> <small>(<%= _("Not ready for renting") %>)</small>
-      </p>
+      </h2>
       <p>
         <%= _("You have started the registration of %{num}") %{num: current_user.boats.incomplete.count} %>
         <%= n_("boat", "boats", current_user.boats.incomplete.count) %>.
@@ -64,7 +64,7 @@
       </p>
     </div>
   </div>
-  <div class="row">
+  <div class="row dashboard-incomplete-list">
     <% current_user.boats.incomplete.each do |boat| %>
       <%= render 'boats/boat_card', boat: boat %>
     <% end %>
