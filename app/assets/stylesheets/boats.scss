@@ -46,25 +46,25 @@
   }
 
   .boat-model {
+    @extend .ellipsized;
     margin-top: 10px;
     font-weight: bold;
     font-size: 28px;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .boat-name, .boat-place {
-    font-weight: 200;
-    font-size: 14px;
-    font-size: 18px;
+    @extend .ellipsized;
     margin-top: 0;
+    font-weight: 200;
+    font-size: 18px;
   }
 
   a {
     color: $black;
     font-weight: bold;
-    text-transform: capitalize;
+    // text-transform: capitalize;
   }
+
   a:hover {
     text-decoration: none;
   }
