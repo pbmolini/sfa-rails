@@ -35,6 +35,13 @@ footer {
   .language-select {
     margin-top: 1em;
   }
+  .center-links {
+    @extend .text-center;
+  }
+  .right-links {
+    @extend .text-right;
+    margin-top: 1em;
+  }
 }
 
 .footer-dropdown {

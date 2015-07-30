@@ -17,13 +17,13 @@
           </ul>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-4 center-links">
         <br>
-        <p class="text-center hidden-xs">
+        <p class="hidden-xs">
           Sea for All - Copyright 2015
         </p>
-        <p class="text-center"><%= mail_to "hello@seaforall.com" %></p>
-        <p class="text-center icons">
+        <p><%= mail_to "hello@seaforall.com" %></p>
+        <p class="icons">
           <a href="https://twitter.com/seaforall">
             <i class="fa fa-twitter"></i>
           </a>
@@ -32,17 +32,21 @@
           </a>
         </p>
       </div>
-      <div class="col-sm-4 text-right">
-        <br>
-        <p>
-          <small><%= link_to _("Help"), page_path(id: 'help') %></small>
-          <br>
-          <small><%= link_to _("About us"), page_path(id: 'about') %></small>
-          <br>
-          <small><%= link_to _("Terms and Conditions"), page_path(id: 'legal/tos') %></small>
-          <br>
-          <small><%= link_to _("Privacy Policy"), page_path(id: 'legal/privacy') %></small>
-        </p>
+      <div class="col-sm-4 right-links">
+        <ul class="list-unstyled">
+          <li>
+            <small><%= link_to _("Help"), page_path(id: 'help') %></small>
+          </li>
+          <li>
+            <small><%= link_to _("About us"), page_path(id: 'about') %></small>
+          </li>
+          <li>
+            <small><%= link_to _("Terms and Conditions"), page_path(id: 'legal/tos') %></small>
+          </li>
+          <li>
+            <small><%= link_to _("Privacy Policy"), page_path(id: 'legal/privacy') %></small>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
