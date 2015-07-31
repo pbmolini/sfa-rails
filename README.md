@@ -63,4 +63,16 @@ heroku run rake db:migrate
 ```
 
 ### Production
-TODO
+To do a *production* deploy just type
+
+```
+git push production master:master
+```
+This command pushes the latest commit from the *master* local branch to the *production* remote (that is the *master* branch on heroku)
+
+If needed, migrate the database with
+
+```
+heroku
+heroku run rake db:migrate --remote production
+```

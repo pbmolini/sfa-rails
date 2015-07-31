@@ -37,28 +37,28 @@ team_members:
     github: https://github.com/aaronsama
 
   - name: Giulio
-    role: "Designer, Front-end Developer"
+    role: "Front-end Designer and Developer"
     picture: team/giulio.png
     linkedin: http://it.linkedin.com/pub/giulio-michelon/58/995/148/en
     twitter: https://twitter.com/giulio_michelon
     github: https://github.com/juleship
 
   - name: Andrea
-    role: "Legal"
+    role: "Legal Manager"
     picture: team/andrea.png
     linkedin: http://it.linkedin.com/in/maruccio
     twitter:
     github:
 
   - name: Martina
-    role: "Branding, Identity"
-    picture: team/placekitten_140.jpg
+    role: "Branding & Identity Manager"
+    picture: team/martina.jpg
     linkedin: http://it.linkedin.com/pub/martina-portunato/2a/563/110/en
     twitter:
     github:
 
   - name: Massimiliano
-    role: "Research & Analysis"
+    role: "Research & Analysis Manager"
     picture: team/massimiliano.png
     linkedin: http://it.linkedin.com/pub/massimiliano-mazzurana/3/aa9/a84
     twitter:

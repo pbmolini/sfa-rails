@@ -17,6 +17,7 @@
   			<% end %>
 
         <%= f.association :boat_category,
+            label: _('Boat category'),
             prompt: _("Select the category"),
             input_html: { class: 'form-control' },
             label_method: ->(obj) { _(obj.to_s).capitalize },
