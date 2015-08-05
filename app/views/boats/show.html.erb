@@ -91,7 +91,7 @@
       <div class="col-sm-4">
         <dl class="dl-horizontal">
           <dt><%= s_("Boat|Fuel Type") %></dt>
-          <dd><%= _(@boat.fuel_type).humanize %></dd>
+          <dd><%= _(text_for @boat, :fuel_type) %></dd>
           <dt><%= s_("Boat|Horse power") %></dt>
           <dd><%= text_for @boat, :horse_power %></dd>
         </dl>

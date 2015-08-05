@@ -1,9 +1,28 @@
 <% title s_("Title|Privacy Policy") %>
 <div class="row">
 	<div class="col-sm-12">
-		<h1 class="text-center">
-			Informativa sulla Privacy
-		</h1>
+		<h1 class="text-center"><%= s_("Title|Privacy Policy") %></h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+		<% unless I18n.locale == :it %>
+			<div class="alert alert-info">
+				<p>
+					Our Privacy Policy is written only in Italian at the moment. It basically says that your personal data are safe in our servers and that we will never give them to any third party. We only use them to deliver the best service to our users.
+					<br>
+					Sorry for the inconvenience.
+				</p>
+				<p>
+					<small>-- the team of Sea for All</small>
+				</p>
+			</div>
+		<% end %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		
 		<p>
 			blabla
 		</p>

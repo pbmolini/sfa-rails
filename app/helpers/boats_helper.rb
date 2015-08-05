@@ -12,7 +12,12 @@ module BoatsHelper
   	if boat.send(field_name.to_s).blank?
   		content_tag :span, _("N/A"), class: 'incomplete-field'
   	else
-  		boat.send(field_name.to_s)
+      field = boat.send(field_name.to_s)
+      if field_name == :fuel_type
+  		  _(field).humanize
+      else
+        field
+      end
   	end
   end
 
