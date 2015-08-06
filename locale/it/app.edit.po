@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.3\n"
-"POT-Creation-Date: 2015-07-30 17:52+0200\n"
+"POT-Creation-Date: 2015-08-07 00:21+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -170,6 +170,12 @@ msgstr "WC"
 
 msgid "BoatFeature|Name"
 msgstr "Nome"
+
+msgid "BoatIndex|This page will be full of awesome boats in the next few weeks."
+msgstr ""
+
+msgid "BoatIndex|We are building our database of boats available for sharing."
+msgstr ""
 
 msgid "BoatMissingField|Address not set"
 msgstr ""
@@ -861,9 +867,7 @@ msgstr "devi inserire la password attuale per cambiare la password"
 
 #~ msgid "BoatCard|Address_not_saved"
 #~ msgstr "Indirizzo non salvato"
-
 #~ msgid "BoatCard|Model not saved"
 #~ msgstr "Modello non salvato"
-
 #~ msgid "BoatCard|Name not saved"
 #~ msgstr "Nome non salvato"

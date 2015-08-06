@@ -170,6 +170,12 @@ msgstr ""
 msgid "BoatFeature|Name"
 msgstr ""
 
+msgid "BoatIndex|This page will be full of awesome boats in the next few weeks."
+msgstr ""
+
+msgid "BoatIndex|We are building our database of boats available for sharing."
+msgstr ""
+
 msgid "BoatMissingField|Address not set"
 msgstr ""
 

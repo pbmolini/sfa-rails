@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-30 17:52+0200\n"
-"PO-Revision-Date: 2015-07-30 17:52+0200\n"
+"POT-Creation-Date: 2015-08-07 00:21+0200\n"
+"PO-Revision-Date: 2015-08-07 00:21+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -169,6 +169,12 @@ msgid "BoatFeaturesSet|Wc"
 msgstr ""
 
 msgid "BoatFeature|Name"
+msgstr ""
+
+msgid "BoatIndex|This page will be full of awesome boats in the next few weeks."
+msgstr ""
+
+msgid "BoatIndex|We are building our database of boats available for sharing."
 msgstr ""
 
 msgid "BoatMissingField|Address not set"
