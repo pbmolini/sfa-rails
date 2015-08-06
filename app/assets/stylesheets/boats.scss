@@ -133,3 +133,8 @@ span.boat-input-group-addon {
 .boat-edit {
   @extend .row;
 }
+
+.boat-launch {
+  fill: $darkblue;
+  height: 5em;
+}

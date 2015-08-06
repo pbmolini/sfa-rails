@@ -154,6 +154,10 @@ GEM
     hashie (3.4.1)
     high_voltage (2.3.0)
     i18n (0.7.0)
+    inline_svg (0.6.1)
+      activesupport (>= 4.0.4)
+      loofah (>= 2.0)
+      nokogiri (~> 1.6)
     jbuilder (2.2.13)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -359,6 +363,7 @@ DEPENDENCIES
   gettext_i18n_rails
   gettext_i18n_rails_js (~> 1.0.0)
   high_voltage
+  inline_svg
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
