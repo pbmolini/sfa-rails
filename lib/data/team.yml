@@ -3,21 +3,21 @@ team_members:
 
   - name: Stefano
     role: "Co-founder, CEO"
-    picture: team/placekitten_140.jpg
+    picture: team/stefano.png
     linkedin:
     twitter: https://twitter.com/StePellerano
     github:
 
   - name: Giorgio
     role: "Co-founder, COO"
-    picture: team/placekitten_140.jpg
+    picture: team/giorgio.png
     linkedin: http://it.linkedin.com/pub/giorgio-pellerano/a9/9a2/428/en
     twitter: https://twitter.com/superantani
     github:
 
   - name: Pietro
     role: "Co-founder, CTO"
-    picture: team/placekitten_140.jpg
+    picture: team/pietro.jpg
     linkedin: http://it.linkedin.com/in/pietromolini
     twitter: https://twitter.com/andareverso
     github: https://github.com/pbmolini
