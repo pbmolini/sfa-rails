@@ -403,9 +403,6 @@ msgstr ""
 msgid "Landing|I'm looking for a boat to rent"
 msgstr ""
 
-msgid "Landing|Interested in renting a boat?"
-msgstr ""
-
 msgid "Landing|Keep me posted"
 msgstr ""
 
@@ -415,7 +412,15 @@ msgstr ""
 msgid "Landing|Leave us your email."
 msgstr ""
 
+msgid "Landing|Looking for a boat to rent?"
+msgstr ""
+
 msgid "Landing|More info"
+msgstr ""
+
+msgid ""
+"Landing|Offset your ownership costs by listing your boat whenever and however "
+"you like"
 msgstr ""
 
 msgid "Landing|Ready?"
@@ -425,11 +430,6 @@ msgid "Landing|Register your boat"
 msgstr ""
 
 msgid "Landing|Share your boat with those who love the sea"
-msgstr ""
-
-msgid ""
-"Landing|Super engaging message for the host. He must crave being able to share"
-" his boat!"
 msgstr ""
 
 msgid "Landing|Want a boat to spend a day at sea?"

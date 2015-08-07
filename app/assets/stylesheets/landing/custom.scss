@@ -127,6 +127,11 @@ li {
 #hero .container #mc_embed_signup {
   padding-left: 0;
 }
+
+#hero .guest-msg {
+  margin-top: 5em;
+}
+
 .mc-field-group {
   float: left;
 }
@@ -214,11 +219,13 @@ footer {
 footer .icons {
   font-size: 30px;
 }
-footer .icons a {
+footer a {
   color: #fff;
 }
-footer .icons a:focus {
+footer a:hover {
   outline: none;
+  color: #fff;
+  text-decoration: none; 
 }
 @media screen and (max-width: 610px) {
   .bordino-mail {

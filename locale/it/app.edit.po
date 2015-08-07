@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-07-29 17:45+0200\n"
+"PO-Revision-Date: 2015-08-07 00:30+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
-"X-Generator: Poedit 1.8.3\n"
-"POT-Creation-Date: 2015-08-07 00:21+0200\n"
+"X-Generator: Poedit 1.8.4\n"
+"POT-Creation-Date: 2015-08-07 22:22+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -172,19 +172,19 @@ msgid "BoatFeature|Name"
 msgstr "Nome"
 
 msgid "BoatIndex|This page will be full of awesome boats in the next few weeks."
-msgstr ""
+msgstr "Nelle prossime settimane questa pagina mostrerà l’elenco di tutte le barche pronte per essere condivise."
 
 msgid "BoatIndex|We are building our database of boats available for sharing."
-msgstr ""
+msgstr "Stiamo costruendo il nostro database di barche disponibili per essere condivise."
 
 msgid "BoatMissingField|Address not set"
-msgstr ""
+msgstr "Indirizzo mancante"
 
 msgid "BoatMissingField|Model not set"
-msgstr ""
+msgstr "Modello mancante"
 
 msgid "BoatMissingField|Name not set"
-msgstr ""
+msgstr "Nome mancante"
 
 msgid "Boat|Address"
 msgstr "Indirizzo"
@@ -329,6 +329,9 @@ msgid ""
 "pictures\n"
 " "
 msgstr ""
+"Modifica per\n"
+"aggiungere foto\n"
+" "
 
 msgid "Engine Horse Power"
 msgstr "Cavalli Potenza"
@@ -393,9 +396,6 @@ msgstr "Mi interessa perché"
 msgid "Landing|I'm looking for a boat to rent"
 msgstr "Cerco una barca in noleggio o locazione"
 
-msgid "Landing|Interested in renting a boat?"
-msgstr "Sei interessato a trovare una barca?"
-
 msgid "Landing|Keep me posted"
 msgstr "Tienimi aggiornato"
 
@@ -405,8 +405,15 @@ msgstr "Lasciaci l’email!"
 msgid "Landing|Leave us your email."
 msgstr "Lasciaci l’email."
 
+#, fuzzy
+msgid "Landing|Looking for a boat to rent?"
+msgstr "Cerco una barca in noleggio o locazione"
+
 msgid "Landing|More info"
 msgstr "Più informazioni"
+
+msgid "Landing|Offset your ownership costs by listing your boat whenever and however you like"
+msgstr ""
 
 msgid "Landing|Ready?"
 msgstr "Sei pronto?"
@@ -416,9 +423,6 @@ msgstr "Registra la tua barca"
 
 msgid "Landing|Share your boat with those who love the sea"
 msgstr "Condividi la tua barca con chi ama il mare"
-
-msgid "Landing|Super engaging message for the host. He must crave being able to share his boat!"
-msgstr "Messaggio superfigo per chi ha una barca. Deve non vedere l’ora di poter condividere la sua barca!"
 
 msgid "Landing|Want a boat to spend a day at sea?"
 msgstr "Vuoi passare una giornata in barca?"
@@ -484,7 +488,7 @@ msgid "My Profile"
 msgstr "Il mio profilo"
 
 msgid "N/A"
-msgstr ""
+msgstr "N/D"
 
 msgid "Need help? Visit our wonderful %{help_page_link}!"
 msgstr "Ti serve auito? Visita la nostra %{help_page_link}!"
@@ -541,7 +545,7 @@ msgid "Picture|Image updated at"
 msgstr ""
 
 msgid "Please use the fallback form below to upload your files like in the olden days."
-msgstr ""
+msgstr "Per favore usa il for qui sotto per caricare i file come ai bei vecchi tempi."
 
 msgid "Power"
 msgstr "Motore"
@@ -793,7 +797,7 @@ msgid "You have to log in to continue."
 msgstr "È necessario effettuare il login per continuare."
 
 msgid "Your boat's description goes here. %{link_text} this boat to add a description."
-msgstr ""
+msgstr "La descrizione della tua barca apparirà qui. %{link_text} questa barca per inserire una descrizione."
 
 msgid "Your boat's length, in meters"
 msgstr "La lunghezza della barca, in metri"
@@ -865,9 +869,12 @@ msgstr "troppe immagini (non possono essere più di 10)"
 msgid "we need your current password to confirm your changes"
 msgstr "devi inserire la password attuale per cambiare la password"
 
-#~ msgid "BoatCard|Address_not_saved"
-#~ msgstr "Indirizzo non salvato"
-#~ msgid "BoatCard|Model not saved"
-#~ msgstr "Modello non salvato"
-#~ msgid "BoatCard|Name not saved"
-#~ msgstr "Nome non salvato"
+#~ msgid "Landing|Interested in renting a boat?"
+#~ msgstr "Sei interessato a trovare una barca?"
+
+#~ msgid ""
+#~ "Landing|Super engaging message for the host. He must crave being able to share"
+#~ " his boat!"
+#~ msgstr ""
+#~ "Messaggio superfigo per chi ha una barca. Deve non vedere l’ora di poter condi"
+#~ "videre la sua barca!"
