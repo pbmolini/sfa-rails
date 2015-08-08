@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.4\n"
-"POT-Creation-Date: 2015-08-07 22:22+0200\n"
+"POT-Creation-Date: 2015-08-08 14:11+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -42,8 +42,8 @@ msgstr "Chi siamo"
 msgid "Address"
 msgstr "Indirizzo"
 
-msgid "All the boats that soon will be available for renting"
-msgstr "Tutte le barche che saranno presto disponibili per il noleggio"
+msgid "All the boats will be available for renting soon"
+msgstr ""
 
 msgid "Already have an account?"
 msgstr "Hai già un account?"
@@ -869,9 +869,11 @@ msgstr "troppe immagini (non possono essere più di 10)"
 msgid "we need your current password to confirm your changes"
 msgstr "devi inserire la password attuale per cambiare la password"
 
+#~ msgid "All the boats that soon will be available for renting"
+#~ msgstr "Tutte le barche che saranno presto disponibili per il noleggio"
+
 #~ msgid "Landing|Interested in renting a boat?"
 #~ msgstr "Sei interessato a trovare una barca?"
-
 #~ msgid ""
 #~ "Landing|Super engaging message for the host. He must crave being able to share"
 #~ " his boat!"

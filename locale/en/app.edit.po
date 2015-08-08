@@ -41,7 +41,7 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-msgid "All the boats that soon will be available for renting"
+msgid "All the boats will be available for renting soon"
 msgstr ""
 
 msgid "Already have an account?"
