@@ -42,6 +42,11 @@ footer {
     @extend .text-right;
     margin-top: 1em;
   }
+  .icons {
+    i {
+      padding: 0 .2em;
+    }
+  }
 }
 
 .footer-dropdown {
