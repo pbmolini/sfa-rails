@@ -138,3 +138,8 @@ span.boat-input-group-addon {
   fill: $darkblue;
   height: 5em;
 }
+
+.btn-boat-new {
+  @extend .btn, .btn-lg, .btn-success, .btn-block;
+  margin-top: 1em;
+}

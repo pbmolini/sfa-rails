@@ -1,8 +1,11 @@
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2">
-
-			<h1><%= _("New Boat") %></h1>
+		<div class="col-sm-6 col-sm-offset-3">
+      <div class="row">
+        <div class="col-sm-12 text-center">      
+    			<h1><%= _("New Boat") %></h1>
+        </div>
+      </div>
 			<%# Usage of wrappers:https://github.com/plataformatec/simple_form/wiki/How-to-use-Bootstrap-3-input-group-in-Simple-Form %>
 			<%= simple_form_for @boat, html: { :multipart => true }, wrapper: :vertical_input_group,
         wrapper_mappings: {
@@ -16,26 +19,42 @@
     			<p><%= error %></p>
   			<% end %>
 
-        <%= f.association :boat_category,
-            label: _('Boat category'),
-            prompt: _("Select the category"),
-            input_html: { class: 'form-control' },
-            label_method: ->(obj) { _(obj.to_s).capitalize },
-            required: false %>
+        <div class="row">
+          <div class="col-sm-12">
+            <%= f.association :boat_category,
+                label: _('Boat category'),
+                prompt: _("Select the category"),
+                input_html: { class: 'form-control' },
+                label_method: ->(obj) { _(obj.to_s).capitalize },
+                required: false %>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-sm-12">
+            <%= f.input :rental_type,
+                collection: Boat::RENTAL_TYPES,
+                prompt: _("Select the type of rental"),
+                label_method: ->(obj) { _(obj.to_s).capitalize },
+                required: false %>
+          </div>
+        </div>
 
-        <%= f.input :rental_type,
-            collection: Boat::RENTAL_TYPES,
-            prompt: _("Select the type of rental"),
-            label_method: ->(obj) { _(obj.to_s).capitalize },
-            required: false %>
-
-        <%= f.input :address,
-            placeholder: _("Where is your boat moored? E.g. Molo Ponte Morosini, 46, Genoa"),
-            required: false %>
+        <div class="row">
+          <div class="col-sm-12">            
+            <%= f.input :address,
+                placeholder: _("Where is your boat moored? E.g. Molo Ponte Morosini, 46, Genoa"),
+                required: false %>
+          </div>
+        </div>
 
 				<%#= render 'fields', f: f %>
-
-  			<%= f.button :submit, _("Create Boat"), class: "btn btn-lg btn-primary" %>
+        
+        <div class="row">
+          <div class="col-sm-12">
+  			   <%= f.button :submit, _("Create Boat"), class: "btn-boat-new" %> 
+          </div>
+        </div>
 
 			<% end %>
 
