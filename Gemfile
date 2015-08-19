@@ -78,6 +78,9 @@ gem 'daemons'
 # Stupid Cookie Law
 gem 'cookies_eu'
 
+# Mailchimp
+gem 'gibbon'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
