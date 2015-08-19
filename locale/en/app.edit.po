@@ -668,7 +668,13 @@ msgstr ""
 msgid "Title|Help & Support"
 msgstr ""
 
+msgid "Title|Login"
+msgstr ""
+
 msgid "Title|Privacy Policy"
+msgstr ""
+
+msgid "Title|Sign up"
 msgstr ""
 
 msgid "Title|Terms of Service"

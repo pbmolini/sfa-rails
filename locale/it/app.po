@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-08-18 14:58+0200\n"
+"PO-Revision-Date: 2015-08-19 15:39+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -716,8 +716,14 @@ msgstr "Modifica profilo"
 msgid "Title|Help & Support"
 msgstr "Aiuto e Supporto"
 
+msgid "Title|Login"
+msgstr "Login"
+
 msgid "Title|Privacy Policy"
 msgstr "Informativa privacy"
+
+msgid "Title|Sign up"
+msgstr "Registrati"
 
 msgid "Title|Terms of Service"
 msgstr "Termini di Servizio"

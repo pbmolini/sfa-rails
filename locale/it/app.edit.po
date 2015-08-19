@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-08-07 00:30+0200\n"
+"PO-Revision-Date: 2015-08-18 14:58+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.4\n"
-"POT-Creation-Date: 2015-08-08 14:11+0200\n"
+"POT-Creation-Date: 2015-08-19 15:38+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -43,7 +43,7 @@ msgid "Address"
 msgstr "Indirizzo"
 
 msgid "All the boats will be available for renting soon"
-msgstr ""
+msgstr "Tutte le barche saranno presto disponibili per il noleggio"
 
 msgid "Already have an account?"
 msgstr "Hai già un account?"
@@ -405,15 +405,14 @@ msgstr "Lasciaci l’email!"
 msgid "Landing|Leave us your email."
 msgstr "Lasciaci l’email."
 
-#, fuzzy
 msgid "Landing|Looking for a boat to rent?"
-msgstr "Cerco una barca in noleggio o locazione"
+msgstr "Cerchi una barca?"
 
 msgid "Landing|More info"
 msgstr "Più informazioni"
 
 msgid "Landing|Offset your ownership costs by listing your boat whenever and however you like"
-msgstr ""
+msgstr "Risparmia sui costi di gestione della tua barca condividendola quando vuoi e con chi vuoi"
 
 msgid "Landing|Ready?"
 msgstr "Sei pronto?"
@@ -473,7 +472,7 @@ msgid "MailBody|Complete now your first boat's profile and get ready to share yo
 msgstr "Completa subito il profilo della tua prima barca e preparati a condividerla con altre persone che come te amano il mare."
 
 msgid "MailBody|For any help just visit our awesome %{help_page} or contact us by replying to this email."
-msgstr "Se hai bisogno di aiuto puoi andare sulla nostra fantastica %{help_page} oppure puoi contattarci direttamente rispondendo a questa email."
+msgstr "Se hai bisogno di aiuto puoi andare sulla nostra %{help_page} oppure puoi contattarci direttamente rispondendo a questa email."
 
 msgid "MailBody|Welcome and thanks for joining Sea for All!"
 msgstr "Benvenuto e grazie per esserti registrato su Sea for All!"
@@ -673,8 +672,15 @@ msgstr "Modifica profilo"
 msgid "Title|Help & Support"
 msgstr "Aiuto e Supporto"
 
+msgid "Title|Login"
+msgstr ""
+
 msgid "Title|Privacy Policy"
 msgstr "Informativa privacy"
+
+#, fuzzy
+msgid "Title|Sign up"
+msgstr "Chi siamo"
 
 msgid "Title|Terms of Service"
 msgstr "Termini di Servizio"
@@ -868,15 +874,3 @@ msgstr "troppe immagini (non possono essere più di 10)"
 
 msgid "we need your current password to confirm your changes"
 msgstr "devi inserire la password attuale per cambiare la password"
-
-#~ msgid "All the boats that soon will be available for renting"
-#~ msgstr "Tutte le barche che saranno presto disponibili per il noleggio"
-
-#~ msgid "Landing|Interested in renting a boat?"
-#~ msgstr "Sei interessato a trovare una barca?"
-#~ msgid ""
-#~ "Landing|Super engaging message for the host. He must crave being able to share"
-#~ " his boat!"
-#~ msgstr ""
-#~ "Messaggio superfigo per chi ha una barca. Deve non vedere l’ora di poter condi"
-#~ "videre la sua barca!"
