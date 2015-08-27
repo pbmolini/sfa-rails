@@ -8,6 +8,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .btn-file input[type=file] {
   position: absolute;
   top: 0;
@@ -22,7 +23,33 @@
   cursor: inherit;
   display: block;
 }
+
 input[readonly] {
   background-color: white !important;
   cursor: text !important;
+}
+
+.signup-subtitle, .login-subtitle {
+  font-size: smaller;
+  color: gray;
+  a {
+    font-weight: bold;
+  }
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: 10px;
+}
+
+p.legal-acceptance {
+  font-size: small;
+  text-align: center;
+}
+
+.avatar-preview {
+  @extend .text-center;
+   img {
+    height: 50px;
+   }
 }

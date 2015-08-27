@@ -46,25 +46,25 @@
   }
 
   .boat-model {
+    @extend .ellipsized;
     margin-top: 10px;
     font-weight: bold;
     font-size: 28px;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .boat-name, .boat-place {
-    font-weight: 200;
-    font-size: 14px;
-    font-size: 18px;
+    @extend .ellipsized;
     margin-top: 0;
+    font-weight: 200;
+    font-size: 18px;
   }
 
   a {
     color: $black;
     font-weight: bold;
-    text-transform: capitalize;
+    // text-transform: capitalize;
   }
+
   a:hover {
     text-decoration: none;
   }
@@ -76,110 +76,6 @@
     background-position: center center;
     background-size: cover;
     position: relative;
-  }
-
-}
-
-.boat-hero {
-  .boat-management-buttons {
-    position: absolute;
-    z-index: 2;
-    right: 10px
-  }
-
-  .carousel-container {
-    padding: 0;
-    .carousel#boat-photos-carousel {
-      margin-top: -20px;
-      height: 500px;
-      .carousel-inner {
-        height: 100%;
-        img {
-          width: 100%;
-        }
-      }
-    }
-  }
-  .boat-name-container {
-    position: absolute;
-    bottom: 0;
-    left: 24px;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.7);
-    color: white;
-    h1.boat-name {
-      font-size: 5em;
-      margin-bottom: 0;
-    }
-    h2.boat-owner {
-      margin-top: 0;
-      .user-avatar {
-        height: 50px;
-        border-radius: 50%;
-        border: 4px solid white;
-        box-shadow: 0 1px 1px rgba(0,0,0,0.7);
-      }
-    }
-  }
-}
-
-.boat-body {
-  background-color: white;
-  margin-bottom: 60px; //because we are clevah!
-
-  .boat-info {
-    margin-top: 0;
-    padding-top: 1em;
-    background: white;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .boat-booking {
-    background-color: #CDE1EE;
-    .boat-price {
-      padding: 10px;
-      text-align: center;
-      font-weight: bold;
-      background-color: aliceblue;
-      #price {
-        font-size: 2em;
-        margin-bottom: 0;
-      }
-      #rental-type {
-        font-size: .8em;
-      }
-    }
-    .booking-form {
-      margin-bottom: 2em;
-      // form, h2 {
-      //   opacity: .5;
-      // }
-      // .btn {
-      //   @extend .disabled;
-      // }
-      .coming-soon {
-        position: absolute;
-        top: 25%;
-        text-align: center;
-        width: 60%;
-        right: 20%;
-        height: 50%;
-        background-color: rgba($blue, .99);
-        z-index: 3;
-        margin: 0;
-        color: white;
-        padding-top: 30px;
-        font-size: 1.5em;
-        letter-spacing: 4px;
-      }
-    }
-    .boat-map {
-      height: 300px;
-      padding: 0;
-      #map {
-        height: 100%;
-      }
-    }
   }
 }
 
@@ -232,4 +128,18 @@ span.boat-input-group-addon {
   font-size: small;
   text-decoration: underline;
   color: grey;
+}
+
+.boat-edit {
+  @extend .row;
+}
+
+.boat-launch {
+  fill: $darkblue;
+  height: 5em;
+}
+
+.btn-boat-new {
+  @extend .btn, .btn-lg, .btn-success, .btn-block;
+  margin-top: 1em;
 }

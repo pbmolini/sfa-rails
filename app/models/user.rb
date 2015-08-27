@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :boats
   has_many :bookings
 
-  has_attached_file :image, :styles => { :thumb => "50x50#" }, default_url: "default_avatar.png"
+  has_attached_file :image, :styles => { thumb: "50x50#", medium: "150x150#" }, default_url: "default_avatar.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   validates_presence_of :first_name, :last_name
   validates :birthdate, presence: true, on: :update
@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   end
 
   def complete?
-    self.location and self.phone and self.birthdate
+    self.location.present? and self.phone.present? and self.birthdate.present?
   end
 
   private

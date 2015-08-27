@@ -3,8 +3,11 @@
 	<%= s_("MailBody|Welcome and thanks for joining Sea for All!") %>
 </p>
 <p>
-	<%= _("You can register blablah") %>
+	<%= s_("MailBody|Complete now your first boat's profile and get ready to share your boat!") %>
 </p>
 <p>
-	<%= _("Thank you,") %>
+	<%= (s_("MailBody|For any help just visit our awesome %{help_page} or contact us by replying to this email.") %{help_page: link_to(_("help page"), page_url(id: :help, locale: I18n.locale))}).html_safe %>
+</p>
+<p>
+	<%= _("Thank you") %>,
 </p>

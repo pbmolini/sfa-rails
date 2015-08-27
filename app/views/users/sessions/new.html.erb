@@ -1,31 +1,54 @@
+<% title s_("Title|Login") %>
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-			<h2>Log in</h2>
+			<div class="row">
+        <div class="col-sm-12 text-center">
+          <h1><%= _("Login") %></h1>
+					<p class="login-subtitle"><%= _("Not a member?") %> <%= link_to _("Sign up"), new_registration_path(resource_name) %></p>
+        </div>
+      </div>
 
-			<p>
-				<%= button_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary navbar-btn' do %>
-				  <%= fa_icon('facebook', text: _("Login with Facebook")) %>
-				<% end %>
-        <%= _("or just fill the form below") %>
-			</p>
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<p>
+						<%= button_to user_omniauth_authorize_path(:facebook), class: 'btn btn-lg btn-primary btn-block' do %>
+						  <span class="pull-left"><%= fa_icon('facebook') %></span>
+				          <%= _("Login with Facebook") %>
+						<% end %>
+					</p>
+          <p>
+            <%= _("or just fill the form below") %>
+          </p>
+				</div>
+			</div>
 
 			<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-			  <div class="form-inputs">
-			    <%= f.input :email, required: false, autofocus: true %>
-			    <%= f.input :password, required: false %>
-			    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-			  </div>
+				<div class="row">
+					<div class="col-sm-12">
+		    		<%= f.input :email, required: false, autofocus: true %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+		    		<%= f.input :password, required: false %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+		    		<%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+					</div>
+					<div class="col-sm-6 forgot-password">
+						<%= link_to _("Forgot your password?"), new_password_path(resource_name) %>
+					</div>
+				</div>
 
-			  <div class="form-actions">
-			    <%= f.button :submit, _("Log in"), class: 'btn btn-lg btn-success' %>
-			  </div>
+				<div class="row">
+					<div class="col-sm-12">
+		    		<%= f.button :submit, _("Log in"), class: 'btn btn-lg btn-success btn-block' %>
+					</div>
+				</div>
 			<% end %>
-
-			<p>
-				<%= render "devise/shared/links" %>
-			</p>
-			
     </div>
   </div>
 </div>

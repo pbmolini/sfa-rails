@@ -45,11 +45,11 @@
   <div class="container">
     <h1><%= s_("Landing|Share your boat with those who love the sea") %></h1>
     <p>&nbsp;</p>
-    <h3><%= s_("Landing|Super engaging message for the host. He must crave being able to share his boat!") %></strong></h3>
+    <h3><%= s_("Landing|Offset your ownership costs by listing your boat whenever and however you like") %></strong></h3>
 
     <%= link_to s_("Landing|Register your boat"), new_user_registration_path, class: 'button btn btn-lg btn-mailchimp' %>
-    <h3>
-      <%= s_("Landing|Interested in renting a boat?") %>
+    <h3 class="guest-msg">
+      <%= s_("Landing|Looking for a boat to rent?") %>
       <strong><%= link_to s_("Landing|Leave us your email!"), "#leave-email" %></strong>
     </h3>
     <!--End mc_embed_signup-->

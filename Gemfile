@@ -37,6 +37,8 @@ gem 'newrelic_rpm'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'paperclip', '~> 4.2'
+# To save paperclip stuff on AWS
+# see https://github.com/aws/aws-sdk-ruby/tree/aws-sdk-v1
 gem 'aws-sdk-v1'
 
 gem 'simple_form'
@@ -50,12 +52,13 @@ gem 'devise-i18n'
 gem 'omniauth-facebook'
 gem 'cancancan', '~> 1.10'
 
-gem 'momentjs-rails', '>= 2.8.1'
+gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
 
 gem 'gettext_i18n_rails'
 gem "gettext_i18n_rails_js", "~> 1.0.0"
 gem 'font-awesome-rails'
+gem 'inline_svg'
 
 # for uploading photos
 gem 'dropzonejs-rails'
@@ -74,6 +77,9 @@ gem 'daemons'
 
 # Stupid Cookie Law
 gem 'cookies_eu'
+
+# Mailchimp
+gem 'gibbon'
 
 group :development do
   gem "better_errors"

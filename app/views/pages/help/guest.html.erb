@@ -1,20 +1,30 @@
-<h2>Sei interessato al Noleggio o alla Locazione?</h2>
+<h1>Vuoi passare una giornata in barca?</h1>
+<p class="lead">
+  Se hai voglia di trascorrere una giornata in barca, con Sea for All potrai trovare facilmente l’imbarcazione più adatta alle tue esigenze!
+</p>
+<p>
+  <ul class="list-unstyled lead">
+    <li>Cerca la barca più vicina a te</li>
+    <li>Scegli tra <em>noleggio</em> (con capitano a bordo) e <em>locazione</em> (il capitano sei tu)</li>
+    <li>Contatta il proprietario tramite Sea for All</li>
+    <li>Goditi la giornata in barca</li>
+    <li>Valuta la tua esperienza</li>
+  </ul>
+</p>
 
-<p>
-  Le barche presenti su Sea for All possono essere disponibili per la locazione, il noleggio o entrambi le soluzioni.
-</p>
-<p>
-  Con LOCAZIONE è intesa la cessione dell'unità da diporto da parte del proprietario (locatore) alla controparte (conduttore) per un periodo di tempo concordato al termine del quale essa deve venir restituita al locatore.
-</p>
-<p>
-  Il conduttore diventa pertanto il comandante dell'unità da diporto, il quale si assume ogni onere e rischio connesso con la navigazione. Il locatore quindi consegue un corrispettivo ma rimane estraneo all'utilizzo dell'unità di navigazione.
-</p>
-<p>
-  Con il NOLEGGIO il proprietario dell'unità da diporto (il noleggiante) mette a disposizione dell'altra parte (il noleggiatore) la propria barca per un determinato periodo di tempo da trascorrere a scopo ricreativo in zone marine o acque interne di sua scelta, da fermo o in navigazione a fronte di un determinato corrispettivo (nolo). L'unità noleggiata rimane nella disponibilità del noleggiante alle cui dipendenze resta anche (l'eventuale) equipaggio.
-</p>
-<p>
-  Il noleggiante si obbliga a compiere con l'unità da diporto una determinata navigazione ordinata dal noleggiatore con il mantenimento della disponibilità e della conduzione tecnica dell'unità da diporto.
-</p>
+<div class="row col-sm-12">
+  <div class="alert alert-info">
+    <h3>Work in Progress</h3>
+    <p>
+      Le funzionalità per il <em>Guest</em> di Sea for All sono ancora in "Beta".
+      Avviseremo i nostri utenti appena queste funzionalità saranno disponibili per tutti.
+      <br> 
+      Seguici su <strong><%= link_to "Facebook", "https://www.facebook.com/pages/Sea-for-All/368816339967609" %></strong> e <strong><%= link_to "Twitter", "https://twitter.com/seaforall" %></strong> per rimanere aggiornato su tutte le nostre prossime novità.
+    </p>
+  </div>
+</div>
+
+<%= render 'pages/help/noleggio_locazione' %>
 
 <h2>Trova una barca</h2>
 
@@ -22,7 +32,7 @@
   Inserisci la località balneare e trova una barca adatta alle tue esigenze.
 </p>
 <p>
-  In caso di Locazione verifica se per l'utilizzo dell'unità da diporto è necessario essere titolari di una patente nautica, e di che genere (motore, vela/motore). Cerca la tipologia di barca a seconda delle tue esigenze. Sea for All consente diverse modalità di ricerca. Potrai pertanto scegliere la tipologia di imbarcazione (vela, motore, gommone, etc..), le dimensioni dell'unità da diporto, la disponibilità massima di persone a bordo, e tante altre caratteristiche (ad esempio se l'imbarcazione è adatta alla pesca sportiva o se fornita di zona prendisole con cuscineria per il massimo relax).
+  In caso di Locazione verifica se per l'utilizzo dell'unità da diporto è necessario essere titolari di una patente nautica, e di che genere (motore, vela/motore). Cerca la tipologia di barca a seconda delle tue esigenze. Sea for All consente diverse modalità di ricerca. Potrai pertanto scegliere la tipologia di imbarcazione (vela, motore, gommone, etc..), le dimensioni dell'unità da diporto, la disponibilità massima di persone a bordo, e tante altre caratteristiche (ad esempio se l'imbarcazione è adatta alla pesca sportiva o se fornita di zona prendisole con cuscineria).
 </p>
 
 <h2>Verifica la disponibilità</h2>
@@ -35,17 +45,17 @@
 <p>
   Una volta verificata la disponibilità dell'imbarcazione prenota la tua uscita.
 </p>
-<p>
-  Il sistema di pagamento di Sea for All è interamente digitale, tramite il circuito Visa, MasterCard. Potrai disdire la prenotazione entro 48 ore dalla data fissata senza alcun esborso. Ti consigliamo pertanto di controllare per tempo le condizioni meteo della località interessata.
-</p>
+<%# <p> %>
+<%#   Il sistema di pagamento di Sea for All è interamente digitale, tramite il circuito Visa, MasterCard. Potrai disdire la prenotazione entro 48 ore dalla data fissata senza alcun esborso. Ti consigliamo pertanto di controllare per tempo le condizioni meteo della località interessata. %>
+<%# </p> %>
 
-<h2>Deposito Cauzionale</h2>
-<p>
-  Sea for All permette al proprietario di richiedere o meno un Deposito Cauzionale. Il Deposito Cauzionale è legato solo al servizio di Locazione. Infatti con il servizio di Noleggio il proprietario (o che ne fa le veci) sarà comunque al comando della barca.
-</p>
-<p>
-  Il massimale del Deposito Cauzionale è di 500 €. Tale importo che viene bloccato sulla carta di credito del cliente a garanzia dell‘unità da diporto che gli è stata data in locazione. Si tratta di una somma che viene pre-addebitata nell'evenienza che il cliente causi accidentalmente danni alla vettura. A fine locazione, una volta consegnala la barca e verificato che non ci sono danni, il proprietario, tramite Sea for All procede allo sblocco immediato del Deposito Cauzionale.
-</p>
+<%# <h2>Deposito Cauzionale</h2> %>
+<%# <p> %>
+<%#   Sea for All permette al proprietario di richiedere o meno un Deposito Cauzionale. Il Deposito Cauzionale è legato solo al servizio di Locazione. Infatti con il servizio di Noleggio il proprietario (o che ne fa le veci) sarà comunque al comando della barca. %>
+<%# </p> %>
+<%# <p> %>
+<%#   Il massimale del Deposito Cauzionale è di 500 €. Tale importo che viene bloccato sulla carta di credito del cliente a garanzia dell‘unità da diporto che gli è stata data in locazione. Si tratta di una somma che viene pre-addebitata nell'evenienza che il cliente causi accidentalmente danni alla vettura. A fine locazione, una volta consegnala la barca e verificato che non ci sono danni, il proprietario, tramite Sea for All procede allo sblocco immediato del Deposito Cauzionale. %>
+<%# </p> %>
 
 <h2>Contatta il proprietario</h2>
 <p>
@@ -61,25 +71,9 @@
   In caso di servizio di noleggio richiedi maggiori specifiche sull'itinerario della giornata, sulla durata della navigazione, sul pranzo (nel caso che tali informazioni non fossero già segnalate dal proprietario nella sua bacheca).
 </p>
 
-<h2>Dotazioni di Sicurezza</h2>
-<p>
-  Ogni imbarcazione iscritta su Sea for All è equipaggiata delle dotazioni di sicurezza previste dalla Guardia Costiera (<%= link_to "link", "http://www.guardiacostiera.it/maresicuro/downloads/dotazionidisicurezza_upd20042010.pdf" %>).
-</p>
-<p>
-  Il proprietario dovrà perciò garantire di essere in regola dimostrando e segnalando la posizione dell'equipaggiamento di sicurezza sulla barca.
-</p>
-<p>
-  L'unità da diporto fornita di motore (di qualsiasi potenza) avrà l'Assicurazione RC obbligatoria.
-</p>
+<%= render 'pages/help/dotazioni_sicurezza', guest: true %>
 
-<h2>Assicurazione Sea for All</h2>
-<%# TODO: tenere aggiornato e usare sempre tono non negativo %>
-<p>
-  Il team di Sea for All è al lavoro per trovare la migliore soluzione assicurativa per te, perché vogliamo che la tua esperienza con Sea for All sia al riparo da ogni possibile problema.
-</p>
-<p>
-  Ti terremo costantemente aggiornato tu tutte le novità in merito all'Assicurazione.
-</p>
+<%= render 'pages/help/assicurazione', guest: true %>
 
 <h2>Check-in</h2>
 <p>
@@ -94,7 +88,7 @@
 
 <h2>Check-out</h2>
 <p>
-  In caso servizio di Locazione, al momento del rientro in porto nell'orario stabilito in fase di prenotazione, il proprietario (o una persona da lui delegata) e verificherà le condizioni dell'barca certificando che la barca e il relativo equipaggiamento non abbiano subito danni. A quel punto, in maniera digitale tramite Sea for All, procederà allo sblocco immediato del Deposito Cauzionale.
+  In caso servizio di Locazione, al momento del rientro in porto nell'orario stabilito in fase di prenotazione, il proprietario (o una persona da lui delegata) e verificherà le condizioni dell'barca certificando che la barca e il relativo equipaggiamento non abbiano subito danni. <%# A quel punto, in maniera digitale tramite Sea for All, procederà allo sblocco immediato del Deposito Cauzionale. %>
 </p>
 <p>
   Salvo che non sia stato precedentemente pattuito diversamente, devi riconsegnare la barca provvista di carburante.

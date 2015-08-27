@@ -3,8 +3,8 @@
 
 $black: rgba(0,0,0,.87);
 $blue: #3A8CC2;
+$darkblue: #104466;
 $orange: #FAB647;
-
 
 body, html {
 	font-family: "proxima-nova";
@@ -62,4 +62,33 @@ a.dropdown-toggle {
 	ul li {
 		padding: 10px 15px !important;
 	}
+}
+
+.btn {
+	border-radius: 0;
+	border: 0;
+}
+
+.cookies-eu {
+  background: $orange !important;
+  font-size: 13px;
+  .cookies-eu-button-holder .cookies-eu-ok {
+    border: 1px solid #848484 !important;
+    background: #848484 !important;
+    font-size: 13px;
+  }
+  .cookies-eu-link:hover {
+    background: none;
+    color: lightblue;
+  }
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+	background: $darkblue;
+}
+
+.ellipsized {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

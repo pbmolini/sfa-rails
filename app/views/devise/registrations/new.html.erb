@@ -1,34 +1,68 @@
+<% title s_("Title|Sign up") %>
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h2><%= _("Sign up") %></h2>
-
-      <p>
-        <%= button_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary navbar-btn' do %>
-          <%= fa_icon('facebook', text: _("Sign up with Facebook")) %>
-        <% end %>
-        <%= _("or just fill the form below") %>
-      </p>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1><%= _("Sign up") %></h1>
+          <p class="signup-subtitle">
+            <%= _("Already have an account?") %> <%= link_to _("Log in"), new_session_path(resource_name) %>
+          </p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <p>
+            <%= button_to user_omniauth_authorize_path(:facebook), class: 'btn btn-lg btn-primary btn-block' do %>
+              <span class="pull-left"><%= fa_icon('facebook') %></span>
+              <%= _("Sign up with Facebook") %>
+            <% end %>
+          </p>
+          <p>
+            <%= _("or just fill the form below") %>
+          </p>
+        </div>
+      </div>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
-
-        <div class="form-inputs">
-          <%= f.input :first_name, required: true, autofocus: true %>
-          <%= f.input :last_name, required: true %>
-          <%= f.input :email, required: true %>
-          <%= f.input :password, required: true, hint: (_("%{length} characters minimum") %{length: @minimum_password_length} if @validatable) %>
-          <%= f.input :password_confirmation, required: true %>
-        </div>
-
-        <div class="form-actions">
-          <%= f.button :submit, _("Sign up"), class: 'btn btn-lg btn-success' %>
-        </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <%= f.input :first_name, required: true, autofocus: true %>
+            </div>
+            <div class="col-sm-6">
+              <%= f.input :last_name, required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <%= f.input :email, required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <%= f.input :password, required: true, hint: (_("%{length} characters minimum") %{length: @minimum_password_length} if @validatable) %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <%= f.input :password_confirmation, label: _("Confirm password"), required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <p class="legal-acceptance">
+                <%= (_("By joining you agree to our %{tos} and %{privacy}") %{tos: link_to(_("Terms of Service"), page_path(id: 'legal/tos')), privacy: link_to(_("Privacy Policy"), page_path(id: 'legal/privacy'))}).html_safe %>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <%= f.button :submit, _("Sign up"), class: 'btn btn-lg btn-success btn-block' %>
+            </div>
+          </div>
       <% end %>
-
-      <p>
-        <%= render "devise/shared/links" %>
-      </p>
     </div>
   </div>
 </div>

@@ -1,0 +1,145 @@
+.boat-hero {
+  .boat-management-buttons {
+    position: absolute;
+    z-index: 2;
+    right: 10px;
+    a {
+    	background: $orange;
+    }
+  }
+
+  .carousel-container {
+    padding: 0;
+    .carousel#boat-photos-carousel {
+      margin-top: -20px;
+      // height: 500px;
+      .carousel-inner {
+        height: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .boat-name-container {
+    position: absolute;
+    bottom: 0;
+    left: 24px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    color: white;
+    h1.boat-model {
+      font-size: 4em;
+      margin-bottom: 0;
+    }
+    h2.boat-name {
+      margin-bottom: .5em;
+    }
+  }
+}
+
+.boat-body {
+  background-color: white;
+  margin-bottom: 60px; //because we are clevah!
+  .boat-location {
+    background-color: aliceblue;
+    padding-top: 1em;
+    padding-bottom: .5em;
+  }
+  .boat-description {
+    padding-top: 1em;
+    text-align: justify;
+  }
+  .boat-owner {
+    margin-bottom: 1em;
+    .user-avatar {
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.7);
+    }
+    .boat-owner-bio {
+      // margin: 10px;
+      margin-top: 1em;
+      padding-top: .5em;
+      padding-bottom: .5em;
+      background-color: aliceblue;
+    }
+    .boat-owner-stats {
+      @extend .small;
+      padding-top: .5em;
+    }
+  }
+
+  .boat-info {
+    margin-top: 0;
+    padding-top: 1em;
+    background: white;
+    // padding-left: 24px;
+    // padding-right: 24px;
+    overflow: hidden;
+    dd {
+      margin-left: 170px;
+    }
+    .incomplete-field {
+      color: lightgrey;
+    }
+  }
+
+  .boat-booking {
+    background-color: #CDE1EE;
+    .boat-price {
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      background-color: aliceblue;
+      #price {
+        font-size: 2em;
+        margin-bottom: 0;
+      }
+      #rental-type {
+        font-size: .8em;
+      }
+    }
+    .booking-form {
+      margin-bottom: 2em;
+      form, h2 {
+        opacity: .5;
+      }
+      .btn {
+        @extend .disabled;
+      }
+      .coming-soon {
+        position: absolute;
+        top: 25%;
+        text-align: center;
+        width: 60%;
+        right: 20%;
+        height: 50%;
+        background-color: rgba($darkblue, .99);
+        z-index: 3;
+        margin: 0;
+        color: white;
+        padding-top: 30px;
+        font-size: 1.5em;
+        letter-spacing: 4px;
+      }
+    }
+    .boat-map {
+      height: 300px;
+      padding: 0;
+      #map {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.boat-features {
+	padding-left: 0;
+	li {
+		i {
+			color: $blue;
+		}
+		list-style: none;
+	}
+}

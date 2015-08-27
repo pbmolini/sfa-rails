@@ -1,71 +1,122 @@
-<div class="row boat-hero">
-  <% if can? :edit, @boat %>
-    <div class="boat-management-buttons">
-      <%= link_to _('Edit'), edit_boat_path(@boat), class: 'btn btn-primary' %>
-      <%#= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-primary' %>
-    </div>
-  <% end %>
-  <div class="col-sm-12 carousel-container">
-    <div id="boat-photos-carousel" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner" role="listbox">
-        <% @boat.pictures.each_with_index do |p,index| %>
-          <div class="item <%= 'active' if index==0 %>">
-            <%= image_tag p.image.url %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="row boat-name-container">
-      <div class="col-sm-12">
-        <h1 class="boat-name"><%= @boat.name %></h1>
-        <h2 class="boat-owner">
-          <%= image_tag @boat.user.image(:thumb), class: 'user-avatar' %> <%= @boat.user.name %>
-        </h2>
-      </div>
-    </div>
-  </div>
-</div>
-
+<% title @boat.name %>
 <div class="row boat-body">
+  <%# Left Column %>
   <div class="col-sm-8 boat-info">
-
-    <p><strong><%= @boat.address %></strong></p>
-
-    <h2><%= _('Info') %></h2>
-
-    <p><%= @boat.description %></p>
-
-    <h2><%= _('Details') %></h2>
-
-    <div class="row">
-      <div class="col-sm-6">
-        <p><strong><%= s_("Boat category") %>:</strong> <%= _(@boat.boat_category.name) %></p>
-        <p><strong><%= s_("Boat|Manufacturer") %>:</strong> <%= @boat.manufacturer %></p>
-        <p><strong><%= s_("Boat|Model") %>:</strong> <%= @boat.model %></p>
+    <div class="row boat-hero">
+      <% if can? :edit, @boat %>
+        <div class="boat-management-buttons">
+          <%= link_to _('Edit'), edit_boat_path(@boat), class: 'btn btn-primary btn-lg' %>
+          <%#= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+      <div class="col-sm-12 carousel-container">
+        <div id="boat-photos-carousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <% if @boat.pictures.any? %>
+              <% @boat.pictures.each_with_index do |p,index| %>
+              <div class="item <%= 'active' if index == 0 %>">
+                <%= image_tag p.image.url %>
+              </div>
+              <% end %>
+            <% else %>
+              <div class="item active">
+                <%= image_tag placeholder_url_for(:boat_show) %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="row boat-name-container">
+          <div class="col-sm-12">
+            <h1 class="boat-model">
+              <% if @boat.model.present? %>
+                <%= @boat.model %>
+              <% else %>
+                <%= s_("BoatMissingField|Model not set") %>
+              <% end %>
+            </h1>
+            <h2 class="boat-name">
+              <% if @boat.name.present? %>
+                <%= @boat.name %>
+              <% else %>
+                <%= s_("BoatMissingField|Name not set") %>            
+              <% end %>
+            </h2>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-6">
-        <p><strong><%= s_("Boat|Length") %>:</strong> <%= @boat.length %> m</p>
-        <p><strong><%= s_("Boat|Guest capacity") %>:</strong> <%= @boat.guest_capacity %></p>
+    </div>
+    <div class="row boat-location">
+      <div class="col-sm-12">
+        <strong><%= fa_icon 'map-marker', text: @boat.address.present? ? @boat.address : s_("BoatMissingField|Address not set") %></strong>
+      </div>
+    </div>
+    <div class="row boat-description">
+      <div class="col-sm-12">    
+        <% if @boat.description.present? %>
+          <%= @boat.description %>
+        <% else %>
+          <span class="incomplete-text">
+            <%= (_("Your boat's description goes here. %{link_text} this boat to add a description.") %{link_text: link_to(_("Edit"), edit_boat_path(@boat))}).html_safe %>            
+          </span>
+        <% end %>
+
+        <hr>
       </div>
     </div>
 
-    <h2><%= _('Features') %></h2>
+    <h3><%= _('Details') %></h3>
+    <div class="row">
+      <div class="col-sm-4">
+        <dl class="dl-horizontal">
+          <dt><%= s_("Boat category") %></dt>
+          <dd><%= _(@boat.boat_category.name) %></dd>
+          <dt><%= s_("Boat|Model") %></dt>
+          <dd><%= text_for @boat, :model %></dd>
+          <dt><%= s_("Boat|Name") %></dt>
+          <dd><%= text_for @boat, :name %></dd>
+          <dt><%= s_("Boat|Manufacturer") %></dt>
+          <dd><%= text_for @boat, :manufacturer %></dd>
+        </dl>
+      </div>
+      <div class="col-sm-4">
+        <dl class="dl-horizontal">
+          <dt><%= s_("Boat|Year") %></dt>
+          <dd><%= text_for @boat, :year %></dd>
+          <dt><%= s_("Boat|Length") %> (m)</dt>
+          <dd><%= text_for @boat, :length %></dd>
+          <dt><%= s_("Boat|Guest capacity") %></dt>
+          <dd><%= text_for @boat, :guest_capacity %></dd>
+        </dl>
+      </div>
+      <div class="col-sm-4">
+        <dl class="dl-horizontal">
+          <dt><%= s_("Boat|Fuel Type") %></dt>
+          <dd><%= _(text_for @boat, :fuel_type) %></dd>
+          <dt><%= s_("Boat|Horse power") %></dt>
+          <dd><%= text_for @boat, :horse_power %></dd>
+        </dl>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3><%= _('Features') %></h3>
 
     <div class="row">
       <div class="col-sm-6">
-        <ul>
+        <ul class="boat-features">
           <% @boat.features.each_with_index do |f,i| %>
             <% if i.even? %>
-              <li><%= s_("BoatFeaturesSet|#{f.humanize}") %></li>
+              <li><%= fa_icon "check-square", text: s_("BoatFeaturesSet|#{f.humanize}") %></li>
             <% end %>
           <% end %>
         </ul>
       </div>
       <div class="col-sm-6">
-        <ul>
+        <ul class="boat-features">
           <% @boat.features.each_with_index do |f,i| %>
             <% if i.odd? %>
-              <li><%= s_("BoatFeaturesSet|#{f.humanize}") %></li>
+              <li><%= fa_icon "check-square", text: s_("BoatFeaturesSet|#{f.humanize}") %></li>
             <% end %>
           <% end %>
         </ul>
@@ -73,6 +124,7 @@
     </div>
 
   </div>
+  <%# Right Column %>
   <div class="col-sm-4 boat-booking">
     <div class="row">
       <div class="col-sm-12 boat-price">
@@ -111,6 +163,44 @@
             }
           ])
         %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 boat-owner">
+        <h2><%= @boat.user.name %></h2>
+        <div class="row">
+          <div class="col-sm-4">
+            <%= image_tag @boat.user.image.url(:medium), class: 'user-avatar' %>
+          </div>
+          <div class="col-sm-6 boat-owner-stats">
+            <ul class="list-unstyled">
+              <li>
+                <%= time_ago_in_words(@boat.user.birthdate).capitalize if @boat.user.birthdate %>
+              </li>
+              <li>
+                <%= _("Registered %{time} ago") %{time: time_ago_in_words(@boat.user.created_at)} %>
+              </li>
+              <li>
+                <%= _("%{num} %{boat_pl} %{registered_pl}") %{num: @boat.user.boats.complete.count, boat_pl: n_("boat", "boats", @boat.user.boats.complete.count), registered_pl: n_("registered", "registered", @boat.user.boats.complete.count)} %>
+              </li>
+              <li>
+                <%= _("No feedback yet") %>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <% unless @boat.user.bio.blank? %> 
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1 boat-owner-bio">
+            <span class="small">
+              <%= fa_icon 'quote-left', class: 'fa-2x pull-left' %>
+              <%= @boat.user.bio %>
+              <%= fa_icon 'quote-right', class: 'fa-2x pull-right' %>
+            </span>
+          </div>
+        </div>
+        <% end %>
+        
       </div>
     </div>
   </div>

@@ -1,0 +1,34 @@
+.dashboard-welcome {
+	background: white;
+	.btn {
+		margin-top: 1em;
+	}
+}
+
+.dashboard-incomplete-header {
+	margin-top: 1em;
+	background: $orange;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	color: white;
+}
+
+.dashboard-incomplete-list {
+	margin-top: .5em;
+}
+
+.dashboard-incomplete-profile {
+	@extend .alert, .alert-warning;
+	margin-top: 1em;
+}
+
+.dashboard-no-boats {
+	@extend .alert, .alert-info;
+}
+
+.wave {
+	position: absolute;
+	top: -7px;
+  right: 20px;
+  height: 10px;
+}

@@ -1,0 +1,56 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 language-select">
+        <div class="btn-group">
+          <button type="button" class="footer-dropdown" data-toggle="dropdown" aria-expanded="false">
+            <%= _("Change language") %> <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <% if I18n.locale == I18n.default_locale %>
+                <%= link_to "English", locale: :en %>
+              <% else %>
+                <%= link_to "Italiano", locale: :it %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-4 center-links">
+        <br>
+        <p class="hidden-xs">
+          Sea for All - Copyright 2015
+        </p>
+        <p><%= mail_to "hello@seaforall.com" %></p>
+        <p class="icons">
+          <a href="https://twitter.com/seaforall">
+            <%= fa_icon 'twitter' %>
+          </a>
+          <a href="https://www.facebook.com/pages/Sea-for-All/368816339967609">
+            <%= fa_icon 'facebook-square' %>
+          </a>
+          <a href="https://instagram.com/seaforall">
+            <%= fa_icon 'instagram' %>
+          </a>
+        </p>
+      </div>
+      <div class="col-sm-4 right-links">
+        <ul class="list-unstyled">
+          <li>
+            <small><%= link_to _("Help"), page_path(id: 'help') %></small>
+          </li>
+          <li>
+            <small><%= link_to _("About us"), page_path(id: 'about') %></small>
+          </li>
+          <li>
+            <small><%= link_to _("Terms and Conditions"), page_path(id: 'legal/tos') %></small>
+          </li>
+          <li>
+            <small><%= link_to _("Privacy Policy"), page_path(id: 'legal/privacy') %></small>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

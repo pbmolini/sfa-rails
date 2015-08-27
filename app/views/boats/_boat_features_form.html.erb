@@ -9,7 +9,7 @@
     <%= _("Other Features of your boat") %>
   </h3>
   <p>
-    <span class="last-update"><%= _('Last update:') %> <%= l @boat.updated_at, format: :short %></span>
+    <span class="last-update"><%= _('Last update:') %> <%= l @boat.boat_features_set.updated_at, format: :short %></span>
     <span class="saving"><%= _('Saving...') %></span>
   </p>
 

@@ -1,3 +1,4 @@
+<% title s_("Title|Edit Profile") %>
 <div class="container">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
@@ -11,10 +12,10 @@
         <h2><%= _("Edit Profile") %><%= f.button :submit, _("Update"), class: 'btn btn-lg btn-success pull-right' %></h2>
         <ul class="nav nav-pills">
           <li role="presentation" class="active">
-            <a href="#personal_info" aria-controls="personal_info" role="tab" data-toggle="tab"><%= _("Personal info") %></a>
+            <a href="#personal_info" aria-controls="personal_info" role="tab" data-toggle="tab"><%= fa_icon 'user', text: _("Personal info") %></a>
           </li>
           <li role="presentation">
-            <a href="#login_info" aria-controls="login_info" role="tab" data-toggle="tab"><%= _("Login info") %></a>
+            <a href="#login_info" aria-controls="login_info" role="tab" data-toggle="tab"><%= fa_icon 'lock', text: _("Login info") %></a>
           </li>
         </ul>
         <p><%= f.error_notification %></p>
@@ -35,7 +36,7 @@
 
             <%= f.label _("Profile picture") %>
             <div class="row">
-              <div class="col-sm-2 text-center" id="avatar-preview">
+              <div class="col-sm-2 avatar-preview" id="avatar-preview">
                 <%= image_tag resource.image.url(:thumb) %>
               </div>
               <div class="col-sm-10">
@@ -59,7 +60,7 @@
               <h4><%= _("Change Password") %></h4>
               <%= f.input :current_password, hint: _("we need your current password to confirm your changes"), required: true %>
               <%= f.input :password, autocomplete: "off", hint: _("leave it blank if you don't want to change it"), required: false %>
-              <%= f.input :password_confirmation, required: false %>
+              <%= f.input :password_confirmation, label: _("Confirm password"), required: false %>
             <% else %>
               <%= _("You created this account using your Facebook credentials.") %>
               <br>
@@ -94,6 +95,17 @@
         reader.readAsDataURL(this.files[0]);
       }
     });
+
+
+    $('#user_birthdate').datetimepicker({
+      locale: '<%= I18n.locale %>',
+      format: 'YYYY-MM-DD',
+      extraFormats: [ 'LL' ],
+      useCurrent: <%= resource.birthdate.blank? %>,
+      defaultDate: moment().subtract(16, 'years').subtract(1, 'days'),
+      maxDate: moment().subtract(16, 'years').subtract(1, 'days')
+    });
+
   });
 </script>
 <% end %>

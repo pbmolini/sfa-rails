@@ -1,19 +1,30 @@
-<div class="row boat-search-header">
-  <div class="col-sm-12">
-    <p class="text-center">
-	    <img class="logo" src="<%= aws_image_path_for 'sfa-logo-hor-white-navbar.png' %>" alt="SEA FOR ALL | Condividi la tua barca e risparmia sui costi di gestione">
-	  </p>
-  </div>
-</div>
-
+<% title s_("Title|All the boats") %>
+<p class="text-center">
+  <%= image_tag("mini-logo.png", height:"50px") %>
+</p>
 <div class="row boat-search-subtitle">
   <div class="col-sm-12">
-    <h1><%= s_("All the boats that soon will be available for renting") %></h1>
+    <p>
+      <%= s_("All the boats will be available for renting soon") %>
+    </p>
   </div>
 </div>
 
-<div class="row boat-search-results">
-  <% @boats.complete.each do |boat| %>
-    <%= render 'boat_card', boat: boat %>
-  <% end %>
+<div class="row">
+	<% if @boats.any? %>
+	  <% @boats.complete.each do |boat| %>
+	    <%= render 'boat_card', boat: boat %>
+	  <% end %>
+	<% else %>
+	<div class="col-sm-10 col-sm-offset-1">
+		<p class="lead text-center">
+			<%= s_("BoatIndex|We are building our database of boats available for sharing.") %>
+			<br>
+			<%= s_("BoatIndex|This page will be full of awesome boats in the next few weeks.") %>
+		</p>
+		<p class="text-center">
+			<%= inline_svg 'boat-launch', class: 'boat-launch' %>
+		</p>
+	</div>
+	<% end %>
 </div>
