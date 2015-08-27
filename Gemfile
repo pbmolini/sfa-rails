@@ -51,7 +51,7 @@ gem 'omniauth-facebook'
 gem 'cancancan', '~> 1.10'
 
 gem 'momentjs-rails', '>= 2.8.1'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
 
 gem 'gettext_i18n_rails'
 gem "gettext_i18n_rails_js", "~> 1.0.0"

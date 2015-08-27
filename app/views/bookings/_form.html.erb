@@ -8,18 +8,20 @@
   <div class="form-inputs">
     <%= f.association :user, as: :hidden %>
 
+    <%#= f.h %>
+
     <div class="row">
-      <div class="col-sm-6">
-        <%= f.input :start_time, class: 'input-group date', wrapper: :vertical_input_group do %>
-          <%= f.input_field :start_time, as: :string, class: 'form-control' %>
+      <div class="col-sm-12">
+        <div id="start_time-picker"></div>
+        <%#= f.input :start_time, class: 'input-group date', wrapper: :vertical_input_group do %>
+          <%#= f.input_field :start_time, as: :string, class: 'form-control' %>
           <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span> -->
-        <% end %>
-      </div>
-      <div class="col-sm-6">
-        <%= f.input :end_time, input_html: { class: 'input-group date' }, wrapper: :vertical_input_group do %>
-          <%= f.input_field :end_time, as: :string, class: 'form-control' %>
+        <%# end %>
+        <div id="end_time-picker"></div>
+        <%#= f.input :end_time, input_html: { class: 'input-group date' }, wrapper: :vertical_input_group do %>
+          <%#= f.input_field :end_time, as: :string, class: 'form-control' %>
           <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span> -->
-        <% end %>
+        <%# end %>
       </div>
     </div>
 

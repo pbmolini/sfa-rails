@@ -60,7 +60,7 @@ GEM
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
-    bootstrap3-datetimepicker-rails (4.7.14)
+    bootstrap3-datetimepicker-rails (4.15.35)
       momentjs-rails (>= 2.8.1)
     builder (3.2.2)
     byebug (4.0.5)
@@ -170,14 +170,14 @@ GEM
     jwt (1.4.1)
     leaflet-rails (0.7.4)
     locale (2.1.0)
-    loofah (2.0.2)
+    loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
-    minitest (5.7.0)
+    minitest (5.8.0)
     momentjs-rails (2.10.3)
       railties (>= 3.1)
     multi_json (1.11.0)
@@ -237,7 +237,7 @@ GEM
       sprockets-rails
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.6)
+    rails-dom-testing (1.0.7)
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
@@ -340,7 +340,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (~> 3.3.3)
-  bootstrap3-datetimepicker-rails (~> 4.7.14)
+  bootstrap3-datetimepicker-rails (~> 4.15.35)
   cancancan (~> 1.10)
   cocoon (>= 1.2.0)!
   coffee-rails (~> 4.1.0)

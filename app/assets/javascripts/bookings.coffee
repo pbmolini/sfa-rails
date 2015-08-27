@@ -10,10 +10,14 @@ $.fn.extend
     startTimePicker = @find('.booking_start_time .form-control').datetimepicker
       format: 'DD/MM/YYYY'
       enabledDates: datesToEnable
+      inline: true
+      keepOpen: true
 
     endTimePicker = @find('.booking_end_time .form-control').datetimepicker
       format: 'DD/MM/YYYY'
       enabledDates: datesToEnable
+      inline: true
+      keepOpen: true
 
     @find(".booking_start_time .form-control").on "dp.change", (e) =>
       minDate = e.date
