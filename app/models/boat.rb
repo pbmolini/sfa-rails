@@ -57,6 +57,10 @@ class Boat < ActiveRecord::Base
     self.boat_features_set.attributes.select { |k, v| k if v == true }.keys
   end
 
+  def has_available_days?
+    days.from_now.available.any?
+  end
+
   private
 
   def check_complete?

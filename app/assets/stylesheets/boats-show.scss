@@ -123,6 +123,14 @@
         font-size: 1.5em;
         letter-spacing: 4px;
       }
+      .no-available-dates {
+        font-size: 1.5em;
+        margin-top: 40px;
+        text-align: center;
+        small {
+          font-size: 50%;
+        }
+      }
     }
     .boat-map {
       height: 300px;
