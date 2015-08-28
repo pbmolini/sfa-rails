@@ -10,4 +10,4 @@ CATEGORIES = ["Sail", "Power", "Other"].freeze
 
 CATEGORIES.each do |category_name|
 	BoatCategory.find_or_create_by(name: category_name)
-end
+endAdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
