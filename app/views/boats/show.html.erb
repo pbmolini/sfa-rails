@@ -38,7 +38,7 @@
               <% if @boat.name.present? %>
                 <%= @boat.name %>
               <% else %>
-                <%= s_("BoatMissingField|Name not set") %>            
+                <%= s_("BoatMissingField|Name not set") %>
               <% end %>
             </h2>
           </div>
@@ -51,12 +51,12 @@
       </div>
     </div>
     <div class="row boat-description">
-      <div class="col-sm-12">    
+      <div class="col-sm-12">
         <% if @boat.description.present? %>
           <%= @boat.description %>
         <% else %>
           <span class="incomplete-text">
-            <%= (_("Your boat's description goes here. %{link_text} this boat to add a description.") %{link_text: link_to(_("Edit"), edit_boat_path(@boat))}).html_safe %>            
+            <%= (_("Your boat's description goes here. %{link_text} this boat to add a description.") %{link_text: link_to(_("Edit"), edit_boat_path(@boat))}).html_safe %>
           </span>
         <% end %>
 
@@ -189,7 +189,7 @@
             </ul>
           </div>
         </div>
-        <% unless @boat.user.bio.blank? %> 
+        <% unless @boat.user.bio.blank? %>
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 boat-owner-bio">
             <span class="small">
@@ -200,7 +200,7 @@
           </div>
         </div>
         <% end %>
-        
+
       </div>
     </div>
   </div>

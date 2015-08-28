@@ -1,3 +1,50 @@
 // Place all the styles related to the bookings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.booking-date-picker {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f6f6f6;
+
+  p {
+    margin: 0;
+  }
+
+  .chevron-expand {
+    transition: transform .1s ease;
+  }
+
+  .bootstrap-datetimepicker-widget {
+    transition: all .3s ease;
+    overflow: hidden;
+    height: 300px; //fixed so that animations work
+  }
+
+  .day {
+    border-radius: 0;
+    // background-color: #3AC24B;
+    background-color: white;
+    border: 1px solid #ddd;
+
+    &:hover {
+      background: $blue !important;
+      color: white;
+    }
+  }
+
+  .day.disabled {
+    // background-color: red;
+    background-color: transparent;
+    opacity: .2;
+  }
+}
+
+.form-group.booking_people_on_board {
+  text-align: center;
+  .slider {
+    margin-top: 25px; //to allow space for the tooltip
+    width: 90%;
+  }
+}

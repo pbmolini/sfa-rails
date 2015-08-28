@@ -19,6 +19,7 @@
 //= require moment
 //= require moment/it.js
 //= require bootstrap-datetimepicker
+//= require bootstrap-slider
 //= require turbolinks
 //= require toastr
 //= require jquery.calendario

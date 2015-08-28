@@ -1,3 +1,5 @@
+$availableColor: #3AC24B;
+
 .fc-calendar .fc-row {
 
   .unavailable-day {
@@ -6,23 +8,11 @@
   }
 
   .available-day {
-    background: #3AC24B;
+    background: $availableColor;
     .fc-date, .fc-weekday {
       color: white;
       text-shadow: none;
     }
   }
 
-}
-
-.bootstrap-datetimepicker-widget {
-  .day {
-    border-radius: 0;
-    background-color: #3AC24B;
-  }
-
-  .day.disabled {
-    background-color: red;
-    opacity: .2;
-  }
 }

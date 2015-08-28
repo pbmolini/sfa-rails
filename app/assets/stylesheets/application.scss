@@ -20,6 +20,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
+@import "bootstrap-slider.css";
 @import "bootstrap_overrides";
 @import "font-awesome";
 @import "dropzone/dropzone";
@@ -40,4 +41,5 @@
 @import "boat_features_sets";
 @import "pages";
 @import "days";
+@import "bookings";
 @import "dashboard";

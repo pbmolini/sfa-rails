@@ -6,6 +6,7 @@ class Booking < ActiveRecord::Base
 
   validate :minimum_booking_period
   validate :availability_of_days
+  validates_numericality_of :people_on_board, greater_than_or_equal_to: 1
   validates_numericality_of :people_on_board, less_than_or_equal_to: ->(booking) {booking.boat.guest_capacity}
 
   after_validation :set_days_unavailable, on: :create
