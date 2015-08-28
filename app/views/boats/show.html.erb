@@ -5,8 +5,10 @@
     <div class="row boat-hero">
       <% if can? :edit, @boat %>
         <div class="boat-management-buttons">
-          <%= link_to _('Availability'), boat_days_path(@boat), class: 'btn btn-primary btn-lg' %>
-          <%= link_to _('Edit'), edit_boat_path(@boat), class: 'btn btn-primary btn-lg' %>
+          <% if can? :create, @boat.days.build %>
+            <%= link_to fa_icon('calendar fw'), boat_days_path(@boat), class: 'btn btn-primary btn-lg' %>
+          <% end %>
+          <%= link_to fa_icon('pencil fw'), edit_boat_path(@boat), class: 'btn btn-primary btn-lg' %>
           <%#= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-primary' %>
         </div>
       <% end %>

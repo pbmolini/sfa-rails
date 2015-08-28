@@ -1,4 +1,17 @@
-<h2><%= _("Book") %></h2>
+<h2>
+  <%= _("Book") %>
+  <% if can? :create, @boat.days.build %>
+    <%= link_to _('Edit Availability'), boat_days_path(@boat), class: 'btn btn-link pull-right' %>
+  <% end %>
+</h2>
+
+<% if @boat.user == current_user %>
+  <div class="alert alert-sm alert-info">
+    <p>
+      <small><%= _("You can't book your own boat. This is just a preview of what guests will see.") %></small>
+    </p>
+  </div>
+<% end %>
 
 <%= simple_form_for([@boat, @booking]) do |f| %>
   <% if @booking.errors[:base].any? %>
