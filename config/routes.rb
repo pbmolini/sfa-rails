@@ -26,7 +26,7 @@ Rails.application.routes.draw do
       resources :pictures, only: [:index, :new, :create, :destroy]
       resources :bookings
       resources :boat_features_sets, as: :features_sets # to avoid boat_boat_features_sets_path
-      resources :days
+      resources :days, only: [:index, :create, :destroy]
     end
 
     get 'bookings' => 'bookings#index', as: :bookings
