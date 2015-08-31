@@ -1,3 +1,12 @@
+<%= content_for :fb_open_graph_tags do %>
+  <!-- OpenGraph tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content='Sea for All | <%= s_("Landing|Share your boat with those who love the sea") %>' />
+  <meta property="og:description" content='<%= s_("Landing|Offset your ownership costs by listing your boat whenever and however you like") %>' />
+  <meta property="og:image" content='<%= "https:#{aws_image_path_for 'og-image.jpg'}" %>' />
+  <meta property="og:url" content='<%= request.url %>' />
+<% end %>
+
 <div id="hero">
   <div class="container-fluid">
     <nav class="navbar">
