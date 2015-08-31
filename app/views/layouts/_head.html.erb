@@ -3,6 +3,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= yield(:title).present? ? yield(:title) : "Sharing is Saving" %> | Sea for All</title>
 
+<!-- Facebook OG tags will go here -->
+<%= yield :fb_open_graph_tags %>
+
 <%= stylesheet_link_tag    layout, media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag layout, 'data-turbolinks-track' => true %>
 <%= csrf_meta_tags %>
