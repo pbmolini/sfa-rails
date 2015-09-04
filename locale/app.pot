@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-19 15:38+0200\n"
-"PO-Revision-Date: 2015-08-19 15:38+0200\n"
+"POT-Creation-Date: 2015-09-04 22:47+0200\n"
+"PO-Revision-Date: 2015-09-04 22:47+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -264,6 +264,12 @@ msgstr ""
 msgid "Change language"
 msgstr ""
 
+msgid "Change my password"
+msgstr ""
+
+msgid "Change your password"
+msgstr ""
+
 msgid "Check this if the boat has an engine"
 msgstr ""
 
@@ -286,6 +292,9 @@ msgid "Complete your profile"
 msgstr ""
 
 msgid "Confirm password"
+msgstr ""
+
+msgid "Confirm your new password"
 msgstr ""
 
 msgid "Create Boat"
@@ -312,6 +321,9 @@ msgstr ""
 msgid "Didn't receive unlock instructions?"
 msgstr ""
 
+msgid "Don't panic. Enter your email to receive reset password instructions."
+msgstr ""
+
 msgid "Drop here the photos of your boat! You are already awesome!"
 msgstr ""
 
@@ -328,6 +340,9 @@ msgid ""
 "Edit to add\n"
 "pictures\n"
 " "
+msgstr ""
+
+msgid "Email address used in Sea for All"
 msgstr ""
 
 msgid "Engine Horse Power"
@@ -492,6 +507,9 @@ msgstr ""
 msgid "New Boat"
 msgstr ""
 
+msgid "New password"
+msgstr ""
+
 msgid "No Engine"
 msgstr ""
 
@@ -597,6 +615,9 @@ msgstr ""
 msgid "Select the year"
 msgstr ""
 
+msgid "Send me reset password instructions"
+msgstr ""
+
 msgid "Sign in with %{provider}"
 msgstr ""
 
@@ -657,6 +678,9 @@ msgstr ""
 msgid "Title|All the boats"
 msgstr ""
 
+msgid "Title|Change your password"
+msgstr ""
+
 msgid "Title|Dashboard"
 msgstr ""
 
@@ -664,6 +688,9 @@ msgid "Title|Edit Boat"
 msgstr ""
 
 msgid "Title|Edit Profile"
+msgstr ""
+
+msgid "Title|Forgot password"
 msgstr ""
 
 msgid "Title|Help & Support"

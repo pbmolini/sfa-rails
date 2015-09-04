@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-08-19 15:39+0200\n"
+"PO-Revision-Date: 2015-09-04 22:51+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -273,6 +273,12 @@ msgstr "Cambia l’immagine"
 msgid "Change language"
 msgstr "Cambia lingua"
 
+msgid "Change my password"
+msgstr "Cambia password"
+
+msgid "Change your password"
+msgstr "Cambia la password"
+
 msgid "Check this if the boat has an engine"
 msgstr "Controlla che la barca abbia un motore"
 
@@ -300,6 +306,9 @@ msgstr "Completa il tuo profilo"
 msgid "Confirm password"
 msgstr "Conferma password"
 
+msgid "Confirm your new password"
+msgstr "Conferma nuova password"
+
 msgid "Create Boat"
 msgstr "Crea barca"
 
@@ -324,6 +333,11 @@ msgstr "Non hai ricevuto le istruzioni di conferma?"
 msgid "Didn't receive unlock instructions?"
 msgstr "Non hai ricevuto le istruzioni per lo sblocco?"
 
+msgid "Don't panic. Enter your email to receive reset password instructions."
+msgstr ""
+"Va tutto bene. Inserisci la tua email per ricevere le istruzioni su come cambiare "
+"la password."
+
 msgid "Drop here the photos of your boat! You are already awesome!"
 msgstr "Trascina qui le tue foto! Verranno caricate automaticamente"
 
@@ -344,6 +358,9 @@ msgstr ""
 "Modifica per\n"
 "aggiungere foto\n"
 " "
+
+msgid "Email address used in Sea for All"
+msgstr "Email che usi su Sea for All"
 
 msgid "Engine Horse Power"
 msgstr "Cavalli Potenza"
@@ -525,6 +542,9 @@ msgstr "Ti serve auito? Visita la nostra %{help_page_link}!"
 msgid "New Boat"
 msgstr "Nuova barca"
 
+msgid "New password"
+msgstr "Nuova password"
+
 msgid "No Engine"
 msgstr "Senza motore"
 
@@ -631,6 +651,9 @@ msgstr "Seleziona il tipo di noleggio"
 msgid "Select the year"
 msgstr "Seleziona l’anno"
 
+msgid "Send me reset password instructions"
+msgstr "Inviatemi le istruzioni"
+
 msgid "Sign in with %{provider}"
 msgstr "Login con %{provider}"
 
@@ -704,6 +727,9 @@ msgstr "Chi siamo"
 msgid "Title|All the boats"
 msgstr "Tutte le barche"
 
+msgid "Title|Change your password"
+msgstr "Cambia la password"
+
 msgid "Title|Dashboard"
 msgstr "Dashboard"
 
@@ -712,6 +738,9 @@ msgstr "Modifica barca"
 
 msgid "Title|Edit Profile"
 msgstr "Modifica profilo"
+
+msgid "Title|Forgot password"
+msgstr "Password dimenticata"
 
 msgid "Title|Help & Support"
 msgstr "Aiuto e Supporto"

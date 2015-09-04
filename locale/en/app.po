@@ -266,6 +266,12 @@ msgstr ""
 msgid "Change language"
 msgstr ""
 
+msgid "Change my password"
+msgstr ""
+
+msgid "Change your password"
+msgstr ""
+
 msgid "Check this if the boat has an engine"
 msgstr ""
 
@@ -292,6 +298,9 @@ msgstr ""
 msgid "Confirm password"
 msgstr ""
 
+msgid "Confirm your new password"
+msgstr ""
+
 msgid "Create Boat"
 msgstr ""
 
@@ -316,6 +325,9 @@ msgstr ""
 msgid "Didn't receive unlock instructions?"
 msgstr ""
 
+msgid "Don't panic. Enter your email to receive reset password instructions."
+msgstr ""
+
 msgid "Drop here the photos of your boat! You are already awesome!"
 msgstr ""
 
@@ -332,6 +344,9 @@ msgid ""
 "Edit to add\n"
 "pictures\n"
 " "
+msgstr ""
+
+msgid "Email address used in Sea for All"
 msgstr ""
 
 msgid "Engine Horse Power"
@@ -508,6 +523,9 @@ msgstr ""
 msgid "New Boat"
 msgstr ""
 
+msgid "New password"
+msgstr ""
+
 msgid "No Engine"
 msgstr ""
 
@@ -615,6 +633,9 @@ msgstr ""
 msgid "Select the year"
 msgstr ""
 
+msgid "Send me reset password instructions"
+msgstr ""
+
 msgid "Sign in with %{provider}"
 msgstr ""
 
@@ -681,6 +702,9 @@ msgstr ""
 msgid "Title|All the boats"
 msgstr ""
 
+msgid "Title|Change your password"
+msgstr ""
+
 msgid "Title|Dashboard"
 msgstr ""
 
@@ -688,6 +712,9 @@ msgid "Title|Edit Boat"
 msgstr ""
 
 msgid "Title|Edit Profile"
+msgstr ""
+
+msgid "Title|Forgot password"
 msgstr ""
 
 msgid "Title|Help & Support"
