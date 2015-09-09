@@ -146,6 +146,9 @@
         </div>
       </div>
     <%# end %>
+    <%# Map Alert %>
+    <%= render 'map_alert' if can? :edit, @boat %>
+    <%# Map %>
     <div class="row">
       <div class="col-sm-12 boat-map">
         <%=

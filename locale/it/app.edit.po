@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2015-08-19 15:39+0200\n"
+"PO-Revision-Date: 2015-09-10 00:16+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.4\n"
-"POT-Creation-Date: 2015-09-04 22:47+0200\n"
+"POT-Creation-Date: 2015-09-10 00:17+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -264,13 +264,11 @@ msgstr "Cambia l’immagine"
 msgid "Change language"
 msgstr "Cambia lingua"
 
-#, fuzzy
 msgid "Change my password"
 msgstr "Cambia password"
 
-#, fuzzy
 msgid "Change your password"
-msgstr "Cambia password"
+msgstr "Cambia la password"
 
 msgid "Check this if the boat has an engine"
 msgstr "Controlla che la barca abbia un motore"
@@ -296,9 +294,8 @@ msgstr "Completa il tuo profilo"
 msgid "Confirm password"
 msgstr "Conferma password"
 
-#, fuzzy
 msgid "Confirm your new password"
-msgstr "Conferma password"
+msgstr "Conferma nuova password"
 
 msgid "Create Boat"
 msgstr "Crea barca"
@@ -324,8 +321,11 @@ msgstr "Non hai ricevuto le istruzioni di conferma?"
 msgid "Didn't receive unlock instructions?"
 msgstr "Non hai ricevuto le istruzioni per lo sblocco?"
 
+msgid "Does the map display a wrong place?"
+msgstr "La mappa mostra un luogo sbagliato?"
+
 msgid "Don't panic. Enter your email to receive reset password instructions."
-msgstr ""
+msgstr "Va tutto bene. Inserisci la tua email per ricevere le istruzioni su come cambiare la password."
 
 msgid "Drop here the photos of your boat! You are already awesome!"
 msgstr "Trascina qui le tue foto! Verranno caricate automaticamente"
@@ -349,7 +349,7 @@ msgstr ""
 " "
 
 msgid "Email address used in Sea for All"
-msgstr ""
+msgstr "Email che usi su Sea for All"
 
 msgid "Engine Horse Power"
 msgstr "Cavalli Potenza"
@@ -513,9 +513,8 @@ msgstr "Ti serve auito? Visita la nostra %{help_page_link}!"
 msgid "New Boat"
 msgstr "Nuova barca"
 
-#, fuzzy
 msgid "New password"
-msgstr "Conferma password"
+msgstr "Nuova password"
 
 msgid "No Engine"
 msgstr "Senza motore"
@@ -574,6 +573,12 @@ msgstr "Motore"
 msgid "Privacy Policy"
 msgstr "Informativa privacy"
 
+msgid "Problems with the map"
+msgstr "Problemi con la mappa"
+
+msgid "Problems with the map?"
+msgstr "Problemi con la mappa?"
+
 msgid "Profile picture"
 msgstr "Immagine del profilo"
 
@@ -607,6 +612,9 @@ msgstr "Vela"
 msgid "Saving..."
 msgstr "Salvo…"
 
+msgid "Sea for All uses a third-party geocoding service that sometimes can make mistakes. %{link_text} this boat’s address and try with “<em>City, Country</em>”. %{writeus} if the problem persists."
+msgstr "Sea for All utilizza un servizio di terze parti per il geocoding dell’indirizzo, e questo a volte può dare risultati sbagliati. %{link_text} l’indirizzo di questa barca e prova con “<em>Città, Nazione</em>”. %{writeus} se il problema persiste."
+
 msgid "See this table for details"
 msgstr "Controlla questa tabella per i dettagli"
 
@@ -623,7 +631,7 @@ msgid "Select the year"
 msgstr "Seleziona l’anno"
 
 msgid "Send me reset password instructions"
-msgstr ""
+msgstr "Inviatemi le istruzioni"
 
 msgid "Sign in with %{provider}"
 msgstr "Login con %{provider}"
@@ -686,7 +694,7 @@ msgid "Title|All the boats"
 msgstr "Tutte le barche"
 
 msgid "Title|Change your password"
-msgstr ""
+msgstr "Cambia la password"
 
 msgid "Title|Dashboard"
 msgstr "Dashboard"
@@ -698,7 +706,7 @@ msgid "Title|Edit Profile"
 msgstr "Modifica profilo"
 
 msgid "Title|Forgot password"
-msgstr ""
+msgstr "Password dimenticata"
 
 msgid "Title|Help & Support"
 msgstr "Aiuto e Supporto"
@@ -810,6 +818,9 @@ msgstr "Dove è ormeggiata la tua barca? Es. Molo Ponte Morosini, 46, Genova"
 
 msgid "Who built your boat?"
 msgstr "Qual’è il cantiere di provenienza?"
+
+msgid "Write us"
+msgstr ""
 
 msgid "Yay! You published your boat! Prepare to share it!"
 msgstr "Grande! Hai appena pubblicato la tua barca! Preparati a condividerla!"

@@ -143,3 +143,12 @@
 		list-style: none;
 	}
 }
+
+.map-alert {
+  p {
+    @extend .alert, .alert-danger;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+}
