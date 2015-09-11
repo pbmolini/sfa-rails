@@ -8,7 +8,7 @@ class Ability
     when AdminUser
       can :manage, :all
       
-    when User
+    else # User or Guest
     user ||= User.new # guest user (not logged in)
 
       alias_action :create, :read, :update, :destroy, :to => :crud
