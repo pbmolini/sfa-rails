@@ -5,7 +5,7 @@
   <div class="boat-card">
     <%= link_to boat do %>
       <div>
-        <% bg_image = boat.pictures.any? ? boat.pictures.first.image.url : placeholder_url_for(:boat_card) %>
+        <% bg_image = boat.pictures.any? ? boat.pictures.first.image.url(:medium) : placeholder_url_for(:boat_card) %>
         <%= image_tag(boat.user.image(:thumb), height: '50px', class: 'boat-owner') %>
         <p class="boat-price"><%= boat.daily_price || "??" %> <%= fa_icon 'eur' %></p>
         <div class="picture" style="background-image: url('<%= bg_image %>')"></div>
