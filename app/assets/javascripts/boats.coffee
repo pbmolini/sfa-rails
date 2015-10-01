@@ -12,6 +12,7 @@ $.fn.extend
       else
         $('#boat_horse_power').attr("readonly", "readonly").val(0)
         $('.boat_horse_power > label').text __('No Engine')
+      $('form').submit()
 
   toggleInBoardEngine: () ->
     @on 'change', () ->
