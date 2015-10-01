@@ -8,23 +8,48 @@
     }
   }
 
+
   .carousel-container {
     padding: 0;
-    .carousel#boat-photos-carousel {
-      background-color: $blue;
+    .boat-photos-carousel {
       margin-top: -20px;
-      height: 500px;
-      .top-indicators {
-        top: 20px;
+      height: 470px;
+      .slick-arrow {
+        z-index: 3;
       }
-      .carousel-inner {
-        height: 100%;
-        img {
-          width: 100%;
+      .slick-prev {
+        left: 24px;
+      }
+      .slick-next {
+        right: 24px;
+      }
+      .slick-dots {
+        bottom: auto;
+        top: 5px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .slick-slide img {
+          margin-left: -25%;
         }
       }
     }
+  //   .carousel#boat-photos-carousel {
+  //     background-color: $blue;
+  //     margin-top: -20px;
+  //     height: 500px;
+  //     .top-indicators {
+  //       top: 20px;
+  //     }
+  //     .carousel-inner {
+  //       height: 100%;
+  //       img {
+  //         width: 100%;
+  //       }
+  //     }
+  //   }
   }
+
   .boat-name-container {
     position: absolute;
     bottom: 0;

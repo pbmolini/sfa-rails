@@ -39,3 +39,15 @@ $.fn.extend
       maxDate: moment()
     .on 'dp.change', () =>
       @closest('form').submit()
+
+$(document).ready ->
+  $('.boat-photos-carousel').slick
+    infinite: true
+    adaptiveHeight: true
+    lazyload: 'ondemand'
+    slidesToShow: 1
+    slidesToScroll: 1
+    autoplay: false
+    autoplaySpeed: 5000
+    dots: true
+    variableWidth: true
