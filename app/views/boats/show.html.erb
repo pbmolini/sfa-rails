@@ -33,26 +33,6 @@
         </div>
       </div>
     </div>
-    <%# Qui c'era il boat-name-container che stava fuori dal hero %>
-    <%# NOTA: se lo si mette si deve aggiungere visible-lg a boat-name-container nel hero %>
-<!--     <div class="row hidden-lg boat-name-container-no-hero">
-      <div class="col-sm-12">
-        <h1 class="boat-model">
-          <%# if @boat.model.present? %>
-            <%# @boat.model %>
-          <%# else %>
-            <%# s_("BoatMissingField|Model not set") %>
-          <%# end %>
-        </h1>
-        <h2 class="boat-name">
-          <%# if @boat.name.present? %>
-            <%# @boat.name %>
-          <%# else %>
-            <%# s_("BoatMissingField|Name not set") %>
-          <%# end %>
-        </h2>
-      </div>
-    </div> -->
     <div class="row boat-location">
       <div class="col-sm-12">
         <strong><%= fa_icon 'map-marker', text: @boat.address.present? ? @boat.address : s_("BoatMissingField|Address not set") %></strong>
