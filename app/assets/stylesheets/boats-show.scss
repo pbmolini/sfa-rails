@@ -34,20 +34,6 @@
         }
       }
     }
-  //   .carousel#boat-photos-carousel {
-  //     background-color: $blue;
-  //     margin-top: -20px;
-  //     height: 500px;
-  //     .top-indicators {
-  //       top: 20px;
-  //     }
-  //     .carousel-inner {
-  //       height: 100%;
-  //       img {
-  //         width: 100%;
-  //       }
-  //     }
-  //   }
   }
 
   .boat-name-container {
@@ -56,11 +42,11 @@
     left: 24px;
     text-shadow: 0 1px 3px rgba(0,0,0,0.7);
     color: white;
-    h1.boat-model { // Warning: do not confuse with the one of 'boat-name-container-no-hero'
+    h1.boat-model {
       font-size: 4em;
       margin-bottom: 0;
     }
-    h2.boat-name { // Warning: do not confuse with the one of 'boat-name-container-no-hero'
+    h2.boat-name {
       margin-bottom: .5em;
     }
   }
@@ -69,20 +55,6 @@
 .boat-body {
   background-color: white;
   margin-bottom: 60px; // because we are clevah!
-  // Decommentare se c'è nel html
-  // .boat-name-container-no-hero {
-  //   background-color: $blue;
-  //   text-shadow: 0 1px 3px rgba(0,0,0,0.7);
-  //   color: white;
-  //   h1.boat-model { // Warning: do not confuse with the one of 'boat-name-container'
-  //     font-size: 3em;
-  //     margin-bottom: 0;
-  //   }
-  //   h2.boat-name { // Warning: do not confuse with the one of 'boat-name-container'
-  //     font-size: 1.5em;
-  //     margin-bottom: .5em;
-  //   }
-  // }
   .boat-location {
     background-color: aliceblue;
     padding-top: 1em;
