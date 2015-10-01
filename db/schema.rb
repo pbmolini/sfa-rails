@@ -155,6 +155,18 @@ ActiveRecord::Schema.define(version: 20150828145456) do
 
   add_index "bookings", ["boat_id"], name: "index_bookings_on_boat_id"
 
+  create_table "days", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "boat_id"
+    t.integer  "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "days", ["boat_id"], name: "index_days_on_boat_id"
+  add_index "days", ["booking_id"], name: "index_days_on_booking_id"
+  add_index "days", ["date"], name: "index_days_on_date"
+
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
