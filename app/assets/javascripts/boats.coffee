@@ -12,6 +12,7 @@ $.fn.extend
       else
         $('#boat_horse_power').attr("readonly", "readonly").val(0)
         $('.boat_horse_power > label').text __('No Engine')
+      $('form').submit()
 
   toggleInBoardEngine: () ->
     @on 'change', () ->
@@ -38,3 +39,15 @@ $.fn.extend
       maxDate: moment()
     .on 'dp.change', () =>
       @closest('form').submit()
+
+$(document).ready ->
+  $('.boat-photos-carousel').slick
+    infinite: true
+    adaptiveHeight: true
+    lazyload: 'ondemand'
+    slidesToShow: 1
+    slidesToScroll: 1
+    autoplay: true
+    autoplaySpeed: 5000
+    dots: true
+    variableWidth: true

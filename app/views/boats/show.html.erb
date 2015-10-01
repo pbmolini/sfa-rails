@@ -11,41 +11,7 @@
       <% end %>
       <div class="col-sm-12 carousel-container">
         <!-- Start Carousel -->
-        <div id="boat-photos-carousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <% if @boat.pictures.count > 1 %>
-          <ol class="carousel-indicators top-indicators">
-            <% @boat.pictures.count.times do |i| %>
-              <li data-target="#boat-photos-carousel" data-slide-to="<%= i %>" class="<%= 'active' if i == 0 %>"></li>
-            <% end %>
-          </ol>
-          <% end %>
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-            <% if @boat.pictures.any? %>
-              <% @boat.pictures.each_with_index do |p,index| %>
-              <div class="item <%= 'active' if index == 0 %>">
-                <%= image_tag p.image.url %>
-              </div>
-              <% end %>
-            <% else %>
-              <div class="item active">
-                <%= image_tag placeholder_url_for(:boat_show) %>
-              </div>
-            <% end %>
-          </div>
-          <!-- Controls -->
-          <% if @boat.pictures.count > 1 %>
-          <a class="left carousel-control" href="#boat-photos-carousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#boat-photos-carousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-          <% end %>
-        </div>
+        <%= render 'boats/carousel', boat: @boat %>
         <!-- End Carousel -->
         <div class="row boat-name-container">
           <div class="col-sm-12">
@@ -60,45 +26,25 @@
               <% if @boat.name.present? %>
                 <%= @boat.name %>
               <% else %>
-                <%= s_("BoatMissingField|Name not set") %>            
+                <%= s_("BoatMissingField|Name not set") %>
               <% end %>
             </h2>
           </div>
         </div>
       </div>
     </div>
-    <%# Qui c'era il boat-name-container che stava fuori dal hero %>
-    <%# NOTA: se lo si mette si deve aggiungere visible-lg a boat-name-container nel hero %>
-<!--     <div class="row hidden-lg boat-name-container-no-hero">
-      <div class="col-sm-12">
-        <h1 class="boat-model">
-          <%# if @boat.model.present? %>
-            <%# @boat.model %>
-          <%# else %>
-            <%# s_("BoatMissingField|Model not set") %>
-          <%# end %>
-        </h1>
-        <h2 class="boat-name">
-          <%# if @boat.name.present? %>
-            <%# @boat.name %>
-          <%# else %>
-            <%# s_("BoatMissingField|Name not set") %>            
-          <%# end %>
-        </h2>
-      </div>
-    </div> -->
     <div class="row boat-location">
       <div class="col-sm-12">
         <strong><%= fa_icon 'map-marker', text: @boat.address.present? ? @boat.address : s_("BoatMissingField|Address not set") %></strong>
       </div>
     </div>
     <div class="row boat-description">
-      <div class="col-sm-12">    
+      <div class="col-sm-12">
         <% if @boat.description.present? %>
           <%= @boat.description %>
         <% else %>
           <span class="incomplete-text">
-            <%= (_("Your boat's description goes here. %{link_text} this boat to add a description.") %{link_text: link_to(_("Edit"), edit_boat_path(@boat))}).html_safe %>            
+            <%= (_("Your boat's description goes here. %{link_text} this boat to add a description.") %{link_text: link_to(_("Edit"), edit_boat_path(@boat))}).html_safe %>
           </span>
         <% end %>
 
@@ -234,7 +180,7 @@
             </ul>
           </div>
         </div>
-        <% unless @boat.user.bio.blank? %> 
+        <% unless @boat.user.bio.blank? %>
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1 boat-owner-bio">
             <span class="small">
@@ -245,7 +191,7 @@
           </div>
         </div>
         <% end %>
-        
+
       </div>
     </div>
   </div>
