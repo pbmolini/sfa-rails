@@ -29,9 +29,8 @@ class MailchimpRegisteredUser < Struct.new(:user_id, :first_name, :last_name, :e
 					}
 				})
 
-		# save the member["id"]
-		user.mc_member_id = member["id"]
-		user.save
+		# save the member["id"] (don't 'save' to skip validations)
+		user.update_attribute(:mc_member_id, member["id"])
 	end
 
 	# Uncomment when debugging
