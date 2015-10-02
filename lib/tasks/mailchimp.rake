@@ -4,7 +4,7 @@ namespace :sfa do
   task set_mc_member_id_to_users: :environment do
     list_id = ENV['MC_REGISTERED_USERS_LIST_ID']
     gibbon = Gibbon::Request.new
-    list = gibbon.lists(list_id).members.retrieve
+    list = gibbon.lists(list_id).members.retrieve(params: {count: (User.count + 42)})
     h = {} # will be something like {"ciao@example.com" => "ID"}
     list["members"].each {|member| h[member["email_address"]] = member["id"]}
     puts "#{h.count} members found in this list"
