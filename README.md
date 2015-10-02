@@ -22,7 +22,7 @@ Branch *master* is the one used for the **production** deployment.
 Branch *development* is the one used for the **staging** deployment.
 
 
-### Rake tasks env variables
+### Rake tasks env variables (in `development`)
 
 Since SfA is using `foreman`, use this command
 
@@ -32,6 +32,13 @@ foreman run rake some_task
 
 to execute tasks that use things like `ENV['MY_VARIABLE']`
 
+**NOTE**: in `production` the command is
+
+```
+heroku run rake some_task
+```
+
+since *heroku* uses `foreman`
 
 ## Translations
 

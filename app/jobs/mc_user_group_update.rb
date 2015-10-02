@@ -22,11 +22,11 @@ class MCUserGroupUpdate < Struct.new(:mc_member_id, :boat_started, :boat_complet
 	end
 
 	# Uncomment when debugging
-	def error(job, exception)		
-		Delayed::Worker.logger.error exception.raw_body
-	end
+	# def error(job, exception)		
+	# 	Delayed::Worker.logger.error exception.raw_body
+	# end
 
-	def reschedule_at(current_time, attempts)
-		current_time + 30.seconds
-	end
+	# def reschedule_at(current_time, attempts)
+	# 	current_time + 30.seconds
+	# end
 end
