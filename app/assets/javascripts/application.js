@@ -24,6 +24,7 @@
 //= require dropzone
 //= require leaflet
 //= require cookies_eu
+//= require jquery.slick
 //= require_tree ./locale
 //= require gettext/all
 //= require_tree .

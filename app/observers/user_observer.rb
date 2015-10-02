@@ -4,7 +4,8 @@ class UserObserver < ActiveRecord::Observer
   	# Send the welcome email
     UserMailer.welcome_email(user, I18n.locale.to_s).deliver_later
 
-    # Add the user to the Mailchimp list, only in production and staging
+    # Add the user to the Mailchimp list and put it in the correct group
+    # Used only in production and staging, comments the `unless .. end` for debugging
     unless Rails.env == "development"
 	    Delayed::Job.enqueue MailchimpRegisteredUser.new(
 	    	user.id,

@@ -1,5 +1,5 @@
-$("#boat_details").html("<%= escape_javascript(render :partial => 'boat_details_form') %>");
-$("#boat_features").html("<%= escape_javascript(render :partial => 'boat_features_form') %>");
+// $("#boat_details").html("<%= escape_javascript(render :partial => 'boat_details_form') %>");
+// $("#boat_features").html("<%= escape_javascript(render :partial => 'boat_features_form') %>");
 
 <% if @boat.pictures.any? %>
   $('#at_least_one_pic-notice').fadeOut();
@@ -10,8 +10,8 @@ $("#boat_features").html("<%= escape_javascript(render :partial => 'boat_feature
 $("#boat_details, #boat_features").find('.saving').fadeOut();
 
 // listeners that must be reinitialized every time
-$('form').initEngineField(<%= @boat.horse_power == nil || @boat.horse_power > 1 %>);
-$('#engine-presence').engine_check(<%= @boat.horse_power %>);
-$("#boat_boat_features_set_attributes_outboard_engine").toggleInBoardEngine();
-$("#boat_boat_features_set_attributes_inboard_engine").toggleOutBoardEngine();
-$('.boat_year .form-control').boatYearField();
+// $('form').initEngineField(<%= @boat.horse_power == nil || @boat.horse_power > 1 %>);
+// $('#engine-presence').engine_check(<%= @boat.horse_power %>);
+// $("#boat_boat_features_set_attributes_outboard_engine").toggleInBoardEngine();
+// $("#boat_boat_features_set_attributes_inboard_engine").toggleOutBoardEngine();
+// $('.boat_year .form-control').boatYearField();
