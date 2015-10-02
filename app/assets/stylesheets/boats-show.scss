@@ -8,34 +8,45 @@
     }
   }
 
+
   .carousel-container {
     padding: 0;
-    .carousel#boat-photos-carousel {
-      background-color: $blue;
+    .boat-photos-carousel {
       margin-top: -20px;
-      height: 500px;
-      .top-indicators {
-        top: 20px;
+      height: 470px;
+      .slick-arrow {
+        z-index: 3;
       }
-      .carousel-inner {
-        height: 100%;
-        img {
-          width: 100%;
+      .slick-prev {
+        left: 24px;
+      }
+      .slick-next {
+        right: 24px;
+      }
+      .slick-dots {
+        bottom: auto;
+        top: 5px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .slick-slide img {
+          margin-left: -25%;
         }
       }
     }
   }
+
   .boat-name-container {
     position: absolute;
     bottom: 0;
     left: 24px;
     text-shadow: 0 1px 3px rgba(0,0,0,0.7);
     color: white;
-    h1.boat-model { // Warning: do not confuse with the one of 'boat-name-container-no-hero'
+    h1.boat-model {
       font-size: 4em;
       margin-bottom: 0;
     }
-    h2.boat-name { // Warning: do not confuse with the one of 'boat-name-container-no-hero'
+    h2.boat-name {
       margin-bottom: .5em;
     }
   }
@@ -44,20 +55,6 @@
 .boat-body {
   background-color: white;
   margin-bottom: 60px; // because we are clevah!
-  // Decommentare se c'è nel html
-  // .boat-name-container-no-hero {
-  //   background-color: $blue;
-  //   text-shadow: 0 1px 3px rgba(0,0,0,0.7);
-  //   color: white;
-  //   h1.boat-model { // Warning: do not confuse with the one of 'boat-name-container'
-  //     font-size: 3em;
-  //     margin-bottom: 0;
-  //   }
-  //   h2.boat-name { // Warning: do not confuse with the one of 'boat-name-container'
-  //     font-size: 1.5em;
-  //     margin-bottom: .5em;
-  //   }
-  // }
   .boat-location {
     background-color: aliceblue;
     padding-top: 1em;
