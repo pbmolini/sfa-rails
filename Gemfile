@@ -87,6 +87,9 @@ gem 'activeadmin', github: 'activeadmin'
 # Slick carousel SOMEONE PLEASE ORGANIZE THIS GEMFILE OR LET'S JUST SWITCH TO BOWER-RAILS
 gem "jquery-slick-rails"
 
+# State Machine
+gem 'aasm'
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

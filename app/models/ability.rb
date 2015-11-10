@@ -9,7 +9,7 @@ class Ability
       can :manage, :all
       
     else # User or Guest
-    user ||= User.new # guest user (not logged in)
+      user ||= User.new # guest user (not logged in)
 
       alias_action :create, :read, :update, :destroy, :to => :crud
 
@@ -27,7 +27,7 @@ class Ability
       can :read, Booking, boat: { user_id: user.id }
 
       can :create, Booking do |booking|
-          booking.user == user && booking.boat.user != user
+          booking.user == user and booking.boat.user != user
       end
 
     end
