@@ -13,21 +13,9 @@
         </div>
       <% end %>
       <div class="col-sm-12 carousel-container">
-        <div id="boat-photos-carousel" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner" role="listbox">
-            <% if @boat.pictures.any? %>
-              <% @boat.pictures.each_with_index do |p,index| %>
-              <div class="item <%= 'active' if index == 0 %>">
-                <%= image_tag p.image.url %>
-              </div>
-              <% end %>
-            <% else %>
-              <div class="item active">
-                <%= image_tag placeholder_url_for(:boat_show) %>
-              </div>
-            <% end %>
-          </div>
-        </div>
+        <!-- Start Carousel -->
+        <%= render 'boats/carousel', boat: @boat %>
+        <!-- End Carousel -->
         <div class="row boat-name-container">
           <div class="col-sm-12">
             <h1 class="boat-model">
@@ -159,6 +147,9 @@
         </div>
       </div>
     <%# end %>
+    <%# Map Alert %>
+    <%= render 'map_alert' if can? :edit, @boat %>
+    <%# Map %>
     <div class="row">
       <div class="col-sm-12 boat-map">
         <%=

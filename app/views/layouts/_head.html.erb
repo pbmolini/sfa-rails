@@ -3,6 +3,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= yield(:title).present? ? yield(:title) : "Sharing is Saving" %> | Sea for All</title>
 
+<!-- Facebook OG tags will go here -->
+<%= yield :fb_open_graph_tags %>
+
 <%= stylesheet_link_tag    layout, media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag layout, 'data-turbolinks-track' => true %>
 <%= csrf_meta_tags %>
@@ -20,15 +23,16 @@
 
 <!-- font-awesome -->
 <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-60149534-1', 'auto');
-  ga('send', 'pageview');
-</script>
+<% if ENV['HEROKU_DEPLOYMENT'] == "production" %>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-60149534-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+<% end %>
 
 <!-- typekit -->
 <% if Rails.env == "production" %>

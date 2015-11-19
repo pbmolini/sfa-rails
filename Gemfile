@@ -85,6 +85,12 @@ gem 'cookies_eu'
 # Mailchimp
 gem 'gibbon'
 
+# Active Admin
+gem 'activeadmin', github: 'activeadmin'
+
+# Slick carousel SOMEONE PLEASE ORGANIZE THIS GEMFILE OR LET'S JUST SWITCH TO BOWER-RAILS
+gem "jquery-slick-rails"
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"

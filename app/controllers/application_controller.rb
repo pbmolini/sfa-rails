@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  authorize_resource unless: :devise_or_pages_controller?
-  check_authorization unless: :devise_or_pages_controller?
+  authorize_resource unless: :devise_or_pages_or_admin_controller?
+  check_authorization unless: :devise_or_pages_or_admin_controller?
 
   rescue_from CanCan::AccessDenied do |exception|
     if current_user.nil?
@@ -26,11 +26,19 @@ class ApplicationController < ActionController::Base
   # Devise wants these methods here, see:
   # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-after-a-successful-sign-in-or-sign-out
   def after_sign_in_path_for(resource)
-   dashboard_path
+    if resource.is_a? ::AdminUser
+      admin_root_path
+    else
+      dashboard_path
+    end
   end
 
   def after_sign_out_path_for(resource_or_scope)
-    root_path
+    if resource_or_scope.is_a? ::AdminUser
+      admin_root_path
+    else
+      root_path
+    end
   end
 
   def set_locale
@@ -38,14 +46,22 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options(options = {})
-    { locale: I18n.locale }.merge options
+    # Passing the locale in the URL when inside the admin interface is a mess
+    if self.class.ancestors.include?(ActiveAdmin::BaseController)
+      options
+    else
+      { locale: I18n.locale }.merge options
+    end
   end
 
   private
 
-  def devise_or_pages_controller?
-    devise_controller? || is_a?(PagesController)
+  def devise_or_pages_or_admin_controller?
+    devise_controller? || is_a?(::PagesController) || admin_controller?
   end
 
+  def admin_controller?
+    self.class.ancestors.include?(ActiveAdmin::BaseController) || self.class.ancestors.include?(ActiveAdmin::Devise::Controller)
+  end
 
 end

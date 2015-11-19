@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-19 15:38+0200\n"
-"PO-Revision-Date: 2015-08-19 15:38+0200\n"
+"POT-Creation-Date: 2015-09-10 00:17+0200\n"
+"PO-Revision-Date: 2015-09-10 00:17+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -264,6 +264,12 @@ msgstr ""
 msgid "Change language"
 msgstr ""
 
+msgid "Change my password"
+msgstr ""
+
+msgid "Change your password"
+msgstr ""
+
 msgid "Check this if the boat has an engine"
 msgstr ""
 
@@ -286,6 +292,9 @@ msgid "Complete your profile"
 msgstr ""
 
 msgid "Confirm password"
+msgstr ""
+
+msgid "Confirm your new password"
 msgstr ""
 
 msgid "Create Boat"
@@ -312,6 +321,12 @@ msgstr ""
 msgid "Didn't receive unlock instructions?"
 msgstr ""
 
+msgid "Does the map display a wrong place?"
+msgstr ""
+
+msgid "Don't panic. Enter your email to receive reset password instructions."
+msgstr ""
+
 msgid "Drop here the photos of your boat! You are already awesome!"
 msgstr ""
 
@@ -328,6 +343,9 @@ msgid ""
 "Edit to add\n"
 "pictures\n"
 " "
+msgstr ""
+
+msgid "Email address used in Sea for All"
 msgstr ""
 
 msgid "Engine Horse Power"
@@ -492,6 +510,9 @@ msgstr ""
 msgid "New Boat"
 msgstr ""
 
+msgid "New password"
+msgstr ""
+
 msgid "No Engine"
 msgstr ""
 
@@ -549,6 +570,12 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
+msgid "Problems with the map"
+msgstr ""
+
+msgid "Problems with the map?"
+msgstr ""
+
 msgid "Profile picture"
 msgstr ""
 
@@ -582,6 +609,9 @@ msgstr ""
 msgid "Saving..."
 msgstr ""
 
+msgid "Sea for All uses a third-party geocoding service that sometimes can make mistakes. %{link_text} this boat’s address and try with “<em>City, Country</em>”. %{writeus} if the problem persists."
+msgstr ""
+
 msgid "See this table for details"
 msgstr ""
 
@@ -595,6 +625,9 @@ msgid "Select the type of rental"
 msgstr ""
 
 msgid "Select the year"
+msgstr ""
+
+msgid "Send me reset password instructions"
 msgstr ""
 
 msgid "Sign in with %{provider}"
@@ -657,6 +690,9 @@ msgstr ""
 msgid "Title|All the boats"
 msgstr ""
 
+msgid "Title|Change your password"
+msgstr ""
+
 msgid "Title|Dashboard"
 msgstr ""
 
@@ -664,6 +700,9 @@ msgid "Title|Edit Boat"
 msgstr ""
 
 msgid "Title|Edit Profile"
+msgstr ""
+
+msgid "Title|Forgot password"
 msgstr ""
 
 msgid "Title|Help & Support"
@@ -775,6 +814,9 @@ msgid "Where is your boat moored? E.g. Molo Ponte Morosini, 46, Genoa"
 msgstr ""
 
 msgid "Who built your boat?"
+msgstr ""
+
+msgid "Write us"
 msgstr ""
 
 msgid "Yay! You published your boat! Prepare to share it!"

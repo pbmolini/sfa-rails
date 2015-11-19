@@ -8,19 +8,34 @@
     }
   }
 
+
   .carousel-container {
     padding: 0;
-    .carousel#boat-photos-carousel {
+    .boat-photos-carousel {
       margin-top: -20px;
-      // height: 500px;
-      .carousel-inner {
-        height: 100%;
-        img {
-          width: 100%;
+      height: 470px;
+      .slick-arrow {
+        z-index: 3;
+      }
+      .slick-prev {
+        left: 24px;
+      }
+      .slick-next {
+        right: 24px;
+      }
+      .slick-dots {
+        bottom: auto;
+        top: 5px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .slick-slide img {
+          margin-left: -25%;
         }
       }
     }
   }
+
   .boat-name-container {
     position: absolute;
     bottom: 0;
@@ -39,7 +54,7 @@
 
 .boat-body {
   background-color: white;
-  margin-bottom: 60px; //because we are clevah!
+  margin-bottom: 60px; // because we are clevah!
   .boat-location {
     background-color: aliceblue;
     padding-top: 1em;
@@ -150,4 +165,13 @@
 		}
 		list-style: none;
 	}
+}
+
+.map-alert {
+  p {
+    @extend .alert, .alert-danger;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
 }

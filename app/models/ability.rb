@@ -4,11 +4,13 @@ class Ability
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
+    case user
+    when AdminUser
+      can :manage, :all
+
+    else # User or Guest
     user ||= User.new # guest user (not logged in)
 
-    if user.admin?
-      can :manage, :all
-    else
       alias_action :create, :read, :update, :destroy, :to => :crud
 
       can [:read, :create], Boat
@@ -29,6 +31,7 @@ class Ability
       end
 
       can [:read, :create, :destroy], Day, boat: { user_id: user.id }
+
     end
 
   end
