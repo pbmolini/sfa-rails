@@ -4,7 +4,7 @@ class DaysController < ApplicationController
   before_action :set_boat
 
   def index
-    @days = @boat.days.inject({}) { |acc,d| acc[d.date.to_s] = d.id; acc }
+    @days = @boat.days.inject({}) { |acc,d| acc[d.date.to_s] = {availability: d.availability, id: d.id}; acc }
   end
 
   def create
@@ -40,6 +40,6 @@ class DaysController < ApplicationController
   end
 
   def day_params
-    params.require(:day).permit(:date)
+    params.require(:day).permit(:date, :availability)
   end
 end

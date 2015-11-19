@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150617202202) do
-=======
-ActiveRecord::Schema.define(version: 20150828145456) do
+ActiveRecord::Schema.define(version: 20151119221248) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -48,7 +45,6 @@ ActiveRecord::Schema.define(version: 20150828145456) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
->>>>>>> development
 
   create_table "boat_categories", force: :cascade do |t|
     t.string   "name"
@@ -163,8 +159,9 @@ ActiveRecord::Schema.define(version: 20150828145456) do
     t.date     "date"
     t.integer  "boat_id"
     t.integer  "booking_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "availability"
   end
 
   add_index "days", ["boat_id"], name: "index_days_on_boat_id"
@@ -201,22 +198,18 @@ ActiveRecord::Schema.define(version: 20150828145456) do
   add_index "pictures", ["boat_id"], name: "index_pictures_on_boat_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-<<<<<<< HEAD
-    t.boolean  "admin",                  default: false
-=======
->>>>>>> development
     t.string   "provider"
     t.string   "uid"
     t.string   "first_name"

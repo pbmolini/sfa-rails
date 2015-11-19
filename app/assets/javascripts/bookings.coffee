@@ -6,17 +6,21 @@ class BookingForm
 
   constructor: (@el, dates) ->
     # private methods
-    restrictEndDate = (date) =>
-      maxDate = _.reduce(@datesToEnable, (memo, d) ->
-        if Math.floor(moment.duration(d.diff(memo)).as('days')) == 1
-          memo = d
-        else
-          memo
-      , date)
+
+    # given a start date it blocks all the dates after the first blocked day
+    # this means that it ensures that the user cannot book blocked days
+    restrictEndDate = (startDate) =>
+      maxDate = undefined
+
+      for d in @datesToDisable
+        if Math.floor(moment.duration(d.diff(startDate)).as('days')) > 0
+          maxDate = d
+          break
+
       # NOTE: start date always wins. whenever you change it, the end date is cleared
       @endTimePicker.clear()
-      @endTimePicker.minDate(date)
-      @endTimePicker.maxDate(maxDate.hour(23).minutes(59).seconds(59))
+      @endTimePicker.minDate(startDate)
+      @endTimePicker.maxDate(maxDate.hour(23).minutes(59).seconds(59)) if maxDate
       # why? you may ask... that's because bootstrap datetimepicker always reasons using date and time
       # so maxDate must be the latest possible time within the max date
 
@@ -44,18 +48,22 @@ class BookingForm
         picker = @el.find("##{pickerId}>.bootstrap-datetimepicker-widget")
         animateHidePicker(picker)
 
+    __formatDate = (date) =>
+      moment(date).format('DD/MM/YYYY')
+
     # constructor logic
-    @datesToEnable = _.map dates, (d) ->
+    @datesToDisable = _.map dates, (d) ->
       moment(new Date(d.date))
 
     @startTimePicker = @el.find('#start_time-picker').datetimepicker
       format: 'DD/MM/YYYY'
-      enabledDates: @datesToEnable
+      disabledDates: @datesToDisable
       inline: true
       showClear: true
     .on "dp.change", (e) =>
       if e.date
         @el.find("#start_time-link .booking-date-picker-label").html "<strong>#{__('Start')}:</strong> #{moment(e.date).format('DD/MM/YYYY')}"
+        @el.find('#booking_start_time').val(moment(e.date).hour(0).minutes(0).seconds(0))
         restrictEndDate(e.date)
         animateTogglePickers()
       else
@@ -65,13 +73,14 @@ class BookingForm
 
     @endTimePicker = @el.find('#end_time-picker').datetimepicker
       format: 'DD/MM/YYYY'
-      enabledDates: @datesToEnable
+      disabledDates: @datesToDisable
       inline: true
       showClear: true
       useCurrent: false #IMPORTANT
     .on "dp.change", (e) =>
       if e.date
         @el.find("#end_time-link .booking-date-picker-label").html "<strong>#{__('End')}:</strong> #{moment(e.date).format('DD/MM/YYYY')}"
+        @el.find('#booking_end_time').val(moment(e.date).hour(23).minutes(59).seconds(59))
         animateHideAllPickers()
       else
         @el.find("#end_time-link .booking-date-picker-label").html __('Select an end date')

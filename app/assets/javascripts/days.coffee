@@ -19,7 +19,7 @@ class AvailabilityCalendar
 
     # $(document).on 'shown.calendar.calendario', (e, instance) =>
     @setUnavailable()
-    @setAvailable()
+    # @setAvailable()
 
     @el.find('#custom-next').on 'click', () =>
       @cal.gotoNextMonth(@updateMonthYear)
@@ -44,16 +44,20 @@ class AvailabilityCalendar
     today = @el.find('.fc-today')
     today.prevAll('div').addClass('unavailable-day')
     today.closest('.fc-row').prevAll('.fc-row').find('div').addClass('unavailable-day')
+    _.each @cal.caldata, (day_properties, date) =>
+      $cell = @getCell(date)
+      $cell.addClass('unavailable-day') if $cell && day_properties.availability == 'unavailable'
 
   # removes the class .unavailable-day from every unavailable day
   resetUnavailable: () =>
     @el.find('unavailable-day').removeClass('unavailable-day')
 
+  # TODO: THIS IS NOT NEEDED ANYMORE BUT MAY BE USEFUL TO MARK DAYS AS BOOKED
   # reads from @cal.caldata all the dates that are available in the current month
-  setAvailable: () =>
-    _.each @cal.caldata, (day_id, date) =>
-      $cell = @getCell(date)
-      $cell.addClass('available-day') if $cell
+  # setAvailable: () =>
+  #   _.each @cal.caldata, (day_properties, date) =>
+  #     $cell = @getCell(date)
+  #     $cell.addClass('available-day') if $cell &&
 
   # removes the .available-day from every available day
   resetAvailable: () =>
@@ -66,12 +70,12 @@ class AvailabilityCalendar
     @resetUnavailable()
     @setUnavailable()
     @resetAvailable()
-    @setAvailable()
+    # @setAvailable()
 
   # sets days as available or undefined and syncs with the server
   updateDays: (element, dateProperties) =>
     date = moment(new Date("#{dateProperties.year}-#{dateProperties.month}-#{dateProperties.day}")).format("YYYY-MM-DD")
-    day_id = @cal.caldata[date]
+    day_id = @cal.caldata[date].id if @cal.caldata[date]
     if day_id
       $.ajax
         url: "#{@rest_path}/#{day_id}"
@@ -79,7 +83,7 @@ class AvailabilityCalendar
         dataType: 'json'
         success: (data) =>
           if data.success
-            $(element).removeClass('available-day')
+            $(element).removeClass('unavailable-day')
             delete @cal.caldata[date]
     else
       $.ajax
@@ -89,7 +93,8 @@ class AvailabilityCalendar
         data:
           day:
             date: date
+            availability: 'unavailable'
         success: (data) =>
           if data.success
-            $(element).addClass('available-day')
-            @cal.caldata[date] = data.day.id
+            $(element).addClass('unavailable-day')
+            @cal.caldata[date] = { id: data.day.id, availability: 'unavailable' }

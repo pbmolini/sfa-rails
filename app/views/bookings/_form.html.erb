@@ -34,6 +34,8 @@
           </p>
         </div>
 
+        <%= f.input :start_time, as: :hidden %>
+
         <div id="end_time-picker" class="booking-date-picker">
           <p>
             <%= link_to '#', id: 'end_time-link' do %>
@@ -42,6 +44,8 @@
             <% end %>
           </p>
         </div>
+
+        <%= f.input :end_time, as: :hidden %>
       </div>
     </div>
 
@@ -56,6 +60,6 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-  $('form#new_booking').bookingForm(<%= @boat.days.where('date >= ? AND booking_id IS NULL', DateTime.now).order('date ASC').to_json.html_safe %>);
+  $('form#new_booking').bookingForm(<%= @dates_to_disable %>);
 });
 </script>
