@@ -15,6 +15,9 @@
           <p class="boat-place"><%= fa_icon 'map-marker', text: boat.address.present? ? boat.address : s_("BoatMissingField|Address not set") %></p>
         </div>
       </div>
+      <% if can? :create, boat.days.build %>
+        <%= link_to fa_icon('calendar'), boat_days_path(boat), class: 'btn btn-availability' %>
+      <% end %>
     <% end %>
   </div>
 </div>

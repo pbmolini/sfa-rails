@@ -10,6 +10,9 @@ class Boat < ActiveRecord::Base
   has_many :pictures#, dependent: :destroy
   accepts_nested_attributes_for :pictures, reject_if: :all_blank, allow_destroy: true
 
+  has_many :days
+  accepts_nested_attributes_for :days
+
   RENTAL_TYPES = [ 'bareboat', 'captained', 'both' ].freeze
   FUEL_TYPES = [ 'petrol', 'diesel', 'mix', 'not_applicable' ].freeze
   COMPULSORY_FIELDS = [
@@ -52,6 +55,10 @@ class Boat < ActiveRecord::Base
   # Returns all the features that are true in self.boat_features_set
   def features
     self.boat_features_set.attributes.select { |k, v| k if v == true }.keys
+  end
+
+  def has_available_days?
+    days.from_now.available.any?
   end
 
   private

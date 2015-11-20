@@ -1,0 +1,18 @@
+$availableColor: #3AC24B;
+
+.fc-calendar .fc-row {
+
+  .unavailable-day {
+    opacity: .2;
+    cursor: not-allowed;
+  }
+
+  .available-day {
+    background: $availableColor;
+    .fc-date, .fc-weekday {
+      color: white;
+      text-shadow: none;
+    }
+  }
+
+}

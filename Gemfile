@@ -46,14 +46,18 @@ gem "cocoon", '>= 1.2.0', git: 'https://github.com/nathanvda/cocoon'
 
 gem 'bootstrap-sass', '~> 3.3.3'
 
+# Bootstrap plugins
+gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
+gem 'bootstrap-slider-rails'
+
 # Auth
 gem 'devise'
 gem 'devise-i18n'
 gem 'omniauth-facebook'
 gem 'cancancan', '~> 1.10'
 
+# Better dates and times in JS
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
 
 gem 'gettext_i18n_rails'
 gem "gettext_i18n_rails_js", "~> 1.0.0"

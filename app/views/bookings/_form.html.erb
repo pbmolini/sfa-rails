@@ -1,55 +1,65 @@
-<h2><%= _("Book") %></h2>
+<h2>
+  <%= _("Book") %>
+  <% if can? :create, @boat.days.build %>
+    <%= link_to _('Edit Availability'), boat_days_path(@boat), class: 'btn btn-link pull-right' %>
+  <% end %>
+</h2>
+
+<% if @boat.user == current_user %>
+  <div class="alert alert-sm alert-info">
+    <p>
+      <small><%= _("You can't book your own boat. This is just a preview of what guests will see.") %></small>
+    </p>
+  </div>
+<% end %>
 
 <%= simple_form_for([@boat, @booking]) do |f| %>
   <% if @booking.errors[:base].any? %>
-    <p class="error"><%= @booking.errors[:base].join(', ') %></p>
+    <p class="alert alert-danger"><%= @booking.errors[:base].join(', ') %></p>
   <% end %>
-
-  <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.association :user, as: :hidden %>
 
+    <%#= f.h %>
+
     <div class="row">
-      <div class="col-sm-6">
-        <%= f.input :start_time, class: 'input-group date', wrapper: :vertical_input_group do %>
-          <%= f.input_field :start_time, as: :string, class: 'form-control' %>
-          <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span> -->
-        <% end %>
-      </div>
-      <div class="col-sm-6">
-        <%= f.input :end_time, input_html: { class: 'input-group date' }, wrapper: :vertical_input_group do %>
-          <%= f.input_field :end_time, as: :string, class: 'form-control' %>
-          <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span> -->
-        <% end %>
+      <div class="col-sm-12">
+        <div id="start_time-picker" class="booking-date-picker">
+          <p>
+            <%= link_to '#', id: 'start_time-link' do %>
+              <span class="booking-date-picker-label"><%= _('Select a start date') %></span>
+              <%= fa_icon 'chevron-right rotate-90', class: 'chevron-expand pull-right' %>
+            <% end %>
+          </p>
+        </div>
+
+        <%= f.input :start_time, as: :hidden %>
+
+        <div id="end_time-picker" class="booking-date-picker">
+          <p>
+            <%= link_to '#', id: 'end_time-link' do %>
+              <span class="booking-date-picker-label"><%= _('Select an end date') %></span>
+              <%= fa_icon 'chevron-right', class: 'chevron-expand pull-right' %>
+            <% end %>
+          </p>
+        </div>
+
+        <%= f.input :end_time, as: :hidden %>
       </div>
     </div>
 
-    <%= f.input :people_on_board %>
+    <%= f.label :people_on_board %>
+    <%= f.input :people_on_board, as: :range, label: false, input_html: {data: {'slider-min': 1, 'slider-max': @boat.guest_capacity, 'slider-ticks': [1, @boat.guest_capacity], 'slider-ticks-labels': [1, @boat.guest_capacity] }} %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, _('Book'), class: 'btn btn-block btn-lg btn-success' %>
+    <%= f.button(:submit, _('Book'), class: 'btn btn-block btn-lg btn-success') unless @boat.user == current_user %>
   </div>
 <% end %>
 
 <script type="text/javascript">
 $(document).ready(function() {
-  $('.booking_start_time .form-control').datetimepicker({
-    // need to upgrade to 4.7.14 to have inline
-    // inline: true,
-    // sideBySide: true
-  });
-  $('.booking_end_time .form-control').datetimepicker({
-    // need to upgrade to 4.7.14 to have inline
-    // inline: true,
-    // sideBySide: true
-  });
-  $(".booking_start_time .form-control").on("dp.change",function (e) {
-    $('.booking_end_time .form-control').data("DateTimePicker").minDate(e.date);
-  });
-  $(".booking_end_time .form-control").on("dp.change",function (e) {
-    $('.booking_start_time .form-control').data("DateTimePicker").maxDate(e.date);
-  });
+  $('form#new_booking').bookingForm(<%= @dates_to_disable %>);
 });
 </script>

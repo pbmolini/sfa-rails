@@ -17,6 +17,8 @@ class BoatsController < ApplicationController
     @booking.start_time = Time.zone.tomorrow + 9.hours
     @booking.end_time = Time.zone.tomorrow + 18.hours
     @booking.people_on_board = 1
+    @dates_to_disable = @boat.days.from_now.order('date ASC').to_json.html_safe
+    #TODO disable also booked(accepted) days
   end
 
   # GET /boats/new

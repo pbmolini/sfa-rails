@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151001193516) do
+ActiveRecord::Schema.define(version: 20151119221248) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -154,6 +154,19 @@ ActiveRecord::Schema.define(version: 20151001193516) do
   end
 
   add_index "bookings", ["boat_id"], name: "index_bookings_on_boat_id"
+
+  create_table "days", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "boat_id"
+    t.integer  "booking_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "availability"
+  end
+
+  add_index "days", ["boat_id"], name: "index_days_on_boat_id"
+  add_index "days", ["booking_id"], name: "index_days_on_booking_id"
+  add_index "days", ["date"], name: "index_days_on_date"
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false

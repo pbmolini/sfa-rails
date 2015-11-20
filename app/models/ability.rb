@@ -7,7 +7,7 @@ class Ability
     case user
     when AdminUser
       can :manage, :all
-      
+
     else # User or Guest
     user ||= User.new # guest user (not logged in)
 
@@ -27,8 +27,10 @@ class Ability
       can :read, Booking, boat: { user_id: user.id }
 
       can :create, Booking do |booking|
-          booking.user == user && booking.boat.user != user
+        booking.user == user && booking.boat.user != user
       end
+
+      can [:read, :create, :destroy], Day, boat: { user_id: user.id }
 
     end
 

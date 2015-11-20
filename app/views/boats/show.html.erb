@@ -5,7 +5,10 @@
     <div class="row boat-hero">
       <% if can? :edit, @boat %>
         <div class="boat-management-buttons">
-          <%= link_to _('Edit'), edit_boat_path(@boat), class: 'btn btn-primary btn-lg' %>
+          <% if can? :create, @boat.days.build %>
+            <%= link_to fa_icon('calendar fw'), boat_days_path(@boat), class: 'btn btn-primary btn-lg' %>
+          <% end %>
+          <%= link_to fa_icon('pencil fw'), edit_boat_path(@boat), class: 'btn btn-primary btn-lg' %>
           <%#= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-primary' %>
         </div>
       <% end %>
@@ -127,10 +130,20 @@
     <%# if can? :create, @boat.bookings.build %>
       <div class="row booking-form">
         <div class="col-sm-12 boat-booking">
-          <div class="coming-soon">
+<!--           <div class="coming-soon">
             <p>COMING SOON!</p>
-          </div>
-          <%= render 'bookings/form' %>
+          </div> -->
+          <% if @boat.has_available_days? %>
+            <%= render 'bookings/form' %>
+          <% else %>
+            <p class="no-available-dates">
+              <%= _("Sorry. The owner of this boat has not set any available date.") %>
+              <% if @boat.user == current_user %>
+                <br>
+                <small><%= link_to _("I'm the owner! Let me set some dates already!"), boat_days_path(@boat) %></small>
+              <% end %>
+            </p>
+          <% end %>
         </div>
       </div>
     <%# end %>

@@ -20,14 +20,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
+@import "bootstrap-slider.css";
 @import "bootstrap_overrides";
 @import "font-awesome";
-@import "toastr";
 @import "dropzone/dropzone";
 @import "leaflet";
 @import "cookies_eu";
 @import "slick";
 @import "slick-theme";
+
+// vendor stuff
+@import "toastr";
+@import "calendar";
+@import "calendar_custom_style";
 
 // our stuff
 @import "boats";
@@ -37,4 +42,7 @@
 @import "pictures";
 @import "boat_features_sets";
 @import "pages";
+@import "days";
+@import "bookings";
+
 @import "dashboard";

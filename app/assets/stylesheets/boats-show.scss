@@ -117,26 +117,34 @@
     }
     .booking-form {
       margin-bottom: 2em;
-      form, h2 {
-        opacity: .5;
-      }
-      .btn {
-        @extend .disabled;
-      }
-      .coming-soon {
-        position: absolute;
-        top: 25%;
-        text-align: center;
-        width: 60%;
-        right: 20%;
-        height: 50%;
-        background-color: rgba($darkblue, .99);
-        z-index: 3;
-        margin: 0;
-        color: white;
-        padding-top: 30px;
+      // form, h2 {
+      //   // opacity: .5;
+      // }
+      // .btn {
+      //   @extend .disabled;
+      // }
+      // .coming-soon {
+      //   position: absolute;
+      //   top: 25%;
+      //   text-align: center;
+      //   width: 60%;
+      //   right: 20%;
+      //   height: 50%;
+      //   background-color: rgba($darkblue, .99);
+      //   z-index: 3;
+      //   margin: 0;
+      //   color: white;
+      //   padding-top: 30px;
+      //   font-size: 1.5em;
+      //   letter-spacing: 4px;
+      // }
+      .no-available-dates {
         font-size: 1.5em;
-        letter-spacing: 4px;
+        margin-top: 40px;
+        text-align: center;
+        small {
+          font-size: 50%;
+        }
       }
     }
     .boat-map {
