@@ -133,17 +133,17 @@
 <!--           <div class="coming-soon">
             <p>COMING SOON!</p>
           </div> -->
-          <% if @boat.has_available_days? %>
+          <%# if @boat.has_available_days? %>
             <%= render 'bookings/form' %>
-          <% else %>
-            <p class="no-available-dates">
-              <%= _("Sorry. The owner of this boat has not set any available date.") %>
-              <% if @boat.user == current_user %>
+          <%# else %>
+<!--             <p class="no-available-dates">
+              <%#= _("Sorry. The owner of this boat has not set any available date.") -%>
+              <%# if @boat.user == current_user %>
                 <br>
-                <small><%= link_to _("I'm the owner! Let me set some dates already!"), boat_days_path(@boat) %></small>
-              <% end %>
-            </p>
-          <% end %>
+                <small><%#= link_to _("I'm the owner! Let me set some dates already!"), boat_days_path(@boat) %></small>
+              <%# end %>
+            </p> -->
+          <%# end %>
         </div>
       </div>
     <%# end %>

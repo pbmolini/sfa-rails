@@ -151,6 +151,7 @@ ActiveRecord::Schema.define(version: 20151119221248) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "user_id"
+    t.string   "aasm_state"
   end
 
   add_index "bookings", ["boat_id"], name: "index_bookings_on_boat_id"

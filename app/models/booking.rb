@@ -15,7 +15,7 @@ class Booking < ActiveRecord::Base
 
   def minimum_booking_period
   	unless start_time > Time.zone.now
-  		errors.add :start_time, "must be later than now"
+  		errors.add :start_time, s_("BookingValidationError|must be later than now")
   	end
   	# unless end_time - start_time > 4.hours DOESN'T MAKE SENSE BECAUSE WE CANNOT RESERVE A BOAT FOR LESS THAN 24 HOURS
   	# 	errors.add :end_time, "must be later than #{start_time + 4.hours}"
@@ -24,7 +24,7 @@ class Booking < ActiveRecord::Base
 
   def availability_of_days
     unless (start_time.to_date..end_time.to_date).all? { |d| Day.exists?(date: d) and Day.find_by(date: d).booking.nil? }
-      errors.add :base, "This boat is not available in the period you selected"
+      errors.add :base, s_("BookingValidationError|This boat is not available in the period you selected")
     end
   end
 
