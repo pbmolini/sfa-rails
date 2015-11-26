@@ -1,4 +1,39 @@
 class Booking < ActiveRecord::Base
+  
+  # State Machine definition begins
+  include AASM
+  aasm do
+    state :pending, initial: true
+    state :accepted
+    state :rejected
+    state :canceled
+
+    event :accept do
+      after do
+        # TODO: turn_calendar_days_red
+        # TODO: send a merry email
+      end
+      transitions from: :pending, to: :accepted
+    end
+
+    event :reject do
+      after do
+        # TODO: send a sad email
+      end
+      transitions from: :pending, to: :rejected
+    end
+
+    event :cancel do
+      after do
+        # TODO: write_cancel_motivation
+        # TODO: turn_calendar_days_white
+        # TODO: send a wroth email
+      end
+      transitions from: :accepted, to: :canceled
+    end
+  end
+  # State Machine definition ends
+
   belongs_to :user
   belongs_to :boat
 

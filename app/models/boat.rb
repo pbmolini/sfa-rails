@@ -7,7 +7,7 @@ class Boat < ActiveRecord::Base
   accepts_nested_attributes_for :boat_features_set, update_only: true
 
   has_many :bookings
-  has_many :pictures#, dependent: :destroy
+  has_many :pictures #, dependent: :destroy
   accepts_nested_attributes_for :pictures, reject_if: :all_blank, allow_destroy: true
 
   has_many :days

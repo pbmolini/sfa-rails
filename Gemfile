@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '~> 4.2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -90,6 +90,9 @@ gem 'activeadmin', github: 'activeadmin'
 
 # Slick carousel SOMEONE PLEASE ORGANIZE THIS GEMFILE OR LET'S JUST SWITCH TO BOWER-RAILS
 gem "jquery-slick-rails"
+
+# State Machine
+gem 'aasm'
 
 group :development do
   gem "better_errors"
