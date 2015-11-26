@@ -54,7 +54,7 @@
 
     <h3><%= _('Details') %></h3>
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-6">
         <dl class="dl-horizontal">
           <dt><%= s_("Boat category") %></dt>
           <dd><%= _(@boat.boat_category.name) %></dd>
@@ -64,20 +64,16 @@
           <dd><%= text_for @boat, :name %></dd>
           <dt><%= s_("Boat|Manufacturer") %></dt>
           <dd><%= text_for @boat, :manufacturer %></dd>
-        </dl>
-      </div>
-      <div class="col-sm-4">
-        <dl class="dl-horizontal">
           <dt><%= s_("Boat|Year") %></dt>
           <dd><%= text_for @boat, :year %></dd>
+        </dl>
+      </div>
+      <div class="col-sm-6">
+        <dl class="dl-horizontal">
           <dt><%= s_("Boat|Length") %> (m)</dt>
           <dd><%= text_for @boat, :length %></dd>
           <dt><%= s_("Boat|Guest capacity") %></dt>
           <dd><%= text_for @boat, :guest_capacity %></dd>
-        </dl>
-      </div>
-      <div class="col-sm-4">
-        <dl class="dl-horizontal">
           <dt><%= s_("Boat|Fuel Type") %></dt>
           <dd><%= _(text_for @boat, :fuel_type) %></dd>
           <dt><%= s_("Boat|Horse power") %></dt>

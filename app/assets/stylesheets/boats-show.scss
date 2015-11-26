@@ -167,3 +167,19 @@
     text-align: center;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .dl-horizontal dt {
+    width: 140px;
+  }
+
+  .boat-body .boat-info dd {
+    margin-left: 150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .boat-body .boat-info dd {
+    margin-left: 0;
+  }
+}
