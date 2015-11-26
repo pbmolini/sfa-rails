@@ -1,0 +1,22 @@
+$(document).ready () ->
+  if $('.boat-map').length
+    latitude = $('.boat-map').data('latitude')
+    longitude = $('.boat-map').data('longitude')
+
+    map = L.map('boat-map', {
+      zoom: 14,
+      scrollWheelZoom: false
+    }).setView([latitude, longitude], 14)
+    L.tileLayer("http://{s}.tiles.mapbox.com/v4/pbmolini.ma0ja58n/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicGJtb2xpbmkiLCJhIjoidHhEOFZMWSJ9.JFgyJekyCGep4S_RErl0Kg", {
+      attribution: '<a href="http://www.seaforall.com">SeaForAll</a>',
+      maxZoom: 16
+    }).addTo(map)
+    L.marker(
+      [latitude, longitude],
+      {
+        icon: L.icon(
+          iconUrl: '<%= image_path("sfa-pin.png") %>'
+          iconSize: [42, 42]
+        )
+      }
+    ).addTo(map)

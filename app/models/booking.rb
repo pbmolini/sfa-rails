@@ -23,7 +23,7 @@ class Booking < ActiveRecord::Base
   end
 
   def availability_of_days
-    unless (start_time.to_date..end_time.to_date).all? { |d| Day.exists?(date: d) and Day.find_by(date: d).booking.nil? }
+    unless (start_time.to_date..end_time.to_date).all? { |d| not Day.exists?(date: d, boat_id: self.id) } #TODO this is not future proof
       errors.add :base, "This boat is not available in the period you selected"
     end
   end
