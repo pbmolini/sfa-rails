@@ -5,5 +5,5 @@ class Day < ActiveRecord::Base
   scope :from_now, -> { where('date >= ?', DateTime.now) }
   scope :future, -> { where('date > ?', DateTime.now) }
   scope :past, -> { where('date < ?', DateTime.now) }
-  # scope :available, -> { where booking_id: nil }
+  scope :available, -> { where booking_id: nil }
 end

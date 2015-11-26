@@ -130,20 +130,7 @@
     <%# if can? :create, @boat.bookings.build %>
       <div class="row booking-form">
         <div class="col-sm-12 boat-booking">
-<!--           <div class="coming-soon">
-            <p>COMING SOON!</p>
-          </div> -->
-          <%# if @boat.has_available_days? %>
-            <%= render 'bookings/form' %>
-          <%# else %>
-<!--             <p class="no-available-dates">
-              <%#= _("Sorry. The owner of this boat has not set any available date.") -%>
-              <%# if @boat.user == current_user %>
-                <br>
-                <small><%#= link_to _("I'm the owner! Let me set some dates already!"), boat_days_path(@boat) %></small>
-              <%# end %>
-            </p> -->
-          <%# end %>
+          <%= render 'bookings/form' %>
         </div>
       </div>
     <%# end %>
@@ -151,23 +138,7 @@
     <%= render 'map_alert' if can? :edit, @boat %>
     <%# Map %>
     <div class="row">
-      <div class="col-sm-12 boat-map">
-        <%=
-          map(:center => {
-            :latlng => [@boat.latitude, @boat.longitude],
-            :zoom => 12
-          },
-          :markers => [
-            {
-              :latlng => [@boat.latitude, @boat.longitude],
-              icon: {
-                icon_url: image_path('sfa-pin.png'),
-                icon_size: 42
-              }
-            }
-          ])
-        %>
-      </div>
+      <div class="col-sm-12 boat-map" id="boat-map" data-latitude="<%= @boat.latitude %>" data-longitude="<%= @boat.longitude %>"></div>
     </div>
     <div class="row">
       <div class="col-sm-12 boat-owner">
