@@ -1,4 +1,14 @@
 <% title @boat.name %>
+<% if @boat.complete? %>
+  <%= content_for :fb_open_graph_tags do %>
+    <!-- OpenGraph tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content='<%= @boat.name %> - <%= @boat.model %> | Sea for All' />
+    <meta property="og:description" content='<%= @boat.description.truncate(42) %>' />
+    <meta property="og:image" content='<%= @boat.pictures.first.image.url(:carousel_photo) %>' />
+    <meta property="og:url" content='<%= request.url %>' />
+  <% end %>
+<% end %>
 <div class="row boat-body">
   <%# Left Column %>
   <div class="col-sm-8 boat-info">
