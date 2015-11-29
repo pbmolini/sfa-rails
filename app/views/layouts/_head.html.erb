@@ -4,6 +4,7 @@
 <title><%= yield(:title).present? ? yield(:title) : "Sharing is Saving" %> | Sea for All</title>
 
 <!-- Facebook OG tags will go here -->
+<meta property="fb:app_id" content="<%= ENV['FACEBOOK_ID'] %>"/>
 <%= yield :fb_open_graph_tags %>
 
 <%= stylesheet_link_tag    layout, media: 'all', 'data-turbolinks-track' => true %>
