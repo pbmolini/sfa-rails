@@ -1,4 +1,14 @@
 <% title @boat.name %>
+<% if @boat.complete? %>
+  <%= content_for :fb_open_graph_tags do %>
+    <!-- OpenGraph tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content='<%= @boat.name %> - <%= @boat.model %> | Sea for All' />
+    <meta property="og:description" content='<%= @boat.description.truncate(42) %>' />
+    <meta property="og:image" content='<%= "http:#{@boat.pictures.first.image.url(:carousel_photo)}" %>' />
+    <meta property="og:url" content='<%= request.url %>' />
+  <% end %>
+<% end %>
 <div class="row boat-body">
   <%# Left Column %>
   <div class="col-sm-8 boat-info">
@@ -57,7 +67,7 @@
 
     <h3><%= _('Details') %></h3>
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-6">
         <dl class="dl-horizontal">
           <dt><%= s_("Boat category") %></dt>
           <dd><%= _(@boat.boat_category.name) %></dd>
@@ -67,20 +77,16 @@
           <dd><%= text_for @boat, :name %></dd>
           <dt><%= s_("Boat|Manufacturer") %></dt>
           <dd><%= text_for @boat, :manufacturer %></dd>
-        </dl>
-      </div>
-      <div class="col-sm-4">
-        <dl class="dl-horizontal">
           <dt><%= s_("Boat|Year") %></dt>
           <dd><%= text_for @boat, :year %></dd>
+        </dl>
+      </div>
+      <div class="col-sm-6">
+        <dl class="dl-horizontal">
           <dt><%= s_("Boat|Length") %> (m)</dt>
           <dd><%= text_for @boat, :length %></dd>
           <dt><%= s_("Boat|Guest capacity") %></dt>
           <dd><%= text_for @boat, :guest_capacity %></dd>
-        </dl>
-      </div>
-      <div class="col-sm-4">
-        <dl class="dl-horizontal">
           <dt><%= s_("Boat|Fuel Type") %></dt>
           <dd><%= _(text_for @boat, :fuel_type) %></dd>
           <dt><%= s_("Boat|Horse power") %></dt>
@@ -147,7 +153,7 @@
           <div class="col-sm-4">
             <%= image_tag @boat.user.image.url(:medium), class: 'user-avatar' %>
           </div>
-          <div class="col-sm-6 boat-owner-stats">
+          <div class="col-md-6 col-sm-12 boat-owner-stats">
             <ul class="list-unstyled">
               <li>
                 <%= time_ago_in_words(@boat.user.birthdate).capitalize if @boat.user.birthdate %>
