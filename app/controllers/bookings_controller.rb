@@ -35,7 +35,7 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to @boat, notice: 'Booking was successfully created.' }
+        format.html { redirect_to boat_booking_path(@boat, @booking), notice: _("You have successfully requested a booking to #{@boat.user.name}") }
         # format.json { render :show, status: :created, location: @boat }
       else
         format.html { render 'boats/show' }
