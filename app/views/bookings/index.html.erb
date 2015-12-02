@@ -9,7 +9,7 @@
       <th>End time</th>
       <th>People on board</th>
       <th>Boat</th>
-      <th colspan="2"></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -20,6 +20,7 @@
         <td><%= booking.end_time %></td>
         <td><%= booking.people_on_board %></td>
         <td><%= link_to booking.boat.name, booking.boat %></td>
+        <td><%= link_to 'Show', boat_booking_path(booking.boat, booking) %></td>
         <td><%= link_to 'Edit', edit_boat_booking_path(booking.boat, booking) %></td>
         <td><%= link_to 'Destroy', boat_booking_path(booking.boat, booking), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

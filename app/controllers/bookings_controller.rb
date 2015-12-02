@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   load_and_authorize_resource :boat
   load_and_authorize_resource :booking, through: :boat
+  before_action :authenticate_user!
   before_action :set_booking, only: [:show, :edit, :update, :destroy, :accept, :reject, :cancel]
   before_action :set_boat
 
