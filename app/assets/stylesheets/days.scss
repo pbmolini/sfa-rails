@@ -22,3 +22,36 @@ $pendingColor: $orange;
   }
 
 }
+
+.row.calendar-legend {
+  margin-top: 1em;
+  .fa-2x {
+    line-height: inherit;
+    vertical-align: middle;
+  }
+  .available-day .fa {
+    color: white;
+  }
+  .unavailable-day .fa {
+    color: $black;
+    opacity: .2;
+  }
+  .pending-day .fa {
+    color: $pendingColor;
+  }
+  .accepted-day .fa {
+    color: $bookedColor;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .calendar-col {
+    padding: 0;
+  }
+  .fc-calendar-container {
+    padding: 0;
+    .fc-head {
+      display: none;
+    }
+  }
+}
