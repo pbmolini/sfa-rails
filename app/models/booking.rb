@@ -1,5 +1,5 @@
 class Booking < ActiveRecord::Base
-  
+
   # State Machine definition begins
   include AASM
   aasm do
@@ -19,6 +19,7 @@ class Booking < ActiveRecord::Base
     event :reject do
       after do
         # TODO: send a sad email
+
       end
       transitions from: :pending, to: :rejected
     end
@@ -26,7 +27,7 @@ class Booking < ActiveRecord::Base
     event :cancel do
       after do
         # TODO: write_cancel_motivation
-        # TODO: turn_calendar_days_white
+        # TODO: turn_calendar_days_white ---> REMEMBAH to set day.booking_id to nil before destroying days!
         # TODO: send a wroth email
       end
       transitions from: :accepted, to: :canceled
@@ -44,7 +45,7 @@ class Booking < ActiveRecord::Base
   validates_numericality_of :people_on_board, greater_than_or_equal_to: 1
   validates_numericality_of :people_on_board, less_than_or_equal_to: ->(booking) {booking.boat.guest_capacity}
 
-  after_validation :set_days_unavailable, on: :create
+  after_commit :init_days, on: :create
 
   private
 
@@ -64,7 +65,10 @@ class Booking < ActiveRecord::Base
     end
   end
 
-  def set_days_unavailable
-    self.days = Day.where(date: start_time.to_date..end_time.to_date)
+  # after a booking is created, this creates n days in the db
+  def init_days
+    (start_time.to_date..end_time.to_date).each do |t|
+      Day.create date: t, availability: self.aasm_state, boat: boat, booking: self
+    end
   end
 end

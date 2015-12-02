@@ -46,7 +46,10 @@ class AvailabilityCalendar
     today.closest('.fc-row').prevAll('.fc-row').find('div').addClass('unavailable-day')
     _.each @cal.caldata, (day_properties, date) =>
       $cell = @getCell(date)
-      $cell.addClass('unavailable-day') if $cell && day_properties.availability == 'unavailable'
+      # $cell.addClass('unavailable-day') if $cell && day_properties.availability == 'unavailable'
+      $cell.addClass("#{day_properties.availability}-day") if $cell
+      if $cell && day_properties.booking_id
+        $cell.addClass('booked-day')
 
   # removes the class .unavailable-day from every unavailable day
   resetUnavailable: () =>

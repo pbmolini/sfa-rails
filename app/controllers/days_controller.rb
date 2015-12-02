@@ -4,7 +4,13 @@ class DaysController < ApplicationController
   before_action :set_boat
 
   def index
-    @days = @boat.days.inject({}) { |acc,d| acc[d.date.to_s] = {availability: d.availability, id: d.id}; acc }
+    @days = @boat.days.inject({}) { |acc,d| acc[d.date.to_s] = {availability: d.availability, booking_id: d.booking_id, id: d.id}; acc }
+
+    # @boat.bookings.each do |b|
+    #   (b.start_time..b.end_time).each do |t|
+    #     @boat[t.to_date.to_s] = { availability: b.state, id: ?? }
+    #   end
+    # end
   end
 
   def create

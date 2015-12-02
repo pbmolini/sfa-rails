@@ -1,17 +1,23 @@
-$availableColor: #3AC24B;
+$bookedColor: #3AC24B;
+$pendingColor: $orange;
 
 .fc-calendar .fc-row {
 
   .unavailable-day {
     opacity: .2;
-    cursor: not-allowed;
+    // cursor: not-allowed;
   }
 
-  .available-day {
-    background: $availableColor;
+  .booked-day {
     .fc-date, .fc-weekday {
       color: white;
       text-shadow: none;
+    }
+    &.pending-day {
+      background: $pendingColor;
+    }
+    &.accepted-day {
+      background: $bookedColor;
     }
   }
 

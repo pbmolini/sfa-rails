@@ -57,6 +57,7 @@ class BookingForm
 
     @startTimePicker = @el.find('#start_time-picker').datetimepicker
       format: 'DD/MM/YYYY'
+      minDate: new Date()
       disabledDates: @datesToDisable
       inline: true
       showClear: true
