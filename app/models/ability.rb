@@ -39,6 +39,11 @@ class Ability
         booking.pending? and booking.boat.user == user
       end
 
+      # if can read and the booking may be canceled (managed by aasm)
+      can :cancel, Booking do |booking|
+        (booking.user == user or booking.boat.user == user) and booking.may_cancel?
+      end
+
       can [:read, :create, :destroy], Day, boat: { user_id: user.id }
 
     end

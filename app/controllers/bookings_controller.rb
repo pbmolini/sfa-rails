@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   load_and_authorize_resource :boat
   load_and_authorize_resource :booking, through: :boat
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy, :accept, :reject, :cancel]
   before_action :set_boat
 
   # GET /bookings
@@ -22,6 +22,39 @@ class BookingsController < ApplicationController
   # GET /bookings/new
   def new
     @booking = @boat.bookings.build(user: current_user)
+  end
+
+  def accept
+    respond_to do |format|
+      if @booking.may_accept?
+        @booking.accept!
+        format.html { redirect_to boat_booking_path(@boat, @booking), notice: _("You have accepted this booking!") }
+      else
+        format.html { redirect_to boat_booking_path(@boat, @booking), alert: _("Oops! It was not possible to accept this booking!") }
+      end
+    end
+  end
+
+  def reject
+    respond_to do |format|
+      if @booking.may_reject?
+        @booking.reject!
+        format.html { redirect_to boat_booking_path(@boat, @booking), notice: _("You have rejected this booking!") }
+      else
+        format.html { redirect_to boat_booking_path(@boat, @booking), alert: _("Oops! It was not possible to reject this booking!") }
+      end
+    end
+  end
+
+  def cancel
+    respond_to do |format|
+      if @booking.may_cancel?
+        @booking.cancel!
+        format.html { redirect_to boat_booking_path(@boat, @booking), notice: _("You have canceled this booking!") }
+      else
+        format.html { redirect_to boat_booking_path(@boat, @booking), alert: _("Oops! It was not possible to cancel this booking!") }
+      end
+    end
   end
 
   # GET /bookings/1/edit

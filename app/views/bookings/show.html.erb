@@ -1,8 +1,9 @@
 <% title "Booking for #{@booking.boat.name}, #{@booking.boat.model}" %>
 
 <p>
-  <%= link_to("Accept", "#", class: 'btn btn-small btn-success') if can? :accept, @booking %>
-  <%= link_to("Reject", "#", class: 'btn btn-small btn-danger') if can? :reject, @booking %>
+  <%= link_to("Accept", accept_boat_booking_path(@boat, @booking), class: 'btn btn-small btn-success') if can? :accept, @booking %>
+  <%= link_to("Reject", reject_boat_booking_path(@boat, @booking), class: 'btn btn-small btn-danger') if can? :reject, @booking %>
+  <%= link_to("Cancel", cancel_boat_booking_path(@boat, @booking), class: 'btn btn-small btn-danger') if can? :cancel, @booking %>
 </p>
 
 <p>
