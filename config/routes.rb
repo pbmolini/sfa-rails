@@ -26,7 +26,11 @@ Rails.application.routes.draw do
     resources :boats do
       post 'publish', on: :member
       resources :pictures, only: [:index, :new, :create, :destroy]
-      resources :bookings
+      resources :bookings do
+        get 'accept', on: :member
+        get 'reject', on: :member
+        get 'cancel', on: :member
+      end
       resources :boat_features_sets, as: :features_sets # to avoid boat_boat_features_sets_path
       resources :days, only: [:index, :create, :destroy]
     end

@@ -24,10 +24,24 @@ class Ability
         pic.boat.user == user
       end
 
-      can :read, Booking, boat: { user_id: user.id }
+      # if the user is either the booking's creator or the boat's owner
+      can :read, Booking do |booking|
+        booking.user == user or booking.boat.user == user
+      end
 
+      # if the booking's creator is not the boat's owner
       can :create, Booking do |booking|
         booking.user == user and booking.boat.user != user
+      end
+
+      # if the booking is pending and the user is the boat's owner
+      can [:reject, :accept], Booking do |booking|
+        booking.pending? and booking.boat.user == user
+      end
+
+      # if can read and the booking may be canceled (managed by aasm)
+      can :cancel, Booking do |booking|
+        (booking.user == user or booking.boat.user == user) and booking.may_cancel?
       end
 
       can [:read, :create, :destroy], Day, boat: { user_id: user.id }

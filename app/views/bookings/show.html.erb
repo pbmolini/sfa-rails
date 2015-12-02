@@ -1,24 +1,47 @@
+<% title "Booking for #{@booking.boat.name}, #{@booking.boat.model}" %>
 
+<p>
+  <%= link_to("Accept", accept_boat_booking_path(@boat, @booking), class: 'btn btn-small btn-success') if can? :accept, @booking %>
+  <%= link_to("Reject", reject_boat_booking_path(@boat, @booking), class: 'btn btn-small btn-danger') if can? :reject, @booking %>
+  <%= link_to("Cancel", cancel_boat_booking_path(@boat, @booking), class: 'btn btn-small btn-danger') if can? :cancel, @booking %>
+</p>
+
+<p>
+  <strong>Boat:</strong>
+  <%= link_to @booking.boat.name, boat_path(@booking.boat) %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @booking.aasm_state.humanize %>
+</p>
+
+<p>
+  <strong>Boat's owner:</strong>
+  <%= @booking.boat.user.name %>, <%= @booking.boat.user.email %>
+</p>
 
 <p>
   <strong>Start time:</strong>
-  <%= @booking.start_time %>
+  <%= l @booking.start_time.in_time_zone, format: :short %>
 </p>
 
 <p>
   <strong>End time:</strong>
-  <%= @booking.end_time %>
+  <%= l @booking.end_time.in_time_zone, format: :short %>
+</p>
+
+<p>
+  <strong>Number of days:</strong>
+  <%= n_days = booking_duration_in_days(@booking.end_time - @booking.start_time) %>
+</p>
+
+<p>
+  <strong>Total Price:</strong>
+  <%= n_days * @booking.boat.daily_price %>€
 </p>
 
 <p>
   <strong>People on board:</strong>
   <%= @booking.people_on_board %>
 </p>
-
-<p>
-  <strong>Boat:</strong>
-  <%= @booking.boat %>
-</p>
-
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', bookings_path %>

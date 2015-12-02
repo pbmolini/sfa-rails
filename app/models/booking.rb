@@ -40,7 +40,7 @@ class Booking < ActiveRecord::Base
 
   has_many :days
 
-  validate :minimum_booking_period
+  validate :minimum_booking_period, on: :create # because we can change the aasm_state even if the booking is in the past
   validate :availability_of_days
   validates_numericality_of :people_on_board, greater_than_or_equal_to: 1
   validates_numericality_of :people_on_board, less_than_or_equal_to: ->(booking) {booking.boat.guest_capacity}
