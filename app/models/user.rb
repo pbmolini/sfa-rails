@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [:facebook]
 
+  acts_as_messageable
+
   has_many :boats
   has_many :bookings
 
@@ -47,7 +49,8 @@ class User < ActiveRecord::Base
   end
 
   def complete?
-    self.location.present? and self.phone.present? and self.birthdate.present?
+    valid?
+    # self.location.present? and self.phone.present? and self.birthdate.present?
   end
 
   private

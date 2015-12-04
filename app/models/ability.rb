@@ -13,7 +13,13 @@ class Ability
 
       alias_action :create, :read, :update, :destroy, :to => :crud
 
-      can [:read, :create], Boat
+      # Any registered user
+      can :create, Boat
+
+      # If either the boat is ready for publication or the user is the boat's owner
+      can :read, Boat do |boat|
+        boat.can_be_published? or boat.user == user
+      end
       can [:crud, :publish], Boat, user_id: user.id
 
       can [:read, :create], BoatFeaturesSet
@@ -42,6 +48,11 @@ class Ability
       # if can read and the booking may be canceled (managed by aasm)
       can :cancel, Booking do |booking|
         (booking.user == user or booking.boat.user == user) and booking.may_cancel?
+      end
+
+      # if can read and the booking is not canceled (managed by aasm)
+      can :reply, Booking do |booking|
+        (booking.user == user or booking.boat.user == user) and not booking.canceled?
       end
 
       can [:read, :create, :destroy], Day, boat: { user_id: user.id }

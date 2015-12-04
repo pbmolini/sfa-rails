@@ -2,11 +2,19 @@
 <div class="container">
 	<div class="boat-edit">
 		<div class="col-md-10 col-md-offset-1">
-			<% unless @boat.complete? %>
+			<% unless @boat.can_be_published? %>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 alert alert-warning">
 						<p class="text-center">
-							<small><%= _("This boat cannot be published yet. Fill all the fields and <strong>upload at least one picture</strong> to complete the boat's profile.").html_safe %></small>
+							<small><%= _("This boat cannot be published yet").html_safe %></small>
+							<% unless @boat.complete? %>
+								<br>
+								<small><%= _("Fill all the fields and <strong>upload at least one picture</strong> to complete the boat's profile").html_safe %></small>
+							<% end %>
+							<% unless @boat.user.complete? %>
+								<br>
+								<small><%= (_("You have to %{complete_profile} before making this boat available") %{complete_profile: link_to(_("complete your profile"), edit_user_registration_path)}).html_safe %></small>
+							<% end %>
 						</p>
 					</div>
 				</div>

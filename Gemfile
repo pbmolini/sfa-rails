@@ -49,6 +49,10 @@ gem 'bootstrap-sass', '~> 3.3.3'
 # Bootstrap plugins
 gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
 gem 'bootstrap-slider-rails'
+gem 'bootstrap-will_paginate'
+
+# Will Paginate
+gem 'will_paginate'
 
 # Auth
 gem 'devise'
@@ -93,6 +97,9 @@ gem "jquery-slick-rails"
 
 # State Machine
 gem 'aasm'
+
+# Mailboxer
+gem 'mailboxer'
 
 group :development do
   gem "better_errors"

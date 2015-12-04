@@ -2,8 +2,10 @@ class BookingsController < ApplicationController
   load_and_authorize_resource :boat
   load_and_authorize_resource :booking, through: :boat
   before_action :authenticate_user!
-  before_action :set_booking, only: [:show, :edit, :update, :destroy, :accept, :reject, :cancel]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy, :accept, :reject, :cancel, :reply]
   before_action :set_boat
+  before_action :get_mailbox
+  before_action :get_conversation, only: [:show, :reply]
 
   # GET /bookings
   # GET /bookings.json
@@ -62,6 +64,12 @@ class BookingsController < ApplicationController
   def edit
   end
 
+  def reply
+    current_user.reply_to_conversation(@conversation, params[:body])
+    flash[:success] = _('Reply sent')
+    redirect_to boat_booking_path(@boat, @booking)
+  end
+
   # POST /bookings
   # POST /bookings.json
   def create
@@ -103,6 +111,15 @@ class BookingsController < ApplicationController
   end
 
   private
+
+    def get_mailbox
+      @mailbox ||= current_user.mailbox
+    end
+
+    def get_conversation
+      @conversation ||= @mailbox.conversations.find_by booking_id: @booking.id
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_booking
       @booking = Booking.find(params[:id])

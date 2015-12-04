@@ -1,5 +1,5 @@
 <% title @boat.name %>
-<% if @boat.complete? %>
+<% if @boat.can_be_published? %>
   <%= content_for :fb_open_graph_tags do %>
     <!-- OpenGraph tags -->
     <meta property="og:type" content="website" />

@@ -1,4 +1,45 @@
 <% title "Booking for #{@booking.boat.name}, #{@booking.boat.model}" %>
+<div class="row">
+  <div class="col-sm-12">
+    
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= @conversation.subject %></div>
+
+      <div class="panel-body">
+        <div class="messages">
+          <% @conversation.receipts_for(current_user).each do |receipt| %>
+            <div class="media">
+              <% message = receipt.message %>
+              <div class="media-left">
+                <%= image_tag message.sender.image.url(:medium), class: 'chat-user-avatar' %>
+              </div>
+
+              <div class="media-body">
+                <h6 class="media-heading"><%= message.sender.name %>
+                  says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
+                <%= message.body %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <% if can? :reply, @booking %>
+          <%= form_tag reply_boat_booking_path(@boat, @booking), method: :post do %>
+            <div class="form-group">
+              <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: _('Type something...'), required: true %>
+            </div>
+            <%= submit_tag _("Send Message"), class: 'btn btn-primary' %>
+          <% end %>
+        <% else %>
+          <div class="panel-footer">
+            <%= _("This booking has been canceled. No more messages!") %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <p>
   <%= link_to("Accept", accept_boat_booking_path(@boat, @booking), class: 'btn btn-small btn-success') if can? :accept, @booking %>

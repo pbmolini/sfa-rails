@@ -38,7 +38,8 @@ class Booking < ActiveRecord::Base
   belongs_to :user
   belongs_to :boat
 
-  has_many :days
+  has_many :days, dependent: :destroy
+  has_one :conversation, class_name: "Mailboxer::Conversation", dependent: :destroy
 
   validate :minimum_booking_period, on: :create # because we can change the aasm_state even if the booking is in the past
   validate :availability_of_days

@@ -57,6 +57,10 @@ class Boat < ActiveRecord::Base
     self.boat_features_set.attributes.select { |k, v| k if v == true }.keys
   end
 
+  def can_be_published?
+    self.complete? and self.user.complete?
+  end
+
   private
 
   def check_complete?
@@ -66,8 +70,8 @@ class Boat < ActiveRecord::Base
   end
 
   def set_complete
-    # update_column :complete, check_complete?
-    complete = check_complete?
+    update_column :complete, check_complete?
+    # complete = check_complete?
   end
 
   # def min_pics
