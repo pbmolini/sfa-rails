@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :boats do
       post 'publish', on: :member
       resources :pictures, only: [:index, :new, :create, :destroy]
+      # Host's bookings
       resources :bookings do
         get :accept, on: :member
         get :reject, on: :member
@@ -36,7 +37,8 @@ Rails.application.routes.draw do
       resources :days, only: [:index, :create, :destroy]
     end
 
-    get 'bookings' => 'bookings#index', as: :bookings
+    # Guest's bookings
+    get 'my_bookings' => 'bookings#my_bookings', as: :my_bookings
 
     resources :boat_features
     resources :boat_categories

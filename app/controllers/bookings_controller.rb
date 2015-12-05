@@ -1,20 +1,22 @@
 class BookingsController < ApplicationController
   load_and_authorize_resource :boat
   load_and_authorize_resource :booking, through: :boat
+  skip_load_and_authorize_resource :booking, only: :my_bookings
   before_action :authenticate_user!
   before_action :set_booking, only: [:show, :edit, :update, :destroy, :accept, :reject, :cancel, :reply]
-  before_action :set_boat
+  before_action :set_boat, except: :my_bookings
   before_action :get_mailbox
   before_action :get_conversation, only: [:show, :reply]
 
   # GET /bookings
   # GET /bookings.json
   def index
-    if @boat
-      @bookings = @boat.bookings
-    else
-      @bookings = current_user.bookings
-    end
+    @bookings = @boat.bookings
+  end
+
+  def my_bookings
+    # authorize! :index_my_bookings, @bookings
+    @bookings = current_user.bookings
   end
 
   # GET /bookings/1

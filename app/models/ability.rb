@@ -20,24 +20,31 @@ class Ability
       can :read, Boat do |boat|
         boat.can_be_published? or boat.user == user
       end
+
       can [:crud, :publish], Boat, user_id: user.id
 
       can [:read, :create], BoatFeaturesSet
+
       can :crud, BoatFeaturesSet do |bfs|
         bfs.boat.user == user
       end
+
       can :crud, Picture do |pic|
         pic.boat.user == user
       end
+
+      # can :index_my_bookings, Booking, user_id: user.id
 
       # if the user is either the booking's creator or the boat's owner
       can :read, Booking do |booking|
         booking.user == user or booking.boat.user == user
       end
 
-      # if the booking's creator is not the boat's owner
+      # if is complete and the booking's creator is not the boat's owner
       can :create, Booking do |booking|
-        booking.user == user and booking.boat.user != user
+        user.complete? and
+        booking.user == user and 
+        booking.boat.user != user
       end
 
       # if the booking is pending and the user is the boat's owner

@@ -20,7 +20,12 @@
               <span class="caret"></span>
             <% end %>
             <ul class="dropdown-menu" role="menu">
-              <li role="presentation"><%= link_to _("My Boats"), dashboard_path %></li>
+              <% if current_user.boats.any? %>
+                <li role="presentation"><%= link_to _("My Boats"), dashboard_path %></li>
+              <% end %>
+              <% if current_user.bookings.any? %>
+                <li role="presentation"><%= link_to _("My Bookings"), my_bookings_path %></li>
+              <% end %>
               <li role="presentation"><%= link_to _("My Profile"), edit_user_registration_path %></li>
               <li role="presentation" class="divider"></li>
               <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
