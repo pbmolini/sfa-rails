@@ -53,6 +53,11 @@ class User < ActiveRecord::Base
     # self.location.present? and self.phone.present? and self.birthdate.present?
   end
 
+  # Used by mailboxer, see https://github.com/mailboxer/mailboxer#emails
+  def mailboxer_email(object)
+    email
+  end
+
   private
 
   def self.facebook_image_url uri

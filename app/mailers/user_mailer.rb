@@ -10,8 +10,8 @@ class UserMailer < ActionMailer::Base
   def welcome_email user, locale
     I18n.locale = locale.to_sym
     @user = user
-    @recipient = user
-    mail to: @recipient.email, subject: s_("MailTitle|Welcome to Sea for All!")
+    @receiver = user
+    mail to: @receiver.email, subject: s_("MailTitle|Welcome to Sea for All!")
   end
 
 end

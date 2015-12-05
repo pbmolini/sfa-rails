@@ -31,7 +31,7 @@
           <p class="logo-host">
             <%= image_tag("#{aws_image_path_for('sfa-logo-circle-blue.png')}".gsub("/#{I18n.locale}/", "/")) %>
           </p>
-          <p><%= _("Hi %{name}") %{name: @recipient.name } %></p>
+          <p><%= _("Hi %{name}") %{name: @receiver.name } %></p>
 
           <%= yield %>
           
@@ -45,7 +45,7 @@
         <!-- <td width="100" valign="top"></td> -->
         <td colspan="3" width="600" valign="top" class="footer">
           <p>
-            <%= (_("You are receiving this email because you registered an account on %{link} with the email address <em>%{email}</em>. If you think you shouldn't have received this email please contact us replying to this message.") %{link: link_to("Sea for All", root_url(locale: I18n.locale), target: '_blank', style: "color: orange; text-decoration: none;"), email: @recipient.email}).html_safe %>
+            <%= (_("You are receiving this email because you registered an account on %{link} with the email address <em>%{email}</em>. If you think you shouldn't have received this email please contact us replying to this message.") %{link: link_to("Sea for All", root_url(locale: I18n.locale), target: '_blank', style: "color: orange; text-decoration: none;"), email: @receiver.email}).html_safe %>
           </p>
         </td>
         <!-- <td width="100" valign="top"></td> -->
