@@ -21,12 +21,13 @@ class BookingMessageMailer < Mailboxer::BaseMailer
   def new_message_email(message, receiver, locale)
     I18n.locale = locale.to_sym
     @message  = message
+    @sender = message.sender
     @receiver = receiver
     @booking = Booking.find(message.conversation.booking_id) # TODO: improve using .booking
     @boat = @booking.boat
     set_subject(message)
     mail to: receiver.send(Mailboxer.email_method, message),
-         subject: (_("You have a new booking for %{boat_name}") %{boat_name: @boat.name}),
+         subject: (_("You have a new booking for %{boat_name} on Sea for All") %{boat_name: @boat.name}),
          template_name: 'new_message_email'
   end
 
@@ -34,12 +35,13 @@ class BookingMessageMailer < Mailboxer::BaseMailer
   def reply_message_email(message, receiver, locale)
     I18n.locale = locale.to_sym
     @message  = message
+    @sender = message.sender
     @receiver = receiver
     @booking = Booking.find(message.conversation.booking_id) # TODO: improve using .booking
     @boat = @booking.boat
     set_subject(message)
     mail to: receiver.send(Mailboxer.email_method, message),
-         subject: (_("%{sender_name} just replied about booking %{boat_name}") %{sender_name: @message.sender.name, boat_name: @boat.name}),
+         subject: (s_("NewReplyMailSubject|You received a message from %{sender_name} on Sea for All") %{sender_name: @sender.name}),
          template_name: 'reply_message_email'
   end
 end

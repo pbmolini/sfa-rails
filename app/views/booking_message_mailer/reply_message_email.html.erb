@@ -1,12 +1,38 @@
-<h1>You have a new reply: <%= @subject %></h1>
+<% content_for :title, s_("NewReplyMailTitle|New message from %{sender_name}") %{sender_name: @sender.name} %>
 <p>
-  You have received a new reply:
+  <%= s_("NewReplyMailBody|You received a private message from %{sender_name} for the booking:") %{sender_name: @sender.name} %>
 </p>
-<blockquote>
-  <p>
-    <%= raw @message.body %>
-  </p>
-</blockquote>
-<p>
-  Visit <%= link_to root_url, root_url %> and go to your inbox for more info.
-</p>
+<table class="booking-message">
+  <thead>
+    
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= _("Start") %></td>
+      <td><%= l @booking.start_time.in_time_zone, format: :short %></td>
+    </tr>
+    <tr>
+      <td><%= _("End") %></td>
+      <td><%= l @booking.end_time.in_time_zone, format: :short %></td>
+    </tr>
+    <tr>
+      <td><%= _("Boat") %></td>
+      <td><%= @booking.boat.name %></td>
+    </tr>
+    <tr>
+      <td><%= _("Number of days") %></td>
+      <td><%= @booking.duration_in_days %></td>
+    </tr>
+    <tr>
+      <td><%= _("People on board") %></td>
+      <td><%= @booking.people_on_board %></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="total-price"><%= _("Total Price") %>: <%= @booking.total_price %>€</h2>
+
+<h1 class="read-message-btn">
+  <%#= NOTE: the usual url boat_booking_url(@boat, @booking) doesn't work here %>
+  <%= link_to s_("NewReplyMailBody|Read the message"), boat_booking_url(boat_id: @boat.id, id: @booking.id) %>
+</h1>

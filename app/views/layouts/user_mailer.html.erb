@@ -26,10 +26,9 @@
     <td>
     <table cellpadding="0" cellspacing="0" border="0" align="center">
       <tr>
-        <td width="100" valign="top" class="side-bg"></td>
-        <td width="400" valign="top" class="main-content">
+        <td width="500" valign="top" class="main-content">
           <p class="logo-host">
-            <%= image_tag("#{aws_image_path_for('sfa-logo-circle-blue.png')}".gsub("/#{I18n.locale}/", "/")) %>
+            <%= link_to image_tag("http:#{aws_image_path_for('sfa-logo-circle-blue.png')}".gsub("/#{I18n.locale}/", "/")), root_url %>
           </p>
           <p><%= _("Hi %{name}") %{name: @receiver.name } %></p>
 
@@ -39,7 +38,6 @@
             <small><%= (_("-- the team of %{link}") %{link: link_to("Sea for All", root_url(locale: I18n.locale), target: '_blank')}).html_safe %></small>
           </p>
         </td>
-        <td width="100" valign="top" class="side-bg"></td>
       </tr>
       <tr>
         <!-- <td width="100" valign="top"></td> -->

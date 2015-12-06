@@ -1,12 +1,42 @@
-<h1>You have a new message: <%= @subject %></h1>
+<% content_for :title, s_("NewBookingMailTitle|New booking for %{boat_name}") %{boat_name: @boat.name} %>
 <p>
-  You have received a new message:
+  <%= s_("NewBookingMailBody|You have a new booking request for %{boat_name}:") %{boat_name: @boat.name} %>
 </p>
-<blockquote>
-  <p>
-    <%= raw @message.body %>
-  </p>
-</blockquote>
+<table class="booking-message">
+  <thead>
+    
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= _("Start") %></td>
+      <td><%= l @booking.start_time.in_time_zone, format: :short %></td>
+    </tr>
+    <tr>
+      <td><%= _("End") %></td>
+      <td><%= l @booking.end_time.in_time_zone, format: :short %></td>
+    </tr>
+    <tr>
+      <td><%= _("User") %></td>
+      <td><%= @sender.name %></td>
+    </tr>
+    <tr>
+      <td><%= _("Number of days") %></td>
+      <td><%= @booking.duration_in_days %></td>
+    </tr>
+    <tr>
+      <td><%= _("People on board") %></td>
+      <td><%= @booking.people_on_board %></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="total-price"><%= _("Total Price") %>: <%= @booking.total_price %>€</h2>
+
 <p>
-  Visit <%= link_to root_url, root_url %> and go to your inbox for more info.
+  <%= (s_("NewBookingMailBody|Review the details of the booking, reply to %{sender_name} and <strong>accept</strong> (or reject) the booking.") %{sender_name: @sender.name}).html_safe %>
 </p>
+
+<h1 class="read-message-btn">
+  <%#= NOTE: the usual url boat_booking_url(@boat, @booking) doesn't work here %>
+  <%= link_to s_("NewBookingMailBody|Go to this booking"), boat_booking_url(boat_id: @boat.id, id: @booking.id) %>
+</h1>

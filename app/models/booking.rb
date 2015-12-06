@@ -48,6 +48,15 @@ class Booking < ActiveRecord::Base
 
   after_commit :init_days, on: :create
 
+  def duration_in_days
+    duration_in_seconds = end_time - start_time
+    (duration_in_seconds.to_i / (24 * 60 * 60)) + 1
+  end
+
+  def total_price
+    duration_in_days * boat.daily_price
+  end
+
   private
 
   def minimum_booking_period
