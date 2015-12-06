@@ -16,7 +16,7 @@ Mailboxer.setup do |config|
   # Use delayed_jobs for sending the email
   # from https://github.com/mailboxer/mailboxer/issues/189
   config.custom_deliver_proc = ->(mailer, mailable, recipient) do
-    mailer.delay.send_email(mailable, recipient)
+    mailer.delay.send_email(mailable, recipient, I18n.locale)
   end
 
   # Configures if you use or not a search engine and which one you are using
