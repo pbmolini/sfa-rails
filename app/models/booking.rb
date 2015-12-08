@@ -12,6 +12,10 @@ class Booking < ActiveRecord::Base
       after do
         # TODO: turn_calendar_days_red
         # TODO: send a merry email
+        # Mail to guest
+        BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
+        # Mail to host
+        BookingStateMailer.send_email(boat.user, self, aasm_state, I18n.locale.to_s).deliver_later
       end
       transitions from: :pending, to: :accepted
     end
@@ -19,7 +23,10 @@ class Booking < ActiveRecord::Base
     event :reject do
       after do
         # TODO: send a sad email
-
+        # Mail to guest
+        BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
+        # Mail to host
+        BookingStateMailer.send_email(boat.user, self, aasm_state, I18n.locale.to_s).deliver_later
       end
       transitions from: :pending, to: :rejected
     end
@@ -29,6 +36,10 @@ class Booking < ActiveRecord::Base
         # TODO: write_cancel_motivation
         # TODO: turn_calendar_days_white ---> REMEMBAH to set day.booking_id to nil before destroying days!
         # TODO: send a wroth email
+        # Mail to guest
+        BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
+        # Mail to host
+        BookingStateMailer.send_email(boat.user, self, aasm_state, I18n.locale.to_s).deliver_later
       end
       transitions from: :accepted, to: :canceled
     end

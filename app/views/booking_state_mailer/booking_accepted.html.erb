@@ -1,0 +1,12 @@
+<% content_for :title, s_("BookingAcceptedMailTitle|Booking accepted for %{boat_name}") %{boat_name: @boat.name} %>
+<% if @receiver == @guest %>
+ 	<%# Guest %>
+	<p>
+		<%= s_("BookingAcceptedMailBody|%{host_name} has accepted your booking for %{boat_name}") %{host_name: @host.name, boat_name: @boat.name} %>
+	</p>
+<% else %>
+	<%# Host %>	
+	<p>
+		<%= s_("BookingAcceptedMailBody|You have accepted a booking for %{boat_name}") %{boat_name: @boat.name} %>
+	</p>
+<% end %>
