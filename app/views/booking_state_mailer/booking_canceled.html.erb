@@ -15,5 +15,5 @@
 
 <h1 class="read-message-btn">
   <%#= NOTE: the usual url boat_booking_url(@boat, @booking) doesn't work here %>
-  <%= link_to s_("BookingAcceptedMailBody|Go to the booking"), boat_booking_url(boat_id: @boat.id, id: @booking.id) %>
+  <%= link_to s_("BookingCanceledMailBody|Go to the booking"), boat_booking_url(boat_id: @boat.id, id: @booking.id) %>
 </h1>
