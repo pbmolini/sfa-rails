@@ -10,3 +10,10 @@
 		<%= s_("BookingRejectedMailBody|You have rejected a booking for %{boat_name}") %{boat_name: @boat.name} %>
 	</p>
 <% end %>
+
+<%= render 'booking_table' %>
+
+<h1 class="read-message-btn">
+  <%#= NOTE: the usual url boat_booking_url(@boat, @booking) doesn't work here %>
+  <%= link_to s_("BookingRejectedMailBody|Go to the booking"), boat_booking_url(boat_id: @boat.id, id: @booking.id) %>
+</h1>

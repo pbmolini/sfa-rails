@@ -1,0 +1,34 @@
+<table class="booking-message">
+  <thead>
+    <tr>
+      <th colspan="2"><h3><%= s_("BookingTableMailer|Details of the booking") %></h3></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= s_("BookingTableMailer|Start") %></td>
+      <td><%= l @booking.start_time.in_time_zone, format: :short %></td>
+    </tr>
+    <tr>
+      <td><%= s_("BookingTableMailer|End") %></td>
+      <td><%= l @booking.end_time.in_time_zone, format: :short %></td>
+    </tr>
+    <tr>
+    	<% if @receiver == @guest %>
+    	<td><%= s_("BookingTableMailer|Boat's owner") %></td>
+    	<td><%= @host.name %></td>
+    	<% else %>
+    	<td><%= s_("BookingTableMailer|Guest") %></td>
+    	<td><%= @guest.name %></td>
+    	<% end %>
+    </tr>
+    <tr>
+      <td><%= s_("BookingTableMailer|Number of days") %></td>
+      <td><%= @booking.duration_in_days %></td>
+    </tr>
+    <tr>
+      <td><%= s_("BookingTableMailer|People on board") %></td>
+      <td><%= @booking.people_on_board %></td>
+    </tr>
+  </tbody>
+</table>

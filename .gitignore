@@ -31,6 +31,9 @@ config/secrets.yml
 *.bowerrc
 bower.json
 
+# Procfile for development
+Procfile.dev
+
 # custom scripts
 heroku_deploy.rb
 heroku_console_staging.sh

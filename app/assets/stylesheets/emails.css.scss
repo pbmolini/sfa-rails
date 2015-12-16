@@ -147,6 +147,11 @@ p {
 
 // Booking Message
 table .booking-message {
+  border: 1px solid rgb(237, 237, 237);
+  th {
+    background-color: lightgrey;
+    padding: 10px;
+  }
   td {
     padding: 10px;
   }
