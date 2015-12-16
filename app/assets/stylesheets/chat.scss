@@ -1,0 +1,120 @@
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
+.panel-default > .panel-heading {
+	color: #9A9A9A;
+	padding-left: 12px;
+
+	.panel-user {
+		color: black;
+		font-size: 24px;
+		line-height: 24px;
+		margin: 0;
+
+		img {
+			height: 45px;
+		}
+	}
+}
+
+.message-container {
+	@extend .clearfix;
+	width: 100%;
+	position: relative;
+	margin-bottom: 8px;
+	&:first-child {
+		margin-top: 10px;
+	}
+	&:last-child {
+		margin-bottom: 5px;
+	}
+}
+
+.media-body {
+	h5 {
+	margin: 2px 0;
+	}
+	h6 {
+		margin-bottom: 0;
+	}
+}
+
+.chat-user-avatar {
+  height: 45px;
+  border-radius: 50%;
+}
+
+#messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 0 1em;
+}
+
+.chat-reply-btn,.chat-reply-text {
+	float: left;
+}
+
+.chat-booking {
+	background: #E2E8EC;
+}
+
+.chat-boat {
+	background: #D5E6F1;
+}
+
+.chat-boat, .chat-booking {
+	position: relative;
+	max-width: 70%;
+	padding: 20px 15px;
+	border-radius: 4px;
+	@extend .clearfix;
+}
+
+.chat-booking {
+	float: right;
+
+	.media-left {
+		float: right;
+	}
+	.media-body {
+		margin-left: 200px;
+	}
+}
+
+.chat-text-avatar {
+	position: absolute;
+	top: 10px;
+	left: 12px;
+}
+
+.chat-reply-text {
+	position: relative;
+	width: 80%;
+	margin-bottom: 0;
+	textarea {
+		border-radius: 0;
+		border: 1px solid #ddd; 
+		box-shadow: none;
+		padding-top: 1em;
+		padding-left: 72px;
+		&:focus {
+			box-shadow: none;
+			border: 1px solid #ddd; 
+		}
+	}
+}
+
+.chat-reply-btn {
+	width: 20%;
+	height: 62px;
+}

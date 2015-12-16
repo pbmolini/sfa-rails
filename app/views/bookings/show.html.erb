@@ -1,33 +1,53 @@
 <% title "Booking for #{@booking.boat.name}, #{@booking.boat.model}" %>
 <div class="row">
-  <div class="col-sm-12">
-    
+  <div class="col-sm-12"> 
     <div class="panel panel-default">
-      <div class="panel-heading"><%= @conversation.subject %></div>
+      <div class="panel-heading">
+        <p class="panel-user">
+          <% if current_user == @booking.user %>
+            <%= image_tag @boat.user.image.url(:medium), class: 'chat-user-avatar' %>
+            <%= @boat.user.name %>
+          <% else %>
+            <%= image_tag @booking.user.image.url(:medium), class: 'chat-user-avatar' %>
+            <%= @booking.user.name %>
+          <% end %>
+        </p>
+        <%= @conversation.subject %>
+      </div>
 
       <div class="panel-body">
-        <div class="messages">
+        <div id="messages">
           <% @conversation.receipts_for(current_user).each do |receipt| %>
-            <div class="media">
-              <% message = receipt.message %>
-              <div class="media-left">
-                <%= image_tag message.sender.image.url(:medium), class: 'chat-user-avatar' %>
-              </div>
+            <% message = receipt.message %>
+              <div class="message-container">
+                <% if message.sender == current_user %>
+                  <div class="media chat-boat">
+                <% else %>
+                  <div class="media chat-booking">
+                <% end %>
+                <div class="media-left">
+                  <%= image_tag message.sender.image.url(:medium), class: 'chat-user-avatar' %>
+                </div>
 
-              <div class="media-body">
-                <h6 class="media-heading"><%= message.sender.name %>
-                  says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
-                <%= message.body %>
+                <div class="media-body">
+                  <h5><strong><%= message.sender.name %></strong></h5>
+                  <h6 class="media-heading">
+                    says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
+                  <p>
+                    <%= message.body %>
+                  </p>
+                </div>
               </div>
             </div>
           <% end %>
         </div>
         <% if can? :reply, @booking %>
           <%= form_tag reply_boat_booking_path(@boat, @booking), method: :post do %>
-            <div class="form-group">
+            <div class="form-group chat-reply-text">
+              <%= image_tag current_user.image(:medium), class: 'chat-user-avatar chat-text-avatar' %>
               <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: _('Type something...'), required: true %>
             </div>
-            <%= submit_tag _("Send Message"), class: 'btn btn-primary' %>
+            <%= submit_tag _("Send Message"), class: 'btn btn-primary chat-reply-btn' %>
           <% end %>
         <% else %>
           <div class="panel-footer">
@@ -58,21 +78,6 @@
 </p>
 
 <p>
-  <strong>Boat's owner:</strong>
-  <%= @booking.boat.user.name %>, <%= @booking.boat.user.email %>
-</p>
-
-<p>
-  <strong>Start time:</strong>
-  <%= l @booking.start_time.in_time_zone, format: :short %>
-</p>
-
-<p>
-  <strong>End time:</strong>
-  <%= l @booking.end_time.in_time_zone, format: :short %>
-</p>
-
-<p>
   <strong>Number of days:</strong>
   <%= n_days = booking_duration_in_days(@booking.end_time - @booking.start_time) %>
 </p>
@@ -86,3 +91,12 @@
   <strong>People on board:</strong>
   <%= @booking.people_on_board %>
 </p>
+
+<% content_for :scripts do %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var element = document.getElementById("messages");
+      element.scrollTop = element.scrollHeight;
+    });
+  </script>
+<% end %>
