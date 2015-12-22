@@ -44,7 +44,64 @@
 .form-group.booking_people_on_board {
   text-align: center;
   .slider {
-    margin-top: 25px; //to allow space for the tooltip
+    margin-top: 25px; // to allow space for the tooltip
     width: 90%;
   }
+}
+
+.booking-info {
+  border: thin solid lightgray;
+  border-radius: 3px;
+
+  .booking-boat-media {
+    margin-top: 10px;
+    padding: 5px;
+
+    img {
+      width: 96px;
+    }
+    
+    a:hover {
+      text-decoration: none;
+    }
+    
+    a {
+      color: $black;
+      font-weight: bold;
+    }
+  }
+
+  .booking-total-price, .booking-duration, .booking-people-on-board {
+    text-align: center;
+    margin-top: -5px;
+    .price {
+      margin-top: -15px;
+      font-size: 2.5em;
+      font-weight: 700;
+    }
+    .duration, .people-on-board {
+      margin-bottom: -5px;  
+      font-size: 2em;
+      font-weight: 700;
+    }
+  }
+
+  .booking-duration {
+
+  }
+
+  .booking-actions {
+    .accept {
+      text-align: center;
+    }
+
+    .reject {
+      text-align: right;
+    }
+
+    .cancel {
+      text-align: right;
+    }
+  }
+
 }

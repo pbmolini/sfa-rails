@@ -64,6 +64,14 @@ class Booking < ActiveRecord::Base
     (duration_in_seconds.to_i / (24 * 60 * 60)) + 1
   end
 
+  def first_day_in_locale
+    I18n.l(start_time.in_time_zone, format: :sfa_short)
+  end
+
+  def last_day_in_locale
+    I18n.l(end_time.in_time_zone, format: :sfa_short)
+  end
+
   def total_price
     duration_in_days * boat.daily_price
   end

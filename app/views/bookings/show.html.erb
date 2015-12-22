@@ -1,97 +1,138 @@
 <% title "Booking for #{@booking.boat.name}, #{@booking.boat.model}" %>
 <div class="row">
-  <div class="col-sm-12"> 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <p class="panel-user">
-          <% if current_user == @booking.user %>
-            <%= image_tag @boat.user.image.url(:medium), class: 'chat-user-avatar' %>
-            <%= @boat.user.name %>
-          <% else %>
-            <%= image_tag @booking.user.image.url(:medium), class: 'chat-user-avatar' %>
-            <%= @booking.user.name %>
-          <% end %>
-        </p>
-        <%= @conversation.subject %>
-      </div>
+  <div class="col-sm-8">
+    <%# Chat %>
+    <div class="row">
+      <div class="col-sm-12"> 
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <p class="panel-user">
+              <% if current_user == @booking.user %>
+                <%= image_tag @boat.user.image.url(:medium), class: 'chat-user-avatar' %>
+                <%= @boat.user.name %>
+              <% else %>
+                <%= image_tag @booking.user.image.url(:medium), class: 'chat-user-avatar' %>
+                <%= @booking.user.name %>
+              <% end %>
+            </p>
+            <%= @conversation.subject %>
+          </div>
 
-      <div class="panel-body">
-        <div id="messages">
-          <% @conversation.receipts_for(current_user).each do |receipt| %>
-            <% message = receipt.message %>
-              <div class="message-container">
-                <% if message.sender == current_user %>
-                  <div class="media chat-boat">
-                <% else %>
-                  <div class="media chat-booking">
-                <% end %>
-                <div class="media-left">
-                  <%= image_tag message.sender.image.url(:medium), class: 'chat-user-avatar' %>
-                </div>
+          <div class="panel-body">
+            <div id="messages">
+              <% @conversation.receipts_for(current_user).each do |receipt| %>
+                <% message = receipt.message %>
+                  <div class="message-container">
+                    <div class="media <%= (message.sender == current_user) ? 'chat-boat' : 'chat-booking' %>">
+                      <div class="media-left">
+                        <%= image_tag message.sender.image.url(:medium), class: 'chat-user-avatar' %>
+                      </div>
 
-                <div class="media-body">
-                  <h5><strong><%= message.sender.name %></strong></h5>
-                  <h6 class="media-heading">
-                    says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
-                  <p>
-                    <%= message.body %>
-                  </p>
-                </div>
-              </div>
+                      <div class="media-body">
+                        <h5><strong><%= message.sender.name %></strong></h5>
+                        <h6 class="media-heading">
+                          says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
+                        <p>
+                          <%= message.body %>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+              <% end %>
             </div>
+            <% if can? :reply, @booking %>
+              <%= form_tag reply_boat_booking_path(@boat, @booking), method: :post do %>
+                <div class="form-group chat-reply-text">
+                  <%= image_tag current_user.image(:medium), class: 'chat-user-avatar chat-text-avatar' %>
+                  <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: _('Type something...'), required: true %>
+                </div>
+                <%= submit_tag _("Send"), class: 'btn btn-primary btn-lg chat-reply-btn' %>
+              <% end %>
+            <% else %>
+              <div class="panel-footer">
+                <%= _("This booking has been canceled. No more messages!") %>
+              </div>
+            <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="col-sm-4 booking-info">
+    <%# Right column %>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="booking-boat-media">
+          <%= link_to @boat do %>
+          <div class="media">
+            <div class="media-left">
+              <%= image_tag @boat.pictures.first.image.url(:medium), class: "media-object" %>
+            </div>
+            <div class="media-body">
+              <h3 class="media-heading"><%= @boat.model %></h3>
+              <h4 class="media-heading"><%= @boat.name %></h4>
+              <p><%= fa_icon 'map-marker', text: @boat.address %></p>
+            </div>
+          </div>
           <% end %>
         </div>
-        <% if can? :reply, @booking %>
-          <%= form_tag reply_boat_booking_path(@boat, @booking), method: :post do %>
-            <div class="form-group chat-reply-text">
-              <%= image_tag current_user.image(:medium), class: 'chat-user-avatar chat-text-avatar' %>
-              <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: _('Type something...'), required: true %>
-            </div>
-            <%= submit_tag _("Send Message"), class: 'btn btn-primary chat-reply-btn' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 booking-duration">
+        <p class="duration"><%= @booking.duration_in_days %></p>
+        <p><%= n_("Day", "Days", @booking.duration_in_days) %></p>
+      </div>
+      <div class="col-xs-6 booking-people-on-board">
+        <p class="people-on-board"><%= @booking.people_on_board %></p>
+        <p><%= n_("Person", "People", @booking.people_on_board) %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 booking-dates">
+        <p class="text-center">
+          <% if @booking.duration_in_days > 1 %>
+            <%= @booking.first_day_in_locale %> - <%= @booking.last_day_in_locale %>
+          <% else %>
+            <%= @booking.first_day_in_locale %>
           <% end %>
-        <% else %>
-          <div class="panel-footer">
-            <%= _("This booking has been canceled. No more messages!") %>
-          </div>
-        <% end %>
-
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="booking-total-price">
+          <p><%= _("Total Price") %></p>
+          <p class="price"><%= @booking.total_price %> €</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="booking-actions">
+          <% if can? :accept, @booking %>
+          <p class="accept">
+            <%= link_to("Accept", accept_boat_booking_path(@boat, @booking), class: 'btn btn-lg btn-block btn-success') %>
+          </p>
+          <% end %>
+          <% if can? :reject, @booking %>
+          <p class="reject">
+            <small><%= _("Do you prefer not to accept?") %></small>
+            <%= link_to("Reject", reject_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to reject this booking?") }) %>
+          </p>
+          <% end %>
+          <% if can? :cancel, @booking %>
+          <p class="cancel">
+            <small><%= _("Do you want to cancel this booking?") %></small>
+            <%= link_to("Cancel", cancel_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to cancel this booking?") }) %>
+          </p>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-<p>
-  <%= link_to("Accept", accept_boat_booking_path(@boat, @booking), class: 'btn btn-small btn-success') if can? :accept, @booking %>
-  <%= link_to("Reject", reject_boat_booking_path(@boat, @booking), class: 'btn btn-small btn-danger') if can? :reject, @booking %>
-  <%= link_to("Cancel", cancel_boat_booking_path(@boat, @booking), class: 'btn btn-small btn-danger', data: { confirm: _("Are you really sure you want to cancel this booking?") }) if can? :cancel, @booking %>
-</p>
-
-<p>
-  <strong>Boat:</strong>
-  <%= link_to @booking.boat.name, boat_path(@booking.boat) %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @booking.aasm_state.humanize %>
-</p>
-
-<p>
-  <strong>Number of days:</strong>
-  <%= n_days = booking_duration_in_days(@booking.end_time - @booking.start_time) %>
-</p>
-
-<p>
-  <strong>Total Price:</strong>
-  <%= n_days * @booking.boat.daily_price %>€
-</p>
-
-<p>
-  <strong>People on board:</strong>
-  <%= @booking.people_on_board %>
-</p>
 
 <% content_for :scripts do %>
   <script type="text/javascript">

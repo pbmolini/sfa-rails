@@ -31,12 +31,12 @@
 	@extend .clearfix;
 	width: 100%;
 	position: relative;
-	margin-bottom: 8px;
+	// margin-bottom: 8px;
 	&:first-child {
-		margin-top: 10px;
+		margin-top: 12px; // change this to be as high as the chat
 	}
 	&:last-child {
-		margin-bottom: 5px;
+		margin-bottom: 14px; // change this to be as high as the chat
 	}
 }
 

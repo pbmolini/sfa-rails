@@ -12,15 +12,19 @@ class BookingObserver < ActiveRecord::Observer
 	private
 
 	def body_for(booking)
-		start_time = I18n.l(booking.start_time.in_time_zone, format: :short)
-		end_time = I18n.l(booking.end_time.in_time_zone, format: :short)
-		_("Hi #{booking.boat.user.first_name}, I would like to book #{booking.boat.name} from #{start_time} to #{end_time}")
+		if booking.duration_in_days > 1
+			_("Hi %{first_name}, I would like to book %{boat_name} from %{first_day} to %{last_day}" %{first_name: booking.boat.user.first_name, boat_name: booking.boat.name, first_day: booking.first_day_in_locale, last_day: booking.last_day_in_locale})
+		else
+			_("Hi %{first_name}, I would like to book %{boat_name} on the %{first_day}" %{first_name: booking.boat.user.first_name, boat_name: booking.boat.name, first_day: booking.first_day_in_locale})
+		end
 	end
 
 	def subject_for(booking)
-		start_time = I18n.l(booking.start_time.in_time_zone, format: :short)
-		end_time = I18n.l(booking.end_time.in_time_zone, format: :short)
-		_("From #{start_time} to #{end_time}")
+		if booking.duration_in_days > 1
+			_("%{duration} days from %{first_day} to %{last_day}" %{duration: booking.duration_in_days, first_day: booking.first_day_in_locale, last_day: booking.last_day_in_locale})
+		else
+			_("One day on %{first_day}" %{first_day: booking.first_day_in_locale})
+		end
 	end
 	
 end
