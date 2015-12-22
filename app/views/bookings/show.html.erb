@@ -55,11 +55,12 @@
           </div>
         <% end %>
 
+        </div>
       </div>
     </div>
-
   </div>
 </div>
+
 
 <p>
   <%= link_to("Accept", accept_boat_booking_path(@boat, @booking), class: 'btn btn-small btn-success') if can? :accept, @booking %>
