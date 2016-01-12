@@ -7,11 +7,11 @@
   <tbody>
     <tr>
       <td><%= s_("BookingTableMailer|Start") %></td>
-      <td><%= l @booking.start_time.in_time_zone, format: :short %></td>
+      <td><%= @booking.first_day_in_locale %></td>
     </tr>
     <tr>
       <td><%= s_("BookingTableMailer|End") %></td>
-      <td><%= l @booking.end_time.in_time_zone, format: :short %></td>
+      <td><%= @booking.last_day_in_locale %></td>
     </tr>
     <tr>
     	<% if @receiver == @guest %>

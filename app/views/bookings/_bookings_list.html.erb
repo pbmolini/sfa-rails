@@ -1,0 +1,25 @@
+<% unless bookings.empty? %>
+  <% bookings.each do |booking| %>
+    <div class="booking-card">
+    <%= link_to boat_booking_path(@boat, booking) do %> 
+      <div class="row">
+        <div class="col-sm-1">
+          <%= image_tag booking.user.image.url(:medium), class: 'chat-user-avatar' %>
+        </div>
+        <div class="col-sm-8">
+          <h3><%= booking.user.name %></h3>
+          <p><%= booking.title %></p>
+        </div>
+        <div class="col-sm-1">
+          <h3><%= fa_icon 'users', text: booking.people_on_board %></h3>
+        </div>
+        <div class="col-sm-2">
+          <h2><%= booking.total_price %> €</h2>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p><%= _("No Bookings...") %></p>
+<% end %>

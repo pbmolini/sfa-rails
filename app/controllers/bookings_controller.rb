@@ -12,6 +12,10 @@ class BookingsController < ApplicationController
   # GET /bookings.json
   def index
     @bookings = @boat.bookings
+    @pending_bookings = @bookings.select(&:pending?)
+    @accepted_bookings = @bookings.select(&:accepted?)
+    @rejected_bookings = @bookings.select(&:rejected?)
+    @canceled_bookings = @bookings.select(&:canceled?)
   end
 
   def my_bookings

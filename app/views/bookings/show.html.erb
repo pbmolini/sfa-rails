@@ -1,4 +1,4 @@
-<% title "Booking for #{@booking.boat.name}, #{@booking.boat.model}" %>
+<% title _("Booking for %{boat_name}, %{boat_model}") %{boat_name: @boat.name, boat_model: @boat.model} %>
 <div class="row">
   <div class="col-sm-8">
     <%# Chat %>
@@ -6,6 +6,9 @@
       <div class="col-sm-12"> 
         <div class="panel panel-default">
           <div class="panel-heading">
+            <p class="pull-right heading-icon">
+              <%= fa_icon "#{booking_state_icon(@booking)} 4x", class: "heading-icon-#{@booking.aasm_state}", id: 'heading-icon' %>
+            </p>
             <p class="panel-user">
               <% if current_user == @booking.user %>
                 <%= image_tag @boat.user.image.url(:medium), class: 'chat-user-avatar' %>
@@ -112,20 +115,28 @@
       <div class="col-sm-12">
         <div class="booking-actions">
           <% if can? :accept, @booking %>
+            <p>
+              <% if @booking.is_started? and !@booking.is_expired? %>
+              <span class="label label-info"><%= _("Booking still pending") %></span>
+              <% elsif @booking.is_expired? %>
+              <span class="label label-info"><%= _("Booking already expired") %></span>
+              <% end %>
+              <%= fa_icon "question-circle", id: 'booking-period-help-icon' %>
+            </p>
           <p class="accept">
-            <%= link_to("Accept", accept_boat_booking_path(@boat, @booking), class: 'btn btn-lg btn-block btn-success') %>
+            <%= link_to((@booking.is_started? ? _("Oh yes, I accepted") : _("Accept")), accept_boat_booking_path(@boat, @booking), class: 'btn btn-lg btn-block btn-success') %>
           </p>
           <% end %>
           <% if can? :reject, @booking %>
           <p class="reject">
-            <small><%= _("Do you prefer not to accept?") %></small>
-            <%= link_to("Reject", reject_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to reject this booking?") }) %>
+            <small><%= @booking.is_started? ? _("Did you reject this booking?") : _("Do you prefer not to accept?") %></small>
+            <%= link_to((@booking.is_started? ? _("Yep, I rejected it") : _("Reject")), reject_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to reject this booking?") }) %>
           </p>
           <% end %>
           <% if can? :cancel, @booking %>
           <p class="cancel">
             <small><%= _("Do you want to cancel this booking?") %></small>
-            <%= link_to("Cancel", cancel_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to cancel this booking?") }) %>
+            <%= link_to(_("Cancel"), cancel_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to cancel this booking?") }) %>
           </p>
           <% end %>
         </div>
@@ -139,6 +150,14 @@
     $(document).ready(function () {
       var element = document.getElementById("messages");
       element.scrollTop = element.scrollHeight;
+    });
+    $('#heading-icon').tooltip({
+      title: '<%= booking_state_tooltip_text(@booking) %>',
+      placement: 'auto'
+    });
+    $('#booking-period-help-icon').tooltip({
+      title: '<%= _("Tell us whether you accepted or rejected this booking. This way you can leave and receive a feedback") %>',
+      placement: 'auto'
     });
   </script>
 <% end %>

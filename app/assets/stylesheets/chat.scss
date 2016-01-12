@@ -15,6 +15,25 @@
 	color: #9A9A9A;
 	padding-left: 12px;
 
+	.heading-icon {
+		
+		.heading-icon-pending {
+			color: $orange;
+		}
+
+		.heading-icon-accepted {
+			color: green;
+		}
+
+		.heading-icon-rejected {
+			color: red;
+		}
+
+		.heading-icon-canceled {
+			color: grey;
+		}
+	}
+
 	.panel-user {
 		color: black;
 		font-size: 24px;
@@ -31,7 +50,7 @@
 	@extend .clearfix;
 	width: 100%;
 	position: relative;
-	// margin-bottom: 8px;
+	margin-bottom: 8px;
 	&:first-child {
 		margin-top: 12px; // change this to be as high as the chat
 	}

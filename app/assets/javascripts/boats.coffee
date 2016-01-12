@@ -44,7 +44,7 @@ $(document).ready ->
   $('.boat-photos-carousel').slick
     infinite: true
     adaptiveHeight: true
-    lazyload: 'ondemand'
+    lazyLoad: 'ondemand'
     slidesToShow: 1
     slidesToScroll: 1
     autoplay: true

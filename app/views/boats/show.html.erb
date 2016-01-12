@@ -15,11 +15,11 @@
     <div class="row boat-hero">
       <% if can? :edit, @boat %>
         <div class="boat-management-buttons">
+          <%= link_to fa_icon('list-ul fw'), boat_bookings_path(@boat), class: 'btn btn-primary btn-lg', title: s_("BoatMngtButtonTooltip|See all the bookings") %>
           <% if can? :create, @boat.days.build %>
-            <%= link_to fa_icon('calendar fw'), boat_days_path(@boat), class: 'btn btn-primary btn-lg' %>
+            <%= link_to fa_icon('calendar fw'), boat_days_path(@boat), class: 'btn btn-primary btn-lg', title: s_("BoatMngtButtonTooltip|Availability Calendar") %>
           <% end %>
-          <%= link_to fa_icon('pencil fw'), edit_boat_path(@boat), class: 'btn btn-primary btn-lg' %>
-          <%#= link_to _('See all Bookings'), boat_bookings_path(@boat), class: 'btn btn-primary' %>
+          <%= link_to fa_icon('pencil fw'), edit_boat_path(@boat), class: 'btn btn-primary btn-lg', title: s_("BoatMngtButtonTooltip|Edit Boat") %>
         </div>
       <% end %>
       <div class="col-sm-12 carousel-container">
@@ -186,3 +186,12 @@
     </div>
   </div>
 </div>
+
+<% content_for :scripts do %>
+  <script type="text/javascript">
+    $('.boat-management-buttons > a').tooltip({
+      placement: 'bottom',
+      container: 'body'
+    });
+  </script>
+<% end %>

@@ -8,14 +8,14 @@
 
 <% content_for :scripts do %>
   <script type="text/javascript">
-    $(document).ready(function () {
+    // $(document).ready(function () {
       $('#map-alert-popover').popover({
-				placement: 'bottom',
+				placement: 'auto',
 				trigger: 'focus',
 				html: true,
 				title: '<%= _("Does the map display a wrong place?") %>',
       	content: '<%= (_("Sea for All uses a third-party geocoding service that sometimes can make mistakes. %{link_text} this boat’s address and try with “<em>City, Country</em>”. %{writeus} if the problem persists.") %{writeus: mail_to("hello@seaforall.com", _("Write us"), subject: _("Problems with the map")), link_text: link_to(_("Edit"), edit_boat_path(@boat))}).html_safe %>'
       	});
-    });
+    // });
   </script>
 <% end %>

@@ -76,6 +76,22 @@ class Booking < ActiveRecord::Base
     duration_in_days * boat.daily_price
   end
 
+  def title
+    if duration_in_days > 1
+      _("%{duration} days from %{first_day} to %{last_day}" %{duration: duration_in_days, first_day: first_day_in_locale, last_day: last_day_in_locale})
+    else
+      _("One day on %{first_day}" %{first_day: first_day_in_locale})
+    end
+  end
+
+  def is_started?
+    start_time < Time.now
+  end
+
+  def is_expired?
+    end_time < Time.now
+  end
+
   private
 
   def minimum_booking_period

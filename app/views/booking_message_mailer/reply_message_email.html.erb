@@ -8,23 +8,23 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= _("Start") %></td>
-      <td><%= l @booking.start_time.in_time_zone, format: :short %></td>
+      <td><%= s_("BookingTableMailer|Start") %></td>
+      <td><%= @booking.first_day_in_locale %></td>
     </tr>
     <tr>
-      <td><%= _("End") %></td>
-      <td><%= l @booking.end_time.in_time_zone, format: :short %></td>
+      <td><%= s_("BookingTableMailer|End") %></td>
+      <td><%= @booking.last_day_in_locale %></td>
     </tr>
     <tr>
-      <td><%= _("Boat") %></td>
+      <td><%= s_("BookingTableMailer|Boat") %></td>
       <td><%= @booking.boat.name %></td>
     </tr>
     <tr>
-      <td><%= _("Number of days") %></td>
+      <td><%= s_("BookingTableMailer|Number of days") %></td>
       <td><%= @booking.duration_in_days %></td>
     </tr>
     <tr>
-      <td><%= _("People on board") %></td>
+      <td><%= s_("BookingTableMailer|People on board") %></td>
       <td><%= @booking.people_on_board %></td>
     </tr>
   </tbody>

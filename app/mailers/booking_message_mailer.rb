@@ -6,9 +6,9 @@ class BookingMessageMailer < Mailboxer::BaseMailer
   layout 'user_mailer'
   default from: "SeaForAll <hello@seaforall.com>"
 
-  #Sends and email for indicating a new message or a reply to a receiver.
-  #It calls new_message_email if notifing a new message and reply_message_email
-  #when indicating a reply to an already created conversation.
+  # Sends and email for indicating a new message or a reply to a receiver.
+  # It calls new_message_email if notifing a new message and reply_message_email
+  # when indicating a reply to an already created conversation.
   def send_email(message, receiver, locale)
     if message.conversation.messages.size > 1
       reply_message_email(message, receiver, locale)

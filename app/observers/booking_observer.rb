@@ -7,6 +7,9 @@ class BookingObserver < ActiveRecord::Observer
 		conversation = sender.send_message(recipient, body_for(booking), subject_for(booking)).conversation
 		conversation.booking_id = booking.id
 		conversation.save # TODO What if this goes wrong?
+		# Creating a conversation, Mailboxer sends also the email to the host
+		# TODO: The email to the guest is sent here
+
 	end
 
 	private
@@ -20,11 +23,7 @@ class BookingObserver < ActiveRecord::Observer
 	end
 
 	def subject_for(booking)
-		if booking.duration_in_days > 1
-			_("%{duration} days from %{first_day} to %{last_day}" %{duration: booking.duration_in_days, first_day: booking.first_day_in_locale, last_day: booking.last_day_in_locale})
-		else
-			_("One day on %{first_day}" %{first_day: booking.first_day_in_locale})
-		end
+		booking.title
 	end
 	
 end
