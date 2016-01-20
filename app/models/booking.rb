@@ -84,11 +84,11 @@ class Booking < ActiveRecord::Base
     end
   end
 
-  def is_started?
+  def has_started?
     start_time < Time.now
   end
 
-  def is_expired?
+  def has_expired?
     end_time < Time.now
   end
 

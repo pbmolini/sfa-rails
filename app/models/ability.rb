@@ -52,9 +52,11 @@ class Ability
         booking.pending? and booking.boat.user == user
       end
 
-      # if can read and the booking may be canceled (managed by aasm)
+      # if can read, the booking may be canceled (managed by aasm), and it is not expired
       can :cancel, Booking do |booking|
-        (booking.user == user or booking.boat.user == user) and booking.may_cancel?
+        (booking.user == user or booking.boat.user == user) and 
+        booking.may_cancel? and
+        !booking.has_expired?
       end
 
       # if can read and the booking is not canceled (managed by aasm)

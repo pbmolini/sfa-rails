@@ -116,21 +116,21 @@
         <div class="booking-actions">
           <% if can? :accept, @booking %>
             <p>
-              <% if @booking.is_started? and !@booking.is_expired? %>
+              <% if @booking.has_started? and !@booking.has_expired? %>
               <span class="label label-info"><%= _("Booking still pending") %></span>
-              <% elsif @booking.is_expired? %>
+              <% elsif @booking.has_expired? %>
               <span class="label label-info"><%= _("Booking already expired") %></span>
               <% end %>
               <%= fa_icon "question-circle", id: 'booking-period-help-icon' %>
             </p>
           <p class="accept">
-            <%= link_to((@booking.is_started? ? _("Oh yes, I accepted") : _("Accept")), accept_boat_booking_path(@boat, @booking), class: 'btn btn-lg btn-block btn-success') %>
+            <%= link_to((@booking.has_started? ? _("Oh yes, I accepted") : _("Accept")), accept_boat_booking_path(@boat, @booking), class: 'btn btn-lg btn-block btn-success') %>
           </p>
           <% end %>
           <% if can? :reject, @booking %>
           <p class="reject">
-            <small><%= @booking.is_started? ? _("Did you reject this booking?") : _("Do you prefer not to accept?") %></small>
-            <%= link_to((@booking.is_started? ? _("Yep, I rejected it") : _("Reject")), reject_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to reject this booking?") }) %>
+            <small><%= @booking.has_started? ? _("Did you reject this booking?") : _("Do you prefer not to accept?") %></small>
+            <%= link_to((@booking.has_started? ? _("Yep, I rejected it") : _("Reject")), reject_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to reject this booking?") }) %>
           </p>
           <% end %>
           <% if can? :cancel, @booking %>
