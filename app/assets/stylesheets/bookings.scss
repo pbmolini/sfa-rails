@@ -52,23 +52,60 @@
 .booking-info, .booking-card {
   border: thin solid lightgray;
   border-radius: 3px;
+  background: white;
 
-  .booking-boat-media {
-    margin-top: 10px;
-    padding: 5px;
+  .booking-status {
+    top: -7px;
+    position: relative;
+    font-size: 16px;
+    border-bottom: thin solid lightgray;
+    text-align: center;
+    color: white;
 
-    img {
-      width: 96px;
+    i {
+      margin-right: 5px;
+      position: relative;
+      top: 5px;
     }
-    
-    a:hover {
-      text-decoration: none;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  .boat-recap {
+    cursor: pointer;
+    border-bottom: thin solid lightgray;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: #F7F7F7;
     }
-    
-    a {
+  
+    .recap-avatar {
+      height: 100px;
+      width: 100px;
+    }
+
+    .booking-boat-media {
+      margin-top: 10px;
+      padding: 5px;
       color: $black;
-      font-weight: bold;
+      font-weight: bold;      
     }
+  }
+
+  .booking-duration, .booking-people-on-board {
+    border-bottom: thin solid lightgray;
+  }
+  .booking-duration {
+    border-right: thin solid lightgray;
+  }
+
+  .booking-total-price {
+    padding-top: 20px;
+    border-top: thin solid lightgray;    
   }
 
   .booking-total-price, .booking-duration, .booking-people-on-board {
@@ -86,10 +123,6 @@
     }
   }
 
-  .booking-duration {
-
-  }
-
   .booking-actions {
     .accept {
       text-align: center;
@@ -103,5 +136,25 @@
       text-align: right;
     }
   }
+}
 
+.booking-dates {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.state-background-pending {
+  background: $orange;
+}
+
+.state-background-accepted {
+  background: #27ae60;
+}
+
+.state-background-rejected {
+  background: #e74c3c;
+}
+
+.state-background-canceled {
+  background: grey;
 }

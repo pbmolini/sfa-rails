@@ -15,25 +15,6 @@
 	color: #9A9A9A;
 	padding-left: 12px;
 
-	.heading-icon {
-		
-		.heading-icon-pending {
-			color: $orange;
-		}
-
-		.heading-icon-accepted {
-			color: green;
-		}
-
-		.heading-icon-rejected {
-			color: red;
-		}
-
-		.heading-icon-canceled {
-			color: grey;
-		}
-	}
-
 	.panel-user {
 		color: black;
 		font-size: 24px;
@@ -81,6 +62,10 @@
 
 .chat-reply-btn,.chat-reply-text {
 	float: left;
+
+	textarea {
+		border-left: 0 !important;
+	}
 }
 
 .chat-booking {

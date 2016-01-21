@@ -6,9 +6,6 @@
       <div class="col-sm-12">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <p class="pull-right heading-icon">
-              <%= fa_icon "#{booking_state_icon(@booking)} 4x", class: "heading-icon-#{@booking.aasm_state}", id: 'heading-icon' %>
-            </p>
             <p class="panel-user">
               <% if current_user == @booking.user %>
                 <%= image_tag @boat.user.image.url(:medium), class: 'chat-user-avatar' %>
@@ -64,22 +61,30 @@
   </div>
   <div class="col-sm-4 booking-info">
     <%# Right column %>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="booking-boat-media">
-          <%= link_to @boat do %>
-          <div class="media">
-            <div class="media-left">
-              <%= image_tag @boat.pictures.first.image.url(:medium), class: "media-object" %>
-            </div>
-            <div class="media-body">
-              <h3 class="media-heading"><%= @boat.model %></h3>
-              <h4 class="media-heading"><%= @boat.name %></h4>
-              <p><%= fa_icon 'map-marker', text: @boat.address %></p>
+    <%= link_to @boat do %>
+      <div class="row boat-recap">
+        <div class="col-sm-12">
+          <div class="booking-boat-media">
+            <div class="media">
+              <div class="media-left">
+                <div class="recap-avatar" style="background: url('<%= @boat.pictures.first.image.url(:medium) %>') no-repeat center center; background-size: cover;"></div> 
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading"><%= @boat.model %></h3>
+                <h4 class="media-heading"><%= @boat.name %></h4>
+                <p><%= fa_icon 'map-marker', text: @boat.address %></p>
+              </div>
             </div>
           </div>
-          <% end %>
         </div>
+      </div>
+    <% end %>
+    <div class="row booking-status state-background-<%= @booking.aasm_state %>">
+      <div class="col-sm-12">
+        <p>
+          <%= fa_icon "#{booking_state_icon(@booking)} 2x", class: "heading-icon-#{@booking.aasm_state}", id: 'heading-icon' %> 
+          <%= booking_state_tooltip_text(@booking) %>          
+        </p>
       </div>
     </div>
     <div class="row">
@@ -103,12 +108,10 @@
         </p>
       </div>
     </div>
-    <div class="row">
+    <div class="row booking-total-price">
       <div class="col-sm-12">
-        <div class="booking-total-price">
-          <p><%= _("Total Price") %></p>
-          <p class="price"><%= @booking.total_price %> €</p>
-        </div>
+        <p><%= _("Total Price") %></p>
+        <p class="price"><%= @booking.total_price %> €</p>
       </div>
     </div>
     <div class="row">
@@ -151,10 +154,6 @@
     var element = document.getElementById("messages");
     element.scrollTop = element.scrollHeight;
     // });
-    $('#heading-icon').tooltip({
-      title: '<%= booking_state_tooltip_text(@booking) %>',
-      placement: 'auto'
-    });
     $('#booking-period-help-icon').tooltip({
       title: '<%= _("Tell us whether you accepted or rejected this booking. This way you can leave and receive a feedback") %>',
       placement: 'auto'
