@@ -3,7 +3,7 @@
   <div class="col-sm-8">
     <%# Chat %>
     <div class="row">
-      <div class="col-sm-12"> 
+      <div class="col-sm-12">
         <div class="panel panel-default">
           <div class="panel-heading">
             <p class="pull-right heading-icon">
@@ -147,10 +147,10 @@
 
 <% content_for :scripts do %>
   <script type="text/javascript">
-    $(document).ready(function () {
-      var element = document.getElementById("messages");
-      element.scrollTop = element.scrollHeight;
-    });
+    // $(document).ready(function () {
+    var element = document.getElementById("messages");
+    element.scrollTop = element.scrollHeight;
+    // });
     $('#heading-icon').tooltip({
       title: '<%= booking_state_tooltip_text(@booking) %>',
       placement: 'auto'

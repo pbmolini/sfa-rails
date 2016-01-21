@@ -43,10 +43,6 @@
   </div>
 </div>
 
-<%= content_for :scripts do %>
 <script type="text/javascript">
-  $(document).ready(function() {
-    $('.availability-calendar-wrap').availabilityCalendar('<%= boat_days_url(@boat) %>', <%= @days.to_json.html_safe %>);
-  });
+  $('.availability-calendar-wrap').availabilityCalendar('<%= boat_days_url(@boat) %>', <%= @days.to_json.html_safe %>);
 </script>
-<% end %>

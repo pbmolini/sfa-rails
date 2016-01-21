@@ -1,7 +1,12 @@
 <div class="boat-photos-carousel">
   <% boat.pictures.each do |p| %>
     <div>
-      <%= image_tag p.image.url(:carousel_photo) %>
+      <!-- See lazy loading here http://kenwheeler.github.io/slick/ -->
+      <%= image_tag nil, data: { lazy: p.image.url(:carousel_photo) } %>
     </div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  $('.boat-photos-carousel').boatCarousel();
+</script>
