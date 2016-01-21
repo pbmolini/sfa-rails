@@ -10,8 +10,8 @@ class Booking < ActiveRecord::Base
 
     event :accept do
       after do
-        # TODO: turn_calendar_days_red
-        # TODO: send a merry email
+        # Mark days as "accepted"
+        toggle_calendar_days aasm_state
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
         # Mail to host
@@ -22,6 +22,7 @@ class Booking < ActiveRecord::Base
 
     event :reject do
       after do
+        toggle_calendar_days aasm_state
         # TODO: send a sad email
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
@@ -34,7 +35,7 @@ class Booking < ActiveRecord::Base
     event :cancel do
       after do
         # TODO: write_cancel_motivation
-        # TODO: turn_calendar_days_white ---> REMEMBAH to set day.booking_id to nil before destroying days!
+        turn_calendar_days_white
         # TODO: send a wroth email
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
@@ -114,6 +115,18 @@ class Booking < ActiveRecord::Base
   def init_days
     (start_time.to_date..end_time.to_date).each do |t|
       Day.create date: t, availability: self.aasm_state, boat: boat, booking: self
+    end
+  end
+
+  # Change the :availability of the days or delete them
+  def toggle_calendar_days(state)
+    if state == "accepted"
+      days.each { |d| d.update_attributes availability: state }
+    else
+      # Set day.booking_id to nil before destroying day!
+      # the :delete_all nullifys foreign keys by default
+      # see http://stackoverflow.com/a/8037115
+      days.delete_all
     end
   end
 end
