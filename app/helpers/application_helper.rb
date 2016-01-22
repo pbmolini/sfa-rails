@@ -13,5 +13,10 @@ module ApplicationHelper
 	def title page_title
 		content_for :title, page_title
 	end
+
+	def tel_to(text)
+    numbers = text.scan(/[0-9]+/).join("")
+    link_to text, "tel:#{numbers}"
+  end
 	
 end

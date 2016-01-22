@@ -10,10 +10,16 @@
               <%= image_tag @other_user.image.url(:medium), class: 'chat-user-avatar' %>
               <%= @other_user.name %>
             </p>
-            <%= @conversation.subject %> <br>
-            <% if @booking.accepted? or @booking.canceled? %>
-              <%= fa_icon 'envelope', text: @other_user.email %> &nbsp; &nbsp; <%= fa_icon 'phone', text: @other_user.phone %>
+            <p>
+              <%= @conversation.subject %>
+            </p>
+            <p class="panel-contacts">
+            <% if @booking.accepted? or @booking.canceled? or current_user == @boat.user %>
+              <%= fa_icon('envelope', text: mail_to(@other_user.email))  %>
+              &nbsp; &nbsp; 
+              <%= fa_icon('phone', text: tel_to(@other_user.phone)) %>
             <% end %>
+            </p>
           </div>
 
           <div class="panel-body">
@@ -116,14 +122,14 @@
       <div class="col-sm-12">
         <div class="booking-actions">
           <% if can? :accept, @booking %>
-            <p>
-              <% if @booking.has_started? and !@booking.has_expired? %>
-              <span class="label label-info"><%= _("Booking still pending") %></span>
-              <% elsif @booking.has_expired? %>
-              <span class="label label-info"><%= _("Booking already expired") %></span>
-              <% end %>
-              <%= fa_icon "question-circle", id: 'booking-period-help-icon' %>
-            </p>
+          <p>
+            <% if @booking.has_started? %>
+            <span class="label label-info">
+              <%= @booking.has_expired? ? _("Booking already expired") : _("Booking still pending") %>
+            </span>
+            <%= fa_icon "question-circle", id: 'booking-period-help-icon' %>
+            <% end %>
+          </p>
           <p class="accept">
             <%= link_to((@booking.has_started? ? _("Oh yes, I accepted") : _("Accept")), accept_boat_booking_path(@boat, @booking), class: 'btn btn-lg btn-block btn-success') %>
           </p>
@@ -131,7 +137,7 @@
           <% if can? :reject, @booking %>
           <p class="reject">
             <small><%= @booking.has_started? ? _("Did you reject this booking?") : _("Do you prefer not to accept?") %></small>
-            <%= link_to((@booking.has_started? ? _("Yep, I rejected it") : _("Reject")), reject_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to reject this booking?") }) %>
+            <%= link_to((@booking.has_started? ? _("I rejected it") : _("Reject")), reject_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to reject this booking?") }) %>
           </p>
           <% end %>
           <% if can? :cancel, @booking %>
