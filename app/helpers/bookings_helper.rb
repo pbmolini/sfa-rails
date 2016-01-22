@@ -8,13 +8,13 @@ module BookingsHelper
 	end
 
 	def booking_state_icon(booking)
-		if @booking.pending?
+		if booking.pending?
       "clock-o"
-    elsif @booking.accepted?
+    elsif booking.accepted?
       "check-circle-o"
-    elsif @booking.rejected?
+    elsif booking.rejected?
       "minus-circle"
-    elsif @booking.canceled?
+    elsif booking.canceled?
       "times-circle-o"
     else
       "question-circle"
@@ -24,16 +24,17 @@ module BookingsHelper
 	# Returns the tooltip text for each state
 	# It's not DRY but it's easy for managing translations
 	def booking_state_tooltip_text(booking)
-		if @booking.pending?
+		if booking.pending?
       s_("BookingStateTooltip|Pending Booking")
-    elsif @booking.accepted?
+    elsif booking.accepted?
       s_("BookingStateTooltip|Accepted Booking")
-    elsif @booking.rejected?
+    elsif booking.rejected?
       s_("BookingStateTooltip|Rejected Booking")
-    elsif @booking.canceled?
+    elsif booking.canceled?
       s_("BookingStateTooltip|Canceled Booking")
     else
       s_("BookingStateTooltip|Undefined Booking")
     end
 	end
+
 end

@@ -7,16 +7,13 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <p class="panel-user">
-              <% if current_user == @booking.user %>
-                <%= image_tag @boat.user.image.url(:medium), class: 'chat-user-avatar' %>
-                <%= @boat.user.name %>
-              <% else %>
-                <%= image_tag @booking.user.image.url(:medium), class: 'chat-user-avatar' %>
-                <%= @booking.user.name %>
-              <% end %>
+              <%= image_tag @other_user.image.url(:medium), class: 'chat-user-avatar' %>
+              <%= @other_user.name %>
             </p>
             <%= @conversation.subject %> <br>
-            <%= fa_icon 'envelope', text: "ciaone@email.coms" %> &nbsp; &nbsp; <%= fa_icon 'phone', text: "+39 333 444 55 33" %>
+            <% if @booking.accepted? or @booking.canceled? %>
+              <%= fa_icon 'envelope', text: @other_user.email %> &nbsp; &nbsp; <%= fa_icon 'phone', text: @other_user.phone %>
+            <% end %>
           </div>
 
           <div class="panel-body">

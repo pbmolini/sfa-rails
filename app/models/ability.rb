@@ -33,12 +33,19 @@ class Ability
         pic.boat.user == user
       end
 
-      # can :index_my_bookings, Booking, user_id: user.id
+      can :my_bookings, Booking, user_id: user.id
 
-      # if the user is either the booking's creator or the boat's owner
-      can :read, Booking do |booking|
-        booking.user == user or booking.boat.user == user
-      end
+      # Ability for :show and :index. Do not change the order!
+      # The user is the booking's creator...
+      can :read, Booking, user_id: user.id
+      # ... nobody can see the list of bookings (since they belong to a boat)...
+      cannot :index, Booking
+      # ... apart from the boat's owner
+      can :read, Booking, boat: { user_id: user.id }
+      # can :read, Booking do |booking|
+      #   booking.user == user or booking.boat.user == user
+      # end
+
 
       # if is complete and the booking's creator is not the boat's owner
       can :create, Booking do |booking|

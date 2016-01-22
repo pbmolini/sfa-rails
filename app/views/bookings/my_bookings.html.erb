@@ -15,17 +15,17 @@
 					</div>
 					<div class="col-sm-3">
 						<p>
-							<%= l @booking.start_time.in_time_zone, format: :short %>
+							<%= booking.first_day_in_locale %>
 						</p>
 					</div>
 					<div class="col-sm-3">
 						<p>
-							<%= l @booking.end_time.in_time_zone, format: :short %>
+							<%= booking.last_day_in_locale %>
 						</p>
 					</div>
 					<div class="col-sm-3">
 						<p>
-							<%= @booking.aasm_state.humanize %>
+							<%= booking.aasm_state.humanize %>
 						</p>
 					</div>
 				</div>

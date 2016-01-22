@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
   load_and_authorize_resource :boat
-  load_and_authorize_resource :booking, through: :boat
-  skip_load_and_authorize_resource :booking, only: :my_bookings
+  load_and_authorize_resource :booking, through: :boat, except: [:my_bookings]
   before_action :authenticate_user!
   before_action :set_booking, only: [:show, :edit, :update, :destroy, :accept, :reject, :cancel, :reply]
   before_action :set_boat, except: :my_bookings
@@ -19,13 +18,13 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
-    # authorize! :index_my_bookings, @bookings
     @bookings = current_user.bookings
   end
 
   # GET /bookings/1
   # GET /bookings/1.json
   def show
+    @other_user = current_user_is_guest? ? @booking.boat.user : @booking.user
   end
 
   # GET /bookings/new
@@ -140,4 +139,9 @@ class BookingsController < ApplicationController
       params.require(:boat_id)
       params.require(:booking).permit(:start_time, :end_time, :people_on_board, :user_id)
     end
+
+    def current_user_is_guest?
+      current_user == @booking.user
+    end
+
 end
