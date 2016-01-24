@@ -56,8 +56,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    new_boat_path # if host
-    # dashboard_path if guest ?
+    welcome_path
+    # TODO: how to know if the signup comes after trying to create a booking?
+    
+    # Before version Varazze it was
+    # new_boat_path 
   end
 
   # The path used after updating profile.
