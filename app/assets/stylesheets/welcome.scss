@@ -1,0 +1,9 @@
+.welcome-choice {
+	padding: 5px 5px 20px 5px;
+	&:hover {
+	  background: white;
+	}
+	a {
+		text-decoration: none;
+	}
+}
