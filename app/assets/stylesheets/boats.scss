@@ -78,7 +78,7 @@
     position: relative;
   }
 
-  .btn.btn-availability {
+  .btn.btn-boat-card {
     @extend .btn-primary;
     color: white;
     border-radius: 50%;
@@ -88,7 +88,12 @@
     font-size: 26px;
     position: absolute;
     bottom: 10px;
-    right: 10px;
+    &.btn-availability {
+      right: 10px;
+    }
+    &.btn-bookings {
+      right: 70px;
+    }
   }
 }
 

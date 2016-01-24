@@ -17,7 +17,10 @@
       </div>
     <% end %>
     <% if can? :create, boat.days.build %>
-      <%= link_to fa_icon('calendar'), boat_days_path(boat), class: 'btn btn-availability' %>
+      <%= link_to fa_icon('calendar'), boat_days_path(boat), class: 'btn btn-boat-card btn-availability' %>
+    <% end %>
+    <% if boat.bookings.any? %>
+      <%= link_to fa_icon('list-ul'), boat_bookings_path(boat), class: 'btn btn-boat-card btn-bookings' %>
     <% end %>
   </div>
 </div>
