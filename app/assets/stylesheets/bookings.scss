@@ -166,3 +166,33 @@
 .state-background-canceled {
   background: grey;
 }
+
+.list-group-item, .list-group {
+  border-radius: 0 !important;
+}
+
+.list-group-item.accepted {
+  border-left: 5px solid #27ae60;
+}
+
+.list-group-item.rejected {
+  border-left: 5px solid #e74c3c;  
+}
+
+.list-group-item.canceled {
+  border-left: 5px solid grey;  
+}
+
+.list-group-item.pending {
+  border-left: 5px solid $orange;  
+}
+
+.list-group-item {
+  h3 {
+    margin-top: 10px;
+  }
+}
+
+.list-group-item-heading {
+  font-weight: bold;
+}
