@@ -4,19 +4,19 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2012, Codrops
  * http://www.codrops.com
  */
 ;( function( $, window, undefined ) {
-	
+
 	'use strict';
 
 	$.Calendario = function( options, element ) {
-		
+
 		this.$el = $( element );
 		this._init( options );
-		
+
 	};
 
 	// the options
@@ -51,7 +51,7 @@
 	$.Calendario.prototype = {
 
 		_init : function( options ) {
-			
+
 			// options
 			this.options = $.extend( true, {}, $.Calendario.defaults, options );
 
@@ -111,7 +111,7 @@
 		_getHead : function() {
 
 			var html = '<div class="fc-head">';
-		
+
 			for ( var i = 0; i <= 6; i++ ) {
 
 				var pos = i + this.options.startIn,
@@ -153,7 +153,7 @@
 						inner = '',
 						today = this.month === this.today.getMonth() && this.year === this.today.getFullYear() && day === this.today.getDate(),
 						content = '';
-					
+
 					if ( day <= monthLength && ( i > 0 || j >= p ) ) {
 
 						inner += '<span class="fc-date">' + day + '</span><span class="fc-weekday">' + this.options.weekabbrs[ j + this.options.startIn > 6 ? j + this.options.startIn - 6 - 1 : j + this.options.startIn ] + '</span>';
@@ -192,7 +192,7 @@
 				if (day > monthLength) {
 					this.rowTotal = i + 1;
 					break;
-				} 
+				}
 				else {
 					html += '</div><div class="fc-row">';
 				}
@@ -237,7 +237,7 @@
 		_move : function( period, dir, callback ) {
 
 			if( dir === 'previous' ) {
-				
+
 				if( period === 'month' ) {
 					this.year = this.month > 0 ? this.year : --this.year;
 					this.month = this.month > 0 ? --this.month : 11;
@@ -262,7 +262,7 @@
 			this._generateTemplate( callback );
 
 		},
-		/************************* 
+		/*************************
 		******PUBLIC METHODS *****
 		**************************/
 		getYear : function() {
@@ -321,68 +321,68 @@
 		}
 
 	};
-	
+
 	var logError = function( message ) {
 
 		if ( window.console ) {
 
 			window.console.error( message );
-		
+
 		}
 
 	};
-	
+
 	$.fn.calendario = function( options ) {
 
 		var instance = $.data( this, 'calendario' );
-		
+
 		if ( typeof options === 'string' ) {
-			
+
 			var args = Array.prototype.slice.call( arguments, 1 );
-			
+
 			this.each(function() {
-			
+
 				if ( !instance ) {
 
 					logError( "cannot call methods on calendario prior to initialization; " +
 					"attempted to call method '" + options + "'" );
 					return;
-				
+
 				}
-				
+
 				if ( !$.isFunction( instance[options] ) || options.charAt(0) === "_" ) {
 
 					logError( "no such method '" + options + "' for calendario instance" );
 					return;
-				
+
 				}
-				
+
 				instance[ options ].apply( instance, args );
-			
+
 			});
-		
-		} 
+
+		}
 		else {
-		
+
 			this.each(function() {
-				
+
 				if ( instance ) {
 
 					instance._init();
-				
+
 				}
 				else {
 
 					instance = $.data( this, 'calendario', new $.Calendario( options, this ) );
-				
+
 				}
 
 			});
-		
+
 		}
-		
+
 		return instance;
-		
+
 	};
-	
+
 } )( jQuery, window );

@@ -6,6 +6,11 @@ class DaysController < ApplicationController
   def index
     @days = @boat.days.inject({}) { |acc,d| acc[d.date.to_s] = {availability: d.availability, booking_id: d.booking_id, id: d.id}; acc }
 
+    respond_to do |format|
+      format.html
+      format.json { render json: @days }
+    end
+
     # @boat.bookings.each do |b|
     #   (b.start_time..b.end_time).each do |t|
     #     @boat[t.to_date.to_s] = { availability: b.state, id: ?? }

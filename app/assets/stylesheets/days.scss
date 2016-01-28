@@ -3,6 +3,14 @@ $pendingColor: $orange;
 
 .fc-calendar .fc-row {
 
+  div>a.link-to-booking {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
   .unavailable-day {
     opacity: .2;
     // cursor: not-allowed;

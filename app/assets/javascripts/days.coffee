@@ -1,6 +1,6 @@
 $.fn.extend
-  availabilityCalendar: (path, days) ->
-    new AvailabilityCalendar(@, path, days)
+  availabilityCalendar: (days_path) ->
+    new AvailabilityCalendar(@, days_path)
 
 class AvailabilityCalendar
 
@@ -11,15 +11,17 @@ class AvailabilityCalendar
       months: moment.months()
       monthabbrs: moment.monthsShort()
       caldata: days
-      onDayClick: (element, content, dateProperties) =>
-        @updateDays(element, dateProperties) if moment(new Date("#{dateProperties.year}-#{dateProperties.month}-#{dateProperties.day}")).isAfter(moment(), 'day')
+      onDayClick: @onDayClick
 
     @month = @el.find('#custom-month').html @cal.getMonthName()
     @year = @el.find('#custom-year').html @cal.getYear()
 
-    # $(document).on 'shown.calendar.calendario', (e, instance) =>
-    @setUnavailable()
-    # @setAvailable()
+    # Ricordati di aggiungere .json qui e non metterlo in html.erb
+    # Mi serve rest_path come base da altre parti (fai CTRL+F per scoprire dove!)
+    $.ajax(url: "#{@rest_path}.json", dataType: 'json')
+    .success (days_data) =>
+      @cal.caldata = days_data
+      @setUnavailable()
 
     @el.find('#custom-next').on 'click', () =>
       @cal.gotoNextMonth(@updateMonthYear)
@@ -27,6 +29,21 @@ class AvailabilityCalendar
     @el.find('#custom-prev').on 'click', () =>
       if ((@cal.getMonth() - 1 > moment().month()) && (@cal.getYear() == moment().year())) || (@cal.getYear() > moment().year())
         @cal.gotoPreviousMonth(@updateMonthYear)
+
+  _toDate: (dateProperties) ->
+    moment(new Date("#{dateProperties.year}-#{dateProperties.month}-#{dateProperties.day}"))
+
+  _getData: (date) =>
+    d = if typeof date == 'string' then date else date.format("YYYY-MM-DD")
+    @cal.caldata[d]
+
+  onDayClick: (element, content, dateProperties) =>
+    date = @_toDate(dateProperties)
+    if date.isAfter(moment(), 'day')
+      dateData = @_getData(date) || { availability: 'available' }
+      switch dateData.availability
+        when 'unavailable', 'available' then @updateDays(element, dateProperties)
+        when 'pending', 'accepted' then @goToBooking(dateProperties)
 
   # overrides Calendario's getCell that appears to be broken
   # date is a string YYYY-MM-DD
@@ -77,11 +94,12 @@ class AvailabilityCalendar
 
   # sets days as available or undefined and syncs with the server
   updateDays: (element, dateProperties) =>
-    date = moment(new Date("#{dateProperties.year}-#{dateProperties.month}-#{dateProperties.day}")).format("YYYY-MM-DD")
-    day_id = @cal.caldata[date].id if @cal.caldata[date]
-    if day_id
+    date = @_toDate(dateProperties).format("YYYY-MM-DD")
+    dateData = @_getData(date)
+    dayId = dateData.id if dateData
+    if dayId
       $.ajax
-        url: "#{@rest_path}/#{day_id}"
+        url: "#{@rest_path}/#{dayId}"
         method: 'DELETE'
         dataType: 'json'
         success: (data) =>
@@ -100,4 +118,10 @@ class AvailabilityCalendar
         success: (data) =>
           if data.success
             $(element).addClass('unavailable-day')
-            @cal.caldata[date] = { id: data.day.id, availability: 'unavailable' }
+            @cal.caldata[date] = { availability: 'unavailable', id: data.day.id }
+
+  goToBooking: (dateProperties) =>
+    dateData = @_getData(@_toDate(dateProperties))
+    boatId = dateData.boat_id
+    bookingId = dateData.booking_id
+    window.location.assign @rest_path.replace("/days", "/bookings/#{bookingId}")
