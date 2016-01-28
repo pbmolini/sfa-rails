@@ -1,39 +1,23 @@
 <% content_for :title, s_("NewBookingMailTitle|New booking for %{boat_name}") %{boat_name: @boat.name} %>
+<% content_for :logo_img, @receiver == @guest ? "orange" : "blue" %>
 <p>
-  <%= s_("NewBookingMailBody|You have a new booking request for %{boat_name}:") %{boat_name: @boat.name} %>
+  <% if @receiver == @guest %>
+    <%= s_("NewBookingMailBody|You have created a new booking request for %{boat_name}:") %{boat_name: @boat.name} %>
+  <% else %>
+    <%= s_("NewBookingMailBody|You have received a new booking request for %{boat_name}:") %{boat_name: @boat.name} %>
+  <% end %>
 </p>
-<table class="booking-message">
-  <thead>
-    
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= s_("BookingTableMailer|Start") %></td>
-      <td><%= @booking.first_day_in_locale %></td>
-    </tr>
-    <tr>
-      <td><%= s_("BookingTableMailer|End") %></td>
-      <td><%= @booking.last_day_in_locale %></td>
-    </tr>
-    <tr>
-      <td><%= s_("BookingTableMailer|User") %></td>
-      <td><%= @sender.name %></td>
-    </tr>
-    <tr>
-      <td><%= s_("BookingTableMailer|Number of days") %></td>
-      <td><%= @booking.duration_in_days %></td>
-    </tr>
-    <tr>
-      <td><%= s_("BookingTableMailer|People on board") %></td>
-      <td><%= @booking.people_on_board %></td>
-    </tr>
-  </tbody>
-</table>
+
+<%= render 'shared/booking_table' %>
 
 <h2 class="total-price"><%= _("Total Price") %>: <%= @booking.total_price %>€</h2>
 
 <p>
-  <%= (s_("NewBookingMailBody|Review the details of the booking, reply to %{sender_name} and <strong>accept</strong> (or reject) the booking.") %{sender_name: @sender.name}).html_safe %>
+  <% if @receiver == @guest %>
+    <%= (s_("NewBookingMailBody|Review the details of the booking, continue the conversation with %{sender_name} and enjoy the boat once %{sender_name} will have accepted the booking.") %{sender_name: @sender.name}).html_safe %>
+  <% else %>
+    <%= (s_("NewBookingMailBody|Review the details of the booking, reply to %{sender_name} and <strong>accept</strong> (or reject) the booking.") %{sender_name: @sender.name}).html_safe %>
+  <% end %>
 </p>
 
 <h1 class="read-message-btn">

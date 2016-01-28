@@ -8,8 +8,10 @@ class BookingObserver < ActiveRecord::Observer
 		conversation.booking_id = booking.id
 		conversation.save # TODO What if this goes wrong?
 		# Creating a conversation, Mailboxer sends also the email to the host
-		# TODO: The email to the guest is sent here
 
+		# The email to the guest is sent here
+		# TODO: This is awful, find a more elegant way to send this email
+		BookingMessageMailer.new_message_email(conversation.messages.first, booking.user, I18n.locale.to_s)
 	end
 
 	private

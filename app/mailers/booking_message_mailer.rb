@@ -25,9 +25,11 @@ class BookingMessageMailer < Mailboxer::BaseMailer
     @receiver = receiver
     @booking = Booking.find(message.conversation.booking_id) # TODO: improve using .booking
     @boat = @booking.boat
+    @guest = @booking.user
+    @host = @boat.user
     set_subject(message)
     mail to: receiver.send(Mailboxer.email_method, message),
-         subject: (_("You have a new booking for %{boat_name} on Sea for All") %{boat_name: @boat.name}),
+         subject: (_("New booking for %{boat_name} on Sea for All") %{boat_name: @boat.name}),
          template_name: 'new_message_email'
   end
 
@@ -39,9 +41,11 @@ class BookingMessageMailer < Mailboxer::BaseMailer
     @receiver = receiver
     @booking = Booking.find(message.conversation.booking_id) # TODO: improve using .booking
     @boat = @booking.boat
+    @guest = @booking.user
+    @host = @boat.user
     set_subject(message)
     mail to: receiver.send(Mailboxer.email_method, message),
-         subject: (s_("NewReplyMailSubject|You received a message from %{sender_name} on Sea for All") %{sender_name: @sender.name}),
+         subject: (s_("NewReplyMailSubject|New message from %{sender_name} on Sea for All") %{sender_name: @sender.name}),
          template_name: 'reply_message_email'
   end
 end

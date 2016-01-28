@@ -1,4 +1,5 @@
 <% content_for :title, s_("NewReplyMailTitle|New message from %{sender_name}") %{sender_name: @sender.name} %>
+<% content_for :logo_img, @receiver == @guest ? "orange" : "blue" %>
 <p>
   <%= s_("NewReplyMailBody|You received a private message from %{sender_name} for the booking:") %{sender_name: @sender.name} %>
 </p>
