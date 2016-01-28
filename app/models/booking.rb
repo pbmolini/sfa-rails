@@ -35,7 +35,7 @@ class Booking < ActiveRecord::Base
     event :cancel do
       after do
         # TODO: write_cancel_motivation
-        turn_calendar_days_white
+        toggle_calendar_days aasm_state
         # TODO: send a wroth email
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
