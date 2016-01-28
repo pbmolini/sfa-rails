@@ -1,4 +1,5 @@
 <% content_for :title, s_("BookingAcceptedMailTitle|Booking accepted for %{boat_name}") %{boat_name: @boat.name} %>
+<% content_for :logo_img, @receiver == @guest ? "orange" : "blue" %>
 <% if @receiver == @guest %>
  	<%# Guest %>
 	<p>
@@ -17,7 +18,7 @@
 	</p>
 <% end %>
 
-<%= render 'booking_table' %>
+<%= render 'shared/booking_table' %>
 
 <h1 class="read-message-btn">
   <%#= NOTE: the usual url boat_booking_url(@boat, @booking) doesn't work here %>

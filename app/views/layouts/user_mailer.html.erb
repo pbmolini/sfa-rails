@@ -20,6 +20,7 @@
   </style>
   <![endif]-->
 </head>
+<% img_path = aws_image_path_for("sfa-logo-circle-#{yield :logo_img}.png") %>
 <body>
   <table cellpadding="0" cellspacing="0" border="0" id="backgroundTable">
   <tr>
@@ -28,7 +29,7 @@
       <tr>
         <td width="500" valign="top" class="main-content">
           <p class="logo-host">
-            <%= link_to image_tag("http:#{aws_image_path_for('sfa-logo-circle-blue.png')}".gsub("/#{I18n.locale}/", "/")), root_url %>
+            <%= link_to image_tag("http:#{img_path}".gsub("/#{I18n.locale}/", "/")), root_url %>
           </p>
           <p><%= _("Hi %{name}") %{name: @receiver.name } %></p>
 
