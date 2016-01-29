@@ -1,25 +1,22 @@
-<% unless bookings.empty? %>
-  <% bookings.each do |booking| %>
-    <%= link_to boat_booking_path(@boat, booking), class: "list-group-item #{booking.aasm_state}" do %> 
-      <div class="row">
-        <div class="col-sm-1 hidden-xs">
-          <%= image_tag booking.user.image.url(:medium), class: 'chat-user-avatar' %>
-        </div>
-        <div class="col-sm-7">
-          <h4 class="list-group-item-heading"><%= booking.user.name %></h4>
-          <p class="list-group-item-text">
-            <%= booking.title %>
-          </p>            
-        </div>
-        <div class="col-sm-2 hidden-xs">
-          <h3><%= fa_icon 'users', text: booking.people_on_board %> </h3>
-        </div>
-        <div class="col-sm-2 hidden-xs">
-          <h3><%= booking.total_price %> €</h3>
-        </div>
+<% bookings.each do |booking| %>
+  <% other_user = other_user_for(booking) %>
+  <%= link_to boat_booking_path(booking.boat, booking), class: "list-group-item #{booking.aasm_state}" do %> 
+    <div class="row">
+      <div class="col-sm-1 hidden-xs">
+        <%= image_tag other_user.image.url(:medium), class: 'chat-user-avatar' %>
       </div>
-    <% end %>
+      <div class="col-sm-7">
+        <h4 class="list-group-item-heading"><%= other_user.name %></h4>
+        <p class="list-group-item-text">
+          <%= booking.title %>
+        </p>            
+      </div>
+      <div class="col-sm-2 hidden-xs">
+        <h3><%= fa_icon 'users', text: booking.people_on_board %> </h3>
+      </div>
+      <div class="col-sm-2 hidden-xs">
+        <h3><%= booking.total_price %> €</h3>
+      </div>
+    </div>
   <% end %>
-<% else %>
-  <p><%= _("No messages received yet, my captain!") %></p>
 <% end %>

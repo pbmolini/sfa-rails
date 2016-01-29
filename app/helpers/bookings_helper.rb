@@ -37,4 +37,8 @@ module BookingsHelper
     end
 	end
 
+  def other_user_for(booking)
+    current_user == booking.user ? booking.boat.user : booking.user
+  end
+
 end

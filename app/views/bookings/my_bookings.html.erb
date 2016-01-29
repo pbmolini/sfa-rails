@@ -1,35 +1,9 @@
+<% title _("Bookings for %{user_name}") %{user_name: @current_user.name} %>
 <div class="row">
-	<div class="col-sm-12">
+	<div class="col-md-10 col-md-offset-1">
 		<h1><%= _("My bookings") %></h1>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-12">
 		<% if @bookings.any? %>
-			<% @bookings.each do |booking| %>
-				<div class="row">
-					<div class="col-sm-3">
-						<p>
-							<%= link_to booking.boat.name, boat_booking_path(booking.boat, booking) %>
-						</p>
-					</div>
-					<div class="col-sm-3">
-						<p>
-							<%= booking.first_day_in_locale %>
-						</p>
-					</div>
-					<div class="col-sm-3">
-						<p>
-							<%= booking.last_day_in_locale %>
-						</p>
-					</div>
-					<div class="col-sm-3">
-						<p>
-							<%= booking.aasm_state.humanize %>
-						</p>
-					</div>
-				</div>
-			<% end %>
+			<%= render 'bookings_list', bookings: @bookings %>
 		<% else %>
 			<p><%= _("You have no bookings") %></p>
 		<% end %>
