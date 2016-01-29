@@ -29,6 +29,13 @@ team_members:
     twitter: https://twitter.com/FrancescoDerchi
     github:
 
+  - name: Elisabetta
+    role: "Media & Relations"
+    picture: team/betta.jpg
+    linkedin: https://www.linkedin.com/in/elisabettacantalini
+    twitter: https://twitter.com/elisabettacant1
+    github: 
+
   - name: Aaron
     role: "Full-stack Developer"
     picture: team/aaron.png

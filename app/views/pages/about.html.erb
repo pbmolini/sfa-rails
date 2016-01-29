@@ -18,17 +18,19 @@
 		</p>
 	</div>
 </div>
+<div class="container-fluid">
+	
 <div class="row">
 	<h1 class="text-center">Team</h1>
 	<% team_members.each do |m| %>
-	<div class="col-sm-4 team-member-card">
+	<div class="col-md-4 col-sm-6 team-member-card">
 		<div class="row">
 			<div class="col-sm-6 team-member-picture">
 				<%= image_tag aws_image_path_for(m['picture']), alt: m['name'], class: "img-circle img-thumbnail" %>
 			</div>
 			<div class="col-sm-6 team-member-text">
 				<h3><%= m['name'] %></h3>
-				<p><%= m['role'] %></p>
+				<p class="hidden-xs hidden-sm"><%= m['role'] %></p>
 				<p>
 					<% %w{ linkedin twitter github }.each do |link| %>
 						<%= link_to(fa_icon("#{link}-square"), m[link], target: '_blank') if m[link] %>
@@ -38,4 +40,5 @@
 		</div>
 	</div>
 	<% end %>
+</div>
 </div>
