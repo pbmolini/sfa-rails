@@ -54,6 +54,7 @@ class Booking < ActiveRecord::Base
   has_one :conversation, class_name: "Mailboxer::Conversation", dependent: :destroy
 
   validate :minimum_booking_period, on: :create # because we can change the aasm_state even if the booking is in the past
+  validate :start_before_end, on: :create
   validate :availability_of_days
   validates_numericality_of :people_on_board, greater_than_or_equal_to: 1
   validates_numericality_of :people_on_board, less_than_or_equal_to: ->(booking) {booking.boat.guest_capacity}
@@ -102,6 +103,13 @@ class Booking < ActiveRecord::Base
   	# unless end_time - start_time > 4.hours DOESN'T MAKE SENSE BECAUSE WE CANNOT RESERVE A BOAT FOR LESS THAN 24 HOURS
   	# 	errors.add :end_time, "must be later than #{start_time + 4.hours}"
   	# end
+  end
+
+  # To avoid a negative duration_in_days
+  def start_before_end
+    if start_time > end_time
+      errors.add :start_time, s_("BookingValidationError|must be before end time")
+    end
   end
 
   def availability_of_days
