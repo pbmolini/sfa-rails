@@ -33,9 +33,9 @@ class MailchimpRegisteredUser < Struct.new(:user_id, :first_name, :last_name, :e
 		user.update_attribute(:mc_member_id, member["id"])
 	end
 
-	# Uncomment when debugging
+	# Uncomment when debugging and check .env
 	# def error(job, exception)		
-	# 	Delayed::Worker.logger.error exception.raw_body
+	# 	Delayed::Worker.logger.error exception
 	# end
 
 	# def reschedule_at(current_time, attempts)

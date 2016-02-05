@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
   validates :phone, presence: true, on: :update
   validates :location, presence: true, on: :update
 
+  # Remove the user's email from tha mailing list on Mailchimp
+  after_commit :remove_from_mailchimp, on: :destroy
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -64,6 +67,11 @@ class User < ActiveRecord::Base
   end
 
   private
+  
+  # Remove the user's email from tha mailing list on Mailchimp
+  def remove_from_mailchimp
+    Delayed::Job.enqueue MailchimpDeletedUser.new mc_member_id
+  end
 
   def self.facebook_image_url uri
     image_url = URI.parse(uri)

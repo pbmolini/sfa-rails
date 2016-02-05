@@ -58,7 +58,7 @@
 
               <%= f.input :email, required: true, autofocus: true %>
               <h4><%= _("Change Password") %></h4>
-              <%= f.input :current_password, hint: _("we need your current password to confirm your changes"), required: true %>
+              <%= f.input :current_password, label: _("Current password"), hint: _("we need your current password to confirm your changes"), required: true %>
               <%= f.input :password, autocomplete: "off", hint: _("leave it blank if you don't want to change it"), required: false %>
               <%= f.input :password_confirmation, label: _("Confirm password"), required: false %>
             <% else %>
@@ -68,9 +68,23 @@
             <% end %>
 
             <h3><%= _("Delete my account") %></h3>
-
-            <p class="alert alert-danger" role="alert">
-              <%= _('Unhappy?') %> <%= link_to _("Cancel my account"), registration_path(resource_name), data: { confirm: _("Are you really sure?") }, class: 'alert-link', method: :delete %></p><%= link_to _("Back"), :back %>
+            <% if resource.boats.any? %>
+              <p class="alert alert-danger" role="alert">
+                <%= _("Please delete all your boats before leaving Sea for All") %>
+              </p>
+            <% end %>
+            <% if resource.bookings.pending.any? %>
+              <p class="alert alert-danger" role="alert">
+                <%= _("Please cancel all your pending bookings before leaving Sea for All") %>
+              </p>
+            <% end %>
+            <% unless resource.bookings.pending.any? || resource.boats.any? %>
+              <p class="alert alert-danger" role="alert">
+                <%= _('Unhappy?') %> <%= link_to _("Cancel my account"), registration_path(resource_name), data: { confirm: _("Are you really sure?") }, class: 'alert-link', method: :delete %>
+              </p>
+            <% else %>
+            <% end %>
+            <%= link_to _("Back"), :back %>
           </div>
         </div>
       <% end %>

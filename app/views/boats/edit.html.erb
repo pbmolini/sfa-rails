@@ -70,11 +70,17 @@
 					<p class="alert alert-danger" role="alert">
 						<%= _("Tired of sharing your boat?") %>
 						<br>
+						<% if @boat.bookings.pending.any? %>
+							<span>
+								<%=  _("You must accept or reject all the pending bookings of %{name} before removing it from Sea for All") %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name} %>
+							</span>
+						<% else %>
 						<%= link_to _("Remove %{name} from Sea for All") %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name},
 													boat_path(@boat),
 													method: :delete,
 													:class => 'alert-link',
 													data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name} } if can? :destroy, @boat %>
+						<% end %>
 					</p>
 				</div>
 			</div>

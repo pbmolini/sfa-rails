@@ -9,7 +9,7 @@ class MCUserGroupUpdate < Struct.new(:mc_member_id, :boat_started, :boat_complet
 
 		gibbon = Gibbon::Request.new
 		
-		# put user's email in "No Boat" group
+		# put user's email in the corresponding group
 		gibbon.lists(list_id).members(mc_member_id).update(
 			body: {
 				interests: {
@@ -21,9 +21,9 @@ class MCUserGroupUpdate < Struct.new(:mc_member_id, :boat_started, :boat_complet
 
 	end
 
-	# Uncomment when debugging
+	# Uncomment when debugging and check .env
 	# def error(job, exception)		
-	# 	Delayed::Worker.logger.error exception.raw_body
+	# 	Delayed::Worker.logger.error exception
 	# end
 
 	# def reschedule_at(current_time, attempts)

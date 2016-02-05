@@ -23,7 +23,7 @@
           </div>
           <div class="panel-body">
             <div id="messages">
-              <% @conversation.receipts_for(current_user).each do |receipt| %>
+              <% @conversation.receipts_for(current_user).order(created_at: :asc).each do |receipt| %>
                 <% message = receipt.message %>
                   <div class="message-container">
                     <div class="media <%= (message.sender == current_user) ? 'chat-boat' : 'chat-booking' %>">
@@ -34,7 +34,7 @@
                       <div class="media-body">
                         <h5><strong><%= message.sender.name %></strong></h5>
                         <h6 class="media-heading">
-                          says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
+                          says at <%= message.created_at.strftime("%-d %B %Y, %H:%M") %></h6>
                         <p>
                           <%= message.body %>
                         </p>
