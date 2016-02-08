@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       post 'publish', on: :member
       resources :pictures, only: [:index, :new, :create, :destroy]
       # Host's bookings
-      resources :bookings do
+      resources :bookings, except: [:edit, :update, :destroy] do
         get :accept, on: :member
         get :reject, on: :member
         get :cancel, on: :member
