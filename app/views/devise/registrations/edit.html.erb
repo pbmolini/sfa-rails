@@ -1,7 +1,7 @@
 <% title s_("Title|Edit Profile") %>
 <div class="container">
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-10 col-sm-offset-1">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, wrapper: :vertical_input_group,
         wrapper_mappings: {
           check_boxes: :horizontal_radio_and_checkboxes,
@@ -22,31 +22,39 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade in active" id="personal_info">
             <h3><%= _("Personal info") %></h3>
-
-            <%= f.input :first_name %>
-            <%= f.input :last_name %>
-
-            <%= f.input :birthdate, class: 'input-group date', wrapper: :vertical_input_group do %>
-              <%= f.input_field :birthdate, as: :string, class: 'form-control' %>
-              <span class="input-group-addon"><%= fa_icon 'calendar' %></span>
-            <% end %>
-            <%= f.input :bio, placeholder: _("Tell us something about you, and how much you love your boat!") %>
-            <%= f.input :phone, placeholder: _("e.g. +39 012 3456789") %>
-            <%= f.input :location, label: _("Address"), placeholder: _("e.g. 200 E Main St Phoenix AZ 85123 USA") %>
-
-            <%= f.label _("Profile picture") %>
             <div class="row">
-              <div class="col-sm-2 avatar-preview" id="avatar-preview">
-                <%= image_tag resource.image.url(:thumb) %>
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-sm-12 avatar-preview" id="avatar-preview">
+                    <%= f.label _("Profile picture")  %>
+                    <%= image_tag resource.image.url(:medium) %>
+                    <span class="btn btn-primary btn-file">
+                      <%= _("Change avatar") %>&hellip; <%= f.input_field :image, as: :file, label: false, wrapper: false %>
+                    </span>
+                    <%= f.error :image, style: 'color: red' %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 text-center">
+                    <%= f.input :bio, placeholder: _("Tell us something about you, and how much you love your boat!") %>
+                  </div>
+                </div>
+                
               </div>
-              <div class="col-sm-10">
-                <span class="btn btn-primary btn-file">
-                  <%= _("Change avatar") %>&hellip; <%= f.input_field :image, as: :file, label: false, wrapper: false %>
-                </span>
-                <%= f.error :image, style: 'color: red' %>
-                <%#= f.input :image %>
+              <div class="col-md-8">
+                <%= f.input :first_name %>
+                <%= f.input :last_name %>
+
+                <%= f.input :birthdate, class: 'input-group date', wrapper: :vertical_input_group do %>
+                  <%= f.input_field :birthdate, as: :string, class: 'form-control' %>
+                  <span class="input-group-addon"><%= fa_icon 'calendar' %></span>
+                <% end %>
+                <%= f.input :phone, placeholder: _("e.g. +39 012 3456789") %>
+                <%= f.input :location, label: _("Address"), placeholder: _("e.g. 200 E Main St Phoenix AZ 85123 USA") %>
+                
               </div>
             </div>
+
           </div>
           <div role="tabpanel" class="tab-pane fade in" id="login_info">
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -84,7 +92,6 @@
               </p>
             <% else %>
             <% end %>
-            <%= link_to _("Back"), :back %>
           </div>
         </div>
       <% end %>
@@ -102,7 +109,7 @@
         reader.onload = function (e) {
           $('#avatar-preview img')
             .attr('src', e.target.result)
-            .height(50);
+            .height(150);
             // .width(50)
         };
 

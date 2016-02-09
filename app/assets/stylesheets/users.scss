@@ -50,10 +50,18 @@ p.legal-acceptance {
 .avatar-preview {
   @extend .text-center;
    img {
-    height: 50px;
+    height: 150px;
    }
 }
 
 .forgot-password-form {
   margin-top: 1em;
+}
+
+.user_bio {
+  margin-top: 26px;
+  textarea {
+    resize: none;
+    height: 112px;
+  }
 }
