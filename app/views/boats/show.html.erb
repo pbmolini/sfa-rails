@@ -15,9 +15,11 @@
     <div class="row boat-hero">
       <% if can? :edit, @boat %>
         <div class="boat-management-buttons">
-          <%= link_to fa_icon('list-ul fw'), boat_bookings_path(@boat), class: 'btn btn-primary btn-lg', title: s_("BoatMngtButtonTooltip|See all the bookings") %>
-          <% if can? :create, @boat.days.build %>
-            <%= link_to fa_icon('calendar fw'), boat_days_path(@boat), class: 'btn btn-primary btn-lg', title: s_("BoatMngtButtonTooltip|Availability Calendar") %>
+          <% if @boat.complete? %>
+            <%= link_to fa_icon('list-ul fw'), boat_bookings_path(@boat), class: 'btn btn-primary btn-lg', title: s_("BoatMngtButtonTooltip|See all the bookings") %>
+            <% if can? :create, @boat.days.build %>
+              <%= link_to fa_icon('calendar fw'), boat_days_path(@boat), class: 'btn btn-primary btn-lg', title: s_("BoatMngtButtonTooltip|Availability Calendar") %>
+            <% end %>
           <% end %>
           <%= link_to fa_icon('pencil fw'), edit_boat_path(@boat), class: 'btn btn-primary btn-lg', title: s_("BoatMngtButtonTooltip|Edit Boat") %>
         </div>

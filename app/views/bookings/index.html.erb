@@ -4,19 +4,27 @@
     <h1><%= _("Bookings for %{boat_name}") %{boat_name: @boat.name} %></h1>
   </div>
 </div>
-<% if @active_bookings.any? %>
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h2><%= _("Active Bookings") %></h2>
-      <%= render 'bookings_list', bookings: @active_bookings %>
+<% if @bookings.any? %>
+  <% if @active_bookings.any? %>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2><%= _("Active Bookings") %></h2>
+        <%= render 'bookings_list', bookings: @active_bookings %>
+      </div>
     </div>
-  </div>
-<% end %>
-<% if @expired_bookings.any? %>
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h2><%= _("Expired Bookings") %></h2>
-      <%= render 'bookings_list', bookings: @expired_bookings %>
+  <% end %>
+  <% if @expired_bookings.any? %>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2><%= _("Expired Bookings") %></h2>
+        <%= render 'bookings_list', bookings: @expired_bookings %>
+      </div>
     </div>
+  <% end %>
+<% else %>
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h3><%= _("No bookings yet") %></h3>
   </div>
+</div>
 <% end %>
