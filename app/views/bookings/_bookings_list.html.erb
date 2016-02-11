@@ -4,9 +4,9 @@
     <div class="row">
       <div class="col-sm-1 hidden-xs">
         <% if current_user == booking.boat.user %>
-          <%= image_tag other_user.image.url(:medium), class: 'chat-user-avatar' %>
+          <%= image_tag other_user.image.url(:thumb), class: 'chat-user-avatar' %>
         <% else %>
-          <%= image_tag booking.boat.pictures.first.image.url(:medium), class: 'giulio-fix-this' %>
+          <div style="background: url(<%= booking.boat.pictures.first.image.url(:thumb)%>) no-repeat center; height: 45px; width: 45px; border-radius: 50%;"></div>
         <% end %>
       </div>
       <div class="col-sm-7">
