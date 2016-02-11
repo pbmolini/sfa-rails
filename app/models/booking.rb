@@ -67,11 +67,11 @@ class Booking < ActiveRecord::Base
   end
 
   def first_day_in_locale
-    I18n.l(start_time.in_time_zone, format: :sfa_short)
+    I18n.l(start_time.in_time_zone.to_date, format: :sfa_short)
   end
 
   def last_day_in_locale
-    I18n.l(end_time.in_time_zone, format: :sfa_short)
+    I18n.l(end_time.in_time_zone.to_date, format: :sfa_short)
   end
 
   def total_price

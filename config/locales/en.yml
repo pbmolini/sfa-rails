@@ -10,7 +10,7 @@ en:
     - Fri
     - Sat
     abbr_month_names:
-    - 
+    -
     - Jan
     - Feb
     - Mar
@@ -32,11 +32,13 @@ en:
     - Friday
     - Saturday
     formats:
-      default: "%Y-%m-%d"
+      # default: "%Y-%m-%d"
+      default: "%m/%d/%Y"
       long: "%B %d, %Y"
       short: "%b %d"
+      sfa_short: "%d %B"
     month_names:
-    - 
+    -
     - January
     - February
     - March
@@ -202,5 +204,4 @@ en:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
-      sfa_short: "%d %B"
     pm: pm

@@ -56,7 +56,8 @@ class BookingForm
       moment(new Date(d.date))
 
     @startTimePicker = @el.find('#start_time-picker').datetimepicker
-      format: 'DD/MM/YYYY'
+      locale: moment.locale()
+      format: moment.localeData().longDateFormat('L')
       minDate: new Date()
       disabledDates: @datesToDisable
       inline: true
@@ -73,7 +74,8 @@ class BookingForm
     .data("DateTimePicker")
 
     @endTimePicker = @el.find('#end_time-picker').datetimepicker
-      format: 'DD/MM/YYYY'
+      locale: moment.locale()
+      format: moment.localeData().longDateFormat('L')
       disabledDates: @datesToDisable
       minDate: new Date()
       inline: true
