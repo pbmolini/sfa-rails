@@ -93,7 +93,8 @@ class BookingForm
     # hide the end time picker when the page is loaded
     @el.find('#end_time-picker>.bootstrap-datetimepicker-widget').height(0);
 
-    @el.find("#start_time-link, #end_time-link").on 'click', () ->
+    @el.find("#start_time-link, #end_time-link").on 'click', (e) ->
+      e.preventDefault()
       animateTogglePicker($(@).closest('.booking-date-picker').find('.bootstrap-datetimepicker-widget'))
 
     @el.find('#booking_people_on_board').slider
