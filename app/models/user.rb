@@ -19,7 +19,10 @@ class User < ActiveRecord::Base
   validates :phone, presence: true, on: :update
   validates :location, presence: true, on: :update
 
-  # Remove the user's email from tha mailing list on Mailchimp
+  # Modify record in Mailchimp
+  after_commit :update_mailchimp, on: :update
+
+  # Remove the user's email from the mailing list on Mailchimp
   after_commit :remove_from_mailchimp, on: :destroy
 
   def self.from_omniauth(auth)
@@ -68,9 +71,22 @@ class User < ActiveRecord::Base
 
   private
   
-  # Remove the user's email from tha mailing list on Mailchimp
+  # Remove the user's email from the mailing list on Mailchimp
   def remove_from_mailchimp
     Delayed::Job.enqueue MailchimpDeletedUser.new mc_member_id
+  end
+
+  # Modify record in Mailchimp
+  def update_mailchimp
+    if previous_changes['email'].present?
+      # Delete the record and create a new one
+      Delayed::Job.enqueue MailchimpRecreateUser.new self.id
+
+    end
+    if previous_changes['first_name'].present? or previous_changes['last_name'].present?
+      # Update only :first_name or :last_name
+      Delayed::Job.enqueue MailchimpModifiedUser.new self.id
+    end
   end
 
   def self.facebook_image_url uri
