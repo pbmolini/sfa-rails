@@ -39,19 +39,19 @@
                     <%= f.input :bio, placeholder: _("Tell us something about you, and how much you love your boat!") %>
                   </div>
                 </div>
-                
+
               </div>
               <div class="col-md-8">
                 <%= f.input :first_name %>
                 <%= f.input :last_name %>
 
                 <%= f.input :birthdate, class: 'input-group date', wrapper: :vertical_input_group do %>
-                  <%= f.input_field :birthdate, as: :string, class: 'form-control' %>
+                  <%= f.input_field :birthdate, as: :string, class: 'form-control', value: l(resource.birthdate) %>
                   <span class="input-group-addon"><%= fa_icon 'calendar' %></span>
                 <% end %>
                 <%= f.input :phone, placeholder: _("e.g. +39 012 3456789") %>
                 <%= f.input :location, label: _("Address"), placeholder: _("e.g. 200 E Main St Phoenix AZ 85123 USA") %>
-                
+
               </div>
             </div>
 
@@ -117,11 +117,10 @@
       }
     });
 
-
     $('#user_birthdate').datetimepicker({
       locale: '<%= I18n.locale %>',
-      format: 'YYYY-MM-DD',
-      extraFormats: [ 'LL' ],
+      format: moment.localeData().longDateFormat('L'),
+      // extraFormats: [ 'LL' ],
       useCurrent: <%= resource.birthdate.blank? %>,
       defaultDate: moment().subtract(16, 'years').subtract(1, 'days'),
       maxDate: moment().subtract(16, 'years').subtract(1, 'days')
