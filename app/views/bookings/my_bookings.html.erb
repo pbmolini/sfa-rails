@@ -1,7 +1,11 @@
 <% title _("Bookings for %{user_name}") %{user_name: @current_user.name} %>
 <div class="row">
-	<div class="col-md-10 col-md-offset-1">
+  <div class="col-sm-12 text-center">
 		<h1><%= _("My bookings") %></h1>
+  </div>
+</div>
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
 		<% if @bookings.any? %>
 			<%= render 'bookings_list', bookings: @bookings %>
 		<% else %>
