@@ -13,7 +13,7 @@ class Booking < ActiveRecord::Base
         # Mark days as "accepted"
         toggle_calendar_days aasm_state
         # Add an automatic message to the conversation
-        conversation = boat.user.mailbox.conversations.find_by booking_id: id
+        # conversation = boat.user.mailbox.conversations.find_by booking_id: id
         boat.user.reply_with_booking_state_change(conversation, self)
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
@@ -26,6 +26,9 @@ class Booking < ActiveRecord::Base
     event :reject do
       after do
         toggle_calendar_days aasm_state
+        # Add an automatic message to the conversation
+        # conversation = boat.user.mailbox.conversations.find_by booking_id: id
+        boat.user.reply_with_booking_state_change(conversation, self)
         # TODO: send a sad email
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
@@ -39,6 +42,9 @@ class Booking < ActiveRecord::Base
       after do
         # TODO: write_cancel_motivation
         toggle_calendar_days aasm_state
+        # Add an automatic message to the conversation
+        # conversation = boat.user.mailbox.conversations.find_by booking_id: id
+        boat.user.reply_with_booking_state_change(conversation, self)
         # TODO: send a wroth email
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later

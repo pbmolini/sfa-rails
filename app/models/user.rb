@@ -59,19 +59,29 @@ class User < ActiveRecord::Base
     # self.location.present? and self.phone.present? and self.birthdate.present?
   end
 
-  # Used by mailboxer, see https://github.com/mailboxer/mailboxer#emails
+  # MAILBOXER: Used by mailboxer, see https://github.com/mailboxer/mailboxer#emails
   def mailboxer_email(object)
     email unless object.is_a? BookingStateMessage and object.is_booking_state_change?
   end
 
-  # Reply to conversation with booking state change message
+  # MAILBOXER: Reply to conversation with booking state change message
   # more coherent with Mailboxer own methods
   def reply_with_booking_state_change(conversation, booking)
+    message = ""
+    case booking.aasm_state
+    when "accepted"
+      message = _("I accept your booking. Enjoy my boat!")
+    when "rejected"
+      message = _("Sorry, I reject your booking.")
+    when "canceled"
+      message = _("Sorry, I must cancel this booking.")
+    end
+
     BookingStateMessage.new({
       :sender       => self,
       :conversation => conversation,
-      :recipients   => conversation.last_message.recipients,
-      :body         => _('I accepted your booking. Enjoy my boat!'), #TODO: according to state
+      :recipients   => [booking.user],
+      :body         => message,
       :subject      => conversation.subject,
       :booking_state_change => booking.aasm_state
     }).deliver
