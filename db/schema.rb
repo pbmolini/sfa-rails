@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203113549) do
+ActiveRecord::Schema.define(version: 20160212155438) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -219,6 +219,7 @@ ActiveRecord::Schema.define(version: 20151203113549) do
     t.datetime "created_at",                           null: false
     t.boolean  "global",               default: false
     t.datetime "expires"
+    t.string   "booking_state_change"
   end
 
   add_index "mailboxer_notifications", ["conversation_id"], name: "index_mailboxer_notifications_on_conversation_id"

@@ -108,13 +108,13 @@
 	textarea {
 		resize: none;
 		border-radius: 0;
-		border: 1px solid #ddd; 
+		border: 1px solid #ddd;
 		box-shadow: none;
 		padding-top: 1em;
 		padding-left: 72px;
 		&:focus {
 			box-shadow: none;
-			border: 1px solid #ddd; 
+			border: 1px solid #ddd;
 		}
 	}
 }
@@ -122,4 +122,11 @@
 .chat-reply-btn {
 	width: 20%;
 	height: 62px;
+}
+
+.chat-state-change {
+  &.accepted {
+    background-color: #27ae60; //variabilizzare!!
+    color: white;
+  }
 }

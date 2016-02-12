@@ -24,9 +24,11 @@
           <div class="panel-body">
             <div id="messages">
               <% @conversation.receipts_for(current_user).order(created_at: :asc).each do |receipt| %>
-                <% message = receipt.message %>
+                <% message = receipt.notification %>
                   <div class="message-container">
-                    <div class="media <%= (message.sender == current_user) ? 'chat-boat' : 'chat-booking' %>">
+                    <div class="media
+                                <%= (message.sender == current_user) ? 'chat-boat' : 'chat-booking' %>
+                                <%= "chat-state-change #{message.booking_state_change}" if message.is_a? BookingStateMessage %>">
                       <div class="media-left">
                         <%= image_tag message.sender.image.url(:medium), class: 'chat-user-avatar' %>
                       </div>

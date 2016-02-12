@@ -12,6 +12,23 @@ class Booking < ActiveRecord::Base
       after do
         # Mark days as "accepted"
         toggle_calendar_days aasm_state
+        # Add an automatic message to the conversation
+        conversation = boat.user.mailbox.conversations.find_by booking_id: id
+
+        BookingStateMessage.new({
+          :sender       => boat.user,
+          :conversation => conversation,
+          :recipients   => [user],
+          :body         => _('I accepted your booking. Enjoy my boat!'),
+          :subject      => conversation.subject,
+          :booking_state_change => aasm_state
+        }).deliver
+
+        # binding.pry
+
+        # # bsm.recipients = conversation.recipients
+        # bsm.save
+        # bsm.deliver
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
         # Mail to host
@@ -51,7 +68,7 @@ class Booking < ActiveRecord::Base
   belongs_to :boat
 
   has_many :days, dependent: :destroy
-  has_one :conversation, class_name: "Mailboxer::Conversation", dependent: :destroy
+  has_one :conversation, class_name: "Conversation", dependent: :destroy
 
   validate :minimum_booking_period, on: :create # because we can change the aasm_state even if the booking is in the past
   validate :start_before_end, on: :create
