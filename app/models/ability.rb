@@ -73,6 +73,11 @@ class Ability
 
       can [:read, :create, :destroy], Day, boat: { user_id: user.id }
 
+      # if is the associated booking's guest or host
+      can [:create, :index], Review do |review|
+        review.booking.user == user or review.booking.boat.user == user
+      end
+
     end
 
   end

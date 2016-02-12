@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
 
   has_many :boats
   has_many :bookings
+  
+  has_many :sent_reviews, class_name: "Review", foreign_key: :reviewer_id
+  has_many :received_reviews, class_name: "Review", foreign_key: :reviewee_id
 
   has_attached_file :image, :styles => { thumb: "50x50#", medium: "150x150#" }, default_url: "default_avatar.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/

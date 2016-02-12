@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
   # The priority is based upon order of creation: first created -> highest priority.
@@ -32,10 +31,14 @@ Rails.application.routes.draw do
         get :reject, on: :member
         get :cancel, on: :member
         post :reply, on: :member
+        resources :reviews, only: [:new, :create]
       end
       resources :boat_features_sets, as: :features_sets # to avoid boat_boat_features_sets_path
       resources :days, only: [:index, :create, :destroy]
+      get 'reviews' => 'reviews#index', as: :reviews
     end
+
+    get 'reviews' => 'reviews#index', as: :reviews
 
     # Guest's bookings
     get 'my_bookings' => 'bookings#my_bookings', as: :my_bookings

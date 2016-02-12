@@ -1,0 +1,15 @@
+<%= simple_form_for([@boat, @booking, @review]) do |f| %>
+  <% if @review.errors[:base].any? %>
+    <p class="alert alert-danger"><%= @review.errors[:base].join(', ') %></p>
+  <% end %>
+
+  <div class="form-inputs">
+    <%= f.input :rating %>
+    <%= f.input :comment %>
+    <%= f.input :reviewee_id, as: :hidden %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

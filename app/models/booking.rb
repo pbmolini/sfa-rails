@@ -53,6 +53,9 @@ class Booking < ActiveRecord::Base
   has_many :days, dependent: :destroy
   has_one :conversation, class_name: "Mailboxer::Conversation", dependent: :destroy
 
+  has_one :guest_review, -> (booking) { where reviewer_id: booking.user }, class_name: "Review"
+  has_one :host_review, -> (booking) { where reviewer_id: booking.boat.user.id }, class_name: "Review"
+
   validate :minimum_booking_period, on: :create # because we can change the aasm_state even if the booking is in the past
   validate :start_before_end, on: :create
   validate :availability_of_days

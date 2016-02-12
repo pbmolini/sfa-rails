@@ -61,6 +61,11 @@ class Boat < ActiveRecord::Base
     self.complete? and self.user.complete?
   end
 
+  # All the guest_reviews given to this boat
+  def reviews
+    bookings.map(&:guest_review).compact
+  end
+
   private
 
   def check_complete?
