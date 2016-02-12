@@ -14,21 +14,7 @@ class Booking < ActiveRecord::Base
         toggle_calendar_days aasm_state
         # Add an automatic message to the conversation
         conversation = boat.user.mailbox.conversations.find_by booking_id: id
-
-        BookingStateMessage.new({
-          :sender       => boat.user,
-          :conversation => conversation,
-          :recipients   => [user],
-          :body         => _('I accepted your booking. Enjoy my boat!'),
-          :subject      => conversation.subject,
-          :booking_state_change => aasm_state
-        }).deliver
-
-        # binding.pry
-
-        # # bsm.recipients = conversation.recipients
-        # bsm.save
-        # bsm.deliver
+        boat.user.reply_with_booking_state_change(conversation, self)
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
         # Mail to host

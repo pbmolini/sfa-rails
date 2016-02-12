@@ -64,6 +64,19 @@ class User < ActiveRecord::Base
     email unless object.is_a? BookingStateMessage and object.is_booking_state_change?
   end
 
+  # Reply to conversation with booking state change message
+  # more coherent with Mailboxer own methods
+  def reply_with_booking_state_change(conversation, booking)
+    BookingStateMessage.new({
+      :sender       => self,
+      :conversation => conversation,
+      :recipients   => conversation.last_message.recipients,
+      :body         => _('I accepted your booking. Enjoy my boat!'), #TODO: according to state
+      :subject      => conversation.subject,
+      :booking_state_change => booking.aasm_state
+    }).deliver
+  end
+
   # Devise ActiveJob Integration, see https://github.com/plataformatec/devise#activejob-integration
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
