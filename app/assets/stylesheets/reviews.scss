@@ -1,3 +1,11 @@
-// Place all the styles related to the reviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.review_comment {
+	textarea {
+		height: 150px;
+		resize: none;
+	}
+}
+
+.comment-length {
+	@extend .help-block, .text-right;
+	font-size: .8em;
+}

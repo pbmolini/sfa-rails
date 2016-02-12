@@ -1,15 +1,24 @@
 <%= simple_form_for([@boat, @booking, @review]) do |f| %>
-  <% if @review.errors[:base].any? %>
-    <p class="alert alert-danger"><%= @review.errors[:base].join(', ') %></p>
-  <% end %>
-
-  <div class="form-inputs">
-    <%= f.input :rating %>
-    <%= f.input :comment %>
-    <%= f.input :reviewee_id, as: :hidden %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.error_notification %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.input :rating %>
+    </div>
+    <div class="col-md-8">
+      <%= f.input :comment %>
+      <span class="comment-length">Min. 42, Max. 512</span>
+    </div>
+  </div>
+  <%= f.input :reviewee_id, as: :hidden %>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 text-center">
+      <%= f.button :submit, class: 'btn btn-lg btn-block btn-success' %>
+    </div>
   </div>
 <% end %>

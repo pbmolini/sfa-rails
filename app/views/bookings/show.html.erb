@@ -124,30 +124,30 @@
           <p>
             <% if @booking.has_started? %>
             <span class="label label-info">
-              <%= @booking.has_expired? ? _("Booking already expired") : _("Booking still pending") %>
+              <%= @booking.has_expired? ? s_("BookingActionHintText|Booking already expired") : s_("BookingActionHintText|Booking still pending") %>
             </span>
             <%= fa_icon "question-circle", id: 'booking-period-help-icon' %>
             <% end %>
           </p>
           <p class="accept">
-            <%= link_to((@booking.has_started? ? _("Oh yes, I accepted") : _("Accept")), accept_boat_booking_path(@boat, @booking), class: 'btn btn-lg btn-block btn-success') %>
+            <%= link_to((@booking.has_started? ? s_("BookingActionBtnText|Oh yes, I accepted") : s_("BookingActionBtnText|Accept")), accept_boat_booking_path(@boat, @booking), class: 'btn btn-lg btn-block btn-success') %>
           </p>
           <% end %>
           <% if can? :reject, @booking %>
           <p class="reject">
-            <small><%= @booking.has_started? ? _("Did you reject this booking?") : _("Do you prefer not to accept?") %></small>
-            <%= link_to((@booking.has_started? ? _("I rejected it") : _("Reject")), reject_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to reject this booking?") }) %>
+            <small><%= @booking.has_started? ? s_("BookingActionHintText|Did you reject this booking?") : s_("BookingActionHintText|Do you prefer not to accept?") %></small>
+            <%= link_to((@booking.has_started? ? s_("BookingActionBtnText|I rejected it") : s_("BookingActionBtnText|Reject")), reject_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to reject this booking?") }) %>
           </p>
           <% end %>
           <% if can? :cancel, @booking %>
           <p class="cancel">
-            <small><%= _("Do you want to cancel this booking?") %></small>
-            <%= link_to(_("Cancel"), cancel_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to cancel this booking?") }) %>
+            <small><%= s_("BookingActionHintText|Do you want to cancel this booking?") %></small>
+            <%= link_to(s_("BookingActionBtnText|Cancel"), cancel_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to cancel this booking?") }) %>
           </p>
           <% end %>
           <% if can? :create, @review %>
             <p class="review">
-              <%= link_to(_("Review your experience"), new_boat_booking_review_path(@boat, @booking), class: 'btn btn-lg btn-block btn-info') %>
+              <%= link_to(s_("BookingActionBtnText|Review your experience"), new_boat_booking_review_path(@boat, @booking), class: 'btn btn-lg btn-block btn-info') %>
             </p>
           <% end %>
         </div>

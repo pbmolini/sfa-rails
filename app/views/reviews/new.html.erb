@@ -1,7 +1,14 @@
-<h1><%= _("Review your experience on %{boat_name}") %{boat_name: @boat.name} %></h1>
-<p>
-	<%= _("Please leave a review and let everybody know about your experience") %>
-</p>
-<%= render 'form' %>
-
-<%= link_to 'Back', reviews_path %>
+<% title _("Review about %{boat_name}") %{boat_name: @boat.name} %>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2 text-center">
+		<h1><%= _("Review your experience on %{boat_name}") %{boat_name: @boat.name} %></h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<p>
+			<%= _("Please leave a review and let everybody know about your experience") %>
+		</p>
+		<%= render 'form' %>
+	</div>
+</div>
