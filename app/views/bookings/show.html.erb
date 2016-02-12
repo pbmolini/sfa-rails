@@ -145,6 +145,11 @@
             <%= link_to(_("Cancel"), cancel_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to cancel this booking?") }) %>
           </p>
           <% end %>
+          <% if can? :create, @review %>
+            <p class="review">
+              <%= link_to(_("Review your experience"), new_boat_booking_review_path(@boat, @booking), class: 'btn btn-lg btn-block btn-info') %>
+            </p>
+          <% end %>
         </div>
       </div>
     </div>

@@ -73,11 +73,17 @@ class Ability
 
       can [:read, :create, :destroy], Day, boat: { user_id: user.id }
 
-      # if is the associated booking's guest or host
-      can [:create, :index], Review do |review|
-        review.booking.user == user or review.booking.boat.user == user
+      # if the booking is :accepted, has expired and 
+      # current_user is the booking's guest or host
+      can :create, Review do |review|
+        review.booking.accepted? and review.booking.has_expired? and 
+        (review.booking.user == user or review.booking.boat.user == user)
       end
 
+      # if is the associated booking's guest or host
+      can :index, Review do |review|
+        review.booking.user == user or review.booking.boat.user == user
+      end
     end
 
   end

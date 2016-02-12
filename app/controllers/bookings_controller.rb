@@ -23,6 +23,9 @@ class BookingsController < ApplicationController
   # GET /bookings/1.json
   def show
     @other_user = current_user_is_guest? ? @booking.boat.user : @booking.user
+    
+    # The @review is used by can? for displayung the Review button
+    @review = current_user_is_guest? ? @booking.build_guest_review : @booking.build_host_review
   end
 
   # GET /bookings/new

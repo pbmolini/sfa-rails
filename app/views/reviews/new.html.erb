@@ -1,5 +1,7 @@
-<h1>New Review</h1>
-
+<h1><%= _("Review your experience on %{boat_name}") %{boat_name: @boat.name} %></h1>
+<p>
+	<%= _("Please leave a review and let everybody know about your experience") %>
+</p>
 <%= render 'form' %>
 
 <%= link_to 'Back', reviews_path %>
