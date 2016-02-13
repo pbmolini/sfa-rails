@@ -1,25 +1,20 @@
-<h1>Listing Reviews</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Rating</th>
-      <th>Comment</th>
-      <th>Booking</th>
-      <th>Reviewer</th>
-      <th>Reviewee</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @reviews.each do |review| %>
-      <tr>
-        <td><%= review.rating %></td>
-        <td><%= review.comment %></td>
-        <td><%= review.booking_id %></td>
-        <td><%= review.reviewer_id %></td>
-        <td><%= review.reviewee_id %></td>
-      </tr>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 text-center">
+    <h1>Listing Reviews</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <% if @reviews.any? %>
+      <% @reviews.each do |review| %>
+        <%= render 'review', review: review %>
+      <% end %>
+    <% else %>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <h2><%= _("No reviews yet") %></h2>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
