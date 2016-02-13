@@ -42,7 +42,7 @@ class Booking < ActiveRecord::Base
         # Mail to host
         BookingStateMailer.send_email(boat.user, self, aasm_state, I18n.locale.to_s).deliver_later
       end
-      transitions from: :accepted, to: :canceled, after: ->(reason) { update_attribute(:cancellation_reason, reason) }
+      transitions from: :accepted, to: :canceled, before: ->(reason) { update_attribute(:cancellation_reason, reason) }
     end
   end
   # State Machine definition ends
