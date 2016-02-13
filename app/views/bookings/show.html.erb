@@ -11,12 +11,12 @@
               <%= @other_user.name %>
             </p>
             <p>
-              <%= @conversation.subject %>
+              <%= @booking.title %>
             </p>
             <p class="panel-contacts">
             <% if @booking.accepted? or @booking.canceled? or current_user == @boat.user %>
               <%= fa_icon('envelope', text: mail_to(@other_user.email))  %>
-              &nbsp; &nbsp; 
+              &nbsp; &nbsp;
               <%= fa_icon('phone', text: tel_to(@other_user.phone)) %>
             <% end %>
             </p>
@@ -24,9 +24,11 @@
           <div class="panel-body">
             <div id="messages">
               <% @conversation.receipts_for(current_user).order(created_at: :asc).each do |receipt| %>
-                <% message = receipt.message %>
+                <% message = receipt.notification %>
                   <div class="message-container">
-                    <div class="media <%= (message.sender == current_user) ? 'chat-boat' : 'chat-booking' %>">
+                    <div class="media
+                                <%= (message.sender == current_user) ? 'chat-boat' : 'chat-booking' %>
+                                <%= "chat-state-change #{message.booking_state_change}" if message.is_a? BookingStateMessage %>">
                       <div class="media-left">
                         <%= image_tag message.sender.image.url(:medium), class: 'chat-user-avatar' %>
                       </div>
@@ -70,7 +72,7 @@
           <div class="booking-boat-media">
             <div class="media">
               <div class="media-left">
-                <div class="recap-avatar" style="background: url('<%= @boat.pictures.first.image.url(:medium) %>') no-repeat center center; background-size: cover;"></div> 
+                <div class="recap-avatar" style="background: url('<%= @boat.pictures.first.image.url(:medium) %>') no-repeat center center; background-size: cover;"></div>
               </div>
               <div class="media-body">
                 <h3 class="media-heading"><%= @boat.model %></h3>
@@ -85,8 +87,8 @@
     <div class="row booking-status state-background-<%= @booking.aasm_state %>">
       <div class="col-sm-12">
         <p>
-          <%= fa_icon "#{booking_state_icon(@booking)} 2x", class: "heading-icon-#{@booking.aasm_state}", id: 'heading-icon' %> 
-          <%= booking_state_tooltip_text(@booking) %>          
+          <%= fa_icon "#{booking_state_icon(@booking)} 2x", class: "heading-icon-#{@booking.aasm_state}", id: 'heading-icon' %>
+          <%= booking_state_tooltip_text(@booking) %>
         </p>
       </div>
     </div>
@@ -141,8 +143,8 @@
           <% end %>
           <% if can? :cancel, @booking %>
           <p class="cancel">
-            <small><%= s_("BookingActionHintText|Do you want to cancel this booking?") %></small>
-            <%= link_to(s_("BookingActionBtnText|Cancel"), cancel_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to cancel this booking?") }) %>
+            <small><%= _("BookingActionHintText|Do you want to cancel this booking?") %></small>
+            <%= link_to(_("BookingActionBtnText|Cancel"), '#', class: 'btn btn-xs btn-danger', data: { toggle: 'modal', target: '#cancellation-modal' }) %>
           </p>
           <% end %>
           <% if can?(:create, @review) %>
@@ -155,6 +157,8 @@
     </div>
   </div>
 </div>
+
+<%= render 'cancellation_modal' if @booking.may_cancel? %>
 
 <% content_for :scripts do %>
   <script type="text/javascript">

@@ -25,7 +25,7 @@
       <div class="col-sm-12">
         <div id="start_time-picker" class="booking-date-picker">
           <p>
-            <%= link_to '#', id: 'start_time-link' do %>
+            <%= link_to '#start_time-picker', id: 'start_time-link' do %>
               <span class="booking-date-picker-label"><%= _('Select a start date') %></span>
               <%= fa_icon 'chevron-right rotate-90', class: 'chevron-expand pull-right' %>
             <% end %>
@@ -36,7 +36,7 @@
 
         <div id="end_time-picker" class="booking-date-picker">
           <p>
-            <%= link_to '#', id: 'end_time-link' do %>
+            <%= link_to '#end_time-picker', id: 'end_time-link' do %>
               <span class="booking-date-picker-label"><%= _('Select an end date') %></span>
               <%= fa_icon 'chevron-right', class: 'chevron-expand pull-right' %>
             <% end %>
@@ -56,8 +56,10 @@
   </div>
 <% end %>
 
+<%= content_for :scripts do %>
 <script type="text/javascript">
 $(document).ready(function() {
   $('form#new_booking').bookingForm(<%= @dates_to_disable %>);
 });
 </script>
+<% end %>

@@ -17,6 +17,21 @@
   }
 }
 
+.dropdown {
+  .logged-in {
+    color: white;
+    &:hover {
+      text-decoration: underline;
+      background-color: transparent;
+      color: white;
+    }
+  }
+}
+
+.nav .open > .logged-in, .nav .open > .logged-in:hover, .nav .open > .logged-in:focus {
+  color: #0f75bc;
+}
+
 #menu {
   position: fixed;
   top: 0;

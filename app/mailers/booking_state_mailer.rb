@@ -57,6 +57,7 @@ class BookingStateMailer < ActionMailer::Base
 
 	def booking_canceled(receiver, booking, locale)
 		I18n.locale = locale.to_sym
+		@canceler = booking.canceled_by_id.present? ? User.find(booking.canceled_by_id) : nil
 		@receiver = receiver
 		@booking = booking
 		@boat = booking.boat

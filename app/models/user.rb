@@ -62,9 +62,15 @@ class User < ActiveRecord::Base
     # self.location.present? and self.phone.present? and self.birthdate.present?
   end
 
-  # Used by mailboxer, see https://github.com/mailboxer/mailboxer#emails
+  # MAILBOXER: Used by mailboxer, see https://github.com/mailboxer/mailboxer#emails
   def mailboxer_email(object)
-    email
+    email unless object.is_a? BookingStateMessage and object.is_booking_state_change?
+  end
+
+  # MAILBOXER: Reply to conversation with booking state change message
+  # more coherent with Mailboxer own methods
+  def reply_with_booking_state_change(conversation, booking)
+    BookingStateMessage.new(self, conversation, booking).deliver
   end
 
   # Devise ActiveJob Integration, see https://github.com/plataformatec/devise#activejob-integration
@@ -73,7 +79,7 @@ class User < ActiveRecord::Base
   end
 
   private
-  
+
   # Remove the user's email from the mailing list on Mailchimp
   def remove_from_mailchimp
     Delayed::Job.enqueue MailchimpDeletedUser.new mc_member_id

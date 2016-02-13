@@ -48,7 +48,7 @@
             </li>
             <% if user_signed_in? %>
               <li class="dropdown">
-                <%= link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' }, role: 'button', aria: { expanded: 'false' } do %>
+                <%= link_to '#', class: 'dropdown-toggle logged-in', data: { toggle: 'dropdown' }, role: 'button', aria: { expanded: 'false' } do %>
                   <%= current_user.first_name %> <%= image_tag current_user.image(:thumb), class: 'user-avatar' %>
                 <% end %>
                 <ul class="dropdown-menu" role="menu">

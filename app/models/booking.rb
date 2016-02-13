@@ -12,6 +12,9 @@ class Booking < ActiveRecord::Base
       after do
         # Mark days as "accepted"
         toggle_calendar_days aasm_state
+        # Add an automatic message to the conversation
+        # conversation = boat.user.mailbox.conversations.find_by booking_id: id
+        boat.user.reply_with_booking_state_change(conversation, self)
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
         # Mail to host
@@ -23,6 +26,9 @@ class Booking < ActiveRecord::Base
     event :reject do
       after do
         toggle_calendar_days aasm_state
+        # Add an automatic message to the conversation
+        # conversation = boat.user.mailbox.conversations.find_by booking_id: id
+        boat.user.reply_with_booking_state_change(conversation, self)
         # TODO: send a sad email
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
@@ -36,13 +42,16 @@ class Booking < ActiveRecord::Base
       after do
         # TODO: write_cancel_motivation
         toggle_calendar_days aasm_state
+        # Add an automatic message to the conversation
+        # conversation = boat.user.mailbox.conversations.find_by booking_id: id
+        boat.user.reply_with_booking_state_change(conversation, self)
         # TODO: send a wroth email
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
         # Mail to host
         BookingStateMailer.send_email(boat.user, self, aasm_state, I18n.locale.to_s).deliver_later
       end
-      transitions from: :accepted, to: :canceled
+      transitions from: :accepted, to: :canceled, after: ->(canceled_by, reason) { update(canceled_by: canceled_by, cancellation_reason: reason) }
     end
   end
   # State Machine definition ends
@@ -51,7 +60,9 @@ class Booking < ActiveRecord::Base
   belongs_to :boat
 
   has_many :days, dependent: :destroy
-  has_one :conversation, class_name: "Mailboxer::Conversation", dependent: :destroy
+  has_one :conversation, class_name: "Conversation", dependent: :destroy
+
+  belongs_to :canceled_by, class_name: "User"
 
   has_one :guest_review, -> (booking) { where reviewer_id: booking.user }, class_name: "Review"
   has_one :host_review, -> (booking) { where reviewer_id: booking.boat.user.id }, class_name: "Review"
@@ -61,6 +72,7 @@ class Booking < ActiveRecord::Base
   validate :availability_of_days
   validates_numericality_of :people_on_board, greater_than_or_equal_to: 1
   validates_numericality_of :people_on_board, less_than_or_equal_to: ->(booking) {booking.boat.guest_capacity}
+  validates :cancellation_reason, length: { minimum: 50 }, allow_blank: true
 
   after_commit :init_days, on: :create
 
@@ -73,11 +85,11 @@ class Booking < ActiveRecord::Base
   end
 
   def first_day_in_locale
-    I18n.l(start_time.in_time_zone, format: :sfa_short)
+    I18n.l(start_time.in_time_zone.to_date, format: :sfa_short)
   end
 
   def last_day_in_locale
-    I18n.l(end_time.in_time_zone, format: :sfa_short)
+    I18n.l(end_time.in_time_zone.to_date, format: :sfa_short)
   end
 
   def total_price
