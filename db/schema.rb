@@ -258,6 +258,19 @@ ActiveRecord::Schema.define(version: 20160213142951) do
 
   add_index "pictures", ["boat_id"], name: "index_pictures_on_boat_id"
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "rating"
+    t.text     "comment"
+    t.integer  "booking_id"
+    t.integer  "reviewer_id"
+    t.integer  "reviewee_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "reviews", ["reviewee_id"], name: "index_reviews_on_reviewee_id"
+  add_index "reviews", ["reviewer_id"], name: "index_reviews_on_reviewer_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
