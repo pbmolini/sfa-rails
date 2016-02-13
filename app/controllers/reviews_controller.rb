@@ -19,19 +19,24 @@ class ReviewsController < ApplicationController
 	end
 
 	def new
+		# Use the 'new' and not the 'build_association' because
+		# the latter UPDATEs the record if it already exists
+		# Anyway CanCan should not allow to get here
 		if current_user == @booking.user
-			@review = @booking.build_guest_review(reviewee: @boat.user)
-		elsif current_user = @boat.user
-			@review = @booking.build_host_review(reviewee: @booking.user)
+			@review = Review.new(booking: @booking, reviewer: @booking.user, reviewee: @boat.user)
+		elsif current_user == @boat.user
+			@review = Review.new(booking: @booking, reviewer: @boat.user, reviewee: @booking.user)
 		else
 			raise CanCan::AccessDenied.new(_("Not authorized!"), :create, Review)
 		end				
 	end
 
 	def create
+		# Here the 'build_association' is fine because if CanCan 
+		# allows to get here it means that the record does not exist
 		if current_user == @booking.user
 			@review = @booking.build_guest_review(review_params)
-		elsif current_user = @boat.user
+		elsif current_user == @boat.user
 			@review = @booking.build_host_review(review_params)
 		else
 			raise CanCan::AccessDenied.new(_("Not authorized!"), :create, Review)

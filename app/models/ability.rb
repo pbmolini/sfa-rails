@@ -73,12 +73,28 @@ class Ability
 
       can [:read, :create, :destroy], Day, boat: { user_id: user.id }
 
-      # if the booking is :accepted, has expired and 
-      # current_user is the booking's guest or host
+      # if the booking is :accepted, has expired, 
+      # current_user is the booking's guest or host and
+      # has not yet reviewed the booking
       can :create, Review do |review|
+        booking = review.booking
+        already_reviewed = false
+        if booking.guest_review.present? 
+          if booking.guest_review.reviewer == user
+            already_reviewed = true
+          end
+        end
+        if booking.host_review.present? 
+          if booking.host_review.reviewer == user
+            already_reviewed = true
+          end
+        end
+
         review.booking.accepted? and review.booking.has_expired? and 
-        (review.booking.user == user or review.booking.boat.user == user)
+        (review.booking.user == user or review.booking.boat.user == user) and
+        !already_reviewed
       end
+
 
       # if is the associated booking's guest or host
       can :index, Review do |review|

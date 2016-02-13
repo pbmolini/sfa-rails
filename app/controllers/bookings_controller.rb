@@ -24,8 +24,10 @@ class BookingsController < ApplicationController
   def show
     @other_user = current_user_is_guest? ? @booking.boat.user : @booking.user
     
-    # The @review is used by can? for displayung the Review button
-    @review = current_user_is_guest? ? @booking.build_guest_review : @booking.build_host_review
+    # The @review is used by can? for displaying the Review button
+    guest_review = Review.new(reviewer: @booking.user, booking: @booking)
+    host_review = Review.new(reviewer: @booking.boat.user, booking: @booking)
+    @review = current_user_is_guest? ? guest_review : host_review
   end
 
   # GET /bookings/new

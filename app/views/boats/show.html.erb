@@ -167,7 +167,13 @@
                 <%= _("%{num} %{boat_pl} %{registered_pl}") %{num: @boat.user.boats.complete.count, boat_pl: n_("boat", "boats", @boat.user.boats.complete.count), registered_pl: n_("registered", "registered", @boat.user.boats.complete.count)} %>
               </li>
               <li>
-                <%= _("No feedback yet") %>
+                <% if @boat.reviews.any? %>                  
+                  <%= link_to boat_reviews_path(@boat) do %>
+                    <% @boat.reviews.count == 1 ? _("One review") : _("%{num} reviews") %{num: @boat.reviews.count} %>
+                  <% end %>
+                <% else %>
+                  <%= _("No reviews yet") %>
+                <% end %>
               </li>
             </ul>
           </div>
