@@ -1,0 +1,15 @@
+<li class="dropdown">
+  <%= link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' }, role: 'button', aria: { expanded: 'false' } do %>
+    <%= image_tag current_user.image(:thumb), class: 'user-avatar' %>
+    <%= current_user.first_name %>
+    <span class="caret"></span>
+  <% end %>
+  <ul class="dropdown-menu" role="menu">
+    <% if current_user.boats.any? %>
+      <li role="presentation"><%= link_to _("My Boats"), dashboard_path %></li>
+    <% end %>
+    <li role="presentation"><%= link_to _("My Profile"), edit_user_registration_path %></li>
+    <li role="presentation" class="divider"></li>
+    <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+  </ul>
+</li>
