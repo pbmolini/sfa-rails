@@ -51,7 +51,7 @@ class Booking < ActiveRecord::Base
         # Mail to host
         BookingStateMailer.send_email(boat.user, self, aasm_state, I18n.locale.to_s).deliver_later
       end
-      transitions from: :accepted, to: :canceled
+      transitions from: :accepted, to: :canceled, after: ->(canceled_by, reason) { update(canceled_by: canceled_by, cancellation_reason: reason) }
     end
   end
   # State Machine definition ends
@@ -62,11 +62,14 @@ class Booking < ActiveRecord::Base
   has_many :days, dependent: :destroy
   has_one :conversation, class_name: "Conversation", dependent: :destroy
 
+  belongs_to :canceled_by, class_name: "User"
+
   validate :minimum_booking_period, on: :create # because we can change the aasm_state even if the booking is in the past
   validate :start_before_end, on: :create
   validate :availability_of_days
   validates_numericality_of :people_on_board, greater_than_or_equal_to: 1
   validates_numericality_of :people_on_board, less_than_or_equal_to: ->(booking) {booking.boat.guest_capacity}
+  validates :cancellation_reason, length: { minimum: 50 }, allow_blank: true
 
   after_commit :init_days, on: :create
 

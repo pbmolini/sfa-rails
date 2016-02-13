@@ -1,0 +1,36 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="cancellation-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><%= _('Do you really want to cancel?') %></h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [@boat, @booking], url: cancel_boat_booking_path, html: { id: 'cancellation-form' } do |f| %>
+          <%= f.input :cancellation_reason, placeholder: _('Please provide your reason for canceling'), input_html: { data: { toggle: 'tooltip', title: _('You need to type at least 50 characters') } } %>
+        <% end %>
+        <span id="help-block" class="help-block">
+          <%= _('It is important for the guest/host to understand why you had to cancel this booking.') %>
+          <!-- TODO: improve help message -->
+        </span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= _('Close') %></button>
+        <button type="button" class="btn btn-primary" id="confirm-cancel-booking"><%= _('Cancel Booking') %></button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<%= content_for :scripts do %>
+<script type="text/javascript">
+  $('#confirm-cancel-booking').on('click', function(e){
+    if ($('#booking_cancellation_reason').val().length >= 50) {
+      $('#cancellation-form').submit();
+    } else {
+      e.preventDefault();
+      $('#booking_cancellation_reason').tooltip('show');
+    }
+  })
+</script>
+<% end %>

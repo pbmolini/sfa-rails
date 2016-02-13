@@ -55,7 +55,7 @@ class BookingsController < ApplicationController
   def cancel
     respond_to do |format|
       if @booking.may_cancel?
-        @booking.cancel!
+        @booking.cancel! current_user, params[:booking][:cancellation_reason]
         format.html { redirect_to boat_booking_path(@boat, @booking), notice: _("You have canceled this booking!") }
       else
         format.html { redirect_to boat_booking_path(@boat, @booking), alert: _("Oops! It was not possible to cancel this booking!") }
@@ -80,9 +80,9 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
-        format.html { 
-          redirect_to boat_booking_path(@boat, @booking), 
-                      notice: _("You have successfully requested a booking to %{host_name}") %{host_name: @boat.user.name} 
+        format.html {
+          redirect_to boat_booking_path(@boat, @booking),
+                      notice: _("You have successfully requested a booking to %{host_name}") %{host_name: @boat.user.name}
         }
         # format.json { render :show, status: :created, location: @boat }
       else
