@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203113549) do
+ActiveRecord::Schema.define(version: 20160213133415) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -148,10 +148,11 @@ ActiveRecord::Schema.define(version: 20151203113549) do
     t.datetime "end_time"
     t.integer  "people_on_board"
     t.integer  "boat_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "user_id"
     t.string   "aasm_state"
+    t.text     "cancellation_reason"
   end
 
   add_index "bookings", ["boat_id"], name: "index_bookings_on_boat_id"
@@ -219,6 +220,7 @@ ActiveRecord::Schema.define(version: 20151203113549) do
     t.datetime "created_at",                           null: false
     t.boolean  "global",               default: false
     t.datetime "expires"
+    t.string   "booking_state_change"
   end
 
   add_index "mailboxer_notifications", ["conversation_id"], name: "index_mailboxer_notifications_on_conversation_id"

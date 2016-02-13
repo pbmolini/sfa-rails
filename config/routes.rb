@@ -30,7 +30,7 @@ Rails.application.routes.draw do
       resources :bookings, except: [:edit, :update, :destroy] do
         get :accept, on: :member
         get :reject, on: :member
-        get :cancel, on: :member
+        patch :cancel, on: :member
         post :reply, on: :member
       end
       resources :boat_features_sets, as: :features_sets # to avoid boat_boat_features_sets_path

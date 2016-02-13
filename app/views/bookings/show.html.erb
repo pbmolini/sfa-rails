@@ -142,7 +142,7 @@
           <% if can? :cancel, @booking %>
           <p class="cancel">
             <small><%= _("Do you want to cancel this booking?") %></small>
-            <%= link_to(_("Cancel"), cancel_boat_booking_path(@boat, @booking), class: 'btn btn-xs btn-danger', data: { confirm: _("Are you really sure you want to cancel this booking?") }) %>
+            <%= link_to(_("Cancel"), '#', class: 'btn btn-xs btn-danger', data: { toggle: 'modal', target: '#cancellation-modal' }) %>
           </p>
           <% end %>
         </div>
@@ -150,6 +150,8 @@
     </div>
   </div>
 </div>
+
+<%= render 'cancellation_modal' if @booking.may_cancel? %>
 
 <% content_for :scripts do %>
   <script type="text/javascript">
