@@ -103,17 +103,6 @@ class Booking < ActiveRecord::Base
     end_time < Time.now
   end
 
-  def state_change_message
-    case aasm_state.to_sym
-    when :accepted
-      _("I accept your booking. Enjoy my boat!")
-    when :rejected
-      _("Sorry, I reject your booking.")
-    when :canceled
-      _("Sorry, I must cancel this booking.")
-    end
-  end
-
   private
 
   def minimum_booking_period
