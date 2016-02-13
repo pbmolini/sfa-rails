@@ -37,6 +37,22 @@ module BookingsHelper
     end
 	end
 
+  # Same as above, returns the state name given the state symbol
+  def booking_state_name(state)
+    case state
+    when :pending
+      s_("BookingStateName|Pending")
+    when :accepted
+      s_("BookingStateName|Accepted")
+    when :rejected
+      s_("BookingStateName|Rejected")
+    when :canceled
+      s_("BookingStateName|Canceled")
+    else
+      s_("BookingStateName|Undefined")
+    end
+  end
+
   def other_user_for(booking)
     current_user == booking.user ? booking.boat.user : booking.user
   end

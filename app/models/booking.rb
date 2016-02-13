@@ -64,6 +64,9 @@ class Booking < ActiveRecord::Base
 
   after_commit :init_days, on: :create
 
+  # Not used by aasm, but useful for the views
+  STATES = [:pending, :accepted, :rejected, :canceled].freeze
+
   def duration_in_days
     duration_in_seconds = end_time - start_time
     (duration_in_seconds.to_i / (24 * 60 * 60)) + 1

@@ -4,38 +4,15 @@
     <span class="caret"></span>
   <% end %>
   <ul class="dropdown-menu" role="menu">
-
-    <% if current_user.bookings.pending.any? %>
-      <li role="presentation">
-        <%= link_to my_bookings_path do %>
-          <%= _("Pending") %>
-          <span class="pull-right">(<%= current_user.bookings.pending.count %>)</span>
-        <% end %>
-      </li>
-    <% end %>
-    <% if current_user.bookings.accepted.any? %>
-      <li role="presentation">
-        <%= link_to my_bookings_path do %>
-          <%= _("Accepted") %>
-          <span class="pull-right">(<%= current_user.bookings.accepted.count %>)</span>
-        <% end %>
-      </li>
-    <% end %>
-    <% if current_user.bookings.rejected.any? %>
-      <li role="presentation">
-        <%= link_to my_bookings_path do %>
-          <%= _("Rejected") %>
-          <span class="pull-right">(<%= current_user.bookings.rejected.count %>)</span>
-        <% end %>
-      </li>
-    <% end %>
-    <% if current_user.bookings.canceled.any? %>
-      <li role="presentation">
-        <%= link_to my_bookings_path do %>
-          <%= _("Canceled") %>
-          <span class="pull-right">(<%= current_user.bookings.canceled.count %>)</span>
-        <% end %>
-      </li>
+    <% Booking::STATES.each do |state| %>
+      <% if current_user.bookings.send(state).any? %>
+        <li role="presentation">
+          <%= link_to my_bookings_path do %>
+            <%= booking_state_name state %>
+            <span class="pull-right">(<%= current_user.bookings.send(state).count %>)</span>
+          <% end %>
+        </li>
+      <% end %>
     <% end %>
     <li role="presentation" class="divider"></li>
     <li role="presentation"><%= link_to _("All"), my_bookings_path %></li>
