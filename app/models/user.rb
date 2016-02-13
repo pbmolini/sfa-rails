@@ -67,21 +67,11 @@ class User < ActiveRecord::Base
   # MAILBOXER: Reply to conversation with booking state change message
   # more coherent with Mailboxer own methods
   def reply_with_booking_state_change(conversation, booking)
-    message = ""
-    case booking.aasm_state
-    when "accepted"
-      message = _("I accept your booking. Enjoy my boat!")
-    when "rejected"
-      message = _("Sorry, I reject your booking.")
-    when "canceled"
-      message = _("Sorry, I must cancel this booking.")
-    end
-
     BookingStateMessage.new({
       :sender       => self,
       :conversation => conversation,
       :recipients   => [booking.user],
-      :body         => message,
+      :body         => booking.state_change_message,
       :subject      => conversation.subject,
       :booking_state_change => booking.aasm_state
     }).deliver
