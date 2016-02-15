@@ -1,0 +1,20 @@
+<% content_for :title, @subject %>
+<% content_for :logo_img, @receiver == @guest ? "orange" : "blue" %>
+
+<p>
+	<% if @receiver == @reviewer %>
+		<%= s_("MailBodyNewReview|You have left a review about the following booking") %>
+	<% else %>
+		<%= s_("MailBodyNewReview|%{reviewer} have left a review about the following booking") %{reviewer: @reviewer.name} %>
+	<% end %>
+</p>
+
+<%= render 'shared/booking_table' %>
+
+<p>
+  <%= (s_("MailBodyNewReview|Go to the details of the booking and read the full review!")).html_safe %>
+</p>
+<h1 class="read-message-btn">
+  <%#= NOTE: the usual url boat_booking_url(@boat, @booking) doesn't work here %>
+  <%= link_to s_("MailBodyNewReview|Go to the booking"), boat_booking_url(boat_id: @boat.id, id: @booking.id) %>
+</h1>

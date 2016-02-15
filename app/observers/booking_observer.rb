@@ -11,7 +11,7 @@ class BookingObserver < ActiveRecord::Observer
 
 		# The email to the guest is sent here
 		# TODO: This is awful, find a more elegant way to send this email
-		BookingMessageMailer.new_message_email(conversation.messages.first, booking.user, I18n.locale.to_s)
+		BookingMessageMailer.new_message_email(conversation.messages.first, booking.user, I18n.locale.to_s).deliver_later
 	end
 
 	private

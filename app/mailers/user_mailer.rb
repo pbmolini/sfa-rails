@@ -5,7 +5,7 @@ class UserMailer < ActionMailer::Base
 	include Devise::Controllers::UrlHelpers # Optional. eg. `confirmation_url`
 
 	layout 'user_mailer'
-  default from: "SeaForAll <hello@seaforall.com>"
+  default from: "Sea for All <hello@seaforall.com>"
 
   def welcome_email user, locale
     I18n.locale = locale.to_sym

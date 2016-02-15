@@ -1,20 +1,20 @@
-<% content_for :title, s_("BookingAcceptedMailTitle|Booking accepted for %{boat_name}") %{boat_name: @boat.name} %>
+<% content_for :title, s_("MailTitleBookingAccepted|Booking accepted for %{boat_name}") %{boat_name: @boat.name} %>
 <% content_for :logo_img, @receiver == @guest ? "orange" : "blue" %>
 <% if @receiver == @guest %>
  	<%# Guest %>
 	<p>
-		<%= s_("BookingAcceptedMailBody|%{host_name} has accepted your booking for %{boat_name}") %{host_name: @host.name, boat_name: @boat.name} %>
+		<%= s_("MailBodyBookingAccepted|%{host_name} has accepted your booking for %{boat_name}") %{host_name: @host.name, boat_name: @boat.name} %>
 	</p>
 	<p>
-	  <%= (s_("BookingAcceptedMailBody|Review the details of the booking, get in touch with %{host_name} and enjoy the boat trip!") %{host_name: @host.name}).html_safe %>
+	  <%= (s_("MailBodyBookingAccepted|Review the details of the booking, get in touch with %{host_name} and enjoy the boat trip!") %{host_name: @host.name}).html_safe %>
 	</p>
 <% else %>
 	<%# Host %>	
 	<p>
-		<%= s_("BookingAcceptedMailBody|You have accepted a booking for %{boat_name}") %{boat_name: @boat.name} %>
+		<%= s_("MailBodyBookingAccepted|You have accepted a booking for %{boat_name}") %{boat_name: @boat.name} %>
 	</p>
 	<p>
-	  <%= (s_("BookingAcceptedMailBody|Review the details of the booking, get in touch with %{guest_name} and make the experience on your boat unforgettable!") %{guest_name: @guest.name}).html_safe %>
+	  <%= (s_("MailBodyBookingAccepted|Review the details of the booking, get in touch with %{guest_name} and make the experience on your boat unforgettable!") %{guest_name: @guest.name}).html_safe %>
 	</p>
 <% end %>
 
@@ -22,5 +22,5 @@
 
 <h1 class="read-message-btn">
   <%#= NOTE: the usual url boat_booking_url(@boat, @booking) doesn't work here %>
-  <%= link_to s_("BookingAcceptedMailBody|Go to the booking"), boat_booking_url(boat_id: @boat.id, id: @booking.id) %>
+  <%= link_to s_("MailBodyBookingAccepted|Go to the booking"), boat_booking_url(boat_id: @boat.id, id: @booking.id) %>
 </h1>

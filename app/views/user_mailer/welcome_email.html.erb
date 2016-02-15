@@ -1,25 +1,25 @@
-<% content_for :title, s_("WelcomeMailTitle|Welcome to Sea for All!") %>
+<% content_for :title, s_("MailTitleWelcome|Welcome to Sea for All!") %>
 <% content_for :logo_img, "blue" %>
 <p>
-	<%= s_("WelcomeMailBody|Welcome and thanks for joining Sea for All!") %>
+	<%= s_("MailBodyWelcome|Welcome and thanks for joining Sea for All!") %>
 </p>
 <p>
-	<strong><%= s_("WelcomeMailBody|Do you want to spend some days on a boat?") %></strong>
-	<%= s_("WelcomeMailBody|Find the right boat for you, anywhere you like!") %>
+	<strong><%= s_("MailBodyWelcome|Do you want to spend some days on a boat?") %></strong>
+	<%= s_("MailBodyWelcome|Find the right boat for you, anywhere you like!") %>
 </p>
-<h2><%= link_to s_("WelcomeMailBody|Start now"), root_url %></h2>
+<h2><%= link_to s_("MailBodyWelcome|Start now"), root_url %></h2>
 <p>
-	<strong><%= s_("WelcomeMailBody|Have you got a boat and want to share it?") %></strong>
-	<%= s_("WelcomeMailBody|Register your first boat and get ready to share it with other people like you!") %>
+	<strong><%= s_("MailBodyWelcome|Have you got a boat and want to share it?") %></strong>
+	<%= s_("MailBodyWelcome|Register your first boat and get ready to share it with other people like you!") %>
 </p>
-<h2><%= link_to s_("WelcomeMailBody|Register your boat"), new_boat_url %></h2>
+<h2><%= link_to s_("MailBodyWelcome|Register your boat"), new_boat_url %></h2>
 <p>
-	<strong><%= s_("WelcomeMailBody|Present yourself at the best") %></strong>
-	<%= s_("WelcomeMailBody|to enjoy all the features offered by Sea for All!") %>
+	<strong><%= s_("MailBodyWelcome|Present yourself at the best") %></strong>
+	<%= s_("MailBodyWelcome|to enjoy all the features offered by Sea for All!") %>
 </p>
-<h2><%= link_to s_("WelcomeMailBody|Complete your profile"), edit_user_registration_url %></h2>
+<h2><%= link_to s_("MailBodyWelcome|Complete your profile"), edit_user_registration_url %></h2>
 <p>
-	<%= (s_("WelcomeMailBody|For any help just visit our awesome %{help_page} or contact us by replying to this email.") %{help_page: link_to(_("help page"), page_url(id: :help, locale: I18n.locale))}).html_safe %>
+	<%= (s_("MailBodyWelcome|For any help just visit our awesome %{help_page} or contact us by replying to this email.") %{help_page: link_to(_("help page"), page_url(id: :help, locale: I18n.locale))}).html_safe %>
 </p>
 <p>
 	<%= _("Thank you") %>,

@@ -1,14 +1,14 @@
-<% content_for :title, s_("BookingRejectedMailTitle|Booking rejected for %{boat_name}") %{boat_name: @boat.name} %>
+<% content_for :title, s_("MailTitleBookingRejected|Booking rejected for %{boat_name}") %{boat_name: @boat.name} %>
 <% content_for :logo_img, @receiver == @guest ? "orange" : "blue" %>
 <% if @receiver == @guest %>
  	<%# Guest %>
 	<p>
-		<%= s_("BookingRejectedMailBody|%{host_name} has rejected your booking for %{boat_name}") %{host_name: @host.name, boat_name: @boat.name} %>
+		<%= s_("MailBodyBookingRejected|%{host_name} has rejected your booking for %{boat_name}") %{host_name: @host.name, boat_name: @boat.name} %>
 	</p>
 <% else %>
 	<%# Host %>	
 	<p>
-		<%= s_("BookingRejectedMailBody|You have rejected a booking for %{boat_name}") %{boat_name: @boat.name} %>
+		<%= s_("MailBodyBookingRejected|You have rejected a booking for %{boat_name}") %{boat_name: @boat.name} %>
 	</p>
 <% end %>
 
@@ -16,5 +16,5 @@
 
 <h1 class="read-message-btn">
   <%#= NOTE: the usual url boat_booking_url(@boat, @booking) doesn't work here %>
-  <%= link_to s_("BookingRejectedMailBody|Go to the booking"), boat_booking_url(boat_id: @boat.id, id: @booking.id) %>
+  <%= link_to s_("MailBodyBookingRejected|Go to the booking"), boat_booking_url(boat_id: @boat.id, id: @booking.id) %>
 </h1>

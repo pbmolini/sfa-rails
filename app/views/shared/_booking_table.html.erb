@@ -1,10 +1,14 @@
-<table class="booking-message">
+<table align="center" class="booking-message">
   <thead>
     <tr>
       <th colspan="2"><h3><%= s_("BookingTableMailer|Details of the booking") %></h3></th>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td><%= s_("BookingTableMailer|Boat") %></td>
+      <td><%= @booking.boat.name %></td>
+    </tr>
     <tr>
       <td><%= s_("BookingTableMailer|Start") %></td>
       <td><%= @booking.first_day_in_locale %></td>

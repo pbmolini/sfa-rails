@@ -3,7 +3,7 @@ class BookingStateMailer < ActionMailer::Base
 	include Roadie::Rails::Automatic
 
 	layout 'user_mailer'
-  default from: "SeaForAll <hello@seaforall.com>"
+  default from: "Sea for All <hello@seaforall.com>"
 
   def send_email(receiver, booking, state, locale)
   	case state
@@ -22,10 +22,7 @@ class BookingStateMailer < ActionMailer::Base
 	def booking_accepted(receiver, booking, locale)
 		I18n.locale = locale.to_sym
 		@receiver = receiver
-		@booking = booking
-		@boat = booking.boat
-		@guest = @booking.user
-		@host = @boat.user
+		setup_mailer_from booking
 		subj = ""
 		if @receiver == @guest
 			# Guest
@@ -40,10 +37,7 @@ class BookingStateMailer < ActionMailer::Base
 	def booking_rejected(receiver, booking, locale)
 		I18n.locale = locale.to_sym
 		@receiver = receiver
-		@booking = booking
-		@boat = booking.boat
-		@guest = @booking.user
-		@host = @boat.user
+		setup_mailer_from booking
 		subj = ""
 		if @receiver == @guest
 			# Guest
@@ -59,10 +53,7 @@ class BookingStateMailer < ActionMailer::Base
 		I18n.locale = locale.to_sym
 		@canceler = booking.canceled_by_id.present? ? User.find(booking.canceled_by_id) : nil
 		@receiver = receiver
-		@booking = booking
-		@boat = booking.boat
-		@guest = @booking.user
-		@host = @boat.user
+		setup_mailer_from booking
 		subj = ""
 		if @receiver == @guest
 			# Guest
@@ -74,4 +65,12 @@ class BookingStateMailer < ActionMailer::Base
 		mail to: @receiver.email, subject: subj, template_name: 'booking_canceled'
 	end
 	
+	private
+
+	def setup_mailer_from(booking)
+		@booking = booking
+		@boat = booking.boat
+		@guest = @booking.user
+		@host = @boat.user
+	end
 end

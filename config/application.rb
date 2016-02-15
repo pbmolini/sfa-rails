@@ -24,7 +24,7 @@ module SfaRails
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.active_record.observers = :user_observer, :boat_observer, :booking_observer
+    config.active_record.observers = :user_observer, :boat_observer, :booking_observer, :review_observer
     # Make delayed_job the Queue Adapter
     config.active_job.queue_adapter = :delayed_job
 
