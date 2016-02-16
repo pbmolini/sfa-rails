@@ -10,8 +10,17 @@
       <%= f.input :rating %>
     </div>
     <div class="col-md-8">
-      <%= f.input :comment %>
-      <span class="comment-length">Min. 42, Max. 512</span>
+      <%= f.input :comment, placeholder: _("Enter at least 42 characters") %>
+      <div class="comment-length">
+        <span id="char-to-go">
+          <span id="comment-min-length">42</span>
+          characters to go,
+        </span>
+        <span id="char-left">
+          <span id="comment-max-length">512</span>
+          characters left
+        </span>
+      </div>
     </div>
   </div>
   <%= f.input :reviewee_id, as: :hidden %>
@@ -21,4 +30,12 @@
       <%= f.button :submit, class: 'btn btn-lg btn-block btn-success' %>
     </div>
   </div>
+<% end %>
+
+<% content_for :scripts  do %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#review_comment").keyup(countChar)
+    });
+  </script>
 <% end %>
