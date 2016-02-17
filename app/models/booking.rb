@@ -112,6 +112,11 @@ class Booking < ActiveRecord::Base
     end_time < Time.now
   end
 
+  # Return an array containing the reviews
+  def reviews
+    ([host_review] + [guest_review]).compact
+  end
+
   private
 
   def minimum_booking_period

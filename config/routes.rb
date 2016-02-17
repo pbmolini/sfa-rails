@@ -31,7 +31,7 @@ Rails.application.routes.draw do
         get :reject, on: :member
         patch :cancel, on: :member
         post :reply, on: :member
-        resources :reviews, only: [:new, :create]
+        resources :reviews, only: [:new, :create, :index]
       end
       resources :boat_features_sets, as: :features_sets # to avoid boat_boat_features_sets_path
       resources :days, only: [:index, :create, :destroy]

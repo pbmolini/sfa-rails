@@ -7,8 +7,15 @@ class ReviewsController < ApplicationController
 	before_action :set_boat, only: [:new, :create, :index]
 	before_action :set_booking, only: [:new, :create]
 
+	# This index action controls the list of reviews for:
+	# * a booking
+	# * a boat
+	# * a user
+	# Please preserve the order of the condition
 	def index
-		if @boat.present? # for boat's reviews [path: /boats/:boat_id/reviews]
+		if @booking.present? # for booking's reviews [path: /boats/:boat_id/bookings/:booking_id/reviews]
+			@reviews = @booking.reviews
+		elsif @boat.present? # for boat's reviews [path: /boats/:boat_id/reviews]
 			@reviews = @boat.reviews
 		else # for user's reviews [path: /reviews]
 			authenticate_user!

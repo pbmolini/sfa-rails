@@ -155,6 +155,15 @@
         </div>
       </div>
     </div>
+    <% if @booking.reviews.any? %>
+      <div class="row">
+        <div class="col-sm-12 booking-reviews">
+          <p class="text-center">
+            <%= link_to _("Reviews for this booking"), boat_booking_reviews_path(@boat, @booking) %>
+          </p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
