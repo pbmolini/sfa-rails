@@ -1,6 +1,10 @@
 <div class="row">
 	<div class="col-md-4">
-		<p><%= review.rating %></p>
+		<div class="rating">
+      <% 1.upto(5) do |rating| %>
+        <%= fa_icon "star#{'-o' if rating > review.rating} 2x", class: 'rating-star' %>
+      <% end %>
+    </div>
 		<p><%= review.reviewer.name %></p>
 	</div>
 	<div class="col-md-8">

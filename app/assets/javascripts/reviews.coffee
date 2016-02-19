@@ -13,5 +13,4 @@ window.countChar = (e) ->
   if (len > 512) 
     textarea.val(textarea.val().substring(0, 512))
   else 
-  	$('#comment-max-length').text(512 - len)
-  
+  	$('#comment-max-length').text(512 - len) 

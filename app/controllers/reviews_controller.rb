@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
 			@reviews = @booking.reviews
 		elsif @boat.present? # for boat's reviews [path: /boats/:boat_id/reviews]
 			@reviews = @boat.reviews
-		else # for user's reviews [path: /reviews]
+		else # for current_user's reviews [path: /reviews]
 			authenticate_user!
 			@sent_reviews = current_user.sent_reviews
 			@received_reviews = current_user.received_reviews

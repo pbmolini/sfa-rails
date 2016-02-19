@@ -9,3 +9,20 @@
 	@extend .help-block, .text-right;
 	font-size: .8em;
 }
+
+.rating {
+  .rating-star {
+  	display: inline-block;
+	  position: relative;
+    padding-right: 5px;
+    margin-left: -5px;
+    color: #e3cf7a;
+  }
+  .selected {
+  	@extend .fa-star;
+  }
+}
+
+.as-pointer {
+	cursor: pointer;
+}

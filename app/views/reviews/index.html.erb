@@ -1,3 +1,11 @@
+<% if @booking.present? %>
+  <% title s_("Title|Booking's reviews") %>
+<% elsif @boat.present? %>
+  <% title s_("Title|Reviews about %{boat_name}") %{boat_name: @boat.name} %>
+<% else %>
+  <% title s_("Title|Your reviews") %>
+<% end %>
+
 <div class="row">
   <div class="col-md-8 col-md-offset-2 text-center">
     <h1>Listing Reviews</h1>

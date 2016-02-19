@@ -7,7 +7,13 @@
 
   <div class="row">
     <div class="col-md-4">
-      <%= f.input :rating %>
+      <%= f.label _("Rating"), required: true %>
+      <%= f.input :rating, as: :hidden %>
+      <div class="rating as-pointer">
+        <% 1.upto(5) do |rating| %>
+          <%= fa_icon 'star-o 2x', class: 'rating-star', data: { rating: rating }, id: "rating-#{rating}" %>
+        <% end %>
+      </div>
     </div>
     <div class="col-md-8">
       <%= f.input :comment, placeholder: _("Enter at least 42 characters") %>
@@ -34,8 +40,29 @@
 
 <% content_for :scripts  do %>
   <script type="text/javascript">
+
     $(document).ready(function () {
-      $("#review_comment").keyup(countChar)
+      $("#review_comment").keyup(countChar);
+      $('.rating-star')
+      .on('mouseover', function(e) {
+        var rating = $(e.target).data('rating');
+        // riempi tutte le stelle
+        $('.rating-star').removeClass('fa-star-o').addClass('fa-star');
+        // svuota quelle a destra di quella su cui è il mouse
+        $('.rating-star#rating-' + rating + ' ~ .rating-star').removeClass('fa-star').addClass('fa-star-o');
+      })
+      .on('mouseleave', function (e) {
+        // svuota le stelle, ma non quelle '.selected'
+        $('.rating-star').removeClass('fa-star').addClass('fa-star-o');
+      })
+      .on('click', function(e) {
+        var rating = $(e.target).data('rating');
+        $('#review_rating').val(rating);
+        // riempi tutte le stelle usando la classe '.selected'
+        $('.rating-star').removeClass('fa-star-o').addClass('selected');
+        // svuota quelle a destra di quella selezionata
+        $('.rating-star#rating-' + rating + ' ~ .rating-star').removeClass('selected').addClass('fa-star-o');
+      })
     });
   </script>
 <% end %>
