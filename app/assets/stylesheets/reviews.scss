@@ -10,7 +10,34 @@
 	font-size: .8em;
 }
 
+.review-card {
+	@extend .row;
+	background: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  .review-left-by {
+  	text-align: center;
+  	.reviewer {
+  		display: block;
+  		padding-top: 5px;
+  		font-size: 0.85em;
+  	  color: darkgray;
+  	}
+  	img {
+  		border: 1px solid darkgray;
+  	}
+  }
+  .review-left-at {
+  	padding: 10px;
+  	font-size: 0.75em;
+    color: darkgray;
+  }
+}
+
 .rating {
+	text-align: center;
+	padding: 10px 0px 0px 0px;
   .rating-star {
   	display: inline-block;
 	  position: relative;

@@ -37,6 +37,7 @@ en:
       long: "%B %d, %Y"
       short: "%b %d"
       sfa_short: "%d %B"
+      sfa_review: "%B %Y"
     month_names:
     -
     - January

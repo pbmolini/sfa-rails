@@ -1,13 +1,21 @@
-<div class="row">
+<div class="review-card">
 	<div class="col-md-4">
 		<div class="rating">
       <% 1.upto(5) do |rating| %>
-        <%= fa_icon "star#{'-o' if rating > review.rating} 2x", class: 'rating-star' %>
+        <%= fa_icon "star#{'-o' if rating > review.rating}", class: 'rating-star' %>
       <% end %>
     </div>
-		<p><%= review.reviewer.name %></p>
+    <hr>
+		<p class="review-left-by">
+			<%= image_tag review.reviewer.image.url(:thumb), class: 'chat-user-avatar' %>
+			<span class="reviewer"><%= review.reviewer.name %></span>
+		</p>
 	</div>
 	<div class="col-md-8">
 		<%= review.comment %>
+		<p class="review-left-at">
+			<%= s_("ReviewCard|Left on") %>
+			<%= l(review.created_at.to_date, format: :sfa_review) %>
+		</p>
 	</div>
 </div>

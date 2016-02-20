@@ -36,6 +36,7 @@ it:
       long: "%d %B %Y"
       short: "%d %b"
       sfa_short: "%d %B"
+      sfa_review: "%B %Y"
     month_names:
     -
     - gennaio
