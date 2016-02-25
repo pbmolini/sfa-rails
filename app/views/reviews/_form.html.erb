@@ -7,26 +7,31 @@
 
   <div class="row">
     <div class="col-md-4">
-      <%= f.label _("Rating"), required: true %>
-      <%= f.input :rating, as: :hidden %>
-      <div class="rating as-pointer">
-        <% 1.upto(5) do |rating| %>
-          <%= fa_icon 'star-o 2x', class: 'rating-star', data: { rating: rating }, id: "rating-#{rating}" %>
-        <% end %>
-      </div>
+      <%= f.label _("Rating") %>
+      <%= f.input :rating, label: false do %>
+        <%= f.input_field :rating, as: :hidden %>
+        <div class="rating as-pointer">
+          <% 1.upto(5) do |rating| %>
+            <%= fa_icon 'star-o 2x', class: 'rating-star', data: { rating: rating }, id: "rating-#{rating}" %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
     <div class="col-md-8">
-      <%= f.input :comment, placeholder: _("Enter at least 42 characters") %>
-      <div class="comment-length">
-        <span id="char-to-go">
-          <span id="comment-min-length">42</span>
-          characters to go,
+      <p>
+        <strong>Comment</strong>
+        <span class="comment-length">
+          <span id="char-to-go">
+            <span id="comment-min-length">42</span>
+            <%= s_("ReviewChars|characters to go") %>,
+          </span>
+          <span id="char-left">
+            <span id="comment-max-length">512</span>
+            <%= s_("ReviewChars|left") %>
+          </span>
         </span>
-        <span id="char-left">
-          <span id="comment-max-length">512</span>
-          characters left
-        </span>
-      </div>
+      </p>
+      <%= f.input :comment, placeholder: _("Enter at least 42 characters"), label: false %>
     </div>
   </div>
   <%= f.input :reviewee_id, as: :hidden %>
