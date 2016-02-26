@@ -10,9 +10,11 @@ class BookingsController < ApplicationController
   # GET /bookings
   # GET /bookings.json
   def index
-    @bookings = @boat.bookings.order start_time: :desc
+    @bookings = @boat.bookings.order start_time: :asc
     @expired_bookings = @bookings.select &:has_expired?
-    @active_bookings = @bookings - @expired_bookings
+    @canceled_bookings = @bookings.select &:canceled?
+    @rejected_bookings = @bookings.select &:rejected?
+    @active_bookings = @bookings - @expired_bookings - @canceled_bookings - @rejected_bookings
   end
 
   def my_bookings

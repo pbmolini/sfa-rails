@@ -1,5 +1,9 @@
 class AddCanceledByToBookings < ActiveRecord::Migration
-  def change
-    add_reference :bookings, :canceled_by, index: true, foreign_key: true
+  def up
+    add_reference :bookings, :canceled_by, references: :users, index: true
+    add_foreign_key :posts, :users, column: :canceled_by_id
+  end
+  def down
+  	remove_column :bookings, :canceled_by_id
   end
 end

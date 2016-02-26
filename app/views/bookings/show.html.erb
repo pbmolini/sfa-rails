@@ -143,8 +143,8 @@
           <% end %>
           <% if can? :cancel, @booking %>
           <p class="cancel">
-            <small><%= _("BookingActionHintText|Do you want to cancel this booking?") %></small>
-            <%= link_to(_("BookingActionBtnText|Cancel"), '#', class: 'btn btn-xs btn-danger', data: { toggle: 'modal', target: '#cancellation-modal' }) %>
+            <small><%= s_("BookingActionHintText|Do you want to cancel this booking?") %></small>
+            <%= link_to(s_("BookingActionBtnText|Cancel"), '#', class: 'btn btn-xs btn-danger', data: { toggle: 'modal', target: '#cancellation-modal' }) %>
           </p>
           <% end %>
           <% if can?(:create, @review) %>

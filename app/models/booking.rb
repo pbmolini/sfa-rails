@@ -44,7 +44,7 @@ class Booking < ActiveRecord::Base
         toggle_calendar_days aasm_state
         # Add an automatic message to the conversation
         # conversation = boat.user.mailbox.conversations.find_by booking_id: id
-        boat.user.reply_with_booking_state_change(conversation, self)
+        self.canceled_by.reply_with_booking_state_change(conversation, self)
         # TODO: send a wroth email
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later

@@ -17,6 +17,22 @@
         </div>
       </div>
     <% end %>
+    <% if @rejected_bookings.any? %>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h2><%= _("Rejected Bookings") %></h2>
+          <%= render 'bookings_list', bookings: @rejected_bookings %>
+        </div>
+      </div>
+    <% end %>
+    <% if @canceled_bookings.any? %>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h2><%= _("Canceled Bookings") %></h2>
+          <%= render 'bookings_list', bookings: @canceled_bookings %>
+        </div>
+      </div>
+    <% end %>
     <% if @expired_bookings.any? %>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">

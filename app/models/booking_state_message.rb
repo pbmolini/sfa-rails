@@ -4,7 +4,7 @@ class BookingStateMessage < Mailboxer::Message
     super({
       sender: sender,
       conversation: conversation,
-      recipients: [booking.user],
+      recipients: [ recipient_for(sender, booking) ],
       subject: conversation.subject,
       body: body || state_change_message(booking),
       booking_state_change: booking.aasm_state
@@ -25,6 +25,14 @@ class BookingStateMessage < Mailboxer::Message
       _("Sorry, I reject your booking.")
     when :canceled
       _("Sorry, I must cancel this booking.")
+    end
+  end
+
+  def recipient_for sender, booking
+    if sender == booking.user
+      booking.boat.user
+    else
+      booking.user
     end
   end
 end
