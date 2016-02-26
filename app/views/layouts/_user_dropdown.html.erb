@@ -6,10 +6,10 @@
   <% end %>
   <ul class="dropdown-menu" role="menu">
     <% if current_user.boats.any? %>
-      <li role="presentation"><%= link_to _("My Boats"), dashboard_path %></li>
+      <li role="presentation"><%= link_to(fa_icon('tachometer', text:_("Dashboard")), dashboard_path) %></li>
     <% end %>
-    <li role="presentation"><%= link_to _("My Profile"), edit_user_registration_path %></li>
+    <li role="presentation"><%= link_to(fa_icon('user', text: _("My Profile")), edit_user_registration_path) %></li>
     <li role="presentation" class="divider"></li>
-    <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+    <li role="presentation"><%= link_to(fa_icon('sign-out', text: "Logout"), destroy_user_session_path, method: :delete) %></li>
   </ul>
 </li>
