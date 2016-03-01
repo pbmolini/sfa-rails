@@ -3,7 +3,10 @@ class DaysController < ApplicationController
   load_and_authorize_resource :day, through: :boat
   before_action :set_boat
 
+  add_breadcrumb Proc.new { |c| c.fa_icon('tachometer') }, :dashboard_path, only: [:index]
+
   def index
+    add_breadcrumb @boat.name, boat_path(@boat)
     @days = @boat.days.inject({}) { |acc,d| acc[d.date.to_s] = {availability: d.availability, booking_id: d.booking_id, id: d.id}; acc }
 
     respond_to do |format|

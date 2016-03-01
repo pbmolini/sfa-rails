@@ -1,10 +1,11 @@
 <% title s_("Title|Bookings for %{boat_name}") %{boat_name: @boat.name} %>
+<%= render 'shared/breadcrumbs', display: 'calendar' %>
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 text-center">
       <h1>
         <%= _("Bookings for %{boat_name}") %{boat_name: @boat.name} %>
-        <%= link_to fa_icon('calendar'), boat_days_path(@boat), class: 'btn btn-primary btn-lg pull-right' %>
+        <%# link_to fa_icon('calendar'), boat_days_path(@boat), class: 'btn btn-primary btn-lg pull-right' %>
       </h1>
     </div>
   </div>

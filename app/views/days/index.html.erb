@@ -1,12 +1,10 @@
 <% title s_("Title|Availability of %{boat_name}") %{boat_name: @boat.name} %>
+<%= render 'shared/breadcrumbs', display: 'list' %>
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 text-center">
       <h1>
         <%= _("Availability") %>
-        <% if @boat.bookings.any? %>
-          <%= link_to fa_icon('list-ul'), boat_bookings_path(@boat), class: 'btn btn-primary btn-lg pull-right' %>
-        <% end %>
       </h1>
     </div>
   </div>

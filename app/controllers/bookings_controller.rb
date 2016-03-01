@@ -7,9 +7,12 @@ class BookingsController < ApplicationController
   before_action :get_mailbox
   before_action :get_conversation, only: [:show, :reply]
 
+  add_breadcrumb Proc.new { |c| c.fa_icon('tachometer') }, :dashboard_path, only: [:index, :show]
+
   # GET /bookings
   # GET /bookings.json
   def index
+    add_breadcrumb @boat.name, boat_path(@boat)
     @bookings = @boat.bookings.order start_time: :desc
     @expired_bookings = @bookings.select &:has_expired?
     @canceled_bookings = @bookings.select &:canceled?
@@ -24,6 +27,8 @@ class BookingsController < ApplicationController
   # GET /bookings/1
   # GET /bookings/1.json
   def show
+    add_breadcrumb @boat.name, boat_path(@boat)
+    add_breadcrumb(_("Bookings"), boat_bookings_path(@boat)) if can? :edit, @boat
     @other_user = current_user_is_guest? ? @booking.boat.user : @booking.user
     
     # The @review is used by can? for displaying the Review button

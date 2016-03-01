@@ -7,16 +7,23 @@ class ReviewsController < ApplicationController
 	before_action :set_boat, only: [:new, :create, :index]
 	before_action :set_booking, only: [:new, :create]
 
+	add_breadcrumb Proc.new { |c| c.fa_icon('tachometer') }, :dashboard_path, only: [:index, :new], if: :current_user_present?
+
 	# This index action controls the list of reviews for:
 	# * a booking
 	# * a boat
 	# * a user
 	# Please preserve the order of the condition
 	def index
-		if @booking.present? # for booking's reviews [path: /boats/:boat_id/bookings/:booking_id/reviews]
-			@reviews = @booking.reviews
-		elsif @boat.present? # for boat's reviews [path: /boats/:boat_id/reviews]
-			@reviews = @boat.reviews
+		if @boat.present?
+			add_breadcrumb(@boat.name, boat_path(@boat)) if current_user_present?
+			if @booking.present? # for booking's reviews [path: /boats/:boat_id/bookings/:booking_id/reviews]
+				add_breadcrumb _("Bookings"), boat_bookings_path(@boat) if can? :edit, @boat
+	    	add_breadcrumb @booking.title, boat_booking_path(@boat, @booking)
+				@reviews = @booking.reviews
+			else # for boat's reviews [path: /boats/:boat_id/reviews]
+				@reviews = @boat.reviews
+			end
 		else # for current_user's reviews [path: /reviews]
 			authenticate_user!
 			@sent_reviews = current_user.sent_reviews
@@ -26,6 +33,9 @@ class ReviewsController < ApplicationController
 	end
 
 	def new
+		add_breadcrumb @boat.name, boat_path(@boat)
+    add_breadcrumb _("Bookings"), boat_bookings_path(@boat)
+    add_breadcrumb @booking.title, boat_booking_path(@boat, @booking)
 		# Use the 'new' and not the 'build_association' because
 		# the latter UPDATEs the record if it already exists
 		# Anyway CanCan should not allow to get here
@@ -74,6 +84,10 @@ class ReviewsController < ApplicationController
 
     def review_params
       params.require(:review).permit(:rating, :comment, :reviewee_id)
+    end
+
+    def current_user_present?
+    	current_user.present?
     end
 end
 

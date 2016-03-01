@@ -54,6 +54,9 @@ gem 'bootstrap-will_paginate'
 # Will Paginate
 gem 'will_paginate'
 
+# Breadcrumbs
+gem 'breadcrumbs_on_rails'
+
 # Auth
 gem 'devise'
 gem 'devise-i18n'
