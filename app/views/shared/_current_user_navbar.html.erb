@@ -1,0 +1,28 @@
+<nav class="current-user-navbar navbar navbar-default navbar-static-top hidden-xs">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-nav">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse main-nav">
+      <ul class="nav navbar-nav">
+    		<%= render_breadcrumbs tag: :li, separator: "" %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      	<li>
+      		<% if can? :edit, @boat %>		
+				  	<% if display == 'calendar' %>
+				  		<%= link_to fa_icon('calendar'), boat_days_path(@boat) %>
+				  	<% end %>
+				  	<% if display == 'list' and @boat.bookings.any? %>
+				      <%= link_to fa_icon('list-ul'), boat_bookings_path(@boat) %>
+				    <% end %>
+			  	<% end %>
+      	</li>
+      </ul>
+    </div>
+  </div>
+</nav>

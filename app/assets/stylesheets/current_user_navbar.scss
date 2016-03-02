@@ -1,0 +1,11 @@
+nav.current-user-navbar.navbar {
+	margin-top: -20px;
+	ul.nav.navbar-nav {
+		li {
+			border-left: 1px solid lightgray;
+		}
+		li:last-of-type {
+			border-right: 1px solid lightgray;
+		}
+	}
+}

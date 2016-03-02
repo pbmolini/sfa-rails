@@ -14,6 +14,11 @@ module ApplicationHelper
 		content_for :title, page_title
 	end
 
+	# Show a sub-navbar filled with breadcrumbs for navigating boat/bookings/reviews/days/etc.
+	def current_user_navbar params={}
+		content_for :current_user_navbar, render('shared/current_user_navbar', params)
+	end
+
 	def tel_to(text)
     numbers = text.scan(/[0-9]+/).join("")
     link_to text, "tel:#{numbers}"
