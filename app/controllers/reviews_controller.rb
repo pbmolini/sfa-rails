@@ -34,7 +34,7 @@ class ReviewsController < ApplicationController
 
 	def new
 		add_breadcrumb @boat.name, boat_path(@boat)
-    add_breadcrumb _("Bookings"), boat_bookings_path(@boat)
+    add_breadcrumb _("Bookings"), boat_bookings_path(@boat) if can? :edit, @boat
     add_breadcrumb @booking.title, boat_booking_path(@boat, @booking)
 		# Use the 'new' and not the 'build_association' because
 		# the latter UPDATEs the record if it already exists
