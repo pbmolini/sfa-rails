@@ -3,24 +3,20 @@ nav.current-user-navbar.navbar {
 	margin-top: -20px;
 	ul.nav.navbar-nav {
 		li {
-			&:last-child {
-				a:after {
-					content: none;
+			&:first-child {
+				a {
+					padding-left: 0px;
 				}
-				&:first-child {
-					a{
-						padding-left: 0;
-					}
-				}
+			}
+			img.separator {
+				height: 50px;
 			}
 		}
-		li a {
-			padding-right: 4px;
-			padding-left: 3px;
-			
-			&:after {
-					content: " >";
-			}
+		li.active-bc-title {
+			color: lightgray;
+			padding-top: 13px;
+  		padding-bottom: 12px;
+  		padding-left: 15px;
 		}
 	}
 }

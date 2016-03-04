@@ -16,7 +16,7 @@ module ApplicationHelper
 
 	# Show a sub-navbar filled with breadcrumbs for navigating boat/bookings/reviews/days/etc.
 	def current_user_navbar params={}
-		content_for :current_user_navbar, render('shared/current_user_navbar', params)
+		content_for :current_user_navbar, render('shared/current_user_navbar', locals: params)
 	end
 
 	def tel_to(text)

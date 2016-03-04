@@ -1,3 +1,4 @@
+<%# Here locals{} is used avoid access to possible nil variables %>
 <nav class="current-user-navbar navbar navbar-default navbar-static-top hidden-xs">
   <div class="container">
     <div class="navbar-header">
@@ -9,15 +10,18 @@
     </div>
     <div class="collapse navbar-collapse main-nav">
       <ul class="nav navbar-nav">
-    		<%= render_breadcrumbs tag: :li, separator: "" %>
+    		<%= render_breadcrumbs tag: :li, 
+             separator: content_tag(:li, image_tag('arrow.svg', class: 'separator')), 
+             active_bc_title: content_tag(:li, locals[:active_bc_title], class: 'active-bc-title'), 
+             builder: SfaBuilder %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<li>
       		<% if can? :edit, @boat %>		
-				  	<% if display == 'calendar' %>
+				  	<% if locals[:display] == 'calendar' %>
 				  		<%= link_to fa_icon('calendar'), boat_days_path(@boat) %>
 				  	<% end %>
-				  	<% if display == 'list' and @boat.bookings.any? %>
+				  	<% if locals[:display] == 'list' and @boat.bookings.any? %>
 				      <%= link_to fa_icon('list-ul'), boat_bookings_path(@boat) %>
 				    <% end %>
 			  	<% end %>

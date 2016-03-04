@@ -1,5 +1,5 @@
 <% title s_("Title|Booking for %{boat_name}, %{boat_model}") %{boat_name: @boat.name, boat_model: @boat.model} %>
-<% current_user_navbar display: 'calendar' %>
+<% current_user_navbar active_bc_title: @booking.title, display: 'calendar' %>
 <div class="row">
   <div class="col-sm-8">
     <%# Chat %>
