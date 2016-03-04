@@ -1,11 +1,26 @@
 nav.current-user-navbar.navbar {
+	background: white;
 	margin-top: -20px;
 	ul.nav.navbar-nav {
 		li {
-			border-left: 1px solid lightgray;
+			&:last-child {
+				a:after {
+					content: none;
+				}
+				&:first-child {
+					a{
+						padding-left: 0;
+					}
+				}
+			}
 		}
-		li:last-of-type {
-			border-right: 1px solid lightgray;
+		li a {
+			padding-right: 4px;
+			padding-left: 3px;
+			
+			&:after {
+					content: " >";
+			}
 		}
 	}
 }
