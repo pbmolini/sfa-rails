@@ -4,6 +4,8 @@ class BoatsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :publish]
   before_action :set_boat, only: [:show, :edit, :update, :destroy, :publish]
 
+  add_breadcrumb Proc.new { |c| c.fa_icon('tachometer') }, :dashboard_path, if: :user_signed_in?
+
   # GET /boats
   # GET /boats.json
   def index

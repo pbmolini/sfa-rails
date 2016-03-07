@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
   before_action :get_mailbox
   before_action :get_conversation, only: [:show, :reply]
 
-  add_breadcrumb Proc.new { |c| c.fa_icon('tachometer') }, :dashboard_path, only: [:index, :show]
+  add_breadcrumb Proc.new { |c| c.fa_icon('tachometer') }, :dashboard_path, only: [:index, :show, :my_bookings]
 
   # GET /bookings
   # GET /bookings.json

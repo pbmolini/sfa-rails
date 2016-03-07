@@ -4,6 +4,8 @@ class PagesController < ApplicationController
 
   layout :layout_for_page
 
+  add_breadcrumb Proc.new { |c| c.fa_icon('tachometer') }, '', if: :user_signed_in?
+
   private
 
   # Custom authorization: CanCan skips this Controller

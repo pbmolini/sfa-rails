@@ -2,6 +2,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_filter :configure_sign_up_params, only: [:create]
   before_filter :configure_account_update_params, only: [:update]
 
+  add_breadcrumb Proc.new { |c| c.fa_icon('tachometer') }, :dashboard_path, only: [:edit], if: :user_signed_in?
+
   # GET /resource/sign_up
   # def new
   #   super

@@ -4,7 +4,7 @@ class SfaBuilder < BreadcrumbsOnRails::Breadcrumbs::SimpleBuilder
 	def render
     @elements.collect do |element|
       render_element(element)
-    end.push(@options[:active_bc_title]).join(@options[:separator] || " &rarr; ")
+    end.push(@options[:active_bc_title]).compact.join(@options[:separator] || " &rarr; ")
   end
 	
 	

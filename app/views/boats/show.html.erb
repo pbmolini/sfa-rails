@@ -1,4 +1,5 @@
 <% title @boat.name %>
+<% current_user_navbar active_bc_title: @boat.name %>
 <% if @boat.can_be_published? %>
   <%= content_for :fb_open_graph_tags do %>
     <!-- OpenGraph tags -->
