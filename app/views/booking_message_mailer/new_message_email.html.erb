@@ -14,9 +14,9 @@
 
 <p>
   <% if @receiver == @guest %>
-    <%= (s_("MailBodyNewBooking|Review the details of the booking, continue the conversation with %{sender_name} and enjoy the boat once %{sender_name} will have accepted the booking.") %{sender_name: @sender.name}).html_safe %>
+    <%= (s_("MailBodyNewBooking|Review the details of the booking, continue the conversation with %{host_name} and enjoy the boat once %{host_name} will have accepted the booking.") %{host_name: @host.name}).html_safe %>
   <% else %>
-    <%= (s_("MailBodyNewBooking|Review the details of the booking, reply to %{sender_name} and <strong>accept</strong> (or reject) the booking.") %{sender_name: @sender.name}).html_safe %>
+    <%= (s_("MailBodyNewBooking|Review the details of the booking, reply to %{guest_name} and <strong>accept</strong> (or reject) the booking.") %{guest_name: @guest.name}).html_safe %>
   <% end %>
 </p>
 

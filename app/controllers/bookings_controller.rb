@@ -81,7 +81,7 @@ class BookingsController < ApplicationController
 
   def reply
     current_user.reply_to_conversation(@conversation, params[:body])
-    flash[:success] = _('Reply sent')
+    flash[:success] = _('Message sent')
     redirect_to boat_booking_path(@boat, @booking)
   end
 

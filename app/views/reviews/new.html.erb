@@ -1,8 +1,8 @@
-<% title s_("Title|Review about %{boat_name}") %{boat_name: @boat.name} %>
+<% title s_("Title|Review your experience") %>
 <% current_user_navbar active_bc_title: _("New review")%>
 <div class="row">
 	<div class="col-md-8 col-md-offset-2 text-center">
-		<h1><%= _("Review your experience on %{boat_name}") %{boat_name: @boat.name} %></h1>
+		<h1><%= _("Review your experience with %{reviewee_name}") %{reviewee_name: @review.reviewee.first_name} %></h1>
 	</div>
 </div>
 <div class="row">
