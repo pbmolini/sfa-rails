@@ -37,13 +37,27 @@ class Boat < ActiveRecord::Base
   end
 
   # Other validations in COMPULSORY_FIELDS
-  validates :year, numericality: { greater_than_or_equal_to: 1900 }, on: :update, if: -> { complete? || complete_changed? }
-  validates :fuel_type, inclusion: { within: Boat::FUEL_TYPES }, on: :update, if: -> { complete? || complete_changed? }
-  validates :horse_power, numericality: { greater_than_or_equal_to: 0 }, on: :update, if: -> { complete? || complete_changed? }
-  validates :daily_price, numericality: { greater_than_or_equal_to: 1 }, on: :update, if: -> { complete? || complete_changed? }
-  validates :length, numericality: { greater_than_or_equal_to: 1 }, on: :update, if: -> { complete? || complete_changed? }
-  validates :guest_capacity, numericality: { greater_than_or_equal_to: 1 }, on: :update, if: -> { complete? || complete_changed? }
-  validates :pictures, presence: true, on: :update, if: -> { complete? || complete_changed? }
+  validates :year, 
+            numericality: { greater_than_or_equal_to: 1900 }, 
+            on: :update, if: -> { complete? || complete_changed? }
+  validates :fuel_type, 
+            inclusion: { within: Boat::FUEL_TYPES }, 
+            on: :update, if: -> { complete? || complete_changed? }
+  validates :horse_power, 
+            numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 10000 }, 
+            on: :update, if: -> { complete? || complete_changed? }
+  validates :daily_price, 
+            numericality: { greater_than_or_equal_to: 1 }, 
+            on: :update, if: -> { complete? || complete_changed? }
+  validates :length, 
+            numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 150 }, 
+            on: :update, if: -> { complete? || complete_changed? }
+  validates :guest_capacity, 
+            numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 42 }, 
+            on: :update, if: -> { complete? || complete_changed? }
+  validates :pictures, 
+            presence: true, 
+            on: :update, if: -> { complete? || complete_changed? }
   validate :max_pics, on: :update, if: -> { complete? || complete_changed? }
 
   after_validation :set_complete, on: :update
