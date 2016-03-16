@@ -30,6 +30,7 @@ class Boat < ActiveRecord::Base
 
   validates :rental_type, inclusion: { within: Boat::RENTAL_TYPES }
   validates :address, presence: true
+  validate :valid_address, if: -> { address.present? and address_changed? }
 
   # Presence validations on COMPULSORY_FIELDS
   Boat::COMPULSORY_FIELDS.each do |f|
@@ -101,6 +102,11 @@ class Boat < ActiveRecord::Base
   # end
 
   def max_pics
-    errors.add(:base, _("too many pictures (choose at most 10)")) unless pictures.size <= 10
+    errors.add(:base, s_("ValidationError|too many pictures (choose at most 10)")) unless pictures.size <= 10
   end
+
+  def valid_address
+    errors.add(:address, s_("ValidationError|doesn't seem to be a valid address")) if Geocoder.search(address).empty?  
+  end
+  
 end
