@@ -84,8 +84,9 @@ class Boat < ActiveRecord::Base
 
   private
 
+  # this MUST return a boolean, never nil
   def check_complete?
-    Boat::COMPULSORY_FIELDS.map { |f| self.send(f) }.reduce {|r,e| r && e} and
+    Boat::COMPULSORY_FIELDS.map { |f| self.send(f).present? }.reduce {|r,e| r && e} and
     self.pictures.any? and
     self.boat_features_set.safety_equipment?
   end
