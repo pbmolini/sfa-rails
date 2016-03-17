@@ -69,10 +69,21 @@ class BoatsController < ApplicationController
 
   def publish
     @boat.complete = true
+    # :complete is set to true so that the validations run. It is again set to 
+    # the real value in the model's 'after_validation'
     respond_to do |format|
-      if @boat.save
-        # TODO: mandare mail per avvenuta pubblicazione
-        format.html { redirect_to @boat, notice: _('Yay! You published your boat! Prepare to share it!') }
+      if @boat.save 
+        # after having saved, the boat must be :complete to be published
+        if @boat.complete?
+          # TODO: mandare mail per avvenuta pubblicazione
+          format.html { redirect_to @boat, 
+            notice: _('Yay! You published your boat! Prepare to share it!') 
+          }
+        else
+          format.html { redirect_to edit_boat_path(@boat), 
+            alert: _("Ops! Cannot publish this boat yet: please check all the compulsory fields") 
+          }
+        end
       else
         format.html { render :edit }
       end

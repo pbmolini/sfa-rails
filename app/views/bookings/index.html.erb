@@ -3,50 +3,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1 text-center">
-      <h1>
-        <%= _("Bookings for %{boat_name}") %{boat_name: @boat.name} %>
-        <%# link_to fa_icon('calendar'), boat_days_path(@boat), class: 'btn btn-primary btn-lg pull-right' %>
-      </h1>
+      <h1><%= _("Bookings for %{boat_name}") %{boat_name: @boat.name} %></h1>
     </div>
   </div>
-  <% if @bookings.any? %>
-    <% if @active_bookings.any? %>
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <h2><%= _("Active Bookings") %></h2>
-          <%= render 'bookings_list', bookings: @active_bookings %>
-        </div>
-      </div>
-    <% end %>
-    <% if @rejected_bookings.any? %>
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <h2><%= _("Rejected Bookings") %></h2>
-          <%= render 'bookings_list', bookings: @rejected_bookings %>
-        </div>
-      </div>
-    <% end %>
-    <% if @canceled_bookings.any? %>
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <h2><%= _("Canceled Bookings") %></h2>
-          <%= render 'bookings_list', bookings: @canceled_bookings %>
-        </div>
-      </div>
-    <% end %>
-    <% if @expired_bookings.any? %>
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <h2><%= _("Expired Bookings") %></h2>
-          <%= render 'bookings_list', bookings: @expired_bookings %>
-        </div>
-      </div>
-    <% end %>
-  <% else %>
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h3><%= _("No bookings yet") %></h3>
-    </div>
-  </div>
-  <% end %>
+  <%= render 'bookings_list_by_state' %>
 </div>

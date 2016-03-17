@@ -29,7 +29,7 @@
       <tr>
         <td width="500" valign="top" class="main-content">
           <p class="logo-host">
-            <%= link_to image_tag("http:#{img_path}".gsub("/#{I18n.locale}/", "/")), root_url %>
+            <%= link_to image_tag("http:#{img_path}".gsub("/#{I18n.locale}/", "/"), alt: yield(:title)), root_url %>
           </p>
           <p><%= _("Hi %{name}") %{name: @receiver.name } %></p>
 

@@ -14,14 +14,12 @@ class BookingsController < ApplicationController
   def index
     add_breadcrumb @boat.name, boat_path(@boat)
     @bookings = @boat.bookings.order start_time: :desc
-    @expired_bookings = @bookings.select &:has_expired?
-    @canceled_bookings = @bookings.select &:canceled?
-    @rejected_bookings = @bookings.select &:rejected?
-    @active_bookings = @bookings - @expired_bookings - @canceled_bookings - @rejected_bookings
+    split_by_state @bookings
   end
 
   def my_bookings
     @bookings = current_user.bookings.order start_time: :desc
+    split_by_state @bookings
   end
 
   # GET /bookings/1
@@ -155,6 +153,17 @@ class BookingsController < ApplicationController
 
     def current_user_is_guest?
       current_user == @booking.user
+    end
+
+    def split_by_state bookings
+      @pending_bookings = bookings.select &:pending?
+      @accepted_bookings = bookings.select &:accepted?
+      @canceled_bookings = bookings.select &:canceled?
+      @rejected_bookings = bookings.select &:rejected?
+      
+      # @expired_bookings = bookings.select &:has_expired?
+      
+      # @active_bookings = bookings - @expired_bookings - @canceled_bookings - @rejected_bookings
     end
 
 end

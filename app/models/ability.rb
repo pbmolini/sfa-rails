@@ -50,6 +50,7 @@ class Ability
       # if is complete and the booking's creator is not the boat's owner
       can :create, Booking do |booking|
         user.complete? and
+        booking.boat.complete? and
         booking.user == user and 
         booking.boat.user != user
       end

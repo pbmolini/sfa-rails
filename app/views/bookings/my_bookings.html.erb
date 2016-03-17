@@ -1,16 +1,10 @@
 <% title s_("Title|My Bookings")%>
 <% current_user_navbar active_bc_title: s_('Title|My Bookings') %>
-<div class="row">
-  <div class="col-sm-12 text-center">
-		<h1><%= _("My bookings") %></h1>
-  </div>
-</div>
-<div class="row">
-	<div class="col-md-10 col-md-offset-1">
-		<% if @bookings.any? %>
-			<%= render 'bookings_list', bookings: @bookings %>
-		<% else %>
-			<p><%= _("You have no bookings") %></p>
-		<% end %>
+<div class="container">
+	<div class="row">
+	  <div class="col-md-10 col-md-offset-1 text-center">
+			<h1><%= _("My bookings") %></h1>
+	  </div>
 	</div>
+	<%= render 'bookings_list_by_state' %>
 </div>

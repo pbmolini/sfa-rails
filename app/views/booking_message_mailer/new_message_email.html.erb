@@ -2,7 +2,7 @@
 <% content_for :logo_img, @receiver == @guest ? "orange" : "blue" %>
 <p>
   <% if @receiver == @guest %>
-    <%= s_("MailBodyNewBooking|You have created a new booking request for %{boat_name}:") %{boat_name: @boat.name} %>
+    <%= s_("MailBodyNewBooking|You have made a new booking request for %{boat_name}:") %{boat_name: @boat.name} %>
   <% else %>
     <%= s_("MailBodyNewBooking|You have received a new booking request for %{boat_name}:") %{boat_name: @boat.name} %>
   <% end %>
