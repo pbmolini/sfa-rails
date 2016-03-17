@@ -109,6 +109,8 @@ group :development do
   gem "binding_of_caller"
   gem 'gettext', '>=3.0.2', :require => false
   gem 'ruby_parser', :require => false
+
+  gem 'rails_real_favicon'
 end
 
 group :development, :test do

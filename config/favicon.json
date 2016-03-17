@@ -1,0 +1,40 @@
+{
+    "master_picture": "app/assets/images/sfa-logo-square-w.png",
+    "favicon_design": {
+        "ios": {
+            "picture_aspect": "background_and_margin",
+            "background_color": "#ffffff",
+            "margin": "14%",
+            "app_name": "Sea for All"
+        },
+        "desktop_browser": [
+
+        ],
+        "windows": {
+            "picture_aspect": "no_change",
+            "background_color": "#2b5797",
+            "on_conflict": "override",
+            "app_name": "Sea for All"
+        },
+        "android_chrome": {
+            "picture_aspect": "shadow",
+            "theme_color": "#ffffff",
+            "manifest": {
+                "name": "Sea for All",
+                "display": "browser",
+                "orientation": "not_set",
+                "on_conflict": "override",
+                "declared": true
+            }
+        },
+        "safari_pinned_tab": {
+            "picture_aspect": "black_and_white",
+            "threshold": 93.75,
+            "theme_color": "#5bbad5"
+        }
+    },
+    "settings": {
+        "scaling_algorithm": "Mitchell",
+        "error_on_image_too_small": false
+    }
+}
