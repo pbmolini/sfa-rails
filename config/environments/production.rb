@@ -4,12 +4,17 @@ Rails.application.configure do
   # SET THIS!!!!
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.smtp_settings = {
-    :port =>           '587',
-    :address =>        'smtp.mandrillapp.com',
-    :user_name =>      ENV['MANDRILL_USERNAME'],
-    :password =>       ENV['MANDRILL_APIKEY'],
-    :domain =>         'heroku.com',
-    :authentication => :plain
+    port:           '587',
+    # address:        'smtp.mandrillapp.com',
+    # user_name:      ENV['MANDRILL_USERNAME'],
+    # password:       ENV['MANDRILL_APIKEY'],
+    # domain:         'heroku.com',
+    address:        'smtp.sendgrid.net',
+    user_name:      ENV['SENDGRID_USERNAME'],
+    password:       ENV['SENDGRID_PASSWORD'],
+    enable_starttls_auto: true,
+    domain:         'seaforall.com',
+    authentication: :plain
   }
   config.action_mailer.delivery_method = :smtp
 
