@@ -19,6 +19,12 @@ class Booking < ActiveRecord::Base
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
         # Mail to host
         BookingStateMailer.send_email(boat.user, self, aasm_state, I18n.locale.to_s).deliver_later
+
+        # Enqueue the reminder to be sent at the end of the booking
+        # To the guest
+        ReviewReminderJob.set(wait_until: (end_time - 6.hours)).perform_later(self, user)
+        # To the host
+        ReviewReminderJob.set(wait_until: (end_time - 6.hours)).perform_later(self, boat.user)
       end
       transitions from: :pending, to: :accepted
     end
