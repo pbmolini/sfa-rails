@@ -1,0 +1,26 @@
+.search-form {
+  max-width: 600px;
+  margin: auto;
+  .form-control {
+    font-size: 20px;
+    height: 40px;
+  }
+  .btn {
+    height: 40px;
+    margin-bottom: 3px;
+  }
+}
+
+// Styles for Google Autocomplete
+// Don't touch unless you know what you are doing
+.pac-icon {
+  background: image-url('sfa-pin.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 4px;
+}
+
+.pac-item-selected .pac-icon {
+  background-position: center;
+}

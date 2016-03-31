@@ -1,8 +1,27 @@
-<input type="text" name="boat-search" id="boat-search-bar">
+<%= form_tag boats_path, method: :get, class: "search-form" do %>
+  <%= content_tag :div, class: 'input-group' do %>
+    <%= text_field_tag :search,
+                       params[:search],
+                       placeholder: _("Search"),
+                       class: "form-control input-large",
+                       id: 'boat-search-bar' %>
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="submit">
+        <%= fa_icon 'search', text: _('Search') %>
+      </button>
+    </span>
+  <% end %>
+
+  <%= hidden_field_tag :latitude, nil, id: 'search-latitude' %>
+  <%= hidden_field_tag :longitude, nil, id: 'search-longitude' %>
+<% end %>
+<!-- <input type="text" name="boat-search" id="boat-search-bar"> -->
 
 <%= content_for :scripts do %>
 <script type="text/javascript">
 (function () {
+  'use strict';
+
   var input = document.getElementById('boat-search-bar');
   var options = {
     componentRestrictions: {
@@ -13,7 +32,14 @@
   };
 
   var autocomplete = new google.maps.places.Autocomplete(input, options);
+  autocomplete.addListener('place_changed', fillInLatLng);
 
+  function fillInLatLng() {
+    var place = autocomplete.getPlace();
+    $('#boat-search-bar').val(place.name);
+    $('#search-latitude').val(place.geometry.location.lat());
+    $('#search-longitude').val(place.geometry.location.lng());
+  };
 })();
 </script>
 <% end %>
