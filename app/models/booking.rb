@@ -21,10 +21,12 @@ class Booking < ActiveRecord::Base
         BookingStateMailer.send_email(boat.user, self, aasm_state, I18n.locale.to_s).deliver_later
 
         # Enqueue the reminder to be sent at the end of the booking
+        # If the booking has expired, the Job is run in 2 minutes
+        execution_time = has_expired? ? end_time : 2.minutes.from_now
         # To the guest
-        ReviewReminderJob.set(wait_until: (end_time - 6.hours)).perform_later(self, user)
+        ReviewReminderJob.set(wait_until: execution_time).perform_later(self, user)
         # To the host
-        ReviewReminderJob.set(wait_until: (end_time - 6.hours)).perform_later(self, boat.user)
+        ReviewReminderJob.set(wait_until: execution_time).perform_later(self, boat.user)
       end
       transitions from: :pending, to: :accepted
     end
@@ -35,27 +37,33 @@ class Booking < ActiveRecord::Base
         # Add an automatic message to the conversation
         # conversation = boat.user.mailbox.conversations.find_by booking_id: id
         boat.user.reply_with_booking_state_change(conversation, self)
-        # TODO: send a sad email
+        # Send a sad email
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
         # Mail to host
         BookingStateMailer.send_email(boat.user, self, aasm_state, I18n.locale.to_s).deliver_later
+
+        # NOTE: the reminder jobs are not deleted, they are executed anyway and 
+        # they send the email only if the booking is still :accepted.
       end
       transitions from: :pending, to: :rejected
     end
 
     event :cancel do
       after do
-        # TODO: write_cancel_motivation
+
         toggle_calendar_days aasm_state
         # Add an automatic message to the conversation
         # conversation = boat.user.mailbox.conversations.find_by booking_id: id
         self.canceled_by.reply_with_booking_state_change(conversation, self)
-        # TODO: send a wroth email
+        # Send a wroth email
         # Mail to guest
         BookingStateMailer.send_email(user, self, aasm_state, I18n.locale.to_s).deliver_later
         # Mail to host
         BookingStateMailer.send_email(boat.user, self, aasm_state, I18n.locale.to_s).deliver_later
+
+        # NOTE: the reminder jobs are not deleted, they are executed anyway and 
+        # they send the email only if the booking is still :accepted.
       end
       transitions from: :accepted, to: :canceled, after: ->(canceled_by, reason) { update(canceled_by: canceled_by, cancellation_reason: reason) }
     end
