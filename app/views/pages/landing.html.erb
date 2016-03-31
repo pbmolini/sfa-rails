@@ -44,7 +44,7 @@
               <% else %>
                 <%= link_to "Italiano", locale: :it %>
               <% end %>
-    
+
             </li>
             <% if user_signed_in? %>
               <li class="dropdown">
@@ -82,6 +82,11 @@
       <%= s_("Landing|Looking for a boat to rent?") %>
       <strong><%= link_to s_("Landing|Leave us your email!"), "#leave-email" %></strong>
     </h3>
+
+    <div class="search-bar">
+      <%= render 'boats/search' %>
+    </div>
+
     <!--End mc_embed_signup-->
     <h2>#sharingissaving</h2>
   </div>

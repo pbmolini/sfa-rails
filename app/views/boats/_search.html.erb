@@ -1,0 +1,19 @@
+<input type="text" name="boat-search" id="boat-search-bar">
+
+<%= content_for :scripts do %>
+<script type="text/javascript">
+(function () {
+  var input = document.getElementById('boat-search-bar');
+  var options = {
+    componentRestrictions: {
+      country: 'it'
+    },
+    type: '(cities)', //in the future this will be the only supported param
+    types: ['(cities)'] //supported only until Feb. 17 2017
+  };
+
+  var autocomplete = new google.maps.places.Autocomplete(input, options);
+
+})();
+</script>
+<% end %>
