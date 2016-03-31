@@ -70,7 +70,7 @@ nav {
 }
 #hero {
   text-shadow: 0 1px 1px rgba(0,0,0,0.7);
-  height: 750px;
+  height: 550px;
   background: url("https://sfa-static.s3.amazonaws.com/img/3.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -88,7 +88,7 @@ nav {
   background: rgba(10,113,180,0.4);
   position: absolute;
   width: 100%;
-  height: 750px;
+  height: 550px;
   z-index: 1;
   top: 0;
 }
@@ -293,5 +293,70 @@ footer a:hover {
   .cookies-eu-link:hover {
     background: none;
     color: lightblue;
+  }
+}
+
+.welcome-title {
+  margin-top: 4em;
+}
+
+.home-search {
+  margin-top: 2em;
+  .form-group {
+    input {
+      width: 400px;
+      font-size: 19px;
+      height: 44px;
+      border-radius: 4px 0 0 4px;
+      border: 0;
+    }
+  }
+  .btn {
+    height: 44px;
+    font-size: 19px;
+    background: #fcb539;
+    color: white;
+    border: 0;
+    text-shadow: none;
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+#best-offers {
+  padding-bottom: 2em;
+
+  h2 {
+    margin-top: 2em;
+    margin-bottom: 1.8em;
+  }
+
+  .boat-offer {
+    display: block;
+  }
+
+  .picture-offer {
+    width: 100%;
+    height: 300px;
+  }
+
+  .boat-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-weight: bold;
+    font-size: 32px;
+    color: white;
+    letter-spacing: 1px;
+  }
+
+  .more-boats {
+    margin-top: 2em;
+    .btn {
+      background: #0f75bc;
+      color: white;
+      font-size: 18px;
+    }
   }
 }
