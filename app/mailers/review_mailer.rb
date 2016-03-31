@@ -17,6 +17,20 @@ class ReviewMailer < ActionMailer::Base
 		mail to: @receiver.email, subject: @subject
 	end
 
+	def remind_review(booking, receiver, locale)
+		I18n.locale = locale.to_sym
+		@receiver = receiver
+		@booking = booking
+		@guest = booking.user
+		@boat = booking.boat
+		@host = booking.boat.user
+		@other_user = @receiver == @host ? @guest : @host
+		@subject = s_("MailTitle|Review your experience")
+		@subject = (s_("MailTitle|Leave a review for %{boat_name}") %{boat_name: @boat.name}) if @receiver == @guest
+		@subject = (s_("MailTitle|Leave a review to %{guest_name}") %{guest_name: @guest.name}) if @receiver == @host
+		mail to: @receiver.email, subject: @subject
+	end
+
 	private
 
 	def setup_mailer_from(review)
