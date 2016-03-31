@@ -1,3 +1,8 @@
+$black: rgba(0,0,0,.87);
+$blue: #3A8CC2;
+$darkblue: #104466;
+$orange: #FAB647;
+
 #navbar .user-avatar {
   height: 24px;
   border-radius: 100%;
@@ -10,7 +15,7 @@
 
 .navbar-landing-link a {
   color: white;
-  
+
   &:hover, &:focus {
     text-decoration: underline !important;
     background-color: transparent !important;
@@ -240,7 +245,7 @@ footer a {
 footer a:hover {
   outline: none;
   color: #fff;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .mobile-navbar {
