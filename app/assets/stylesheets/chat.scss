@@ -11,18 +11,20 @@
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 
-.panel-default > .panel-heading {
-	color: #9A9A9A;
-	padding-left: 12px;
+.booking-show {
+	.panel-default > .panel-heading {
+		color: #9A9A9A;
+		padding-left: 12px;
 
-	.panel-user {
-		color: black;
-		font-size: 24px;
-		line-height: 24px;
-		margin: 0;
+		.panel-user {
+			color: black;
+			font-size: 24px;
+			line-height: 24px;
+			margin: 0;
 
-		img {
-			height: 45px;
+			img {
+				height: 45px;
+			}
 		}
 	}
 }

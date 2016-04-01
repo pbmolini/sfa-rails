@@ -25,16 +25,16 @@
             <h3><%= _("Personal info") %></h3>
             <div class="row">
               <div class="col-md-4">
-                <div class="row">
-                  <div class="col-sm-12 avatar-preview" id="avatar-preview">
+
+                  <div class="text-center" id="avatar-preview">
                     <%= f.label _("Profile picture")  %>
-                    <%= image_tag resource.image.url(:medium) %>
+                    <div class="avatar-preview"><%= image_tag resource.image.url(:medium) %></div>
                     <span class="btn btn-primary btn-file">
                       <%= _("Change avatar") %>&hellip; <%= f.input_field :image, as: :file, label: false, wrapper: false %>
                     </span>
                     <%= f.error :image, style: 'color: red' %>
                   </div>
-                </div>
+
                 <div class="row">
                   <div class="col-sm-12 text-center">
                     <%= f.input :bio, placeholder: _("Tell us something about you, and how much you love your boat!") %>

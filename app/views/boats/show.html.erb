@@ -166,7 +166,7 @@
                 <%= _("Registered %{time} ago") %{time: time_ago_in_words(@boat.user.created_at)} %>
               </li>
               <li>
-                <%= _("%{num} %{boat_pl} %{registered_pl}") %{num: @boat.user.boats.complete.count, boat_pl: n_("boat", "boats", @boat.user.boats.complete.count), registered_pl: n_("registered", "registered", @boat.user.boats.complete.count)} %>
+                <%= n_("%{count} boat registered", "%{count} boats registered", @boat.user.boats.complete.count) %{count: @boat.user.boats.complete.count} %>
               </li>
               <li>
                 <% if @boat.reviews.any? %>                  

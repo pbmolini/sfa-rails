@@ -18,6 +18,7 @@
   background: white;
   position: relative;
   padding-bottom: 1em;
+  border: 1px solid lightgrey;
 
   .boat-owner {
     position: absolute;
@@ -60,7 +61,9 @@
   }
 
   .boat-place {
+    @extend .ellipsized;
     width: 230px;
+    font-size: 16px;
   }
 
   a {
