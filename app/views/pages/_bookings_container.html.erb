@@ -4,6 +4,7 @@
   </div>
   <div class="panel-body">
     <%= render 'bookings/bookings_list', bookings: current_user.bookings.accepted.limit(3) %>
+    <br>
 		<% if current_user.bookings.accepted.count > 0 %>
     	<p class="text-center"><%= link_to _("View all"), my_bookings_path %></p>
 		<% end %>

@@ -2,8 +2,9 @@
 <% current_user_navbar active_bc_title: s_('Title|Dashboard') %>
 <div class="container dashboard">
   <div class="row">
-    <div class="col-md-2 hidden-sm hidden-xs">
+    <div class="col-md-2 hidden-sm hidden-xs gray-box">
       <div class="avatar-preview"><%= image_tag current_user.image.url(:medium) %></div>
+      <br>
       <p><%= link_to (n_("%{count} review", "%{count} reviews", current_user.received_reviews.count) %{count: current_user.received_reviews.count}), reviews_path %></p>
       <p><%= link_to _("My Bookings"), my_bookings_path %></p>
       <% if current_user.boats.any? %>
