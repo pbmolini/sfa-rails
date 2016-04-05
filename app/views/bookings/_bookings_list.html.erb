@@ -1,6 +1,7 @@
 <% bookings.each do |booking| %>
   <% other_user = other_user_for(booking) %>
-  <%= link_to boat_booking_path(booking.boat, booking), class: "list-group-item #{booking.aasm_state}" do %> 
+  <% role = current_user == booking.boat.user ? "host" : "guest" %>
+  <%= link_to boat_booking_path(booking.boat, booking), class: "list-group-item #{booking.aasm_state} #{role}" do %> 
     <div class="row">
       <div class="col-sm-1 hidden-xs">
         <% if current_user == booking.boat.user %>
