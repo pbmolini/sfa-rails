@@ -64,6 +64,11 @@ class User < ActiveRecord::Base
     # self.location.present? and self.phone.present? and self.birthdate.present?
   end
 
+  # All the bookings of all the user's boats
+  def boat_bookings
+    Booking.joins(:boat).merge(Boat.where(user: self))
+  end
+
   # MAILBOXER: Used by mailboxer, see https://github.com/mailboxer/mailboxer#emails
   def mailboxer_email(object)
     email unless object.is_a? BookingStateMessage and object.is_booking_state_change?
