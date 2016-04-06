@@ -68,3 +68,25 @@ p.legal-acceptance {
     height: 112px;
   }
 }
+
+.bookings-dropdown {
+  min-width: 200px;
+}
+
+.badge.booking-badge {
+  min-width: 32px;
+  line-height: 16px;
+  /* padding-bottom: 11px; */
+  /* margin-top: -3px; */
+  display: inline-block;
+  bottom: 2px;
+  font-size: 16px;
+  
+  &.badge-host {
+    background-color: $blue;
+  }
+
+  &.badge-guest {
+    background-color: $orange;
+  }
+}
