@@ -1,8 +1,10 @@
-<% title s_('Title|Edit Boat') %>
-<% current_user_navbar active_bc_title: s_('Title|Edit Boat') %>
+<% title s_('Title|Edit %{boat_name}') %{boat_name: @boat.name || _("boat")} %>
+<% current_user_navbar active_bc_title: s_('Title|Edit %{boat_name}') %{boat_name: @boat.name || _("boat")} %>
 <div class="container">
 	<div class="boat-edit">
 		<div class="col-md-10 col-md-offset-1">
+			<div class="container-fluid white-box">
+				
 			<% unless @boat.can_be_published? %>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 alert alert-warning">
@@ -21,7 +23,7 @@
 				</div>
 			<% end %>
 			<%# Usage of wrappers:https://github.com/plataformatec/simple_form/wiki/How-to-use-Bootstrap-3-input-group-in-Simple-Form %>
-			<h1><%= _('Edit Boat') %> <%= publish_boat_button(@boat) %></h1>
+			
       <%# when we load the page, if the boat has at least one pic (that can't be deleted) we don't show the message. Otherwise, we show it and in reload.js we hide it if a picture is added %>
       <% if @boat.pictures.empty? %>
         <p class="alert alert-danger" id="at_least_one_pic-notice">
@@ -49,6 +51,7 @@
           	<%= fa_icon "exclamation-circle" %> <span class="hidden-xs"><%= _("Danger Zone") %></span>
           </a>
         </li>
+        <%= publish_boat_button(@boat) %>
       </ul>
 
       <div class="tab-content">
@@ -85,6 +88,8 @@
 					</p>
 				</div>
 			</div>
+			</div>
+
 		</div>
 	</div>
 </div>

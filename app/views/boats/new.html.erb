@@ -3,64 +3,62 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
-      <div class="row">
-        <div class="col-sm-12 text-center">      
-    			<h1><%= _("New Boat") %></h1>
+      <div class="container-fluid white-box">
+        <div class="row">
+          <div class="col-sm-12 text-center">      
+      			<h1><%= _("New Boat") %></h1>
+          </div>
         </div>
-      </div>
-			<%# Usage of wrappers:https://github.com/plataformatec/simple_form/wiki/How-to-use-Bootstrap-3-input-group-in-Simple-Form %>
-			<%= simple_form_for @boat, html: { :multipart => true }, wrapper: :vertical_input_group,
-        wrapper_mappings: {
-          check_boxes: :horizontal_radio_and_checkboxes,
-          radio_buttons: :horizontal_radio_and_checkboxes,
-          file: :horizontal_file_input,
-          boolean: :vertical_boolean
-        } do |f| %>
-  			<%= f.error_notification %>
-  			<% @boat.errors[:base].each do |error| %>
-    			<p><%= error %></p>
+  			<%# Usage of wrappers:https://github.com/plataformatec/simple_form/wiki/How-to-use-Bootstrap-3-input-group-in-Simple-Form %>
+  			<%= simple_form_for @boat, html: { :multipart => true }, wrapper: :vertical_input_group,
+          wrapper_mappings: {
+            check_boxes: :horizontal_radio_and_checkboxes,
+            radio_buttons: :horizontal_radio_and_checkboxes,
+            file: :horizontal_file_input,
+            boolean: :vertical_boolean
+          } do |f| %>
+    			<%= f.error_notification %>
+    			<% @boat.errors[:base].each do |error| %>
+      			<p><%= error %></p>
+    			<% end %>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <%= f.association :boat_category,
+                  label: _('Boat category'),
+                  prompt: _("Select the category"),
+                  input_html: { class: 'form-control' },
+                  label_method: ->(obj) { _(obj.to_s).capitalize },
+                  required: false %>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-sm-12">
+              <%= f.input :rental_type,
+                  collection: Boat::RENTAL_TYPES,
+                  prompt: _("Select the type of rental"),
+                  label_method: ->(obj) { _(obj.to_s).capitalize },
+                  required: false %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">            
+              <%= f.input :address,
+                  placeholder: _("Where is your boat moored? E.g. Genoa, Italy"),
+                  required: false %>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-sm-12">
+    			   <%= f.button :submit, _("Create Boat"), class: "btn-boat-new" %> 
+            </div>
+          </div>
+
   			<% end %>
-
-        <div class="row">
-          <div class="col-sm-12">
-            <%= f.association :boat_category,
-                label: _('Boat category'),
-                prompt: _("Select the category"),
-                input_html: { class: 'form-control' },
-                label_method: ->(obj) { _(obj.to_s).capitalize },
-                required: false %>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-sm-12">
-            <%= f.input :rental_type,
-                collection: Boat::RENTAL_TYPES,
-                prompt: _("Select the type of rental"),
-                label_method: ->(obj) { _(obj.to_s).capitalize },
-                required: false %>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-12">            
-            <%= f.input :address,
-                placeholder: _("Where is your boat moored? E.g. Genoa, Italy"),
-                required: false %>
-          </div>
-        </div>
-
-				<%#= render 'fields', f: f %>
-        
-        <div class="row">
-          <div class="col-sm-12">
-  			   <%= f.button :submit, _("Create Boat"), class: "btn-boat-new" %> 
-          </div>
-        </div>
-
-			<% end %>
-
-			<%#= link_to 'Back', boats_path %>
+      </div>
 		</div>
 	</div>
 </div>

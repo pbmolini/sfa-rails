@@ -6,52 +6,35 @@
       <div class="avatar-preview"><%= image_tag current_user.image.url(:medium) %></div>
       <br>
       <p><%= link_to (n_("%{count} review", "%{count} reviews", current_user.received_reviews.count) %{count: current_user.received_reviews.count}), reviews_path %></p>
-      <p><%= link_to _("My Bookings"), my_bookings_path %></p>
+      <% if current_user.bookings.any? %>
+        <p><%= link_to _("My Bookings"), my_bookings_path %></p>
+      <% end %>
       <% if current_user.boats.any? %>
         <p><%= n_("%{count} boat", "%{count} boats", current_user.boats.count) %{count: current_user.boats.count} %></p>
       <% end %>
+      <p>
+        <small><%= current_user.boats.any? ? _("You own another boat?") : _("You own a boat?") %></small>
+        <br>
+        <%= link_to _("Register it now"), new_boat_path, class: 'btn btn-success' %>
+      </p>
     </div>
     <div class="col-md-10">
       <!-- Welcome message -->
-      <% if current_user.sign_in_count == 1 %>
-        <div class="panel panel-success">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <%= _("Welcome!") %>
-            </h3>
-          </div>
-          <div class="panel-body">
-            <p class="lead">
-              <%= _("Hi %{name}") %{name: current_user.first_name} %>,
-              <br>
-              <%= _("welcome to <strong>Sea for All</strong> and thank you for joining us!").html_safe %>
-            </p>
-            <p>
-              <%= _("This is your <em>dashboard</em>: from here you can access all the details of your boats, your bookings, your reviews and your profile. Enjoy <strong>Sea for All</strong>!").html_safe %>
-            </p>
-          </div>
-        </div>
+      <% unless current_user.boats.any? or current_user.bookings.any? %>
+        <%= render 'pages/dashboard/welcome_panel' %>
       <% end %>
 
       <%# Incomplete Profile %>
       <% unless current_user.complete? %>
-        <div class="panel panel-warning">
-          <div class="panel-heading">
-            <p class="panel-title"><%= _("Complete your profile") %></p>
-          </div>
-          <div class="panel-body">
-            <%= _("You must complete your profile both for booking a boat and for publishing your own boat.") %>
-            <%= link_to(_("Complete your profile"), edit_user_registration_path, class: 'btn btn-info btn-sm pull-right') %>
-          </div>
-        </div>
+        <%= render 'pages/dashboard/incomplete_profile' %>
       <% end %>
   
       <% if current_user.bookings.any? %>
-        <%= render 'bookings_container' %>        
+        <%= render 'pages/dashboard/bookings_panel' %>        
       <% end %>
       
       <% if current_user.boats.any? %>
-        <%= render 'boats_container' %>
+        <%= render 'pages/dashboard/boats_panel' %>
       <% end %>
 
     </div>
