@@ -1,0 +1,25 @@
+<% title s_("Title|My boats") %>
+<% current_user_navbar active_bc_title: s_('Title|My Boats') %>
+<p class="text-center">
+  <%= image_tag("mini-logo.png", height:"50px") %>
+</p>
+
+<div class="row">
+	<% if @boats.any? %>
+	  <% @boats.each do |boat| %>
+	    <%= render('boat_card', boat: boat) %>
+	  <% end %>
+	<% else %>
+	<div class="col-sm-10 col-sm-offset-1 text-center">
+		<p class="lead">
+			<%= s_("MyBoats|You have not registered any boat yet.") %>
+		</p>
+		<p>
+			<%= link_to s_("MyBoats|Register your boat now"), new_boat_path, class: 'btn btn-success btn-lg' %>
+		</p>
+		<p>
+			<%= inline_svg 'boat-launch', class: 'boat-launch' %>
+		</p>
+	</div>
+	<% end %>
+</div>

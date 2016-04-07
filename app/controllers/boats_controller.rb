@@ -1,7 +1,7 @@
 class BoatsController < ApplicationController
   load_and_authorize_resource
 
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :publish]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :publish, :my_boats]
   before_action :set_boat, only: [:show, :edit, :update, :destroy, :publish]
 
   add_breadcrumb Proc.new { |c| c.fa_icon('tachometer') }, :dashboard_path, if: :user_signed_in?
@@ -10,6 +10,10 @@ class BoatsController < ApplicationController
   # GET /boats.json
   def index
     @boats = Boat.all
+  end
+
+  def my_boats
+    @boats = current_user.boats.order('complete desc')
   end
 
   # GET /boats/1

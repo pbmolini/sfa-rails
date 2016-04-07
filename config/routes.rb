@@ -40,8 +40,9 @@ Rails.application.routes.draw do
 
     get 'reviews' => 'reviews#index', as: :reviews
 
-    # Guest's bookings
+    # All user's bookings
     get 'my_bookings' => 'bookings#my_bookings', as: :my_bookings
+    get 'my_boats' => 'boats#my_boats', as: :my_boats
 
     resources :boat_features
     resources :boat_categories

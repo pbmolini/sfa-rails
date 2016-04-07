@@ -10,7 +10,11 @@
         <p><%= link_to _("My Bookings"), my_bookings_path %></p>
       <% end %>
       <% if current_user.boats.any? %>
-        <p><%= n_("%{count} boat", "%{count} boats", current_user.boats.count) %{count: current_user.boats.count} %></p>
+        <p>
+          <%= link_to my_boats_path do %>
+            <% n_("%{count} boat", "%{count} boats", current_user.boats.count) %{count: current_user.boats.count} %>
+          <% end %>
+        </p>
       <% end %>
       <p>
         <small><%= current_user.boats.any? ? _("You own another boat?") : _("You own a boat?") %></small>
