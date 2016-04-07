@@ -1,5 +1,10 @@
 module BoatsHelper
 
+  # Returns boat's name if present, "boat" otherwise
+  def name_or_boat_for boat
+    boat.name.present? ? boat.name : _("boat")
+  end
+
   def publish_boat_button boat
     simple_form_for boat, url: publish_boat_url(boat), method: :post, html: { class: 'pull-right' } do |f|
       f.button :button, class: 'btn btn-success btn-lg' do

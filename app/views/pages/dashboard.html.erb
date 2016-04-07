@@ -34,7 +34,11 @@
       <% end %>
   
       <% if current_user.bookings.any? %>
-        <%= render 'pages/dashboard/bookings_panel' %>        
+        <%= render 'pages/dashboard/bookings_panel', bookings: current_user.bookings.accepted.limit(3), role: 'guest' %>        
+      <% end %>
+
+      <% if current_user.bookings.any? %>
+        <%= render 'pages/dashboard/bookings_panel', bookings: current_user.boat_bookings.accepted.limit(3), role: 'host' %>        
       <% end %>
       
       <% if current_user.boats.any? %>

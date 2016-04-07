@@ -1,5 +1,5 @@
-<% title s_('Title|Edit %{boat_name}') %{boat_name: @boat.name || _("boat")} %>
-<% current_user_navbar active_bc_title: s_('Title|Edit %{boat_name}') %{boat_name: @boat.name || _("boat")} %>
+<% title s_("Title|Edit %{boat_name}") %{boat_name: name_or_boat_for(@boat)} %>
+<% current_user_navbar active_bc_title: s_("Title|Edit %{boat_name}") %{boat_name: name_or_boat_for(@boat)} %>
 <div class="container">
 	<div class="boat-edit">
 		<div class="col-md-10 col-md-offset-1">

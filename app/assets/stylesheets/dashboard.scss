@@ -15,7 +15,12 @@
 	.bookings-panel {
 		@extend .panel, .panel-default;
 		.panel-heading {
-			background-color: $orange;
+			&.panel-guest {
+				background-color: $orange;
+			}
+			&.panel-host {
+				background-color: $blue;
+			}
 			.panel-title {
 				color: white;
 				font-size: 20px;

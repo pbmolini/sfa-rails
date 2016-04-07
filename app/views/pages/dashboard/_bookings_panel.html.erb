@@ -1,9 +1,11 @@
 <div class="bookings-panel">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= _("Latest bookings") %></h3>
+  <div class="panel-heading panel-<%= role %>">
+    <h3 class="panel-title">
+      <%= _("Latest bookings") %> <%= _("for your boats") if role == 'host' %>
+    </h3>
   </div>
   <div class="panel-body">
-    <%= render 'bookings/bookings_list', bookings: current_user.bookings.accepted.limit(3) %>
+    <%= render 'bookings/bookings_list', bookings: bookings %>
     <br>
 		<% if current_user.bookings.accepted.count > 0 %>
     	<p class="text-center"><%= link_to _("View all"), my_bookings_path %></p>
