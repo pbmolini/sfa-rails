@@ -133,7 +133,7 @@ li {
   list-style-type: none;
   padding: 0;
 }
-#users {
+#home-features {
   background: #fff;
   color: #0a71b4;
   position: relative;
@@ -358,5 +358,22 @@ footer a:hover {
       color: white;
       font-size: 18px;
     }
+  }
+}
+
+#call-to-action-bottom {
+  background: linear-gradient(rgba(41, 41, 41, 0.39), rgba(0, 0, 0, 0.2)), url('homepage-boat.jpg') center center; background-size: cover;
+  padding: 3em 0 2.8em 0;
+
+  p,h2 {
+    color: white;
+    text-align: center;
+  }
+
+  .btn {
+    height: 44px;
+    font-size: 19px;
+    background: #fcb539;
+    color: white;
   }
 }
