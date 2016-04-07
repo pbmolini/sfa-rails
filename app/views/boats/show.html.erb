@@ -10,7 +10,15 @@
     <meta property="og:url" content='<%= request.url %>' />
   <% end %>
 <% end %>
-
+<% unless @boat.user.complete? %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="alert alert-danger" role="alert">
+        <%= (s_("BoatShow|Almost done! You must <strong><a href='%{link}' class='alert-link'>complete your profile</a></strong> to make this boat visible to other people." %{link: edit_boat_path(@boat)})).html_safe %>
+      </div>
+    </div>
+  </div>
+<% end %>
 <div class="row boat-body">
   <%# Left Column %>
   <div class="col-sm-8 boat-info">

@@ -48,7 +48,7 @@
         </li>
         <li role="presentation">
           <a href="#boat_danger_zone" aria-controls="boat_danger_zone" role="tab" data-toggle="tab">
-          	<%= fa_icon "exclamation-circle" %> <span class="hidden-xs"><%= _("Danger Zone") %></span>
+          	<%= fa_icon "frown-o" %> <span class="hidden-xs"><%= _("Delete boat") %></span>
           </a>
         </li>
         <%= publish_boat_button(@boat) %>
@@ -70,22 +70,22 @@
 					<%= render 'pictures/fields' %>
 				</div>
 				<div role="tabpanel" class="tab-pane fade in" id="boat_danger_zone">
-					<h3><%= _("Be careful here...") %></h3>
-					<p class="alert alert-danger" role="alert">
-						<%= _("Tired of sharing your boat?") %>
-						<br>
+					<h3><%= _("If you leave now, we will miss you forever") %></h3>
+					<!-- <p class="alert alert-danger" role="alert"> -->
+						<p class="text-center"><%= inline_svg 'boat-launch', class: 'boat-launch' %></p>
+						<hr>
 						<% if @boat.bookings.pending.any? %>
-							<span>
+							<p>
 								<%=  _("You must accept or reject all the pending bookings of %{name} before removing it from Sea for All") %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name} %>
-							</span>
+							</p>
 						<% else %>
-						<%= link_to _("Remove %{name} from Sea for All") %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name},
-													boat_path(@boat),
-													method: :delete,
-													:class => 'alert-link',
-													data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name} } if can? :destroy, @boat %>
+							<p class="text-center">
+								<%= _("Tired of sharing your boat?") %>
+								<br>
+								<%= link_to _("Remove %{name} from Sea for All") %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name}, boat_path(@boat), method: :delete, class: 'btn btn-danger', data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name} } if can? :destroy, @boat %>
+							</p>
 						<% end %>
-					</p>
+					<!-- </p> -->
 				</div>
 			</div>
 			</div>

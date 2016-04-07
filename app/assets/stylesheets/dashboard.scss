@@ -1,5 +1,17 @@
 .dashboard {
 
+	.left-panel {
+		background: #CDE1EE;
+	  padding: 20px;
+	  border-radius: 5px;
+	  a {
+	  	color: black;
+	  }
+	  .btn {
+	  	color: white;
+	  }
+	}
+
 	.bookings-container {
 		@extend .container-fluid, .white-box;
 		margin-bottom: 10px;
@@ -16,7 +28,7 @@
 		@extend .panel, .panel-default;
 		.panel-heading {
 			&.panel-guest {
-				background-color: $orange;
+				background-color: $darkorange;
 			}
 			&.panel-host {
 				background-color: $blue;

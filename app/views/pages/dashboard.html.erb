@@ -2,7 +2,7 @@
 <% current_user_navbar active_bc_title: s_('Title|Dashboard') %>
 <div class="container dashboard">
   <div class="row">
-    <div class="col-md-2 hidden-sm hidden-xs gray-box">
+    <div class="col-md-2 hidden-sm hidden-xs left-panel">
       <div class="avatar-preview"><%= image_tag current_user.image.url(:medium) %></div>
       <br>
       <p><%= link_to (n_("%{count} review", "%{count} reviews", current_user.received_reviews.count) %{count: current_user.received_reviews.count}), reviews_path %></p>
@@ -16,10 +16,9 @@
           <% end %>
         </p>
       <% end %>
+      <hr>
       <p>
-        <small><%= current_user.boats.any? ? _("You own another boat?") : _("You own a boat?") %></small>
-        <br>
-        <%= link_to _("Register it now"), new_boat_path, class: 'btn btn-success' %>
+        <%= link_to _("Register a boat"), new_boat_path, class: 'btn btn-success btn-block' %>
       </p>
     </div>
     <div class="col-md-10">

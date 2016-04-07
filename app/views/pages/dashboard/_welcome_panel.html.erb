@@ -12,7 +12,7 @@
     </p>
     <p>
       <%= (_("This is your <em>Dashboard</em>: from here you can access all the details of your %{boats_link}, %{bookings_link}, %{reviews_link} and %{profile_link}. Enjoy <strong>Sea for All</strong>!") %{ 
-        boats_link: link_to(_('boats'), '#'),
+        boats_link: link_to(_('boats'), my_boats_path),
         bookings_link: link_to(_('bookings'), my_bookings_path),
         reviews_link: link_to(_('reviews'), reviews_path),
         profile_link: link_to(_('profile'), edit_user_registration_path) 
