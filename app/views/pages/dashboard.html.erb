@@ -3,7 +3,7 @@
 <div class="container dashboard">
   <div class="row">
     <div class="col-md-2 hidden-sm hidden-xs left-panel">
-      <div class="avatar-preview"><%= image_tag current_user.image.url(:medium) %></div>
+      <div class="user-pic"><%= image_tag current_user.image.url(:medium) %></div>
       <br>
       <p><%= link_to (n_("%{count} review", "%{count} reviews", current_user.received_reviews.count) %{count: current_user.received_reviews.count}), reviews_path %></p>
       <% if current_user.bookings.any? %>

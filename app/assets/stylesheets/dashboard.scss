@@ -10,6 +10,16 @@
 	  .btn {
 	  	color: white;
 	  }
+
+		.user-pic {
+		  @extend .text-center;
+		   img {
+		    width: 100%;
+		    border: 2px solid lightgrey;
+		    border-radius: 5px;
+		    background-color: white;
+		   }
+		}
 	}
 
 	.bookings-container {
