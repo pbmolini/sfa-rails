@@ -169,7 +169,7 @@
 
 .map-alert {
   p {
-    @extend .alert, .alert-danger;
+    @extend .alert, .alert-info;
     padding: 5px;
     margin-bottom: 5px;
     text-align: center;

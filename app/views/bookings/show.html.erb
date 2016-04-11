@@ -1,6 +1,6 @@
 <% title s_("Title|Booking for %{boat_name}, %{boat_model}") %{boat_name: @boat.name, boat_model: @boat.model} %>
 <% current_user_navbar active_bc_title: @booking.title, display: 'calendar' %>
-<div class="row">
+<div class="row booking-show">
   <div class="col-sm-8">
     <%# Chat %>
     <div class="row">
@@ -177,7 +177,7 @@
     element.scrollTop = element.scrollHeight;
     // });
     $('#booking-period-help-icon').tooltip({
-      title: '<%= _("Tell us whether you accepted or rejected this booking. This way you can leave and receive a feedback") %>',
+      title: '<%= _("Tell us whether you accepted or rejected this booking. This way you can leave and receive a review") %>',
       placement: 'auto'
     });
   </script>

@@ -1,0 +1,22 @@
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <%= _("Welcome!") %>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <p class="lead">
+      <%= _("Hi %{name}") %{name: current_user.first_name} %>,
+      <br>
+      <%= _("welcome to <strong>Sea for All</strong> and thank you for joining us!").html_safe %>
+    </p>
+    <p>
+      <%= (_("This is your <em>Dashboard</em>: from here you can access all the details of your %{boats_link}, %{bookings_link}, %{reviews_link} and %{profile_link}. Enjoy <strong>Sea for All</strong>!") %{ 
+        boats_link: link_to(_('boats'), my_boats_path),
+        bookings_link: link_to(_('bookings'), my_bookings_path),
+        reviews_link: link_to(_('reviews'), reviews_path),
+        profile_link: link_to(_('profile'), edit_user_registration_path) 
+      }).html_safe %>
+    </p>
+  </div>
+</div>

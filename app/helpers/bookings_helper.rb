@@ -53,6 +53,12 @@ module BookingsHelper
     end
   end
 
+  def bookings_counter_badge count, role
+    if count > 0
+      content_tag :span, count, class: "badge booking-badge badge-#{role}"
+    end
+  end
+
   def other_user_for(booking)
     current_user == booking.user ? booking.boat.user : booking.user
   end

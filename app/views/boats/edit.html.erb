@@ -1,8 +1,10 @@
-<% title s_('Title|Edit Boat') %>
-<% current_user_navbar active_bc_title: s_('Title|Edit Boat') %>
+<% title s_("Title|Edit %{boat_name}") %{boat_name: name_or_boat_for(@boat)} %>
+<% current_user_navbar active_bc_title: s_("Title|Edit %{boat_name}") %{boat_name: name_or_boat_for(@boat)} %>
 <div class="container">
 	<div class="boat-edit">
 		<div class="col-md-10 col-md-offset-1">
+			<div class="container-fluid white-box">
+				
 			<% unless @boat.can_be_published? %>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 alert alert-warning">
@@ -21,7 +23,7 @@
 				</div>
 			<% end %>
 			<%# Usage of wrappers:https://github.com/plataformatec/simple_form/wiki/How-to-use-Bootstrap-3-input-group-in-Simple-Form %>
-			<h1><%= _('Edit Boat') %> <%= publish_boat_button(@boat) %></h1>
+			
       <%# when we load the page, if the boat has at least one pic (that can't be deleted) we don't show the message. Otherwise, we show it and in reload.js we hide it if a picture is added %>
       <% if @boat.pictures.empty? %>
         <p class="alert alert-danger" id="at_least_one_pic-notice">
@@ -46,9 +48,10 @@
         </li>
         <li role="presentation">
           <a href="#boat_danger_zone" aria-controls="boat_danger_zone" role="tab" data-toggle="tab">
-          	<%= fa_icon "exclamation-circle" %> <span class="hidden-xs"><%= _("Danger Zone") %></span>
+          	<%= fa_icon "frown-o" %> <span class="hidden-xs"><%= _("Delete boat") %></span>
           </a>
         </li>
+        <%= publish_boat_button(@boat) %>
       </ul>
 
       <div class="tab-content">
@@ -67,24 +70,26 @@
 					<%= render 'pictures/fields' %>
 				</div>
 				<div role="tabpanel" class="tab-pane fade in" id="boat_danger_zone">
-					<h3><%= _("Be careful here...") %></h3>
-					<p class="alert alert-danger" role="alert">
-						<%= _("Tired of sharing your boat?") %>
-						<br>
+					<h3><%= _("If you leave now, we will miss you forever") %></h3>
+					<!-- <p class="alert alert-danger" role="alert"> -->
+						<p class="text-center"><%= inline_svg 'boat-launch', class: 'boat-launch' %></p>
+						<hr>
 						<% if @boat.bookings.pending.any? %>
-							<span>
+							<p>
 								<%=  _("You must accept or reject all the pending bookings of %{name} before removing it from Sea for All") %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name} %>
-							</span>
+							</p>
 						<% else %>
-						<%= link_to _("Remove %{name} from Sea for All") %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name},
-													boat_path(@boat),
-													method: :delete,
-													:class => 'alert-link',
-													data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name} } if can? :destroy, @boat %>
+							<p class="text-center">
+								<%= _("Tired of sharing your boat?") %>
+								<br>
+								<%= link_to _("Remove %{name} from Sea for All") %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name}, boat_path(@boat), method: :delete, class: 'btn btn-danger', data: { confirm: _('Are really you sure you want to delete %{name}?') %{name: @boat.name.blank? ? s_("Remove|this boat") : @boat.name} } if can? :destroy, @boat %>
+							</p>
 						<% end %>
-					</p>
+					<!-- </p> -->
 				</div>
 			</div>
+			</div>
+
 		</div>
 	</div>
 </div>

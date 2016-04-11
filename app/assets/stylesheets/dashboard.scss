@@ -1,29 +1,93 @@
-.dashboard-welcome {
-	background: white;
-	.btn {
+.dashboard {
+
+	.left-panel {
+		background: #CDE1EE;
+	  padding: 20px;
+	  border-radius: 5px;
+	  a {
+	  	color: black;
+	  }
+	  .btn {
+	  	color: white;
+	  }
+
+		.user-pic {
+		  @extend .text-center;
+		   img {
+		    width: 100%;
+		    border: 2px solid lightgrey;
+		    border-radius: 5px;
+		    background-color: white;
+		   }
+		}
+	}
+
+	.bookings-container {
+		@extend .container-fluid, .white-box;
+		margin-bottom: 10px;
+		border: 2px solid $orange;
+	}
+
+	.boats-container {
+		@extend .container-fluid, .white-box;
+		margin-bottom: 10px;
+		border: 2px solid $blue;
+	}
+
+	.bookings-panel {
+		@extend .panel, .panel-default;
+		.panel-heading {
+			&.panel-guest {
+				background-color: $darkorange;
+			}
+			&.panel-host {
+				background-color: $blue;
+			}
+			.panel-title {
+				color: white;
+				font-size: 20px;
+			}
+		}
+	}
+
+	.boats-panel {
+		@extend .panel, .panel-default;
+		.panel-heading {
+			background-color: $blue;
+			.panel-title {
+				color: white;
+				font-size: 20px;
+			}
+		}
+	}
+
+	.welcome {
+		background: white;
+		.btn {
+			margin-top: 1em;
+		}
+	}
+
+	.incomplete-header {
+		margin-top: 1em;
+		background: $orange;
+		padding-top: 10px;
+		padding-bottom: 5px;
+		color: white;
+	}
+
+	.incomplete-list {
+		margin-top: .5em;
+	}
+
+	.incomplete-profile {
+		@extend .alert, .alert-warning;
 		margin-top: 1em;
 	}
-}
 
-.dashboard-incomplete-header {
-	margin-top: 1em;
-	background: $orange;
-	padding-top: 10px;
-	padding-bottom: 5px;
-	color: white;
-}
-
-.dashboard-incomplete-list {
-	margin-top: .5em;
-}
-
-.dashboard-incomplete-profile {
-	@extend .alert, .alert-warning;
-	margin-top: 1em;
-}
-
-.dashboard-no-boats {
-	@extend .alert, .alert-info;
+	.no-boats {
+		@extend .alert, .alert-info;
+	}	
 }
 
 .wave {

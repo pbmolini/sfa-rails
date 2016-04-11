@@ -19,7 +19,14 @@ class BookingsController < ApplicationController
 
   def my_bookings
     @bookings = current_user.bookings.order start_time: :desc
-    split_by_state @bookings
+    @boat_bookings = current_user.boat_bookings
+    Booking::STATES.each do |state|
+      instance_variable_set("@#{state}_bookings", 
+        current_user.bookings.send(state).order(start_time: :desc) + 
+        current_user.boat_bookings.send(state).order(start_time: :desc)
+        ) # this creates @pending_bookings, @accepted_bookings, etc.
+    end
+    # split_by_state @bookings
   end
 
   # GET /bookings/1

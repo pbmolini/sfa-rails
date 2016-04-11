@@ -1,0 +1,32 @@
+<div class="boats-panel">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= _("Your boats") %></h3>
+  </div>
+  <div class="panel-body">
+
+    <% if current_user.boats.any? %>
+      <div class="row">
+        <% current_user.boats.order('complete desc').limit(3).each do |boat| %>
+          <%= render 'boats/boat_card', boat: boat %>
+        <% end %>
+      </div>
+      <p class="text-center"><%= link_to _("View all"), my_boats_path %></p>
+    <% else %>
+    <%# No Boats %>
+      <div class="row">
+        <div class="col-sm-12 no-boats">
+          <h2><%= _("No boats yet") %></h2>
+          <p><%= _("You have no boats registered in Sea for All yet. Register your first boat now! It's fast and easy.") %></p>
+          <p class="text-center">
+            <%= link_to _("Sure! Register my first boat"), new_boat_path, class: 'btn btn-success btn-lg' %>
+          </p>
+          <p class="text-center">
+            <small>
+              <%= (_("Need help? Visit our wonderful %{help_page_link}!") %{help_page_link: link_to(_("help page"), page_path('help', locale: I18n.locale))}).html_safe %>
+            </small>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

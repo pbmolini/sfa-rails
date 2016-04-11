@@ -51,6 +51,9 @@ p.legal-acceptance {
   @extend .text-center;
    img {
     height: 150px;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    background-color: white;
    }
 }
 
@@ -63,5 +66,27 @@ p.legal-acceptance {
   textarea {
     resize: none;
     height: 112px;
+  }
+}
+
+.bookings-dropdown {
+  min-width: 200px;
+}
+
+.badge.booking-badge {
+  min-width: 32px;
+  line-height: 16px;
+  /* padding-bottom: 11px; */
+  /* margin-top: -3px; */
+  display: inline-block;
+  bottom: 2px;
+  font-size: 16px;
+  
+  &.badge-host {
+    background-color: $blue;
+  }
+
+  &.badge-guest {
+    background-color: $orange;
   }
 }

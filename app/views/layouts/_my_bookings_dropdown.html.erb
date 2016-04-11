@@ -3,13 +3,16 @@
     <%= fa_icon("anchor", text: _("My Bookings")) %>
     <span class="caret"></span>
   <% end %>
-  <ul class="dropdown-menu" role="menu">
+  <ul class="dropdown-menu bookings-dropdown" role="menu">
     <% Booking::STATES.each do |state| %>
-      <% if current_user.bookings.send(state).any? %>
+      <% if current_user.bookings.send(state).any? or current_user.boat_bookings.send(state).any? %>
         <li role="presentation">
           <%= link_to my_bookings_path(anchor: state) do %>
             <%= booking_state_name state %>
-            <span class="pull-right">(<%= current_user.bookings.send(state).count %>)</span>
+            <span class="pull-right">
+              <%= bookings_counter_badge current_user.boat_bookings.send(state).count, 'host' %>
+              <%= bookings_counter_badge current_user.bookings.send(state).count, 'guest' %>
+            </span>
           <% end %>
         </li>
       <% end %>

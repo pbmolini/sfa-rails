@@ -1,88 +1,49 @@
 <% title s_("Title|Dashboard") %>
 <% current_user_navbar active_bc_title: s_('Title|Dashboard') %>
-<div class="container">
+<div class="container dashboard">
   <div class="row">
-    <div class="col-sm-12 dashboard-welcome">
-      <%= image_tag("wave.png", class:"wave") %>
-      <%= link_to _("Register a new boat"), new_boat_path, class: 'btn btn-success pull-right' %>
-      <h3>
-        <%= _("Hi %{name}") %{name: current_user.first_name} %>,
-      </h3>
-      <p class="lead">
-        <%= _("Welcome to <strong>Sea for All</strong> and thank you for joining us!").html_safe %>
-      </p>
+    <div class="col-md-2 hidden-sm hidden-xs left-panel">
+      <div class="user-pic"><%= image_tag current_user.image.url(:medium) %></div>
+      <br>
+      <p><%= link_to (n_("%{count} review", "%{count} reviews", current_user.received_reviews.count) %{count: current_user.received_reviews.count}), reviews_path %></p>
+      <% if current_user.bookings.any? %>
+        <p><%= link_to _("My Bookings"), my_bookings_path %></p>
+      <% end %>
+      <% if current_user.boats.any? %>
+        <p>
+          <%= link_to my_boats_path do %>
+            <% n_("%{count} boat", "%{count} boats", current_user.boats.count) %{count: current_user.boats.count} %>
+          <% end %>
+        </p>
+      <% end %>
+      <hr>
       <p>
-        <%= _("This is your <em>dashboard</em>: from here you can access all the details of your boats and soon you will be able to manage your bookings.").html_safe %>
+        <%= link_to _("Register a boat"), new_boat_path, class: 'btn btn-success btn-block' %>
       </p>
     </div>
-  </div>
+    <div class="col-md-10">
+      <!-- Welcome message -->
+      <% unless current_user.boats.any? or current_user.bookings.any? %>
+        <%= render 'pages/dashboard/welcome_panel' %>
+      <% end %>
 
-  <%# Incomplete Profile %>
-  <% unless current_user.complete? %>
-  <div class="row">
-    <div class="col-md-12 dashboard-incomplete-profile">
-      <h2><%= _("Complete your profile") %></h2>
-      <p class="small">
-        <%= (_("%{profile_link_text} to <strong>publish</strong> your first boat. You can start the registration of as many boats you like, but they will be visible to other people once you have completed your profile.") %{profile_link_text: link_to(_("Complete your profile"), edit_user_registration_path)}).html_safe %>
-      </p>
-    </div>
-  </div>
-  <% end %>
-
-  <%# No Boats %>
-  <% unless current_user.boats.any? %>
-  <div class="row">
-    <div class="col-sm-12 dashboard-no-boats">
-      <h2><%= _("No boats yet") %></h2>
-      <p><%= _("You have no boats registered in Sea for All yet. Register your first boat now! It's fast and easy.") %></p>
-      <p class="text-center">
-        <%= link_to _("Sure! Register my first boat"), new_boat_path, class: 'btn btn-success btn-lg' %>
-      </p>
-      <p class="text-center">
-        <small>
-          <%= (_("Need help? Visit our wonderful %{help_page_link}!") %{help_page_link: link_to(_("help page"), page_path('help', locale: I18n.locale))}).html_safe %>
-        </small>
-      </p>
-    </div>
-  </div>
-  <% end %>
+      <%# Incomplete Profile %>
+      <% unless current_user.complete? %>
+        <%= render 'pages/dashboard/incomplete_profile' %>
+      <% end %>
   
-  <%# Incomplete Boats %>
-  <% if current_user.boats.incomplete.any? %>
-  <div class="row">
-    <div class="col-sm-12 dashboard-incomplete-header">
-      <h2>
-        <%= _("Incomplete boats") %> <small>(<%= _("Not ready for renting") %>)</small>
-      </h2>
-      <p>
-        <%= _("You have started the registration of %{num}") %{num: current_user.boats.incomplete.count} %>
-        <%= n_("boat", "boats", current_user.boats.incomplete.count) %>.
-        <% if current_user.boats.incomplete.count > 1 %>
-          <%= _("Complete the profiles of these boats to make them visible to your future guests.") %>
-        <% else %>
-          <%= _("Complete the profile of this boat to make it visible to your future guests.") %>
-        <% end %>
-      </p>
-    </div>
-  </div>
-  <div class="row dashboard-incomplete-list">
-    <% current_user.boats.incomplete.each do |boat| %>
-      <%= render 'boats/boat_card', boat: boat %>
-    <% end %>
-  </div>
-  <% end %>
+      <% if current_user.bookings.any? %>
+        <%= render 'pages/dashboard/bookings_panel', bookings: current_user.bookings.accepted.limit(3), role: 'guest' %>        
+      <% end %>
 
-  <%# Complete Boats %>
-  <% if current_user.boats.complete.any? %>
-  <div class="row">
-    <div class="col-sm-12">
-      <h2><%= _("Complete boats") %> <small>(<%= _("Soon ready for renting") %>)</small></h2>
+      <% if current_user.bookings.any? %>
+        <%= render 'pages/dashboard/bookings_panel', bookings: current_user.boat_bookings.accepted.limit(3), role: 'host' %>        
+      <% end %>
+      
+      <% if current_user.boats.any? %>
+        <%= render 'pages/dashboard/boats_panel' %>
+      <% end %>
+
     </div>
   </div>
-  <div class="row">
-    <% current_user.boats.complete.each do |boat| %>
-      <%= render 'boats/boat_card', boat: boat %>
-    <% end %>
-  </div>
-  <% end %>
 </div>

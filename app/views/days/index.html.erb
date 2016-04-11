@@ -11,7 +11,13 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1 calendar-col">
 
-      <p><%= _("Click on the days when your boat will not be available for renting. Click on a gray day to make it available again. Don't forget that reserved days cannot be modified.") %></p>
+      <p>
+        <%= _("Click on the days when your boat will not be available for renting. Click on a gray day to make it available again. Don't forget that reserved days cannot be modified.") %>
+        <br>
+        <small>
+          <%= _('Changes are automatically saved') %>
+        </small>
+      </p>
 
       <div class="availability-calendar-wrap">
         <div id="custom-inner" class="custom-inner">
@@ -37,17 +43,6 @@
     <div class="col-lg-2 calendar-legend unavailable-day"><%= fa_icon 'square 2x', text: _("Unavailable") %></div>
     <div class="col-lg-2 calendar-legend pending-day"><%= fa_icon 'square 2x', text: _("Requested") %></div>
     <div class="col-lg-2 calendar-legend accepted-day"><%= fa_icon 'square 2x', text: _("Booked") %></div>
-  </div>
-  <div class="row" style="margin-top: 1em;">
-    <div class="col-md-10 col-md-offset-1">
-      <p class="text-right">
-        <%= link_to _('Back to the boat!'), @boat, class: 'btn btn-primary btn-lg' %>
-        <br>
-        <small>
-          <%= _('Changes are automatically saved') %>
-        </small>
-      </p>
-    </div>
   </div>
 </div>
 

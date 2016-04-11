@@ -23,6 +23,8 @@ class Ability
 
       can [:crud, :publish], Boat, user_id: user.id
 
+      can :my_boats, Boat, user_id: user.id
+
       can [:read, :create], BoatFeaturesSet
 
       can :crud, BoatFeaturesSet do |bfs|

@@ -5,6 +5,7 @@ $black: rgba(0,0,0,.87);
 $blue: #3A8CC2;
 $darkblue: #104466;
 $orange: #FAB647;
+$darkorange: #FCA039;
 
 body, html {
 	font-family: "proxima-nova";
@@ -60,7 +61,7 @@ a.dropdown-toggle {
 	font-size: 16px;
 }
 
-.panel-body {
+.booking-show .panel-body {
 	padding: 0;
 
 	ul li {
