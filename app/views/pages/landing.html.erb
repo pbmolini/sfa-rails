@@ -68,100 +68,100 @@
       </div>
     </nav>
   </div>
-  <p class="text-center">
+  <p class="text-center welcome-title">
     <img class="logo" src="<%= aws_image_path_for 'sfa-logo-hor-white-navbar.png' %>" alt="SEA FOR ALL | Condividi la tua barca e risparmia sui costi di gestione">
   </p>
   <div class="hero-background"></div>
   <div class="container">
     <h1><%= s_("Landing|Share your boat with those who love the sea") %></h1>
-    <p>&nbsp;</p>
-    <h3><%= s_("Landing|Offset your ownership costs by listing your boat whenever and however you like") %></strong></h3>
 
-    <%= link_to s_("Landing|Register your boat"), new_user_registration_path, class: 'button btn btn-lg btn-mailchimp' %>
-    <h3 class="guest-msg">
-      <%= s_("Landing|Looking for a boat to rent?") %>
-      <strong><%= link_to s_("Landing|Leave us your email!"), "#leave-email" %></strong>
-    </h3>
-    <!--End mc_embed_signup-->
-    <h2>#sharingissaving</h2>
+    <form class="form-inline home-search">
+      <div class="form-group">
+        <input type="text" class="form-control" id="exampleInputName2" placeholder="Porto di partenza">
+      </div><button type="submit" class="btn btn-default">Cerca barca</button>
+    </form>
   </div>
 </div>
 
-<div id="users">
-<div class="pattern"></div>
+<div id="best-offers" class="container">
+  <h2 class="text-center">Migliori offerte</h2>
+  <div class="row">
+    <div class="col-sm-4">
+      <a class="boat-offer" href="#">
+        <p class="boat-text">Capri - Catamarano elegante</p>
+        <div class="picture-offer" style="background-image: url('http://placehold.it/350x250');"></div>
+      </a>
+    </div>
+    <div class="col-sm-4">
+      <a class="boat-offer" href="#">
+        <p class="boat-text">Capri - Catamarano elegante</p>
+        <div class="picture-offer" style="background-image: url('http://placehold.it/350x250');"></div>
+      </a>
+    </div>
+    <div class="col-sm-4">
+      <a class="boat-offer" href="#">
+        <p class="boat-text">Capri - Catamarano elegante</p>
+        <div class="picture-offer" style="background-image: url('http://placehold.it/350x250');"></div>
+      </a>
+    </div>
+  </div>
+  <p class="text-center more-boats">
+    <button class="btn btn-active">Mostrami più barche</button>
+  </p>
+</div>
+
+<div id="home-features">
   <div class="container">
     <div class="row">
-      <h1 class="text-center"><%= s_("Landing|What is SEA FOR ALL") %></h1>
-      <div class="col-sm-6 owner text-center">
+
+      <div class="col-sm-4 owner text-center">
         <div class="description-icon">
           <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-blue.png'), page_path(id: 'help/host') %>
         </div>
-        <h2><%= link_to s_("Landing|Want to earn extra money with your boat?"), page_path(id: 'help/host') %></h2>
+        <h2><%= link_to s_("Landing|100% Gratuito"), page_path(id: 'help/host') %></h2>
         <ul>
           <li><%= s_("Landing|We find people who would like to use it") %></li>
           <li><%= s_("Landing|and help you reduce your costs") %></li>
         </ul>
-        <p><small><%= link_to s_("Landing|More info"), page_path(id: 'help/host') %></small></p>
       </div>
-      <div class="col-sm-6 consumer text-center">
+      <div class="col-sm-4 consumer text-center">
         <div class="description-icon">
           <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path(id: 'help/guest') %>
         </div>
         <h2>
-          <%= link_to s_("Landing|Want a boat to spend a day at sea?"), page_path(id: 'help/guest') %>
+          <%= link_to s_("Landing|Entra nella community"), page_path(id: 'help/guest') %>
         </h2>
         <ul>
           <li><%= s_("Landing|We help you find the perfect fit for you") %></li>
           <li><%= s_("Landing|a great boat at a reasonable price") %></li>
         </ul>
-        <p><small><%= link_to s_("Landing|More info"), page_path(id: 'help/guest') %></small></p>
+      </div>
+      <div class="col-sm-4 consumer text-center">
+        <div class="description-icon">
+          <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path(id: 'help/guest') %>
+        </div>
+        <h2>
+          <%= link_to s_("Landing|Assistenza"), page_path(id: 'help/guest') %>
+        </h2>
+        <ul>
+          <li><%= s_("Landing|We help you find the perfect fit for you") %></li>
+          <li><%= s_("Landing|a great boat at a reasonable price") %></li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
-<a id="leave-email"></a>
-<div class="bottom-call">
-  <div class="pattern"></div>
+
+<div id="call-to-action-bottom">
   <div class="container">
-    <div class="row text-center">
-      <div class="col-sm-12">
-        <div class="bordino-mail">
-
-          <h2 class="sei-pronto"><%= s_("Landing|Ready?") %></h2>
-          <p><%= s_("Landing|Leave us your email.") %><br>
-            <%= s_("Landing|We'll get in touch as we weigh anchor.") %></p>
-
-            <!-- Begin MailChimp Signup Form -->
-            <div id="mc_embed_signup">
-              <form action="//seaforall.us10.list-manage.com/subscribe/post?u=69835b8c2d366cadb1d79be22&amp;id=b07377296f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                <div id="mc_embed_signup_scroll">
-                  <div class="mc-field-group">
-                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                  </div>
-                  <div class="mc-field-group">
-                    <label for="mce-ROLE"><%= s_("Landing|I'm interested because") %>
-                    </label>
-                    <br>
-                    <select name="ROLE" class="required" id="mce-ROLE">
-
-                      <option value="Vorrei affittare una barca"><%= s_("Landing|I'm looking for a boat to rent") %></option>
-                      <option value="Vorrei condividere la mia barca"><%= s_("Landing|I have a boat to share") %></option>
-
-                    </select>
-                  </div>
-                  <div id="mce-responses" class="clear">
-                    <div class="response" id="mce-error-response" style="display:none"></div>
-                    <div class="response" id="mce-success-response" style="display:none"></div>
-                  </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                  <div style="position: absolute; left: -5000px;"><input type="text" name="b_69835b8c2d366cadb1d79be22_b07377296f" tabindex="-1" value=""></div>
-                  <div class="clear"><input type="submit" value="<%= s_("Landing|Keep me posted") %>" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-mailchimp"></div>
-                </div>
-              </form>
-            </div>
-
-        <!--End mc_embed_signup-->
-        </div>
-      </div>
+    <div class="row">
+      <h2>Grande call to action!</h2>
+      <p>Sottotitolo della call to action</p>
+      <p>
+        <button class="btn btn-active">
+          Bottone convincente della call to action
+        </button>
+      </p>
     </div>
   </div>
 </div>
