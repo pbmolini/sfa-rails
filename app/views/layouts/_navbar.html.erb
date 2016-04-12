@@ -12,6 +12,7 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to fa_icon("life-ring", text: _("Help")), page_path('help', locale: I18n.locale) %></li>
+        <li><%= link_to fa_icon("wpforms", text: "Blog"), 'https://seaforall.wordpress.com/' %></li>
         <% if user_signed_in? %>
           <% if current_user.bookings.any? %>
             <%= render 'layouts/my_bookings_dropdown' %>
