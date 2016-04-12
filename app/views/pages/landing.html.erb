@@ -8,8 +8,8 @@
 <% end %>
 
 <div id="hero">
-<div class="container">
-  <nav class="mobile-navbar">
+  <div class="container">
+    <nav class="mobile-navbar">
       <% if user_signed_in? %>
         <li class="dropdown">
           <%= link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' }, role: 'button', aria: { expanded: 'false' } do %>
@@ -26,8 +26,8 @@
       <% else %>
         <li class="navbar-landing-link"><%= link_to "Login", new_user_session_path %></li>
       <% end %>
-  </nav>
-</div>
+    </nav>
+  </div>
   <div class="container-fluid">
     <nav class="navbar">
       <div class="container-fluid">
@@ -68,6 +68,7 @@
       </div>
     </nav>
   </div>
+
   <p class="text-center welcome-title">
     <img class="logo" src="<%= aws_image_path_for 'sfa-logo-hor-white-navbar.png' %>" alt="SEA FOR ALL | Condividi la tua barca e risparmia sui costi di gestione">
   </p>
@@ -106,7 +107,7 @@
     </div>
   </div>
   <p class="text-center more-boats">
-    <button class="btn btn-active">Mostrami più barche</button>
+    <%= link_to s_("Landing|Show me more boats"), boats_path, class: 'btn btn-active' %>
   </p>
 </div>
 
@@ -155,12 +156,10 @@
 <div id="call-to-action-bottom">
   <div class="container">
     <div class="row">
-      <h2>Grande call to action!</h2>
-      <p>Sottotitolo della call to action</p>
+      <h2><%= s_("Landing|Share your boat with those who love the sea") %></h2>
+      <p><%= s_("Landing|Offset your ownership costs by listing your boat whenever and however you like") %></p>
       <p>
-        <button class="btn btn-active">
-          Bottone convincente della call to action
-        </button>
+        <%= link_to s_("Landing|Register your boat"), (user_signed_in? ? new_boat_path : new_user_registration_path), class: 'btn btn-active' %>
       </p>
     </div>
   </div>

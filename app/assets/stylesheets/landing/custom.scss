@@ -1,3 +1,9 @@
+$black: rgba(0,0,0,.87);
+$blue: #3A8CC2;
+$darkblue: #104466;
+$orange: #FAB647;
+$darkorange: #FCA039;
+
 #navbar .user-avatar {
   height: 24px;
   border-radius: 100%;
@@ -43,11 +49,7 @@ body {
   font-weight: 300;
   font-size: 18px;
 }
-body label {
-  font-weight: 300;
-}
-h1,
-h2 {
+h1, h2 {
   font-family: 'Pathway Gothic One', sans-serif;
 }
 h2 {
@@ -77,154 +79,65 @@ nav {
   background-size: cover;
   background-position: center;
   margin: 0;
-}
-#hero .logo {
-  position: relative;
-  top: 0;
-  z-index: 255;
-  width: 500px;
-}
-#hero .hero-background {
-  background: rgba(10,113,180,0.4);
-  position: absolute;
-  width: 100%;
-  height: 550px;
-  z-index: 1;
-  top: 0;
-}
-#hero .container {
-  position: relative;
-  z-index: 256;
-  text-align: center;
+  .logo {
+    position: relative;
+    top: 0;
+    z-index: 255;
+    width: 500px;
+  }
+  .hero-background {
+    background: rgba(10,113,180,0.4);
+    position: absolute;
+    width: 100%;
+    height: 550px;
+    z-index: 1;
+    top: 0;
+  }
+  .container {
+    position: relative;
+    z-index: 256;
+    text-align: center;
+    .container a {
+      color: white;
+    }
+
+    h1, h2, h3 {
+      color: #fff;
+      font-weight: 300;
+    }
+    h1 {
+      margin: 0 auto;
+      padding: 0.3em 0 0 0;
+      font-size: 50px;
+    }
+    h3 {
+      line-height: 1.3em;
+      padding-left: 0;
+      margin-top: 1.2em;
+      margin-bottom: 0.5em;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  }
 }
 
-#hero .container a {
-  color: white;
-}
-
-#hero h1,
-#hero h2,
-#hero h3 {
-  color: #fff;
-  font-weight: 300;
-}
-#hero h1 {
-  margin: 0 auto;
-  padding: 0.3em 0 0 0;
-  font-size: 50px;
-}
-#hero h3 {
-  line-height: 1.3em;
-  padding-left: 0;
-  margin-top: 1.2em;
-  margin-bottom: 0.5em;
-}
-#hero label {
-  margin-top: 0.6em;
-  margin-bottom: 0.4em;
-}
-#hero h3,
-#hero label {
-  font-size: 20px;
-  letter-spacing: 1px;
-}
-ul,
-li {
+ul, li {
   list-style-type: none;
   padding: 0;
 }
+
 #home-features {
   background: #fff;
   color: #0a71b4;
   position: relative;
   padding: 2em 0;
 }
-#hero .container #mc_embed_signup {
-  padding-left: 0;
-}
 
-#hero .guest-msg {
-  margin-top: 5em;
-}
-
-.mc-field-group {
-  float: left;
-}
-.mc-field-group label {
-  margin-top: 0.3em;
-}
-.mc-field-group input {
-  padding: 10px 7px;
-  height: 45px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  border: 0;
-  width: 400px;
-  border: 2px solid #d8d8d8;
-  background: #fff;
-}
-.btn-mailchimp {
-  color: #fff;
-  background: #fab647;
-  margin-top: 1em;
-  font-size: 25px;
-  letter-spacing: 1px;
-}
-.btn-mailchimp:hover {
-  color: #fff;
-  background: rgba(#fab647, .9);
-}
-.pattern {
-  opacity: 0.2;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-  filter: alpha(opacity=20);
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.bottom-call {
-  color: #fff;
-  background: #6fabd0;
-  padding: 2em;
-  position: relative;
-}
-.centrati {
-  margin: 0 auto 2em auto;
-  width: 477px;
-}
-.mc-field-group {
-  float: none;
-  color: #fff;
-}
-.mc-field-group input {
-  color: #000;
-}
 .description-icon img {
   width: 25%;
   display: inline-block;
 }
-select {
-  color: #000;
-  width: 400px;
-  padding: 5px;
-  font-size: 16px;
-  line-height: 1;
-  border: 0;
-  -webkit-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  height: 45px;
-}
-.bordino-mail {
-  border: 1px solid #fff;
-  padding: 0 20px 20px 20px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  width: 500px;
-  margin: 0 auto;
-}
+
 footer {
   display: inline-block;
   width: 100%;

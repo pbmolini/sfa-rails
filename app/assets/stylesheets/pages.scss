@@ -47,15 +47,15 @@ footer {
       padding: 0 .2em;
     }
   }
+  .footer-dropdown {
+    @extend .btn;
+    @extend .btn-default; 
+    @extend .dropdown-toggle;
+    background: $blue;
+    color: white;
+  }
 }
 
-.footer-dropdown {
-  @extend .btn;
-  @extend .btn-default; 
-  @extend .dropdown-toggle;
-  background: $blue;
-  color: white;
-}
 
 .boat-search-subtitle {
   padding: 10px;
