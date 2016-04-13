@@ -21,6 +21,7 @@
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
 @import "bootstrap-slider";
+@import "variables";
 @import "bootstrap_overrides";
 @import "font-awesome";
 @import "dropzone/dropzone";
@@ -35,6 +36,7 @@
 @import "calendar_custom_style";
 
 // our stuff
+@import "shared";
 @import "boats";
 @import "boats-show";
 @import "users";
@@ -50,4 +52,3 @@
 
 @import "dashboard";
 @import "welcome";
-@import "shared";

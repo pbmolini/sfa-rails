@@ -1,12 +1,6 @@
 // Raleway font
 @import url(//fonts.googleapis.com/css?family=Raleway:400,300,700);
 
-$black: rgba(0,0,0,.87);
-$blue: #3A8CC2;
-$darkblue: #104466;
-$orange: #FAB647;
-$darkorange: #FCA039;
-
 body, html {
 	font-family: "proxima-nova";
 	color: $black;
@@ -90,10 +84,4 @@ a.dropdown-toggle {
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
 	background: $darkblue;
-}
-
-.ellipsized {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }

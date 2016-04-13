@@ -87,24 +87,9 @@
 <div id="best-offers" class="container">
   <h2 class="text-center">Migliori offerte</h2>
   <div class="row">
-    <div class="col-sm-4">
-      <a class="boat-offer" href="#">
-        <p class="boat-text">Capri - Catamarano elegante</p>
-        <div class="picture-offer" style="background-image: url('http://placehold.it/350x250');"></div>
-      </a>
-    </div>
-    <div class="col-sm-4">
-      <a class="boat-offer" href="#">
-        <p class="boat-text">Capri - Catamarano elegante</p>
-        <div class="picture-offer" style="background-image: url('http://placehold.it/350x250');"></div>
-      </a>
-    </div>
-    <div class="col-sm-4">
-      <a class="boat-offer" href="#">
-        <p class="boat-text">Capri - Catamarano elegante</p>
-        <div class="picture-offer" style="background-image: url('http://placehold.it/350x250');"></div>
-      </a>
-    </div>
+    <% Boat.complete.limit(3).each do |boat| %>
+      <%= render('boats/boat_card', boat: boat) if boat.can_be_published? %>
+    <% end %>
   </div>
   <p class="text-center more-boats">
     <%= link_to s_("Landing|Show me more boats"), boats_path, class: 'btn btn-active' %>
@@ -119,7 +104,7 @@
         <div class="description-icon">
           <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-blue.png'), page_path(id: 'help/host') %>
         </div>
-        <h2><%= link_to s_("Landing|100% Gratuito"), page_path(id: 'help/host') %></h2>
+        <h2><%= link_to s_("Landing|Want to earn extra money with your boat?"), page_path(id: 'help/host') %></h2>
         <ul>
           <li><%= s_("Landing|We find people who would like to use it") %></li>
           <li><%= s_("Landing|and help you reduce your costs") %></li>
@@ -130,7 +115,7 @@
           <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path(id: 'help/guest') %>
         </div>
         <h2>
-          <%= link_to s_("Landing|Entra nella community"), page_path(id: 'help/guest') %>
+          <%= link_to s_("Landing|Join the community"), page_path(id: 'help/guest') %>
         </h2>
         <ul>
           <li><%= s_("Landing|We help you find the perfect fit for you") %></li>
@@ -142,11 +127,11 @@
           <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path(id: 'help/guest') %>
         </div>
         <h2>
-          <%= link_to s_("Landing|Assistenza"), page_path(id: 'help/guest') %>
+          <%= link_to s_("Landing|100% free"), page_path(id: 'help/guest') %>
         </h2>
         <ul>
-          <li><%= s_("Landing|We help you find the perfect fit for you") %></li>
-          <li><%= s_("Landing|a great boat at a reasonable price") %></li>
+          <li><%= s_("Landing|No hidden costs or fees") %></li>
+          <li><%= s_("Landing|Other cool text") %></li>
         </ul>
       </div>
     </div>

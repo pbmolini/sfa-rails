@@ -157,19 +157,19 @@
 }
 
 .state-background-pending {
-  background: $orange; // TODO: variabilizzare!!
+  background: $booking-pending-color;
 }
 
 .state-background-accepted {
-  background: #27ae60; // TODO: variabilizzare!!
+  background: $booking-accepted-color;
 }
 
 .state-background-rejected {
-  background: #e74c3c; // TODO: variabilizzare!!
+  background: $booking-rejected-color;
 }
 
 .state-background-canceled {
-  background: grey; // TODO: variabilizzare!!
+  background: $booking-canceled-color;
 }
 
 .list-group-item, .list-group {

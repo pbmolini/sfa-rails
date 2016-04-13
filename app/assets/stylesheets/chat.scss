@@ -128,17 +128,17 @@
 
 .chat-state-change {
   &.accepted {
-    background-color: #27ae60; // TODO: variabilizzare!!
+    background-color: $booking-accepted-color;
     color: white;
   }
 
   &.rejected {
-  	background-color: #e74c3c; // TODO: variabilizzare!!
+  	background-color: $booking-rejected-color;
     color: white;
   }
 
   &.canceled {
-  	background-color: grey; // TODO: variabilizzare!!
+  	background-color: $booking-canceled-color;
     color: white;
   }
 }
