@@ -1,0 +1,53 @@
+.navbar-inverse {
+  background: $blue;
+  border-bottom: transparent;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+	padding: 10px 10px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: white;
+}
+
+a.dropdown-toggle {
+	padding-bottom: 11px !important;
+}
+
+.btn-register {
+	background: $orange;
+	&:hover {
+		background: rgba($orange,0.8);
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.navbar-collapse .navbar-nav .open .dropdown-menu > li > a {
+		color: white;
+	}
+}
+
+.navbar-inverse .navbar-toggle {
+	border-color: white;
+}
+
+.navbar-inverse .navbar-text {
+	color: white;
+	font-weight: bold;
+}
+
+.dropdown-menu {
+	font-size: 16px;
+}
+
+.btn {
+	border-radius: 0;
+	border: 0;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+	background: $darkblue;
+}
