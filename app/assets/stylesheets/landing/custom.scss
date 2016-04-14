@@ -1,7 +1,16 @@
-$black: rgba(0,0,0,.87);
-$blue: #3A8CC2;
-$darkblue: #104466;
-$orange: #FAB647;
+// $black: rgba(0,0,0,.87);
+// $blue: #3A8CC2;
+// $darkblue: #104466;
+// $orange: #E69A15;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 150px;
+}
 
 #navbar .user-avatar {
   height: 24px;
@@ -138,21 +147,43 @@ ul, li {
 }
 
 footer {
-  display: inline-block;
+  display: block;
+  background: $darkblue;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  background: #0a71b4;
-  color: #fff;
-}
-footer .icons {
-  font-size: 30px;
-}
-footer a {
-  color: #fff;
-}
-footer a:hover {
-  outline: none;
-  color: #fff;
-  text-decoration: none;
+  height: 150px;
+  margin-top: 20px;
+  i, a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+      color: lightBlue;
+    }
+  }
+  .language-select {
+    margin-top: 1em;
+  }
+  .center-links {
+    @extend .text-center;
+  }
+  .right-links {
+    @extend .text-right;
+    margin-top: 1em;
+  }
+  .icons {
+    i {
+      padding: 0 .2em;
+    }
+  }
+  .footer-dropdown {
+    @extend .btn;
+    @extend .btn-default; 
+    @extend .dropdown-toggle;
+    background: $blue;
+    color: white;
+  }
 }
 
 .mobile-navbar {
@@ -195,7 +226,7 @@ footer a:hover {
 }
 
 .cookies-eu {
-  background: #FAB647;
+  background: $orange;
   font-size: 13px;
   .cookies-eu-button-holder .cookies-eu-ok {
     border: 1px solid #848484 !important;
@@ -253,7 +284,7 @@ footer a:hover {
 
 #call-to-action-bottom {
   background: linear-gradient(rgba(41, 41, 41, 0.39), rgba(0, 0, 0, 0.2)), url('homepage-boat.jpg') center center; background-size: cover;
-  padding: 3em 0 2.8em 0;
+  padding: 6em 0 5.8em 0;
 
   p,h2 {
     color: white;
@@ -263,7 +294,19 @@ footer a:hover {
   .btn {
     height: 44px;
     font-size: 19px;
-    background: #fcb539;
+    background: $darkorange;
     color: white;
+    margin-top: 1em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #call-to-action-bottom {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .language-select {
+    text-align: center;
   }
 }

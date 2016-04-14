@@ -1,6 +1,7 @@
 .search-form {
   margin-top: 2em;
   .input-group {
+    margin: auto;
     max-width: 600px;
     input {
       font-size: 19px;
@@ -12,27 +13,13 @@
   .btn {
     height: 44px;
     font-size: 19px;
-    background: #fcb539;
+    background: $darkorange;
     color: white;
     border: 0;
     text-shadow: none;
     border-radius: 0 4px 4px 0;
   }
 }
-
-// .search-form {
-//   max-width: 600px;
-//   margin: auto;
-//   .form-control {
-//     font-size: 20px;
-//     height: 40px;
-//     border-radius: 0;
-//   }
-//   .btn {
-//     height: 40px;
-//     margin-bottom: 3px;
-//   }
-// }
 
 // Styles for Google Autocomplete
 // Don't touch unless you know what you are doing
@@ -46,4 +33,10 @@
 
 .pac-item-selected .pac-icon {
   background-position: center;
+}
+
+@media screen and (min-width: 768px) {
+  input#boat-search-bar {
+    width: 350px;
+  }
 }

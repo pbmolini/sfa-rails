@@ -7,27 +7,7 @@
     <%= render 'cookies_eu/cookies_eu', link: page_path(id: 'cookies', locale: I18n.locale) %>
     <%= yield %>
     
-    <!-- TODO use this and fix the css -->
-    <%# render 'layouts/footer' %>
-
-    <footer>
-      <br>
-      <p class="text-center">
-        Sea for All - Copyright 2015
-      </p>
-      <p class="text-center"><%= mail_to "hello@seaforall.com" %></p>
-      <p class="text-center icons">
-        <a href="https://twitter.com/seaforall">
-          <i class="fa fa-twitter"></i>
-        </a>
-        <a href="https://www.facebook.com/pages/Sea-for-All/368816339967609">
-          <i class="fa fa-facebook-square"></i>
-        </a>
-        <a href="https://instagram.com/seaforall">
-          <%= fa_icon 'instagram' %>
-        </a>
-      </p>
-    </footer>
+    <%= render 'layouts/footer' %>
 
     <!-- Toastr messages -->
     <%= render 'layouts/messages' %>
