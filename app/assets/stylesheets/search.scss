@@ -41,3 +41,10 @@
 .pac-item-selected .pac-icon {
   background-position: center;
 }
+
+
+@media screen and (min-width: 767px) {
+  input#boat-search-bar{
+    width: 470px;
+  }
+}
