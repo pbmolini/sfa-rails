@@ -57,3 +57,19 @@ a.dropdown-toggle {
   border-radius: 100%;
   margin-left: 5px;
 }
+
+.badge.booking-badge {
+  min-width: 32px;
+  line-height: 16px;
+  display: inline-block;
+  bottom: 2px;
+  font-size: 16px;
+  
+  &.badge-host {
+    background-color: $blue;
+  }
+
+  &.badge-guest {
+    background-color: $orange;
+  }
+}
