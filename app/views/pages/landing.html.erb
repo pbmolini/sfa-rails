@@ -100,9 +100,9 @@
 
       <div class="col-sm-4 owner text-center">
         <div class="description-icon">
-          <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-blue.png'), page_path(id: 'help/host') %>
+          <%= image_tag(aws_image_path_for 'sfa-logo-circle-blue.png') %>
         </div>
-        <h2><%= link_to s_("Landing|Want to earn extra money with your boat?"), page_path(id: 'help/host') %></h2>
+        <h2><%= s_("Landing|Want to earn extra money with your boat?") %></h2>
         <ul>
           <li><%= s_("Landing|We find people who would like to use it") %></li>
           <li><%= s_("Landing|and help you reduce your costs") %></li>
@@ -110,10 +110,10 @@
       </div>
       <div class="col-sm-4 consumer text-center">
         <div class="description-icon">
-          <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path(id: 'help/guest') %>
+          <%= image_tag(aws_image_path_for 'sfa-logo-circle-orange.png') %>
         </div>
         <h2>
-          <%= link_to s_("Landing|Join the community"), page_path(id: 'help/guest') %>
+          <%= s_("Landing|Join the community") %>
         </h2>
         <ul>
           <li><%= s_("Landing|We help you find the perfect fit for you") %></li>
@@ -122,10 +122,10 @@
       </div>
       <div class="col-sm-4 consumer text-center">
         <div class="description-icon">
-          <%= link_to image_tag(aws_image_path_for 'sfa-logo-circle-orange.png'), page_path(id: 'help/guest') %>
+          <%= image_tag(aws_image_path_for 'sfa-logo-circle-orange.png') %>
         </div>
         <h2>
-          <%= link_to s_("Landing|100% free"), page_path(id: 'help/guest') %>
+          <%= s_("Landing|100% free") %>
         </h2>
         <ul>
           <li><%= s_("Landing|No hidden costs or fees") %></li>
@@ -139,11 +139,13 @@
 <div id="call-to-action-bottom">
   <div class="container">
     <div class="row">
-      <h2><%= s_("Landing|Share your boat with those who love the sea") %></h2>
-      <p><%= s_("Landing|Offset your ownership costs by listing your boat whenever and however you like") %></p>
-      <p>
-        <%= link_to s_("Landing|Register your boat"), (user_signed_in? ? new_boat_path : new_user_registration_path), class: 'btn btn-active' %>
-      </p>
+      <div class="col-sm-8 col-sm-offset-2">
+        <h2><%= s_("Landing|Share your boat with those who love the sea") %></h2>
+        <p><%= s_("Landing|Offset your ownership costs by listing your boat whenever and however you like") %></p>
+        <p>
+          <%= link_to s_("Landing|Register your boat"), (user_signed_in? ? new_boat_path : new_user_registration_path), class: 'btn btn-active' %>
+        </p>
+      </div>
     </div>
   </div>
 </div>
