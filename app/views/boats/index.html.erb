@@ -1,14 +1,16 @@
 <% title s_("Title|All the boats") %>
 
 <div class="row">
-  <div class="col-sm-10 col-sm-offset-1 search-container">
+  <div class="col-sm-12 text-center search-container">
     <%= render 'search' %>
     <% if @search_location %>
-      <p class="text-center search-result-message">
+      <p class="search-result-message">
         <% if @search_results_count > 0 %>
-        <%= _('There are %{count} boats near %{place}') %{count: @search_results_count, place: @search_location} %>
+        <%= s_('SearchResults|There are %{count} boats near %{place}') %{count: @search_results_count, place: @search_location} %>
         <% else %>
-        <%= _('Sorry. There are no boats near %{place}... But there are more in other places (or start sharing yours).') %{place: @search_location} %>
+        <%= s_('SearchResults|Sorry. There are no boats near %{place} ).') %{place: @search_location} %>
+        <br>
+        <%= s_('SearchResults|But there are more in other places (or start sharing yours') %>
         <% end %>
       </p>
     <% end %>
@@ -17,7 +19,7 @@
 
 <div class="row">
 	<% if @boats.any? %>
-	  <% @boats.complete.each do |boat| %>
+	  <% @boats.each do |boat| %>
 	    <%= render('boat_card', boat: boat) if boat.can_be_published? %>
 	  <% end %>
 	<% else %>

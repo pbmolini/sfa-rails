@@ -11,14 +11,14 @@ class BoatsController < ApplicationController
   def index
     if params[:search].present? and !params[:search].empty?
       @search_location = params[:search]
-      @boats = Boat.near(search_params, 20, unit: :km, order: 'distance')
+      @boats = Boat.complete.near(search_params, 20, unit: :km, order: 'distance').select(&:can_be_published?)
       @search_results_count = @boats.size # count doesn't work with near
       if @boats.empty?
-        @boats = Boat.near(search_params, 99999, unit: :km, order: 'distance')
+        @boats = Boat.complete.near(search_params, 99999, unit: :km, order: 'distance').select(&:can_be_published?)
         @boats = Boat.all if @boats.empty?
       end
     else
-      @boats = Boat.all
+      @boats = Boat.complete.all.select(&:can_be_published?)
     end
   end
 
