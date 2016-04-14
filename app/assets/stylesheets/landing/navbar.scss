@@ -51,3 +51,9 @@ a.dropdown-toggle {
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
 	background: $darkblue;
 }
+
+#navbar .user-avatar {
+  height: 24px;
+  border-radius: 100%;
+  margin-left: 5px;
+}
