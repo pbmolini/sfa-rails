@@ -44,7 +44,7 @@
               <% else %>
                 <%= link_to "Italiano", locale: :it %>
               <% end %>
-    
+
             </li>
             <% if user_signed_in? %>
               <li class="dropdown">
@@ -76,11 +76,9 @@
   <div class="container">
     <h1><%= s_("Landing|Share your boat with those who love the sea") %></h1>
 
-    <form class="form-inline home-search">
-      <div class="form-group">
-        <input type="text" class="form-control" id="exampleInputName2" placeholder="Porto di partenza">
-      </div><button type="submit" class="btn btn-default">Cerca barca</button>
-    </form>
+    <div class="search-bar">
+      <%= render 'boats/search' %>
+    </div>
   </div>
 </div>
 

@@ -1,3 +1,8 @@
+$black: rgba(0,0,0,.87);
+$blue: #3A8CC2;
+$darkblue: #104466;
+$orange: #FAB647;
+
 #navbar .user-avatar {
   height: 24px;
   border-radius: 100%;
@@ -10,7 +15,7 @@
 
 .navbar-landing-link a {
   color: white;
-  
+
   &:hover, &:focus {
     text-decoration: underline !important;
     background-color: transparent !important;
@@ -147,7 +152,7 @@ footer a {
 footer a:hover {
   outline: none;
   color: #fff;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .mobile-navbar {
@@ -205,28 +210,6 @@ footer a:hover {
 
 .welcome-title {
   margin-top: 4em;
-}
-
-.home-search {
-  margin-top: 2em;
-  .form-group {
-    input {
-      width: 400px;
-      font-size: 19px;
-      height: 44px;
-      border-radius: 4px 0 0 4px;
-      border: 0;
-    }
-  }
-  .btn {
-    height: 44px;
-    font-size: 19px;
-    background: #fcb539;
-    color: white;
-    border: 0;
-    text-shadow: none;
-    border-radius: 0 4px 4px 0;
-  }
 }
 
 #best-offers {

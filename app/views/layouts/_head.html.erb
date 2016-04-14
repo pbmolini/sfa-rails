@@ -8,7 +8,12 @@
 <%= yield :fb_open_graph_tags %>
 
 <%= stylesheet_link_tag    layout, media: 'all', 'data-turbolinks-track' => true %>
+
+<!-- Google Maps -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=places&language=<%= I18n.locale %>"></script>
+
 <%= javascript_include_tag layout, 'data-turbolinks-track' => true %>
+
 <%= csrf_meta_tags %>
 <%# favicon_link_tag %>
 <%= render 'favicon' %>

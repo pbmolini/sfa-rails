@@ -9,7 +9,17 @@ class BoatsController < ApplicationController
   # GET /boats
   # GET /boats.json
   def index
-    @boats = Boat.all
+    if params[:search].present? and !params[:search].empty?
+      @search_location = params[:search]
+      @boats = Boat.near(search_params, 20, unit: :km, order: 'distance')
+      @search_results_count = @boats.size # count doesn't work with near
+      if @boats.empty?
+        @boats = Boat.near(search_params, 99999, unit: :km, order: 'distance')
+        @boats = Boat.all if @boats.empty?
+      end
+    else
+      @boats = Boat.all
+    end
   end
 
   def my_boats
@@ -134,6 +144,14 @@ class BoatsController < ApplicationController
       params.require(:boat).permit(create_params)
     elsif action_name == "update"
       params.require(:boat).permit(update_params)
+    end
+  end
+
+  def search_params
+    if params[:latitude].empty? or params[:longitude].empty?
+      params[:search]
+    else
+      [params[:latitude], params[:longitude]]
     end
   end
 
