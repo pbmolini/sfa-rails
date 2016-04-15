@@ -111,6 +111,8 @@ group :development do
   gem 'ruby_parser', :require => false
 
   gem 'rails_real_favicon'
+
+  gem 'brakeman', require: false
 end
 
 group :development, :test do
