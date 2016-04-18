@@ -52,9 +52,13 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button(:submit, _('Book'), class: 'btn btn-block btn-lg btn-success') unless @boat.user == current_user %>
+    <%= f.button(:submit, 
+                  _('Book'), 
+                  class: "btn btn-block btn-lg btn-success #{'disabled' unless user_signed_in_and_complete?}"
+                  ) unless @boat.user == current_user %>
   </div>
 <% end %>
+<%= render 'booking_alert' unless user_signed_in_and_complete? %>
 
 <%= content_for :scripts do %>
 <script type="text/javascript">

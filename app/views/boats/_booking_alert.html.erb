@@ -1,0 +1,21 @@
+<div class="row booking-alert">
+  <div class="col-sm-12">
+    <p role="alert">
+    	<a id="booking-alert-popover" tabindex="0" class="alert-link"><%= _("You cannot book yet...") %></a>
+    </p>
+  </div>
+</div>
+
+<% content_for :scripts do %>
+  <script type="text/javascript">
+    // $(document).ready(function () {
+      $('#booking-alert-popover').popover({
+				placement: 'auto',
+				trigger: 'focus',
+				html: true,
+				title: '<%= _("Why can not I book?") %>',
+      	content: '<%= (_("To be able to book a boat you have to <strong>%{link_text}</strong>") %{link_text: link_to(_("complete your profile"), edit_user_registration_path)}).html_safe %>'
+      	});
+    // });
+  </script>
+<% end %>
