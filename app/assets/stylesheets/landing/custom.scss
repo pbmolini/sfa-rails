@@ -96,9 +96,25 @@ ul, li {
   padding: 2em 0;
 }
 
-.description-icon img {
-  width: 25%;
+.description-icon {
+  img {
+    width: 200px;
+    display: inline-block;
+  }
+}
+
+.container-handshake {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #0F75BC 50%, $orange 50%);
   display: inline-block;
+}
+
+.circle-handshake {
+  margin-top: 55px;
+  width: 150px;
+  fill: white;
 }
 
 footer {
