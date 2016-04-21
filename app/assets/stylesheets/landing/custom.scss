@@ -96,9 +96,25 @@ ul, li {
   padding: 2em 0;
 }
 
-.description-icon img {
-  width: 25%;
+.description-icon {
+  img {
+    width: 200px;
+    display: inline-block;
+  }
+}
+
+.container-handshake {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #0F75BC 50%, $orange 50%);
   display: inline-block;
+}
+
+.circle-handshake {
+  margin-top: 55px;
+  width: 150px;
+  fill: white;
 }
 
 footer {
@@ -222,7 +238,7 @@ footer {
 }
 
 #call-to-action-bottom {
-  background: linear-gradient(rgba(41, 41, 41, 0.39), rgba(0, 0, 0, 0.2)), url('homepage-boat.jpg') center center; background-size: cover;
+  background: linear-gradient(rgba(41, 41, 41, 0.39), rgba(0, 0, 0, 0.2)), url('https://sfa-static.s3.amazonaws.com/img/bg-host.jpg') center center; background-size: cover;
   padding: 6em 0 5.8em 0;
 
   p,h2 {
@@ -236,6 +252,10 @@ footer {
     background: $darkorange;
     color: white;
     margin-top: 1em;
+  }
+
+  .host-content {
+    padding-top: 10em;
   }
 }
 

@@ -7,17 +7,20 @@
 	<strong><%= s_("MailBodyWelcome|Do you want to spend some days on a boat?") %></strong>
 	<%= s_("MailBodyWelcome|Find the right boat for you, anywhere you like!") %>
 </p>
-<h2><%= link_to s_("MailBodyWelcome|Start now"), root_url %></h2>
+<h1 class="read-message-btn"><%= link_to s_("MailBodyWelcome|Start now"), root_url %></h2>
+<hr>
 <p>
 	<strong><%= s_("MailBodyWelcome|Have you got a boat and want to share it?") %></strong>
 	<%= s_("MailBodyWelcome|Register your first boat and get ready to share it with other people like you!") %>
 </p>
-<h2><%= link_to s_("MailBodyWelcome|Register your boat"), new_boat_url %></h2>
+<h1 class="read-message-btn"><%= link_to s_("MailBodyWelcome|Register your boat"), new_boat_url %></h2>
+<hr>
 <p>
 	<strong><%= s_("MailBodyWelcome|Present yourself at the best") %></strong>
 	<%= s_("MailBodyWelcome|to enjoy all the features offered by Sea for All!") %>
 </p>
-<h2><%= link_to s_("MailBodyWelcome|Complete your profile"), edit_user_registration_url %></h2>
+<h1 class="read-message-btn"><%= link_to s_("MailBodyWelcome|Complete your profile"), edit_user_registration_url %></h1>
+<hr>
 <p>
 	<%= (s_("MailBodyWelcome|For any help just visit our awesome %{help_page} or contact us by replying to this email.") %{help_page: link_to(_("help page"), page_url(id: :help, locale: I18n.locale))}).html_safe %>
 </p>

@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <%= render 'layouts/inspector_header' if Rails.env == "production" %>
 <html lang='<%= I18n.locale %>'>
-<head>
-  <%= render 'layouts/head', layout: 'application' %>
-</head>
-<body>
-  <%= render 'layouts/navbar' %>
-  <%= render 'cookies_eu/cookies_eu', link: page_path(id: 'cookies', locale: I18n.locale) %>
-  <%= yield :current_user_navbar %>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <%= yield %>
+  <head>
+    <%= render 'layouts/head', layout: 'application' %>
+  </head>
+  <body>
+    <%= render 'layouts/navbar' %>
+    <%= render 'cookies_eu/cookies_eu', link: page_path(id: 'cookies', locale: I18n.locale) %>
+    <%= yield :current_user_navbar %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <%= yield %>
+        </div>
       </div>
-    </div>
-  </div><!-- /.container -->
+    </div><!-- /.container -->
 
-  <%= render 'layouts/messages' %>
-  
-  <%= render 'layouts/footer' %>
+    <%= render 'layouts/messages' %>
+    
+    <%= render 'layouts/footer' %>
 
-  <script type="text/javascript">
-    moment.locale('<%= I18n.locale %>');
-  </script>
-  <%= yield :scripts %>
+    <script type="text/javascript">
+      moment.locale('<%= I18n.locale %>');
+    </script>
+    
+    <%= yield :scripts %>
 
-</body>
+  </body>
 </html>

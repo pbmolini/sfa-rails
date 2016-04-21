@@ -1,19 +1,24 @@
-<% title s_("Title|All the boats") %>
+<% bc_title = @search_location ? s_('Title|Boats near %{place}' %{place: @search_location}) : s_('Title|All Boats') %>
+<% title bc_title %>
+<% current_user_navbar active_bc_title: bc_title %>
 
 <div class="row">
   <div class="col-sm-12 text-center search-container">
+    
     <%= render 'search' %>
+
     <% if @search_location %>
       <p class="search-result-message">
         <% if @search_results_count > 0 %>
         <%= s_('SearchResults|There are %{count} boats near %{place}') %{count: @search_results_count, place: @search_location} %>
         <% else %>
-        <%= s_('SearchResults|Sorry. There are no boats near %{place} ).') %{place: @search_location} %>
+        <%= s_('SearchResults|Sorry. There are no boats near %{place}') %{place: @search_location} %>
         <br>
-        <%= s_('SearchResults|But there are more in other places (or start sharing yours') %>
+        <%= s_('SearchResults|Check out what is available a little bit farther') %>
         <% end %>
       </p>
     <% end %>
+
   </div>
 </div>
 

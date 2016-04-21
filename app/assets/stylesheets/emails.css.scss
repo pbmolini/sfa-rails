@@ -163,4 +163,7 @@ table .booking-message {
 .read-message-btn {
   padding: 10px;
   text-align: center;
+  a {
+    text-decoration: none;
+  }
 }

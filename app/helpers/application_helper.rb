@@ -23,5 +23,11 @@ module ApplicationHelper
     numbers = text.scan(/[0-9]+/).join("")
     link_to text, "tel:#{numbers}"
   end
+
+  # This should be used like this: 
+  # `SOME ACTION unless user_signed_in_and_complete?`
+  def user_signed_in_and_complete?
+  	user_signed_in? ? current_user.complete? : true
+  end
 	
 end
