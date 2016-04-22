@@ -1,5 +1,7 @@
 <div class="help-container">
 	
+	<%= render 'pages/help/modals' %>
+
 	<div class="row host">
 		<div class="col-md-6 help-text">
 			<h1>Vuoi guadagnare con la tua barca?</h1>
@@ -9,10 +11,10 @@
 			  In poche e semplici mosse, come e quando vuoi.
 			</p>
 			<p>
-				Le barche presenti su Sea for All possono essere disponibili per il noleggio o la locazione, o per entrambe le soluzioni.
+				Le barche presenti su Sea for All possono essere disponibili per il <%= link_to 'noleggio', '#', data: { toggle: 'modal', target: '#noleggioModal'} %> o la <%= link_to 'locazione', '#', data: { toggle: 'modal', target: '#locazioneModal'} %>, o per entrambe le soluzioni.
 			</p>
 			<p>
-				Per quanto riguarda il noleggio di unità da diporto tra privati, Sea for All si avvale della regolamentazione in vigore prevista dalla nuova legge sul noleggio occasionale.
+				Per quanto riguarda il noleggio di unità da diporto tra privati, Sea for All si avvale della regolamentazione in vigore prevista dalla nuova legge sul <%= link_to 'noleggio occasionale', '#', data: { toggle: 'modal', target: '#noleggioOccasionaleModal'} %>.
 			</p>
 			<p>
 				Per iscrivere la tua barca per il servizio di locazione è necessario che tutti i requisiti di legge siano assolti. Devi pertanto contattare la tua Capitaneria di Porto di riferimento per poter richiedere tutti i permessi.
@@ -92,7 +94,7 @@
 		<div class="col-md-6 help-text">
 			<h1>Dotazioni di Sicurezza</h1>
 			<p>
-				Ogni imbarcazione iscritta su Sea for All deve essere equipaggiata delle dotazioni di sicurezza previste dalla Guardia Costiera (disponibili a questo link).
+				Ogni imbarcazione iscritta su Sea for All deve essere equipaggiata delle dotazioni di sicurezza previste dalla Guardia Costiera (disponibili a <%= link_to 'questo link', aws_pdf_path_for("dotazioni-di-sicurezza.pdf"), target: '_blank' %>).
 			</p>
 			<p>
 				Il proprietario dovrà perciò garantire di essere in regola, dimostrando e segnalando la posizione dell'equipaggiamento di sicurezza sulla barca.
