@@ -3,7 +3,7 @@
 	<%= render 'pages/help/modals' %>
 
 	<div class="row host">
-		<div class="col-md-6 help-text">
+		<div class="col-md-8 help-text">
 			<h1>Vuoi guadagnare con la tua barca?</h1>
 			<p>
 			  Se hai una barca e vuoi ridurre i tuoi costi di gestione e manutenzione, con Sea for All potrai condividerla in totale sicurezza con chi, come te, ama il mare.
@@ -20,14 +20,17 @@
 				Per iscrivere la tua barca per il servizio di locazione è necessario che tutti i requisiti di legge siano assolti. Devi pertanto contattare la tua Capitaneria di Porto di riferimento per poter richiedere tutti i permessi.
 			</p>
 		</div>
-		<div class="col-md-6 help-image">
-			<%= image_tag "http://placekitten.com/400/500" %>
+		<div class="col-md-4 help-image">
+			<div class="circle-help-host">
+				<%= inline_svg 'np-host-hat', class: 'help-host-hat', nocomment: true %>
+			</div>
 		</div>
 	</div>
 	
 	<div class="row host">
 		<div class="col-md-6 help-image">
-			<%= image_tag "http://placekitten.com/300/200" %>
+			<%#= image_tag "http://placekitten.com/300/200" %>
+			<%= inline_svg 'np-logbook', class: 'help-np-icon-blue', nocomment: true %>
 		</div>
 		<div class="col-md-6 help-text">
 			<h1>Iscrivi la tua barca</h1>
@@ -52,13 +55,15 @@
 			</p>
 		</div>
 		<div class="col-md-6 help-image">
-			<%= image_tag "http://placekitten.com/400/300" %>
+			<%#= image_tag "http://placekitten.com/400/300" %>
+			<%= inline_svg 'np-calendar', class: 'help-np-icon-blue', nocomment: true %>
 		</div>
 	</div>
 	
 	<div class="row host">
 		<div class="col-md-6 help-image">
-			<%= image_tag "http://placekitten.com/400/300" %>
+			<%#= image_tag "http://placekitten.com/400/300" %>
+			<%= inline_svg 'np-chat', class: 'help-np-icon-blue', nocomment: true %>
 		</div>
 		<div class="col-md-6 help-text">
 			<h1>Organizza l'uscita</h1>
@@ -83,13 +88,17 @@
 			</p>
 		</div>
 		<div class="col-md-6 help-image">
-			<%= image_tag "http://placekitten.com/400/300" %>
+			<%#= image_tag "http://placekitten.com/400/300" %>
+			<%= inline_svg 'np-review', class: 'help-np-icon-blue', nocomment: true %>
 		</div>
 	</div>
 
 	<div class="row host">
 		<div class="col-md-6 help-image">
-			<%= image_tag "http://placekitten.com/400/300" %>
+			<%#= image_tag "http://placekitten.com/400/300" %>
+			<div class="circle-help-host">
+				<%= inline_svg 'np-vest', class: 'help-host-vest', nocomment: true %>
+			</div>
 		</div>
 		<div class="col-md-6 help-text">
 			<h1>Dotazioni di Sicurezza</h1>

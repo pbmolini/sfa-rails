@@ -6,7 +6,7 @@
 			border-bottom: 5px solid $darkblue;
 		}
 		&.guest {
-			border-bottom: 5px solid $orange;
+			border-bottom: 5px solid $darkorange;
 		}
 		&:last-child {
 			border-bottom: none;
@@ -21,9 +21,107 @@
 		}
 	}
 }
+
 .help-image {
   img {
   	@extend .img-responsive, .center-block;
     width: 100%;
   }
+
+  text-align: center;
+
+	// Hosts
+
+	.circle-help-host {
+		width: 300px;
+	  height: 300px;
+	  border-radius: 50%;
+	  margin-top: 3em;
+	  background-color: $darkblue;
+	  display: inline-block;
+		.help-host-hat {
+			path {
+				fill: white;
+			}
+    	padding-top: 70px;
+    	width: 80%;
+		}
+		.help-host-vest {
+			path {
+				fill: white;
+			}
+    	padding-top: 50px;
+    	width: 90%;
+		}
+	}
+
+	.help-np-icon-blue {
+		fill: $darkblue;    
+		height: 300px;
+    padding-top: 1em;
+  }
+
+	// Guests
+
+	.circle-help-guest {
+		width: 300px;
+	  height: 300px;
+	  border-radius: 50%;
+	  margin-top: 1em;
+	  background-color: $orange;
+	  display: inline-block;
+		.help-guest-hat {
+			path {
+				fill: white;
+			}
+    	padding-top: 70px;
+    	width: 80%;
+		}
+		.help-guest-vest {
+			path {
+				fill: white;
+			}
+    	padding-top: 50px;
+    	width: 90%;
+		}
+	}
+
+	.help-np-icon-orange {
+		fill: $orange;    
+		height: 300px;
+    padding-top: 1em;
+  }
+
+	@media screen and (max-width: 768px) {
+		.help-np-icon-blue, .help-np-icon-orange {
+			width: 200px;
+			height: auto;
+		}
+		.circle-help-host {
+			width: 200px;
+			height: 200px;
+			margin-top: 1em;
+			.help-host-hat {
+				padding-top: 50px;
+			}
+			.help-host-vest {
+				padding-top: 30px;
+			}
+		}
+
+		.circle-help-guest {
+			width: 200px;
+			height: 200px;
+			margin-top: 1em;
+			.help-guest-hat {
+				padding-top: 50px;
+			}
+			.help-guest-vest {
+				padding-top: 30px;
+			}
+		}
+	}
+
+
 }
+
