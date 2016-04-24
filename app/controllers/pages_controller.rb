@@ -21,8 +21,9 @@ class PagesController < ApplicationController
     case params[:id]
     when 'landing'
       'landing'
-    when 'help/host', 'help/guest'
-      'help'
+    # this was used for the old help (the one with affix)
+    # when 'help/host', 'help/guest'
+    #   'help'
     else
       'application'
     end

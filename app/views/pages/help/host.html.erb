@@ -1,136 +1,116 @@
-<h1>Vuoi guadagnare con la tua barca?</h1>
-<p class="lead">
-  Se hai una barca e vuoi ridurre i tuoi costi di gestione e manutenzione, con Sea for All potrai condividerla in totale sicurezza con chi, come te, ama il mare.
-  <br>
-  In poche e semplici mosse, come e quando vuoi.
-</p>
-<p>
-  <ul class="list-unstyled lead">
-    <li>Iscrivi la tua barca su Sea for All</li>
-    <li>Scegli i giorni in cui metterla a disposizone</li>
-    <li>Descrivi le principali caratteristiche della barca</li>
-    <li>Stabilisci il prezzo</li>
-    <li>Inizia a condividerla e a guadagnare con la tua barca!</li>
-  </ul>
-</p>
+<div class="help-container">
+	
+	<%= render 'pages/help/modals' %>
 
-<%= render 'pages/help/noleggio_locazione' %>
+	<div class="row host">
+		<div class="col-md-8 help-text">
+			<h1>Vuoi guadagnare con la tua barca?</h1>
+			<p>
+			  Se hai una barca e vuoi ridurre i tuoi costi di gestione e manutenzione, con Sea for All potrai condividerla in totale sicurezza con chi, come te, ama il mare.
+			  <br>
+			  In poche e semplici mosse, come e quando vuoi.
+			</p>
+			<p>
+				Le barche presenti su Sea for All possono essere disponibili per il <%= link_to 'noleggio', '#', data: { toggle: 'modal', target: '#noleggioModal'} %> o la <%= link_to 'locazione', '#', data: { toggle: 'modal', target: '#locazioneModal'} %>, o per entrambe le soluzioni.
+			</p>
+			<p>
+				Per quanto riguarda il noleggio di unità da diporto tra privati, Sea for All si avvale della regolamentazione in vigore prevista dalla nuova legge sul <%= link_to 'noleggio occasionale', '#', data: { toggle: 'modal', target: '#noleggioOccasionaleModal'} %>.
+			</p>
+			<p>
+				Per iscrivere la tua barca per il servizio di locazione è necessario che tutti i requisiti di legge siano assolti. Devi pertanto contattare la tua Capitaneria di Porto di riferimento per poter richiedere tutti i permessi.
+			</p>
+		</div>
+		<div class="col-md-4 help-image">
+			<div class="circle-help-host">
+				<%= inline_svg 'np-host-hat', class: 'help-host-hat', nocomment: true %>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row host">
+		<div class="col-md-6 help-image">
+			<%#= image_tag "http://placekitten.com/300/200" %>
+			<%= inline_svg 'np-logbook', class: 'help-np-icon-blue', nocomment: true %>
+		</div>
+		<div class="col-md-6 help-text">
+			<h1>Iscrivi la tua barca</h1>
+			<p>
+				Inserisci tutte le caratteristiche della tua barca e specifica l'area dove è ormeggiata. Avrai inoltre uno spazio dedicato per descrivere le particolarità della tua barca.
+			</p>
+			<p>Stabilisci il prezzo giornaliero.</p>
+			<p>
+				In caso di Locazione verifica se per l'utilizzo dell'unità da diporto è necessario essere titolari di una patente nautica, e di che genere (motore, vela/motore).
+			</p>
+		</div>
+	</div>
+	
+	<div class="row host">
+		<div class="col-md-6 help-text">
+			<h1>Gestisci il Calendario</h1>
+			<p>
+				Scegli le date in cui vuoi rendere disponibile la tua barca. 
+			</p>
+			<p>
+				Sea for All ti permette di avere il controllo totale della tua agenda. Potrai modificare le date, scegliere se condividere la tua barca per uno o più giorni.
+			</p>
+		</div>
+		<div class="col-md-6 help-image">
+			<%#= image_tag "http://placekitten.com/400/300" %>
+			<%= inline_svg 'np-calendar', class: 'help-np-icon-blue', nocomment: true %>
+		</div>
+	</div>
+	
+	<div class="row host">
+		<div class="col-md-6 help-image">
+			<%#= image_tag "http://placekitten.com/400/300" %>
+			<%= inline_svg 'np-chat', class: 'help-np-icon-blue', nocomment: true %>
+		</div>
+		<div class="col-md-6 help-text">
+			<h1>Organizza l'uscita</h1>
+			<p>
+				Ogni volta che la tua barca viene prenotata verrai contattato dalla persona interessata tramite un sistema di messaggistica presente all'interno di Sea for All.
+			</p> 
+			<p>
+				A questo punto ti potrai mettere d'accordo sui dettagli pratici dell'appuntamento (ad esempio il luogo e l'ora dell'incontro).
+			</p>
+		</div>
+	</div>
+	
+	<div class="row host">
+		<div class="col-md-6 help-text">
+			<h1>Recensioni</h1>
+			<p>
+				Lascia una recensione della tua esperienza e condividi la tua valutazione di chi ha preso in noleggio e/o locazione la tua barca.
+			</p> 
+			<p>Il tuo feedback sarà utile a tutti gli utenti iscritti su Sea for All.</p> 
+			<p>
+				I principali parametri da considerare da parte del proprietario di barca sono le condizioni in cui è stata riconsegnata la barca, la pulizia e la puntualità.
+			</p>
+		</div>
+		<div class="col-md-6 help-image">
+			<%#= image_tag "http://placekitten.com/400/300" %>
+			<%= inline_svg 'np-review', class: 'help-np-icon-blue', nocomment: true %>
+		</div>
+	</div>
 
-<h2>Iscrivi la tua barca</h2>
-<p>
-  Inserisci tutte le caratteristiche della tua barca e specifica l'area dove è ormeggiata. Sea for All facilita la profilazione della tua barca attraverso una serie di opzioni preimpostate.
-</p>
-<p>
-  Avrai inoltre uno spazio dedicato per descrivere le particolarità della tua barca.
-</p>
-<p>
-  In caso di Locazione verifica se per l'utilizzo dell'unità da diporto è necessario essere titolari di una patente nautica, e di che genere (motore, vela/motore).
-</p>
-
-<h2>Gestisci il Calendario</h2>
-<div class="alert alert-info">
-  <h3>Work in Progress</h3>
-  <p>
-    Il sistema di Gestione del Calendario di Sea for All è ancora in "Beta".
-    Avviseremo i nostri utenti appena questa funzionalità sarà aperta a tutti.
-  </p>
+	<div class="row host">
+		<div class="col-md-6 help-image">
+			<%#= image_tag "http://placekitten.com/400/300" %>
+			<div class="circle-help-host">
+				<%= inline_svg 'np-vest', class: 'help-host-vest', nocomment: true %>
+			</div>
+		</div>
+		<div class="col-md-6 help-text">
+			<h1>Dotazioni di Sicurezza</h1>
+			<p>
+				Ogni imbarcazione iscritta su Sea for All deve essere equipaggiata le dotazioni di sicurezza previste dalla Guardia Costiera (disponibili a <%= link_to 'questo link', aws_pdf_path_for("dotazioni-di-sicurezza.pdf"), target: '_blank' %>).
+			</p>
+			<p>
+				Il proprietario dovrà perciò garantire di essere in regola, dimostrando e segnalando la posizione dell'equipaggiamento di sicurezza sulla barca.
+			</p>
+			<p>
+				L'unità da diporto fornita di motore (di qualsiasi potenza) deve essere provvista di Assicurazione RC obbligatoria, come previsto dalla legge.
+			</p>
+		</div>
+	</div>
 </div>
-<p>
-  Scegli le date in cui vuoi rendere disponibile la tua barca. Sea for All ti permette di avere il controllo totale della tua agenda. Potrai modificare le date, scegliere se condividere la tu barca per uno o più giorni.
-</p>
-
-<h2>Aspetti legali e fiscali</h2>
-
-<h3>NOLEGGIO E LOCAZIONE</h3>
-
-<p>
-  Per quanto riguarda il Noleggio della tua barca andrai a sfruttare la legge sul NOLEGGIO OCCASIONALE in vigore dal 25 marzo 2015. Al fine di incentivare la nautica da diporto e il turismo nautico, il proprietario dell'imbarcazione può effettuare, in forma occasionale (massimo 40 giorni all'anno), attività di noleggio. Tale forma di noleggio non costituisce uso commerciale dell'unità.
-</p>
-<p>
-  Il comando e la condotta dell'imbarcazione da diporto possono essere assunti dal titolare, o attraverso l'utilizzazione di altro personale, con il solo requisito del possesso della patente nautica. Qualora sia utilizzato personale diverso, le relative prestazioni di lavoro si intendono comprese tra le prestazioni occasionali di tipo accessorio e ad esse si applicano le disposizioni di cui all'articolo 72 del citato decreto legislativo n. 276 del 2003.
-</p>
-<p>
-  L'effettuazione del noleggio è subordinata esclusivamente alla previa comunicazione, da effettuare mediante modalità telematiche, all'Agenzia delle entrate e alla Capitaneria di porto territorialmente competente, (nonché all'Inps ed all'Inail, nel caso di impiego di personale).
-</p>
-<p>
-  Il modulo da compilare online è il seguente: <%= link_to "http://guardiacostiera.it/diporto/noleggio/", "http://guardiacostiera.it/diporto/noleggio/" %>
-</p>
-<p>
-  I proventi derivanti dall'attività di noleggio sono assoggettati non possono essere superiore a 30.000 euro annui, con una tassazione del 20%, con esclusione della detraibilità o deducibilità dei costi e delle spese sostenute relative all'attività di noleggio.
-</p>
-
-<%# <h3>LOCAZIONE</h3> %>
-<%# TODO %>
-<%# Da rivedere dopo le ultime novità.%>
-
-<h2>Scegli il tuo costo giornaliero</h2>
-<p>
-  Sea for All ti permette di scegliere il prezzo giornaliero per il noleggio e/o locazione della tua barca in totale autonomia.
-</p>
-<div class="alert alert-info">
-  <h3>Work in Progress</h3>
-  <p>
-    Il sistema di Prenotazione e Pagamento di Sea for All è ancora in "Beta".
-    Avviseremo i nostri utenti appena questa funzionalità sarà aperta a tutti.
-  </p>
-</div>
-<p>
-  In futuro Sea for All valuterà le politiche di prezzo scelte dal proprietario andando ad evidenziare/valorizzare coloro che hanno optato per una quotazione competitiva. I parametri per una corretta price strategy sono infatti molteplici; si va dalla tipologia di imbarcazione alla marina dove è ormeggiata la barca, al periodo di affitto, alle condizioni e caratteristiche generali dell'imbarcazione. <%# Per il servizio di matching e di assicurazione Sea for All  tratterrà una fee del 15% per ogni transazione. %>
-</p>
-<p>
-  <%# Il sistema di pagamento di Sea for All è interamente digitale, tramite il circuito Visa, Mastercard. %>
-</p>
-<p>
-  <%# Sia te in veste di proprietario che la persona interessata alla tua barca potrete disdire la prenotazione entro 48 ore dalla data fissata.  Se il soggetto che ha prenotato la tua barca non rinuncia al servizio senza aver disdetto entro le 48 ore pagherà comunque il 50% della cifra totale. Ti consigliamo pertanto di controllare per tempo le condizioni meteo della località interessata. %>
-</p>
-
-<%# <h2>Deposito Cauzionale</h2> %>
-<%# <p> %>
-<%#   Sea for All permette al proprietario di richiedere o meno un Deposito Cauzionale. Il Deposito Cauzionale è legato solo al servizio di Locazione. Infatti con il servizio di Noleggio il proprietario (o che ne fa le veci) sarà comunque al comando della barca. %>
-<%# </p> %>
-<%# <p> %>
-<%#   Il massimale del Deposito Cauzionale è di 500 €. Tale importo che viene bloccato sulla carta di credito del cliente a garanzia dell‘unità da diporto che gli è stata data in locazione. Si tratta di una somma che viene pre-addebitata nell'evenienza che il cliente causi accidentalmente danni alla vettura. A fine locazione, una volta consegnala la barca e verificato che non ci sono danni, il proprietario, tramite Sea for All procede allo sblocco immediato del Deposito Cauzionale. %>
-<%# </p> %>
-
-<h2>Organizza l'uscita</h2>
-<p>
-  Ogni volta che la tua barca viene prenotata verrai contattato dalla persona interessata tramite un sistema di messaggistica presente all'interno di Sea for All. A questo punto ti potrai mettere d'accordo sui dettagli pratici dell'appuntamento (ad esempio il luogo e l'ora dell'incontro). In tale occasione, se stai offrendo un servizio di locazione comunicherai direttamente al tuo ospite se sarai presente in persona a consegnare la barca o se ci sarà una persona terza da te delegata (molto probabilmente l'uomo che gestisce il pontile).
-</p>
-<p>
-  In caso di servizio di noleggio darai invece maggiori informazioni sull'itinerario dell'uscita (ad esempio la durata della navigazione, informazioni sul vitto, e altri dettagli pratici).
-</p>
-
-<%= render 'pages/help/dotazioni_sicurezza', guest: false %>
-
-<%= render 'pages/help/assicurazione', guest: false %>
-
-<h2>Check-in</h2>
-<p>
-  In caso di servizio di Noleggio il proprietario incontrerà le persone che hanno scelto la sua barca per l'uscita. I dettagli dell'itinerario sono già stati concordati precedentemente in fase di prenotazione. Il proprietario sarà il loro comandante e avrai la responsabilità della barca. Una volta a bordo il proprietario dovrà dimostrare che la descrizione e le caratteristiche mostrate sul sito web siano effettivamente reali. Gli ospiti avranno inoltre facoltà di verificare che le dotazioni di sicurezza siano presenti e a norma.
-</p>
-<p>
-  In caso servizio di Locazione il proprietario incontrerà la persona che ha prenotato la sua barca direttamente nel luogo dove è ormeggiata. Come già detto il proprietario ha facoltà di delegare una persona di sua fiducia (presumibilmente l'uomo che gestisce il tuo pontile) per le attività di check-in. È importante però che tale informazione sia stata comunicata e condivisa precedentemente con l'ospite. Una volta incontrata la persona sul luogo il proprietario (o una persona da lui delegata) dovrà essere dovrà fornire un'attività di supporto. Innanzitutto dovrà dimostrare che la barca sia in perfette condizioni per la navigazione, e comunque che corrisponda a quanto descritto nel sito, poi dovrà spiegare dove sono posizionate le dotazioni di sicurezza e i documenti necessari per la navigazione (inclusa la copertura dall'assicurazione RC).
-</p>
-<p>
-  Sempre in fase di check-in il proprietario è tenuto a spiegarti eventuali peculiarità dell'imbarcazione.
-</p>
-
-<h2>Check-out</h2>
-<p>
-  In caso servizio di Locazione, al momento del rientro in porto nell'orario stabilito in fase di prenotazione, il proprietario (o una persona da lui delegata) verificherà le condizioni della barca certificando che la barca e il relativo equipaggiamento non abbiano subito danni. <%# A quel punto, in maniera digitale tramite Sea for All procederà allo sblocco immediato del Deposito Cauzionale. %>
-</p>
-<p>
-  Salvo che non sia stato precedentemente pattuito diversamente, l'ospite deve riconsegnare la barca provvista di carburante.
-</p>
-
-<h2>Feedback/Recensioni</h2>
-<div class="alert alert-info">
-  <h3>Work in Progress</h3>
-  <p>
-    Il sistema di Feedback di Sea for All è ancora in "Beta" e sarà attivo insieme con il sistema di Prenotazione e Pagamento.
-    Avviseremo i nostri utenti appena questa funzionalità sarà aperta a tutti.
-  </p>
-</div>
-<p>
-  Lascia una recensione della tua esperienza e condividi la tua valutazione di chi ha preso in noleggio e/o locazione la tua barca. Il tuo feedback sarà utile a tutti gli utenti iscritti su Sea for All. I principali parametri da considerare da parte del proprietario di barca sono le condizioni in cui è stata riconsegnata la barca, la pulizia e la puntualità.
-</p>
