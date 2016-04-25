@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-25 22:22+0200\n"
-"PO-Revision-Date: 2016-04-25 22:22+0200\n"
+"POT-Creation-Date: 2016-04-25 23:07+0200\n"
+"PO-Revision-Date: 2016-04-25 23:07+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -124,9 +124,6 @@ msgid "Are you really sure?"
 msgstr ""
 
 msgid "Availability"
-msgstr ""
-
-msgid "Available"
 msgstr ""
 
 msgid "Boat"
@@ -321,9 +318,6 @@ msgstr ""
 msgid "Book"
 msgstr ""
 
-msgid "Booked"
-msgstr ""
-
 msgid "Booking"
 msgstr ""
 
@@ -445,6 +439,18 @@ msgid "Booking|Start time"
 msgstr ""
 
 msgid "By joining you agree to our %{tos} and %{privacy}"
+msgstr ""
+
+msgid "CalendarLegend|Available"
+msgstr ""
+
+msgid "CalendarLegend|Booked"
+msgstr ""
+
+msgid "CalendarLegend|Requested"
+msgstr ""
+
+msgid "CalendarLegend|Unavailable"
 msgstr ""
 
 msgid "Cancel my account"
@@ -740,13 +746,19 @@ msgstr ""
 msgid "MailBodyBookingCanceled|You have canceled a booking for %{boat_name}"
 msgstr ""
 
-msgid "MailBodyBookingRejected|%{host_name} has rejected your booking for %{boat_name}"
+msgid "MailBodyBookingRejected|%{host_name} has rejected your booking request for %{boat_name}"
 msgstr ""
 
-msgid "MailBodyBookingRejected|You have rejected a booking for %{boat_name}"
+msgid "MailBodyBookingRejected|You have rejected a booking request for %{boat_name}"
 msgstr ""
 
 msgid "MailBodyCallToAction|Go to the booking"
+msgstr ""
+
+msgid "MailBodyCallToAction|Leave your review"
+msgstr ""
+
+msgid "MailBodyCallToAction|Read the message"
 msgstr ""
 
 msgid "MailBodyNewBooking|Review the details of the booking, continue the conversation with %{host_name} and enjoy the boat once %{host_name} will have accepted the booking."
@@ -761,9 +773,6 @@ msgstr ""
 msgid "MailBodyNewBooking|You have received a new booking request for %{boat_name}:"
 msgstr ""
 
-msgid "MailBodyNewReply|Read the message"
-msgstr ""
-
 msgid "MailBodyNewReply|You received a private message from %{sender_name} for the booking:"
 msgstr ""
 
@@ -776,7 +785,7 @@ msgstr ""
 msgid "MailBodyNewReview|You have left a review about the following booking"
 msgstr ""
 
-msgid "MailBodyRemindReview|Did you have a good time on <strong>%{boat_name}</strong>? Please review your experience and let other people how much fun you had on %{host_name}'s boat!"
+msgid "MailBodyRemindReview|Did you have a good time on <strong>%{boat_name}</strong>? Please review your experience and let other people know how much fun you had on %{host_name}'s boat!"
 msgstr ""
 
 msgid "MailBodyRemindReview|Don't forget that your review will be public, so please be polite and respectful."
@@ -788,10 +797,7 @@ msgstr ""
 msgid "MailBodyRemindReview|How was your experience with %{guest_name}? Please tell us how it was to host %{guest_name} on your boat."
 msgstr ""
 
-msgid "MailBodyRemindReview|Leave your review"
-msgstr ""
-
-msgid "MailBodyRemindReview|Your review is very important because it will help other users of the SeaForAll community to know more about %{other_name}'s reputation."
+msgid "MailBodyRemindReview|Your review is very important because it will help other users of the Sea for All community to know more about %{other_name}'s reputation."
 msgstr ""
 
 msgid "MailBodyWelcome|Complete your profile"
@@ -1090,9 +1096,6 @@ msgstr ""
 msgid "Remove|this boat"
 msgstr ""
 
-msgid "Requested"
-msgstr ""
-
 msgid "Review"
 msgstr ""
 
@@ -1316,9 +1319,6 @@ msgid "Total Price"
 msgstr ""
 
 msgid "Type something..."
-msgstr ""
-
-msgid "Unavailable"
 msgstr ""
 
 msgid "Unhappy?"

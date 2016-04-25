@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-04-25 22:19+0200\n"
+"PO-Revision-Date: 2016-04-25 23:06+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.7\n"
-"POT-Creation-Date: 2016-04-25 22:22+0200\n"
+"POT-Creation-Date: 2016-04-25 23:07+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -125,9 +125,6 @@ msgstr "Sei davvero sicuro?"
 
 msgid "Availability"
 msgstr "Disponibilità"
-
-msgid "Available"
-msgstr ""
 
 msgid "Boat"
 msgstr "Barca"
@@ -321,9 +318,6 @@ msgstr "Anno"
 msgid "Book"
 msgstr "Prenota"
 
-msgid "Booked"
-msgstr "Prenotata"
-
 msgid "Booking"
 msgstr "Prenotazione"
 
@@ -349,7 +343,7 @@ msgid "BookingActionHintText|Booking already expired"
 msgstr "Periodo di prenotazione già terminato"
 
 msgid "BookingActionHintText|Booking still pending"
-msgstr "Prenotazione in sospeso"
+msgstr "Prenotazione in attesa"
 
 msgid "BookingActionHintText|Did you reject this booking?"
 msgstr "Hai rifiutato questa prenotazione?"
@@ -367,7 +361,7 @@ msgid "BookingStateName|Canceled"
 msgstr "Cancellata"
 
 msgid "BookingStateName|Pending"
-msgstr "In sospeso"
+msgstr "In attesa"
 
 msgid "BookingStateName|Rejected"
 msgstr "Rifiutata"
@@ -382,7 +376,7 @@ msgid "BookingStateTooltip|Canceled Booking"
 msgstr "Prenotazione cancellata"
 
 msgid "BookingStateTooltip|Pending Booking"
-msgstr "Prenotazione in sospeso"
+msgstr "Prenotazione in attesa"
 
 msgid "BookingStateTooltip|Rejected Booking"
 msgstr "Prenotazione rifiutata"
@@ -446,6 +440,18 @@ msgstr "Inizio"
 
 msgid "By joining you agree to our %{tos} and %{privacy}"
 msgstr "Registrandoti accetti i nostri %{tos} e la nostra %{privacy}"
+
+msgid "CalendarLegend|Available"
+msgstr "Disponibile"
+
+msgid "CalendarLegend|Booked"
+msgstr "Prenotata"
+
+msgid "CalendarLegend|Requested"
+msgstr "In attesa"
+
+msgid "CalendarLegend|Unavailable"
+msgstr "Non disponibile"
 
 msgid "Cancel my account"
 msgstr "Elimina il mio account"
@@ -603,10 +609,10 @@ msgid "Fill all the fields and <strong>upload at least one picture</strong> to c
 msgstr "Compila tutti i campi e <strong>carica almeno una foto</strong> per completare il profilo della barca"
 
 msgid "FirstChatMsgBody|Hi %{first_name}, I would like to book %{boat_name} from %{first_day} to %{last_day}"
-msgstr ""
+msgstr "Ciao %{first_name}, vorrei prenotare %{boat_name} dal %{first_day} al %{last_day}"
 
 msgid "FirstChatMsgBody|Hi %{first_name}, I would like to book %{boat_name} on the %{first_day}"
-msgstr ""
+msgstr "Ciao %{first_name}, vorrei prenotare %{boat_name} per il %{first_day}"
 
 msgid "Forgot your password?"
 msgstr "Password dimenticata?"
@@ -735,51 +741,54 @@ msgid "MailBodyBookingCanceled|%{canceler_name} has canceled one of the bookings
 msgstr "%{canceler_name} ha cancellato una prenotazione per %{boat_name}"
 
 msgid "MailBodyBookingCanceled|One of your bookings for %{boat_name} has been canceled"
-msgstr ""
+msgstr "Una delle tue prenotazioni per %{boat_name} è stata cancellata"
 
 msgid "MailBodyBookingCanceled|Take a look to the booking to see the reason of canceling"
-msgstr ""
+msgstr "Dai un’occhiata alla prenotazione per vedere il motico della cancellazione"
 
 msgid "MailBodyBookingCanceled|You have canceled a booking for %{boat_name}"
+msgstr "Hai cancellato una prenotazione per %{boat_name}"
+
+msgid "MailBodyBookingRejected|%{host_name} has rejected your booking request for %{boat_name}"
 msgstr ""
 
-msgid "MailBodyBookingRejected|%{host_name} has rejected your booking for %{boat_name}"
-msgstr ""
-
-msgid "MailBodyBookingRejected|You have rejected a booking for %{boat_name}"
+msgid "MailBodyBookingRejected|You have rejected a booking request for %{boat_name}"
 msgstr ""
 
 msgid "MailBodyCallToAction|Go to the booking"
+msgstr "Vai alla prenotazione"
+
+msgid "MailBodyCallToAction|Leave your review"
+msgstr ""
+
+msgid "MailBodyCallToAction|Read the message"
 msgstr ""
 
 msgid "MailBodyNewBooking|Review the details of the booking, continue the conversation with %{host_name} and enjoy the boat once %{host_name} will have accepted the booking."
-msgstr ""
+msgstr "Controlla i dettagli della richiesta di prenotazione, continua la conversazione con %{host_name} e divertiti sulla sua barca una volta che %{host_name} avrà accettato la richiesta."
 
 msgid "MailBodyNewBooking|Review the details of the booking, reply to %{guest_name} and <strong>accept</strong> (or reject) the booking."
-msgstr ""
+msgstr "Controlla i dettagli della richiesta di prenotazione, continua la conversazione con %{guest_name} e <strong>accetta</strong> (o rifiuta) questa richiesta."
 
 msgid "MailBodyNewBooking|You have made a new booking request for %{boat_name}:"
-msgstr ""
+msgstr "Hai fatto una richiesta di prenotazione per %{boat_name}:"
 
 msgid "MailBodyNewBooking|You have received a new booking request for %{boat_name}:"
-msgstr ""
-
-msgid "MailBodyNewReply|Read the message"
-msgstr ""
+msgstr "Hai ricevuto una richiesta di prenotazione per %{boat_name}:"
 
 msgid "MailBodyNewReply|You received a private message from %{sender_name} for the booking:"
-msgstr ""
+msgstr "MailBodyNewReply|Hai ricevuto un messaggio privato da %{sender_name} per la seguente prenotazione:"
 
 msgid "MailBodyNewReview|%{reviewer} have left a review about the following booking"
-msgstr ""
+msgstr "%{reviewer} ha lasciato una recensione per la seguente prenotazione"
 
 msgid "MailBodyNewReview|Go to the details of the booking and read the full review!"
-msgstr ""
+msgstr "Vai ai dettagli della prenotazione e leggi l’intera recensione!"
 
 msgid "MailBodyNewReview|You have left a review about the following booking"
-msgstr ""
+msgstr "Hai lasciato una recensione per la seguente prenotazione"
 
-msgid "MailBodyRemindReview|Did you have a good time on <strong>%{boat_name}</strong>? Please review your experience and let other people how much fun you had on %{host_name}'s boat!"
+msgid "MailBodyRemindReview|Did you have a good time on <strong>%{boat_name}</strong>? Please review your experience and let other people know how much fun you had on %{host_name}'s boat!"
 msgstr ""
 
 msgid "MailBodyRemindReview|Don't forget that your review will be public, so please be polite and respectful."
@@ -791,10 +800,7 @@ msgstr ""
 msgid "MailBodyRemindReview|How was your experience with %{guest_name}? Please tell us how it was to host %{guest_name} on your boat."
 msgstr ""
 
-msgid "MailBodyRemindReview|Leave your review"
-msgstr ""
-
-msgid "MailBodyRemindReview|Your review is very important because it will help other users of the SeaForAll community to know more about %{other_name}'s reputation."
+msgid "MailBodyRemindReview|Your review is very important because it will help other users of the Sea for All community to know more about %{other_name}'s reputation."
 msgstr ""
 
 msgid "MailBodyWelcome|Complete your profile"
@@ -924,7 +930,7 @@ msgid "Mailboxer::Notification|Subject"
 msgstr ""
 
 msgid "Message sent"
-msgstr ""
+msgstr "Messaggio inviato"
 
 msgid "My Bookings"
 msgstr "Le mie prenotazioni"
@@ -1092,9 +1098,6 @@ msgstr "Elimina immagine"
 
 msgid "Remove|this boat"
 msgstr "questa barca"
-
-msgid "Requested"
-msgstr "Richiesto"
 
 msgid "Review"
 msgstr ""
@@ -1320,9 +1323,6 @@ msgid "Total Price"
 msgstr "Prezzo totale"
 
 msgid "Type something..."
-msgstr ""
-
-msgid "Unavailable"
 msgstr ""
 
 msgid "Unhappy?"
@@ -1579,3 +1579,6 @@ msgstr "devi inserire la password attuale per cambiare la password"
 
 msgid "welcome to <strong>Sea for All</strong> and thank you for joining us!"
 msgstr "benvenuto su <strong>Sea for All</strong> e grazie per esserti unito a noi!"
+
+#~ msgid "MailBodyNewReply|Read the message"
+#~ msgstr "Leggi il messaggio"
