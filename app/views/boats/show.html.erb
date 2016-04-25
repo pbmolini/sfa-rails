@@ -179,7 +179,7 @@
               <li>
                 <% if @boat.reviews.any? %>                  
                   <%= link_to boat_reviews_path(@boat) do %>
-                    <% @boat.reviews.count == 1 ? _("One review") : _("%{num} reviews") %{num: @boat.reviews.count} %>
+                    <% n_("%{count} review", "%{count} reviews", @boat.reviews.count) %{count: @boat.reviews.count} %>
                   <% end %>
                 <% else %>
                   <%= _("No reviews yet") %>

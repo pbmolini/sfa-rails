@@ -18,9 +18,9 @@ class BookingObserver < ActiveRecord::Observer
 
 	def body_for(booking)
 		if booking.duration_in_days > 1
-			_("Hi %{first_name}, I would like to book %{boat_name} from %{first_day} to %{last_day}" %{first_name: booking.boat.user.first_name, boat_name: booking.boat.name, first_day: booking.first_day_in_locale, last_day: booking.last_day_in_locale})
+			s_("FirstChatMsgBody|Hi %{first_name}, I would like to book %{boat_name} from %{first_day} to %{last_day}" %{first_name: booking.boat.user.first_name, boat_name: booking.boat.name, first_day: booking.first_day_in_locale, last_day: booking.last_day_in_locale})
 		else
-			_("Hi %{first_name}, I would like to book %{boat_name} on the %{first_day}" %{first_name: booking.boat.user.first_name, boat_name: booking.boat.name, first_day: booking.first_day_in_locale})
+			s_("FirstChatMsgBody|Hi %{first_name}, I would like to book %{boat_name} on the %{first_day}" %{first_name: booking.boat.user.first_name, boat_name: booking.boat.name, first_day: booking.first_day_in_locale})
 		end
 	end
 

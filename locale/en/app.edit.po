@@ -23,25 +23,91 @@ msgstr ""
 msgid "%{boat_price} €/day"
 msgstr ""
 
+msgid "%{count} boat"
+msgid_plural "%{count} boats"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%{count} boat registered"
+msgid_plural "%{count} boats registered"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%{count} review"
+msgid_plural "%{count} reviews"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "%{duration} days from %{first_day} to %{last_day}"
+msgstr ""
+
 msgid "%{length} characters minimum"
-msgstr ""
-
-msgid "%{num} %{boat_pl} %{registered_pl}"
-msgstr ""
-
-msgid "%{profile_link_text} to <strong>publish</strong> your first boat. You can start the registration of as many boats you like, but they will be visible to other people once you have completed your profile."
 msgstr ""
 
 msgid "-- the team of %{link}"
 msgstr ""
 
+msgid "A problem occurred with your booking. Please try again"
+msgstr ""
+
 msgid "About us"
+msgstr ""
+
+msgid "Accepted Bookings"
+msgstr ""
+
+msgid "Active admin/comment"
+msgstr ""
+
+msgid "ActiveAdmin::Comment|Author type"
+msgstr ""
+
+msgid "ActiveAdmin::Comment|Body"
+msgstr ""
+
+msgid "ActiveAdmin::Comment|Namespace"
+msgstr ""
+
+msgid "ActiveAdmin::Comment|Resource type"
 msgstr ""
 
 msgid "Address"
 msgstr ""
 
-msgid "All the boats will be available for renting soon"
+msgid "Admin user"
+msgstr ""
+
+msgid "AdminUser|Current sign in at"
+msgstr ""
+
+msgid "AdminUser|Current sign in ip"
+msgstr ""
+
+msgid "AdminUser|Email"
+msgstr ""
+
+msgid "AdminUser|Encrypted password"
+msgstr ""
+
+msgid "AdminUser|Last sign in at"
+msgstr ""
+
+msgid "AdminUser|Last sign in ip"
+msgstr ""
+
+msgid "AdminUser|Remember created at"
+msgstr ""
+
+msgid "AdminUser|Reset password sent at"
+msgstr ""
+
+msgid "AdminUser|Reset password token"
+msgstr ""
+
+msgid "AdminUser|Sign in count"
+msgstr ""
+
+msgid "All"
 msgstr ""
 
 msgid "Already have an account?"
@@ -50,19 +116,19 @@ msgstr ""
 msgid "Are really you sure you want to delete %{name}?"
 msgstr ""
 
+msgid "Are you really sure you want to reject this booking?"
+msgstr ""
+
 msgid "Are you really sure?"
 msgstr ""
 
-msgid "Back"
+msgid "Availability"
 msgstr ""
 
-msgid "Be careful here..."
+msgid "Available"
 msgstr ""
 
 msgid "Boat"
-msgstr ""
-
-msgid "Boat Availability"
 msgstr ""
 
 msgid "Boat category"
@@ -185,6 +251,21 @@ msgstr ""
 msgid "BoatMissingField|Name not set"
 msgstr ""
 
+msgid "BoatMngtButtonTooltip|Availability Calendar"
+msgstr ""
+
+msgid "BoatMngtButtonTooltip|Edit Boat"
+msgstr ""
+
+msgid "BoatMngtButtonTooltip|See all the bookings"
+msgstr ""
+
+msgid "BoatSearch|Where?"
+msgstr ""
+
+msgid "BoatShow|Almost done! You must <strong><a href='%{link}' class='alert-link'>complete your profile</a></strong> to make this boat visible to other people."
+msgstr ""
+
 msgid "Boat|Address"
 msgstr ""
 
@@ -209,7 +290,13 @@ msgstr ""
 msgid "Boat|Horse power"
 msgstr ""
 
+msgid "Boat|Latitude"
+msgstr ""
+
 msgid "Boat|Length"
+msgstr ""
+
+msgid "Boat|Longitude"
 msgstr ""
 
 msgid "Boat|Manufacturer"
@@ -233,7 +320,118 @@ msgstr ""
 msgid "Book"
 msgstr ""
 
+msgid "Booked"
+msgstr ""
+
 msgid "Booking"
+msgstr ""
+
+msgid "BookingActionBtnText|Accept"
+msgstr ""
+
+msgid "BookingActionBtnText|Cancel"
+msgstr ""
+
+msgid "BookingActionBtnText|I rejected it"
+msgstr ""
+
+msgid "BookingActionBtnText|Oh yes, I accepted"
+msgstr ""
+
+msgid "BookingActionBtnText|Reject"
+msgstr ""
+
+msgid "BookingActionBtnText|Review your experience"
+msgstr ""
+
+msgid "BookingActionHintText|Booking already expired"
+msgstr ""
+
+msgid "BookingActionHintText|Booking still pending"
+msgstr ""
+
+msgid "BookingActionHintText|Did you reject this booking?"
+msgstr ""
+
+msgid "BookingActionHintText|Do you prefer not to accept?"
+msgstr ""
+
+msgid "BookingActionHintText|Do you want to cancel this booking?"
+msgstr ""
+
+msgid "BookingStateName|Accepted"
+msgstr ""
+
+msgid "BookingStateName|Canceled"
+msgstr ""
+
+msgid "BookingStateName|Pending"
+msgstr ""
+
+msgid "BookingStateName|Rejected"
+msgstr ""
+
+msgid "BookingStateName|Undefined"
+msgstr ""
+
+msgid "BookingStateTooltip|Accepted Booking"
+msgstr ""
+
+msgid "BookingStateTooltip|Canceled Booking"
+msgstr ""
+
+msgid "BookingStateTooltip|Pending Booking"
+msgstr ""
+
+msgid "BookingStateTooltip|Rejected Booking"
+msgstr ""
+
+msgid "BookingStateTooltip|Undefined Booking"
+msgstr ""
+
+msgid "BookingTableMailer|Boat"
+msgstr ""
+
+msgid "BookingTableMailer|Boat's owner"
+msgstr ""
+
+msgid "BookingTableMailer|Details of the booking"
+msgstr ""
+
+msgid "BookingTableMailer|End"
+msgstr ""
+
+msgid "BookingTableMailer|Guest"
+msgstr ""
+
+msgid "BookingTableMailer|Number of days"
+msgstr ""
+
+msgid "BookingTableMailer|People on board"
+msgstr ""
+
+msgid "BookingTableMailer|Start"
+msgstr ""
+
+msgid "BookingValidationError|This boat is not available in the period you selected"
+msgstr ""
+
+msgid "BookingValidationError|must be before end time"
+msgstr ""
+
+msgid "BookingValidationError|must be later than now"
+msgstr ""
+
+msgid "Bookings"
+msgstr ""
+
+msgid "Bookings for %{boat_name}"
+msgstr ""
+
+msgid "Booking|Aasm state"
+msgstr ""
+
+msgid "Booking|Cancellation reason"
 msgstr ""
 
 msgid "Booking|End time"
@@ -254,6 +452,27 @@ msgstr ""
 msgid "Cancel upload"
 msgstr ""
 
+msgid "Canceled Bookings"
+msgstr ""
+
+msgid "CancellationModal|Cancel Booking"
+msgstr ""
+
+msgid "CancellationModal|Close"
+msgstr ""
+
+msgid "CancellationModal|Do you really want to cancel?"
+msgstr ""
+
+msgid "CancellationModal|It is important for the guest/host to understand why you had to cancel this booking."
+msgstr ""
+
+msgid "CancellationModal|Please provide your reason for canceling"
+msgstr ""
+
+msgid "CancellationModal|You need to type at least 50 characters"
+msgstr ""
+
 msgid "Change Password"
 msgstr ""
 
@@ -269,22 +488,19 @@ msgstr ""
 msgid "Change your password"
 msgstr ""
 
+msgid "Changes are automatically saved"
+msgstr ""
+
 msgid "Check this if the boat has an engine"
+msgstr ""
+
+msgid "Click on the days when your boat will not be available for renting. Click on a gray day to make it available again. Don't forget that reserved days cannot be modified."
 msgstr ""
 
 msgid "Coming soon&hellip;"
 msgstr ""
 
-msgid "Complete boats"
-msgstr ""
-
 msgid "Complete profile"
-msgstr ""
-
-msgid "Complete the profile of this boat to make it visible to your future guests."
-msgstr ""
-
-msgid "Complete the profiles of these boats to make them visible to your future guests."
 msgstr ""
 
 msgid "Complete your profile"
@@ -299,10 +515,27 @@ msgstr ""
 msgid "Create Boat"
 msgstr ""
 
-msgid "Danger Zone"
+msgid "Current password"
 msgstr ""
 
 msgid "Darn! Something went wrong."
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Day"
+msgid_plural "Days"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Day|Availability"
+msgstr ""
+
+msgid "Day|Date"
+msgstr ""
+
+msgid "Delete boat"
 msgstr ""
 
 msgid "Delete my account"
@@ -332,7 +565,7 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-msgid "Edit Boat"
+msgid "Edit Availability"
 msgstr ""
 
 msgid "Edit Profile"
@@ -347,13 +580,28 @@ msgstr ""
 msgid "Email address used in Sea for All"
 msgstr ""
 
+msgid "End"
+msgstr ""
+
 msgid "Engine Horse Power"
+msgstr ""
+
+msgid "Enter at least 42 characters"
 msgstr ""
 
 msgid "Enter your Facebook account to change your email and password."
 msgstr ""
 
 msgid "Features"
+msgstr ""
+
+msgid "Fill all the fields and <strong>upload at least one picture</strong> to complete the boat's profile"
+msgstr ""
+
+msgid "FirstChatMsgBody|Hi %{first_name}, I would like to book %{boat_name} from %{first_day} to %{last_day}"
+msgstr ""
+
+msgid "FirstChatMsgBody|Hi %{first_name}, I would like to book %{boat_name} on the %{first_day}"
 msgstr ""
 
 msgid "Forgot your password?"
@@ -398,61 +646,43 @@ msgstr ""
 msgid "How much for a day on your boat?"
 msgstr ""
 
-msgid "Incomplete boats"
+msgid "I accept your booking. Enjoy my boat!"
 msgstr ""
 
-msgid "Landing|I have a boat to share"
+msgid "If you leave now, we will miss you forever"
 msgstr ""
 
-msgid "Landing|I'm interested because"
+msgid "Landing|Earn extra money with your boat"
 msgstr ""
 
-msgid "Landing|I'm looking for a boat to rent"
+msgid "Landing|Join the community"
 msgstr ""
 
-msgid "Landing|Keep me posted"
-msgstr ""
-
-msgid "Landing|Leave us your email!"
-msgstr ""
-
-msgid "Landing|Leave us your email."
-msgstr ""
-
-msgid "Landing|Looking for a boat to rent?"
-msgstr ""
-
-msgid "Landing|More info"
+msgid "Landing|No hidden costs or fees"
 msgstr ""
 
 msgid "Landing|Offset your ownership costs by listing your boat whenever and however you like"
 msgstr ""
 
-msgid "Landing|Ready?"
+msgid "Landing|Other cool text"
 msgstr ""
 
 msgid "Landing|Register your boat"
 msgstr ""
 
+msgid "Landing|Service 100% free"
+msgstr ""
+
 msgid "Landing|Share your boat with those who love the sea"
 msgstr ""
 
-msgid "Landing|Want a boat to spend a day at sea?"
-msgstr ""
-
-msgid "Landing|Want to earn extra money with your boat?"
+msgid "Landing|Show me more boats"
 msgstr ""
 
 msgid "Landing|We find people who would like to use it"
 msgstr ""
 
 msgid "Landing|We help you find the perfect fit for you"
-msgstr ""
-
-msgid "Landing|We'll get in touch as we weigh anchor."
-msgstr ""
-
-msgid "Landing|What is SEA FOR ALL"
 msgstr ""
 
 msgid "Landing|a great boat at a reasonable price"
@@ -462,6 +692,9 @@ msgid "Landing|and help you reduce your costs"
 msgstr ""
 
 msgid "Last update:"
+msgstr ""
+
+msgid "Latest bookings"
 msgstr ""
 
 msgid "License"
@@ -482,22 +715,226 @@ msgstr ""
 msgid "Login with Facebook"
 msgstr ""
 
-msgid "MailBody|Complete now your first boat's profile and get ready to share your boat!"
+msgid "MailBodyBookingAccepted|%{host_name} has accepted your booking for %{boat_name}"
 msgstr ""
 
-msgid "MailBody|For any help just visit our awesome %{help_page} or contact us by replying to this email."
+msgid "MailBodyBookingAccepted|Review the details of the booking, get in touch with %{guest_name} and make the experience on your boat unforgettable!"
 msgstr ""
 
-msgid "MailBody|Welcome and thanks for joining Sea for All!"
+msgid "MailBodyBookingAccepted|Review the details of the booking, get in touch with %{host_name} and enjoy the boat trip!"
+msgstr ""
+
+msgid "MailBodyBookingAccepted|You have accepted a booking for %{boat_name}"
+msgstr ""
+
+msgid "MailBodyBookingCanceled|%{canceler_name} has canceled one of the bookings for %{boat_name}"
+msgstr ""
+
+msgid "MailBodyBookingCanceled|One of your bookings for %{boat_name} has been canceled"
+msgstr ""
+
+msgid "MailBodyBookingCanceled|Take a look to the booking to see the reason of canceling"
+msgstr ""
+
+msgid "MailBodyBookingCanceled|You have canceled a booking for %{boat_name}"
+msgstr ""
+
+msgid "MailBodyBookingRejected|%{host_name} has rejected your booking for %{boat_name}"
+msgstr ""
+
+msgid "MailBodyBookingRejected|You have rejected a booking for %{boat_name}"
+msgstr ""
+
+msgid "MailBodyCallToAction|Go to the booking"
+msgstr ""
+
+msgid "MailBodyNewBooking|Review the details of the booking, continue the conversation with %{host_name} and enjoy the boat once %{host_name} will have accepted the booking."
+msgstr ""
+
+msgid "MailBodyNewBooking|Review the details of the booking, reply to %{guest_name} and <strong>accept</strong> (or reject) the booking."
+msgstr ""
+
+msgid "MailBodyNewBooking|You have made a new booking request for %{boat_name}:"
+msgstr ""
+
+msgid "MailBodyNewBooking|You have received a new booking request for %{boat_name}:"
+msgstr ""
+
+msgid "MailBodyNewReply|Read the message"
+msgstr ""
+
+msgid "MailBodyNewReply|You received a private message from %{sender_name} for the booking:"
+msgstr ""
+
+msgid "MailBodyNewReview|%{reviewer} have left a review about the following booking"
+msgstr ""
+
+msgid "MailBodyNewReview|Go to the details of the booking and read the full review!"
+msgstr ""
+
+msgid "MailBodyNewReview|You have left a review about the following booking"
+msgstr ""
+
+msgid "MailBodyRemindReview|Did you have a good time on <strong>%{boat_name}</strong>? Please review your experience and let other people how much fun you had on %{host_name}'s boat!"
+msgstr ""
+
+msgid "MailBodyRemindReview|Don't forget that your review will be public, so please be polite and respectful."
+msgstr ""
+
+msgid "MailBodyRemindReview|Go to the details of the booking and leave your review!"
+msgstr ""
+
+msgid "MailBodyRemindReview|How was your experience with %{guest_name}? Please tell us how it was to host %{guest_name} on your boat."
+msgstr ""
+
+msgid "MailBodyRemindReview|Leave your review"
+msgstr ""
+
+msgid "MailBodyRemindReview|Your review is very important because it will help other users of the SeaForAll community to know more about %{other_name}'s reputation."
+msgstr ""
+
+msgid "MailBodyWelcome|Complete your profile"
+msgstr ""
+
+msgid "MailBodyWelcome|Do you want to spend some days on a boat?"
+msgstr ""
+
+msgid "MailBodyWelcome|Find the right boat for you, anywhere you like!"
+msgstr ""
+
+msgid "MailBodyWelcome|For any help just visit our awesome %{help_page} or contact us by replying to this email."
+msgstr ""
+
+msgid "MailBodyWelcome|Have you got a boat and want to share it?"
+msgstr ""
+
+msgid "MailBodyWelcome|Present yourself at the best"
+msgstr ""
+
+msgid "MailBodyWelcome|Register your boat"
+msgstr ""
+
+msgid "MailBodyWelcome|Register your first boat and get ready to share it with other people like you!"
+msgstr ""
+
+msgid "MailBodyWelcome|Start now"
+msgstr ""
+
+msgid "MailBodyWelcome|Welcome and thanks for joining Sea for All!"
+msgstr ""
+
+msgid "MailBodyWelcome|to enjoy all the features offered by Sea for All!"
+msgstr ""
+
+msgid "MailTitleBookingAccepted|Booking accepted for %{boat_name}"
+msgstr ""
+
+msgid "MailTitleBookingCanceled|Booking canceled for %{boat_name}"
+msgstr ""
+
+msgid "MailTitleBookingRejected|Booking rejected for %{boat_name}"
+msgstr ""
+
+msgid "MailTitleNewBooking|New booking for %{boat_name}"
+msgstr ""
+
+msgid "MailTitleNewReply|New message from %{sender_name}"
+msgstr ""
+
+msgid "MailTitleWelcome|Welcome to Sea for All!"
+msgstr ""
+
+msgid "MailTitle|%{host_name} has accepted your booking on Sea for All"
+msgstr ""
+
+msgid "MailTitle|%{host_name} has rejected your booking on Sea for All"
+msgstr ""
+
+msgid "MailTitle|Leave a review for %{boat_name}"
+msgstr ""
+
+msgid "MailTitle|Leave a review to %{guest_name}"
+msgstr ""
+
+msgid "MailTitle|New review on Sea for All"
+msgstr ""
+
+msgid "MailTitle|One of your bookings has been canceled on Sea for All"
+msgstr ""
+
+msgid "MailTitle|Review your experience"
 msgstr ""
 
 msgid "MailTitle|Welcome to Sea for All!"
 msgstr ""
 
-msgid "My Boats"
+msgid "MailTitle|You have accepted a booking on Sea for All"
+msgstr ""
+
+msgid "MailTitle|You have rejected a booking on Sea for All"
+msgstr ""
+
+msgid "MailTitle|You posted a review on Sea for All"
+msgstr ""
+
+msgid "MailTitle|You received a review on Sea for All"
+msgstr ""
+
+msgid "Mailboxer/conversation"
+msgstr ""
+
+msgid "Mailboxer/notification"
+msgstr ""
+
+msgid "Mailboxer::Conversation|Subject"
+msgstr ""
+
+msgid "Mailboxer::Notification|Attachment"
+msgstr ""
+
+msgid "Mailboxer::Notification|Body"
+msgstr ""
+
+msgid "Mailboxer::Notification|Booking state change"
+msgstr ""
+
+msgid "Mailboxer::Notification|Draft"
+msgstr ""
+
+msgid "Mailboxer::Notification|Expires"
+msgstr ""
+
+msgid "Mailboxer::Notification|Global"
+msgstr ""
+
+msgid "Mailboxer::Notification|Notification code"
+msgstr ""
+
+msgid "Mailboxer::Notification|Notified object type"
+msgstr ""
+
+msgid "Mailboxer::Notification|Sender type"
+msgstr ""
+
+msgid "Mailboxer::Notification|Subject"
+msgstr ""
+
+msgid "Message sent"
+msgstr ""
+
+msgid "My Bookings"
 msgstr ""
 
 msgid "My Profile"
+msgstr ""
+
+msgid "My bookings"
+msgstr ""
+
+msgid "MyBoats|Register your boat now"
+msgstr ""
+
+msgid "MyBoats|You have not registered any boat yet."
 msgstr ""
 
 msgid "N/A"
@@ -509,7 +946,16 @@ msgstr ""
 msgid "New Boat"
 msgstr ""
 
+msgid "New booking for %{boat_name} on Sea for All"
+msgstr ""
+
 msgid "New password"
+msgstr ""
+
+msgid "New review"
+msgstr ""
+
+msgid "NewReplyMailSubject|New message from %{sender_name} on Sea for All"
 msgstr ""
 
 msgid "No Engine"
@@ -518,16 +964,34 @@ msgstr ""
 msgid "No boats yet"
 msgstr ""
 
+msgid "No bookings yet"
+msgstr ""
+
 msgid "No engine? Uncheck!"
 msgstr ""
 
-msgid "No feedback yet"
+msgid "No reviews yet"
 msgstr ""
 
 msgid "Not a member?"
 msgstr ""
 
-msgid "Not ready for renting"
+msgid "Not authorized!"
+msgstr ""
+
+msgid "One day on %{first_day}"
+msgstr ""
+
+msgid "Oops! It was not possible to accept this booking!"
+msgstr ""
+
+msgid "Oops! It was not possible to cancel this booking!"
+msgstr ""
+
+msgid "Oops! It was not possible to reject this booking!"
+msgstr ""
+
+msgid "Ops! Cannot publish this boat yet: please check all the compulsory fields"
 msgstr ""
 
 msgid "Other"
@@ -535,6 +999,14 @@ msgstr ""
 
 msgid "Other Features of your boat"
 msgstr ""
+
+msgid "Pending Bookings"
+msgstr ""
+
+msgid "Person"
+msgid_plural "People"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Personal info"
 msgstr ""
@@ -560,6 +1032,15 @@ msgstr ""
 msgid "Picture|Image updated at"
 msgstr ""
 
+msgid "Please cancel all your pending bookings before leaving Sea for All"
+msgstr ""
+
+msgid "Please delete all your boats before leaving Sea for All"
+msgstr ""
+
+msgid "Please leave a review and let everybody know about your experience"
+msgstr ""
+
 msgid "Please use the fallback form below to upload your files like in the olden days."
 msgstr ""
 
@@ -581,13 +1062,19 @@ msgstr ""
 msgid "Publish"
 msgstr ""
 
+msgid "Rating"
+msgstr ""
+
 msgid "Register"
 msgstr ""
 
-msgid "Register a new boat"
+msgid "Register a boat"
 msgstr ""
 
 msgid "Registered %{time} ago"
+msgstr ""
+
+msgid "Rejected Bookings"
 msgstr ""
 
 msgid "Remove"
@@ -602,6 +1089,36 @@ msgstr ""
 msgid "Remove|this boat"
 msgstr ""
 
+msgid "Requested"
+msgstr ""
+
+msgid "Review"
+msgstr ""
+
+msgid "Review your experience with %{reviewee_name}"
+msgstr ""
+
+msgid "ReviewCard|Left on"
+msgstr ""
+
+msgid "ReviewChars|characters to go"
+msgstr ""
+
+msgid "ReviewChars|left"
+msgstr ""
+
+msgid "Reviews"
+msgstr ""
+
+msgid "Reviews for this booking"
+msgstr ""
+
+msgid "Review|Comment"
+msgstr ""
+
+msgid "Review|Rating"
+msgstr ""
+
 msgid "Sail"
 msgstr ""
 
@@ -611,7 +1128,25 @@ msgstr ""
 msgid "Sea for All uses a third-party geocoding service that sometimes can make mistakes. %{link_text} this boat’s address and try with “<em>City, Country</em>”. %{writeus} if the problem persists."
 msgstr ""
 
+msgid "Search"
+msgstr ""
+
+msgid "SearchResults|Check out what is available a little bit farther"
+msgstr ""
+
+msgid "SearchResults|Sorry. There are no boats near %{place}"
+msgstr ""
+
+msgid "SearchResults|There are %{count} boats near %{place}"
+msgstr ""
+
 msgid "See this table for details"
+msgstr ""
+
+msgid "Select a start date"
+msgstr ""
+
+msgid "Select an end date"
 msgstr ""
 
 msgid "Select the category"
@@ -626,6 +1161,9 @@ msgstr ""
 msgid "Select the year"
 msgstr ""
 
+msgid "Send"
+msgstr ""
+
 msgid "Send me reset password instructions"
 msgstr ""
 
@@ -638,10 +1176,13 @@ msgstr ""
 msgid "Sign up with Facebook"
 msgstr ""
 
-msgid "Soon ready for renting"
+msgid "Sorry, I must cancel this booking."
 msgstr ""
 
-msgid "Start register"
+msgid "Sorry, I reject your booking."
+msgstr ""
+
+msgid "Start"
 msgstr ""
 
 msgid "Sure! Register my first boat"
@@ -650,7 +1191,10 @@ msgstr ""
 msgid "Sure?"
 msgstr ""
 
-msgid "Tell us something about you, and how much you love your boat!"
+msgid "Tell us something about you, and how much you love being on a boat!"
+msgstr ""
+
+msgid "Tell us whether you accepted or rejected this booking. This way you can leave and receive a review"
 msgstr ""
 
 msgid "Terms and Conditions"
@@ -662,19 +1206,22 @@ msgstr ""
 msgid "Thank you"
 msgstr ""
 
-msgid "Thank you for joining Sea for All. You can register your boat in a minute, just"
+msgid "Thank you for joining Sea for All. You can register your boat in a minute or find the right boat for you!"
 msgstr ""
 
 msgid "They can't be both true!"
 msgstr ""
 
-msgid "This boat cannot be published yet. Fill all the fields and <strong>upload at least one picture</strong> to complete the boat's profile."
+msgid "This boat cannot be published yet"
+msgstr ""
+
+msgid "This booking has been canceled. No more messages!"
 msgstr ""
 
 msgid "This filetype is not supported."
 msgstr ""
 
-msgid "This is your <em>dashboard</em>: from here you can access all the details of your boats and soon you will be able to manage your bookings."
+msgid "This is your <em>Dashboard</em>: from here you can access all the details of your %{boats_link}, %{bookings_link}, %{reviews_link} and %{profile_link}. Enjoy <strong>Sea for All</strong>!"
 msgstr ""
 
 msgid "This photo is too big! No more than {{maxFilesize}} MB please."
@@ -686,7 +1233,22 @@ msgstr ""
 msgid "Title|About us"
 msgstr ""
 
-msgid "Title|All the boats"
+msgid "Title|All Boats"
+msgstr ""
+
+msgid "Title|Availability of %{boat_name}"
+msgstr ""
+
+msgid "Title|Boats near %{place}"
+msgstr ""
+
+msgid "Title|Booking for %{boat_name}, %{boat_model}"
+msgstr ""
+
+msgid "Title|Booking's reviews"
+msgstr ""
+
+msgid "Title|Bookings for %{boat_name}"
 msgstr ""
 
 msgid "Title|Change your password"
@@ -695,7 +1257,7 @@ msgstr ""
 msgid "Title|Dashboard"
 msgstr ""
 
-msgid "Title|Edit Boat"
+msgid "Title|Edit %{boat_name}"
 msgstr ""
 
 msgid "Title|Edit Profile"
@@ -710,7 +1272,25 @@ msgstr ""
 msgid "Title|Login"
 msgstr ""
 
+msgid "Title|My Boats"
+msgstr ""
+
+msgid "Title|My Bookings"
+msgstr ""
+
+msgid "Title|My boats"
+msgstr ""
+
+msgid "Title|New Boat"
+msgstr ""
+
 msgid "Title|Privacy Policy"
+msgstr ""
+
+msgid "Title|Review your experience"
+msgstr ""
+
+msgid "Title|Reviews about %{boat_name}"
 msgstr ""
 
 msgid "Title|Sign up"
@@ -719,7 +1299,25 @@ msgstr ""
 msgid "Title|Terms of Service"
 msgstr ""
 
+msgid "Title|Welcome"
+msgstr ""
+
+msgid "Title|Your reviews"
+msgstr ""
+
+msgid "To be able to book a boat you have to <strong>%{link_text}</strong>"
+msgstr ""
+
 msgid "Too many photos!"
+msgstr ""
+
+msgid "Total Price"
+msgstr ""
+
+msgid "Type something..."
+msgstr ""
+
+msgid "Unavailable"
 msgstr ""
 
 msgid "Unhappy?"
@@ -729,9 +1327,6 @@ msgid "Update"
 msgstr ""
 
 msgid "User"
-msgstr ""
-
-msgid "User|Admin"
 msgstr ""
 
 msgid "User|Bio"
@@ -800,19 +1395,40 @@ msgstr ""
 msgid "User|Uid"
 msgstr ""
 
+msgid "ValidationError|doesn't seem to be a valid address"
+msgstr ""
+
+msgid "ValidationError|too many pictures (choose at most 10)"
+msgstr ""
+
+msgid "View all"
+msgstr ""
+
 msgid "Welcome %{name}"
 msgstr ""
 
-msgid "Welcome to <strong>Sea for All</strong> and thank you for joining us!"
+msgid "Welcome!"
+msgstr ""
+
+msgid "Welcome|Do you own a boat and want to rent it?"
+msgstr ""
+
+msgid "Welcome|Do you want to take a boat for renting?"
 msgstr ""
 
 msgid "What is its name?"
+msgstr ""
+
+msgid "Where is your boat moored? E.g. Genoa, Italy"
 msgstr ""
 
 msgid "Where is your boat moored? E.g. Molo Ponte Morosini, 46, Genoa"
 msgstr ""
 
 msgid "Who built your boat?"
+msgstr ""
+
+msgid "Why can not I book?"
 msgstr ""
 
 msgid "Write us"
@@ -824,19 +1440,49 @@ msgstr ""
 msgid "You are receiving this email because you registered an account on %{link} with the email address <em>%{email}</em>. If you think you shouldn't have received this email please contact us replying to this message."
 msgstr ""
 
+msgid "You can't book your own boat. This is just a preview of what guests will see."
+msgstr ""
+
+msgid "You cannot book yet..."
+msgstr ""
+
 msgid "You created this account using your Facebook credentials."
+msgstr ""
+
+msgid "You have accepted this booking!"
+msgstr ""
+
+msgid "You have canceled this booking!"
 msgstr ""
 
 msgid "You have no boats registered in Sea for All yet. Register your first boat now! It's fast and easy."
 msgstr ""
 
-msgid "You have started the registration of %{num}"
+msgid "You have rejected this booking!"
+msgstr ""
+
+msgid "You have successfully requested a booking to %{host_name}"
+msgstr ""
+
+msgid "You have to %{complete_profile} before making this boat available"
 msgstr ""
 
 msgid "You have to add at least one picture of your boat before publishing"
 msgstr ""
 
+msgid "You have to log in to continue"
+msgstr ""
+
 msgid "You have to log in to continue."
+msgstr ""
+
+msgid "You must accept or reject all the pending bookings of %{name} before removing it from Sea for All"
+msgstr ""
+
+msgid "You must complete your profile both for booking a boat and for publishing your own boat."
+msgstr ""
+
+msgid "You must complete your profile to book a boat"
 msgstr ""
 
 msgid "Your boat's description goes here. %{link_text} this boat to add a description."
@@ -845,19 +1491,30 @@ msgstr ""
 msgid "Your boat's length, in meters"
 msgstr ""
 
+msgid "Your boats"
+msgstr ""
+
 msgid "Your browser does not support drag'n'drop file uploads."
 msgstr ""
 
 msgid "Your guests will love to know more about your boat. Tell them something about it, what you use it for and what you love of your boat"
 msgstr ""
 
+msgid "Your review has been saved. Thank you!"
+msgstr ""
+
 msgid "bareboat"
 msgstr ""
 
+#, fuzzy
 msgid "boat"
-msgid_plural "boats"
-msgstr[0] ""
-msgstr[1] ""
+msgstr ""
+
+msgid "boats"
+msgstr ""
+
+msgid "bookings"
+msgstr ""
 
 msgid "both"
 msgstr ""
@@ -865,7 +1522,7 @@ msgstr ""
 msgid "captained"
 msgstr ""
 
-msgid "complete your Profile!"
+msgid "complete your profile"
 msgstr ""
 
 msgid "diesel"
@@ -878,6 +1535,9 @@ msgid "e.g. 200 E Main St Phoenix AZ 85123 USA"
 msgstr ""
 
 msgid "e.g. Pursuit DC 265, Cobalt A25"
+msgstr ""
+
+msgid "for your boats"
 msgstr ""
 
 msgid "help page"
@@ -895,19 +1555,23 @@ msgstr ""
 msgid "not_applicable"
 msgstr ""
 
+msgid "or complete your profile!"
+msgstr ""
+
 msgid "or just fill the form below"
 msgstr ""
 
 msgid "petrol"
 msgstr ""
 
-msgid "registered"
-msgid_plural "registered"
-msgstr[0] ""
-msgstr[1] ""
+msgid "profile"
+msgstr ""
 
-msgid "too many pictures (choose at most 10)"
+msgid "reviews"
 msgstr ""
 
 msgid "we need your current password to confirm your changes"
+msgstr ""
+
+msgid "welcome to <strong>Sea for All</strong> and thank you for joining us!"
 msgstr ""
