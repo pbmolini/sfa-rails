@@ -3,12 +3,12 @@
 <% if @receiver == @guest %>
  	<%# Guest %>
 	<p>
-		<%= s_("MailBodyBookingRejected|%{host_name} has rejected your booking request for %{boat_name}") %{host_name: @host.name, boat_name: @boat.name} %>
+		<%= s_("MailBodyBookingRejected|%{host_name} has rejected your booking request for %{boat_name}") %{host_name: @host.name, boat_name: @boat.name} %>.
 	</p>
 <% else %>
 	<%# Host %>	
 	<p>
-		<%= s_("MailBodyBookingRejected|You have rejected a booking request for %{boat_name}") %{boat_name: @boat.name} %>
+		<%= s_("MailBodyBookingRejected|You have rejected a booking request for %{boat_name}") %{boat_name: @boat.name} %>.
 	</p>
 <% end %>
 

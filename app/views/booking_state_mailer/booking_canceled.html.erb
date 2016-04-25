@@ -2,16 +2,16 @@
 <% content_for :logo_img, @receiver == @guest ? "orange" : "blue" %>
 <% if @receiver == @canceler %>
 	<p>
-		<%= s_("MailBodyBookingCanceled|You have canceled a booking for %{boat_name}" %{host_name: @host.name, boat_name: @boat.name}) %>
+		<%= s_("MailBodyBookingCanceled|You have canceled a booking for %{boat_name}" %{host_name: @host.name, boat_name: @boat.name}) %>.
 	</p>
 <% else %>
 	<% if @canceler.present? %>
 		<p>
-			<%= s_("MailBodyBookingCanceled|%{canceler_name} has canceled one of the bookings for %{boat_name}" %{canceler_name: @canceler.name, boat_name: @boat.name}) %>
+			<%= s_("MailBodyBookingCanceled|%{canceler_name} has canceled one of the bookings for %{boat_name}" %{canceler_name: @canceler.name, boat_name: @boat.name}) %>.
 		</p>
 	<% else %>
 		<p>
-			<%= s_("MailBodyBookingCanceled|One of your bookings for %{boat_name} has been canceled" %{host_name: @host.name, boat_name: @boat.name}) %>
+			<%= s_("MailBodyBookingCanceled|One of your bookings for %{boat_name} has been canceled" %{boat_name: @boat.name}) %>.
 		</p>
 	<% end %>
 <% end %>
