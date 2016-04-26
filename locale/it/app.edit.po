@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-04-26 00:35+0200\n"
+"PO-Revision-Date: 2016-04-26 16:38+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.7\n"
-"POT-Creation-Date: 2016-04-26 00:42+0200\n"
+"POT-Creation-Date: 2016-04-26 16:39+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -665,6 +665,9 @@ msgstr "Se vai via adesso ci mancherai per sempre"
 msgid "Landing|Earn extra money with your boat"
 msgstr "Vuoi guadagnare con la tua barca?"
 
+msgid "Landing|Find the perfect fit for you"
+msgstr ""
+
 msgid "Landing|Join the community"
 msgstr ""
 
@@ -686,14 +689,14 @@ msgstr ""
 msgid "Landing|Share your boat with those who love the sea"
 msgstr "Condividi la tua barca con chi ama il mare"
 
+msgid "Landing|Share your your passion for the sea"
+msgstr ""
+
 msgid "Landing|Show me more boats"
 msgstr ""
 
 msgid "Landing|We find people who would like to use it"
 msgstr "Troviamo persone interessate ad usarla"
-
-msgid "Landing|We help you find the perfect fit for you"
-msgstr "Ti aiutiamo a trovare la barca adatta alle tue esigenze"
 
 msgid "Landing|a great boat at a reasonable price"
 msgstr "per divertirti ad un prezzo abbordabile"
@@ -740,6 +743,7 @@ msgstr "Hai accettato una prenotazione per %{boat_name}"
 msgid "MailBodyBookingCanceled|%{canceler_name} has canceled one of the bookings for %{boat_name}"
 msgstr "%{canceler_name} ha cancellato una prenotazione per %{boat_name}"
 
+# Questa ha problemi
 msgid "MailBodyBookingCanceled|One of your bookings for %{boat_name} has been canceled"
 msgstr "Una delle tue prenotazioni per %{boat_name} è stata cancellata"
 
@@ -788,8 +792,9 @@ msgstr "Vai ai dettagli della prenotazione e leggi l’intera recensione!"
 msgid "MailBodyNewReview|You have left a review about the following booking"
 msgstr "Hai lasciato una recensione per la seguente prenotazione"
 
+# Questa ha problemi
 msgid "MailBodyRemindReview|Did you have a good time on <strong>%{boat_name}</strong>? Please review your experience and let other people know how much fun you had on %{host_name}'s boat!"
-msgstr "Ti sei divertito su <strong>%{boat_name}</strong>? Descrivi la tua esperienza e fai in modo che altre persone sappiano quanto di sei divertito a bordo della barca di %{host_name}!"
+msgstr "Com’è andata su <strong>%{boat_name}</strong>? Descrivi la tua esperienza e fai in modo che altre persone sappiano quanto ti sei divertito a bordo della barca di %{host_name}!"
 
 msgid "MailBodyRemindReview|Don't forget that your review will be public, so please be polite and respectful."
 msgstr "Ricordati che la tua recensione sarà pubblica, quindi sii educato e rispettoso."
@@ -1285,7 +1290,7 @@ msgid "Title|My Boats"
 msgstr "Le mie barche"
 
 msgid "Title|My Bookings"
-msgstr "Accedi"
+msgstr "Le mie prenotazioni"
 
 msgid "Title|My boats"
 msgstr "Le mie barche"
@@ -1580,3 +1585,6 @@ msgstr "devi inserire la password attuale per cambiare la password"
 
 msgid "welcome to <strong>Sea for All</strong> and thank you for joining us!"
 msgstr "benvenuto su <strong>Sea for All</strong> e grazie per esserti unito a noi!"
+
+#~ msgid "Landing|We help you find the perfect fit for you"
+#~ msgstr "Ti aiutiamo a trovare la barca adatta alle tue esigenze"

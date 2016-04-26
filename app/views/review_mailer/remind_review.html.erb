@@ -3,7 +3,7 @@
 
 <p>
 <% if @receiver == @guest %>
-	<%= (s_("MailBodyRemindReview|Did you have a good time on <strong>%{boat_name}</strong>? Please review your experience and let other people know how much fun you had on %{host_name}'s boat!" %{boat_name: @boat.name, host_name: @host.first_name} ).html_safe) %>
+	<%= (s_("MailBodyRemindReview|Did you have a good time on <strong>%{boat_name}</strong>? Please review your experience and let other people know how much fun you had on %{host_name}'s boat!" %{boat_name: @boat.name, host_name: @host.first_name}).html_safe) %>
 <% else %>
 	<%= s_("MailBodyRemindReview|How was your experience with %{guest_name}? Please tell us how it was to host %{guest_name} on your boat.") %{guest_name: @guest.first_name} %>
 <% end %>

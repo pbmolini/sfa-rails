@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-04-26 00:51+0200\n"
+"PO-Revision-Date: 2016-04-26 16:43+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -699,11 +699,14 @@ msgstr "Se vai via adesso ci mancherai per sempre"
 msgid "Landing|Earn extra money with your boat"
 msgstr "Vuoi guadagnare con la tua barca?"
 
+msgid "Landing|Find the perfect fit for you"
+msgstr "Trova la barca adatta a te"
+
 msgid "Landing|Join the community"
-msgstr ""
+msgstr "Entra nella comunità"
 
 msgid "Landing|No hidden costs or fees"
-msgstr ""
+msgstr "Zero commissioni"
 
 msgid ""
 "Landing|Offset your ownership costs by listing your boat whenever and however you "
@@ -719,19 +722,19 @@ msgid "Landing|Register your boat"
 msgstr "Registra la tua barca"
 
 msgid "Landing|Service 100% free"
-msgstr ""
+msgstr "Servizio 100% gratuito"
 
 msgid "Landing|Share your boat with those who love the sea"
 msgstr "Condividi la tua barca con chi ama il mare"
 
+msgid "Landing|Share your your passion for the sea"
+msgstr "Condividi la passione per il mare"
+
 msgid "Landing|Show me more boats"
-msgstr ""
+msgstr "Mostra altre barche"
 
 msgid "Landing|We find people who would like to use it"
 msgstr "Troviamo persone interessate ad usarla"
-
-msgid "Landing|We help you find the perfect fit for you"
-msgstr "Ti aiutiamo a trovare la barca adatta alle tue esigenze"
 
 msgid "Landing|a great boat at a reasonable price"
 msgstr "per divertirti ad un prezzo abbordabile"
@@ -788,6 +791,7 @@ msgid ""
 "%{boat_name}"
 msgstr "%{canceler_name} ha cancellato una prenotazione per %{boat_name}"
 
+# Questa ha problemi
 msgid "MailBodyBookingCanceled|One of your bookings for %{boat_name} has been canceled"
 msgstr "Una delle tue prenotazioni per %{boat_name} è stata cancellata"
 
@@ -850,12 +854,13 @@ msgstr "Vai ai dettagli della prenotazione e leggi l’intera recensione!"
 msgid "MailBodyNewReview|You have left a review about the following booking"
 msgstr "Hai lasciato una recensione per la seguente prenotazione"
 
+# Questa ha problemi
 msgid ""
 "MailBodyRemindReview|Did you have a good time on <strong>%{boat_name}</strong>? "
 "Please review your experience and let other people know how much fun you had on "
 "%{host_name}'s boat!"
 msgstr ""
-"Come è andata su <strong>%{boat_name}</strong>? Descrivi la tua esperienza e fai in "
+"Com’è andata su <strong>%{boat_name}</strong>? Descrivi la tua esperienza e fai in "
 "modo che altre persone sappiano quanto ti sei divertito a bordo della barca di "
 "%{host_name}!"
 

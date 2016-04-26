@@ -661,6 +661,9 @@ msgstr ""
 msgid "Landing|Earn extra money with your boat"
 msgstr ""
 
+msgid "Landing|Find the perfect fit for you"
+msgstr ""
+
 msgid "Landing|Join the community"
 msgstr ""
 
@@ -682,13 +685,13 @@ msgstr ""
 msgid "Landing|Share your boat with those who love the sea"
 msgstr ""
 
+msgid "Landing|Share your your passion for the sea"
+msgstr ""
+
 msgid "Landing|Show me more boats"
 msgstr ""
 
 msgid "Landing|We find people who would like to use it"
-msgstr ""
-
-msgid "Landing|We help you find the perfect fit for you"
 msgstr ""
 
 msgid "Landing|a great boat at a reasonable price"

@@ -2,7 +2,7 @@
 <% current_user_navbar active_bc_title: s_('Title|Edit Profile') %>
 <div class="container">
   <div class="row">
-    <div class="col-sm-10 col-sm-offset-1">
+    <div class="col-sm-10 col-sm-offset-1 white-box">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, wrapper: :vertical_input_group,
         wrapper_mappings: {
           check_boxes: :horizontal_radio_and_checkboxes,
@@ -13,10 +13,14 @@
         <h2><%= _("Edit Profile") %><%= f.button :submit, _("Update"), class: 'btn btn-lg btn-success pull-right' %></h2>
         <ul class="nav nav-pills">
           <li role="presentation" class="active">
-            <a href="#personal_info" aria-controls="personal_info" role="tab" data-toggle="tab"><%= fa_icon 'user', text: _("Personal info") %></a>
+            <a href="#personal_info" aria-controls="personal_info" role="tab" data-toggle="tab">
+              <%= fa_icon "user" %> <span class="hidden-xs"><%= _("Personal info") %></span>
+            </a>
           </li>
           <li role="presentation">
-            <a href="#login_info" aria-controls="login_info" role="tab" data-toggle="tab"><%= fa_icon 'lock', text: _("Login info") %></a>
+            <a href="#login_info" aria-controls="login_info" role="tab" data-toggle="tab">
+              <%= fa_icon "lock" %> <span class="hidden-xs"><%= _("Login info") %></span>
+            </a>            
           </li>
         </ul>
         <p><%= f.error_notification %></p>
@@ -76,7 +80,13 @@
               <%= _("Enter your Facebook account to change your email and password.") %>
             <% end %>
 
+            <hr>
+
             <h3><%= _("Delete my account") %></h3>
+            <p>
+              <%= _("If you leave now, we will miss you forever") %>
+              <%= fa_icon "frown-o" %>
+            </p>
             <% if resource.boats.any? %>
               <p class="alert alert-danger" role="alert">
                 <%= _("Please delete all your boats before leaving Sea for All") %>
