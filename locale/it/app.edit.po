@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-04-26 16:38+0200\n"
+"PO-Revision-Date: 2016-04-26 16:43+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.7\n"
-"POT-Creation-Date: 2016-04-26 16:39+0200\n"
+"POT-Creation-Date: 2016-04-26 21:50+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -504,9 +504,6 @@ msgstr "Controlla che la barca abbia un motore"
 msgid "Click on the days when your boat will not be available for renting. Click on a gray day to make it available again. Don't forget that reserved days cannot be modified."
 msgstr "Fai clic sui giorni in cui non vuoi che la tua barca sia disponibile. Fai clic su un giorno grigio per renderlo di nuovo disponibile. Ricorda che i giorni con prenotazioni non possono essere modificati."
 
-msgid "Coming soon&hellip;"
-msgstr "Presto disponibile&hellip;"
-
 msgid "Complete profile"
 msgstr "Completa la scheda"
 
@@ -641,9 +638,6 @@ msgstr "Serve aiuto?"
 msgid "Help|or check these out"
 msgstr "oppure dai un’occhiata qui"
 
-msgid "Here you will find a nice calendar for setting the availability of your boat. We are currently working on it!"
-msgstr "Qui troverai il calendario per impostare i giorni in cui la tua barca sarà disponibile. Ci stiamo lavorando su!"
-
 msgid "Hey! Thanks for reading this. Did you know that there is a stupid Cookie Law around? I hope you do, otherwise you might get fined by the evil governments of European countries. In any case take a look at http://cookie.tools to learn more."
 msgstr ""
 
@@ -666,34 +660,31 @@ msgid "Landing|Earn extra money with your boat"
 msgstr "Vuoi guadagnare con la tua barca?"
 
 msgid "Landing|Find the perfect fit for you"
-msgstr ""
+msgstr "Trova la barca adatta a te"
 
 msgid "Landing|Join the community"
-msgstr ""
+msgstr "Entra nella comunità"
 
 msgid "Landing|No hidden costs or fees"
-msgstr ""
+msgstr "Zero commissioni"
 
 msgid "Landing|Offset your ownership costs by listing your boat whenever and however you like"
 msgstr "Risparmia sui costi di gestione della tua barca condividendola quando vuoi e con chi vuoi"
-
-msgid "Landing|Other cool text"
-msgstr ""
 
 msgid "Landing|Register your boat"
 msgstr "Registra la tua barca"
 
 msgid "Landing|Service 100% free"
-msgstr ""
+msgstr "Servizio 100% gratuito"
 
 msgid "Landing|Share your boat with those who love the sea"
 msgstr "Condividi la tua barca con chi ama il mare"
 
 msgid "Landing|Share your your passion for the sea"
-msgstr ""
+msgstr "Condividi la passione per il mare"
 
 msgid "Landing|Show me more boats"
-msgstr ""
+msgstr "Mostra altre barche"
 
 msgid "Landing|We find people who would like to use it"
 msgstr "Troviamo persone interessate ad usarla"
@@ -703,6 +694,9 @@ msgstr "per divertirti ad un prezzo abbordabile"
 
 msgid "Landing|and help you reduce your costs"
 msgstr "e ti aiutiamo ad abbattere i costi"
+
+msgid "Landing|on all the transactions"
+msgstr ""
 
 msgid "Last update:"
 msgstr "Ultimo aggiornamento"
@@ -1586,5 +1580,11 @@ msgstr "devi inserire la password attuale per cambiare la password"
 msgid "welcome to <strong>Sea for All</strong> and thank you for joining us!"
 msgstr "benvenuto su <strong>Sea for All</strong> e grazie per esserti unito a noi!"
 
-#~ msgid "Landing|We help you find the perfect fit for you"
-#~ msgstr "Ti aiutiamo a trovare la barca adatta alle tue esigenze"
+#~ msgid "Coming soon&hellip;"
+#~ msgstr "Presto disponibile&hellip;"
+#~ msgid ""
+#~ "Here you will find a nice calendar for setting the availability of your boat. "
+#~ "We are currently working on it!"
+#~ msgstr ""
+#~ "Qui troverai il calendario per impostare i giorni in cui la tua barca sarà dis"
+#~ "ponibile. Ci stiamo lavorando su!"

@@ -510,9 +510,6 @@ msgid ""
 "e modified."
 msgstr ""
 
-msgid "Coming soon&hellip;"
-msgstr ""
-
 msgid "Complete profile"
 msgstr ""
 
@@ -651,11 +648,6 @@ msgid "Help|or check these out"
 msgstr ""
 
 msgid ""
-"Here you will find a nice calendar for setting the availability of your boat. "
-"We are currently working on it!"
-msgstr ""
-
-msgid ""
 "Hey! Thanks for reading this. Did you know that there is a stupid Cookie Law a"
 "round? I hope you do, otherwise you might get fined by the evil governments of"
 " European countries. In any case take a look at http://cookie.tools to learn m"
@@ -694,9 +686,6 @@ msgid ""
 "you like"
 msgstr ""
 
-msgid "Landing|Other cool text"
-msgstr ""
-
 msgid "Landing|Register your boat"
 msgstr ""
 
@@ -719,6 +708,9 @@ msgid "Landing|a great boat at a reasonable price"
 msgstr ""
 
 msgid "Landing|and help you reduce your costs"
+msgstr ""
+
+msgid "Landing|on all the transactions"
 msgstr ""
 
 msgid "Last update:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-04-26 16:43+0200\n"
+"PO-Revision-Date: 2016-04-26 21:52+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -520,9 +520,6 @@ msgstr ""
 "giorno grigio per renderlo di nuovo disponibile. Ricorda che i giorni con "
 "prenotazioni non possono essere modificati."
 
-msgid "Coming soon&hellip;"
-msgstr "Presto disponibile&hellip;"
-
 msgid "Complete profile"
 msgstr "Completa la scheda"
 
@@ -669,13 +666,6 @@ msgid "Help|or check these out"
 msgstr "oppure dai un’occhiata qui"
 
 msgid ""
-"Here you will find a nice calendar for setting the availability of your boat. We are "
-"currently working on it!"
-msgstr ""
-"Qui troverai il calendario per impostare i giorni in cui la tua barca sarà "
-"disponibile. Ci stiamo lavorando su!"
-
-msgid ""
 "Hey! Thanks for reading this. Did you know that there is a stupid Cookie Law around? "
 "I hope you do, otherwise you might get fined by the evil governments of European "
 "countries. In any case take a look at http://cookie.tools to learn more."
@@ -715,9 +705,6 @@ msgstr ""
 "Risparmia sui costi di gestione della tua barca condividendola quando vuoi e con chi "
 "vuoi"
 
-msgid "Landing|Other cool text"
-msgstr ""
-
 msgid "Landing|Register your boat"
 msgstr "Registra la tua barca"
 
@@ -741,6 +728,9 @@ msgstr "per divertirti ad un prezzo abbordabile"
 
 msgid "Landing|and help you reduce your costs"
 msgstr "e ti aiutiamo ad abbattere i costi"
+
+msgid "Landing|on all the transactions"
+msgstr "su tutte le transazioni"
 
 msgid "Last update:"
 msgstr "Ultimo aggiornamento"
