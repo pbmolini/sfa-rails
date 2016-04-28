@@ -1148,6 +1148,22 @@ msgstr ""
 msgid "Remove|this boat"
 msgstr ""
 
+msgid "ResetPasswordMail|Change my password"
+msgstr ""
+
+msgid "ResetPasswordMail|If you didn't request this, please ignore this email."
+msgstr ""
+
+msgid ""
+"ResetPasswordMail|Someone has requested a link to change your password. You ca"
+"n do this through the link below."
+msgstr ""
+
+msgid ""
+"ResetPasswordMail|Your password won't change until you access the link above a"
+"nd create a new one."
+msgstr ""
+
 msgid "Review"
 msgstr ""
 

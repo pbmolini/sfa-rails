@@ -1,4 +1,4 @@
-class UserMailer < ActionMailer::Base
+class UserMailer < Devise::Mailer
 
 	helper :application # gives access to all helpers defined within `application_helper`.
 	include Roadie::Rails::Automatic
@@ -12,6 +12,14 @@ class UserMailer < ActionMailer::Base
     @user = user
     @receiver = user
     mail to: @receiver.email, subject: s_("MailTitle|Welcome to Sea for All!")
+  end
+
+
+  def reset_password_instructions(record, token, opts={})
+    I18n.locale = opts[:locale].to_sym if opts[:locale].present?
+    @receiver = record
+    # must call super at the end
+    super
   end
 
 end

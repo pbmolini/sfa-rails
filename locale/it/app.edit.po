@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-04-26 16:43+0200\n"
+"PO-Revision-Date: 2016-04-28 10:31+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.7\n"
-"POT-Creation-Date: 2016-04-26 21:50+0200\n"
+"POT-Creation-Date: 2016-04-28 22:44+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -663,7 +663,7 @@ msgid "Landing|Find the perfect fit for you"
 msgstr "Trova la barca adatta a te"
 
 msgid "Landing|Join the community"
-msgstr "Entra nella comunità"
+msgstr "Entra nella community"
 
 msgid "Landing|No hidden costs or fees"
 msgstr "Zero commissioni"
@@ -696,7 +696,7 @@ msgid "Landing|and help you reduce your costs"
 msgstr "e ti aiutiamo ad abbattere i costi"
 
 msgid "Landing|on all the transactions"
-msgstr ""
+msgstr "su tutte le transazioni"
 
 msgid "Last update:"
 msgstr "Ultimo aggiornamento"
@@ -1099,6 +1099,18 @@ msgstr "Elimina immagine"
 msgid "Remove|this boat"
 msgstr "questa barca"
 
+msgid "ResetPasswordMail|Change my password"
+msgstr ""
+
+msgid "ResetPasswordMail|If you didn't request this, please ignore this email."
+msgstr ""
+
+msgid "ResetPasswordMail|Someone has requested a link to change your password. You can do this through the link below."
+msgstr ""
+
+msgid "ResetPasswordMail|Your password won't change until you access the link above and create a new one."
+msgstr ""
+
 msgid "Review"
 msgstr "Recensione"
 
@@ -1215,7 +1227,7 @@ msgid "Thank you"
 msgstr "Grazie"
 
 msgid "Thank you for joining Sea for All. You can register your boat in a minute or find the right boat for you!"
-msgstr "Grzie per esserti unito a Sea for All. Puoi già iniziare a cercare la barca che fa per te oppure, se ne possiedi una, iniziare a registrarla!"
+msgstr "Grazie per esserti unito a Sea for All. Puoi già iniziare a cercare la barca che fa per te oppure, se ne possiedi una, iniziare a registrarla!"
 
 msgid "They can't be both true!"
 msgstr "Non possono essere presenti entrambi!"
@@ -1579,12 +1591,3 @@ msgstr "devi inserire la password attuale per cambiare la password"
 
 msgid "welcome to <strong>Sea for All</strong> and thank you for joining us!"
 msgstr "benvenuto su <strong>Sea for All</strong> e grazie per esserti unito a noi!"
-
-#~ msgid "Coming soon&hellip;"
-#~ msgstr "Presto disponibile&hellip;"
-#~ msgid ""
-#~ "Here you will find a nice calendar for setting the availability of your boat. "
-#~ "We are currently working on it!"
-#~ msgstr ""
-#~ "Qui troverai il calendario per impostare i giorni in cui la tua barca sarà dis"
-#~ "ponibile. Ci stiamo lavorando su!"
