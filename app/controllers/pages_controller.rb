@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
   # Custom authorization: CanCan skips this Controller
   def authorize_page
-    if params[:id] == 'dashboard' and current_user.nil?
+    if (params[:id] == 'dashboard' or params[:id] == 'welcome') and current_user.nil?
       session[:next] = request.fullpath
       puts session[:next]
       redirect_to new_user_session_path, alert: _("You have to log in to continue.")
