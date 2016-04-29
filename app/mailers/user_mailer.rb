@@ -14,7 +14,7 @@ class UserMailer < Devise::Mailer
     mail to: @receiver.email, subject: s_("MailTitle|Welcome to Sea for All!")
   end
 
-
+  # Overrides the original Devise method
   def reset_password_instructions(record, token, opts={})
     I18n.locale = opts[:locale].to_sym if opts[:locale].present?
     @receiver = record

@@ -823,8 +823,8 @@ msgstr ""
 
 msgid ""
 "MailBodyRemindReview|Did you have a good time on <strong>%{boat_name}</strong>"
-"? Please review your experience and let other people know how much fun you had"
-" on %{host_name}'s boat!"
+"? Please review your experience and let other people know how much you enjoyed"
+" %{host_name}'s boat!"
 msgstr ""
 
 msgid ""
