@@ -1,7 +1,10 @@
 .welcome-choice {
-	padding: 5px 5px 20px 5px;
+	padding: 5px 7px 20px 7px;
+	border-radius: 5px;
+	border: 2px solid lightgray;
 	&:hover {
 	  background: white;
+	  border-color: gray;
 	}
 	a {
 		text-decoration: none;

@@ -1,6 +1,6 @@
 <% title s_("Title|Welcome") %>
 <% current_user_navbar active_bc_title: s_('Title|Welcome') %>
-<div class="container">
+<div class="container-fluid white-box">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
     	<h1>
@@ -16,7 +16,11 @@
    <div class="col-sm-4 col-sm-offset-2 text-center">
     <div class="welcome-choice">
       <%= link_to new_boat_path do %>
-        <h2><%= s_("Welcome|Do you own a boat and want to rent it?") %></h2>
+        <h2>
+          <%= s_("Welcome|Do you own a boat and want to rent it?") %>
+          <!-- Very bad trick for keeping the images aligned on md-screens -->
+          <span class="visible-md">&nbsp;&nbsp;&nbsp;</span>
+        </h2>
         <div class="description-icon">
           <%= image_tag(aws_image_path_for 'sfa-logo-circle-blue.png') %>
         </div>
@@ -37,7 +41,7 @@
 
  <div class="row">
    <div class="col-sm-8 col-sm-offset-2 text-center">
-     <h3><%= link_to _("or complete your profile!"), edit_user_registration_path %></h3>
+     <h3><%= (_("or go to your <strong>%{dashboard_link}</strong>!") %{dashboard_link: link_to("dashboard", dashboard_path)}).html_safe %></h3>
    </div>
  </div>
 </div>

@@ -1564,7 +1564,7 @@ msgstr ""
 msgid "not_applicable"
 msgstr ""
 
-msgid "or complete your profile!"
+msgid "or go to your <strong>%{dashboard_link}</strong>!"
 msgstr ""
 
 msgid "or just fill the form below"
