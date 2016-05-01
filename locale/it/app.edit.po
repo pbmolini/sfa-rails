@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-04-28 10:31+0200\n"
+"PO-Revision-Date: 2016-04-29 23:02+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.7\n"
-"POT-Creation-Date: 2016-04-28 22:44+0200\n"
+"POT-Creation-Date: 2016-05-01 22:37+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -786,9 +786,8 @@ msgstr "Vai ai dettagli della prenotazione e leggi l’intera recensione!"
 msgid "MailBodyNewReview|You have left a review about the following booking"
 msgstr "Hai lasciato una recensione per la seguente prenotazione"
 
-# Questa ha problemi
-msgid "MailBodyRemindReview|Did you have a good time on <strong>%{boat_name}</strong>? Please review your experience and let other people know how much fun you had on %{host_name}'s boat!"
-msgstr "Com’è andata su <strong>%{boat_name}</strong>? Descrivi la tua esperienza e fai in modo che altre persone sappiano quanto ti sei divertito a bordo della barca di %{host_name}!"
+msgid "MailBodyRemindReview|Did you have a good time on <strong>%{boat_name}</strong>? Please review your experience and let other people know how much you enjoyed %{host_name}'s boat!"
+msgstr "Come è andata su <strong>%{boat_name}</strong>? Descrivi la tua esperienza e fai in modo che altre persone sappiano quanto ti sei divertito a bordo della barca di %{host_name}!"
 
 msgid "MailBodyRemindReview|Don't forget that your review will be public, so please be polite and respectful."
 msgstr "Ricordati che la tua recensione sarà pubblica, quindi sii educato e rispettoso."
@@ -1100,16 +1099,16 @@ msgid "Remove|this boat"
 msgstr "questa barca"
 
 msgid "ResetPasswordMail|Change my password"
-msgstr ""
+msgstr "Cambia la mia password"
 
 msgid "ResetPasswordMail|If you didn't request this, please ignore this email."
-msgstr ""
+msgstr "Se non sei stato tu a fare la richiesta, puoi tranquillamente ignorare questa email."
 
 msgid "ResetPasswordMail|Someone has requested a link to change your password. You can do this through the link below."
-msgstr ""
+msgstr "Abbiamo ricevuto una richiesta di invio del link per modificare la tua password su Sea for All. Lo puoi fare utilizzando il link qui sotto."
 
 msgid "ResetPasswordMail|Your password won't change until you access the link above and create a new one."
-msgstr ""
+msgstr "La tua password non cambierà finché non accedi al link qui sopra e ne avrai creato una nuova."
 
 msgid "Review"
 msgstr "Recensione"
@@ -1571,8 +1570,8 @@ msgstr "deve essere prima di %{date}"
 msgid "not_applicable"
 msgstr "non applicabile"
 
-msgid "or complete your profile!"
-msgstr "oppure completa il tuo profilo!"
+msgid "or go to your <strong>%{dashboard_link}</strong>!"
+msgstr ""
 
 msgid "or just fill the form below"
 msgstr "oppure compila i seguenti campi"
@@ -1591,3 +1590,6 @@ msgstr "devi inserire la password attuale per cambiare la password"
 
 msgid "welcome to <strong>Sea for All</strong> and thank you for joining us!"
 msgstr "benvenuto su <strong>Sea for All</strong> e grazie per esserti unito a noi!"
+
+#~ msgid "or complete your profile!"
+#~ msgstr "oppure completa il tuo profilo!"
