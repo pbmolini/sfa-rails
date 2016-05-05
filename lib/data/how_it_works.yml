@@ -1,0 +1,29 @@
+it:
+  guest: >
+      <strong>Cerca</strong> una barca, controlla le sue caratteristiche e verifica 
+      se è disponibile nei giorni che ti interessano. 
+      Se è quella che fa per te, fai una richiesta di <strong>prenotazione</strong> 
+      per entrare in contatto con il proprietario tramite Sea for All. 
+      Una volta che avrà <strong>accettato</strong> la tua richiesta di prenotazione, 
+      potrai contattarlo direttamente tramite email o cellulare per gli ultimi dettagli 
+      prima di salpare. 
+      <br>
+      Al termine del periodo di prenotazione potrai <strong>condividere</strong> 
+      la tua esperienza scrivendo una recensione.
+  host: >
+      <strong>Registra</strong> la tua barca e inserisci le sue caratteristiche, 
+      aggiungi alcune foto e indica la disponibilità. 
+      Quando qualcuno è interessato, Sea for All ti avviserà e potrete iniziare 
+      a conoscervi meglio tramite una chat privata. 
+      Se deciderai di <strong>accettare</strong> la sua richiesta di prenotazione, 
+      potrai contattarlo direttamente tramite email o cellulare per gli ultimi 
+      dettagli prima di salpare. 
+      <br>
+      Al termine del periodo di prenotazione potrai <strong>condividere</strong> 
+      la tua esperienza scrivendo una recensione.
+
+en:
+  guest: >
+      The help is not yet available in this language
+  host: >
+      The help is not yet available in this language

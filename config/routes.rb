@@ -58,5 +58,8 @@ Rails.application.routes.draw do
 
     # Welcome
     get 'welcome' => 'pages#show', id: 'welcome', as: :welcome
+
+    # How it works
+    get 'how_it_works' => 'pages#show', id: 'how_it_works', as: :how_it_works
   end
 end

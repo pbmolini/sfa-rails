@@ -1,0 +1,46 @@
+<% title s_("Title|How it works") %>
+<% current_user_navbar active_bc_title: s_('Title|How it works') %>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12 text-center white-box">
+			<h2><%= _("What is Sea for All") %></h2>
+			<p class="lead">
+				<%= (_("<strong>Sea for All</strong> is the place where people who want to spend one or more days on a boat find people willing to share their both with them").html_safe) %>
+			</p>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-sm-12 white-box">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<h1><%= _("How it works") %></h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="how-it-works-panel">
+					  <div class="panel-heading panel-guest">
+					    <h3 class="panel-title"><%= _("I want to spend some time on a boat") %></h3>
+					  </div>
+					  <div class="panel-body">
+					    <p><%= how_it_works_text_for(:guest, I18n.locale) %></p>
+					    <p class="text-center"><%= link_to s_("HowItWorks|More Info"), page_path(id: 'help/guest') %></p>
+					  </div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="how-it-works-panel">
+					  <div class="panel-heading panel-host">
+					    <h3 class="panel-title"><%= _("I have a boat and I want to share it") %></h3>
+					  </div>
+					  <div class="panel-body">
+					    <p><%= how_it_works_text_for(:host, I18n.locale) %></p>
+					    <p class="text-center"><%= link_to s_("HowItWorks|More Info"), page_path(id: 'help/host') %></p>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

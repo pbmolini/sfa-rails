@@ -69,6 +69,23 @@ footer {
   }
 }
 
+.how-it-works-panel {
+  @extend .panel, .panel-default;
+  .panel-heading {
+    @extend .text-center;
+    &.panel-guest {
+      background-color: $darkorange;
+    }
+    &.panel-host {
+      background-color: $blue;
+    }
+    .panel-title {
+      color: white;
+      font-size: 18px;
+    }
+  }
+}
+
 .team-member-card {
   margin: 5px 0px;
   .team-member-picture {
