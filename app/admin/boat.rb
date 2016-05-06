@@ -24,6 +24,12 @@ ActiveAdmin.register Boat do
 	  column :name
 	  column :owner do |boat|
 	  	boat.user.name
+	  end	  
+	  column :bookings do |boat|
+	  	link_to boat.bookings.count, admin_boat_bookings_path(boat)
+	  end
+	  column :features do |boat|
+	  	link_to 'see all', admin_boat_features_set_path(boat.boat_features_set)
 	  end
 		column :address
 		column :rental_type
@@ -31,9 +37,13 @@ ActiveAdmin.register Boat do
 	  	boat.pictures.count
 	  end
 		column :daily_price
+	  column :safety_equipment do |boat|
+	  	boat.boat_features_set.safety_equipment ? status_tag( "yes", :ok ) : status_tag( "no" )
+	  end
 		column :with_license
 		column :complete 
-		actions
+		
+		actions dropdown: true
 	end
 
 	form do |f|
@@ -55,6 +65,15 @@ ActiveAdmin.register Boat do
 		end
     f.actions
 	end
+
+	# show do
+ #    panel "Boat features set" do
+ #      table_for boat.boat_features_set do
+ #        BoatFeaturesSet::FEATURES.reverse.each {|f| column f}
+ #      end
+ #    end
+ #    active_admin_comments
+ #  end
 
 	controller do
 		def update

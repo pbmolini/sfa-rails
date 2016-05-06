@@ -16,7 +16,7 @@ ActiveAdmin.register User do
 		column :location
 		column :phone 
 		column :birthdate
-		actions
+		actions dropdown: true
 	end
 
 	form do |f|
@@ -27,7 +27,7 @@ ActiveAdmin.register User do
 			f.input :location
 			f.input :bio
 			f.input :phone
-			f.input :birthdate
+			f.input :birthdate, as: :datepicker
 		end
     f.actions
 	end
