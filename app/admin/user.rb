@@ -32,4 +32,13 @@ ActiveAdmin.register User do
     f.actions
 	end
 
+	sidebar "Boats", only: [:show, :edit] do
+		h3 link_to 'All boats', admin_user_boats_path(user)
+    ul do
+    	user.boats.each do |boat|
+      	li link_to(boat.name.present? ? boat.name : 'No_name', admin_user_boat_path(user, boat))
+      end
+    end
+  end
+
 end

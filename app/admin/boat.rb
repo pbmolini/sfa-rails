@@ -46,6 +46,13 @@ ActiveAdmin.register Boat do
 		actions dropdown: true
 	end
 
+	sidebar "Related stuff", only: [:show, :edit] do
+    ul do
+      li link_to "Boat features", admin_boat_features_set_path(boat.boat_features_set)
+      li link_to "Reviews", '#'
+    end
+  end
+
 	form do |f|
 		f.inputs "Edit Boat" do
       f.input :model
