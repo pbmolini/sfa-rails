@@ -640,10 +640,28 @@ msgstr ""
 msgid "Hi %{name}"
 msgstr ""
 
+msgid "How it works"
+msgstr ""
+
 msgid "How many people aboard?"
 msgstr ""
 
 msgid "How much for a day on your boat?"
+msgstr ""
+
+msgid "HowItWorks|<strong>Sea for All</strong> is the place where people who want to spend one or more days on a boat find people willing to share their boat with them"
+msgstr ""
+
+msgid "HowItWorks|I have a boat and I want to share it"
+msgstr ""
+
+msgid "HowItWorks|I want to spend some time on a boat"
+msgstr ""
+
+msgid "HowItWorks|More Info"
+msgstr ""
+
+msgid "HowItWorks|What is Sea for All"
 msgstr ""
 
 msgid "I accept your booking. Enjoy my boat!"
@@ -1279,6 +1297,9 @@ msgid "Title|Forgot password"
 msgstr ""
 
 msgid "Title|Help & Support"
+msgstr ""
+
+msgid "Title|How it works"
 msgstr ""
 
 msgid "Title|Login"

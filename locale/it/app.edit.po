@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-04-29 23:02+0200\n"
+"PO-Revision-Date: 2016-05-11 22:12+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.7\n"
-"POT-Creation-Date: 2016-05-01 22:37+0200\n"
+"POT-Creation-Date: 2016-05-11 22:13+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -644,11 +644,29 @@ msgstr ""
 msgid "Hi %{name}"
 msgstr "Ciao %{name}"
 
+msgid "How it works"
+msgstr "Come funziona"
+
 msgid "How many people aboard?"
 msgstr "Quante persone a bordo?"
 
 msgid "How much for a day on your boat?"
 msgstr "Quanto chiedi al giorno?"
+
+msgid "HowItWorks|<strong>Sea for All</strong> is the place where people who want to spend one or more days on a boat find people willing to share their boat with them"
+msgstr ""
+
+msgid "HowItWorks|I have a boat and I want to share it"
+msgstr "Ho una barca e voglio condividerla"
+
+msgid "HowItWorks|I want to spend some time on a boat"
+msgstr "Voglio trascorrere una giornata in barca"
+
+msgid "HowItWorks|More Info"
+msgstr "Più informazioni"
+
+msgid "HowItWorks|What is Sea for All"
+msgstr "Cos’è Sea for All"
 
 msgid "I accept your booking. Enjoy my boat!"
 msgstr "Ho accettato la prenotazione. Buon divertimento!"
@@ -1288,6 +1306,9 @@ msgstr "Password dimenticata"
 msgid "Title|Help & Support"
 msgstr "Aiuto e Supporto"
 
+msgid "Title|How it works"
+msgstr "Come funziona"
+
 msgid "Title|Login"
 msgstr "Login"
 
@@ -1571,7 +1592,7 @@ msgid "not_applicable"
 msgstr "non applicabile"
 
 msgid "or go to your <strong>%{dashboard_link}</strong>!"
-msgstr ""
+msgstr "oppure vai alla <strong>%{dashboard_link}</strong>!"
 
 msgid "or just fill the form below"
 msgstr "oppure compila i seguenti campi"
@@ -1590,6 +1611,3 @@ msgstr "devi inserire la password attuale per cambiare la password"
 
 msgid "welcome to <strong>Sea for All</strong> and thank you for joining us!"
 msgstr "benvenuto su <strong>Sea for All</strong> e grazie per esserti unito a noi!"
-
-#~ msgid "or complete your profile!"
-#~ msgstr "oppure completa il tuo profilo!"
