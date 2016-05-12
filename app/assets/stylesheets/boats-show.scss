@@ -102,6 +102,12 @@
 
   .boat-booking {
     background-color: #CDE1EE;
+
+    //this fixes the overflow from mobile caused by Aaron Ciaghi
+    .form-inputs {
+      overflow: hidden;
+    }
+
     .boat-price {
       padding: 10px;
       text-align: center;
@@ -188,6 +194,7 @@
 }
 
 @media screen and (min-width: 768px) {
+
   .dl-horizontal dt {
     width: 140px;
   }
@@ -198,6 +205,11 @@
 }
 
 @media screen and (max-width: 768px) {
+  
+  body {
+    padding-top: 50px;
+  }
+
   .boat-body .boat-info dd {
     margin-left: 0;
   }
