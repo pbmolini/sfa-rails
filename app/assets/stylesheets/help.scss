@@ -22,6 +22,25 @@
 	}
 }
 
+.help-call-to-action {
+	background: $blue;
+	color: white;
+
+	margin-top: 1em;
+	h2 {
+		margin-bottom: 20px;
+	}
+	h2, p {
+		text-align: center;
+	}
+	.help-cta-container {
+		margin-bottom: 28px;
+	}
+	.btn {
+		background: $darkorange;
+	}
+}
+
 .help-image {
   img {
   	@extend .img-responsive, .center-block;
@@ -68,7 +87,7 @@
 	  height: 300px;
 	  border-radius: 50%;
 	  margin-top: 1em;
-	  background-color: $orange;
+	  background-color: $blue;
 	  display: inline-block;
 		.help-guest-hat {
 			path {
@@ -87,7 +106,7 @@
 	}
 
 	.help-np-icon-orange {
-		fill: $orange;    
+		fill: $blue;    
 		height: 300px;
     padding-top: 1em;
   }
