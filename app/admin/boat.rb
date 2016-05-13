@@ -44,7 +44,7 @@ ActiveAdmin.register Boat do
 		column :complete 
 		
 		actions dropdown: true
-	end
+	end # end index
 
 	sidebar "Related stuff", only: [:show, :edit] do
     ul do
@@ -82,6 +82,16 @@ ActiveAdmin.register Boat do
  #    active_admin_comments
  #  end
 
+ 	# this creates the route that points to the corresponding method in the controller
+ 	member_action :validate, method: :put do
+    resource.validate!
+  end
+
+  # this creates the button
+  action_item :validate, only: :show do
+	  link_to 'Validate', validate_admin_boat_path(resource), method: :put
+	end
+
 	controller do
 		def update
 			# Remove the :user_id to enable update as a nested resource
@@ -93,6 +103,17 @@ ActiveAdmin.register Boat do
 			# This was meant for putting the correct boat count in the index title but does't work
 			@count = params[:user_id].present? ? User.find(params[:user_id]).boats.count : Boat.count
 			index!
+		end
+
+		# this performs the validation
+		def validate
+			boat = Boat.find params[:id]
+			if boat.validate and boat.complete?
+				# Note: leave the order of the condition like this!
+	    	redirect_to admin_boat_path(boat), notice: "Successfully validated!"
+	    else
+	    	redirect_to admin_boat_path(boat), alert: "Error! #{resource.errors.full_messages.join(", ")}"
+	    end
 		end
 	end
 
