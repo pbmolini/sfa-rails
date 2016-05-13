@@ -25,7 +25,7 @@ permit_params BoatFeaturesSet::FEATURES
 
 	sidebar "Related stuff", only: [:show, :edit] do
     ul do
-      li "Boat: #{link_to boat_features_set.boat.name, admin_boat_path(boat_features_set.boat)}".html_safe
+      li "Boat: #{link_to (boat_features_set.boat.name || 'No_name'), admin_boat_path(boat_features_set.boat)}".html_safe
       li "Owner: #{link_to boat_features_set.boat.user.name, admin_user_path(boat_features_set.boat.user)}".html_safe
     end
   end
