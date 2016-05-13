@@ -88,6 +88,12 @@ ActiveAdmin.register Boat do
 			params.delete :user_id.to_s
 			update!
 		end
+
+		def index
+			# This was meant for putting the correct boat count in the index title but does't work
+			@count = params[:user_id].present? ? User.find(params[:user_id]).boats.count : Boat.count
+			index!
+		end
 	end
 
 end

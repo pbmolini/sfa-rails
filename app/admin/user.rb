@@ -16,6 +16,9 @@ ActiveAdmin.register User do
 		column :location
 		column :phone 
 		column :birthdate
+		column :facebook do |user|
+			user.provider == 'facebook' ? status_tag( "yes", :ok ) : status_tag( "no" )
+		end
 		actions dropdown: true
 	end
 
