@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-05-11 22:31+0200\n"
+"PO-Revision-Date: 2016-05-13 16:51+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -535,6 +535,9 @@ msgstr "Conferma nuova password"
 msgid "Create Boat"
 msgstr "Crea barca"
 
+msgid "Credits|Images and Icons"
+msgstr "Immagini e Icone"
+
 msgid "Current password"
 msgstr "Password attuale"
 
@@ -643,6 +646,32 @@ msgstr "Password dimenticata?"
 
 msgid "Help"
 msgstr "Aiuto"
+
+msgid "HelpCtA|And now, what about trying Sea for All?"
+msgstr "E adesso che ne dici di provare Sea for All?"
+
+msgid "HelpCtA|Hey %{name}!"
+msgstr "Hey %{name}!"
+
+msgid "HelpCtA|Hey dear friend!"
+msgstr "Hey amico!"
+
+msgid "HelpCtA|If everything is clear, it's the right time to go to your dashboard!"
+msgstr "Altrimenti è il momento giusto per andare alla tua dashboard!"
+
+msgid "HelpCtA|Oh yeah!"
+msgstr "Ma certo!"
+
+msgid ""
+"HelpCtA|We hope you have found this information useful. If not, just <strong>"
+"%{write_us}</strong>. We will be very happy to help you further."
+msgstr ""
+"Abbiamo scritto questa breve guida per farti capire meglio cosa si fa su Sea for "
+"All. Se hai altre domande <strong>%{write_us}</strong>, saremo molto felici di "
+"aiutarti."
+
+msgid "HelpCtA|send us an email"
+msgstr "scrivici una email"
 
 msgid "Help|Drop us an email"
 msgstr "Scrivici una email"
@@ -1411,6 +1440,9 @@ msgstr "Prenotazioni per %{boat_name}"
 
 msgid "Title|Change your password"
 msgstr "Cambia la password"
+
+msgid "Title|Credits"
+msgstr "Credits"
 
 msgid "Title|Dashboard"
 msgstr "Dashboard"

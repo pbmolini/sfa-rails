@@ -518,6 +518,9 @@ msgstr ""
 msgid "Create Boat"
 msgstr ""
 
+msgid "Credits|Images and Icons"
+msgstr ""
+
 msgid "Current password"
 msgstr ""
 
@@ -611,6 +614,27 @@ msgid "Forgot your password?"
 msgstr ""
 
 msgid "Help"
+msgstr ""
+
+msgid "HelpCtA|And now, what about trying Sea for All?"
+msgstr ""
+
+msgid "HelpCtA|Hey %{name}!"
+msgstr ""
+
+msgid "HelpCtA|Hey dear friend!"
+msgstr ""
+
+msgid "HelpCtA|If everything is clear, it's the right time to go to your dashboard!"
+msgstr ""
+
+msgid "HelpCtA|Oh yeah!"
+msgstr ""
+
+msgid "HelpCtA|We hope you have found this information useful. If not, just <strong>%{write_us}</strong>. We will be very happy to help you further."
+msgstr ""
+
+msgid "HelpCtA|send us an email"
 msgstr ""
 
 msgid "Help|Drop us an email"
@@ -1282,6 +1306,9 @@ msgid "Title|Bookings for %{boat_name}"
 msgstr ""
 
 msgid "Title|Change your password"
+msgstr ""
+
+msgid "Title|Credits"
 msgstr ""
 
 msgid "Title|Dashboard"

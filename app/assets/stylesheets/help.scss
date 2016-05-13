@@ -35,6 +35,10 @@
 	}
 	.help-cta-container {
 		margin-bottom: 28px;
+		a {
+			text-decoration: none;
+			color: white;
+		}
 	}
 	.btn {
 		background: $darkorange;

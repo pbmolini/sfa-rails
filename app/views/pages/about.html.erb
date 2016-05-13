@@ -1,44 +1,48 @@
 <% title s_("Title|About us") %>
-<div class="row">
-	<div class="col-sm-12 text-center">
-		<h1><%= _("About us") %></h1>
-	</div>
-</div>
-<div class="row">
-	<div class="col-sm-12">
-		<br>
-		<p class="lead text-center">
-			<strong>Sea for All è un marketplace web e mobile per il noleggio e la locazione di unità da diporto tra privati</strong>
-		</p>
-		<p class="text-justify">
-			<strong>Sea for All</strong> nasce da un'idea di due fratelli, Giorgio e Stefano, da sempre appassionati di barche, e del loro cugino Pietro, da sempre appassionato di tecnologia. Concepita nell'estate 2015 e messa a punto nell'autunno successivo, nella prima metà del 2016 l'idea ha iniziato a concretizzarsi ed è diventata <a href="http://www.seaforall.com">seaforall.com</a>.
-		</p>
-		<p>
-			
-		</p>
-	</div>
-</div>
-<div class="container-fluid">
-	
-<div class="row">
-	<h1 class="text-center">Team</h1>
-	<% team_members.each do |m| %>
-	<div class="col-md-4 col-sm-6 team-member-card">
-		<div class="row">
-			<div class="col-sm-6 team-member-picture">
-				<%= image_tag aws_image_path_for(m['picture']), alt: m['name'], class: "img-circle img-thumbnail" %>
-			</div>
-			<div class="col-sm-6 team-member-text">
-				<h3><%= m['name'] %></h3>
-				<p class="hidden-xs hidden-sm"><%= m['role'] %></p>
-				<p>
-					<% %w{ linkedin twitter github }.each do |link| %>
-						<%= link_to(fa_icon("#{link}-square"), m[link], target: '_blank') if m[link] %>
-					<% end %>
-				</p>
-			</div>
+<div class="container-fluid white-box">
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<h1><%= _("About us") %></h1>
 		</div>
 	</div>
-	<% end %>
+	<div class="row">
+		<div class="col-sm-12">
+			<p class="lead text-justify">
+				<strong>Sea for All</strong> nasce da un'idea di due fratelli, Giorgio e Stefano, da sempre appassionati di barche, e del loro cugino Pietro, da sempre appassionato di tecnologia. Concepita nell'estate 2015 e messa a punto nell'autunno successivo, nella prima metà del 2016 l'idea ha iniziato a concretizzarsi ed è diventata <a href="http://www.seaforall.com">seaforall.com</a>.
+			</p>
+			<p>
+				
+			</p>
+		</div>
+	</div>
 </div>
+
+<hr>
+<div class="container-fluid white-box">
+	<div class="row">
+		<h1 class="text-center">Team</h1>
+		<% team_members.each do |m| %>
+		<div class="col-md-4 col-sm-6 team-member-card">
+			<div class="row">
+				<div class="col-sm-6 team-member-picture">
+					<%= image_tag aws_image_path_for(m['picture']), alt: m['name'], class: "img-circle img-thumbnail" %>
+				</div>
+				<div class="col-sm-6 team-member-text">
+					<h3><%= m['name'] %></h3>
+					<p class="hidden-xs hidden-sm"><%= m['role'] %></p>
+					<p>
+						<% %w{ linkedin twitter github }.each do |link| %>
+							<%= link_to(fa_icon("#{link}-square"), m[link], target: '_blank') if m[link] %>
+						<% end %>
+					</p>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<p><%= link_to 'Credits', page_path(id: 'credits') %></p>
+		</div>
+	</div>
 </div>

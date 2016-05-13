@@ -1,12 +1,24 @@
 <div class="help-call-to-action white-box">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
-			<h2>Hey caro amico!</h2>
-			<p class="help-cta-container">Grazie alla puntuale spiegazione sarai sicuramente convinto delle peculiarità che contraddistinguono questo innovativo servizio! Che ne dici di provarlo?</p>
+			<% if user_signed_in? %>
+				<h2><%= s_("HelpCtA|Hey %{name}!") %{name: current_user.first_name} %></h2>
+			<% else %>
+				<h2><%= s_("HelpCtA|Hey dear friend!") %></h2>
+			<% end %>
+
+			<p class="help-cta-container">
+				<%= (s_("HelpCtA|We hope you have found this information useful. If not, just <strong>%{write_us}</strong>. We will be very happy to help you further.") %{write_us: mail_to('hello@seaforall.com', s_("HelpCtA|send us an email"), subject: s_("Help|I need help"))} ).html_safe %>
+				<br>
+				<% if user_signed_in? %>
+					<%= s_("HelpCtA|If everything is clear, it's the right time to go to your dashboard!") %>
+				<% else %>
+					<%= s_("HelpCtA|And now, what about trying Sea for All?") %>
+				<% end %>
+			</p>
+			
 			<p>
-				<button class="btn btn-primary btn-lg">
-					Ma certo!
-				</button>
+				<%= link_to s_('HelpCtA|Oh yeah!'), user_signed_in? ? dashboard_path : new_user_registration_path, class: "btn btn-primary btn-lg" %>
 			</p>
 		</div>
 	</div>
