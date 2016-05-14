@@ -34,6 +34,16 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
+
+      column do
+        panel "Le ultime 5 prenotazioni" do
+          ul do
+            Booking.last(5).reverse.map do |booking|
+              li "Per #{link_to(booking.boat.name, admin_boat_booking_path(booking.boat, booking))}, fatto da #{link_to(booking.user.name, admin_user_path(booking.user))}".html_safe
+            end
+          end
+        end
+      end
     end
 
   end # content

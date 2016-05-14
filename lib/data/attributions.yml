@@ -1,0 +1,43 @@
+svg_attributions:
+
+  - svg: boat-launch.svg
+    text: "Created by Edward Boatman from the Noun Project"
+    url: "https://thenounproject.com/search/?q=boat&i=200"
+
+  - svg: handshake.svg
+    text: "Created by Nicholas Menghini from the Noun Project"
+    url: "https://thenounproject.com/search/?q=handshake&i=10790"
+
+  - svg: np-calendar.svg
+    text: "Created by Muneer A.Safiah from the Noun Project"
+    url: "https://thenounproject.com/mabusafiah/collection/calendars/?oq=calendar&cidx=0&i=55144"
+
+  - svg: np-chat.svg
+    text: "Created by icons.design from the Noun Project"
+    url: "https://thenounproject.com/search/?q=chat&i=86264"
+
+  - svg: np-guest-hat.svg
+    text: "Created by Casper Jensen from the Noun Project"
+    url: "https://thenounproject.com/search/?q=sailor+hat&i=208439"
+
+  - svg: np-host-hat.svg
+    text: "Created by Casper Jensen from the Noun Project"
+    url: "https://thenounproject.com/casperlajensen/collection/diving-sailor-hipster/?i=208445"
+
+  - svg: np-logbook.svg
+    text: "Created by Nick Kinling from the Noun Project"
+    url: "https://thenounproject.com/search/?q=logbook&i=155458"
+
+  - svg: np-review.svg
+    text: "Created by Sharon Showalter from the Noun Project"
+    url: "https://thenounproject.com/search/?q=review&i=267301"
+
+  - svg: np-vest.svg
+    text: "Created by Anton Gajdosik from the Noun Project"
+    url: "https://thenounproject.com/search/?q=vest&i=189504"
+
+image_attributions:
+
+  - image: default_avatar.png
+    text: "Created by Ron Gilbert from Monkey Island 2 LeChuck's Revenge"
+    url: "http://grumpygamer.com"

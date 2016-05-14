@@ -1,0 +1,45 @@
+it:
+  guest: >
+      <strong>Cerca</strong> una barca, controlla le sue caratteristiche e verifica 
+      se è disponibile nei giorni che ti interessano. 
+      Se è quella che fa per te, fai una richiesta di <strong>prenotazione</strong> 
+      per entrare in contatto con il proprietario tramite Sea for All. 
+      Una volta che avrà <strong>accettato</strong> la tua richiesta di prenotazione, 
+      potrai contattarlo direttamente tramite email o cellulare per gli ultimi dettagli 
+      prima di salpare. 
+      <br>
+      Al termine del periodo di prenotazione potrai <strong>condividere</strong> 
+      la tua esperienza scrivendo una recensione.
+  host: >
+      <strong>Registra</strong> la tua barca e inserisci le sue caratteristiche, 
+      aggiungi alcune foto e indica la disponibilità. 
+      Quando qualcuno è interessato, Sea for All ti avviserà e potrete iniziare 
+      a conoscervi meglio tramite una chat privata. 
+      Se deciderai di <strong>accettare</strong> la sua richiesta di prenotazione, 
+      potrai contattarlo direttamente tramite email o cellulare per gli ultimi 
+      dettagli. 
+      <br>
+      Al termine del periodo di prenotazione potrai <strong>condividere</strong> 
+      la tua esperienza scrivendo una recensione.
+
+en:
+  guest: >
+      <strong>Find</strong> a boat, check out its features and verify it's 
+      available in the days you need it. If it's the right one for you, 
+      send a <strong>booking</strong> request to the owners via Sea for All. 
+      Once they'll have <strong>accepted</strong> your booking, you may 
+      contact them directly via email or mobile phone for the last details 
+      before sailing off. 
+      <br>
+      After your booking period has expired, please <strong>share</strong> your 
+      experience by leaving a review.
+  host: >
+      <strong>Register</strong> your boat including all its features, 
+      add some pictures and mark the dates when it's available. 
+      Sea for All will notify you when someone is interested, and you can then 
+      ask each other questions in a private chat. 
+      If you decide to <strong>accept</strong> their booking request, you can 
+      contact them directly via email or mobile phone for the last details.
+      <br>
+      After your booking period has expired, please <strong>share</strong> your 
+      experience by leaving a review.

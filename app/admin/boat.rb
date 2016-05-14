@@ -24,6 +24,12 @@ ActiveAdmin.register Boat do
 	  column :name
 	  column :owner do |boat|
 	  	boat.user.name
+	  end	  
+	  column :bookings do |boat|
+	  	link_to boat.bookings.count, admin_boat_bookings_path(boat)
+	  end
+	  column :features do |boat|
+	  	link_to 'see all', admin_boat_features_set_path(boat.boat_features_set)
 	  end
 		column :address
 		column :rental_type
@@ -31,10 +37,21 @@ ActiveAdmin.register Boat do
 	  	boat.pictures.count
 	  end
 		column :daily_price
+	  column :safety_equipment do |boat|
+	  	boat.boat_features_set.safety_equipment ? status_tag( "yes", :ok ) : status_tag( "no" )
+	  end
 		column :with_license
 		column :complete 
-		actions
-	end
+		
+		actions dropdown: true
+	end # end index
+
+	sidebar "Related stuff", only: [:show, :edit] do
+    ul do
+      li link_to "Boat features", admin_boat_features_set_path(boat.boat_features_set)
+      li link_to "Reviews", '#'
+    end
+  end
 
 	form do |f|
 		f.inputs "Edit Boat" do
@@ -56,11 +73,47 @@ ActiveAdmin.register Boat do
     f.actions
 	end
 
+	# show do
+ #    panel "Boat features set" do
+ #      table_for boat.boat_features_set do
+ #        BoatFeaturesSet::FEATURES.reverse.each {|f| column f}
+ #      end
+ #    end
+ #    active_admin_comments
+ #  end
+
+ 	# this creates the route that points to the corresponding method in the controller
+ 	member_action :validate, method: :put do
+    resource.validate!
+  end
+
+  # this creates the button
+  action_item :validate, only: :show do
+	  link_to 'Validate', validate_admin_boat_path(resource), method: :put
+	end
+
 	controller do
 		def update
 			# Remove the :user_id to enable update as a nested resource
 			params.delete :user_id.to_s
 			update!
+		end
+
+		def index
+			# This was meant for putting the correct boat count in the index title but does't work
+			@count = params[:user_id].present? ? User.find(params[:user_id]).boats.count : Boat.count
+			index!
+		end
+
+		# this performs the validation
+		def validate
+			boat = Boat.find params[:id]
+			if boat.validate and boat.complete?
+				# Note: leave the order of the condition like this!
+	    	redirect_to admin_boat_path(boat), notice: "Successfully validated!"
+	    else
+	    	redirect_to admin_boat_path(boat), alert: "Error! #{resource.errors.full_messages.join(", ")}"
+	    end
 		end
 	end
 

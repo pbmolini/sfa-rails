@@ -1,0 +1,29 @@
+<% title s_("Title|Credits") %>
+<div class="container-fluid white-box">
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<h1>Credits</h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 col-lg-8 col-lg-offset-2">
+			<h2><%= s_('Credits|Images and Icons') %></h2>
+			<div class="list-group">
+				<%# Data taken from lib/data/attributions.yml %>
+				<% image_attributions.each do |attribution| %>
+					<%= link_to attribution['url'], class: 'list-group-item', target: '_blank' do %>
+						<%= image_tag attribution['image'], class: 'attribution-image', nocomment: true %>
+						<span><%= attribution['text'] %></span>
+					<% end %>
+				<% end %>
+				<% svg_attributions.each do |attribution| %>
+					<%= link_to attribution['url'], class: 'list-group-item', target: '_blank' do %>
+						<%= inline_svg attribution['svg'], class: 'attribution-image', nocomment: true %>
+						<span><%= attribution['text'] %></span>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

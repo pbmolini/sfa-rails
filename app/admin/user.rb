@@ -16,7 +16,10 @@ ActiveAdmin.register User do
 		column :location
 		column :phone 
 		column :birthdate
-		actions
+		column :facebook do |user|
+			user.provider == 'facebook' ? status_tag( "yes", :ok ) : status_tag( "no" )
+		end
+		actions dropdown: true
 	end
 
 	form do |f|
@@ -27,9 +30,18 @@ ActiveAdmin.register User do
 			f.input :location
 			f.input :bio
 			f.input :phone
-			f.input :birthdate
+			f.input :birthdate, as: :datepicker
 		end
     f.actions
 	end
+
+	sidebar "Boats", only: [:show, :edit] do
+		h3 link_to 'All boats', admin_user_boats_path(user)
+    ul do
+    	user.boats.each do |boat|
+      	li link_to(boat.name.present? ? boat.name : 'No_name', admin_user_boat_path(user, boat))
+      end
+    end
+  end
 
 end
