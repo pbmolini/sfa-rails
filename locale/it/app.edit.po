@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-05-11 22:31+0200\n"
+"PO-Revision-Date: 2016-05-13 16:51+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.7\n"
-"POT-Creation-Date: 2016-05-13 16:39+0200\n"
+"POT-Creation-Date: 2016-05-16 23:12+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -520,7 +520,7 @@ msgid "Create Boat"
 msgstr "Crea barca"
 
 msgid "Credits|Images and Icons"
-msgstr ""
+msgstr "Immagini e Icone"
 
 msgid "Current password"
 msgstr "Password attuale"
@@ -621,27 +621,25 @@ msgid "Help"
 msgstr "Aiuto"
 
 msgid "HelpCtA|And now, what about trying Sea for All?"
-msgstr ""
+msgstr "E adesso che ne dici di provare Sea for All?"
 
-#, fuzzy
 msgid "HelpCtA|Hey %{name}!"
-msgstr "Benvenuto %{name}"
+msgstr "Hey %{name}!"
 
 msgid "HelpCtA|Hey dear friend!"
-msgstr ""
+msgstr "Hey amico!"
 
 msgid "HelpCtA|If everything is clear, it's the right time to go to your dashboard!"
-msgstr ""
+msgstr "Altrimenti è il momento giusto per andare alla tua dashboard!"
 
 msgid "HelpCtA|Oh yeah!"
-msgstr ""
+msgstr "Ma certo!"
 
 msgid "HelpCtA|We hope you have found this information useful. If not, just <strong>%{write_us}</strong>. We will be very happy to help you further."
-msgstr ""
+msgstr "Abbiamo scritto questa breve guida per farti capire meglio cosa si fa su Sea for All. Se hai altre domande <strong>%{write_us}</strong>, saremo molto felici di aiutarti."
 
-#, fuzzy
 msgid "HelpCtA|send us an email"
-msgstr "Scrivici una email"
+msgstr "scrivici una email"
 
 msgid "Help|Drop us an email"
 msgstr "Scrivici una email"
@@ -1317,9 +1315,8 @@ msgstr "Prenotazioni per %{boat_name}"
 msgid "Title|Change your password"
 msgstr "Cambia la password"
 
-#, fuzzy
 msgid "Title|Credits"
-msgstr "Le mie barche"
+msgstr "Credits"
 
 msgid "Title|Dashboard"
 msgstr "Dashboard"
