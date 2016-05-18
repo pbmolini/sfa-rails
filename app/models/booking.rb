@@ -22,7 +22,7 @@ class Booking < ActiveRecord::Base
 
         # Enqueue the reminder to be sent at the end of the booking
         # If the booking has expired, the Job is run in 2 minutes
-        execution_time = has_expired? ? end_time : 2.minutes.from_now
+        execution_time = has_expired? ? 2.minutes.from_now : end_time
         # To the guest
         ReviewReminderJob.set(wait_until: execution_time).perform_later(self, user)
         # To the host
@@ -92,6 +92,15 @@ class Booking < ActiveRecord::Base
 
   # Not used by aasm, but useful for the views
   STATES = [:pending, :accepted, :rejected, :canceled].freeze
+
+  scope :next, 
+        Proc.new { |today = Date.today| where('start_time > ?', today).order('start_time ASC') }
+
+  scope :previous, 
+        Proc.new { |today = Date.today| where('start_time < ?', today).order('start_time DESC') }
+
+  scope :current, 
+        Proc.new { |today = Date.today| where('start_time <= ? AND end_time >= ?', today, today).order('start_time DESC') }
 
   def duration_in_days
     duration_in_seconds = end_time - start_time

@@ -32,14 +32,17 @@
         <%= render 'pages/dashboard/incomplete_profile' %>
       <% end %>
   
+      <%# Bookings as guest %>
       <% if current_user.bookings.any? %>
-        <%= render 'pages/dashboard/bookings_panel', bookings: current_user.bookings.accepted.limit(3), role: 'guest' %>        
+        <%= render 'pages/dashboard/bookings_panel', bookings: current_user.bookings.order('updated_at DESC').limit(3), role: 'guest' %>        
       <% end %>
 
-      <% if current_user.bookings.any? %>
-        <%= render 'pages/dashboard/bookings_panel', bookings: current_user.boat_bookings.accepted.limit(3), role: 'host' %>        
+      <%# Bookings as host %>
+      <% if current_user.boat_bookings.any? %>
+        <%= render 'pages/dashboard/bookings_panel', bookings: current_user.boat_bookings.order('updated_at DESC').limit(3), role: 'host' %>        
       <% end %>
       
+      <%# Boats if host %>
       <% if current_user.boats.any? %>
         <%= render 'pages/dashboard/boats_panel' %>
       <% end %>
