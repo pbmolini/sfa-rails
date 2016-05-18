@@ -24,7 +24,7 @@ class BookingStateMessage < Mailboxer::Message
     when :rejected
       _("Sorry, I reject your booking.")
     when :canceled
-      _("Sorry, I must cancel this booking.")
+      booking.cancellation_reason || _("Sorry, I must cancel this booking.")
     end
   end
 
