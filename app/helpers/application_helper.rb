@@ -20,8 +20,13 @@ module ApplicationHelper
 	end
 
 	def tel_to(text)
-    numbers = text.scan(/[0-9]+/).join("")
-    link_to text, "tel:#{numbers}"
+		if text.present?
+    	numbers = text.scan(/[0-9]+/).join("")
+    	link_to text, "tel:#{numbers}"
+    else
+    	# this should never happen, but it happended on 2016-05-18
+    	_("No phone provided")
+    end
   end
 
   # This should be used like this: 
