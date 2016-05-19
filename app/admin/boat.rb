@@ -49,6 +49,7 @@ ActiveAdmin.register Boat do
 	sidebar "Related stuff", only: [:show, :edit] do
     ul do
       li link_to "Boat features", admin_boat_features_set_path(boat.boat_features_set)
+      li link_to 'All bookings', admin_boat_bookings_path(boat)
       li link_to "Reviews", '#'
     end
   end
