@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-16 23:12+0200\n"
-"PO-Revision-Date: 2016-05-16 23:12+0200\n"
+"POT-Creation-Date: 2016-05-23 23:47+0200\n"
+"PO-Revision-Date: 2016-05-23 23:47+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -109,6 +109,9 @@ msgid "AdminUser|Sign in count"
 msgstr ""
 
 msgid "All"
+msgstr ""
+
+msgid "All boats"
 msgstr ""
 
 msgid "Already have an account?"
@@ -599,6 +602,27 @@ msgstr ""
 msgid "Enter your Facebook account to change your email and password."
 msgstr ""
 
+msgid "ErrorPage|Here are some helpful links instead:"
+msgstr ""
+
+msgid "ErrorPage|Houston we have a problem"
+msgstr ""
+
+msgid "ErrorPage|Oh no!"
+msgstr ""
+
+msgid "ErrorPage|Sorry, there has been a problem with your request."
+msgstr ""
+
+msgid "ErrorPage|Try again later or contact us by writing to %{mail_to}"
+msgstr ""
+
+msgid "ErrorPage|We can't seem to find the page you're looking for."
+msgstr ""
+
+msgid "ErrorPage|Yikes!"
+msgstr ""
+
 msgid "Features"
 msgstr ""
 
@@ -1016,6 +1040,9 @@ msgstr ""
 msgid "No engine? Uncheck!"
 msgstr ""
 
+msgid "No phone provided"
+msgstr ""
+
 msgid "No reviews yet"
 msgstr ""
 
@@ -1321,6 +1348,9 @@ msgstr ""
 msgid "Title|Edit Profile"
 msgstr ""
 
+msgid "Title|Error"
+msgstr ""
+
 msgid "Title|Forgot password"
 msgstr ""
 
@@ -1343,6 +1373,9 @@ msgid "Title|My boats"
 msgstr ""
 
 msgid "Title|New Boat"
+msgstr ""
+
+msgid "Title|Not Found"
 msgstr ""
 
 msgid "Title|Privacy Policy"

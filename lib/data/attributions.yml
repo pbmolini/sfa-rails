@@ -36,6 +36,14 @@ svg_attributions:
     text: "Created by Anton Gajdosik from the Noun Project"
     url: "https://thenounproject.com/search/?q=vest&i=189504"
 
+  - svg: np-not-found.svg
+    text: "Created by Dima Kolchan from the Noun Project"
+    url: "https://thenounproject.com/search/?q=boat&i=36359"
+
+  - svg: np-bailout.svg
+    text: "Created by Luis Prado from the Noun Project"
+    url: "https://thenounproject.com/search/?q=bailout&i=319613"
+
 image_attributions:
 
   - image: default_avatar.png

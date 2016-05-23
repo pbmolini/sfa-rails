@@ -28,8 +28,11 @@ module SfaRails
     config.active_record.raise_in_transactional_callbacks = true
 
     config.active_record.observers = :user_observer, :boat_observer, :booking_observer, :review_observer
+    
     # Make delayed_job the Queue Adapter
     config.active_job.queue_adapter = :delayed_job
 
+    # Use error pages managed by routes
+    config.exceptions_app = self.routes
   end
 end
