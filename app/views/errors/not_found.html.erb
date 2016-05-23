@@ -3,7 +3,8 @@
 	<div class="row">
 		<div class="col-md-6">
 			<h1><%= s_("ErrorPage|Oh no!") %></h1>
-			<p class="lead"><%= s_("ErrorPage|We can't seem to find the page you're looking for.") %></p>
+			<p class="error-msg"><%= s_("ErrorPage|We can't seem to find the page you're looking for.") %></p>
+			<%= render 'useful_links' %>
 		</div>
 		<div class="col-md-6">
 			<div class="error-image">

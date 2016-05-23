@@ -2,11 +2,12 @@
 <div class="container-fluid white-box error-box">
 	<div class="row">
 		<div class="col-md-6">
-			<h1><%= s_("ErrorPage|Oh no!") %></h1>
-			<p class="lead"><%= s_("ErrorPage|There has been a problem with your request.") %></p>
-			<p class="lead">
-				<%= (s_("ErrorPage|Try again later or tell us the problem writing to %{mail_to}.") %{mail_to: mail_to("hello@seaforall.com", "hello@seaforall.com", subject: s_("ErrorPage|Houston we have a problem"))}).html_safe %>
+			<h1><%= s_("ErrorPage|Yikes!") %></h1>
+			<p class="error-msg"><%= s_("ErrorPage|Sorry, there has been a problem with your request.") %></p>
+			<p id="contact-us">
+				<%= (s_("ErrorPage|Try again later or contact us by writing to %{mail_to}") %{mail_to: mail_to("hello@seaforall.com", "hello@seaforall.com", subject: s_("ErrorPage|Houston we have a problem"))}).html_safe %>
 			</p>
+			<%= render 'useful_links' %>
 		</div>		
 		<div class="col-md-6">
 			<div class="error-image">

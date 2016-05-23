@@ -4,12 +4,41 @@
 
 .error-box {
 	h1 {		
-    font-size: 5em;
+    font-size: 124px;
     font-weight: 600;
     color: grey;
 	}
-	
+
+	ul {
+		padding-left: 2em;
+	}
+
+	.error-image {
+		margin-top: 20px;
+	}
+
 	.error-svg {
 		fill: $darkorange;
+	}
+
+	.error-msg {
+		font-size: 28px;
+	}
+
+	#contact-us {
+		font-size: 16px;
+	}
+
+	.useful-links {
+		@extend .hidden-xs, .hidden-sm;
+		p, ul {
+			font-size: 16px;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		h1 {
+			font-size: 80px;
+		}
 	}
 }

@@ -1,0 +1,12 @@
+<div class="useful-links">
+	<p>
+		<%= s_("ErrorPage|Here are some helpful links instead:") %>
+		<ul class="list-unstyled">
+			<li><%= link_to 'Home', root_path %></li>
+			<li><%= link_to('Dashboard', dashboard_path) if user_signed_in? %></li>
+			<li><%= link_to _("All boats"), boats_path %></li>
+			<li><%= link_to _('Help'), page_path(id: 'help') %></li>
+			<li><%= link_to 'Blog', 'https://blog.seaforall.com' %></li>
+		</ul>
+	</p>
+</div>
