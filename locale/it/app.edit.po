@@ -16,7 +16,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.7\n"
-"POT-Creation-Date: 2016-05-16 23:12+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -110,6 +109,10 @@ msgstr ""
 
 msgid "All"
 msgstr "Tutte"
+
+#, fuzzy
+msgid "All boats"
+msgstr "Le tue barche"
 
 msgid "Already have an account?"
 msgstr "Hai già un account?"
@@ -602,6 +605,27 @@ msgstr "Scrivi almeno 42 caratteri"
 msgid "Enter your Facebook account to change your email and password."
 msgstr "Vai sul tuo profilo Facebook per modificare la tua email e la tua password."
 
+msgid "ErrorPage|Here are some helpful links instead:"
+msgstr ""
+
+msgid "ErrorPage|Houston we have a problem"
+msgstr ""
+
+msgid "ErrorPage|Oh no!"
+msgstr ""
+
+msgid "ErrorPage|Sorry, there has been a problem with your request."
+msgstr ""
+
+msgid "ErrorPage|Try again later or contact us by writing to %{mail_to}"
+msgstr ""
+
+msgid "ErrorPage|We can't seem to find the page you're looking for."
+msgstr ""
+
+msgid "ErrorPage|Yikes!"
+msgstr ""
+
 msgid "Features"
 msgstr "Caratteristiche"
 
@@ -1020,6 +1044,10 @@ msgstr "Non ci sono ancora prenotazioni"
 msgid "No engine? Uncheck!"
 msgstr "Senza motore? Deseleziona!"
 
+#, fuzzy
+msgid "No phone provided"
+msgstr "Completa la scheda"
+
 msgid "No reviews yet"
 msgstr "Non ci sono ancora recensioni"
 
@@ -1327,6 +1355,10 @@ msgstr "Modifica %{boat_name}"
 msgid "Title|Edit Profile"
 msgstr "Modifica profilo"
 
+#, fuzzy
+msgid "Title|Error"
+msgstr "Login"
+
 msgid "Title|Forgot password"
 msgstr "Password dimenticata"
 
@@ -1349,6 +1381,10 @@ msgid "Title|My boats"
 msgstr "Le mie barche"
 
 msgid "Title|New Boat"
+msgstr "Nuova barca"
+
+#, fuzzy
+msgid "Title|Not Found"
 msgstr "Nuova barca"
 
 msgid "Title|Privacy Policy"
