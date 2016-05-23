@@ -18,11 +18,11 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   validates_presence_of :first_name, :last_name
   
-  # These validations are skipped whe the user resets the password
-  validates :birthdate, presence: true, on: :update, unless: Proc.new{|u| u.encrypted_password_changed? }
-  validate :at_least_16, on: :update, unless: Proc.new{|u| u.encrypted_password_changed? }
-  validates :phone, presence: true, on: :update, unless: Proc.new{|u| u.encrypted_password_changed? }
-  validates :location, presence: true, on: :update, unless: Proc.new{|u| u.encrypted_password_changed? }
+  # These validations are skipped when the user resets the password
+  validates :birthdate, presence: true, on: :update, unless: Proc.new { |u| u.encrypted_password_changed? }
+  validate :at_least_16, on: :update, unless: Proc.new { |u| u.encrypted_password_changed? }
+  validates :phone, presence: true, on: :update, unless: Proc.new { |u| u.encrypted_password_changed? }
+  validates :location, presence: true, on: :update, unless: Proc.new { |u| u.encrypted_password_changed? }
 
   # Modify record in Mailchimp
   after_commit :update_mailchimp, on: :update
