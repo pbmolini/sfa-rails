@@ -32,6 +32,9 @@ ActiveAdmin.register Booking do
 	  column :guest, sortable: :guest do |b|
 	  	link_to b.user.name, admin_user_path(b.user)
 	  end
+	  column :messages, sortable: :messages do |b|
+	  	link_to b.conversation.messages.count, admin_boat_booking_path(b.boat, b)
+	  end
 	  column :state, sortable: :state do |b| 
 	  	b.aasm_state
 	  end
@@ -41,5 +44,16 @@ ActiveAdmin.register Booking do
 
 	  actions dropdown: true
 	end
+
+	sidebar "Conversation", only: [:show] do
+    ul do
+    	booking.conversation.messages.each do |message|
+      	li "<em>#{I18n.l(message.created_at, format: :long)}</em> <br> <strong>#{message.sender.name}</strong>: <p>#{message.body}</p>".html_safe, style: "list-style:none;"
+      end 
+      if booking.canceled?
+      	li "<strong>Motivo della cancellazione:</strong>: <p>#{booking.cancellation_reason}</p>".html_safe, style: "list-style:none;"
+      end
+    end
+  end
 
 end
