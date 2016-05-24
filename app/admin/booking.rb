@@ -47,7 +47,7 @@ ActiveAdmin.register Booking do
 
 	sidebar "Conversation", only: [:show] do
     ul do
-    	booking.conversation.messages.each do |message|
+    	booking.conversation.messages.order('created_at ASC').each do |message|
       	li "<em>#{I18n.l(message.created_at, format: :long)}</em> <br> <strong>#{message.sender.name}</strong>: <p>#{message.body}</p>".html_safe, style: "list-style:none;"
       end 
       if booking.canceled?
