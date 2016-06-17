@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2016-05-13 16:51+0200\n"
+"PO-Revision-Date: 2016-05-23 23:52+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 1.8.7\n"
+"POT-Creation-Date: 2016-06-16 12:12+0200\n"
 
 msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
@@ -110,9 +111,8 @@ msgstr ""
 msgid "All"
 msgstr "Tutte"
 
-#, fuzzy
 msgid "All boats"
-msgstr "Le tue barche"
+msgstr "Tutte le barche"
 
 msgid "Already have an account?"
 msgstr "Hai già un account?"
@@ -606,25 +606,25 @@ msgid "Enter your Facebook account to change your email and password."
 msgstr "Vai sul tuo profilo Facebook per modificare la tua email e la tua password."
 
 msgid "ErrorPage|Here are some helpful links instead:"
-msgstr ""
+msgstr "Ecco qualche link utile:"
 
 msgid "ErrorPage|Houston we have a problem"
-msgstr ""
+msgstr "Huston abbiamo un problema"
 
 msgid "ErrorPage|Oh no!"
-msgstr ""
+msgstr "Oh no!"
 
 msgid "ErrorPage|Sorry, there has been a problem with your request."
-msgstr ""
+msgstr "Ci dispiace, si è verificato un problema con la tua ultima richiesta."
 
 msgid "ErrorPage|Try again later or contact us by writing to %{mail_to}"
-msgstr ""
+msgstr "Riprova più tardi oppure contattaci scrivendo a %{mail_to}"
 
 msgid "ErrorPage|We can't seem to find the page you're looking for."
-msgstr ""
+msgstr "Non troviamo la pagina che stai cercando."
 
 msgid "ErrorPage|Yikes!"
-msgstr ""
+msgstr "Yikes!"
 
 msgid "Features"
 msgstr "Caratteristiche"
@@ -664,6 +664,16 @@ msgstr "Abbiamo scritto questa breve guida per farti capire meglio cosa si fa su
 
 msgid "HelpCtA|send us an email"
 msgstr "scrivici una email"
+
+msgid "HelpTitle|Cookie Law"
+msgstr ""
+
+msgid "HelpTitle|Help guest"
+msgstr ""
+
+#, fuzzy
+msgid "HelpTitle|Help host"
+msgstr "Nuova barca"
 
 msgid "Help|Drop us an email"
 msgstr "Scrivici una email"
@@ -1044,9 +1054,8 @@ msgstr "Non ci sono ancora prenotazioni"
 msgid "No engine? Uncheck!"
 msgstr "Senza motore? Deseleziona!"
 
-#, fuzzy
 msgid "No phone provided"
-msgstr "Completa la scheda"
+msgstr "Non fornito"
 
 msgid "No reviews yet"
 msgstr "Non ci sono ancora recensioni"
@@ -1355,9 +1364,8 @@ msgstr "Modifica %{boat_name}"
 msgid "Title|Edit Profile"
 msgstr "Modifica profilo"
 
-#, fuzzy
 msgid "Title|Error"
-msgstr "Login"
+msgstr "Pagina di errore"
 
 msgid "Title|Forgot password"
 msgstr "Password dimenticata"
@@ -1383,9 +1391,8 @@ msgstr "Le mie barche"
 msgid "Title|New Boat"
 msgstr "Nuova barca"
 
-#, fuzzy
 msgid "Title|Not Found"
-msgstr "Nuova barca"
+msgstr "Pagina non trovata"
 
 msgid "Title|Privacy Policy"
 msgstr "Informativa privacy"

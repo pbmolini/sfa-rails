@@ -661,6 +661,15 @@ msgstr ""
 msgid "HelpCtA|send us an email"
 msgstr ""
 
+msgid "HelpTitle|Cookie Law"
+msgstr ""
+
+msgid "HelpTitle|Help guest"
+msgstr ""
+
+msgid "HelpTitle|Help host"
+msgstr ""
+
 msgid "Help|Drop us an email"
 msgstr ""
 
