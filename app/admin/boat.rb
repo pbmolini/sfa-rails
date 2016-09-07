@@ -52,7 +52,7 @@ ActiveAdmin.register Boat do
       li link_to 'All bookings', admin_boat_bookings_path(boat)
       li link_to "Reviews", '#'
 			boat.pictures.each_with_index do |pic, i|
-				li link_to "Picture ##{i+1}", pic.image.url
+				li link_to "Picture ##{i+1}", pic.image.url, target: '_blank'
 			end
     end
   end
