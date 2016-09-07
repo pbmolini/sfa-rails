@@ -31,7 +31,8 @@
   <h2 class="text-center">Migliori offerte</h2>
   <div class="row">
     <%# TODO improve this inefficient query %>
-    <% Boat.complete.select { |boat| boat.can_be_published? }.first(3).each do |boat| %>
+    <%# Boat.complete.select { |boat| boat.can_be_published? }.first(3).each do |boat| %>
+    <% @featured_boats.each do |boat| %>
       <%= render('boats/boat_card', boat: boat) if boat.can_be_published? %>
     <% end %>
   </div>

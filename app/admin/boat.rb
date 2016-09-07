@@ -3,7 +3,7 @@ ActiveAdmin.register Boat do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-	permit_params :name, :manufacturer, :daily_price, :year, :model, :length, :guest_capacity, :boat_category_id, :description, :fuel_type, :with_license, :rental_type, :address, :horse_power, :user_id
+	permit_params :name, :manufacturer, :daily_price, :year, :model, :length, :guest_capacity, :boat_category_id, :description, :fuel_type, :with_license, :rental_type, :address, :horse_power, :user_id, :featured
 #
 # or
 #
@@ -24,7 +24,7 @@ ActiveAdmin.register Boat do
 	  column :name
 	  column :owner do |boat|
 	  	boat.user.name
-	  end	  
+	  end
 	  column :bookings do |boat|
 	  	link_to boat.bookings.count, admin_boat_bookings_path(boat)
 	  end
@@ -41,8 +41,8 @@ ActiveAdmin.register Boat do
 	  	boat.boat_features_set.safety_equipment ? status_tag( "yes", :ok ) : status_tag( "no" )
 	  end
 		column :with_license
-		column :complete 
-		
+		column :complete
+
 		actions dropdown: true
 	end # end index
 
@@ -51,11 +51,15 @@ ActiveAdmin.register Boat do
       li link_to "Boat features", admin_boat_features_set_path(boat.boat_features_set)
       li link_to 'All bookings', admin_boat_bookings_path(boat)
       li link_to "Reviews", '#'
+			boat.pictures.each_with_index do |pic, i|
+				li link_to "Picture ##{i+1}", pic.image.url
+			end
     end
   end
 
 	form do |f|
 		f.inputs "Edit Boat" do
+			f.input :featured
       f.input :model
 			f.input :name
       f.input :manufacturer

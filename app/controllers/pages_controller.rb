@@ -1,12 +1,19 @@
 class PagesController < ApplicationController
   include HighVoltage::StaticPage
   before_action :authorize_page # This is NOT CanCan
+  before_action :landing
 
   layout :layout_for_page
 
   add_breadcrumb Proc.new { |c| c.fa_icon('tachometer') }, '', if: :user_signed_in?
 
   private
+
+  def landing
+    if params[:id] == 'landing'
+      @featured_boats = Boat.complete.featured.select { |boat| boat.can_be_published? }.first(3)
+    end
+  end
 
   # Custom authorization: CanCan skips this Controller
   def authorize_page

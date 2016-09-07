@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160213142951) do
+ActiveRecord::Schema.define(version: 20160907085529) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -138,6 +138,7 @@ ActiveRecord::Schema.define(version: 20160213142951) do
     t.boolean  "complete",                                 default: false
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "featured",                                 default: false
   end
 
   add_index "boats", ["boat_category_id"], name: "index_boats_on_boat_category_id"
