@@ -7,6 +7,18 @@ class PagesController < ApplicationController
 
   add_breadcrumb Proc.new { |c| c.fa_icon('tachometer') }, '', if: :user_signed_in?
 
+  def letsencrypt
+    if Rails.env.production? && ENV['HEROKU_DEPLOYMENT'] == 'production'
+      if params[:id] == ENV['LETS_ENCRYPT_ID']
+        render text: ENV['LETS_ENCRYPT_CHALLENGE']
+      else
+        render text: 'Try again genius!'
+      end
+    else
+      render text: 'Used only in production to validate SSL cert. (see http://collectiveidea.com/blog/archives/2016/01/12/lets-encrypt-with-a-rails-app-on-heroku)'
+    end
+  end
+
   private
 
   def landing
