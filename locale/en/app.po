@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
-msgid "\"BoatFeaturesSet|#{f.humanize}\""
+msgid "welcome to <strong>Sea for All</strong> and thank you for joining us!"
 msgstr ""
 
 msgid "%{boat_price} €/day"
@@ -747,6 +747,9 @@ msgid "I accept your booking. Enjoy my boat!"
 msgstr ""
 
 msgid "If you leave now, we will miss you forever"
+msgstr ""
+
+msgid "It seems you are a bit too old..."
 msgstr ""
 
 msgid "Landing|Earn extra money with your boat"
@@ -1760,5 +1763,5 @@ msgstr ""
 msgid "we need your current password to confirm your changes"
 msgstr ""
 
-msgid "welcome to <strong>Sea for All</strong> and thank you for joining us!"
+msgid "\"BoatFeaturesSet|#{f.humanize}\""
 msgstr ""
