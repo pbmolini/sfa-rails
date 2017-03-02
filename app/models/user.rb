@@ -10,17 +10,18 @@ class User < ActiveRecord::Base
 
   has_many :boats
   has_many :bookings
-  
+
   has_many :sent_reviews, class_name: "Review", foreign_key: :reviewer_id
   has_many :received_reviews, class_name: "Review", foreign_key: :reviewee_id
 
   has_attached_file :image, :styles => { thumb: "50x50#", medium: "150x150#" }, default_url: "default_avatar.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   validates_presence_of :first_name, :last_name
-  
+
   # These validations are skipped when the user resets the password
   validates :birthdate, presence: true, on: :update, unless: Proc.new { |u| u.encrypted_password_changed? }
   validate :at_least_16, on: :update, unless: Proc.new { |u| u.encrypted_password_changed? }
+  validate :not_too_old, on: :update, unless: Proc.new { |u| u.encrypted_password_changed? }
   validates :phone, presence: true, on: :update, unless: Proc.new { |u| u.encrypted_password_changed? }
   validates :location, presence: true, on: :update, unless: Proc.new { |u| u.encrypted_password_changed? }
 
@@ -114,6 +115,12 @@ class User < ActiveRecord::Base
   def at_least_16
     if birthdate
       errors.add(:birthdate, _("must be before %{date}") %{date: 16.years.ago.to_date}) unless birthdate < 16.years.ago.to_date
+    end
+  end
+
+  def not_too_old
+    if birthdate
+      errors.add(:birthdate, _('It seems you are a bit too old...')) unless birthdate > 100.years.ago.to_date
     end
   end
 end
