@@ -17,7 +17,7 @@ class Ability
       can :create, Boat
 
       # If either the boat is ready for publication or the user is the boat's owner
-      can :read, Boat do |boat|
+      can [:read, :dates_to_disable], Boat do |boat|
         boat.can_be_published? or boat.user == user
       end
 
@@ -53,7 +53,7 @@ class Ability
       can :create, Booking do |booking|
         user.complete? and
         booking.boat.complete? and
-        booking.user == user and 
+        booking.user == user and
         booking.boat.user != user
       end
 
@@ -64,7 +64,7 @@ class Ability
 
       # if can read, the booking may be canceled (managed by aasm), and it is not expired
       can :cancel, Booking do |booking|
-        (booking.user == user or booking.boat.user == user) and 
+        (booking.user == user or booking.boat.user == user) and
         booking.may_cancel? and
         !booking.has_expired?
       end
@@ -76,24 +76,24 @@ class Ability
 
       can [:read, :create, :destroy], Day, boat: { user_id: user.id }
 
-      # if the booking is :accepted, has expired, 
+      # if the booking is :accepted, has expired,
       # current_user is the booking's guest or host and
       # has not yet reviewed the booking
       can :create, Review do |review|
         booking = review.booking
         already_reviewed = false
-        if booking.guest_review.present? 
+        if booking.guest_review.present?
           if booking.guest_review.reviewer == user
             already_reviewed = true
           end
         end
-        if booking.host_review.present? 
+        if booking.host_review.present?
           if booking.host_review.reviewer == user
             already_reviewed = true
           end
         end
 
-        review.booking.accepted? and review.booking.has_expired? and 
+        review.booking.accepted? and review.booking.has_expired? and
         (review.booking.user == user or review.booking.boat.user == user) and
         !already_reviewed
       end

@@ -1,4 +1,4 @@
-$(document).ready () ->
+$(document).on 'turbolinks:load', () ->
   if $('.boat-map').length
     latitude = $('.boat-map').data('latitude')
     longitude = $('.boat-map').data('longitude')

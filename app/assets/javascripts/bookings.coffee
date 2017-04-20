@@ -4,7 +4,7 @@
 
 class BookingForm
 
-  constructor: (@el, dates) ->
+  constructor: (@el, boatId) ->
     # private methods
 
     # given a start date it blocks all the dates after the first blocked day
@@ -52,59 +52,64 @@ class BookingForm
       moment(date).format('DD/MM/YYYY')
 
     # constructor logic
-    @datesToDisable = _.map dates, (d) ->
-      moment(new Date(d.date))
 
-    @startTimePicker = @el.find('#start_time-picker').datetimepicker
-      locale: moment.locale()
-      format: moment.localeData().longDateFormat('L')
-      minDate: new Date()
-      disabledDates: @datesToDisable
-      inline: true
-      showClear: true
-    .on "dp.change", (e) =>
-      if e.date
-        @el.find("#start_time-link .booking-date-picker-label").html "<strong>#{__('Start')}:</strong> #{moment(e.date).format('DD/MM/YYYY')}"
-        @el.find('#booking_start_time').val(moment(e.date).hour(0).minutes(0).seconds(0))
-        restrictEndDate(e.date)
-        animateTogglePickers()
-      else
-        @el.find("#start_time-link .booking-date-picker-label").html __('Select a start date')
-        @endTimePicker.clear()
-    .data("DateTimePicker")
+    # first of all remove ALL event listeners that may be still there
+    @el.children().off()
 
-    @endTimePicker = @el.find('#end_time-picker').datetimepicker
-      locale: moment.locale()
-      format: moment.localeData().longDateFormat('L')
-      disabledDates: @datesToDisable
-      minDate: new Date()
-      inline: true
-      showClear: true
-      useCurrent: false #IMPORTANT
-    .on "dp.change", (e) =>
-      if e.date
-        @el.find("#end_time-link .booking-date-picker-label").html "<strong>#{__('End')}:</strong> #{moment(e.date).format('DD/MM/YYYY')}"
-        @el.find('#booking_end_time').val(moment(e.date).hour(23).minutes(59).seconds(59))
-        animateHideAllPickers()
-      else
-        @el.find("#end_time-link .booking-date-picker-label").html __('Select an end date')
-    .data("DateTimePicker")
+    # then ask the server for the dates to disable for this boat
+    $.get "/boats/#{boatId}/dates_to_disable.json", (dates) =>
+      @datesToDisable = _.map dates, (d) ->
+        moment(new Date(d.date))
 
-    # hide the end time picker when the page is loaded
-    @el.find('#end_time-picker>.bootstrap-datetimepicker-widget').height(0);
+      @startTimePicker = @el.find('#start_time-picker').datetimepicker
+        locale: moment.locale()
+        format: moment.localeData().longDateFormat('L')
+        minDate: new Date()
+        disabledDates: @datesToDisable
+        inline: true
+        showClear: true
+      .on "dp.change", (e) =>
+        if e.date
+          @el.find("#start_time-link .booking-date-picker-label").html "<strong>#{__('Start')}:</strong> #{moment(e.date).format('DD/MM/YYYY')}"
+          @el.find('#booking_start_time').val(moment(e.date).hour(0).minutes(0).seconds(0))
+          restrictEndDate(e.date)
+          animateTogglePickers()
+        else
+          @el.find("#start_time-link .booking-date-picker-label").html __('Select a start date')
+          @endTimePicker.clear()
+      .data("DateTimePicker")
 
-    @el.find("#start_time-link, #end_time-link").on 'click', (e) ->
-      e.preventDefault()
-      animateTogglePicker($(@).closest('.booking-date-picker').find('.bootstrap-datetimepicker-widget'))
+      @endTimePicker = @el.find('#end_time-picker').datetimepicker
+        locale: moment.locale()
+        format: moment.localeData().longDateFormat('L')
+        disabledDates: @datesToDisable
+        minDate: new Date()
+        inline: true
+        showClear: true
+        useCurrent: false #IMPORTANT
+      .on "dp.change", (e) =>
+        if e.date
+          @el.find("#end_time-link .booking-date-picker-label").html "<strong>#{__('End')}:</strong> #{moment(e.date).format('DD/MM/YYYY')}"
+          @el.find('#booking_end_time').val(moment(e.date).hour(23).minutes(59).seconds(59))
+          animateHideAllPickers()
+        else
+          @el.find("#end_time-link .booking-date-picker-label").html __('Select an end date')
+      .data("DateTimePicker")
 
-    @el.find('#booking_people_on_board').slider
-      tooltip: 'always'
-      value: 1
-      # min: parseInt(@el.find('#booking_people_on_board').prop('min'))
-      # max: parseInt(@el.find('#booking_people_on_board').prop('max'))
-      # width: '100%'
+      # hide the end time picker when the page is loaded
+      @el.find('#end_time-picker>.bootstrap-datetimepicker-widget').height(0);
+
+      @el.find("#start_time-link, #end_time-link").on 'click', (e) ->
+        e.preventDefault()
+        animateTogglePicker($(@).closest('.booking-date-picker').find('.bootstrap-datetimepicker-widget'))
+
+      @el.find('#booking_people_on_board').slider
+        tooltip: 'always'
+        value: 1
+        # min: parseInt(@el.find('#booking_people_on_board').prop('min'))
+        # max: parseInt(@el.find('#booking_people_on_board').prop('max'))
+        # width: '100%'
 
 $.fn.extend
-  bookingForm: (dates) ->
-    # DATES ARE SORTED BY RUBY
-    new BookingForm(@, dates)
+  bookingForm: (boatId) ->
+    new BookingForm(@, boatId)

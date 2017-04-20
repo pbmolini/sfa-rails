@@ -1,4 +1,4 @@
-# $(document).ready () ->
+# $(document).on 'turbolinks:load', () ->
 # 	# This code has been moved back to registrations/edit to use erb
 #   if $('.user_birthdate .form-control').length
 #     $('.user_birthdate .form-control').datetimepicker

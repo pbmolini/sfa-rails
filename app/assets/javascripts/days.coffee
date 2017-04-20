@@ -31,7 +31,8 @@ class AvailabilityCalendar
         @cal.gotoPreviousMonth(@updateMonthYear)
 
   _toDate: (dateProperties) ->
-    moment(new Date("#{dateProperties.year}-#{dateProperties.month}-#{dateProperties.day}"))
+    # -1 perche' js e' stronzo
+    moment(new Date(dateProperties.year, dateProperties.month - 1, dateProperties.day))
 
   _getData: (date) =>
     d = if typeof date == 'string' then date else date.format("YYYY-MM-DD")

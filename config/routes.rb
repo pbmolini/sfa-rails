@@ -40,6 +40,7 @@ Rails.application.routes.draw do
       resources :boat_features_sets, as: :features_sets # to avoid boat_boat_features_sets_path
       resources :days, only: [:index, :create, :destroy]
       get 'reviews' => 'reviews#index', as: :reviews
+      get :dates_to_disable, on: :member, constraints: { format: :json }
     end
 
     get 'reviews' => 'reviews#index', as: :reviews

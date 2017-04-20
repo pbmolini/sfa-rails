@@ -25,7 +25,7 @@
 
 <%= content_for :scripts do %>
   <script type="text/javascript">
-  $(document).ready(function() {
+  $(document).on('turbolinks:load', function() {
     $('#engine-presence').engine_check(<%= @boat.horse_power %>);
   });
   </script>

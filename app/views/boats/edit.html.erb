@@ -90,7 +90,7 @@
 
 <%= content_for :scripts do %>
 <script type="text/javascript">
-	$(document).ready(function() {
+	$(document).on('turbolinks:load', function() {
 		$('#boat_details, #boat_features').find('form .saving').hide();
 		$('#boat_details, #boat_features').on('change', function(){
 			$(this).find('.saving').fadeIn();
