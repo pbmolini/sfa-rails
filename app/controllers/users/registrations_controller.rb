@@ -44,7 +44,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_sign_up_params
     attributes = [:first_name, :last_name, :image]
     attributes.each do |a|
-      devise_parameter_sanitizer.for(:sign_up) << a
+      devise_parameter_sanitizer.permit(:sign_up, keys: attributes) << a
     end
   end
 
@@ -52,21 +52,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_account_update_params
     attributes = [:first_name, :last_name, :location, :bio, :phone, :birthdate, :image]
     attributes.each do |a|
-      devise_parameter_sanitizer.for(:account_update) << a
+      devise_parameter_sanitizer.permit(:account_update, keys: attributes)
     end
   end
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
     if booking_in_session?
-      # redirect to edit_user_path to complete your profile 
+      # redirect to edit_user_path to complete your profile
       flash[:notice] = _("You must complete your profile to book a boat")
       edit_user_registration_path
     else
       welcome_path
     end
     # Before version Varazze it was
-    # new_boat_path 
+    # new_boat_path
   end
 
   # The path used after updating profile.
