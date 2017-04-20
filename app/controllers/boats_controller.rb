@@ -33,7 +33,6 @@ class BoatsController < ApplicationController
     @booking.start_time = Time.zone.tomorrow + 9.hours
     @booking.end_time = Time.zone.tomorrow + 18.hours
     @booking.people_on_board = 1
-    @dates_to_disable = @boat.days.from_now.order('date ASC').to_json.html_safe
     #TODO disable also booked(accepted) days
   end
 
@@ -83,19 +82,19 @@ class BoatsController < ApplicationController
 
   def publish
     @boat.complete = true
-    # :complete is set to true so that the validations run. It is again set to 
+    # :complete is set to true so that the validations run. It is again set to
     # the real value in the model's 'after_validation'
     respond_to do |format|
-      if @boat.save 
+      if @boat.save
         # after having saved, the boat must be :complete to be published
         if @boat.complete?
           # TODO: mandare mail per avvenuta pubblicazione
-          format.html { redirect_to @boat, 
-            notice: _('Yay! You published your boat! Prepare to share it!') 
+          format.html { redirect_to @boat,
+            notice: _('Yay! You published your boat! Prepare to share it!')
           }
         else
-          format.html { redirect_to edit_boat_path(@boat), 
-            alert: _("Ops! Cannot publish this boat yet: please check all the compulsory fields") 
+          format.html { redirect_to edit_boat_path(@boat),
+            alert: _("Ops! Cannot publish this boat yet: please check all the compulsory fields")
           }
         end
       else
@@ -111,6 +110,13 @@ class BoatsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to boats_url, notice: _("Boat was successfully destroyed") }
       format.json { head :no_content }
+    end
+  end
+
+  def dates_to_disable
+    dates_to_disable = @boat.days.from_now.order('date ASC')
+    respond_to do |format|
+      format.json { render json: dates_to_disable }
     end
   end
 

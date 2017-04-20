@@ -46,7 +46,7 @@
 <% content_for :scripts  do %>
   <script type="text/javascript">
 
-    $(document).ready(function () {
+    $(document).on('turbolinks:load', function () {
       $("#review_comment").keyup(countChar);
       $('.rating-star')
       .on('mouseover', function(e) {

@@ -29,7 +29,7 @@
     <%= render 'layouts/messages' %>
 
     <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).on('turbolinks:load', function() {
       $('#affix').makeTocFor('#help-text');
     });
     </script>

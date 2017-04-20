@@ -52,8 +52,8 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button(:submit, 
-                  _('Book'), 
+    <%= f.button(:submit,
+                  _('Book'),
                   class: "btn btn-block btn-lg btn-success #{'disabled' unless user_signed_in_and_complete?}"
                   ) unless @boat.user == current_user %>
   </div>
@@ -62,8 +62,8 @@
 
 <%= content_for :scripts do %>
 <script type="text/javascript">
-$(document).ready(function() {
-  $('form#new_booking').bookingForm(<%= @dates_to_disable %>);
-});
+// $(document).on('turbolinks:load', function() {
+$('form#new_booking').bookingForm(<%= @boat.id %>);
+// });
 </script>
 <% end %>
