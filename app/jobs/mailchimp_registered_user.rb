@@ -14,17 +14,17 @@ class MailchimpRegisteredUser < Struct.new(:user_id, :first_name, :last_name, :e
 		# add user's email to MC list
 		member = gibbon.lists(list_id).members.create(
 			body: {
-				email_address: email, 
-				status: "subscribed", 
+				email_address: email,
+				status: "subscribed",
 				merge_fields: {FNAME: first_name, LNAME: last_name}
-				})
-		
+				}).body
+
 		# put user's email in "No Boat" group
 		gibbon.lists(list_id).members(member["id"]).update(
 			body: {
 				interests: {
-					boat_started_id => false, 
-					boat_complete_id => false, 
+					boat_started_id => false,
+					boat_complete_id => false,
 					boat_none_id => true
 					}
 				})
@@ -34,7 +34,7 @@ class MailchimpRegisteredUser < Struct.new(:user_id, :first_name, :last_name, :e
 	end
 
 	# Uncomment when debugging and check .env
-	# def error(job, exception)		
+	# def error(job, exception)
 	# 	Delayed::Worker.logger.error exception
 	# end
 

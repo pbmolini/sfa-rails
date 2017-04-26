@@ -12,8 +12,7 @@ ActiveAdmin.register Delayed::Job, as: 'Job' do
     column :failed_at
     column :run_at
     column :created_at
-    column :locked_by
-    column :locked_at
+    column :handler
     actions dropdown: true
   end
 
