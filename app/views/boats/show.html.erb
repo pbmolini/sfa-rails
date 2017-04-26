@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="alert alert-danger" role="alert">
-        <%= (s_("BoatShow|Almost done! You must <strong><a href='%{link}' class='alert-link'>complete your profile</a></strong> to make this boat visible to other people.") %{link: edit_boat_path(@boat)}).html_safe %>
+        <%= (s_("BoatShow|Almost done! You must <strong>%{link_text}</strong> to make this boat visible to other people.") %{link_text: link_to(_('complete your profile'), edit_boat_path(@boat))}).html_safe %>
       </div>
     </div>
   </div>
@@ -177,7 +177,7 @@
                 <%= n_("%{count} boat registered", "%{count} boats registered", @boat.user.boats.complete.count) %{count: @boat.user.boats.complete.count} %>
               </li>
               <li>
-                <% if @boat.reviews.any? %>                  
+                <% if @boat.reviews.any? %>
                   <%= link_to boat_reviews_path(@boat) do %>
                     <% n_("%{count} review", "%{count} reviews", @boat.reviews.count) %{count: @boat.reviews.count} %>
                   <% end %>

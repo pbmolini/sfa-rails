@@ -263,7 +263,7 @@ msgstr ""
 msgid "BoatSearch|Where?"
 msgstr ""
 
-msgid "BoatShow|Almost done! You must <strong><a href='%{link}' class='alert-link'>complete your profile</a></strong> to make this boat visible to other people."
+msgid "BoatShow|Almost done! You must <strong>%{link_text}</strong> to make this boat visible to other people."
 msgstr ""
 
 msgid "Boat|Address"
