@@ -43,17 +43,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # You can put the params you want to permit in the empty array.
   def configure_sign_up_params
     attributes = [:first_name, :last_name, :image]
-    attributes.each do |a|
-      devise_parameter_sanitizer.permit(:sign_up, keys: attributes) << a
-    end
+    devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
   end
 
   # You can put the params you want to permit in the empty array.
   def configure_account_update_params
     attributes = [:first_name, :last_name, :location, :bio, :phone, :birthdate, :image]
-    attributes.each do |a|
-      devise_parameter_sanitizer.permit(:account_update, keys: attributes)
-    end
+    devise_parameter_sanitizer.permit(:account_update, keys: attributes)
   end
 
   # The path used after sign up.
