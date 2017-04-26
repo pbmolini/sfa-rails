@@ -10,11 +10,11 @@
           </p>
         </div>
       </div>
-  
+
       <div class="row">
         <div class="col-sm-12 text-center">
           <p>
-            <%= button_to user_omniauth_authorize_path(:facebook), class: 'btn btn-lg btn-primary btn-block' do %>
+            <%= button_to user_facebook_omniauth_authorize_path, class: 'btn btn-lg btn-primary btn-block' do %>
               <span class="pull-left"><%= fa_icon('facebook') %></span>
               <%= _("Sign up with Facebook") %>
             <% end %>
