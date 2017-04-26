@@ -22,7 +22,9 @@ Branch *master* is the one used for the **production** deployment.
 Branch *development* is the one used for the **staging** deployment.
 
 
-### Rake tasks env variables (in `development`)
+### Rake tasks env variables
+
+#### in `development`
 
 Since SfA is using `foreman`, use this command
 
@@ -32,7 +34,8 @@ foreman run rake some_task
 
 to execute tasks that use things like `ENV['MY_VARIABLE']`
 
-**NOTE**: in `production` the command is
+#### in `production`
+the command is
 
 ```
 heroku run rake some_task
@@ -58,7 +61,7 @@ If there are new localized string in Javascript files, run this after saving the
 
 ```
 rake gettext:po_to_json
-``` 
+```
 
 ## Testing
 
@@ -70,7 +73,7 @@ bundle exec cucumber # optionally specify features/<file_name>.feature
 
 ## Deployment
 
-We deploy to Heroku using two environments, *staging* and *production*. 
+We deploy to Heroku using two environments, *staging* and *production*.
 
 ### Staging
 
@@ -104,3 +107,17 @@ If needed, migrate the database with
 heroku
 heroku run rake db:migrate --remote production
 ```
+
+# Troubleshooting
+
+## Mailchimp
+
+Sometimes Mailchimp API change and screw up things, usually Delayed Jobs. The first thing to do is go and check API changes in [the gibbon gem](https://github.com/amro/gibbon).
+
+If the some users don't have the `mc_member_id` you can assign it by executing (locally or on Heroku)
+
+```
+rake sfa:set_mc_member_id_to_users
+```
+
+To be sure that the user is in the correct Mailchimp group, just update each of his boats from the admin interface. This will trigger a `MCUserGroupUpdate` job.
