@@ -70,11 +70,11 @@ class BoatsController < ApplicationController
     respond_to do |format|
       if @boat.update(boat_params)
         format.html { redirect_to @boat, notice: _("Boat was successfully updated") }
-        format.js #{ render 'reload' }
+        format.js
         format.json { render :show, status: :ok, location: @boat }
       else
         format.html { render :edit }
-        format.js #{ render 'reload' }
+        format.js
         format.json { render json: @boat.errors, status: :unprocessable_entity }
       end
     end
