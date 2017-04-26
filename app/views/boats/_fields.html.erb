@@ -107,10 +107,7 @@
 
 <% content_for :scripts do %>
   <script type="text/javascript">
-    $(document).on('turbolinks:load', function () {
-      $('form').initEngineField(<%= @boat.horse_power == nil || @boat.horse_power > 1 %>);
-
-      $('.boat_year .form-control').boatYearField();
-    });
+    $('form').initEngineField(<%= @boat.horse_power == nil || @boat.horse_power > 1 %>);
+    $('.boat_year .form-control').boatYearField();
   </script>
 <% end %>

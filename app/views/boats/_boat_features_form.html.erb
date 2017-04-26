@@ -4,13 +4,22 @@
     radio_buttons: :horizontal_radio_and_checkboxes,
     file: :horizontal_file_input,
     boolean: :vertical_boolean
+  },
+  defaults: {
+    input_html: {
+      data: {
+        remote: true,
+        method: :put,
+        url: boat_path(@boat)
+      }
+    }
   } do |f| %>
   <h3>
     <%= _("Other Features of your boat") %>
   </h3>
   <p>
     <span class="last-update"><%= _('Last update:') %> <%= l @boat.boat_features_set.updated_at, format: :short %></span>
-    <span class="saving"><%= _('Saving...') %></span>
+    <span class="saving" style="display: none"><%= _('Saving...') %></span>
   </p>
 
 	<%#= per evitare messaggi di errore che non ci piacciono %>
@@ -25,8 +34,8 @@
 
 <%= content_for :scripts do %>
   <script type="text/javascript">
-  $(document).on('turbolinks:load', function() {
+  // $(document).on('turbolinks:load', function() {
     $('#engine-presence').engine_check(<%= @boat.horse_power %>);
-  });
+  // });
   </script>
 <% end %>

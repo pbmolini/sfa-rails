@@ -1,6 +1,13 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).on 'turbolinks:load', ->
+  if $('#boat_details, #boat_features').length > 0
+    $('#boat_details, #boat_features').on({
+      'ajax:send': =>
+        $(@).find('.saving').fadeIn()
+      'ajax:success': =>
+        $(@).find('.last-update').html("#{__('Last update:')} #{moment(new Date()).format('DD MMM H:mm')}")
+      'ajax:complete': =>
+        $(@).find('.saving').fadeOut()
+    })
 
 $.fn.extend
   engine_check: (boat_horse_power) ->
